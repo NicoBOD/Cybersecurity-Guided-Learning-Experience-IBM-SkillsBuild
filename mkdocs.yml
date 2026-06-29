@@ -1,0 +1,209 @@
+site_name: Cybersécurité IBM SkillsBuild — NicoBOD
+site_url: https://cybersecurite.bodaine.fr/
+site_description: Parcours d'apprentissage guidés en cybersécurité (8 et 20 sessions) alignés avec IBM SkillsBuild.
+edit_uri: https://github.com/NicoBOD/Cybersecurity-Guided-Learning-Experience-IBM-SkillsBuild/edit/main/docs/
+
+# Fichiers exclus
+exclude_docs: |
+  _template.md
+  !.well-known/
+
+theme:
+  name: material
+  language: fr
+  logo: material/shield-lock-outline
+  favicon: material/shield-lock
+  font:
+    text: Inter
+    code: JetBrains Mono
+  palette:
+    # Suit la préférence système (clair/sombre)
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Passer en mode clair
+    # Mode clair
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Passer en mode sombre
+    # Mode sombre
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Revenir au thème système
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.instant.prefetch
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.path
+    - navigation.indexes
+    - navigation.prune
+    - navigation.footer
+    - search.highlight
+    - search.suggest
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.action.edit
+    - content.action.view
+    - toc.follow
+
+plugins:
+  - search:
+      lang: fr
+  - git-revision-date-localized:
+      type: date
+      locale: fr
+      enable_creation_date: true
+      fallback_to_build_date: true
+  - glightbox
+  - minify:
+      minify_html: true
+      htmlmin_opts:
+        remove_comments: true
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+nav:
+  - Accueil: index.md
+  
+  - "🎓 Parcours A (8 sessions)":
+    - "Présentation & Évaluation":
+      - "Sujet du Projet Capstone A": ressources-pedagogiques/parcours-A-8sessions/projet/A_capstone.md
+      - "Grille d'évaluation": ressources-pedagogiques/parcours-A-8sessions/projet/A_grille_notation.md
+    - "Supports de Cours":
+      - "Session 01 — Fondations & Triade CIA": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S01_support.md
+      - "Session 02 — Menaces, malwares & Phishing": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S02_support.md
+      - "Session 03 — Sécurité Réseau & Architectures": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S03_support.md
+      - "Session 04 — Sécurité Physique & Cloud": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S04_support.md
+      - "Session 05 — RGPD, Conformité & Risques": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S05_support.md
+      - "Session 06 — Vulnérabilités & Score CVSS": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S06_support.md
+      - "Session 07 — IAM, MFA & Gestion des accès": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S07_support.md
+      - "Session 08 — Gestion d'incidents & Restitution": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S08_support.md
+    - "Plans d'Animation (Mentor)":
+      - "Session 01": ressources-pedagogiques/parcours-A-8sessions/plans-de-seance/A_S01_plan.md
+      - "Session 02": ressources-pedagogiques/parcours-A-8sessions/plans-de-seance/A_S02_plan.md
+      - "Session 03": ressources-pedagogiques/parcours-A-8sessions/plans-de-seance/A_S03_plan.md
+      - "Session 04": ressources-pedagogiques/parcours-A-8sessions/plans-de-seance/A_S04_plan.md
+      - "Session 05": ressources-pedagogiques/parcours-A-8sessions/plans-de-seance/A_S05_plan.md
+      - "Session 06": ressources-pedagogiques/parcours-A-8sessions/plans-de-seance/A_S06_plan.md
+      - "Session 07": ressources-pedagogiques/parcours-A-8sessions/plans-de-seance/A_S07_plan.md
+      - "Session 08": ressources-pedagogiques/parcours-A-8sessions/plans-de-seance/A_S08_plan.md
+    - "Diaporamas (Spécifications)":
+      - "Session 01": ressources-pedagogiques/parcours-A-8sessions/slides/A_S01_slides_spec.md
+      - "Session 02": ressources-pedagogiques/parcours-A-8sessions/slides/A_S02_slides_spec.md
+      - "Session 03": ressources-pedagogiques/parcours-A-8sessions/slides/A_S03_slides_spec.md
+      - "Session 04": ressources-pedagogiques/parcours-A-8sessions/slides/A_S04_slides_spec.md
+      - "Session 05": ressources-pedagogiques/parcours-A-8sessions/slides/A_S05_slides_spec.md
+      - "Session 06": ressources-pedagogiques/parcours-A-8sessions/slides/A_S06_slides_spec.md
+      - "Session 07": ressources-pedagogiques/parcours-A-8sessions/slides/A_S07_slides_spec.md
+      - "Session 08": ressources-pedagogiques/parcours-A-8sessions/slides/A_S08_slides_spec.md
+    - "Boîte à Outils":
+      - "Banque de Quiz A": ressources-pedagogiques/parcours-A-8sessions/outils/A_banque_quiz.md
+      - "Scripts de Démos": ressources-pedagogiques/parcours-A-8sessions/outils/A_scripts_demo.md
+      - "Messages Asynchrones": ressources-pedagogiques/parcours-A-8sessions/outils/A_messages.md
+
+  - "🛡️ Parcours B (20 sessions)":
+    - "Présentation & Évaluation":
+      - "Les 4 Mini-projets Pratiques": ressources-pedagogiques/parcours-B-20sessions/projet/B_miniprojets.md
+      - "Sujet du Projet Capstone B": ressources-pedagogiques/parcours-B-20sessions/projet/B_capstone.md
+      - "Grille d'évaluation": ressources-pedagogiques/parcours-B-20sessions/projet/B_grille_notation.md
+    - "Supports de Cours":
+      - "B01 — Fondations & CIA": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S01_support.md
+      - "B02 — Menaces & Ransomwares": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S02_support.md
+      - "B03 — Ingénierie Sociale & Hameçonnage": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S03_support.md
+      - "B04 — Posture & Hygiène Cyber": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S04_support.md
+      - "B05 — Protocoles Réseau & OSI": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S05_support.md
+      - "B06 — Sécurisation & Segmentation": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S06_support.md
+      - "B07 — Configuration de Pare-feux": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S07_support.md
+      - "B08 — Détection d'Intrusions": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S08_support.md
+      - "B09 — IAM, MFA & SSO": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S09_support.md
+      - "B10 — Cryptographie & Chiffrement": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S10_support.md
+      - "B11 — Sécurité Cloud": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S11_support.md
+      - "B12 — Sauvegardes & Résilience 3-2-1": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S12_support.md
+      - "B13 — OWASP Top 10": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S13_support.md
+      - "B14 — DevSecOps & CI/CD": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S14_support.md
+      - "B15 — Vulnérabilités & Scans CVSS": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S15_support.md
+      - "B16 — Supervision & SIEM (SOC)": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S16_support.md
+      - "B17 — Gouvernance, PSSI & ISO 27001": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S17_support.md
+      - "B18 — Analyse de Risques & EBIOS RM": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S18_support.md
+      - "B19 — Réponse aux Incidents (Playbooks)": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S19_support.md
+      - "B20 — Clôture & Soutenance Capstone": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S20_support.md
+    - "Plans d'Animation (Mentor)":
+      - "Session B01": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S01_plan.md
+      - "Session B02": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S02_plan.md
+      - "Session B03": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S03_plan.md
+      - "Session B04": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S04_plan.md
+      - "Session B05": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S05_plan.md
+      - "Session B06": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S06_plan.md
+      - "Session B07": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S07_plan.md
+      - "Session B08": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S08_plan.md
+      - "Session B09": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S09_plan.md
+      - "Session B10": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S10_plan.md
+      - "Session B11": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S11_plan.md
+      - "Session B12": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S12_plan.md
+      - "Session B13": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S13_plan.md
+      - "Session B14": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S14_plan.md
+      - "Session B15": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S15_plan.md
+      - "Session B16": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S16_plan.md
+      - "Session B17": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S17_plan.md
+      - "Session B18": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S18_plan.md
+      - "Session B19": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S19_plan.md
+      - "Session B20": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S20_plan.md
+    - "Boîte à Outils":
+      - "Banque de Quiz B": ressources-pedagogiques/parcours-B-20sessions/outils/B_banque_quiz.md
+      - "Scripts de Démos B": ressources-pedagogiques/parcours-B-20sessions/outils/B_scripts_demo.md
+      - "Messages Asynchrones B": ressources-pedagogiques/parcours-B-20sessions/outils/B_messages.md
+
+  - "🛠️ Cadrage & Organisation":
+    - "Cahier des Charges": documents-de-travail/cahier-des-charges-gle-cybersecurite.md
+    - "Synthèse de Transition": documents-de-travail/summary_gle_cyber.md
+    - "Manifeste d'Avancement": documents-de-travail/00_MANIFESTE.md
+    - "Message d'Amorçage": documents-de-travail/message-amorcage.md

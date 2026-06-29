@@ -1,0 +1,45 @@
+name: Deploy Documentation
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-gh-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Historique complet requis pour la date de révision
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Installer les dépendances système d'imagerie
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev pngquant
+
+      - name: Cache MkDocs (.cache)
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: mkdocs-cache-${{ hashFiles('docs/**', 'mkdocs.yml') }}
+          restore-keys: |
+            mkdocs-cache-
+
+      - name: Installer les dépendances Python
+        run: pip install -r requirements.txt
+
+      - name: Déployer sur GitHub Pages
+        run: mkdocs gh-deploy --force
