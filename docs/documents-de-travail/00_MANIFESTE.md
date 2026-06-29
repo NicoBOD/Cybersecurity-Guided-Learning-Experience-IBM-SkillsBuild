@@ -190,11 +190,11 @@ Toutes les productions respecteront les conventions de nommage `<Parcours>_S<NN>
 ### 3.3 Livrables Parcours B (20 sessions)
 | Session | Plan de séance | Support de cours (.MD) | Spec Slides (.MD) | Deck PPTX |
 |---|---|---|---|---|
-| **B1** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire | ⬜ À faire |
-| **B2** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire | ⬜ À faire |
-| **B3** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire | ⬜ À faire |
-| **B4** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire | ⬜ À faire |
-| **B5** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire | ⬜ À faire |
+| **B1** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
+| **B2** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
+| **B3** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
+| **B4** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
+| **B5** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
 | **B6** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire | ⬜ À faire |
 | **B7** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire | ⬜ À faire |
 | **B8** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire | ⬜ À faire |
