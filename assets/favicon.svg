@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Apprendre la cybersécurité">
+  <rect width="48" height="48" rx="10" fill="#11948e"/>
+  <path d="M14 17l7 7-7 7" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="26" y1="33" x2="36" y2="33" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+</svg>
