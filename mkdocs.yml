@@ -3,16 +3,17 @@ site_url: https://cybersecurite.bodaine.fr/
 site_description: Parcours d'apprentissage guidés en cybersécurité (8 et 20 sessions) alignés avec IBM SkillsBuild.
 edit_uri: https://github.com/NicoBOD/Cybersecurity-Guided-Learning-Experience-IBM-SkillsBuild/edit/main/docs/
 
-# Fichiers exclus
+# Fichiers exclus (masqués pour le visiteur, non compilés en HTML)
 exclude_docs: |
   _template.md
   !.well-known/
+  documents-de-travail/
 
 theme:
   name: material
   language: fr
-  logo: material/shield-lock-outline
-  favicon: material/shield-lock
+  logo: material/fingerprint
+  favicon: material/fingerprint
   font:
     text: Inter
     code: JetBrains Mono
@@ -57,8 +58,6 @@ theme:
     - content.code.copy
     - content.code.annotate
     - content.tabs.link
-    - content.action.edit
-    - content.action.view
     - toc.follow
 
 plugins:
@@ -77,6 +76,25 @@ plugins:
 
 extra_css:
   - stylesheets/extra.css
+
+copyright: >
+  &copy; 2026 Nicolas BODAINE | <a href="https://wiki.bodaine.fr/mentions-legales/" target="_blank" rel="noopener">Mentions légales</a> | <a href="https://skills.yourlearning.ibm.com/activity/PLAN-EC6B83791960" target="_blank" rel="noopener">Plan de formation IBM SkillsBuild</a>
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/bodaine
+      name: Nicolas BODAINE sur LinkedIn
+    - icon: fontawesome/brands/github
+      link: https://github.com/NicoBOD
+      name: NicoBOD sur GitHub
+    - icon: fontawesome/solid/globe
+      link: https://nicolas.bodaine.fr
+      name: Portfolio de Nicolas BODAINE
+    - icon: material/certificate
+      link: https://skills.yourlearning.ibm.com/activity/PLAN-EC6B83791960
+      name: Plan de formation IBM SkillsBuild
 
 markdown_extensions:
   - abbr
@@ -201,9 +219,3 @@ nav:
       - "Banque de Quiz B": ressources-pedagogiques/parcours-B-20sessions/outils/B_banque_quiz.md
       - "Scripts de Démos B": ressources-pedagogiques/parcours-B-20sessions/outils/B_scripts_demo.md
       - "Messages Asynchrones B": ressources-pedagogiques/parcours-B-20sessions/outils/B_messages.md
-
-  - "🛠️ Cadrage & Organisation":
-    - "Cahier des Charges": documents-de-travail/cahier-des-charges-gle-cybersecurite.md
-    - "Synthèse de Transition": documents-de-travail/summary_gle_cyber.md
-    - "Manifeste d'Avancement": documents-de-travail/00_MANIFESTE.md
-    - "Message d'Amorçage": documents-de-travail/message-amorcage.md
