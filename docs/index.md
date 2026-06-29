@@ -80,10 +80,3 @@ Ce parcours long (~30h synchrones) est hautement technique et pratique. Il inclu
 *   **Outils Complémentaires** :
     *   [Banque de Quiz B 📝](ressources-pedagogiques/parcours-B-20sessions/outils/B_banque_quiz.md) | [Scripts de Démos Techniques 💻](ressources-pedagogiques/parcours-B-20sessions/outils/B_scripts_demo.md) | [Messages Asynchrones 💬](ressources-pedagogiques/parcours-B-20sessions/outils/B_messages.md)
 
----
-
-## 🛠️ Documents Organisationnels (Fichiers de travail)
-Les documents de cadrage du projet sont disponibles ci-dessous :
-*   [Cahier des charges de la formation](documents-de-travail/cahier-des-charges-gle-cybersecurite.md)
-*   [Synthèse globale de transition](documents-de-travail/summary_gle_cyber.md)
-*   [Manifeste d'avancement détaillé](documents-de-travail/00_MANIFESTE.md)
