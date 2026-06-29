@@ -5,7 +5,7 @@ Bienvenue sur le portail d'apprentissage guidé en cybersécurité, aligné avec
 Ce portail est conçu pour accompagner :
 
 *   **:material-account-tie: Les Mentors** dans la préparation, l'animation et l'évaluation des séances synchrones.
-*   **:material-account-graduation: Les Apprenants** dans l'acquisition de compétences clés à travers des supports de cours structurés, des quiz d'auto-évaluation et des projets pratiques (Mini-projets et Capstone).
+*   **:material-account: Les Apprenants** dans l'acquisition de compétences clés à travers des supports de cours structurés, des quiz d'auto-évaluation et des projets pratiques (Mini-projets et Capstone).
 
 ---
 
@@ -43,21 +43,21 @@ Sélectionnez le parcours adapté à vos objectifs de formation pour accéder au
 
 Ce parcours court se concentre sur les fondamentaux théoriques et les règles d'hygiène numérique indispensables pour sécuriser une infrastructure d'entreprise.
 
-*   **:material-folder: Module 1 : Fondations & Menaces** (Sessions 01 et 02)
-    *   [Session 01 : Fondations de la cybersécurité & triade CIA](ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S01_support.md)
-    *   [Session 02 : Menaces, malwares & ingénierie sociale](ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S02_support.md)
-*   **:material-folder: Module 2 : Réseau, Physique & Cloud** (Sessions 03 et 04)
-    *   [Session 03 : Réseaux informatiques & sécurité des architectures](ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S03_support.md)
-    *   [Session 04 : Sécurité physique, des données et du cloud](ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S04_support.md)
-*   **:material-folder: Module 3 : Gouvernance & Vulnérabilités** (Sessions 05 et 06)
-    *   [Session 05 : RGPD, conformité et gouvernance des risques](ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S05_support.md)
-    *   [Session 06 : Vulnérabilités logicielles, mises à jour & score CVSS](ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S06_support.md)
-*   **:material-folder: Module 4 : IAM & Gestion d'Incidents** (Sessions 07 et 08)
-    *   [Session 07 : Gestion des accès, authentification forte & IAM](ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S07_support.md)
-    *   [Session 08 : Gestion d'incidents & Présentations du projet final](ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S08_support.md)
+*   **:material-folder: Module 1 : Fondations & Menaces** (Sessions A01 et A02)
+    *   [A01 : Fondations de la cybersécurité & triade CIA](ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S01_support.md)
+    *   [A02 : Menaces, malwares & ingénierie sociale](ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S02_support.md)
+*   **:material-folder: Module 2 : Réseau, Physique & Cloud** (Sessions A03 et A04)
+    *   [A03 : Réseaux informatiques & sécurité des architectures](ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S03_support.md)
+    *   [A04 : Sécurité physique, des données et du cloud](ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S04_support.md)
+*   **:material-folder: Module 3 : Gouvernance & Vulnérabilités** (Sessions A05 et A06)
+    *   [A05 : RGPD, conformité et gouvernance des risques](ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S05_support.md)
+    *   [A06 : Vulnérabilités logicielles, mises à jour & score CVSS](ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S06_support.md)
+*   **:material-folder: Module 4 : IAM & Gestion d'Incidents** (Sessions A07 et A08)
+    *   [A07 : Gestion des accès, authentification forte & IAM](ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S07_support.md)
+    *   [A08 : Gestion d'incidents & Présentations du projet final](ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S08_support.md)
 *   **:material-trophy: Projet Capstone A** :
     *   [Sujet du Projet Capstone A](ressources-pedagogiques/parcours-A-8sessions/projet/A_capstone.md)
-    *   [Grille d'évaluation et barème](ressources-pedagogiques/parcours-A-8sessions/projet/A_grille_notation.md)
+    *   [Grille d'évaluation et barème du Jury](ressources-pedagogiques/parcours-A-8sessions/projet/A_grille_notation.md)
 *   **:material-tools: Outils complémentaires** :
     *   [Banque de Quiz A](ressources-pedagogiques/parcours-A-8sessions/outils/A_banque_quiz.md) | [Scripts de Démos](ressources-pedagogiques/parcours-A-8sessions/outils/A_scripts_demo.md) | [Messages Asynchrones](ressources-pedagogiques/parcours-A-8sessions/outils/A_messages.md)
 
