@@ -23,6 +23,7 @@ Les mini-projets sont des travaux pratiques réalisés en équipe tout au long d
 ### Énoncé & Consignes :
 À partir du contexte de la PME **MedDistri**, proposez une nouvelle architecture réseau sous forme de schéma conceptuel (Mermaid ou outil de dessin) résolvant le problème de réseau local plat.
 Votre proposition doit cloisonner :
+
 1.  Le réseau interne administratif et comptable (LAN Administratif).
 2.  Le réseau de l'entrepôt et des logisticiens (LAN Logistique).
 3.  Un réseau d'accueil pour les smartphones des clients ou visiteurs (LAN Visiteurs).

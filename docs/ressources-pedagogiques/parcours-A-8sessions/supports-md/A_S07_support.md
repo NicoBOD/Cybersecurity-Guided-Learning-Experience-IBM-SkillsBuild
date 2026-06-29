@@ -43,12 +43,14 @@ L'investigation numérique s'apparente à une enquête de police scientifique, t
 
 #### A. L'ordre de volatilité des données
 Les données informatiques s'effacent à des vitesses différentes. Les enquêteurs collectent d'abord les données les plus volatiles :
+
 * **Mémoire vive (RAM)** : Contient les mots de passe saisis en clair, les clés de chiffrement temporaires et la liste des connexions réseau actives de l'attaquant. Si on éteint l'ordinateur, toutes ces preuves cruciales disparaissent instantanément.
 * **Fichiers temporaires & caches système** : Traces d'exécution récentes.
 * **Stockage physique (Disque dur)** : Fichiers persistants, logs enregistrés, fichiers supprimés récupérables.
 
 #### B. La Chaîne de contrôle (*Chain of Custody*)
 Pour qu'une preuve numérique soit acceptée devant un tribunal, l'enquêteur doit prouver qu'elle n'a pas été modifiée lors de sa collecte ou de son analyse.
+
 * *Comment ?* On réalise une **copie bit-à-bit** (clone exact) du disque dur d'origine. On calcule ensuite l'**empreinte numérique** (hachage) du clone. Si l'empreinte correspond exactement à celle du disque d'origine, on prouve que la copie est identique. Toutes les analyses sont ensuite menées uniquement sur la copie, l'original restant scellé sous clé.
 
 ---

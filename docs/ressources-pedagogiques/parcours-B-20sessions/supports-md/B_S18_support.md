@@ -2,6 +2,7 @@
 
 ## Objectifs de la session
 À la fin de cette session, vous serez capable de :
+
 * Citer et détailler les 6 phases du cycle de gestion des incidents de sécurité selon le standard international NIST SP 800-61 r2.
 * Distinguer et planifier les étapes clés de confinement, d'éradication et de recouvrement après une cyberattaque.
 * Rédiger une fiche réflexe opérationnelle (Playbook d'action rapide) pour guider un premier intervenant face à une attaque par rançongiciel.
@@ -32,11 +33,13 @@ graph TD
 
 ### 2. Confinement, Éradication et Recouvrement
 Ces trois étapes constituent le cœur opérationnel de la gestion d'un incident actif :
+
 *   **Confinement** : On stoppe l'hémorragie. L'objectif n'est pas encore de réparer, mais d'éviter que la menace n'atteigne d'autres serveurs.
 *   **Éradication** : On assainit. On cherche toutes les portes dérobées (*backdoors*) créées par le pirate pour s'assurer qu'il ne pourra pas revenir.
 *   **Recouvrement** : On redémarre. On remet les services en ligne progressivement en s'assurant que les vulnérabilités de départ ont bien été corrigées.
 
 *L'analogie de l'incendie de cuisine* :
+
 *   Le **confinement** consiste à fermer la porte de la cuisine pour empêcher la fumée et les flammes d'envahir le reste de la maison.
 *   L'**éradication** consiste à utiliser l'extincteur pour éteindre le feu à sa source et enlever les débris brûlés.
 *   Le **recouvrement** consiste à nettoyer la suie, repeindre les murs et installer une nouvelle cuisinière pour reprendre une activité normale.
@@ -82,9 +85,11 @@ ou des fichiers professionnels impossibles à ouvrir avec une extension ".locked
 
 Étape 3 : COLLECTE DES PREMIÈRES INFORMATIONS
 -> Demander à l'utilisateur :
+
    - L'heure exacte du premier message d'erreur ou du comportement anormal.
    - Le message affiché à l'écran (lui demander de prendre une photo de l'écran
      avec son téléphone portable et de l'envoyer par SMS/canal secondaire).
+
    - Les noms des derniers fichiers ou dossiers ouverts avant le blocage.
 
 Étape 4 : SIGNALEMENT AUX RESPONSABLES DE SÉCURITÉ (Escalade)

@@ -2,6 +2,7 @@
 
 ## Objectifs de la session
 À la fin de cette session, vous serez capable de :
+
 * Expliquer le fonctionnement des pare-feux et comparer les technologies de filtrage sans état (*stateless*), à état (*stateful*) et de nouvelle génération (NGFW).
 * Différencier le rôle, le fonctionnement et le positionnement architectural d'un IDS (détection passive) et d'un IPS (prévention active).
 * Concevoir et modéliser une architecture réseau sécurisée et segmentée en réseaux WAN, LAN et DMZ (Zone Démilitarisée), complétée par sa table de filtrage pare-feu.
@@ -14,6 +15,7 @@
 Un pare-feu est un équipement de sécurité réseau chargé de filtrer les flux d'informations entrants et sortants selon des règles prédéfinies. Le principe fondamental d'un pare-feu est le **Default Deny** (Rejet par défaut) : tout trafic qui n'est pas explicitement autorisé par une règle est bloqué.
 
 On distingue plusieurs générations de pare-feux :
+
 *   **Filtrage sans état (*Stateless*)** : Analyse chaque paquet individuellement sans aucun historique. Il vérifie uniquement si les adresses IP et ports correspondent à ses règles.
     *   *Analogie* : Un portier de boîte de nuit qui vérifie si votre nom est sur la liste d'invités, mais oublie votre visage dès que vous franchissez le pas de la porte.
 *   **Filtrage à état (*Stateful*)** : Garde en mémoire le contexte des connexions initiées (table des états). Si une machine interne initie une connexion vers l'extérieur, le pare-feu s'en souvient et laisse passer le trafic de retour associé, tout en bloquant les paquets entrants non sollicités.
@@ -30,6 +32,7 @@ Malgré les pare-feux, des flux autorisés peuvent contenir du trafic malveillan
 
 ### 3. La segmentation réseau et la DMZ
 Pour éviter qu'un pirate ayant compromis une machine n'accède facilement à tout le réseau de l'entreprise (mouvement latéral), il est impératif de diviser le réseau en zones isolées logiquement :
+
 *   **WAN (*Wide Area Network*)** : Le réseau public non sûr (Internet).
 *   **LAN (*Local Area Network*)** : Le réseau local interne de l'entreprise, contenant les ordinateurs des salariés et les données confidentielles.
 *   **DMZ (*Demilitarized Zone* — Zone Démilitarisée)** : Zone réseau intermédiaire isolée du LAN. C'est ici que l'on place les serveurs qui doivent être accessibles depuis Internet (serveur Web public, serveur de messagerie).
@@ -46,11 +49,13 @@ Pour éviter qu'un pirate ayant compromis une machine n'accède facilement à to
 
 **Consignes :**
 L'entreprise EcoLog souhaite sécuriser son réseau composé de :
+
 *   Un réseau interne (LAN) : ordinateurs des employés (`192.168.10.0/24`).
 *   Une zone DMZ : un serveur web public (`192.168.20.5`) hébergeant le site e-commerce.
 *   L'accès Internet (WAN) représenté par n'importe quelle adresse (`Any`).
 
 Rédigez la table de règles du pare-feu central (contenant 4 règles clés + la règle de fermeture par défaut) en respectant les besoins métiers suivants :
+
 1.  Les clients d'Internet (WAN) doivent pouvoir visiter le site web de l'entreprise en HTTPS (port 443).
 2.  Les employés du LAN doivent pouvoir naviguer sur Internet en HTTP et HTTPS pour leurs recherches.
 3.  Le serveur web en DMZ doit pouvoir télécharger ses mises à jour logicielles sur Internet (HTTPS uniquement).

@@ -2,6 +2,7 @@
 
 ## Objectifs de la session
 À la fin de cette session, vous serez capable de :
+
 * Expliquer le fonctionnement et l'intérêt d'une simulation de crise sur table (*Tabletop Exercise*) pour une organisation.
 * Décrire les rôles et les responsabilités des membres clés d'une cellule de crise (Direction, IT, Communication, DPO/Juridique).
 * Rédiger un communiqué de crise externe factuel, transparent et conforme aux obligations réglementaires (RGPD).
@@ -21,6 +22,7 @@ Un **Tabletop Exercise** (ou exercice sur table) est une simulation de crise th�
 
 ### 2. Organisation de la cellule de crise cyber
 Face à une cyberattaque d'ampleur, l'informatique ne peut pas décider seule. La **cellule de crise** regroupe plusieurs fonctions complémentaires :
+
 *   **Le Directeur de Crise (Direction Générale)** : Il valide la stratégie globale, prend les décisions financières d'urgence (ex. recours à des experts externes) et assume la responsabilité légale finale de la gestion de crise.
 *   **Le Responsable IT/Sécurité (RSSI/DSI)** : Il fournit le diagnostic technique, pilote les équipes d'investigation, propose les mesures d'isolation du réseau et évalue le temps nécessaire à la restauration des systèmes.
 *   **Le Responsable Juridique / DPO** : Il analyse la responsabilité légale de l'entreprise, pilote la rédaction et l'envoi de la déclaration de violation de données personnelles à la **CNIL sous 72h**, et vérifie le respect des engagements contractuels vis-à-vis des clients.
@@ -78,6 +80,7 @@ Contact Presse unique : service.presse@ecolog.fr
 ```
 
 *Analyse pédagogique des points forts du communiqué rédigé :*
+
 *   *Factuel et transparent* : L'entreprise admet l'attaque et la fuite sans essayer de minimiser l'existence de l'incident.
 *   *Rassurant* : Précise immédiatement ce qui n'a **pas** été volé (mots de passe, coordonnées bancaires) pour limiter la panique des clients.
 *   *Légal et responsable* : Mentionne explicitement la notification CNIL et la prise de contact individuelle avec les victimes, démontrant ainsi le respect des lois.

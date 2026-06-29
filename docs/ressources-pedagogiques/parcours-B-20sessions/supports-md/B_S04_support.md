@@ -2,6 +2,7 @@
 
 ## Objectifs de la session
 À la fin de cette session, vous serez capable de :
+
 * Décoder les 5 principaux leviers psychologiques (urgence, autorité, sympathie, peur, preuve sociale) exploités par les attaquants lors d'une manipulation.
 * Distinguer techniquement et fonctionnellement les différents vecteurs d'ingénierie sociale : *Phishing* (email), *Spear-phishing* (ciblé), *Smishing* (SMS) et *Vishing* (téléphone).
 * Rédiger et structurer des règles d'hygiène numérique simples et applicables pour sensibiliser efficacement des collaborateurs en entreprise.
@@ -34,6 +35,7 @@ L'ingénierie sociale emprunte différents canaux technologiques et de communica
 
 ### 3. L'hygiène numérique d'entreprise
 La sécurité humaine repose sur des réflexes simples mais rigoureux, que l'on qualifie d'**hygiène numérique** (*cyber hygiene*). Elle comprend :
+
 *   **La gestion des mots de passe** : Utiliser des mots de passe longs (au moins 12 à 15 caractères), uniques pour chaque service, et stockés dans un gestionnaire de mots de passe sécurisé.
 *   **Le Double Facteur (MFA — *Multi-Factor Authentication*)** : Activer systématiquement la double validation (code SMS, application d'authentification) pour toutes les connexions.
 *   **La culture de la vérification** : Mettre en place des procédures de double validation hors canal (ex. rappeler un fournisseur sur son numéro officiel connu en cas de changement de RIB reçu par email).
@@ -49,6 +51,7 @@ La sécurité humaine repose sur des réflexes simples mais rigoureux, que l'on 
 **Objectif :** Rédiger une fiche mémo synthétique, positive et accessible (sans jargon technique) destinée aux nouveaux salariés d'une PME pour leur donner les clés de l'hygiène cyber dès leur arrivée.
 
 **Consignes :**
+
 1. Formulez 5 règles d'or courtes et concrètes.
 2. Pour chaque règle, expliquez brièvement le risque évité et le comportement attendu.
 3. Présentez le livrable sous forme de guide de poche attractif.

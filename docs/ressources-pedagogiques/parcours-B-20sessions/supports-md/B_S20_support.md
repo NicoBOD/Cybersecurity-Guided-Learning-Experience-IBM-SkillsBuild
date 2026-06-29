@@ -2,6 +2,7 @@
 
 ## Objectifs de la session
 À la fin de cette session, vous serez capable de :
+
 * Présenter et soutenir oralement en équipe les conclusions de votre audit et votre plan d'action pour la PME MedDistri.
 * Argumenter et défendre vos choix d'architectures réseau, de gouvernance et de traitement des risques devant un jury d'évaluation.
 * Formuler un bilan réflexif sur les compétences professionnelles acquises et planifier votre stratégie de veille technologique post-formation.
@@ -14,6 +15,7 @@
 Le **Capstone Project B** marque l'aboutissement de votre parcours de formation de 30 heures. Il simule une mission de conseil cyber réelle pour la PME fictive **MedDistri** (distributeur de matériel médical critique).
 
 Ce projet a requis l'application pratique de l'ensemble des modules étudiés :
+
 *   **Technique** : Conception d'une architecture réseau sécurisée avec segmentation (DMZ, VLANs), durcissement des postes, mise en œuvre d'outils défensifs (pare-feu, IDS) et gestion des accès (MFA, IAM).
 *   **Organisationnel** : Élaboration des règles de la PSSI, calcul et priorisation des risques cyber (matrice 4x4), planification de la résilience (sauvegardes 3-2-1, PCA/PRA) et respect des lois sur la protection des données (RGPD).
 
@@ -31,6 +33,7 @@ Le jury cherchera à tester la solidité de votre plan en vous demandant de just
 
 ### 3. Capitalisation professionnelle et veille continue
 La fin de la formation n'est pas la fin de votre apprentissage. Le paysage de la cybersécurité évolue quotidiennement avec l'apparition de nouvelles failles de sécurité (**CVE**) et de nouvelles techniques d'attaque.
+
 *   **Valorisation** : Téléchargez vos badges de cours et votre certificat final **IBM SkillsBuild** et intégrez-les à vos profils professionnels (LinkedIn, CV) pour valoriser vos compétences de gestion cyber opérationnelle.
 *   **Veille cyber active** : Prenez l'habitude de suivre les bulletins de sécurité officiels (ex. les alertes du **CERT-FR** de l'ANSSI, les articles de cyber.gouv.fr) pour rester informé des vulnérabilités critiques à corriger d'urgence dans vos futurs environnements professionnels.
 
@@ -54,6 +57,7 @@ Utilisez la grille critériée ci-dessous pour évaluer votre livrable *« Audit
 | **4. Clarté du plan de remédiation** | Aucune planification chronologique. | Actions listées en vrac sans priorité claire. | Actions priorisées à court, moyen et long terme. | Feuille de route budgétée, planifiée et adaptée aux ressources de la PME. |
 
 **Exemple de rapport d'auto-évaluation rédigé par un groupe d'apprenants :**
+
 *   **Points forts de notre projet** :
     1.  *Architecture réseau robuste* : Notre proposition de segmentation sépare parfaitement le réseau administratif des serveurs sensibles de commandes médicales via une DMZ stricte.
     2.  *Plan de remédiation réaliste* : Nous avons séparé les actions en 3 phases pour ne pas saturer le budget limité de la PME MedDistri, en commençant par des mesures simples comme le MFA et la sensibilisation.

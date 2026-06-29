@@ -2,6 +2,7 @@
 
 ## Objectifs de la session
 À la fin de cette session, vous serez capable de :
+
 * Expliquer les couches clés des modèles OSI et TCP/IP à travers le prisme de la sécurité en identifiant où se situent les principales attaques et défenses.
 * Décrire le rôle des protocoles réseaux majeurs (DNS, DHCP, ARP, ICMP) et identifier les ports de communication standards les plus exposés (22, 53, 80, 443, 3389).
 * Lire et analyser la structure d'une adresse IP (partie réseau vs partie hôte) et interpréter les éléments clés d'un en-tête de paquet réseau simple (IP source/dest, ports, TTL).
@@ -54,10 +55,12 @@ Les données circulent sur le réseau via des protocoles (langages) spécifiques
 
 ### 3. Adressage IP et En-têtes de paquets
 Une adresse IPv4 est composée de 32 bits (ex. `192.168.1.50`). Elle est divisée en deux parties grâce au **masque de sous-réseau** (ex. `255.255.255.0`) :
+
 1.  **L'adresse réseau** : identifie le réseau sur lequel se trouve la machine (la rue).
 2.  **L'adresse hôte** : identifie la machine spécifique sur ce réseau (le numéro de maison).
 
 Lorsqu'un paquet est envoyé, il contient un **en-tête IP** contenant les métadonnées de transmission :
+
 *   **IP Source & IP Destination** : Qui envoie et qui reçoit.
 *   **TTL (*Time To Live*)** : Une durée de vie sous forme de compteur de routeurs traversés. À chaque routeur, le TTL baisse de 1. S'il atteint 0, le paquet est détruit pour éviter qu'il ne tourne en boucle infinie sur Internet.
 *   **Protocol** : Indique si le paquet de transport encapsulé est du TCP ou de l'UDP.
@@ -71,6 +74,7 @@ Lorsqu'un paquet est envoyé, il contient un **en-tête IP** contenant les méta
 
 **Consignes :**
 Analysez les deux extraits de paquets ci-dessous et répondez aux questions :
+
 1. Quelle est l'adresse IP source et destination ?
 2. Quels sont les ports source et destination ? Quel protocole applicatif est ciblé ?
 3. L'un de ces paquets présente-t-il une anomalie de sécurité ? Si oui, laquelle ?

@@ -2,6 +2,7 @@
 
 ## Objectifs de la session
 À la fin de cette session, vous serez capable de :
+
 * Concevoir et appliquer un plan de classification des données d'entreprise sur 4 niveaux de sensibilité.
 * Différencier et configurer le chiffrement des données au repos (*at rest*) et des données en transit (*in transit*).
 * Expliquer le fonctionnement logique d'une solution de prévention des fuites de données (DLP).
@@ -16,6 +17,7 @@
 Pour protéger efficacement les informations, il faut d'abord savoir ce que l'on possède et quelle est sa valeur. Il est impossible (et inutilement coûteux) de protéger une simple brochure publique avec le même niveau de sécurité qu'un brevet secret de fabrication.
 
 La classification consiste à répartir les données en 4 niveaux types de sensibilité :
+
 1.  **Publique** : Données qui peuvent être divulguées sans aucun risque pour l'entreprise (ex. site web externe, communiqués de presse, catalogues).
 2.  **Interne** : Données réservées à l'usage exclusif des employés de l'entreprise. Leur divulgation externe causerait un embarras mineur ou une perte d'efficacité (ex. organigramme interne, notes de service, procédures techniques).
 3.  **Confidentielle** : Données sensibles dont la divulgation externe porterait préjudice à l'entreprise, à ses clients ou à ses employés (ex. données de paie des RH, fichiers clients, bilans comptables non publiés, contrats de fournisseurs).
@@ -58,6 +60,7 @@ L'agence d'architecture "ArchiTech" emploie 5 dessinateurs. Ils créent des plan
 Proposez une mise en œuvre concrète de la règle 3-2-1 en complétant le schéma logique ci-dessous (définissez la nature de chaque copie, le support matériel utilisé et la localisation physique).
 
 **Questionnaire à remplir :**
+
 *   **Copie n°1 (Production)** : Quel support ? Où est-elle située ?
 *   **Copie n°2 (Sauvegarde locale)** : Quel support ? Où est-elle située ? Comment protège-t-elle contre une panne du serveur de production ?
 *   **Copie n°3 (Sauvegarde hors site/hors ligne)** : Quel support ? Où est-elle située ? Contre quels risques majeurs (locaux et réseau) protège-t-elle ?

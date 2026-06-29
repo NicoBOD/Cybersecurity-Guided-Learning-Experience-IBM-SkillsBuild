@@ -15,6 +15,7 @@ Je suis ravi de vous accueillir au sein du parcours **GLE Cybersécurité (Parco
 La cybersécurité n'est pas seulement une question de technologies complexes, c'est avant tout un état d'esprit et un ensemble de bonnes pratiques que nous allons construire ensemble.
 
 **Votre première étape autonome (Self-paced) avant notre première classe virtuelle :**
+
 1. Connectez-vous à la plateforme **IBM SkillsBuild**.
 2. Parcourez la section d'introduction générale.
 3. Notez une question ou une anecdote cyber qui vous interpelle pour notre brise-glace de démarrage.
@@ -58,6 +59,7 @@ Nous venons de clore la session 04 portant sur la sécurité du cloud, des donn�
 Vos progrès techniques sont impressionnants et la qualité de vos audits de sauvegarde lors de notre dernière activité montre que vous adoptez déjà une vraie posture de professionnels de la cyber.
 
 **Pour garder le rythme pour la seconde moitié :**
+
 * Assurez-vous d'avoir bien validé vos modules SkillsBuild précédents (un suivi est disponible sur votre tableau de bord).
 * Notre prochaine étape (Session 05) portera sur la **Gouvernance, le Risque et le RGPD**. C'est une session charnière pour comprendre les enjeux stratégiques et juridiques d'une entreprise.
 
@@ -82,10 +84,12 @@ Nous venons de terminer la session 06 sur la gestion des vulnérabilités logici
 Vous allez travailler en groupes sur le cas de l'entreprise **MedDistri**, une PME qui a cruellement besoin de votre aide pour sécuriser ses accès distants, ses données commerciales et se mettre en conformité RGPD.
 
 📂 **Vos ressources indispensables sont en ligne :**
+
 * L'énoncé du projet : [A_capstone.md](../projet/A_capstone.md)
 * La grille d'évaluation (barème sur 20 points) : [A_grille_notation.md](../projet/A_grille_notation.md)
 
 **Les étapes clés :**
+
 1. Constituez vos groupes de 3 à 4 apprenants d'ici demain soir et inscrivez vos noms sur le registre.
 2. Travaillez de manière collaborative sur votre rapport d'audit écrit.
 3. Préparez votre pitch oral de 10 minutes pour notre session finale (Session 08).
@@ -108,6 +112,7 @@ C'est avec une grande fierté que je vous écris pour vous féliciter chaleureus
 Votre soutenance finale d'hier sur le cas MedDistri a démontré votre capacité à analyser des vulnérabilités complexes et à proposer des solutions réalistes, structurées et convaincantes.
 
 **Vos prochaines étapes :**
+
 1. **Votre Badge Numérique** : Vous allez recevoir d'ici 48h un e-mail automatique de la plateforme **Credly** vous invitant à réclamer votre badge numérique officiel de complétion de parcours d'IBM SkillsBuild. N'hésitez pas à l'ajouter sur votre profil LinkedIn pour valoriser vos compétences cyber.
 2. **Continuer à apprendre** : La cybersécurité évolue tous les jours. Je vous conseille de suivre la newsletter du site Cybermalveillance.gouv.fr pour rester informé des dernières menaces.
 

@@ -27,6 +27,7 @@ En groupes de **3 à 4 apprenants**, vous devez réaliser l'audit de sécurité 
 
 ### Livrable 1 : Le Rapport d'Audit écrit (format PDF / Markdown)
 Votre rapport de 3 à 5 pages devra comprendre les quatre sections suivantes :
+
 1. **Executive Summary (Synthèse managériale)** : Un résumé de 500 mots maximum vulgarisé à l'attention de Mme Legrand, décrivant la situation, le risque financier global de faillite en cas d'attaque, et le coût estimé de vos recommandations de base.
 2. **Analyse de risques** : L'identification de 3 risques prioritaires sous forme de tableau, cotés selon la formule $C = V \times I$ (Matrice 4x4 apprise en session 5). Chaque risque doit être décrit en termes de Menace, Vulnérabilité et Impact.
 3. **Diagnostic technique et organisationnel** :
@@ -40,6 +41,7 @@ Votre rapport de 3 à 5 pages devra comprendre les quatre sections suivantes :
 
 ### Livrable 2 : Présentation de soutenance (5 Diapositives)
 Un jeu de diapositives structuré pour un pitch de **10 minutes strictes** :
+
 * Slide 1 : Titre et contexte de MedDistri.
 * Slide 2 : La matrice des 3 risques majeurs identifiés.
 * Slide 3 : Recommandations techniques urgentes (MFA, VPN, ports).

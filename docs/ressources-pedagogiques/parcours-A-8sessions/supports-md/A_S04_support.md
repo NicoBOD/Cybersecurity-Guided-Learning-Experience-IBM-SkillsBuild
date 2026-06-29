@@ -27,10 +27,12 @@ Dans un système d'information moderne, l'identité est le nouveau périmètre d
 
 #### A. Le principe du moindre privilège
 Le moindre privilège consiste à limiter les droits d'accès d'un utilisateur au strict minimum requis pour faire son travail.
+
 * *Pourquoi ?* Si le compte d'un collaborateur est piraté, les dommages sont limités à ses droits personnels. Si un simple employé a des privilèges d'administrateur global sur le réseau, sa compromission met en danger l'intégralité du système de l'entreprise.
 
 #### B. L'Authentification Multifacteur (MFA)
 Le mot de passe simple est vulnérable (divulgation, hameçonnage, force brute). Le MFA renforce l'authentification en combinant des facteurs de natures différentes :
+
 * **Ce que je sais** : Un mot de passe, un code PIN, une réponse à une question secrète.
 * **Ce que je possède** : Un téléphone recevant un SMS, une application d'authentification (générant des OTP), une clé de sécurité physique (ex. YubiKey).
 * **Ce que je suis** : Une empreinte digitale, la reconnaissance faciale (biométrie).

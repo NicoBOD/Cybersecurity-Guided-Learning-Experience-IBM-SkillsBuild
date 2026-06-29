@@ -7,6 +7,7 @@ Parcours : A 8 sessions  |  Module : Validation des connaissances  |  Format : B
 
 ### Question 1 : Le pilier de la Confidentialité
 Quelle technologie permet de garantir le pilier de la **Confidentialité** au sein de la triade CIA ?
+
 * A. La duplication des serveurs de base de données.
 * B. Le chiffrement des données de santé stockées.
 * C. La signature numérique des e-mails.
@@ -15,6 +16,7 @@ Quelle technologie permet de garantir le pilier de la **Confidentialité** au se
 
 ### Question 2 : Menace vs Vulnérabilité
 Dans l'évaluation des risques cyber, comment qualifie-t-on un système d'exploitation obsolète et non mis à jour ?
+
 * A. Une menace.
 * B. Une vulnérabilité.
 * C. Un impact.
@@ -23,6 +25,7 @@ Dans l'évaluation des risques cyber, comment qualifie-t-on un système d'exploi
 
 ### Question 3 : Profil d'attaquant
 Quel groupe d'attaquants est principalement motivé par des gains financiers rapides à travers des campagnes massives de ransomwares ?
+
 * A. Les hacktivistes.
 * B. Les États-nations.
 * C. Les cybercriminels.
@@ -35,6 +38,7 @@ Quel groupe d'attaquants est principalement motivé par des gains financiers rap
 
 ### Question 1 : Hameçonnage par téléphone
 Quel terme désigne une attaque d'ingénierie sociale menée spécifiquement par téléphone ?
+
 * A. Le Spear-phishing.
 * B. Le Smishing.
 * C. Le Vishing.
@@ -43,6 +47,7 @@ Quel terme désigne une attaque d'ingénierie sociale menée spécifiquement par
 
 ### Question 2 : Le Cheval de Troie
 Quelle est la caractéristique d'un malware de type "Cheval de Troie" (Trojan) ?
+
 * A. Il se propage de machine en machine de manière totalement autonome.
 * B. Il se cache à l'intérieur d'un programme légitime pour infecter la machine.
 * C. Il chiffre le disque dur et réclame une rançon sous 48h.
@@ -51,6 +56,7 @@ Quelle est la caractéristique d'un malware de type "Cheval de Troie" (Trojan) ?
 
 ### Question 3 : La Cyber Kill Chain
 Dans la méthodologie de la Cyber Kill Chain, à quelle étape correspond l'envoi d'un e-mail de phishing à une cible ?
+
 * A. L'Armement.
 * B. La Livraison.
 * C. L'Exploitation.
@@ -63,6 +69,7 @@ Dans la méthodologie de la Cyber Kill Chain, à quelle étape correspond l'envo
 
 ### Question 1 : HTTP vs HTTPS
 Quelle est la différence fondamentale entre le protocole HTTP et le protocole HTTPS ?
+
 * A. HTTPS est beaucoup plus rapide pour charger des fichiers vidéo.
 * B. HTTPS chiffre les flux d'informations échangés entre le navigateur et le serveur.
 * C. HTTP n'est utilisable que sur les réseaux locaux d'entreprise.
@@ -71,6 +78,7 @@ Quelle est la différence fondamentale entre le protocole HTTP et le protocole H
 
 ### Question 2 : Rôle du Pare-feu
 Sur quel critère principal un pare-feu traditionnel prend-il sa décision d'autoriser ou de bloquer un paquet réseau ?
+
 * A. La présence ou l'absence d'une signature de virus dans le message.
 * B. Les adresses IP (source/destination) et les ports réseaux demandés.
 * C. La longueur du mot de passe de l'utilisateur connecté.
@@ -79,6 +87,7 @@ Sur quel critère principal un pare-feu traditionnel prend-il sa décision d'aut
 
 ### Question 3 : Emplacement des serveurs publics
 Où doit-on placer le serveur web public d'une entreprise pour éviter qu'une intrusion sur ce serveur ne contamine immédiatement le réseau local des salariés ?
+
 * A. Directement dans le réseau local interne (LAN).
 * B. Dans une zone démilitarisée (DMZ).
 * C. Sur le poste de travail de l'administrateur.
@@ -91,6 +100,7 @@ Où doit-on placer le serveur web public d'une entreprise pour éviter qu'une in
 
 ### Question 1 : Le principe du moindre privilège
 Dans une politique d'IAM (Identity and Access Management), qu'implique le "Principe du moindre privilège" ?
+
 * A. Permettre à tous les employés de lire tous les fichiers pour encourager le partage d'informations.
 * B. Limiter les accès d'un utilisateur aux seuls outils et dossiers strictement nécessaires à sa mission.
 * C. Changer son mot de passe tous les vendredis matins.
@@ -99,6 +109,7 @@ Dans une politique d'IAM (Identity and Access Management), qu'implique le "Princ
 
 ### Question 2 : L'authentification MFA
 Quel groupe d'éléments représente une configuration MFA (authentification multifacteur) valide ?
+
 * A. Deux mots de passe différents saisis l'un après l'autre.
 * B. Un mot de passe (savoir) et un code reçu sur une application d'authentification mobile (possession).
 * C. Une empreinte digitale (être) et une reconnaissance faciale (être).
@@ -107,6 +118,7 @@ Quel groupe d'éléments représente une configuration MFA (authentification mul
 
 ### Question 3 : La règle de sauvegarde 3-2-1
 Selon la règle de sauvegarde 3-2-1, combien de supports physiques ou types de supports différents doit-on utiliser pour stocker ses sauvegardes ?
+
 * A. 3 supports différents.
 * B. 2 supports différents.
 * C. 1 seul support à condition qu'il soit situé dans le cloud.
@@ -119,6 +131,7 @@ Selon la règle de sauvegarde 3-2-1, combien de supports physiques ou types de s
 
 ### Question 1 : Le rôle de la PSSI
 Qu'est-ce qu'une PSSI (Politique de Sécurité des Systèmes d'Information) ?
+
 * A. Un logiciel antivirus centralisé sur les postes de travail.
 * B. Un document stratégique définissant les règles et exigences de sécurité obligatoires au sein de l'entreprise.
 * C. Une assurance protégeant contre le vol de données.
@@ -127,6 +140,7 @@ Qu'est-ce qu'une PSSI (Politique de Sécurité des Systèmes d'Information) ?
 
 ### Question 2 : Traitement des risques
 Une entreprise décide de ne pas héberger un fichier client hautement confidentiel et renonce au projet de prospection associé pour éliminer tout risque de fuite de données. Quelle stratégie de traitement de risques applique-t-elle ?
+
 * A. Réduire le risque.
 * B. Transférer le risque.
 * C. Éviter le risque.
@@ -135,6 +149,7 @@ Une entreprise décide de ne pas héberger un fichier client hautement confident
 
 ### Question 3 : Principe du RGPD
 Dans le cadre du RGPD, qu'impose le principe de "Minimisation des données" ?
+
 * A. Stocker les données sur des serveurs miniatures à faible consommation d'énergie.
 * B. Collecter uniquement les données strictement nécessaires au but poursuivi.
 * C. Conserver les données pendant une durée d'un an maximum.
@@ -147,6 +162,7 @@ Dans le cadre du RGPD, qu'impose le principe de "Minimisation des données" ?
 
 ### Question 1 : Rôle du SIEM
 Au sein d'un centre d'opérations de sécurité (SOC), quel est le rôle d'un outil SIEM ?
+
 * A. Installer les correctifs de sécurité automatiquement sur les postes des employés.
 * B. Bloquer le trafic réseau suspect directement au niveau du pare-feu périphérique.
 * C. Centraliser et corréler les logs de divers systèmes pour détecter les comportements suspects.
@@ -155,6 +171,7 @@ Au sein d'un centre d'opérations de sécurité (SOC), quel est le rôle d'un ou
 
 ### Question 2 : Évaluation des failles (CVSS)
 Un scanneur de vulnérabilités découvre une faille de sécurité sur un serveur et lui attribue un score CVSS de 9.8. Comment classe-t-on cette faille ?
+
 * A. Faible.
 * B. Élevée.
 * C. Critique.
@@ -163,6 +180,7 @@ Un scanneur de vulnérabilités découvre une faille de sécurité sur un serveu
 
 ### Question 3 : Scan de vulnérabilités vs Pentest
 Quelle est la limite principale d'un scan de vulnérabilités automatique par rapport à un test d'intrusion (Pentest) ?
+
 * A. Il est beaucoup plus long à exécuter (plusieurs semaines).
 * B. Il génère des faux positifs et ne détecte pas les failles de logique complexe.
 * C. Il exige l'arrêt complet de tous les serveurs de l'entreprise.
@@ -175,6 +193,7 @@ Quelle est la limite principale d'un scan de vulnérabilités automatique par ra
 
 ### Question 1 : Ordre de volatilité
 Dans une enquête de police scientifique informatique (Forensics), pourquoi récupère-t-on la mémoire vive (RAM) avant le disque dur ?
+
 * A. Car la RAM est plus volumineuse et contient plus de photos.
 * B. Car la RAM s'efface dès que l'ordinateur est mis hors tension (donnée hautement volatile).
 * C. Car le disque dur est plus fragile et risque de se casser s'il est manipulé en premier.
@@ -183,6 +202,7 @@ Dans une enquête de police scientifique informatique (Forensics), pourquoi réc
 
 ### Question 2 : La chaîne de contrôle (Chain of Custody)
 À quoi sert d'établir la chaîne de contrôle d'une preuve numérique ?
+
 * A. À accélérer la réinstallation du système informatique nettoyé.
 * B. À garantir que la preuve n'a pas été modifiée ni altérée lors de sa manipulation ou de son analyse.
 * C. À masquer l'identité des analystes de sécurité ayant travaillé sur le dossier.
@@ -191,6 +211,7 @@ Dans une enquête de police scientifique informatique (Forensics), pourquoi réc
 
 ### Question 3 : Cadre pénal en France
 En France, le fait d'accéder ou de se maintenir frauduleusement dans un système informatique sans contrat préalable constitue-t-il une infraction pénale ?
+
 * A. Non, tant qu'aucune donnée n'est volée ou modifiée.
 * B. Oui, c'est un délit (atteinte à un STAD) passible de prison et d'amende.
 * C. Uniquement si le système piraté appartient à l'État ou à une banque.
@@ -203,6 +224,7 @@ En France, le fait d'accéder ou de se maintenir frauduleusement dans un systèm
 
 ### Question 1 : L'argumentaire de remédiation
 Face à un client refusant de déployer le MFA car il le juge trop coûteux et contraignant, quel argumentaire de cybersécurité devez-vous employer ?
+
 * A. Menacer le client d'appeler directement la police s'il ne coopère pas.
 * B. Expliquer que le coût d'une paralysie par rançongiciel ou d'un vol de compte est infiniment supérieur à la gêne occasionnée par le MFA.
 * C. Abandonner la mission car on ne peut pas forcer un client à se protéger.
@@ -211,6 +233,7 @@ Face à un client refusant de déployer le MFA car il le juge trop coûteux et c
 
 ### Question 2 : La feuille de route de remédiation
 Dans une feuille de route de remédiation, à quel horizon temporel doit-on classer le déploiement du MFA sur les comptes administrateurs d'une PME ?
+
 * A. À long terme (Mois 6+).
 * B. À moyen terme (Mois 2-3).
 * C. À court terme (Priorité immédiate - Mois 1).

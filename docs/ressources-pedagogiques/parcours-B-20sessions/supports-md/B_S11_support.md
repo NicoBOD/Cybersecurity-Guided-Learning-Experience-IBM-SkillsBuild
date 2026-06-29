@@ -2,6 +2,7 @@
 
 ## Objectifs de la session
 À la fin de cette session, vous serez capable de :
+
 * Analyser le modèle de responsabilité partagée et attribuer les devoirs de sécurité entre le client et le fournisseur pour les services IaaS, PaaS et SaaS.
 * Identifier les menaces et erreurs de configuration majeures propres au cloud public (buckets de stockage exposés, secrets codés en dur).
 * Définir les bonnes pratiques de sécurité d'accès (IAM, MFA) pour la gouvernance des consoles d'administration cloud.
@@ -27,12 +28,14 @@ Contrairement à une infrastructure classique hébergée en local (on-premise) o
 
 ### 2. Les risques majeurs liés aux mauvaises configurations cloud
 Dans le cloud, les infrastructures sont gérées par logiciel (*Infrastructure as Code*). Une seule erreur de clic ou de ligne de code peut exposer instantanément l'entreprise à l'échelle mondiale.
+
 *   **Les espaces de stockage (buckets) ouverts** : Configuration par erreur d'un bucket cloud (ex. AWS S3 ou Google Cloud Storage) en accès "Public" sans authentification, exposant des milliers de fichiers internes (factures, scans de pièces d'identité) à n'importe quel internaute ou moteur de recherche.
 *   **Le vol de clés d'API et secrets codés en dur (*hardcoded*)** : Intégrer des clés de connexion d'administration cloud directement au milieu du code source des applications et publier ce code par mégarde sur des plateformes publiques comme GitHub. Les attaquants scannent en permanence ces plateformes et utilisent ces clés pour louer des serveurs de cryptomonnaie sous la facture de la victime.
 *   **L'absence de MFA sur le compte administrateur global (Root)** : La compromission du mot de passe du compte racine d'une console cloud permet à un attaquant de détruire ou de rançonner l'ensemble des serveurs et sauvegardes de l'entreprise en quelques minutes.
 
 ### 3. Règles d'or de la gouvernance des accès Cloud
 Pour sécuriser les consoles d'administration cloud, appliquez la politique du moindre privilège :
+
 *   **Ne jamais utiliser le compte Root** (le compte de création du compte cloud) au quotidien. Ce compte doit être verrouillé dans un coffre-fort numérique avec un MFA matériel fort.
 *   **Créer des comptes d'accès nominatifs** via le service IAM du fournisseur cloud pour chaque administrateur et imposer le **MFA obligatoire**.
 *   **Utiliser le principe du moindre privilège** en attribuant des rôles spécifiques (ex. *Billing Administrator* pour la comptabilité, *Network Administrator* pour les réseaux) au lieu du rôle *Owner/Administrator* global.

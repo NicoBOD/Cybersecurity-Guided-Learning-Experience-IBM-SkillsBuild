@@ -24,6 +24,7 @@ Le Projet Capstone constitue l'aboutissement de votre parcours de formation de 8
 L'objectif principal du Projet Capstone est de vous placer dans la posture d'un consultant en cybersécurité junior chargé d'accompagner une PME dans sa transition sécuritaire. Vous devez être capable de traduire des concepts techniques en enjeux métiers intelligibles pour un chef d'entreprise (qui n'est pas un informaticien).
 
 Vos recommandations doivent respecter trois critères :
+
 * **La pertinence technique** : Vos solutions doivent cibler les failles réelles identifiées dans l'énoncé.
 * **Le réalisme économique** : Une PME de 20 personnes ne peut pas s'offrir un SOC interne disponible 24/7 de 10 personnes ou des outils de chiffrement coûtant des dizaines de milliers d'euros. Vous devez privilégier l'hygiène informatique et des solutions managées externes ou open-source à coût modéré.
 * **L'acceptabilité humaine** : Vos propositions ne doivent pas paralyser le travail quotidien des employés de la PME sous peine d'être contournées (ex. éviter de forcer le changement hebdomadaire des mots de passe sans gestionnaire de mots de passe adapté).
@@ -33,6 +34,7 @@ Vos recommandations doivent respecter trois critères :
 ### 2. Structurer son rapport d'évaluation finale (Livrable écrit)
 
 Votre rapport d'évaluation (3 à 5 pages) doit être organisé selon la structure standard suivante :
+
 1. **Executive Summary (Synthèse managériale)** : Un résumé de 500 mots maximum à l'attention du dirigeant détaillant le niveau de risque global de la PME et la feuille de route de remédiation (priorités, budgets et bénéfices).
 2. **Analyse de risques** : Présentation des 3 risques majeurs menaçant la PME (exfiltration de données clients, rançongiciel paralysant, ou vol d'identité d'administration) avec cotation en criticité brute.
 3. **Diagnostic technique et organisationnel** : Analyse critique de l'architecture réseau actuelle de la PME, de la gestion de ses données/sauvegardes et de son niveau de conformité RGPD.
@@ -61,14 +63,17 @@ La feuille de route permet d'organiser dans le temps le déploiement des recomma
 
 ```text
   [ PRIORITÉS IMMÉDIATES - Mois 1 ] ➔ 1. Forcer l'activation du MFA sur tous les accès.
+
                                          2. Mettre en place un gestionnaire de mots de passe.
                                          3. Déployer un antivirus mis à jour sur tous les postes.
                                          
   [ PROJETS MOYEN TERME - Mois 2-3 ] ➔  1. Configurer la règle de sauvegarde 3-2-1 (copie cloud).
+
                                          2. Segmenter le réseau de la PME (VLANs / DMZ).
                                          3. Rédiger la PSSI de base et le registre RGPD.
                                          
   [ CONTINU & LONG TERME - Mois 6+ ] ➔  1. Lancer une campagne annuelle de sensibilisation au phishing.
+
                                          2. Externaliser la surveillance vers un SOC managé.
                                          3. Planifier un scan de vulnérabilités bi-annuel.
 ```

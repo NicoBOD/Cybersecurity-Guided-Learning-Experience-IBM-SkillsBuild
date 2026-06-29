@@ -2,6 +2,7 @@
 
 ## Objectifs de la session
 À la fin de cette session, vous serez capable de :
+
 * Expliquer la structure, l'utilité et le processus d'élaboration d'une Politique de Sécurité des Systèmes d'Information (PSSI).
 * Comparer les référentiels de sécurité mondiaux ISO 27001 (management organisationnel) et NIST CSF (cadre opérationnel technique).
 * Identifier la répartition des rôles et responsabilités entre la Direction Générale et le RSSI au sein de la gouvernance de sécurité d'une entreprise.

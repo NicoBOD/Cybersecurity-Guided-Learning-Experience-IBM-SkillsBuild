@@ -92,6 +92,7 @@ Parcours : A 8 sessions  |  Module : Démonstrations Mentor  |  Format : Scripts
 3. **Étape 2 : Le piège de l'ordre d'application (3 min)** :
    * Poser la question aux apprenants :
      *"Imaginons que je commette une erreur et que je déplace la règle 3 tout en haut du tableau (en RÈGLE 1). Que se passe-t-il ?"*
+
    * *Explication en direct après réponse des élèves* :
      *"Si la règle interdisant tout trafic de manière globale est lue en premier, elle va correspondre à toutes les connexions. Les règles d'autorisation situées en dessous ne seront jamais lues. Les serveurs web seront inaccessibles et le réseau sera totalement paralysé. L'ordre des règles de pare-feu est donc tout aussi important que le contenu des règles elles-mêmes."*
 

@@ -2,6 +2,7 @@
 
 ## Objectifs de la session
 À la fin de cette session, vous serez capable de :
+
 * Expliquer et articuler les composantes d'un risque cyber : atout (actif), menace, vulnérabilité, impact et probabilité.
 * Construire un registre des risques cyber pragmatique et calculer sa criticité à l'aide d'une matrice qualitative 4x4.
 * Justifier et choisir une stratégie de traitement du risque adaptée parmi les 4 options fondamentales (réduire, transférer, éviter, accepter).
@@ -14,6 +15,7 @@
 En sécurité de l'information, le risque n'est pas un concept abstrait. Il se définit comme la possibilité qu'un événement indésirable survienne et affecte l'activité de l'entreprise. 
 
 Pour caractériser un risque, on décompose l'équation en plusieurs éléments :
+
 *   **L'Atout / Actif (*Asset*)** : Ce qui a de la valeur pour l'entreprise et doit être protégé (ex. les fichiers de brevets, la base de données clients, le serveur de messagerie).
 *   **La Menace (*Threat*)** : L'événement redouté d'origine externe ou interne qui pourrait causer un dommage (ex. un ransomware, un employé malveillant, une panne électrique, un incendie).
 *   **La Vulnérabilité (*Vulnerability*)** : La faiblesse ou la faille exploitable au sein du système d'information (ex. l'absence de mises à jour système, un personnel non formé au phishing, l'absence de pare-feu local).
@@ -28,6 +30,7 @@ Pour caractériser un risque, on décompose l'équation en plusieurs éléments 
 Pour prioriser les chantiers de sécurité, les entreprises listent leurs risques dans un **registre des risques** et évaluent leur **criticité brute** (le risque sans aucune mesure de sécurité).
 
 On évalue qualitativement sur une échelle de 1 à 4 :
+
 *   **Vraisemblance / Probabilité (V)** : 1 (Rare) | 2 (Possible) | 3 (Probable) | 4 (Presque certain).
 *   **Gravité / Impact (G)** : 1 (Mineur) | 2 (Modéré) | 3 (Majeur) | 4 (Critique/Catastrophique).
 *   **Criticité (C)** = Vraisemblance $\times$ Gravité. Le score varie de 1 à 16.
@@ -60,6 +63,7 @@ L'entreprise EcoLog s'inquiète du phénomène de **Shadow IT** (utilisation d'o
 Rédigez la ligne de registre pour ce risque en suivant les consignes de cotation et de traitement ci-dessous.
 
 **Données d'évaluation à appliquer :**
+
 *   *Cotation Brute* : Sans aucun contrôle, l'utilisation est quotidienne (Vraisemblance = 4) et la fuite de secrets commerciaux ou de données RGPD causerait de lourdes amendes et un préjudice commercial fort (Gravité = 3).
 *   *Mesure d'atténuation proposée* : Rédiger une charte d'utilisation de l'IA, bloquer l'accès aux IA publiques non sécurisées au niveau du pare-feu d'entreprise, et mettre à disposition des salariés un outil d'IA interne sécurisé qui ne réutilise pas les données pour son entraînement.
 *   *Cotation Résiduelle (après mesure)* : La probabilité de fuite devient rare car les sites externes sont bloqués et une alternative sécurisée existe (Vraisemblance résiduelle = 1), mais l'impact légal d'une fuite resterait identique (Gravité résiduelle = 3).

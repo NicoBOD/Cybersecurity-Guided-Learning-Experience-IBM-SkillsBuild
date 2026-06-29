@@ -2,6 +2,7 @@
 
 ## Objectifs de la session
 À la fin de cette session, vous serez capable de :
+
 * Décrire l'organisation humaine, les différents niveaux d'analystes (L1, L2, L3) et les missions d'un Centre d'Opérations de Sécurité (SOC) moderne.
 * Modéliser le cycle de vie d'une alerte et qualifier des événements de sécurité pour identifier et écarter les faux positifs.
 * Interpréter et calculer les indicateurs clés de performance (KPIs) opérationnels d'un SOC : le MTTD et le MTTR.
@@ -25,6 +26,7 @@ Le **SOC** est la tour de contrôle de la sécurité d'une entreprise. C'est une
 
 ### 2. Le cycle de vie d'une alerte : Vrai vs Faux Positif
 Une alerte de sécurité commence par un événement technique brut (ex. une connexion réseau). Cet événement est analysé par les règles du SOC pour générer une alerte. L'analyste L1 doit qualifier cette alerte :
+
 *   **Faux Positif (FP)** : Une activité légitime et inoffensive mais qui a déclenché une alerte car elle ressemble à un comportement suspect.
     *   *Exemple* : Un outil d'inventaire informatique interne qui scanne le réseau de l'entreprise à la recherche de serveurs. Le pare-feu le signale comme une tentative d'intrusion. L'analyste L1 doit identifier la machine d'inventaire et clore l'alerte comme Faux Positif pour éviter la fatigue des alertes (*alert fatigue*).
 *   **Vrai Positif (VP)** : Une menace réelle ou une activité malveillante avérée qui nécessite une intervention corrective immédiate.

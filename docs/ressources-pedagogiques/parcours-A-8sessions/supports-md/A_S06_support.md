@@ -35,6 +35,7 @@ Ces logs sont indispensables pour comprendre le scénario d'une attaque passée 
 
 #### B. Le SIEM : Le moteur de corrélation
 Le SIEM reçoit des millions de lignes de logs par jour provenant de toutes les machines. Grâce à des règles prédéfinies, il détecte des corrélations suspectes :
+
 * *Règle de corrélation* : Si la machine A subit 50 échecs de connexion en 1 minute (log de sécurité Windows) ET qu'immédiatement après, elle envoie 10 Go de données vers Internet (log pare-feu), ALORS générer une alerte critique pour "Suspicion d'attaque par force brute réussie".
 
 #### C. Le SOC : Les analystes humains
@@ -56,6 +57,7 @@ Maintenir un bon niveau de sécurité nécessite de tester activement ses défen
 Un scan de sécurité sur une entreprise moyenne peut remonter des centaines de vulnérabilités. On utilise le score CVSS pour savoir lesquelles corriger en premier.
 
 Le score CVSS varie de **0.0 à 10.0** et s'appuie sur plusieurs critères d'évaluation :
+
 * **Le vecteur d'accès** : La faille est-elle exploitable à distance via Internet (gravité max) ou nécessite-t-elle un accès physique à la machine ?
 * **La complexité d'exploitation** : Est-elle facile à exploiter (ex. via un script public disponible) ou très complexe ?
 * **Les privilèges requis** : Faut-il être déjà authentifié comme administrateur pour l'exploiter ?

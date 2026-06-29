@@ -2,6 +2,7 @@
 
 ## Objectifs de la session
 À la fin de cette session, vous serez capable de :
+
 * Définir les trois piliers de la triade CIA (Confidentialité, Intégrité, Disponibilité) et illustrer chaque pilier par des exemples d'incidents réels.
 * Identifier et expliquer les impacts directs et indirects (financiers, juridiques, réputationnels) d'une cyberattaque sur la viabilité d'une entreprise.
 * Cartographier les principaux métiers de la cybersécurité en distinguant les postures de défense (*Blue Teaming*) et de test d'intrusion (*Red Teaming*).
@@ -48,6 +49,7 @@ Le secteur de la cybersécurité regroupe des profils variés qui collaborent po
 **Objectif :** Analyser des scénarios réels d'incidents informatiques et identifier le ou les piliers de la triade CIA qui ont été directement violés.
 
 **Consignes :**
+
 1. Lisez attentivement chacun des trois scénarios ci-dessous.
 2. Pour chaque scénario, déterminez quel pilier de la triade CIA a été compromis en premier et pourquoi.
 3. Proposez une mesure simple de bon sens pour éviter que cet incident ne se reproduise.
@@ -57,6 +59,7 @@ Le secteur de la cybersécurité regroupe des profils variés qui collaborent po
 *   **Scénario C** : Une entreprise de commerce électronique laisse par erreur un fichier de sauvegarde contenant les adresses email, les mots de passe hachés et les adresses postales de ses clients en accès libre sur un serveur web non protégé. Le fichier est téléchargé et publié sur un forum public.
 
 **Corrigé / Éléments de réponse :**
+
 *   **Scénario A** :
     *   *Pilier violé* : La **Disponibilité**. Les dossiers médicaux sont chiffrés et donc inaccessibles pour les médecins (ce qui peut mettre des vies en danger). *Note* : La confidentialité peut également être menacée si le groupe d'attaquants a volé les données avant de les chiffrer.
     *   *Mesure préventive* : Mettre en place des sauvegardes régulières hors ligne (déconnectées du réseau) pour pouvoir restaurer les données sans payer la rançon.

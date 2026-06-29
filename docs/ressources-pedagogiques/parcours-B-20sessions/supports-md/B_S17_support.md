@@ -2,6 +2,7 @@
 
 ## Objectifs de la session
 À la fin de cette session, vous serez capable de :
+
 * Expliquer le rôle d'un outil SIEM dans la centralisation, la normalisation, la corrélation et le stockage des événements de sécurité.
 * Analyser et décoder des lignes de logs brutes issues de serveurs web ou de systèmes d'exploitation pour identifier une anomalie ou une cyberattaque.
 * Décrire le principe de fonctionnement d'une règle de corrélation logique pour automatiser la détection des menaces.
@@ -14,6 +15,7 @@
 Un **SIEM** (*Security Information and Event Management* - Gestion des Informations et des Événements de Sécurité) est le moteur logiciel centralisé d'un SOC. Son but est de rassembler en temps réel tous les journaux d'événements (**logs**) générés par les équipements du système d'information (pare-feu, serveurs, routeurs, postes de travail) pour y détecter des activités suspectes.
 
 Le traitement des données par un SIEM suit 4 étapes indispensables :
+
 1.  **La Collecte** : Des agents logiciels légers installés sur les machines ou des protocoles d'envoi réseau standardisés (comme **Syslog**) transmettent les logs vers la base de données centrale du SIEM.
 2.  **La Normalisation (Parsing)** : Les logs bruts proviennent de systèmes différents avec des formats variés. La normalisation traduit ces écritures hétérogènes dans un schéma de données unique (ex. séparer l'adresse IP, le port, le nom de l'utilisateur et le type d'action dans des colonnes standardisées).
 3.  **La Corrélation** : C'est le croisement logique des données normalisées. Le SIEM recherche des relations logiques ou temporelles entre des événements apparemment indépendants survenant sur des machines distinctes pour lever des alertes d'attaque complexe.
@@ -23,12 +25,14 @@ Le traitement des données par un SIEM suit 4 étapes indispensables :
 
 ### 2. Anatomie d'une ligne de log
 Une **log** (ou journal d'événements) est une trace écrite générée automatiquement par un programme informatique à chaque action réalisée. Pour être exploitable par la sécurité, une log doit obligatoirement comporter au moins 3 éléments :
+
 *   **L'horodatage (Timestamp)** : Date et heure précises (généralement normalisées en temps universel UTC).
 *   **La source / l'acteur** : Adresse IP d'origine, nom d'hôte ou identifiant de l'utilisateur à l'origine de l'action.
 *   **L'événement** : Description factuelle de l'action effectuée et son résultat.
 
 #### Analyse d'une log Web Apache (Common Log Format) :
 `198.51.100.45 - - [29/Jun/2026:16:42:57 +0200] "GET /admin/login.php HTTP/1.1" 200 4502`
+
 *   `198.51.100.45` : L'adresse IP de la machine cliente (l'origine).
 *   `[29/Jun/2026:16:42:57 +0200]` : La date, l'heure et le décalage horaire local (+0200 pour la France en été).
 *   `"GET /admin/login.php HTTP/1.1"` : La méthode HTTP utilisée (`GET`), la page ou ressource demandée (`/admin/login.php`), et le protocole utilisé (`HTTP/1.1`).

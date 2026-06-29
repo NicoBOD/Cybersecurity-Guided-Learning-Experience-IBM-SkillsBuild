@@ -25,6 +25,7 @@ Le réseau est le système nerveux de toute infrastructure informatique. Sécuri
 Le pare-feu agit comme un douanier à la frontière du réseau de l'entreprise. Il inspecte chaque paquet de données qui se présente et prend une décision : **Autoriser** (*Accept/Allow*) ou **Bloquer** (*Drop/Deny*).
 
 Le filtrage traditionnel s'appuie sur des règles basées sur trois critères principaux :
+
 * **L'adresse IP source et destination** : Qui envoie le paquet et à qui est-il adressé ?
 * **Le protocole** : Quel protocole est utilisé (TCP, UDP, ICMP) ?
 * **Le port de communication** : Quel canal logique est ciblé (ex. le port 80 pour HTTP, 443 pour HTTPS, 22 pour SSH) ?
@@ -38,6 +39,7 @@ Le filtrage traditionnel s'appuie sur des règles basées sur trois critères pr
 Lorsque vous naviguez sur Internet depuis un réseau Wi-Fi public (ex. dans un café ou une gare), n'importe quel attaquant situé sur le même réseau peut intercepter vos flux non chiffrés. De même, un employé travaillant depuis chez lui a besoin d'accéder aux fichiers internes de l'entreprise sans exposer ces ressources directement sur Internet.
 
 Le VPN résout ce problème en créant un **tunnel chiffré** entre l'ordinateur de l'utilisateur et la passerelle VPN de l'entreprise.
+
 * Les données quittent l'ordinateur sous forme chiffrée.
 * Elles transitent par Internet de manière totalement illisible pour les intermédiaires (fournisseurs d'accès, pirates).
 * Elles arrivent à la passerelle VPN de l'entreprise qui les déchiffre et les transmet au réseau interne comme si l'utilisateur était physiquement assis à son bureau dans l'entreprise.
@@ -56,6 +58,7 @@ Le VPN résout ce problème en créant un **tunnel chiffré** entre l'ordinateur
 Dans un réseau non segmenté (appelé "réseau plat"), si le poste d'un commercial est infecté par un malware, ce dernier peut se propager immédiatement aux serveurs de production, aux bases de données RH et à la comptabilité. C'est ce qu'on appelle le **déplacement latéral**.
 
 Pour empêcher cela, on segmente le réseau en zones logiques étanches séparées par un pare-feu :
+
 1. **La zone LAN interne** : Les ordinateurs des employés de bureau.
 2. **La zone Wi-Fi invités** : Destinée aux visiteurs (sans accès au LAN interne).
 3. **La DMZ (Zone Démilitarisée)** : Contient les serveurs ouverts sur l'extérieur (site internet, serveur e-mail). Si le serveur web de la DMZ est piraté, les règles du pare-feu lui interdisent d'initier des connexions vers le LAN interne, stoppant net la progression de l'attaquant.
@@ -80,6 +83,7 @@ Voici comment se structure une table de filtrage (règles ordonnées de haut en 
 
 ### Énoncé
 Vous devez concevoir la segmentation réseau d'une boutique connectée comprenant :
+
 - 2 caisses enregistreuses informatiques (traitant des données financières sensibles).
 - 1 ordinateur de bureau pour le gérant (utilisé pour les commandes fournisseurs et la comptabilité).
 - 1 borne Wi-Fi gratuite mise à la disposition des clients de la boutique.

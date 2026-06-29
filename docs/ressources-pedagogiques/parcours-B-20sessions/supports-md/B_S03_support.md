@@ -2,6 +2,7 @@
 
 ## Objectifs de la session
 À la fin de cette session, vous serez capable de :
+
 * Classifier les principales familles de logiciels malveillants (*malwares*) en fonction de leur mode de propagation et de leur objectif.
 * Modéliser le déroulement d'une cyberattaque complexe à l'aide des 7 étapes de la *Cyber Kill Chain*.
 * Naviguer dans le framework d'analyse technique MITRE ATT&CK pour décoder les tactiques et techniques des attaquants.
@@ -25,6 +26,7 @@ Pour se défendre efficacement, il faut comprendre le parcours de l'attaquant. D
 
 #### La Cyber Kill Chain (Lockheed Martin)
 Elle découpe une attaque ciblée en 7 étapes chronologiques obligatoires. Briser un seul maillon de cette chaîne suffit à stopper l'attaque :
+
 1.  **Reconnaissance** : Collecte d'informations sur la cible (adresses email, serveurs exposés).
 2.  **Armement (*Weaponization*)** : Création d'une charge utile malveillante (ex. un document Word piégé avec un exploit).
 3.  **Livraison (*Delivery*)** : Envoi de la charge utile (ex. email de phishing, clé USB déposée).
@@ -38,6 +40,7 @@ Il s'agit d'une encyclopédie mondiale et dynamique recensant les comportements 
 
 ### 3. Attaques d'infrastructure et d'applications
 En dehors des logiciels malveillants, les attaquants ciblent les capacités physiques ou logiques des serveurs :
+
 *   **Déni de service (DoS/DDoS)** : L'attaquant sature la bande passante réseau ou les ressources d'un serveur à l'aide de millions de requêtes simultanées pour le rendre inaccessible aux utilisateurs légitimes. On parle de DDoS (Déni de service distribué) lorsque ces requêtes proviennent d'un réseau mondial de machines infectées contrôlées à distance (un réseau de robots ou *botnet*).
 *   **Les injections web (SQL)** : Attaque applicative consistant à envoyer des commandes de base de données (SQL) déguisées en simples entrées utilisateur (dans un formulaire de connexion par exemple). Si le site est mal programmé, le serveur exécute ces commandes, permettant à l'attaquant de voler ou supprimer l'ensemble de la base de données.
 
@@ -49,6 +52,7 @@ En dehors des logiciels malveillants, les attaquants ciblent les capacités phys
 **Objectif :** Analyser le scénario chronologique d'un piratage d'entreprise et associer chaque événement réel à l'une des 7 étapes de la *Cyber Kill Chain*.
 
 **Consignes :**
+
 1. Lisez le récit de l'incident de l'entreprise "PlastiqueNord" ci-dessous.
 2. Pour chaque étape (1 à 7) de la liste, retrouvez la phrase de l'incident qui y correspond.
 
@@ -62,6 +66,7 @@ En dehors des logiciels malveillants, les attaquants ciblent les capacités phys
     *   *Événement G* : L'attaquant envoie l'e-mail de phishing usurpant l'identité du service comptable à l'équipe RH.
 
 **Corrigé / Éléments de réponse :**
+
 *   **Étape 1 : Reconnaissance** $\rightarrow$ **Événement B** (recherche d'adresses email RH sur LinkedIn).
 *   **Étape 2 : Armement (*Weaponization*)** $\rightarrow$ **Événement F** (conception de l'email de phishing avec l'exploit).
 *   **Étape 3 : Livraison (*Delivery*)** $\rightarrow$ **Événement G** (envoi de l'email de phishing ciblé).

@@ -45,6 +45,7 @@ Parcours : B 20 sessions  |  Module : Démonstrations Pratiques  |  Format : Scr
         ```
     *   *Commentaire du Mentor* :
         *"Regardez la fin de la capture. Comme le protocole utilisé est le HTTP (sans S), aucune donnée n'est chiffrée. Les identifiants `admin` et `Password123!` transitent en texte clair sur les ondes du Wi-Fi de l'hôtel. N'importe quel pirate équipé d'un analyseur de paquets gratuit comme Wireshark peut intercepter ces données instantanément."*
+
 3.  **Synthèse (3 min)** :
     *   *Remédiation* : Forcer l'utilisation de HTTPS (chiffrement TLS). En HTTPS, les données en transit seraient remplacées par une suite de caractères indéchiffrables pour l'espion.
 
@@ -64,6 +65,7 @@ Parcours : B 20 sessions  |  Module : Démonstrations Pratiques  |  Format : Scr
         ```
     *   *Résultat affiché* :
         `7f8a9e8b... contrat.txt`
+
     *   *Commentaire* : *"Voici l'empreinte unique de notre contrat."*
 2.  **Modification mineure (3 min)** :
     *   Modifions un seul caractère (ajout d'un point à la fin) :
@@ -73,6 +75,7 @@ Parcours : B 20 sessions  |  Module : Démonstrations Pratiques  |  Format : Scr
         ```
     *   *Résultat affiché* :
         `a3c5d6e2... contrat.txt`
+
     *   *Commentaire* : *"L'empreinte a totalement changé. C'est l'effet avalanche. Même une modification invisible à l'œil nu (comme un espace ou un point) rend le hachage complètement différent."*
 3.  **Synthèse (4 min)** :
     *   Expliquer comment les éditeurs de logiciels fournissent la somme SHA-256 de leurs installateurs pour que les administrateurs puissent vérifier qu'ils n'ont pas été modifiés ou infectés par un virus sur la route du téléchargement.

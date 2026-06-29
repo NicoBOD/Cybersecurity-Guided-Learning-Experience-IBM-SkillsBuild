@@ -133,7 +133,7 @@ markdown_extensions:
 nav:
   - Accueil: index.md
   
-  - "🎓 Parcours A (8 sessions)":
+  - "Parcours A (8 sessions)":
     - "Présentation & Évaluation":
       - "Sujet du Projet Capstone A": ressources-pedagogiques/parcours-A-8sessions/projet/A_capstone.md
       - "Grille d'évaluation": ressources-pedagogiques/parcours-A-8sessions/projet/A_grille_notation.md
@@ -169,7 +169,7 @@ nav:
       - "Scripts de Démos": ressources-pedagogiques/parcours-A-8sessions/outils/A_scripts_demo.md
       - "Messages Asynchrones": ressources-pedagogiques/parcours-A-8sessions/outils/A_messages.md
 
-  - "🛡️ Parcours B (20 sessions)":
+  - "Parcours B (20 sessions)":
     - "Présentation & Évaluation":
       - "Les 4 Mini-projets Pratiques": ressources-pedagogiques/parcours-B-20sessions/projet/B_miniprojets.md
       - "Sujet du Projet Capstone B": ressources-pedagogiques/parcours-B-20sessions/projet/B_capstone.md

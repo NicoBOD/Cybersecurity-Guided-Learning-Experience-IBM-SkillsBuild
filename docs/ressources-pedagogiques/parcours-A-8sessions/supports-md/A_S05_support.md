@@ -33,6 +33,7 @@ La norme ISO 27001 n'impose pas de technologies précises, mais une méthode. El
 
 #### C. Le NIST CSF : Le cadre pragmatique
 Très utilisé à l'international, il structure la sécurité en 5 fonctions opérationnelles :
+
 1. **Identifier** (*Identify*) : Cartographier les actifs, les systèmes, les données et les risques.
 2. **Protéger** (*Protect*) : Mettre en œuvre les barrières de protection (sensibilisation, accès, chiffrement).
 3. **Détecter** (*Detect*) : Identifier la survenue d'incidents de sécurité (journalisation, alertes).
@@ -46,6 +47,7 @@ Très utilisé à l'international, il structure la sécurité en 5 fonctions op�
 Il est impossible de sécuriser un système à 100%. Le budget d'une entreprise étant limité, celle-ci doit prioriser ses investissements. C'est l'objectif de l'analyse de risques.
 
 Un risque se caractérise par deux facteurs :
+
 * **La Vraisemblance (ou Probabilité)** : Quelle est la chance que l'événement redouté se produise (de 1 - Très improbable à 4 - Presque certain) ?
 * **L'Impact (ou Gravité)** : Si l'événement se produit, quels seront les dommages financiers, juridiques ou de réputation (de 1 - Négligeable à 4 - Catastrophique) ?
 

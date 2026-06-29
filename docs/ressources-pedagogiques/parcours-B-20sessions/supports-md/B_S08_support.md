@@ -2,6 +2,7 @@
 
 ## Objectifs de la session
 À la fin de cette session, vous serez capable de :
+
 * Appliquer le principe du moindre privilège sur un système d'exploitation Windows ou Linux pour restreindre la surface d'attaque.
 * Établir et déployer une checklist méthodologique de durcissement (*hardening*) de serveur ou de poste de travail.
 * Différencier les mécanismes de détection par signatures d'un antivirus traditionnel de la détection comportementale d'un EDR (*Endpoint Detection and Response*).

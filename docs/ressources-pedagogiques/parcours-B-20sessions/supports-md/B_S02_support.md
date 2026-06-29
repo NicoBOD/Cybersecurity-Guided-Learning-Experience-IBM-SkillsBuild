@@ -2,6 +2,7 @@
 
 ## Objectifs de la session
 À la fin de cette session, vous serez capable de :
+
 * Catégoriser les quatre principaux profils de cyberattaquants (cybercriminels, États-nations, hacktivistes, menaces internes) et expliquer leurs motivations respectives.
 * Expliquer le fonctionnement structurel de la cybercriminalité moderne sous forme d'économie de services (*Ransomware-as-a-Service*).
 * Identifier et exploiter les sources de renseignement sur les menaces (*Cyber Threat Intelligence*) pour réaliser une veille efficace.
@@ -29,6 +30,7 @@ Oubliez l'image du pirate solitaire en capuche dans son garage. La cybercriminal
 
 ### 3. La Cyber Threat Intelligence (CTI) : Connaître son ennemi
 La **CTI** (Renseignement sur les cybermenaces) consiste à collecter, analyser et organiser des informations sur les attaquants actifs et leurs méthodes.
+
 *   **Les indicateurs de compromission (IoC — *Indicators of Compromise*)** : Ce sont les indices techniques laissés par les pirates (adresses IP de commande, signatures de fichiers malveillants, noms de domaine suspects).
 *   **Les sources de confiance pour la veille** :
     *   Le **CERT-FR** (centre gouvernemental français d'alerte) publie régulièrement des fiches sur les vulnérabilités exploitées.
@@ -45,12 +47,14 @@ La **CTI** (Renseignement sur les cybermenaces) consiste à collecter, analyser 
 **Objectif :** Analyser le profil d'un groupe d'attaquants réel à partir de rapports de Threat Intelligence simplifiés pour comprendre ses objectifs et ses cibles.
 
 **Consignes :**
+
 1. Étudiez la description synthétique ci-dessous.
 2. Complétez la "Fiche d'identité d'acteur" en identifiant le type d'attaquant, ses motivations probables, ses cibles préférées et ses techniques clés.
 
 *   **Description de la menace** : Le groupe connu sous le nom de *Lazarus Group* (ou *APT38*) est actif depuis au moins 2009. Il est soupçonné d'être lié à un État d'Asie de l'Est. Ce groupe s'est fait connaître par le piratage massif de Sony Pictures en 2014, le vol de 81 millions de dollars à la Banque centrale du Bangladesh en 2016 (via le réseau interbancaire SWIFT), et la propagation mondiale du ransomware *WannaCry* en 2017. Le groupe cible principalement les institutions financières, les plateformes d'échange de cryptomonnaies et les infrastructures gouvernementales occidentales.
 
 **Fiche d'identité d'acteur à compléter :**
+
 *   **Nom du groupe d'attaque** : ...
 *   **Origine géographique présumée** : ...
 *   **Catégorie d'attaquant** (Cybercriminel, État-nation, Hacktiviste, Interne) : ...
@@ -59,6 +63,7 @@ La **CTI** (Renseignement sur les cybermenaces) consiste à collecter, analyser 
 *   **Cibles privilégiées** : ...
 
 **Corrigé / Éléments de réponse :**
+
 *   **Nom du groupe d'attaque** : Lazarus Group (APT38)
 *   **Origine géographique présumée** : Corée du Nord (Asie de l'Est)
 *   **Catégorie d'attaquant** : État-nation (avec la particularité unique de mener des actions financières à des fins étatiques).

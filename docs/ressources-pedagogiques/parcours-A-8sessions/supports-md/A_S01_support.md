@@ -29,14 +29,17 @@ Toute stratégie de cybersécurité s'appuie sur trois piliers fondamentaux. Com
 
 #### A. Confidentialité (*Confidentiality*)
 La confidentialité consiste à s'assurer que l'information n'est divulguée qu'aux personnes ou processus autorisés. Si un pirate accède à votre boîte de messagerie ou si un employé consulte le dossier médical d'un patient sans autorisation, la confidentialité est compromise.
+
 * *Mécanismes de protection* : Le chiffrement des données (rendre la lecture impossible sans clé de déchiffrement), les contrôles d'accès logiques (mots de passe, biométrie) et la classification des informations.
 
 #### B. Intégrité (*Integrity*)
 L'intégrité garantit que l'information reste fiable, exacte et complète. Si un pirate intercepte un virement bancaire et remplace le RIB du destinataire par le sien, ou si un virus altère le code d'un logiciel médical pour fausser les doses administrées, c'est l'intégrité qui est impactée.
+
 * *Mécanismes de protection* : Les signatures numériques, les fonctions de hachage (empreintes numériques uniques permettant de vérifier qu'un fichier n'a pas été modifié) et les historiques d'audit non modifiables.
 
 #### C. Disponibilité (*Availability*)
 La disponibilité assure que les systèmes informatiques, les réseaux et les données sont accessibles en temps voulu par les utilisateurs autorisés. Si une attaque par déni de service (DoS) sature le site e-commerce d'une enseigne commerciale durant les soldes, ou si un rançongiciel (ransomware) bloque l'accès aux ordinateurs d'une clinique, la disponibilité est rompue.
+
 * *Mécanismes de protection* : La redondance des infrastructures (serveurs de secours), les sauvegardes régulières, et la maintenance préventive du matériel.
 
 ---
@@ -44,6 +47,7 @@ La disponibilité assure que les systèmes informatiques, les réseaux et les do
 ### 2. Le triptyque : Vulnérabilité, Menace, Risque
 
 En sécurité, ces trois termes ont des sens bien distincts qu'il convient de ne pas confondre :
+
 * La **vulnérabilité** est la porte ouverte (ex. un logiciel non mis à jour ou un mot de passe trop simple).
 * La **menace** est le cambrioleur (ex. un groupe de cybercriminels qui cherche à voler des données).
 * Le **risque** est la probabilité que le cambrioleur trouve la porte ouverte et s'introduise dans la maison pour dérober des biens (l'impact).
@@ -62,6 +66,7 @@ Sécuriser un système consiste à réduire les vulnérabilités pour minimiser 
 ### 4. Qui sont les attaquants modernes ?
 
 Le cliché de l'adolescent isolé piratant la NASA depuis sa chambre est obsolète. Aujourd'hui, les acteurs de menaces sont structurés :
+
 1. **Les Cybercriminels** : Motivés par l'appât du gain financier (ransomware, vol de données bancaires, revente d'informations). Ils opèrent souvent en bandes organisées.
 2. **Les États-Nations** : Motivés par l'espionnage industriel, l'influence géopolitique, la sabotage d'infrastructures critiques ou le vol d'informations stratégiques. Ils disposent de ressources financières et techniques quasi illimitées.
 3. **Les Hacktivistes** : Motivés par des revendications idéologiques, politiques ou écologiques. Ils cherchent à défigurer des sites web (*defacement*) ou à bloquer l'accès à des services pour faire entendre leur voix.

@@ -58,6 +58,7 @@ Votre rapport de 6 à 10 pages devra comprendre les cinq sections suivantes :
 
 ### Livrable 2 : Présentation de soutenance (5 Diapositives maximum)
 Un jeu de diapositives clair et impactant pour un pitch oral de **7 minutes strictes** :
+
 *   *Slide 1* : Contexte, enjeux clés et actifs de MedDistri.
 *   *Slide 2* : Synthèse de l'audit et matrice des 5 risques prioritaires.
 *   *Slide 3* : Schéma réseau cible et règles d'hygiène fondamentales (MFA, VPN).

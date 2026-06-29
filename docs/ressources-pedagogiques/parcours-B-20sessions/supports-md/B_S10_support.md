@@ -2,6 +2,7 @@
 
 ## Objectifs de la session
 À la fin de cette session, vous serez capable de :
+
 * Expliquer la différence de fonctionnement et d'usage entre le chiffrement symétrique (clé unique) et le chiffrement asymétrique (couple de clés).
 * Utiliser et analyser une fonction de hachage (comme SHA-256) pour garantir l'intégrité d'une donnée et illustrer l'effet d'avalanche.
 * Décrire les rôles d'une infrastructure de clés publiques (PKI), des autorités de certification (AC) et déchiffrer la structure d'un certificat X.509.
@@ -52,6 +53,7 @@ Comment être sûr que la clé publique de `banque.com` appartient bien à votre
 
 **Consignes :**
 Considérez les deux phrases suivantes, quasiment identiques à l'exception des accents :
+
 *   **Phrase A** : `La cybersécurité protège nos données.`
 *   **Phrase B** : `La cybersecurite protege nos donnees.`
 
@@ -59,6 +61,7 @@ Considérez les deux phrases suivantes, quasiment identiques à l'exception des 
     *   **SHA-256 de la Phrase A** : `5ccfec79bdf934f595df7b14ab44a2cbe5321f8a846c483a992bb3b0b8c66e4d`
     *   **SHA-256 de la Phrase B** : `8e77a16709f6e1ba0a3203498875567b45ddb17904ce8e7d2bb9b4226f97914a`
     Comparez les deux empreintes. Combien de caractères ont-ils en commun ? Expliquez ce phénomène.
+
 2.  Pourquoi les éditeurs de logiciels (ex. distribution Linux Ubuntu) publient-ils l'empreinte SHA-256 de leurs fichiers d'installation (.ISO) sur leur site officiel à côté du lien de téléchargement ? Expliquez comment un utilisateur utilise cette information.
 
 **Corrigé / Éléments de réponse :**

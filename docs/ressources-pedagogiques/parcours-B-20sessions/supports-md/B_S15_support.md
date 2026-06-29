@@ -2,6 +2,7 @@
 
 ## Objectifs de la session
 À la fin de cette session, vous serez capable de :
+
 * Expliquer les obligations réglementaires majeures d'un organisme au titre du RGPD (Registre, consentement, sécurité, notification sous 72h).
 * Identifier le rôle d'autorité de la CNIL et mesurer les risques financiers et d'image associés aux sanctions pour non-conformité.
 * Auditer une politique de confidentialité d'entreprise pour en extraire les clauses non conformes et proposer des corrections adaptées.
@@ -26,11 +27,13 @@ Entré en vigueur en mai 2018, le **RGPD** (Règlement Général sur la Protecti
 
 ### 2. Le rôle de la CNIL et les sanctions
 La **CNIL** (*Commission Nationale de l'Informatique et des Libertés*) est le gendarme des données personnelles en France.
+
 *   *Missions* : Conseiller les entreprises, informer les citoyens sur leurs droits (droits d'accès, de rectification, de suppression ou "droit à l'oubli") et contrôler les systèmes d'information (audits en ligne ou sur site physique).
 *   *Sanctions* : En cas de manquement grave aux règles du RGPD, la CNIL peut prononcer des amendes administratives pouvant s'élever jusqu'à **20 millions d'euros** ou **4 % du chiffre d'affaires annuel mondial** de l'entreprise délinquante, sans compter le préjudice d'image catastrophique lié à la publication publique de la sanction.
 
 ### 3. Le Délégué à la Protection des Données (DPO — Data Protection Officer)
 Le **DPO** est le pilote de la conformité au sein de l'entreprise.
+
 *   *Rôle* : Il conseille la direction sur la protection de la vie privée, s'assure de la tenue à jour du registre des traitements, mène des Analyses d'Impact sur la Protection des Données (AIPD) pour les projets à risque élevé, et sert de point de contact unique pour les demandes des citoyens ainsi que pour la CNIL en cas de contrôle ou d'incident.
 
 ---

@@ -2,6 +2,7 @@
 
 ## Objectifs de la session
 À la fin de cette session, vous serez capable de :
+
 * Expliquer les étapes du protocole de négociation (*handshake*) TLS/SSL dans la sécurisation des échanges web (HTTPS) et le rôle des autorités de certification.
 * Comparer les protocoles et architectures VPN (IPsec, OpenVPN, WireGuard) en fonction de leurs cas d'usage (accès utilisateur distant ou interconnexion de sites).
 * Identifier les failles des anciens protocoles de chiffrement Wi-Fi (WEP, WPA2-PSK) et préconiser des solutions modernes (WPA3, WPA-Enterprise).
@@ -24,6 +25,7 @@ Lorsque vous naviguez sur un site web en HTTP classique, toutes les informations
 Un **VPN** (*Virtual Private Network*) crée un tunnel virtuel chiffré à travers un réseau public non sûr (comme Internet) pour relier de manière sécurisée deux entités distantes.
 
 On distingue deux architectures majeures :
+
 *   **Le VPN d'accès distant (Client-to-Site)** : Permet à un utilisateur nomade (télétravailleur) d'installer un logiciel client sur son poste pour se connecter de manière sécurisée au réseau de son entreprise.
 *   **Le VPN site-à-site (Site-to-Site)** : Interconnecte de manière permanente les réseaux de deux sites physiques distincts d'une entreprise (ex. relier le siège social et une usine).
 
@@ -34,6 +36,7 @@ On distingue deux architectures majeures :
 
 ### 3. La sécurité des communications sans-fil (Wi-Fi)
 Les ondes radio du Wi-Fi traversent les murs, ce qui permet à n'importe qui à proximité physique d'intercepter les paquets s'ils ne sont pas chiffrés.
+
 *   **WEP (*Wired Equivalent Privacy*)** : Protocole de première génération. **Totalement obsolète et dangereux**. Ses faiblesses mathématiques permettent de casser sa clé de sécurité en quelques secondes à l'aide d'outils grand public.
 *   **WPA2-PSK (*Pre-Shared Key*)** : Le protocole le plus répandu à la maison. Il utilise une clé unique partagée pour tous les utilisateurs. Il est vulnérable aux attaques par dictionnaire (si la clé est trop simple) et à des failles de conception (attaque KRACK).
 *   **WPA3** : Le standard moderne. Il corrige les failles de WPA2 en remplaçant l'échange de clés initial par le protocole **SAE** (*Simultaneous Authentication of Equals*), empêchant le piratage de la clé Wi-Fi par interception passive et attaque hors ligne.
@@ -50,6 +53,7 @@ Les ondes radio du Wi-Fi traversent les murs, ce qui permet à n'importe qui à 
 Vous êtes consultant en cybersécurité pour une société de conseil comprenant 100 consultants mobiles. Ils se déplacent fréquemment chez des clients, travaillent dans des gares ou des hôtels, et doivent accéder en toute sécurité aux serveurs internes de l'entreprise (contenant des rapports d'audit confidentiels) ainsi qu'à des applications Cloud.
 
 Rédigez une fiche de préconisations techniques et d'usages en répondant aux 3 questions suivantes :
+
 1.  **Vecteur réseau** : Quel protocole Wi-Fi et quelle méthode d'authentification préconisez-vous pour le réseau sans-fil des bureaux du siège de l'entreprise ? Justifiez votre choix.
 2.  **Accès nomade** : Quelle technologie de VPN recommandez-vous d'installer sur les ordinateurs des consultants pour leurs déplacements ? Pourquoi ?
 3.  **Comportement sur le terrain** : Un consultant travaille dans un café et doit utiliser le réseau Wi-Fi public gratuit du café pour envoyer un document confidentiel. Listez les 3 règles de sécurité absolues qu'il doit appliquer sur-le-champ.

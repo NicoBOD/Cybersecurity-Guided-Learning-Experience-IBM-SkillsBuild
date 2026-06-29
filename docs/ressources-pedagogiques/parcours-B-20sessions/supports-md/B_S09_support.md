@@ -2,6 +2,7 @@
 
 ## Objectifs de la session
 À la fin de cette session, vous serez capable de :
+
 * Distinguer et expliquer les quatre étapes fondamentales de l'IAM : Identification, Authentification, Autorisation et Audit.
 * Comparer le modèle de contrôle d'accès basé sur les rôles (RBAC) avec le modèle basé sur les attributs (ABAC).
 * Modéliser et concevoir une politique d'authentification multifacteur (MFA) et d'authentification unique (SSO) pour sécuriser l'accès aux données sensibles d'une entreprise.
@@ -44,6 +45,7 @@ Une fois l'utilisateur authentifié, le système doit décider de ses droits d'a
 
 ### 3. SSO (Single Sign-On)
 Le **SSO** (ou Authentification Unique) est un mécanisme permettant à un utilisateur de ne saisir ses identifiants qu'une seule fois auprès d'un fournisseur d'identité central (IdP), afin d'accéder automatiquement à l'ensemble de ses applications d'entreprise compatibles (messagerie, CRM, outils RH).
+
 *   *Avantage cyber* : Réduit la "lassitude des mots de passe" des employés (qui ont tendance à réutiliser le même mot de passe partout s'ils doivent en retenir cinquante différents).
 *   *Avantage administration* : Permet de désactiver instantanément tous les accès d'un salarié qui quitte l'entreprise en bloquant son compte unique auprès du fournisseur d'identité.
 
@@ -56,18 +58,21 @@ Le **SSO** (ou Authentification Unique) est un mécanisme permettant à un utili
 
 **Consignes :**
 L'entreprise "MediDistri" distribue des produits médicaux et souhaite structurer les droits d'accès à ses 4 ressources clés :
+
 1.  **Dossier Candidats RH** : Contient les CV et salaires des candidats.
 2.  **Base de données Factures** : Contient les informations de paiement des clients.
 3.  **Console Administrative AWS** : Console cloud gérant les serveurs de production.
 4.  **Portail Actualités** : L'intranet d'information interne de l'entreprise.
 
 Vous devez définir les droits d'accès de 4 profils d'utilisateurs distincts :
+
 *   **RH_Manager** : Responsable du recrutement.
 *   **Comptable** : Responsable des factures clients.
 *   **Admin_IT** : Responsable technique de l'infrastructure cloud.
 *   **Stagiaire_Marketing** : Stagiaire en charge de la communication.
 
 Pour chaque intersection, attribuez l'un des droits suivants :
+
 *   **W** : Écriture, modification, suppression (*Write*).
 *   **R** : Lecture seule (*Read*).
 *   **N** : Aucun accès (*No access*).
