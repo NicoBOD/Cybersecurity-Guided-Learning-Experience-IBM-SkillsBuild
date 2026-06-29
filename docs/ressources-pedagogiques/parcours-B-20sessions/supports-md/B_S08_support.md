@@ -51,6 +51,7 @@ La protection des machines hôtes (*endpoints*) a fortement évolué pour faire 
 L'entreprise "EcoLog" déploie 50 nouveaux ordinateurs portables Windows 11 pour ses salariés. Rédigez les 5 règles clés de configuration de sécurité que le service informatique doit intégrer dans sa politique de groupe (**GPO** — *Group Policy Object*) avant de remettre les postes aux employés. Complétez le tableau ci-dessous en justifiant le risque atténué pour chaque règle.
 
 **Tableau à remplir :**
+
 | N° | Règle de durcissement technique | Risque de sécurité mitigé (si non appliquée) |
 |---|---|---|
 | 1 | Désactiver les ports USB pour le stockage de masse externe | ... |

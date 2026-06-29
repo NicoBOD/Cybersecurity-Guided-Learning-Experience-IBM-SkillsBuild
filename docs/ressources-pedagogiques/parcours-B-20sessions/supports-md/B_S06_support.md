@@ -63,6 +63,7 @@ Rédigez la table de règles du pare-feu central (contenant 4 règles clés + la
 5.  Appliquez le principe du *Default Deny*.
 
 **Tableau à remplir :**
+
 | N° Règle | Zone Source | IP Source | Zone Destination | IP Destination | Port / Service | Action |
 |---|---|---|---|---|---|---|
 | 1 | ... | ... | ... | ... | ... | ... |

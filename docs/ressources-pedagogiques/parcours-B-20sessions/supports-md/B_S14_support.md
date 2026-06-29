@@ -69,6 +69,7 @@ Rédigez la ligne de registre pour ce risque en suivant les consignes de cotatio
 *   *Cotation Résiduelle (après mesure)* : La probabilité de fuite devient rare car les sites externes sont bloqués et une alternative sécurisée existe (Vraisemblance résiduelle = 1), mais l'impact légal d'une fuite resterait identique (Gravité résiduelle = 3).
 
 **Tableau à remplir :**
+
 | Composante du Risque | Descriptif technique / Valeurs |
 |---|---|
 | **Actif menacé** | ... |

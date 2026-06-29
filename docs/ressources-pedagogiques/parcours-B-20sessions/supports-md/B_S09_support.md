@@ -78,6 +78,7 @@ Pour chaque intersection, attribuez l'un des droits suivants :
 *   **N** : Aucun accès (*No access*).
 
 **Tableau à remplir :**
+
 | Rôle / Ressource | Dossier Candidats RH | Base de données Factures | Console AWS | Portail Actualités |
 |---|---|---|---|---|
 | **RH_Manager** | ... | ... | ... | ... |

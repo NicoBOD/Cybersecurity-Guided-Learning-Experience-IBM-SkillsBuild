@@ -51,6 +51,7 @@ Pour sécuriser les consoles d'administration cloud, appliquez la politique du m
 Pour les 6 tâches de sécurité listées ci-dessous, écrivez dans la colonne correspondante si la responsabilité incombe au **Client** ou au **Fournisseur** pour chacun des modèles (IaaS, PaaS, SaaS).
 
 **Tableau à remplir :**
+
 | N° | Tâche de Sécurité | Modèle IaaS | Modèle PaaS | Modèle SaaS |
 |---|---|---|---|---|
 | 1 | Sécurité physique du datacenter (caméras, alarmes, électricité) | ... | ... | ... |
