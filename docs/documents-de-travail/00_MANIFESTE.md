@@ -205,11 +205,11 @@ Toutes les productions respecteront les conventions de nommage `<Parcours>_S<NN>
 | **B13** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
 | **B14** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
 | **B15** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **B16** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire | ⬜ À faire |
-| **B17** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire | ⬜ À faire |
-| **B18** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire | ⬜ À faire |
-| **B19** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire | ⬜ À faire |
-| **B20** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire | ⬜ À faire |
+| **B16** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
+| **B17** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
+| **B18** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
+| **B19** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
+| **B20** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
 | **Projet** | `B_capstone.md` : 🟡 Produit (En validation) | `B_miniprojets.md` : 🟡 Produit (En validation) | `B_grille_notation.md` : 🟡 Produit (En validation) | - |
 | **Outils** | `B_banque_quiz.md` : 🟡 Produit (En validation) | `B_scripts_demo.md` : 🟡 Produit (En validation) | `B_messages.md` : 🟡 Produit (En validation) | - |
 
