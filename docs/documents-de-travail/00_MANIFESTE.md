@@ -195,11 +195,11 @@ Toutes les productions respecteront les conventions de nommage `<Parcours>_S<NN>
 | **B3** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
 | **B4** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
 | **B5** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **B6** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire | ⬜ À faire |
-| **B7** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire | ⬜ À faire |
-| **B8** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire | ⬜ À faire |
-| **B9** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire | ⬜ À faire |
-| **B10** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire | ⬜ À faire |
+| **B6** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
+| **B7** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
+| **B8** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
+| **B9** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
+| **B10** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
 | **B11** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire | ⬜ À faire |
 | **B12** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire | ⬜ À faire |
 | **B13** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire | ⬜ À faire |
