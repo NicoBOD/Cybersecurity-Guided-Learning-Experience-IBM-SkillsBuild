@@ -12,6 +12,10 @@
 ## Concepts clés
 
 ### 1. Le cycle de réponse aux incidents (NIST SP 800-61 r2)
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 Faire face à une cyberattaque ne s'improvise pas. L'institut de normalisation américain NIST a structuré le cycle de vie de la réponse à incident en **6 étapes chronologiques et itératives** :
 
 ```mermaid
@@ -112,11 +116,12 @@ ou des fichiers professionnels impossibles à ouvrir avec une extension ".locked
 
 ---
 
-## Résumé / points à retenir
-*   La gestion des incidents est un processus normalisé par le **NIST SP 800-61** en 6 étapes, de la préparation au retour d'expérience (REX).
-*   En cas d'attaque par ransomware, l'urgence absolue est le **confinement** (isoler physiquement ou logiquement les machines du réseau).
-*   Il ne faut **jamais éteindre électriquement** une machine infectée pour ne pas détruire les indices précieux localisés dans la **mémoire vive (RAM)**.
-*   Les **Playbooks** (ou fiches réflexes) permettent aux équipes de réagir de manière calme et coordonnée en situation de stress cyber.
+!!! abstract "Résumé"
+    / points à retenir
+    *   La gestion des incidents est un processus normalisé par le **NIST SP 800-61** en 6 étapes, de la préparation au retour d'expérience (REX).
+    *   En cas d'attaque par ransomware, l'urgence absolue est le **confinement** (isoler physiquement ou logiquement les machines du réseau).
+    *   Il ne faut **jamais éteindre électriquement** une machine infectée pour ne pas détruire les indices précieux localisés dans la **mémoire vive (RAM)**.
+    *   Les **Playbooks** (ou fiches réflexes) permettent aux équipes de réagir de manière calme et coordonnée en situation de stress cyber.
 
 ---
 
@@ -131,3 +136,22 @@ ou des fichiers professionnels impossibles à ouvrir avec une extension ".locked
 ## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Incident Response Fundamentals"* (durée estimée : 1h30).
 *   **Étude documentaire** : Télécharger le modèle de plan de réponse à incident fourni gratuitement par l'ANSSI pour observer comment s'organise une cellule de crise au niveau national.
+
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **Concept clé** | À compléter selon la session |
+
+## Ressources pour aller plus loin
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

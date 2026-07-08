@@ -12,6 +12,10 @@
 ## Concepts clés
 
 ### 1. Le Modèle de Responsabilité Partagée
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 Contrairement à une infrastructure classique hébergée en local (on-premise) où l'entreprise gère tout, du câblage au logiciel, le cloud repose sur un partage des responsabilités de sécurité entre le **fournisseur de services cloud** (CSP — *Cloud Service Provider*) et le **client**.
 
 *   **Sécurité DU cloud (Responsabilité du fournisseur)** : Concerne les infrastructures physiques (bâtiments sécurisés, serveurs physiques, alimentation électrique, réseaux de communication physiques) et la couche de virtualisation (l'hyperviseur).
@@ -80,11 +84,12 @@ Pour les 6 tâches de sécurité listées ci-dessous, écrivez dans la colonne c
 
 ---
 
-## Résumé / points à retenir
-*   La sécurité dans le cloud est une **responsabilité partagée** : le fournisseur sécurise l'infrastructure physique (*sécurité du cloud*), le client sécurise ses configurations et données (*sécurité dans le cloud*).
-*   En **IaaS**, le client gère le système d'exploitation et le réseau virtuel. En **SaaS**, le client ne gère que ses données et les droits d'accès de ses utilisateurs.
-*   Les **mauvaises configurations** (comme les buckets de stockage S3 laissés publics ou l'écriture de clés d'API en dur dans le code) sont les principales sources d'incidents cyber dans le cloud.
-*   L'administration d'infrastructures cloud requiert une isolation stricte du compte **Root**, le déploiement généralisé du **MFA** et l'application du moindre privilège via l'**IAM**.
+!!! abstract "Résumé"
+    / points à retenir
+    *   La sécurité dans le cloud est une **responsabilité partagée** : le fournisseur sécurise l'infrastructure physique (*sécurité du cloud*), le client sécurise ses configurations et données (*sécurité dans le cloud*).
+    *   En **IaaS**, le client gère le système d'exploitation et le réseau virtuel. En **SaaS**, le client ne gère que ses données et les droits d'accès de ses utilisateurs.
+    *   Les **mauvaises configurations** (comme les buckets de stockage S3 laissés publics ou l'écriture de clés d'API en dur dans le code) sont les principales sources d'incidents cyber dans le cloud.
+    *   L'administration d'infrastructures cloud requiert une isolation stricte du compte **Root**, le déploiement généralisé du **MFA** et l'application du moindre privilège via l'**IAM**.
 
 ---
 
@@ -99,3 +104,22 @@ Pour les 6 tâches de sécurité listées ci-dessous, écrivez dans la colonne c
 ## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Cloud Security Fundamentals"* (durée estimée : 1h30).
 *   **Recherche complémentaire** : Visiter le site de l'OWASP et rechercher le top 10 des vulnérabilités de sécurité spécifiques au Cloud (OWASP Cloud Security Top 10) pour en comprendre les menaces courantes.
+
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **Concept clé** | À compléter selon la session |
+
+## Ressources pour aller plus loin
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

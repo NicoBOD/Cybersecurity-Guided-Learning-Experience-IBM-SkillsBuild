@@ -12,6 +12,10 @@
 ## Concepts clés
 
 ### 1. Qu'est-ce qu'un risque cyber ? (L'équation du risque)
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 En sécurité de l'information, le risque n'est pas un concept abstrait. Il se définit comme la possibilité qu'un événement indésirable survienne et affecte l'activité de l'entreprise. 
 
 Pour caractériser un risque, on décompose l'équation en plusieurs éléments :
@@ -98,11 +102,12 @@ Rédigez la ligne de registre pour ce risque en suivant les consignes de cotatio
 
 ---
 
-## Résumé / points à retenir
-*   Un **risque cyber** naît de la rencontre d'une menace et d'une vulnérabilité sur un actif de valeur pour l'entreprise.
-*   L'évaluation du risque croise sa **vraisemblance** (probabilité d'occurrence) et sa **gravité** (impact financier, juridique ou d'image).
-*   La **criticité brute** priorise les risques, tandis que la **criticité résiduelle** mesure le risque subsistant après l'application des contrôles de sécurité.
-*   Il existe 4 réponses stratégiques au risque : **Réduire** (sécuriser), **Transférer** (assurance), **Éviter** (renoncer), ou **Accepter** (décision de direction).
+!!! abstract "Résumé"
+    / points à retenir
+    *   Un **risque cyber** naît de la rencontre d'une menace et d'une vulnérabilité sur un actif de valeur pour l'entreprise.
+    *   L'évaluation du risque croise sa **vraisemblance** (probabilité d'occurrence) et sa **gravité** (impact financier, juridique ou d'image).
+    *   La **criticité brute** priorise les risques, tandis que la **criticité résiduelle** mesure le risque subsistant après l'application des contrôles de sécurité.
+    *   Il existe 4 réponses stratégiques au risque : **Réduire** (sécuriser), **Transférer** (assurance), **Éviter** (renoncer), ou **Accepter** (décision de direction).
 
 ---
 
@@ -117,3 +122,22 @@ Rédigez la ligne de registre pour ce risque en suivant les consignes de cotatio
 ## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Cybersecurity Governance and Risk Management - Part 2"* (durée estimée : 1h30).
 *   **Recherche de méthodologie** : Rechercher les grandes lignes de la méthode d'analyse de risques française **EBIOS RM** (développée par l'ANSSI) pour comprendre comment l'État et les grandes organisations modélisent les scénarios de cyberattaques.
+
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **Concept clé** | À compléter selon la session |
+
+## Ressources pour aller plus loin
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

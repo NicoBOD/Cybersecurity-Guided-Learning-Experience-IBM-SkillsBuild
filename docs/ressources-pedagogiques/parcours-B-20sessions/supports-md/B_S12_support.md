@@ -14,6 +14,10 @@
 ## Concepts clés
 
 ### 1. La Classification des données
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 Pour protéger efficacement les informations, il faut d'abord savoir ce que l'on possède et quelle est sa valeur. Il est impossible (et inutilement coûteux) de protéger une simple brochure publique avec le même niveau de sécurité qu'un brevet secret de fabrication.
 
 La classification consiste à répartir les données en 4 niveaux types de sensibilité :
@@ -85,11 +89,12 @@ Proposez une mise en œuvre concrète de la règle 3-2-1 en complétant le sché
 
 ---
 
-## Résumé / points à retenir
-*   La **classification des données** (Publique, Interne, Confidentielle, Secrète) adapte l'effort et le coût de sécurité à la valeur réelle des informations.
-*   Le **chiffrement en transit** protège les données circulant sur le réseau, tandis que le **chiffrement au repos** protège les données écrites sur des supports physiques contre le vol matériel.
-*   Le **DLP** surveille activement les postes et réseaux pour bloquer les fuites d'informations confidentielles vers l'extérieur de l'entreprise.
-*   La règle de sauvegarde **3-2-1** (3 copies, 2 supports différents, 1 copie hors site/hors ligne) est le rempart ultime contre la perte de données et les attaques par rançongiciel.
+!!! abstract "Résumé"
+    / points à retenir
+    *   La **classification des données** (Publique, Interne, Confidentielle, Secrète) adapte l'effort et le coût de sécurité à la valeur réelle des informations.
+    *   Le **chiffrement en transit** protège les données circulant sur le réseau, tandis que le **chiffrement au repos** protège les données écrites sur des supports physiques contre le vol matériel.
+    *   Le **DLP** surveille activement les postes et réseaux pour bloquer les fuites d'informations confidentielles vers l'extérieur de l'entreprise.
+    *   La règle de sauvegarde **3-2-1** (3 copies, 2 supports différents, 1 copie hors site/hors ligne) est le rempart ultime contre la perte de données et les attaques par rançongiciel.
 
 ---
 
@@ -104,3 +109,22 @@ Proposez une mise en œuvre concrète de la règle 3-2-1 en complétant le sché
 ## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Data Security and Privacy"* (durée estimée : 1h30).
 *   **Recherche complémentaire** : Renseignez-vous sur la directive de conformité **RGPD** (Règlement Général sur la Protection des Données). Identifiez comment la classification et la pseudonymisation des données personnelles aident à se conformer à la législation européenne.
+
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **Concept clé** | À compléter selon la session |
+
+## Ressources pour aller plus loin
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

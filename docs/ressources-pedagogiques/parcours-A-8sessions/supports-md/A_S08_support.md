@@ -3,8 +3,8 @@ Parcours : A 8 sessions  |  Module : Consolidation & Soutenance  |  Niveau : Dé
 
 ---
 
-## Résumé exécutif
-Le Projet Capstone constitue l'aboutissement de votre parcours de formation de 8 sessions. C'est l'occasion de démontrer votre autonomie et de mettre en pratique l'ensemble des compétences acquises (triade CIA, analyse de menaces, sécurité des réseaux, cloud, RGPD, gestion des risques et réponse aux incidents) en vous confrontant à une étude de cas d'entreprise réelle ou fictive (une PME ayant besoin d'un audit de sécurité). Ce support de cours vous guidera dans la structuration de vos livrables finaux et dans la préparation de votre présentation orale. Vous y apprendrez à formaliser une feuille de route de remédiation cyber réaliste et à pitcher vos recommandations devant un jury d'évaluation (composé de votre mentor et de vos pairs). C'est la dernière étape pour décrocher votre badge numérique d'achèvement de formation.
+!!! abstract "Résumé"
+    Le Projet Capstone constitue l'aboutissement de votre parcours de formation de 8 sessions. C'est l'occasion de démontrer votre autonomie et de mettre en pratique l'ensemble des compétences acquises (triade CIA, analyse de menaces, sécurité des réseaux, cloud, RGPD, gestion des risques et réponse aux incidents) en vous confrontant à une étude de cas d'entreprise réelle ou fictive (une PME ayant besoin d'un audit de sécurité). Ce support de cours vous guidera dans la structuration de vos livrables finaux et dans la préparation de votre présentation orale. Vous y apprendrez à formaliser une feuille de route de remédiation cyber réaliste et à pitcher vos recommandations devant un jury d'évaluation (composé de votre mentor et de vos pairs). C'est la dernière étape pour décrocher votre badge numérique d'achèvement de formation.
 
 ---
 
@@ -20,6 +20,10 @@ Le Projet Capstone constitue l'aboutissement de votre parcours de formation de 8
 ## Contenu théorique
 
 ### 1. Objectifs du Projet Capstone
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 
 L'objectif principal du Projet Capstone est de vous placer dans la posture d'un consultant en cybersécurité junior chargé d'accompagner une PME dans sa transition sécuritaire. Vous devez être capable de traduire des concepts techniques en enjeux métiers intelligibles pour un chef d'entreprise (qui n'est pas un informaticien).
 
@@ -101,7 +105,28 @@ Rédigez un argumentaire de réponse structuré en 3 points pour lever cette obj
 
 ---
 
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **Projet Capstone** | Un travail d'évaluation final synthétisant l'ensemble des compétences pratiques et théoriques développées tout au long d'un parcours d'apprentissage. |
+| **Feuille de route de remédiation (Remediation Roadmap)** | Plan d'action chronologique et priorisé décrivant les étapes techniques et organisationnelles à accomplir pour corriger les vulnérabilités identifiées lors d'un audit. |
+| **Synthèse managériale (Executive Summary)** | Courte introduction synthétique (1 page max) rédigée à l'intention des dirigeants de l'entreprise, résumant les menaces majeures découvertes et le budget requis, exempte de jargon technique trop complexe. |
+| **Hygiène informatique (Cyber Hygiene)** | Ensemble des règles élémentaires de sécurité à appliquer de manière systématique pour minimiser la majorité des cybermenaces courantes (ex. mises à jour, mots de passe complexes, sauvegardes). |
+| **Évaluation par les pairs (Peer Review)** | Méthode d'évaluation collaborative où les apprenants analysent et notent de manière constructive le travail de leurs pairs à l'aide d'une grille de critères partagée. |
+
 ## Ressources pour aller plus loin
 * **IBM SkillsBuild** : Section méthodologie de gestion de projet informatique et restitution orale.
 * **ANSSI** : "La cybersécurité pour les TPE/PME en 12 questions" (Guide pratique d'aide à la décision).
 * **Cybermalveillance.gouv.fr** : Kit de sensibilisation aux risques numériques pour les entreprises.
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

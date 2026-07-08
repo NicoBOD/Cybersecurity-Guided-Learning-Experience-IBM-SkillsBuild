@@ -3,8 +3,8 @@ Parcours : A 8 sessions  |  Module : Réseau & Infrastructure  |  Niveau : Débu
 
 ---
 
-## Résumé exécutif
-Le réseau est le système nerveux de toute infrastructure informatique. Sécuriser les flux de données qui y transitent et contrôler les accès extérieurs sont des exigences opérationnelles incontournables. Ce support de cours examine les technologies clés de la sécurité réseau. Vous découvrirez le fonctionnement d'un pare-feu (*firewall*), barrière de contrôle des flux entrants et sortants. Nous aborderons les réseaux privés virtuels (*VPN*), indispensables pour le travail à distance sécurisé, et analyserons la différence essentielle entre les protocoles HTTP (en clair) et HTTPS (chiffré). Enfin, nous étudierons la segmentation réseau, une stratégie défensive qui consiste à diviser le réseau d'une entreprise en zones isolées pour empêcher un attaquant de s'y déplacer librement en cas d'intrusion.
+!!! abstract "Résumé"
+    Le réseau est le système nerveux de toute infrastructure informatique. Sécuriser les flux de données qui y transitent et contrôler les accès extérieurs sont des exigences opérationnelles incontournables. Ce support de cours examine les technologies clés de la sécurité réseau. Vous découvrirez le fonctionnement d'un pare-feu (*firewall*), barrière de contrôle des flux entrants et sortants. Nous aborderons les réseaux privés virtuels (*VPN*), indispensables pour le travail à distance sécurisé, et analyserons la différence essentielle entre les protocoles HTTP (en clair) et HTTPS (chiffré). Enfin, nous étudierons la segmentation réseau, une stratégie défensive qui consiste à diviser le réseau d'une entreprise en zones isolées pour empêcher un attaquant de s'y déplacer librement en cas d'intrusion.
 
 ---
 
@@ -21,6 +21,10 @@ Le réseau est le système nerveux de toute infrastructure informatique. Sécuri
 ## Contenu théorique
 
 ### 1. Le filtrage réseau : Le pare-feu (*Firewall*)
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 
 Le pare-feu agit comme un douanier à la frontière du réseau de l'entreprise. Il inspecte chaque paquet de données qui se présente et prend une décision : **Autoriser** (*Accept/Allow*) ou **Bloquer** (*Drop/Deny*).
 
@@ -108,7 +112,29 @@ Vous devez concevoir la segmentation réseau d'une boutique connectée comprenan
 
 ---
 
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **Pare-feu (Firewall)** | Dispositif matériel ou logiciel analysant et filtrant les paquets de données circulant entre un réseau privé et un réseau public (Internet) selon des règles de sécurité. |
+| **VPN (Virtual Private Network)** | Technologie créant un tunnel chiffré et sécurisé sur un réseau public pour acheminer de manière confidentielle les données d'un poste de travail vers le réseau de l'entreprise. |
+| **HTTPS (HyperText Transfer Protocol Secure)** | Version sécurisée du protocole HTTP utilisée pour le web, chiffrant les échanges entre le navigateur de l'utilisateur et le serveur web pour empêcher l'interception. |
+| **SSL / TLS** | Protocoles de sécurisation des échanges sur Internet, servant de socle de chiffrement pour HTTPS. |
+| **Segmentation réseau** | Technique consistant à partitionner un réseau informatique en plusieurs sous-réseaux (VLANs, DMZ) distincts pour limiter la propagation des menaces. |
+| **DMZ (Zone Démilitarisée)** | Sous-réseau d'une entreprise isolé du réseau interne, hébergeant les serveurs devant être accessibles depuis Internet (ex. serveur web public) afin de protéger les postes internes de toute intrusion sur ces serveurs. |
+
 ## Ressources pour aller plus loin
 * **IBM SkillsBuild** : Cours "Network Security Fundamentals".
 * **ANSSI** : Recommandations sur la sécurisation des architectures réseaux.
 * **Wireshark (outil tiers)** : Outil d'analyse de protocoles réseaux (pour observer la structure des paquets).
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

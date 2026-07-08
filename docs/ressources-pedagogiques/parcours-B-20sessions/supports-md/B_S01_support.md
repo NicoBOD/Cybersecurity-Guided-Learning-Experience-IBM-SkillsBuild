@@ -12,6 +12,10 @@
 ## Concepts clés
 
 ### 1. La Triade CIA (ou CID) : Le socle de la sécurité
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 La triade **CIA** (pour *Confidentiality, Integrity, Availability* — ou **CID** en français pour Confidentialité, Intégrité, Disponibilité) est le modèle conceptuel de base à partir duquel toute politique de sécurité est construite. Elle permet de qualifier précisément le besoin de protection d'un système ou d'une information.
 
 *   **Confidentialité (*Confidentiality*)** : Garantir que l'information n'est accessible qu'aux personnes autorisées.
@@ -78,11 +82,12 @@ Le secteur de la cybersécurité regroupe des profils variés qui collaborent po
 
 ---
 
-## Résumé / points à retenir
-*   La **triade CIA (Confidentialité, Intégrité, Disponibilité)** structure toute analyse de sécurité informatique.
-*   Chaque pilier répond à une question clé : Qui peut lire la donnée ? (Confidentialité), Qui peut la modifier ? (Intégrité), La donnée est-elle accessible quand on en a besoin ? (Disponibilité).
-*   Une cyberattaque réussie entraîne des coûts financiers de restauration, mais aussi des sanctions juridiques (RGPD) et une perte de confiance des clients.
-*   La sécurité est un travail d'équipe associant la défense (Blue Team), les tests de résistance (Red Team) et le pilotage managérial (RSSI).
+!!! abstract "Résumé"
+    / points à retenir
+    *   La **triade CIA (Confidentialité, Intégrité, Disponibilité)** structure toute analyse de sécurité informatique.
+    *   Chaque pilier répond à une question clé : Qui peut lire la donnée ? (Confidentialité), Qui peut la modifier ? (Intégrité), La donnée est-elle accessible quand on en a besoin ? (Disponibilité).
+    *   Une cyberattaque réussie entraîne des coûts financiers de restauration, mais aussi des sanctions juridiques (RGPD) et une perte de confiance des clients.
+    *   La sécurité est un travail d'équipe associant la défense (Blue Team), les tests de résistance (Red Team) et le pilotage managérial (RSSI).
 
 ---
 
@@ -98,3 +103,22 @@ Le secteur de la cybersécurité regroupe des profils variés qui collaborent po
 ## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Cybersecurity Fundamentals - Part 1"* (~1h30).
 *   **Ressource complémentaire** : Consulter la section "Actualités" du site cyber.gouv.fr (ANSSI) pour observer des exemples d'incidents cyber récents en France.
+
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **Concept clé** | À compléter selon la session |
+
+## Ressources pour aller plus loin
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

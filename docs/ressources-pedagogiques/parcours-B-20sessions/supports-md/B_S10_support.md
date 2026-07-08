@@ -12,6 +12,10 @@
 ## Concepts clés
 
 ### 1. Chiffrement symétrique vs asymétrique
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 La cryptographie protège la confidentialité des données à l'aide de formules mathématiques. Il existe deux grandes familles d'algorithmes de chiffrement :
 
 *   **Chiffrement symétrique** : Utilise une seule et unique clé secrète partagée pour chiffrer et déchiffrer les données. C'est un protocole extrêmement rapide, idéal pour chiffrer de grands volumes de données (ex. chiffrement de disques durs ou de bases de données avec l'algorithme **AES**).
@@ -82,11 +86,12 @@ Considérez les deux phrases suivantes, quasiment identiques à l'exception des 
 
 ---
 
-## Résumé / points à retenir
-*   Le **chiffrement symétrique** utilise une seule clé partagée (ultra-rapide, idéal pour les gros volumes de données au repos).
-*   Le **chiffrement asymétrique** utilise un couple clé publique/privée (plus lent, idéal pour l'authentification et l'échange sécurisé de clés sur Internet).
-*   La fonction de **hachage** (ex. SHA-256) crée une empreinte unique et irréversible permettant de vérifier l'**intégrité** d'un fichier grâce à l'**effet d'avalanche**.
-*   Les **certificats X.509** et les **Autorités de Certification (AC)** constituent la base de confiance asymétrique nécessaire au chiffrement web (HTTPS).
+!!! abstract "Résumé"
+    / points à retenir
+    *   Le **chiffrement symétrique** utilise une seule clé partagée (ultra-rapide, idéal pour les gros volumes de données au repos).
+    *   Le **chiffrement asymétrique** utilise un couple clé publique/privée (plus lent, idéal pour l'authentification et l'échange sécurisé de clés sur Internet).
+    *   La fonction de **hachage** (ex. SHA-256) crée une empreinte unique et irréversible permettant de vérifier l'**intégrité** d'un fichier grâce à l'**effet d'avalanche**.
+    *   Les **certificats X.509** et les **Autorités de Certification (AC)** constituent la base de confiance asymétrique nécessaire au chiffrement web (HTTPS).
 
 ---
 
@@ -101,3 +106,22 @@ Considérez les deux phrases suivantes, quasiment identiques à l'exception des 
 ## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Cryptography Basics"* (durée estimée : 1h30).
 *   **Activité pratique** : Ouvrez un terminal sur votre ordinateur de test et tapez la commande de hachage sur un court texte pour observer le résultat (ex. sous Linux/macOS : `echo -n "Bonjour" | sha256sum`). Modifiez une lettre et observez la différence.
+
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **Concept clé** | À compléter selon la session |
+
+## Ressources pour aller plus loin
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

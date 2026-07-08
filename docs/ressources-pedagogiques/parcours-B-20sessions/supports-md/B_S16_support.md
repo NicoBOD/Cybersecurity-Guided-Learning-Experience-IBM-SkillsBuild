@@ -12,6 +12,10 @@
 ## Concepts clés
 
 ### 1. Qu'est-ce qu'un SOC ? (Security Operations Center)
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 Le **SOC** est la tour de contrôle de la sécurité d'une entreprise. C'est une entité centralisée (composée d'une équipe humaine et d'outils techniques) chargée de surveiller, détecter, analyser et répondre aux cybermenaces pesant sur le système d'information, 24 heures sur 24 et 7 jours sur 7.
 
 #### L'organisation humaine en 3 niveaux d'expertise :
@@ -77,11 +81,12 @@ Vous êtes analyste SOC L1 de garde pour l'entreprise EcoLog. Les 3 alertes suiv
 
 ---
 
-## Résumé / points à retenir
-*   Le **SOC** surveille le système d'information 24h/24 pour détecter et répondre aux cyberattaques.
-*   Les analystes sont organisés en niveaux : le **L1** qualifie et trie, le **L2** mène l'enquête technique, le **L3** résout la crise et cherche les menaces avancées.
-*   Distinguer les **vrais positifs** (attaques réelles) des **faux positifs** (comportements légitimes inhabituels) est la mission quotidienne du L1.
-*   Les performances du SOC se mesurent par le **MTTD** (rapidité de détection) et le **MTTR** (rapidité de réaction et de confinement).
+!!! abstract "Résumé"
+    / points à retenir
+    *   Le **SOC** surveille le système d'information 24h/24 pour détecter et répondre aux cyberattaques.
+    *   Les analystes sont organisés en niveaux : le **L1** qualifie et trie, le **L2** mène l'enquête technique, le **L3** résout la crise et cherche les menaces avancées.
+    *   Distinguer les **vrais positifs** (attaques réelles) des **faux positifs** (comportements légitimes inhabituels) est la mission quotidienne du L1.
+    *   Les performances du SOC se mesurent par le **MTTD** (rapidité de détection) et le **MTTR** (rapidité de réaction et de confinement).
 
 ---
 
@@ -96,3 +101,22 @@ Vous êtes analyste SOC L1 de garde pour l'entreprise EcoLog. Les 3 alertes suiv
 ## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Security Operations Center (SOC) Fundamentals"* (durée estimée : 1h30).
 *   **Activité pratique** : Rechercher la définition d'un outil **SOAR** (*Security Orchestration, Automation, and Response*). Comprendre comment l'automatisation permet de bloquer automatiquement une machine compromise sans intervention humaine pour réduire le MTTR à quelques secondes.
+
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **Concept clé** | À compléter selon la session |
+
+## Ressources pour aller plus loin
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

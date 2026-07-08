@@ -3,8 +3,8 @@ Parcours : A 8 sessions  |  Module : SecOps & Vulnérabilités  |  Niveau : Déb
 
 ---
 
-## Résumé exécutif
-Une politique de sécurité robuste ne se limite pas à installer des protections statiques : elle exige une surveillance active et continue. Ce support de cours détaille le fonctionnement des centres d'opérations de sécurité (*SOC*) et des outils de corrélation de journaux d'événements (*SIEM*), qui constituent les yeux et les oreilles de la cybersécurité moderne. Vous étudierez la notion essentielle de journalisation (*logs*), trace numérique indispensable pour détecter et comprendre les attaques. Nous aborderons ensuite la gestion des vulnérabilités logicielles, en apprenant à faire la différence entre un scan automatisé et un test d'intrusion. Enfin, vous apprendrez à déchiffrer et à interpréter les scores du système de notation internationale *CVSS* afin de planifier et prioriser de manière pragmatique l'application des correctifs de sécurité (*patchs*) sans impacter l'activité opérationnelle de votre entreprise.
+!!! abstract "Résumé"
+    Une politique de sécurité robuste ne se limite pas à installer des protections statiques : elle exige une surveillance active et continue. Ce support de cours détaille le fonctionnement des centres d'opérations de sécurité (*SOC*) et des outils de corrélation de journaux d'événements (*SIEM*), qui constituent les yeux et les oreilles de la cybersécurité moderne. Vous étudierez la notion essentielle de journalisation (*logs*), trace numérique indispensable pour détecter et comprendre les attaques. Nous aborderons ensuite la gestion des vulnérabilités logicielles, en apprenant à faire la différence entre un scan automatisé et un test d'intrusion. Enfin, vous apprendrez à déchiffrer et à interpréter les scores du système de notation internationale *CVSS* afin de planifier et prioriser de manière pragmatique l'application des correctifs de sécurité (*patchs*) sans impacter l'activité opérationnelle de votre entreprise.
 
 ---
 
@@ -22,6 +22,10 @@ Une politique de sécurité robuste ne se limite pas à installer des protection
 ## Contenu théorique
 
 ### 1. La surveillance active : Le couple SOC et SIEM
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 
 Pour sécuriser une grande infrastructure, il est impossible de regarder manuellement les écrans de chaque ordinateur. On centralise les informations.
 
@@ -113,7 +117,30 @@ Vous êtes analyste de sécurité junior dans un SOC. Le SIEM vient de lever une
 
 ---
 
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **SOC (Security Operations Center)** | Centre opérationnel où des analystes surveillent et analysent en continu la sécurité du système d'information pour détecter les incidents. |
+| **SIEM (Security Information and Event Management)** | Logiciel centralisant les journaux d'événements (logs) de divers équipements réseau et serveurs pour y appliquer des règles de corrélation et lever des alertes en cas de comportement suspect. |
+| **Log (Journal d'événements)** | Fichier texte généré automatiquement par un système, une application ou un équipement, enregistrant les actions, connexions et erreurs survenues chronologiquement. |
+| **Faux Positif** | Une alerte de sécurité déclenchée à tort par un outil de surveillance face à une activité légitime (ex. un employé légitime qui se trompe de mot de passe trois fois). |
+| **CVE (Common Vulnerabilities and Exposures)** | Dictionnaire public recensant et identifiant de manière unique les failles de sécurité logicielles et matérielles connues (ex. CVE-2021-44228). |
+| **CVSS (Common Vulnerability Scoring System)** | Système de notation standardisé évaluant la gravité d'une vulnérabilité informatique sur une échelle de 0.0 (inoffensive) à 10.0 (critique). |
+| **Patch (Correctif)** | Mise à jour logicielle publiée par un éditeur pour corriger des erreurs de programmation ou combler des failles de sécurité. |
+
 ## Ressources pour aller plus loin
 * **IBM SkillsBuild** : Cours sur le fonctionnement d'un SIEM et le métier d'analyste SOC.
 * **NIST** : Base de données nationale des vulnérabilités (NVD - National Vulnerability Database) pour rechercher des identifiants CVE.
 * **FIRST.org** : Calculateur officiel des scores CVSS (pour comprendre l'impact des différentes variables de cotation).
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

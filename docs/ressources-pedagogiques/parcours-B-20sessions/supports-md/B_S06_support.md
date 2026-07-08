@@ -12,6 +12,10 @@
 ## Concepts clés
 
 ### 1. Les Pare-feux (Firewalls) et leurs évolutions
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 Un pare-feu est un équipement de sécurité réseau chargé de filtrer les flux d'informations entrants et sortants selon des règles prédéfinies. Le principe fondamental d'un pare-feu est le **Default Deny** (Rejet par défaut) : tout trafic qui n'est pas explicitement autorisé par une règle est bloqué.
 
 On distingue plusieurs générations de pare-feux :
@@ -90,11 +94,12 @@ Rédigez la table de règles du pare-feu central (contenant 4 règles clés + la
 
 ---
 
-## Résumé / points à retenir
-*   Un pare-feu filtre les paquets selon le principe du **Default Deny** (tout ce qui n'est pas permis est interdit).
-*   Les pare-feux évoluent du filtrage simple (*stateless*) au maintien de session (*stateful*), jusqu'à l'inspection applicative profonde (*NGFW*).
-*   L'**IDS** détecte passivement les intrusions pour alerter, tandis que l'**IPS** s'interpose pour bloquer activement l'attaque en cours de route.
-*   La **segmentation réseau** consiste à isoler les hôtes dans différentes zones (LAN, WAN, DMZ) pour confiner les incidents et empêcher les mouvements latéraux des attaquants.
+!!! abstract "Résumé"
+    / points à retenir
+    *   Un pare-feu filtre les paquets selon le principe du **Default Deny** (tout ce qui n'est pas permis est interdit).
+    *   Les pare-feux évoluent du filtrage simple (*stateless*) au maintien de session (*stateful*), jusqu'à l'inspection applicative profonde (*NGFW*).
+    *   L'**IDS** détecte passivement les intrusions pour alerter, tandis que l'**IPS** s'interpose pour bloquer activement l'attaque en cours de route.
+    *   La **segmentation réseau** consiste à isoler les hôtes dans différentes zones (LAN, WAN, DMZ) pour confiner les incidents et empêcher les mouvements latéraux des attaquants.
 
 ---
 
@@ -109,3 +114,22 @@ Rédigez la table de règles du pare-feu central (contenant 4 règles clés + la
 ## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Network Security - Part 2"* (durée estimée : 1h30).
 *   **Ressource complémentaire** : Dessiner un schéma réseau simple à l'aide d'un outil en ligne gratuit (comme draw.io) en représentant une architecture comprenant un pare-feu, un switch, une DMZ et un LAN.
+
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **Concept clé** | À compléter selon la session |
+
+## Ressources pour aller plus loin
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

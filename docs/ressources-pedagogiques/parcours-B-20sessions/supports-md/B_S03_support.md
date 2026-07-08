@@ -13,6 +13,10 @@
 ## Concepts clés
 
 ### 1. La typologie des logiciels malveillants (*malwares*)
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 Un *malware* (contraction de *malicious software*) est un programme développé dans le but de nuire à un système informatique. On les classe selon leur mode d'action et de propagation :
 
 *   **Le virus** : Un programme qui s'attache à un fichier ou à un programme légitime. Il a besoin d'une action humaine (comme l'ouverture d'une application ou d'un fichier infecté) pour s'exécuter et se propager.
@@ -83,11 +87,12 @@ En dehors des logiciels malveillants, les attaquants ciblent les capacités phys
 
 ---
 
-## Résumé / points à retenir
-*   Les malwares se différencient par leur propagation (vers autonomes vs virus dépendants) et leurs buts (ransomwares pour rançonner, spywares pour espionner).
-*   Un DDoS utilise des machines infectées à distance (botnets) pour surcharger et mettre hors ligne des serveurs web.
-*   La Cyber Kill Chain modélise une attaque en 7 étapes : perturber une seule de ces étapes permet de stopper l'intrusion.
-*   Le framework MITRE ATT&CK offre un langage universel pour classifier les tactiques (buts) et techniques (moyens) observées chez les attaquants.
+!!! abstract "Résumé"
+    / points à retenir
+    *   Les malwares se différencient par leur propagation (vers autonomes vs virus dépendants) et leurs buts (ransomwares pour rançonner, spywares pour espionner).
+    *   Un DDoS utilise des machines infectées à distance (botnets) pour surcharger et mettre hors ligne des serveurs web.
+    *   La Cyber Kill Chain modélise une attaque en 7 étapes : perturber une seule de ces étapes permet de stopper l'intrusion.
+    *   Le framework MITRE ATT&CK offre un langage universel pour classifier les tactiques (buts) et techniques (moyens) observées chez les attaquants.
 
 ---
 
@@ -102,3 +107,22 @@ En dehors des logiciels malveillants, les attaquants ciblent les capacités phys
 ## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Introduction to Cybersecurity Tools & Cyber Attacks"* (~1h30).
 *   **Ressource complémentaire** : Visiter le site officiel d'ATT&CK (attack.mitre.org) et cliquer sur la technique "Phishing" (T1566) pour observer comment les techniques sont documentées mondialement.
+
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **Concept clé** | À compléter selon la session |
+
+## Ressources pour aller plus loin
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

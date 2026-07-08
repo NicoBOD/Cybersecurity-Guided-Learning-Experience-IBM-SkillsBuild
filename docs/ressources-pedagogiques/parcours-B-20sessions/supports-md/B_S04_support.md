@@ -12,6 +12,10 @@
 ## Concepts clés
 
 ### 1. La psychologie de la manipulation (Ingénierie sociale)
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 L'ingénierie sociale (*Social Engineering*) regroupe l'ensemble des techniques de manipulation psychologique visant à inciter une personne à contourner les règles de sécurité ou à divulguer des informations confidentielles. Les pirates ciblent les failles cognitives humaines plutôt que les failles logicielles. Ils exploitent des leviers psychologiques précis :
 
 *   **L'autorité** : Se faire passer pour une figure hiérarchique supérieure (le directeur général, un avocat de l'entreprise, un policier). La victime obéit par respect ou crainte de la hiérarchie.
@@ -84,11 +88,12 @@ La sécurité humaine repose sur des réflexes simples mais rigoureux, que l'on 
 
 ---
 
-## Résumé / points à retenir
-*   L'ingénierie sociale repose sur l'exploitation de faiblesses psychologiques (urgence, peur, autorité) et non sur des failles logicielles.
-*   Les attaques se déclinent sur tous les canaux : e-mail (phishing), SMS (smishing), téléphone (vishing).
-*   L'hameçonnage ciblé (spear-phishing) utilise des informations publiques et personnelles pour piéger précisément sa victime.
-*   L'hygiène cyber (mots de passe forts, MFA, verrouillage, doute systématique et culture du signalement) est le premier bouclier de l'entreprise.
+!!! abstract "Résumé"
+    / points à retenir
+    *   L'ingénierie sociale repose sur l'exploitation de faiblesses psychologiques (urgence, peur, autorité) et non sur des failles logicielles.
+    *   Les attaques se déclinent sur tous les canaux : e-mail (phishing), SMS (smishing), téléphone (vishing).
+    *   L'hameçonnage ciblé (spear-phishing) utilise des informations publiques et personnelles pour piéger précisément sa victime.
+    *   L'hygiène cyber (mots de passe forts, MFA, verrouillage, doute systématique et culture du signalement) est le premier bouclier de l'entreprise.
 
 ---
 
@@ -103,3 +108,22 @@ La sécurité humaine repose sur des réflexes simples mais rigoureux, que l'on 
 ## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Introduction to Cybersecurity Tools & Cyber Attacks - Social Engineering"* (~1h00).
 *   **Recherche autonome** : Se renseigner sur le concept d'OSINT (*Open Source Intelligence*) pour comprendre comment les attaquants collectent légalement des informations publiques sur les entreprises.
+
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **Concept clé** | À compléter selon la session |
+
+## Ressources pour aller plus loin
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

@@ -12,6 +12,10 @@
 ## Concepts clés
 
 ### 1. La Politique de Sécurité des Systèmes d'Information (PSSI)
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 La **PSSI** est le document de référence stratégique et juridique d'une entreprise. Elle traduit les objectifs de sécurité en règles d'usage précises et en exigences techniques obligatoires pour l'ensemble des collaborateurs et prestataires.
 
 *   **Portage par la direction** : Une PSSI ne doit pas être un simple document technique rédigé dans son coin par le service informatique. Pour être légitime, applicable et juridiquement contraignante, elle doit être **validée et signée par la Direction Générale** (souvent annexée au règlement intérieur de l'entreprise).
@@ -73,10 +77,11 @@ L'entreprise de logistique "EcoLog" souhaite intégrer une section "Sécurité d
 
 ---
 
-## Résumé / points à retenir
-*   La **PSSI** définit le cadre légal et technique de la sécurité. Elle doit être validée et portée politiquement par la **Direction Générale** pour être contraignante.
-*   L'**ISO 27001** structure le management de la sécurité (SMSI) autour de l'amélioration continue (**PDCA**), tandis que le **NIST CSF** fournit un cadre d'action opérationnel basé sur 5 fonctions techniques.
-*   Le **RSSI** propose et orchestre les mesures de sécurité, mais c'est la **Direction Générale** qui prend les décisions stratégiques et financières de couverture des risques.
+!!! abstract "Résumé"
+    / points à retenir
+    *   La **PSSI** définit le cadre légal et technique de la sécurité. Elle doit être validée et portée politiquement par la **Direction Générale** pour être contraignante.
+    *   L'**ISO 27001** structure le management de la sécurité (SMSI) autour de l'amélioration continue (**PDCA**), tandis que le **NIST CSF** fournit un cadre d'action opérationnel basé sur 5 fonctions techniques.
+    *   Le **RSSI** propose et orchestre les mesures de sécurité, mais c'est la **Direction Générale** qui prend les décisions stratégiques et financières de couverture des risques.
 
 ---
 
@@ -91,3 +96,22 @@ L'entreprise de logistique "EcoLog" souhaite intégrer une section "Sécurité d
 ## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Cybersecurity Governance and Risk Management - Part 1"* (durée estimée : 1h30).
 *   **Ressource complémentaire** : Visiter le site de l'ANSSI (cyber.gouv.fr) et télécharger le document *"La PSSI en 10 principes de base"* pour observer comment un État structure ses exigences nationales.
+
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **Concept clé** | À compléter selon la session |
+
+## Ressources pour aller plus loin
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

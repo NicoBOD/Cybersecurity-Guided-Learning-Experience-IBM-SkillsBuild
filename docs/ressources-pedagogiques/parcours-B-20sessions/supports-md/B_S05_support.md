@@ -12,6 +12,10 @@
 ## Concepts clés
 
 ### 1. Les Modèles OSI et TCP/IP sous l'angle de la sécurité
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 Pour faire communiquer des ordinateurs, les données doivent être formatées et transmises selon des règles strictes. Le modèle théorique **OSI** (en 7 couches) et le modèle pratique **TCP/IP** (en 4 couches) décrivent ce processus. En cybersécurité, chaque couche représente une surface d'attaque spécifique et nécessite des défenses adaptées.
 
 *   **Couche 2 : Liaison (*Data Link*)** — Gère la communication physique locale entre cartes réseau via les adresses **MAC** (*Media Access Control*).
@@ -114,11 +118,12 @@ Analysez les deux extraits de paquets ci-dessous et répondez aux questions :
 
 ---
 
-## Résumé / points à retenir
-*   Les couches réseau (Liaison, Réseau, Transport, Application) structurent la façon dont les données transitent et définissent les différents types d'attaques cyber.
-*   Chaque service réseau standard écoute sur un **port de communication** spécifique (22 pour SSH, 53 pour DNS, 80/443 pour HTTP/S, 3389 pour RDP).
-*   Une capture de paquets (trame réseau) révèle l'origine (IP/MAC source), la destination (IP/MAC destination), le protocole et le contenu applicatif du flux.
-*   Bloquer les ports inutilisés et analyser le trafic anormal sont des réflexes indispensables pour assurer la sécurité réseau.
+!!! abstract "Résumé"
+    / points à retenir
+    *   Les couches réseau (Liaison, Réseau, Transport, Application) structurent la façon dont les données transitent et définissent les différents types d'attaques cyber.
+    *   Chaque service réseau standard écoute sur un **port de communication** spécifique (22 pour SSH, 53 pour DNS, 80/443 pour HTTP/S, 3389 pour RDP).
+    *   Une capture de paquets (trame réseau) révèle l'origine (IP/MAC source), la destination (IP/MAC destination), le protocole et le contenu applicatif du flux.
+    *   Bloquer les ports inutilisés et analyser le trafic anormal sont des réflexes indispensables pour assurer la sécurité réseau.
 
 ---
 
@@ -133,3 +138,22 @@ Analysez les deux extraits de paquets ci-dessous et répondez aux questions :
 ## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Network Security - Part 1"* (durée estimée : 1h30).
 *   **Action pratique** : Ouvrez un terminal sur votre machine et tapez la commande `ping -c 4 cyber.gouv.fr`. Observez le temps de réponse et la valeur de TTL renvoyée par le serveur.
+
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **Concept clé** | À compléter selon la session |
+
+## Ressources pour aller plus loin
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

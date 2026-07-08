@@ -3,8 +3,8 @@ Parcours : A 8 sessions  |  Module : Cloud & Données  |  Niveau : Débutant
 
 ---
 
-## Résumé exécutif
-À mesure que les données migrent vers les serveurs distants, le périmètre traditionnel du réseau physique s'efface pour laisser place à la gestion logique des identités et à la protection granulaire de la donnée elle-même. Ce support de cours détaille les mécanismes de contrôle d'accès avec la gestion des identités et des accès (*IAM*), l'authentification multifacteur (*MFA*) et la mise en œuvre pratique du principe du moindre privilège. Vous étudierez la distinction clé entre le chiffrement des données au repos (*at rest*) et en transit (*in transit*). Nous clarifierons le modèle de responsabilité partagée dans le *cloud* pour savoir précisément ce qui incombe au fournisseur et au client, et nous conclurons sur la règle de sauvegarde 3-2-1, ultime rempart opérationnel contre la perte définitive de vos actifs numériques.
+!!! abstract "Résumé"
+    À mesure que les données migrent vers les serveurs distants, le périmètre traditionnel du réseau physique s'efface pour laisser place à la gestion logique des identités et à la protection granulaire de la donnée elle-même. Ce support de cours détaille les mécanismes de contrôle d'accès avec la gestion des identités et des accès (*IAM*), l'authentification multifacteur (*MFA*) et la mise en œuvre pratique du principe du moindre privilège. Vous étudierez la distinction clé entre le chiffrement des données au repos (*at rest*) et en transit (*in transit*). Nous clarifierons le modèle de responsabilité partagée dans le *cloud* pour savoir précisément ce qui incombe au fournisseur et au client, et nous conclurons sur la règle de sauvegarde 3-2-1, ultime rempart opérationnel contre la perte définitive de vos actifs numériques.
 
 ---
 
@@ -22,6 +22,10 @@ Parcours : A 8 sessions  |  Module : Cloud & Données  |  Niveau : Débutant
 ## Contenu théorique
 
 ### 1. Contrôle d'accès logique : IAM, Moindre privilège et MFA
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 
 Dans un système d'information moderne, l'identité est le nouveau périmètre de sécurité.
 
@@ -107,7 +111,30 @@ Une petite agence de création web stocke ses créations graphiques et ses bases
 
 ---
 
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **IAM (Identity and Access Management)** | Ensemble des processus et outils technologiques servant à gérer l'identité des utilisateurs et à réguler leurs privilèges d'accès aux ressources informatiques. |
+| **MFA (Multi-Factor Authentication)** | Processus d'authentification exigeant de l'utilisateur qu'il fournisse au moins deux facteurs de preuve distincts (ex. un mot de passe + un code unique envoyé sur smartphone) avant d'autoriser l'accès. |
+| **Moindre privilège** | Principe de sécurité consistant à n'accorder à un utilisateur (ou à un processus) que les droits d'accès strictement nécessaires à l'accomplissement de sa tâche ou de sa fonction, et rien de plus. |
+| **Responsabilité partagée (Cloud)** | Modèle de sécurité définissant la répartition des tâches de protection entre le fournisseur de services cloud (sécurité *du* cloud) et le client utilisant ces services (sécurité *dans* le cloud). |
+| **Données au repos (At rest)** | Données stockées de façon persistante sur un support physique (disque dur, clé USB, serveur de stockage cloud). |
+| **Données en transit (In transit)** | Données actives circulant à travers un réseau public ou privé (ex. lors d'un transfert de fichier ou de la saisie d'un formulaire web). |
+| **Règle 3-2-1 (Sauvegarde)** | Règle d'or de la sauvegarde préconisant de posséder 3 copies de ses données, réparties sur 2 supports différents, dont 1 copie conservée hors site (ex. dans le cloud ou dans un autre bâtiment physique). |
+
 ## Ressources pour aller plus loin
 * **IBM SkillsBuild** : Cours sur l'IAM (Identity and Access Management) et la sécurité Cloud.
 * **ANSSI** : Recommandations pour la sécurisation des sauvegardes contre les rançongiciels.
 * **Cloud Security Alliance (CSA)** : Le guide des menaces critiques liées au cloud computing (notamment les configurations défaillantes).
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

@@ -13,6 +13,10 @@
 ## Concepts clés
 
 ### 1. Le Principe du Moindre Privilège
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 Le principe du moindre privilège (*Least Privilege*) stipule qu'un utilisateur, un programme ou un processus ne doit posséder que les droits d'accès strictement nécessaires à l'accomplissement de sa tâche, et rien de plus.
 
 *   **En pratique** : Les utilisateurs ne doivent jamais travailler au quotidien avec un compte disposant de privilèges d'administration globaux (compte Administrateur sous Windows ou `root` sous Linux).
@@ -78,11 +82,12 @@ L'entreprise "EcoLog" déploie 50 nouveaux ordinateurs portables Windows 11 pour
 
 ---
 
-## Résumé / points à retenir
-*   Le **principe du moindre privilège** protège le système en limitant les droits des utilisateurs au strict nécessaire pour leurs tâches courantes.
-*   Le **durcissement (hardening)** réduit la surface d'attaque en fermant les ports locaux, en désactivant les services superflus et en chiffrant les données au repos.
-*   La gestion des correctifs de sécurité (*patching*) est l'arme la plus efficace contre l'exploitation des failles de sécurité publiques (CVE).
-*   L'**EDR** surpasse l'antivirus classique en analysant en continu les comportements des processus pour contrer les attaques inconnues et automatiser la réaction.
+!!! abstract "Résumé"
+    / points à retenir
+    *   Le **principe du moindre privilège** protège le système en limitant les droits des utilisateurs au strict nécessaire pour leurs tâches courantes.
+    *   Le **durcissement (hardening)** réduit la surface d'attaque en fermant les ports locaux, en désactivant les services superflus et en chiffrant les données au repos.
+    *   La gestion des correctifs de sécurité (*patching*) est l'arme la plus efficace contre l'exploitation des failles de sécurité publiques (CVE).
+    *   L'**EDR** surpasse l'antivirus classique en analysant en continu les comportements des processus pour contrer les attaques inconnues et automatiser la réaction.
 
 ---
 
@@ -97,3 +102,22 @@ L'entreprise "EcoLog" déploie 50 nouveaux ordinateurs portables Windows 11 pour
 ## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"System Hardening and Patch Management"* (durée estimée : 1h30).
 *   **Ressource complémentaire** : Visiter le site de l'ANSSI (cyber.gouv.fr) et consulter le "Guide de configuration d'un système Windows" ou les recommandations de durcissement Linux pour observer le niveau d'exigence technique requis en milieu professionnel.
+
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **Concept clé** | À compléter selon la session |
+
+## Ressources pour aller plus loin
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

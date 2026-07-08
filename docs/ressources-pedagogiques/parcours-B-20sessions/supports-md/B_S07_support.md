@@ -12,6 +12,10 @@
 ## Concepts clés
 
 ### 1. Sécuriser le web : Le protocole TLS/SSL
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 Lorsque vous naviguez sur un site web en HTTP classique, toutes les informations (mots de passe, numéros de carte bancaire) transitent en texte clair sur le réseau. Le protocole **HTTPS** sécurise ces échanges en encapsulant le trafic HTTP au sein d'un tunnel chiffré par le protocole **TLS** (*Transport Layer Security* — successeur du SSL).
 
 *   *L'analogie* : Naviguer en HTTP équivaut à envoyer une carte postale sans enveloppe (tous les intermédiaires peuvent la lire). Naviguer en HTTPS équivaut à glisser le message dans un coffre-fort blindé portatif dont seul le destinataire possède le code.
@@ -79,11 +83,12 @@ Rédigez une fiche de préconisations techniques et d'usages en répondant aux 3
 
 ---
 
-## Résumé / points à retenir
-*   **HTTPS/TLS** protège les données applicatives en transit en combinant la cryptographie asymétrique (échange de clés) et symétrique (chiffrement des flux).
-*   La validation du **certificat numérique** par le navigateur empêche les attaques par interception *Man-in-the-Middle* (MitM).
-*   Le **VPN** sécurise les flux de transport sur des réseaux publics en créant un tunnel chiffré (IPsec pour le site-à-site, WireGuard/OpenVPN pour le nomade).
-*   La sécurité Wi-Fi moderne requiert l'abandon de WEP/WPA2-PSK au profit de **WPA3** et de **WPA-Enterprise** pour l'authentification individuelle.
+!!! abstract "Résumé"
+    / points à retenir
+    *   **HTTPS/TLS** protège les données applicatives en transit en combinant la cryptographie asymétrique (échange de clés) et symétrique (chiffrement des flux).
+    *   La validation du **certificat numérique** par le navigateur empêche les attaques par interception *Man-in-the-Middle* (MitM).
+    *   Le **VPN** sécurise les flux de transport sur des réseaux publics en créant un tunnel chiffré (IPsec pour le site-à-site, WireGuard/OpenVPN pour le nomade).
+    *   La sécurité Wi-Fi moderne requiert l'abandon de WEP/WPA2-PSK au profit de **WPA3** et de **WPA-Enterprise** pour l'authentification individuelle.
 
 ---
 
@@ -98,3 +103,22 @@ Rédigez une fiche de préconisations techniques et d'usages en répondant aux 3
 ## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Secure Protocols & Cryptography Basics"* (durée estimée : 1h30).
 *   **Recherche complémentaire** : Ouvrez un site d'actualité cyber et recherchez des cas d'attaques historiques de type "MitM" ou des compromissions d'Autorités de Certification (comme l'affaire *DigiNotar* en 2011) pour comprendre les enjeux géopolitiques de la confiance numérique.
+
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **Concept clé** | À compléter selon la session |
+
+## Ressources pour aller plus loin
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

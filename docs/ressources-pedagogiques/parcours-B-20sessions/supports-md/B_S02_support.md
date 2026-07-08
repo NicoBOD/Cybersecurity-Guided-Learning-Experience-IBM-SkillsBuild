@@ -12,6 +12,10 @@
 ## Concepts clés
 
 ### 1. Typologie des attaquants et motivations
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 Le monde des cyberattaquants est hétérogène. Identifier qui attaque permet de mieux anticiper les techniques employées et de calibrer la défense de l'entreprise. On distingue quatre grands profils d'acteurs de menace :
 
 *   **Les Cybercriminels (Motivation lucrative)** : C'est le groupe le plus représenté. Leur seul but est de faire de l'argent. Ils utilisent des logiciels de rançon pour chiffrer les données d'entreprises de toutes tailles (hôpitaux, PME, multinationales) et exiger des rançons astronomiques, ou volent des données de cartes bancaires pour les revendre.
@@ -79,11 +83,12 @@ La **CTI** (Renseignement sur les cybermenaces) consiste à collecter, analyser 
 
 ---
 
-## Résumé / points à retenir
-*   Les attaquants se divisent en 4 familles majeures : cybercriminels (argent), États (géopolitique/espionnage), hacktivistes (causes politiques) et internes (employés).
-*   La cybercriminalité moderne est professionnalisée et fonctionne en réseau (modèle de type RaaS - Ransomware-as-a-Service).
-*   La Cyber Threat Intelligence (CTI) permet de collecter les indices techniques (IoC) laissés par les pirates pour renforcer proactivement nos défenses.
-*   Le CERT-FR et la base MITRE ATT&CK sont des ressources essentielles de veille cyber opérationnelle.
+!!! abstract "Résumé"
+    / points à retenir
+    *   Les attaquants se divisent en 4 familles majeures : cybercriminels (argent), États (géopolitique/espionnage), hacktivistes (causes politiques) et internes (employés).
+    *   La cybercriminalité moderne est professionnalisée et fonctionne en réseau (modèle de type RaaS - Ransomware-as-a-Service).
+    *   La Cyber Threat Intelligence (CTI) permet de collecter les indices techniques (IoC) laissés par les pirates pour renforcer proactivement nos défenses.
+    *   Le CERT-FR et la base MITRE ATT&CK sont des ressources essentielles de veille cyber opérationnelle.
 
 ---
 
@@ -98,3 +103,22 @@ La **CTI** (Renseignement sur les cybermenaces) consiste à collecter, analyser 
 ## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Cybersecurity Threat Landscape"* (~1h30).
 *   **Action pratique** : Visiter le site du CERT-FR (cyber.gouv.fr/alertes) et lire la description d'une alerte "Active" pour comprendre comment les experts documentent une menace en temps réel.
+
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **Concept clé** | À compléter selon la session |
+
+## Ressources pour aller plus loin
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

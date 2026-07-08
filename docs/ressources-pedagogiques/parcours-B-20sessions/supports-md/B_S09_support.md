@@ -12,6 +12,10 @@
 ## Concepts clés
 
 ### 1. Les 4 piliers de l'IAM (Identity and Access Management)
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 L'IAM regroupe les processus et technologies visant à garantir que les bonnes personnes ont accès aux bonnes ressources, au bon moment et pour les bonnes raisons. Il repose sur quatre étapes distinctes et successives :
 
 *   **Identification** : L'acte de déclarer qui vous êtes. C'est l'identifiant publique de l'utilisateur (nom d'utilisateur, adresse e-mail, matricule).
@@ -103,11 +107,12 @@ Pour chaque intersection, attribuez l'un des droits suivants :
 
 ---
 
-## Résumé / points à retenir
-*   L'**Identification** déclare qui vous êtes, l'**Authentification** le prouve, l'**Autorisation** accorde les droits d'accès et l'**Audit** trace vos actions.
-*   Le **MFA** combine au moins deux facteurs de natures différentes (ce que je sais, ce que je possède, ce que je suis) pour neutraliser le vol simple de mot de passe.
-*   Le modèle **RBAC** structure les droits par rôles métier, tandis que le modèle **ABAC** utilise des variables dynamiques (IP, heure, lieu) pour une plus grande granularité.
-*   Le **SSO** simplifie l'expérience utilisateur et renforce la sécurité des accès en centralisant l'authentification.
+!!! abstract "Résumé"
+    / points à retenir
+    *   L'**Identification** déclare qui vous êtes, l'**Authentification** le prouve, l'**Autorisation** accorde les droits d'accès et l'**Audit** trace vos actions.
+    *   Le **MFA** combine au moins deux facteurs de natures différentes (ce que je sais, ce que je possède, ce que je suis) pour neutraliser le vol simple de mot de passe.
+    *   Le modèle **RBAC** structure les droits par rôles métier, tandis que le modèle **ABAC** utilise des variables dynamiques (IP, heure, lieu) pour une plus grande granularité.
+    *   Le **SSO** simplifie l'expérience utilisateur et renforce la sécurité des accès en centralisant l'authentification.
 
 ---
 
@@ -122,3 +127,22 @@ Pour chaque intersection, attribuez l'un des droits suivants :
 ## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Identity and Access Management Fundamentals"* (durée estimée : 1h30).
 *   **Recherche complémentaire** : Renseignez-vous sur le protocole standard ouvert **SAML 2.0** et sur le protocole **OIDC (OpenID Connect)**. Découvrez comment ils permettent au SSO d'échanger des preuves d'identité sécurisées entre applications.
+
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **Concept clé** | À compléter selon la session |
+
+## Ressources pour aller plus loin
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

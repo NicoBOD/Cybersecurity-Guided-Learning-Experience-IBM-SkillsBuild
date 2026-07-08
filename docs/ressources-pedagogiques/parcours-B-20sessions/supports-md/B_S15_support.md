@@ -13,6 +13,10 @@
 ## Concepts clés
 
 ### 1. Les Fondamentaux du RGPD
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 Entré en vigueur en mai 2018, le **RGPD** (Règlement Général sur la Protection des Données) est le cadre juridique européen régissant la collecte et le traitement des données à caractère personnel.
 
 *   **Donnée à caractère personnel** : Toute information se rapportant à une personne physique identifiée ou identifiable directement ou indirectement (ex. un nom, une adresse email, un numéro de téléphone, une adresse IP, des données de localisation, ou un numéro de sécurité sociale).
@@ -69,11 +73,12 @@ L'entreprise EcoLog lance une plateforme e-commerce. Le service marketing a éba
 
 ---
 
-## Résumé / points à retenir
-*   Le **RGPD** impose des principes stricts (minimisation, limitation de conservation, consentement libre) pour protéger la vie privée des résidents européens.
-*   En cas d'incident de sécurité sur des données personnelles, l'entreprise doit notifier la **CNIL sous 72 heures maximum**.
-*   Les sanctions de la **CNIL** peuvent être financières (jusqu'à 4 % du CA mondial) et porter une atteinte grave à la réputation de l'entreprise.
-*   Le **DPO** orchestre la conformité interne, tient le registre des traitements obligatoires et fait l'interface avec l'autorité de contrôle.
+!!! abstract "Résumé"
+    / points à retenir
+    *   Le **RGPD** impose des principes stricts (minimisation, limitation de conservation, consentement libre) pour protéger la vie privée des résidents européens.
+    *   En cas d'incident de sécurité sur des données personnelles, l'entreprise doit notifier la **CNIL sous 72 heures maximum**.
+    *   Les sanctions de la **CNIL** peuvent être financières (jusqu'à 4 % du CA mondial) et porter une atteinte grave à la réputation de l'entreprise.
+    *   Le **DPO** orchestre la conformité interne, tient le registre des traitements obligatoires et fait l'interface avec l'autorité de contrôle.
 
 ---
 
@@ -88,3 +93,22 @@ L'entreprise EcoLog lance une plateforme e-commerce. Le service marketing a éba
 ## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Introduction to Data Privacy and GDPR"* (durée estimée : 1h30).
 *   **Activité pratique** : Rendez-vous sur le site de la CNIL (cnil.fr) et lisez le résumé d'une sanction récente prononcée à l'encontre d'une entreprise pour comprendre quels manquements techniques (mots de passe trop faibles, absence de chiffrement) ont été sanctionnés.
+
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **Concept clé** | À compléter selon la session |
+
+## Ressources pour aller plus loin
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

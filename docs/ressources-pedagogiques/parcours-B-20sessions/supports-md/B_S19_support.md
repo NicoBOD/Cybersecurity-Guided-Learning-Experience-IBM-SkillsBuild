@@ -12,6 +12,10 @@
 ## Concepts clés
 
 ### 1. Qu'est-ce qu'un Tabletop Exercise ?
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 Un **Tabletop Exercise** (ou exercice sur table) est une simulation de crise théorique durant laquelle les décisionnaires d'une entreprise se réunissent pour réagir en temps réel à un scénario de cyberattaque fictif.
 
 *   **Le Maître du Jeu (MJ)** : Il anime la session et apporte régulièrement de nouvelles informations perturbatrices (appelées **injects**), telles que : la découverte d'une fuite sur Twitter, la demande de rançon d'un pirate, l'appel téléphonique d'un client en colère ou d'un journaliste.
@@ -93,11 +97,12 @@ Contact Presse unique : service.presse@ecolog.fr
 
 ---
 
-## Résumé / points à retenir
-*   Un **Tabletop Exercise** est un entraînement théorique permettant de tester la capacité décisionnelle d'une entreprise face à un scénario de cyberattaque.
-*   La gestion de crise réunit la **Direction**, l'**IT**, la **Communication** et le **Juridique/DPO** pour coordonner la réponse technique, légale et réputationnelle.
-*   La communication de crise doit être **factuelle, empathique, et centralisée** autour d'un porte-parole unique.
-*   Toute fuite de données personnelles impose une notification rapide aux autorités de contrôle (**CNIL**) et aux personnes concernées.
+!!! abstract "Résumé"
+    / points à retenir
+    *   Un **Tabletop Exercise** est un entraînement théorique permettant de tester la capacité décisionnelle d'une entreprise face à un scénario de cyberattaque.
+    *   La gestion de crise réunit la **Direction**, l'**IT**, la **Communication** et le **Juridique/DPO** pour coordonner la réponse technique, légale et réputationnelle.
+    *   La communication de crise doit être **factuelle, empathique, et centralisée** autour d'un porte-parole unique.
+    *   Toute fuite de données personnelles impose une notification rapide aux autorités de contrôle (**CNIL**) et aux personnes concernées.
 
 ---
 
@@ -111,3 +116,22 @@ Contact Presse unique : service.presse@ecolog.fr
 ## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Incident Response Fundamentals"* (durée estimée : 1h30).
 *   **Guide pratique** : Rechercher et lire le document *"Organiser un exercice de gestion de crise cyber"* édité par l'ANSSI pour comprendre comment concevoir un scénario de simulation complet de A à Z.
+
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **Concept clé** | À compléter selon la session |
+
+## Ressources pour aller plus loin
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

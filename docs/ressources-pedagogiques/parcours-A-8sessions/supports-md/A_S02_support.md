@@ -3,8 +3,8 @@ Parcours : A 8 sessions  |  Module : Menaces Cyber  |  Niveau : Débutant
 
 ---
 
-## Résumé exécutif
-Les cyberattaques modernes ciblent de plus en plus le maillon réputé le plus vulnérable de la chaîne de sécurité : l'être humain. Ce support de cours détaille les mécanismes de l'ingénierie sociale, l'art de manipuler les personnes pour contourner les protections technologiques. Vous étudierez les principaux types de logiciels malveillants (*malware*), du rançongiciel destructeur au cheval de Troie discret. Nous décrypterons également les ressorts psychologiques du phishing (hameçonnage), du vishing (par téléphone) et les grandes étapes de la *Cyber Kill Chain*, le modèle théorique qui décrit le déroulement d'une attaque de son ciblage initial jusqu'à sa conclusion logique. L'objectif est de vous donner les clés pour identifier instantanément les signaux d'alerte et adopter des réflexes d'hygiène numérique indispensables.
+!!! abstract "Résumé"
+    Les cyberattaques modernes ciblent de plus en plus le maillon réputé le plus vulnérable de la chaîne de sécurité : l'être humain. Ce support de cours détaille les mécanismes de l'ingénierie sociale, l'art de manipuler les personnes pour contourner les protections technologiques. Vous étudierez les principaux types de logiciels malveillants (*malware*), du rançongiciel destructeur au cheval de Troie discret. Nous décrypterons également les ressorts psychologiques du phishing (hameçonnage), du vishing (par téléphone) et les grandes étapes de la *Cyber Kill Chain*, le modèle théorique qui décrit le déroulement d'une attaque de son ciblage initial jusqu'à sa conclusion logique. L'objectif est de vous donner les clés pour identifier instantanément les signaux d'alerte et adopter des réflexes d'hygiène numérique indispensables.
 
 ---
 
@@ -21,6 +21,10 @@ Les cyberattaques modernes ciblent de plus en plus le maillon réputé le plus v
 ## Contenu théorique
 
 ### 1. La typologie des logiciels malveillants (*Malwares*)
+
+!!! info "À retenir"
+    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+
 
 Les programmes malveillants revêtent des formes diverses selon l'objectif poursuivi par les attaquants :
 
@@ -121,7 +125,29 @@ Vous recevez un appel sur votre téléphone professionnel. L'appelant se présen
 
 ---
 
+
+## Exercice Bonus (Temps additionnel)
+**Si vous avez terminé en avance (avant les 1h30 de session) :**
+- **Objectif :** Mise en pratique autonome.
+- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
+- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+
+## Aide-mémoire / Fiche de révision
+
+| Concept Clé | Définition synthétique |
+| :--- | :--- |
+| **Malware (Logiciel malveillant)** | Terme générique désignant tout programme conçu pour nuire à un système informatique (virus, ver, rançongiciel, etc.). |
+| **Ransomware (Rançongiciel)** | Malware qui chiffre les fichiers d'un utilisateur ou d'une entreprise et réclame le paiement d'une rançon en échange de la clé de déchiffrement. |
+| **Phishing (Hameçonnage)** | Technique frauduleuse par e-mail visant à tromper le destinataire pour lui soutirer des informations confidentielles (mots de passe, numéros de carte bancaire) en usurpant l'identité d'une marque de confiance. |
+| **Spear-phishing (Hameçonnage ciblé)** | Variante hautement personnalisée du phishing, ciblant un individu ou une organisation spécifique en exploitant des détails personnels collectés à l'avance. |
+| **Ingénierie sociale (Social Engineering)** | Manipulation psychologique visant à extorquer des informations confidentielles ou à faire accomplir des actions dangereuses à une victime. |
+| **Cyber Kill Chain** | Cadre conceptuel décrivant les 7 étapes chronologiques d'une cyberattaque réussie, développé par Lockheed Martin. |
+
 ## Ressources pour aller plus loin
 * **IBM SkillsBuild** : Cours sur l'ingénierie sociale et la sensibilisation au phishing.
 * **Cybermalveillance.gouv.fr (ou organisme national équivalent)** : Fiches pratiques sur les rançongiciels et l'hameçonnage.
 * **MITRE ATT&CK Framework** : Base de connaissances mondiale sur les tactiques et techniques réelles des attaquants (consulter la matrice simplifiée).
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
