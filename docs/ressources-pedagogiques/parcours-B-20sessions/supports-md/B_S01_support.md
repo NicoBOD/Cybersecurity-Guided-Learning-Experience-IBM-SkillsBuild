@@ -109,6 +109,10 @@ Le secteur de la cybersécurité regroupe des profils variés qui collaborent po
 1. Si un site de e-commerce subit une interruption de service (indisponibilité) d'une heure lors du Black Friday, quel pilier est touché et quelles sont les conséquences financières et de réputation potentielles ?
 2. Pourquoi dit-on souvent que la confidentialité et la disponibilité peuvent parfois s'opposer ? (Indice : Pensez aux mécanismes de contrôle d'accès stricts qui ralentissent l'accès rapide aux données).
 
+**Corrigé / Éléments de réponse :**
+1. La Disponibilité est touchée. Les conséquences incluent une perte financière directe énorme (ventes manquées) et un impact réputationnel important.
+2. La confidentialité impose des contrôles (mots de passe, chiffrements) qui peuvent ralentir ou compliquer l'accès rapide et fluide (disponibilité) aux données.
+
 ---
 
 ## 3. Ressources Complémentaires
@@ -122,9 +126,8 @@ Le secteur de la cybersécurité regroupe des profils variés qui collaborent po
 
 ---
 
-## 4. Exercice Bonus (Si vous avez de l'avance)
+## 4. Exercice Bonus
 
-**Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.

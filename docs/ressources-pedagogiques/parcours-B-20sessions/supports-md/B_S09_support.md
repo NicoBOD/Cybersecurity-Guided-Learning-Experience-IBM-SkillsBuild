@@ -133,6 +133,10 @@ Pour chaque intersection, attribuez l'un des droits suivants :
 1. Si un attaquant parvient à voler le mot de passe d'un utilisateur sur un site web non protégé par MFA, comment le MFA l'empêcherait-il de compromettre le compte ? Quel facteur d'authentification bloquerait l'attaquant ?
 2. Imaginez qu'une entreprise adopte le Single Sign-On (SSO). Si le compte SSO unique d'un utilisateur est piraté, quelles en sont les conséquences ? Quelles mesures de sécurité compensatoires doit-on obligatoirement mettre en place sur ce compte unique ?
 
+**Corrigé / Éléments de réponse :**
+1. Le MFA bloque l'attaquant car il ne possède pas le deuxième facteur (téléphone, clé FIDO), même s'il a le bon mot de passe.
+2. Si le compte SSO est compromis, l'attaquant a accès à toutes les applications de l'utilisateur. Le MFA est donc une obligation absolue pour protéger un compte SSO.
+
 ---
 
 ## 3. Ressources Complémentaires
@@ -146,9 +150,8 @@ Pour chaque intersection, attribuez l'un des droits suivants :
 
 ---
 
-## 4. Exercice Bonus (Si vous avez de l'avance)
+## 4. Exercice Bonus
 
-**Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.

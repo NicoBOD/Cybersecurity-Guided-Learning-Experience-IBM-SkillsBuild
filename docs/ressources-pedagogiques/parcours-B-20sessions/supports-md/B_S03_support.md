@@ -113,6 +113,10 @@ En dehors des logiciels malveillants, les attaquants ciblent les capacités phys
 1. Pourquoi la phase de Commandement et Contrôle (C2) de la Kill Chain nécessite-t-elle généralement une connexion *sortante* (du réseau de l'entreprise vers Internet) plutôt qu'une connexion *entrante* ? (Indice : Pensez au comportement par défaut des pare-feu réseau).
 2. Si vous bloquez l'envoi des e-mails malveillants (étape de Livraison), l'attaquant peut-il tout de même compromettre vos serveurs ? Pourquoi la défense doit-elle être organisée en "couches" ?
 
+**Corrigé / Éléments de réponse :**
+1. Les pare-feu d'entreprise bloquent presque toutes les connexions entrantes non sollicitées, mais autorisent les flux sortants (navigation web). L'attaquant fait donc 'téléphoner' le malware vers l'extérieur pour contourner le filtrage.
+2. L'attaquant peut trouver d'autres vecteurs (clé USB, faille exposée). La défense en profondeur permet qu'une couche pallie la défaillance d'une autre.
+
 ---
 
 ## 3. Ressources Complémentaires
@@ -126,9 +130,8 @@ En dehors des logiciels malveillants, les attaquants ciblent les capacités phys
 
 ---
 
-## 4. Exercice Bonus (Si vous avez de l'avance)
+## 4. Exercice Bonus
 
-**Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.

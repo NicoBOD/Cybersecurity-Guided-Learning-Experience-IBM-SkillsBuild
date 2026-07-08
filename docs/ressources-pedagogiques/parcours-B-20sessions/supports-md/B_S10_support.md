@@ -112,6 +112,10 @@ Considérez les deux phrases suivantes, quasiment identiques à l'exception des 
 1. Pourquoi utilise-t-on le chiffrement symétrique (rapide) pour chiffrer l'ensemble d'un disque dur plutôt que le chiffrement asymétrique ?
 2. Si un pirate réussit à modifier le contenu d'un fichier téléchargé ainsi que la page web qui affiche le hachage SHA-256 de ce fichier, comment l'utilisateur peut-il s'apercevoir de l'attaque ? Quel mécanisme cryptographique (lié aux certificats de sites) protège la page web affichant le hash ?
 
+**Corrigé / Éléments de réponse :**
+1. Le chiffrement symétrique est beaucoup plus rapide et moins gourmand en ressources CPU, ce qui est indispensable pour chiffrer/déchiffrer des volumes de données en temps réel (un disque dur entier).
+2. La page web avec le hash est protégée par un certificat TLS (HTTPS), garantissant son intégrité si le site est bien authentique.
+
 ---
 
 ## 3. Ressources Complémentaires
@@ -125,9 +129,8 @@ Considérez les deux phrases suivantes, quasiment identiques à l'exception des 
 
 ---
 
-## 4. Exercice Bonus (Si vous avez de l'avance)
+## 4. Exercice Bonus
 
-**Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.

@@ -126,9 +126,8 @@ Rédigez un argumentaire de réponse structuré en 3 points pour lever cette obj
 
 ---
 
-## 4. Exercice Bonus (Si vous avez de l'avance)
+## 4. Exercice Bonus
 
-**Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.

@@ -122,6 +122,10 @@ Contact Presse unique : service.presse@ecolog.fr
 1. Pourquoi est-il déconseillé d'annoncer publiquement le montant d'une rançon exigée par des pirates, ou même le fait que l'on négocie avec eux ?
 2. En cas de blocage complet du système de messagerie interne de l'entreprise lors d'une cyberattaque, comment la cellule de crise peut-elle communiquer de manière sécurisée avec ses membres et ses collaborateurs ? (Pensez aux canaux de communication dits "hors bande" ou *out-of-band*).
 
+**Corrigé / Éléments de réponse :**
+1. C'est illégal dans certains cas, et cela incite d'autres attaquants à cibler l'entreprise sachant qu'elle est prête à négocier.
+2. Utiliser des messageries chiffrées externes (ex: Signal ou WhatsApp sur téléphones personnels) ou une infrastructure cloud totalement décorrélée du réseau d'entreprise.
+
 ---
 
 ## 3. Ressources Complémentaires
@@ -135,9 +139,8 @@ Contact Presse unique : service.presse@ecolog.fr
 
 ---
 
-## 4. Exercice Bonus (Si vous avez de l'avance)
+## 4. Exercice Bonus
 
-**Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.

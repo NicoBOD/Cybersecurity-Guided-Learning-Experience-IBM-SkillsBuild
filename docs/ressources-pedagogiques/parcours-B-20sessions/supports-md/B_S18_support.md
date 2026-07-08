@@ -142,6 +142,10 @@ ou des fichiers professionnels impossibles à ouvrir avec une extension ".locked
 1. Pourquoi la phase "Activité Post-incident" (Leçons apprises) est-elle souvent négligée par les entreprises ? Quel est le risque de sauter cette étape une fois la production rétablie ?
 2. Imaginez qu'une entreprise restaure ses serveurs à partir de sauvegardes datant de la veille de l'attaque sans avoir identifié la vulnérabilité d'origine. Quel événement risquez-vous de voir se produire dans les heures qui suivent le recouvrement ?
 
+**Corrigé / Éléments de réponse :**
+1. Sans retour d'expérience, les mêmes failles de processus demeurent et l'entreprise risque de subir la même attaque dans le futur.
+2. Si la faille n'est pas corrigée, l'attaquant l'utilisera immédiatement à nouveau pour re-pirater le système fraîchement restauré.
+
 ---
 
 ## 3. Ressources Complémentaires
@@ -155,9 +159,8 @@ ou des fichiers professionnels impossibles à ouvrir avec une extension ".locked
 
 ---
 
-## 4. Exercice Bonus (Si vous avez de l'avance)
+## 4. Exercice Bonus
 
-**Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.

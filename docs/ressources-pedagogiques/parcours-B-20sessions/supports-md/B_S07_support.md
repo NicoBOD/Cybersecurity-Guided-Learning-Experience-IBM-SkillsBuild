@@ -109,6 +109,10 @@ Rédigez une fiche de préconisations techniques et d'usages en répondant aux 3
 1. Si vous utilisez un site web HTTPS (chiffré) tout en étant connecté au Wi-Fi public gratuit d'un aéroport sans activer de VPN, quelles informations un attaquant espionnant le réseau peut-il tout de même intercepter ? (Indice : Pensez aux requêtes de résolution de nom DNS et à la couche IP).
 2. Pourquoi une Autorité de Certification (CA) est-elle considérée comme la clé de voûte de la confiance sur Internet ? Que se passerait-il si un attaquant parvenait à pirater une CA et à émettre de faux certificats ?
 
+**Corrigé / Éléments de réponse :**
+1. L'attaquant peut voir le domaine visité (DNS) et les adresses IP source/destination, révélant ainsi les sites fréquentés, même si le contenu des pages est illisible.
+2. Une CA piratée permettrait à l'attaquant de créer de faux certificats (ex: pour votre banque) reconnus comme valides par les navigateurs, rendant les attaques de type Man-In-The-Middle transparentes.
+
 ---
 
 ## 3. Ressources Complémentaires
@@ -122,9 +126,8 @@ Rédigez une fiche de préconisations techniques et d'usages en répondant aux 3
 
 ---
 
-## 4. Exercice Bonus (Si vous avez de l'avance)
+## 4. Exercice Bonus
 
-**Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.

@@ -102,6 +102,10 @@ L'entreprise de logistique "EcoLog" souhaite intégrer une section "Sécurité d
 1. Pourquoi est-il risqué qu'un RSSI soit directement rattaché à la Direction Informatique (DSI) plutôt qu'au Secrétariat Général ou à la Direction des Risques ? (Pensez aux conflits d'intérêts entre la production informatique et le contrôle de sécurité).
 2. Si une entreprise est certifiée ISO 27001, cela signifie-t-il qu'elle est techniquement impossible à pirater ? Expliquez la différence entre un système de management de la sécurité et une garantie de sécurité absolue.
 
+**Corrigé / Éléments de réponse :**
+1. La DSI priorise souvent la disponibilité et les délais, tandis que le RSSI priorise la sécurité. Ce conflit d'intérêts rend le RSSI impuissant s'il est sous les ordres du DSI.
+2. L'ISO 27001 atteste que l'entreprise a mis en place de bons processus d'amélioration de la sécurité, mais le risque zéro n'existe pas.
+
 ---
 
 ## 3. Ressources Complémentaires
@@ -115,9 +119,8 @@ L'entreprise de logistique "EcoLog" souhaite intégrer une section "Sécurité d
 
 ---
 
-## 4. Exercice Bonus (Si vous avez de l'avance)
+## 4. Exercice Bonus
 
-**Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.

@@ -128,6 +128,10 @@ Rédigez la ligne de registre pour ce risque en suivant les consignes de cotatio
 1. Quelle est la différence entre le risque *Brut* et le risque *Résiduel* ? Pourquoi un risque résiduel n'est-il presque jamais égal à zéro ?
 2. Une entreprise décide d'acheter une cyber-assurance pour couvrir les pertes financières en cas de rançongiciel. A-t-elle éliminé son risque ? Quelle composante du risque (vraisemblance ou gravité de l'impact) l'assurance permet-elle de transférer ?
 
+**Corrigé / Éléments de réponse :**
+1. Le risque brut est le risque initial sans aucune protection. Le risque résiduel est celui qui reste après les mesures de sécurité. Il n'est jamais nul car la sécurité parfaite est impossible.
+2. L'assurance ne réduit ni la probabilité (vraisemblance) de l'attaque ni la fuite de données ; elle transfère uniquement l'impact financier.
+
 ---
 
 ## 3. Ressources Complémentaires
@@ -141,9 +145,8 @@ Rédigez la ligne de registre pour ce risque en suivant les consignes de cotatio
 
 ---
 
-## 4. Exercice Bonus (Si vous avez de l'avance)
+## 4. Exercice Bonus
 
-**Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.

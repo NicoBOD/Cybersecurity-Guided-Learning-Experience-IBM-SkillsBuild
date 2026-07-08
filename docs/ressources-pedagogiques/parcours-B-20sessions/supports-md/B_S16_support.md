@@ -107,6 +107,10 @@ Vous êtes analyste SOC L1 de garde pour l'entreprise EcoLog. Les 3 alertes suiv
 1. Pourquoi une trop grande quantité d'alertes inoffensives (faux positifs) présente-t-elle un danger pour la sécurité réelle d'une entreprise ? (Recherchez le concept de "fatigue des alertes").
 2. Si un SOC dispose d'outils de détection automatique ultra-performants qui alertent en 30 secondes (MTTD bas), mais que l'équipe met 24 heures à réagir et isoler les serveurs infectés (MTTR élevé), l'entreprise est-elle efficacement protégée contre un ransomware ? Expliquez le rôle des playbooks de sécurité pour réduire le MTTR.
 
+**Corrigé / Éléments de réponse :**
+1. La fatigue des alertes pousse les analystes à ignorer ou traiter superficiellement les notifications, augmentant le risque de rater une vraie attaque.
+2. Non, si le MTTR (temps de réaction) est de 24h, le ransomware aura chiffré le réseau. Les playbooks permettent d'automatiser les actions (ex: isoler le poste en 5 minutes) pour réduire le MTTR.
+
 ---
 
 ## 3. Ressources Complémentaires
@@ -120,9 +124,8 @@ Vous êtes analyste SOC L1 de garde pour l'entreprise EcoLog. Les 3 alertes suiv
 
 ---
 
-## 4. Exercice Bonus (Si vous avez de l'avance)
+## 4. Exercice Bonus
 
-**Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.

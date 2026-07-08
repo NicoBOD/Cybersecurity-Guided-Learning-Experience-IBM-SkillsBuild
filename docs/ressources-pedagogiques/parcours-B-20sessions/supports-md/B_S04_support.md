@@ -114,6 +114,10 @@ La sécurité humaine repose sur des réflexes simples mais rigoureux, que l'on 
 1. Pourquoi le Spear-phishing (hameçonnage ciblé) a-t-il un taux de réussite beaucoup plus élevé que le phishing de masse ? Quelles traces publiques un attaquant recherche-t-il sur LinkedIn pour monter son scénario ?
 2. Face à un appel téléphonique d'un interlocuteur affirmant être de votre banque et vous demandant de "valider des transactions de test" sur votre application mobile pour annuler une fraude en cours (Vishing), quelle est la seule réaction sécurisée ?
 
+**Corrigé / Éléments de réponse :**
+1. Le spear-phishing utilise des éléments personnalisés (collègues, projets, organigramme) trouvés sur LinkedIn, ce qui rend le message très crédible et baisse la garde de la cible.
+2. Raccrocher, chercher le vrai numéro de sa banque et la rappeler soi-même pour vérifier la réalité de l'alerte.
+
 ---
 
 ## 3. Ressources Complémentaires
@@ -127,9 +131,8 @@ La sécurité humaine repose sur des réflexes simples mais rigoureux, que l'on 
 
 ---
 
-## 4. Exercice Bonus (Si vous avez de l'avance)
+## 4. Exercice Bonus
 
-**Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.

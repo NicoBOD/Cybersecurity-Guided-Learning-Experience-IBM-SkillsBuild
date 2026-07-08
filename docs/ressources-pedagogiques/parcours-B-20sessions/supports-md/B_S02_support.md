@@ -109,6 +109,10 @@ La **CTI** (Renseignement sur les cybermenaces) consiste à collecter, analyser 
 1. Quelle différence majeure de défense appliquez-vous face à un cybercriminel opportuniste (qui attaque au hasard une PME vulnérable) vs un groupe APT étatique (qui cible précisément votre entreprise avec des ressources illimitées) ?
 2. Pourquoi la menace interne (un collaborateur malveillant ou négligent) est-elle parfois considérée comme le risque le plus difficile à détecter pour une équipe de sécurité ?
 
+**Corrigé / Éléments de réponse :**
+1. Contre un cybercriminel opportuniste, on bloque les failles connues (hygiène de base). Contre un APT, on met en place une détection avancée (EDR/SOC) et du threat hunting car ils utiliseront des moyens inconnus.
+2. L'interne a déjà des droits d'accès légitimes, donc ses actions se fondent dans le trafic normal. Les outils de sécurité classiques (pare-feu) sont conçus pour bloquer les menaces externes.
+
 ---
 
 ## 3. Ressources Complémentaires
@@ -122,9 +126,8 @@ La **CTI** (Renseignement sur les cybermenaces) consiste à collecter, analyser 
 
 ---
 
-## 4. Exercice Bonus (Si vous avez de l'avance)
+## 4. Exercice Bonus
 
-**Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.

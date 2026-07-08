@@ -102,6 +102,10 @@ Utilisez la grille critériée ci-dessous pour évaluer votre livrable *« Audit
 1. Pourquoi est-il indispensable qu'un auditeur en cybersécurité conserve une posture de neutralité absolue et de bienveillance lorsqu'il présente des vulnérabilités critiques aux équipes techniques d'une entreprise auditée ? (Pensez à la gestion de la susceptibilité professionnelle).
 2. Si vous deviez choisir une seule mesure de sécurité à mettre en œuvre d'urgence dans une entreprise manquant totalement de budget, laquelle choisiriez-vous et pourquoi ?
 
+**Corrigé / Éléments de réponse :**
+1. Critiquer agressivement le travail des équipes pousse ces dernières à se braquer et à refuser de collaborer. La sécurité nécessite l'adhésion de tous.
+2. Les mises à jour de sécurité (patchs) et l'utilisation de mots de passe longs (ou MFA). C'est gratuit et cela élimine 80% des attaques basiques.
+
 ---
 
 ## 3. Ressources Complémentaires
@@ -115,9 +119,8 @@ Utilisez la grille critériée ci-dessous pour évaluer votre livrable *« Audit
 
 ---
 
-## 4. Exercice Bonus (Si vous avez de l'avance)
+## 4. Exercice Bonus
 
-**Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.

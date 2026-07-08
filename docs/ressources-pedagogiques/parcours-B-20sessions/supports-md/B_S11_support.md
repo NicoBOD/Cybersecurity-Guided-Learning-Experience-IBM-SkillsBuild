@@ -110,6 +110,10 @@ Pour les 6 tâches de sécurité listées ci-dessous, écrivez dans la colonne c
 1. Si un pirate vole les accès d'un développeur et modifie le code source d'un site web hébergé en PaaS pour y ajouter une porte dérobée, le fournisseur de cloud est-il responsable de cet incident ? Justifiez votre réponse à l'aide de la matrice de responsabilité.
 2. Pourquoi le cloud public augmente-t-il les risques liés aux erreurs humaines de configuration par rapport à un centre de données classique interne ?
 
+**Corrigé / Éléments de réponse :**
+1. Non. En PaaS, le fournisseur gère l'infrastructure, mais le client reste responsable de la sécurité de son application et de la gestion de ses accès (code source).
+2. Le cloud permet de déployer des ressources en un clic à l'échelle mondiale ; une erreur de configuration (ex: un bucket S3 public) expose immédiatement les données à tout Internet.
+
 ---
 
 ## 3. Ressources Complémentaires
@@ -123,9 +127,8 @@ Pour les 6 tâches de sécurité listées ci-dessous, écrivez dans la colonne c
 
 ---
 
-## 4. Exercice Bonus (Si vous avez de l'avance)
+## 4. Exercice Bonus
 
-**Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.

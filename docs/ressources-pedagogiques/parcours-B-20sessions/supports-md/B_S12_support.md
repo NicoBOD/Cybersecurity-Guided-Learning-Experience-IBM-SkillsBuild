@@ -116,6 +116,10 @@ Proposez une mise en œuvre concrète de la règle 3-2-1 en complétant le sché
 1. Si vous chiffrez un disque dur externe au repos à l'aide de BitLocker, et que vous le laissez branché en permanence sur un ordinateur de bureau infecté par un malware actif, le chiffrement empêchera-t-il le malware de voler ou de modifier vos fichiers ? Justifiez votre réponse.
 2. Pourquoi la classification des données est-elle considérée comme un prérequis indispensable avant de configurer les règles d'un logiciel de prévention des fuites de données (DLP) ?
 
+**Corrigé / Éléments de réponse :**
+1. Non, si l'ordinateur est allumé et la session ouverte, le disque est déchiffré à la volée. Le malware peut donc accéder aux fichiers en clair.
+2. Le DLP a besoin de savoir quelles données sont sensibles (confidentielles, restreintes) pour appliquer les bonnes règles ; sans classification, tout est bloqué ou rien n'est bloqué.
+
 ---
 
 ## 3. Ressources Complémentaires
@@ -129,9 +133,8 @@ Proposez une mise en œuvre concrète de la règle 3-2-1 en complétant le sché
 
 ---
 
-## 4. Exercice Bonus (Si vous avez de l'avance)
+## 4. Exercice Bonus
 
-**Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.

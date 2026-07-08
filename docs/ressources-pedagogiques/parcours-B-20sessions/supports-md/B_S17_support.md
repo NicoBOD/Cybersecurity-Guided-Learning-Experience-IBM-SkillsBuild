@@ -119,6 +119,10 @@ Ligne 4 : 203.0.113.88 - - [29/Jun/2026:10:01:25] "GET /admin/../../etc/passwd H
 1. Si un cybercriminel réussit à compromettre le compte administrateur d'un serveur, quelle est généralement l'une de ses premières actions pour dissimuler ses traces ? Comment un SIEM moderne empêche-t-il cette manœuvre ? (Pensez au stockage déporté des logs).
 2. Pourquoi la normalisation (parsing) des logs est-elle l'étape la plus chronophage lors de l'intégration d'une nouvelle application ou d'un nouvel équipement réseau dans un SIEM ?
 
+**Corrigé / Éléments de réponse :**
+1. L'attaquant essaie de supprimer les logs locaux pour masquer ses actions. Le SIEM collecte les logs en temps réel sur un serveur distant sécurisé, préservant ainsi la trace.
+2. Chaque équipement (pare-feu, Windows, Linux) génère des logs dans un format totalement différent. Il faut créer des règles pour traduire chaque champ dans un format commun.
+
 ---
 
 ## 3. Ressources Complémentaires
@@ -132,9 +136,8 @@ Ligne 4 : 203.0.113.88 - - [29/Jun/2026:10:01:25] "GET /admin/../../etc/passwd H
 
 ---
 
-## 4. Exercice Bonus (Si vous avez de l'avance)
+## 4. Exercice Bonus
 
-**Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.

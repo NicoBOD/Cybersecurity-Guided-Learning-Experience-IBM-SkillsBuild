@@ -120,6 +120,10 @@ Rédigez la table de règles du pare-feu central (contenant 4 règles clés + la
 1. Pourquoi est-il déconseillé de configurer une règle permettant à un serveur web situé en DMZ d'initier une connexion vers la base de données de production située dans le LAN interne ? Comment contourner ce besoin de manière sécurisée ?
 2. Un pare-feu de nouvelle génération (NGFW) détecte un flux HTTPS sur le port 443 contenant un malware connu. Pourquoi un pare-feu traditionnel de type "stateful" n'aurait pas pu bloquer cette menace ?
 
+**Corrigé / Éléments de réponse :**
+1. La DMZ est plus exposée ; si le serveur web est compromis, il pourrait attaquer le LAN. Le LAN (BDD) doit initier la connexion vers la DMZ, ou bien on met un proxy inverse ultra-filtré.
+2. Le pare-feu stateful ne regarde que les ports et adresses IP (ici 443 est autorisé). Le NGFW inspecte le contenu (DPI) pour y détecter le malware, même sur un port autorisé.
+
 ---
 
 ## 3. Ressources Complémentaires
@@ -133,9 +137,8 @@ Rédigez la table de règles du pare-feu central (contenant 4 règles clés + la
 
 ---
 
-## 4. Exercice Bonus (Si vous avez de l'avance)
+## 4. Exercice Bonus
 
-**Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.

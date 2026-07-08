@@ -99,6 +99,10 @@ L'entreprise EcoLog lance une plateforme e-commerce. Le service marketing a éba
 1. Si une entreprise sous-traite le stockage de ses fichiers clients à un hébergeur cloud américain, qui est responsable de la conformité des données personnelles au titre du RGPD : l'entreprise (responsable de traitement) ou l'hébergeur cloud (sous-traitant) ?
 2. Quelle est la différence fondamentale entre la "sécurité informatique" classique (gérée par le RSSI) et la "conformité RGPD" (supervisée par le DPO) ? Comment ces deux fonctions doivent-elles collaborer lors d'une fuite de données ?
 
+**Corrigé / Éléments de réponse :**
+1. Les deux sont responsables. L'entreprise doit s'assurer que le sous-traitant est conforme, et le sous-traitant doit garantir la sécurité des données hébergées.
+2. Le RSSI protège le patrimoine de l'entreprise. Le DPO s'assure du respect des droits des personnes. En cas de fuite, ils coordonnent l'enquête technique (RSSI) et les notifications légales (DPO).
+
 ---
 
 ## 3. Ressources Complémentaires
@@ -112,9 +116,8 @@ L'entreprise EcoLog lance une plateforme e-commerce. Le service marketing a éba
 
 ---
 
-## 4. Exercice Bonus (Si vous avez de l'avance)
+## 4. Exercice Bonus
 
-**Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.

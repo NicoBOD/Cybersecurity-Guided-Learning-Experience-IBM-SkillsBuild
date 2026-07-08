@@ -108,6 +108,10 @@ L'entreprise "EcoLog" déploie 50 nouveaux ordinateurs portables Windows 11 pour
 1. Si une entreprise déploie des EDR de dernière génération sur tous ses postes, peut-elle se dispenser d'appliquer les mises à jour de sécurité de son système d'exploitation ? Pourquoi la défense en profondeur reste-t-elle indispensable ?
 2. Quelle est la différence fondamentale entre le rôle d'un administrateur système qui fait du "durcissement" et un analyste SOC qui surveille les alertes EDR ? Comment ces deux activités se complètent-elles ?
 
+**Corrigé / Éléments de réponse :**
+1. L'EDR détecte les comportements malveillants, mais si la faille n'est pas patchée, la vulnérabilité reste ouverte et l'attaquant pourrait désactiver l'EDR ou trouver un moyen de contournement.
+2. L'administrateur prévient (réduction de la surface d'attaque), le SOC détecte et réagit aux menaces résiduelles.
+
 ---
 
 ## 3. Ressources Complémentaires
@@ -121,9 +125,8 @@ L'entreprise "EcoLog" déploie 50 nouveaux ordinateurs portables Windows 11 pour
 
 ---
 
-## 4. Exercice Bonus (Si vous avez de l'avance)
+## 4. Exercice Bonus
 
-**Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.

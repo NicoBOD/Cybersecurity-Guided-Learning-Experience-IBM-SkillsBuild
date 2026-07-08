@@ -144,6 +144,10 @@ Analysez les deux extraits de paquets ci-dessous et répondez aux questions :
 1. Pourquoi est-il dangereux de laisser le protocole RDP (port 3389) directement ouvert et accessible depuis Internet sur un serveur d'entreprise ? Quelle solution réseau intermédiaire permettrait de sécuriser cet accès ?
 2. Si un pare-feu bloque le trafic sur le port 80 (HTTP) mais laisse passer le trafic sur le port 53 (DNS), comment un attaquant peut-il utiliser cette configuration pour exfiltrer des fichiers ?
 
+**Corrigé / Éléments de réponse :**
+1. Le RDP est souvent ciblé par des ransomwares ou du bruteforce. Il faut utiliser un VPN ou une passerelle sécurisée (bastion) avec MFA pour y accéder.
+2. En encapsulant les données volées à l'intérieur de requêtes DNS légitimes (tunneling DNS), le pare-feu verra du trafic DNS normal et le laissera passer.
+
 ---
 
 ## 3. Ressources Complémentaires
@@ -157,9 +161,8 @@ Analysez les deux extraits de paquets ci-dessous et répondez aux questions :
 
 ---
 
-## 4. Exercice Bonus (Si vous avez de l'avance)
+## 4. Exercice Bonus
 
-**Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.
