@@ -607,7 +607,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 
 ### Question 10 : Compréhension du terme Zero Trust
 Quel concept technique est défini par l'affirmation suivante ?
-« Modèle de sécurité basé sur le principe de ne faire confiance à aucun utilisateur ou appareil par défaut. »
+« Modèle de sécurité basé sur le principe de ne faire confiance à aucun utilisateur ou appareil par défaut, nécessitant une vérification continue de l'identité et de la posture de sécurité (« Never trust, always verify »). »
 
 * A. Zero Trust
 * B. Vulnérabilité Zero-Day
@@ -634,7 +634,7 @@ Dans quel cas privilégie-t-on le déploiement d'un VPN IPsec ?
 * B. Pour interconnecter de manière permanente et chiffrée deux réseaux locaux de sites géographiques distincts (site-à-site).
 * C. Pour scanner les virus présents sur une clé USB distante.
 * **Réponse correcte : B**
-* *Explication* : IPsec fonctionne au niveau de la couche réseau et convient parfaitement pour créer des tunnels permanents de routeur à routeur (site-à-site). Le VPN SSL (ou portails d'accès) est souvent préféré pour des connexions utilisateurs ponctuelles depuis des postes tiers via un navigateur.
+* *Explication* : IPsec fonctionne au niveau de la couche réseau (Couche 3 du modèle OSI) et convient parfaitement pour créer des tunnels permanents de routeur à routeur (site-à-site). Le VPN SSL (ou portails d'accès) est souvent préféré pour des connexions utilisateurs ponctuelles depuis des postes tiers via un navigateur.
 
 
 ### Question 3 : Compréhension du terme Handshake
@@ -1450,7 +1450,7 @@ Sous quel délai légal maximal une entreprise doit-elle notifier la CNIL après
 * B. 72 heures.
 * C. 30 jours.
 * **Réponse correcte : B**
-* *Explication* : Le RGPD impose une obligation de notification à l'autorité de contrôle (la CNIL en France) sans retard injustifié et, si possible, dans les **72 heures** au plus tard après avoir pris connaissance de la violation.
+* *Explication* : Le RGPD impose une obligation de notification à l'autorité de contrôle (la CNIL en France) sans retard injustifié et, si possible, dans les **72 heures** au plus tard après en avoir pris connaissance (conformément à l'Article 33 du RGPD) de la violation.
 
 ### Question 2 : L'obligation d'information des personnes concernées
 Dans quel cas une violation de données personnelles impose-t-elle de notifier individuellement les clients affectés, en plus de la CNIL ?

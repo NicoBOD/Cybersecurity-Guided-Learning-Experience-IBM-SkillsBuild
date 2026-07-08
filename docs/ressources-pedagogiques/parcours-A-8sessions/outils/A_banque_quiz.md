@@ -402,7 +402,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 
 ### Question 10 : Compréhension du terme Hachage (Hash)
 Quel concept technique est défini par l'affirmation suivante ?
-« Fonction mathématique à sens unique permettant de garantir l'intégrité d'un fichier ou d'un mot de passe. »
+« Fonction mathématique à sens unique permettant de garantir l'intégrité d'un fichier ou le stockage sécurisé d'un mot de passe (à ne pas confondre avec le chiffrement qui est réversible). »
 
 * A. Hachage (Hash)
 * B. Firewall
