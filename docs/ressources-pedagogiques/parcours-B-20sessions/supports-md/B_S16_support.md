@@ -173,24 +173,14 @@ Pour équiper un SOC (Security Operations Center) moderne et coordonner la répo
 * [CERT-FR - Signalement d'incidents](https://www.cert.ssi.gouv.fr/)
 * [ANSSI - Externalisation SOC](https://cyber.gouv.fr)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Sondage SOAR - Livestorm)
 
-- **Objectif :** Qualification opérationnelle d'alertes SOC et calcul de KPIs.
-- **Consignes :**
-    1. Calculez le MTTD (Temps Moyen de Détection) et le MTTR (Temps Moyen de Réponse) pour les 3 incidents suivants :
-       - Incident A : intrusion à 10h00, détectée à 10h10, neutralisée à 10h40.
-       - Incident B : intrusion à 14h00, détectée à 14h30, neutralisée à 15h30.
-       - Incident C : intrusion à 22h00, détectée à 22h05, neutralisée à 23h05.
-    2. Commentez les résultats obtenus et proposez une action pour réduire le MTTR d'une équipe.
-- **Correction pour le mentor :** Calcul des temps :
-  - Incident A : Détection = 10 min, Réponse = 30 min.
-  - Incident B : Détection = 30 min, Réponse = 60 min.
-  - Incident C : Détection = 5 min, Réponse = 60 min.
-  - **MTTD Moyen** = (10 + 30 + 5) / 3 = 15 minutes.
-  - **MTTR Moyen** = (30 + 60 + 60) / 3 = 50 minutes.
-  Pour réduire le MTTR, les apprenants doivent proposer l'automatisation d'actions de confinement via des *playbooks* ou un outil SOAR (ex. isolation automatique d'une machine suspecte en quelques secondes).
-
----
+*   **Objectif :** Rôle de l'automatisation en réponse à incident.
+*   **Sondage Livestorm :** Un incident de sécurité survient à 3 heures du matin. L'analyste SOC est absent. Quelle solution permet de confiner automatiquement l'attaque ?
+    *   A) Le pare-feu local de la machine.
+    *   B) Un playbook d'isolation automatique configuré dans le SOAR et l'EDR *(Bonne réponse)*.
+    *   C) Un script de redémarrage des serveurs.
+*   **Guide d'animation (pour le mentor) :** Soulignez l'importance du SOAR pour assurer une protection 24h/24 et 7j/7 sans dépendre de la réactivité humaine la nuit.
 
 ## 5. Aide-mémoire / Fiche de révision
 

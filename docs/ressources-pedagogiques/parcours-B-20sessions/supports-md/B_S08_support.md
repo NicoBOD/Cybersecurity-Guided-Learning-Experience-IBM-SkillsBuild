@@ -160,15 +160,14 @@ Le durcissement des systèmes d'exploitation et la protection des endpoints néc
 * [ANSSI - Déploiement client Windows](https://cyber.gouv.fr)
 * [Cybermalveillance - Mises à jour](https://www.cybermalveillance.gouv.fr/tous-nos-contenus/bonnes-pratiques/mises-a-jour)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Sondage Durcissement - Livestorm)
 
-- **Objectif :** Conception d'une checklist de durcissement (OS Hardening).
-- **Consignes :**
-    1. Vous devez sécuriser un serveur Windows ou Linux nouvellement installé en entreprise. Rédigez une checklist de 5 actions concrètes de durcissement technique à appliquer avant sa mise en production.
-    2. Pour chaque action, expliquez brièvement le risque de sécurité que vous éliminez.
-- **Correction pour le mentor :** Actions attendues dans la checklist : 1. Modifier les identifiants d'administration par défaut (bloque les attaques par force brute simples). 2. Désactiver les services et protocoles inutiles comme Telnet ou SMBv1 (réduit la surface d'exposition aux failles logicielles). 3. Configurer les mises à jour automatiques de sécurité (corrige les failles connues). 4. Limiter les connexions SSH/administrateur à des adresses IP spécifiques (réduit les tentatives externes). 5. Activer le pare-feu local du système.
-
----
+*   **Objectif :** Choix des stratégies de restriction des privilèges.
+*   **Sondage Livestorm :** Pour empêcher un malware de s'installer ou de modifier des fichiers système critiques sur les postes utilisateurs, quelle est la règle d'hygiène la plus simple à appliquer ?
+    *   A) Installer deux antivirus différents.
+    *   B) Retirer les privilèges d'administrateur local aux utilisateurs standards *(Bonne réponse)*.
+    *   C) Modifier les mots de passe tous les 5 jours.
+*   **Guide d'animation (pour le mentor) :** Expliquez que sans privilèges d'administrateur, la majorité des malwares ne peuvent pas modifier le système ni se propager en profondeur.
 
 ## 5. Aide-mémoire / Fiche de révision
 

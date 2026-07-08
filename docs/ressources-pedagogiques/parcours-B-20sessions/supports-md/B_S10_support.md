@@ -161,16 +161,14 @@ Pour déployer des PKI d'entreprise, gérer des clés cryptographiques et stocke
 * [ANSSI - Cryptographie](https://cyber.gouv.fr/publications/mecanismes-cryptographiques)
 * [CNIL - Comprendre le chiffrement](https://www.cnil.fr)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Sondage PKI - Livestorm)
 
-- **Objectif :** Validation pratique de l'intégrité par hachage.
-- **Consignes :**
-    1. Vous devez mettre à jour un logiciel critique sur vos serveurs internes. Vous téléchargez le fichier compressé `update.zip` depuis Internet.
-    2. L'éditeur du logiciel indique sur son site officiel l'empreinte SHA-256 suivante : `d3f1a9a4b8...`
-    3. Expliquez la procédure technique pas à pas pour valider que le fichier n'a pas été modifié ou corrompu pendant le transfert avant de l'exécuter.
-- **Correction pour le mentor :** L'apprenant doit expliquer qu'il faut générer localement le hash du fichier téléchargé à l'aide d'une commande système (ex. `sha256sum update.zip` sous Linux ou `Get-FileHash` sous PowerShell). Ensuite, il faut comparer le résultat avec le hash fourni par l'éditeur. Si les deux chaînes de caractères correspondent à l'identique, l'intégrité du fichier est garantie. Si elles diffèrent, le fichier doit être rejeté car il a été altéré ou piraté.
-
----
+*   **Objectif :** Rôle des autorités de certification.
+*   **Sondage Livestorm :** Lorsque votre navigateur affiche une alerte "Connexion non sécurisée" sur un site web HTTPS, quelle en est la cause la plus courante ?
+    *   A) Le site web a été piraté.
+    *   B) Le certificat SSL/TLS du site est expiré ou a été signé par une autorité non reconnue par le système *(Bonne réponse)*.
+    *   C) Votre ordinateur manque de mémoire vive.
+*   **Guide d'animation (pour le mentor) :** Expliquez le rôle de la chaîne de confiance (PKI) : un certificat chiffré doit être signé par une Autorité de Certification (CA) de confiance pour valider l'identité du site.
 
 ## 5. Aide-mémoire / Fiche de révision
 

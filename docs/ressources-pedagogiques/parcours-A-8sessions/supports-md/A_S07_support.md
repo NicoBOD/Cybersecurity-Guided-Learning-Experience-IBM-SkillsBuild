@@ -112,28 +112,18 @@ Lors d'un incident sur un poste de travail, voici l'ordre dans lequel les élém
 
 ---
 
-### Exercice d'application
-**Titre** : Gestion d'une réaction sur incident de rançongiciel
+### Exercice d'application (Scénario de Confinement d'Incident - Livestorm)
 
-### Énoncé
-À 9h00 du matin, un employé de la comptabilité d'une entreprise s'aperçoit que les noms de ses fichiers sur son poste de travail sont renommés avec l'extension `.locked` et qu'un fichier texte s'ouvre automatiquement affichant une demande de rançon. Le poste est connecté au réseau local de l'entreprise par un câble Ethernet.
+**Consignes pour le mentor :** Présentez la situation d'urgence et faites voter le public.
 
-1. Quelle étape du cycle de réponse aux incidents devez-vous engager immédiatement ?
-2. Parmi les deux actions suivantes, laquelle choisissez-vous en expliquant votre décision au regard des contraintes du forensics et du confinement :
-   * **Action A** : Débrancher immédiatement le câble réseau Ethernet du poste de travail pour l'isoler, mais laisser la machine allumée.
-   * **Action B** : Éteindre immédiatement l'ordinateur en restant appuyé sur le bouton d'alimentation physique afin de stopper le chiffrement des fichiers.
-3. Quelle sera la phase d'éradication pour ce poste ?
+*   **Sondage :** Un poste de travail dans l'entrepôt montre des signes d'infection active par un cheval de Troie (les fichiers se suppriment, trafic réseau anormal). Quelle est la première action de confinement à réaliser ?
+    *   A) Éteindre brutalement la machine en maintenant le bouton d'alimentation (au risque de perdre les preuves en mémoire vive).
+    *   B) Débrancher le câble réseau RJ45 ou désactiver le Wi-Fi de la machine pour l'isoler logiquement *(Bonne réponse)*.
+    *   C) Lancer un scan antivirus complet (qui prendra 3 heures).
+    *   D) Envoyer un e-mail à tous les collègues pour leur demander s'ils ont le même problème.
 
-
-
-### Corrigé de l'exercice
-1. **Étape à engager : Le Confinement**. Il faut empêcher le rançongiciel de se propager via le réseau local aux autres postes de travail et surtout aux serveurs de sauvegarde ou serveurs de fichiers partagés de l'entreprise.
-2. **Décision : Action A (Débrancher le câble réseau en laissant la machine allumée)**.
-   * *Pourquoi ?* Débrancher le câble réseau assure un confinement réseau immédiat et total (le malware ne peut plus se propager). Laisser la machine allumée permet aux enquêteurs de collecter le contenu de la mémoire vive (RAM). C'est dans la RAM que l'on pourra potentiellement récupérer la clé de chiffrement utilisée par le rançongiciel ou identifier le processus malveillant en cours d'exécution. L'action B détruirait définitivement ces preuves volatiles et pourrait corrompre le système.
-3. **Phase d'éradication** : Elle consistera à formater complètement le disque dur du poste infecté, à réinstaller le système d'exploitation à partir d'une image d'installation saine et certifiée par l'entreprise, à déployer les derniers correctifs de sécurité et à changer tous les mots de passe associés à l'utilisateur du poste.
-
----
-
+**Éléments de débriefing (pour le mentor) :**
+- Débrancher le réseau coupe immédiatement la propagation latérale et le contrôle à distance par l'attaquant sans détruire les preuves volatiles en mémoire vive (RAM).
 
 ### Cas d'usages et exemples concrets
 
@@ -174,16 +164,14 @@ Lors d'un incident de sécurité ou pour mener une investigation numérique (for
 * [ANSSI - Exercice de crise cyber](https://cyber.gouv.fr/publications/organiser-un-exercice-de-gestion-de-crise-cyber)
 * [Cybermalveillance - Que faire en cas de cyberattaque](https://www.cybermalveillance.gouv.fr)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Sondage Forensics - Livestorm)
 
-- **Objectif :** Simulation de gestion d'incident de sécurité (Ransomware).
-- **Consignes :**
-    1. Vous êtes responsable informatique. Un utilisateur vous appelle en disant que tous ses fichiers ont l'extension `.locked` et qu'une note réclame 2 bitcoins.
-    2. Rédigez la liste des 3 premières actions réflexes que vous effectuez dans les 10 premières minutes pour limiter l'impact.
-    3. Rédigez le message d'alerte court et rassurant à envoyer à l'ensemble des employés de l'entreprise.
-- **Correction pour le mentor :** Actions de base : 1. Ordonner à l'utilisateur de débrancher immédiatement le câble réseau et d'éteindre sa machine (confinement). 2. Vérifier sur la console EDR/antivirus si d'autres alertes similaires sont en cours. 3. Bloquer temporairement les accès VPN et partages de fichiers réseau. Message aux employés : "Bonjour à tous, nous rencontrons actuellement un incident technique sur notre réseau. Par mesure de sécurité, merci de ne pas ouvrir vos partages réseau et de signaler immédiatement au support tout comportement anormal sur vos postes. Nos équipes sont mobilisées." 
-
----
+*   **Objectif :** Compréhension de la préservation des preuves.
+*   **Sondage Livestorm :** Un employé a cliqué sur un lien suspect et a entré ses identifiants. Vous suspectez une intrusion. Pourquoi ne devez-vous pas réinstaller immédiatement le système ?
+    *   A) Parce que cela coûte trop cher.
+    *   B) Pour préserver les traces de l'attaque afin d'analyser comment le pirate est entré et ce qu'il a volé *(Bonne réponse)*.
+    *   C) Parce que la réinstallation va propager le virus.
+*   **Guide d'animation (pour le mentor) :** Expliquez le but du forensics : comprendre l'origine et l'étendue de l'attaque pour éviter qu'elle ne se reproduise le lendemain de la réinstallation.
 
 ## 5. Aide-mémoire / Fiche de révision
 

@@ -161,16 +161,14 @@ Pour surveiller la configuration de sécurité dans le Cloud (CSPM) et identifie
 * [ANSSI - Externalisation vers le Cloud](https://cyber.gouv.fr)
 * [CNIL - Cloud Computing](https://www.cnil.fr/fr/cloud-computing)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Sondage Cloud Config - Livestorm)
 
-- **Objectif :** Analyse d'une faille de configuration Cloud.
-- **Consignes :**
-    1. Étudiez le cas réel ou fictif d'une fuite de données causée par un "Bucket S3" (espace de stockage en ligne Amazon) laissé ouvert publiquement sur Internet.
-    2. Identifiez qui est responsable de cette faille selon le modèle de responsabilité partagée (AWS ou le client ?). Justifiez votre réponse.
-    3. Proposez deux mesures d'audit automatique à mettre en place pour détecter ces faiblesses avant qu'un attaquant ne les trouve.
-- **Correction pour le mentor :** Le client est responsable à 100% de la mauvaise configuration d'accès aux données dans le cloud, tandis qu'Amazon fournit l'infrastructure physique sécurisée. Pour prévenir ce risque, les apprenants doivent proposer : l'activation d'outils d'audit de configuration (ex. AWS Security Hub ou des scanners comme Prowler) et la mise en place de politiques de restriction d'accès globales interdisant par défaut le partage public des conteneurs de stockage.
-
----
+*   **Objectif :** Évaluation des fuites de données dans le cloud.
+*   **Sondage Livestorm :** Un seau de stockage cloud (ex. AWS S3) contenant des fiches de paie est configuré par erreur en accès "Public" sans authentification. De quel type de faille s'agit-il ?
+    *   A) Une attaque par force brute.
+    *   B) Une mauvaise configuration de sécurité cloud (Misconfiguration) *(Bonne réponse)*.
+    *   C) Une faille logicielle du fournisseur cloud.
+*   **Guide d'animation (pour le mentor) :** Rappelez que la majorité des fuites de données dans le cloud résultent de mauvaises configurations de droits d'accès par les clients, et non de failles internes d'AWS ou Microsoft.
 
 ## 5. Aide-mémoire / Fiche de révision
 

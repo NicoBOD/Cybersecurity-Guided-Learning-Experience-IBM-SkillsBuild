@@ -133,29 +133,24 @@ L'équipe Netflix.
 
 ---
 
-### Exercice d'application
-**Titre** : Simulation de réaction face à un appel suspect (Vishing)
+### Exercice d'application (Scénario de Crise Interactif - Livestorm)
 
-### Énoncé
-Vous recevez un appel sur votre téléphone professionnel. L'appelant se présente comme "Marc de la direction informatique". Il vous explique que votre poste de travail émet des alertes réseau anormales et qu'il doit réinitialiser vos accès immédiatement. Il vous demande de lui lire le code à 6 chiffres que vous venez de recevoir par SMS sur votre mobile pour "valider la connexion de sécurité".
+**Consignes pour le mentor :** Présentez la situation et lancez les votes.
 
-1. Identifiez la technique d'attaque utilisée.
-2. Identifiez les leviers psychologiques exploités par l'attaquant.
-3. Rédigez la réponse précise que vous feriez à l'interlocuteur et l'action immédiate que vous entreprendriez.
+*   **Scénario :** Un employé reçoit un e-mail pressant "de la direction" lui demandant d'acheter des cartes cadeaux d'urgence. De quel type d'attaque s'agit-il ?
+    *   A) Ransomware
+    *   B) Hameçonnage ciblé / Virement au président (Spear-phishing / BEC) *(Bonne réponse)*
+    *   C) Attaque par déni de service (DDoS)
+    *   D) Logiciel espion (Spyware)
+*   **Sondage :** Quelle est l'action la plus sûre que l'employé doit faire à ce stade ?
+    *   A) Répondre à l'e-mail pour demander des clarifications.
+    *   B) Acheter les cartes et envoyer les codes pour ne pas mécontenter la direction.
+    *   C) Contacter la direction par un canal alternatif (téléphone, en personne) pour vérifier l'authenticité *(Bonne réponse)*.
+    *   D) Transférer l'e-mail à tous ses collègues pour les prévenir.
 
-
-
-### Corrigé de l'exercice
-1. **Technique utilisée** : Vishing (hameçonnage vocal / par téléphone) combiné à une tentative de contournement de la double authentification (demande du code SMS OTP).
-2. **Leviers psychologiques** : L'autorité ("direction informatique") et l'urgence/peur ("votre poste émet des alertes réseau").
-3. **Réaction attendue** :
-   * Refuser catégoriquement de donner le code SMS (ne jamais partager un code MFA ou mot de passe).
-   * Raccrocher poliment.
-   * Contacter le support informatique interne en utilisant le numéro officiel répertorié dans l'annuaire d'entreprise (ne pas rappeler le numéro de l'appelant).
-   * Signaler l'incident au responsable sécurité de l'entreprise.
-
----
-
+**Éléments de débriefing (pour le mentor) :**
+- Le canal de messagerie d'origine ne doit jamais être utilisé pour confirmer une demande suspecte (l'attaquant peut avoir compromis le compte).
+- L'utilisation d'un canal alternatif (téléphone) est la règle d'or de la double validation.
 
 ### Cas d'usages et exemples concrets
 
@@ -194,16 +189,14 @@ Pour lutter contre l'ingénierie sociale et sécuriser la messagerie d'entrepris
 * [Cybermalveillance - Fiche Phishing](https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-reflexes/hameconnage-phishing)
 * [CNIL - Phishing](https://www.cnil.fr/fr/spam-phishing-arnaques-signaler-pour-agir)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Sondage de Vigilance - Livestorm)
 
-- **Objectif :** Conception d'une campagne de sensibilisation au phishing.
-- **Consignes :**
-    1. Rédigez le texte d'un faux e-mail de phishing à visée pédagogique (simulation interne) ciblant l'équipe des Ressources Humaines.
-    2. Identifiez au moins 3 indicateurs de suspicion (indices) que les employés doivent repérer pour détecter l'e-mail.
-    3. Déterminez les 2 métriques clés que vous suivrez pendant cette campagne pour évaluer le niveau de vigilance.
-- **Correction pour le mentor :** Le mentor validera que l'e-mail de phishing créé utilise des leviers psychologiques pertinents (ex. changement de grille de salaire urgent). Les indices à repérer doivent inclure : adresse d'expédition suspecte, lien pointant vers un domaine étranger, fautes de syntaxe subtiles. Les métriques recommandées sont le *taux de clic* (à minimiser) et le *taux de signalement au SOC/IT* (à maximiser).
-
----
+*   **Objectif :** Détection de signaux faibles d'hameçonnage.
+*   **Sondage Livestorm :** Vous recevez un e-mail d'un fournisseur habituel contenant une facture. Quelle anomalie doit vous alerter en premier ?
+    *   A) Le montant de la facture est élevé.
+    *   B) L'adresse de l'expéditeur a un domaine légèrement modifié (ex. `support@st0rmshield.fr` au lieu de `stormshield.fr`) *(Bonne réponse)*.
+    *   C) L'e-mail a été envoyé à 14h.
+*   **Guide d'animation (pour le mentor) :** Montrez l'importance du typosquattage (changement de caractères subtils comme un zéro au lieu d'un 'o') comme vecteur classique pour tromper les utilisateurs.
 
 ## 5. Aide-mémoire / Fiche de révision
 

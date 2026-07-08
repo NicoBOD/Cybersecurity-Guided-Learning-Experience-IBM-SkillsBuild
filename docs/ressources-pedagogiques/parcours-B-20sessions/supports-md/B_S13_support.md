@@ -152,16 +152,14 @@ Le pilotage de la gouvernance de sécurité et l'établissement d'une PSSI s'app
 * [ANSSI - EBIOS RM](https://cyber.gouv.fr/la-methode-ebios-risk-manager)
 * [CNIL - PIA / Analyse d'impact](https://www.cnil.fr)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Sondage Conformité - Livestorm)
 
-- **Objectif :** Rédaction d'une clause de PSSI (BYOD).
-- **Consignes :**
-    1. Dans le cadre de la rédaction de la PSSI de votre entreprise, vous devez rédiger la clause encadrant l'usage des smartphones personnels des employés pour accéder aux e-mails professionnels (règle BYOD).
-    2. Rédigez 3 règles d'usage simples mais contraignantes pour le collaborateur (ex. verrouillage d'écran obligatoire).
-    3. Indiquez la mesure technique que le département informatique doit déployer sur le téléphone pour séparer les données privées des données pro.
-- **Correction pour le mentor :** Les règles d'usage rédigées doivent imposer : 1. Un mot de passe ou schéma de déverrouillage fort obligatoire sur le smartphone. 2. L'interdiction de prêter le téléphone à des tiers (famille, amis) pour un usage professionnel. 3. L'obligation de signaler immédiatement la perte ou le vol du mobile. La mesure technique attendue est le déploiement d'un conteneur sécurisé ou d'une solution MDM/MAM (Mobile Device Management) pour isoler les applications professionnelles et permettre leur effacement à distance sans altérer les photos personnelles.
-
----
+*   **Objectif :** Approche de la conformité d'audit.
+*   **Sondage Livestorm :** Un auditeur de sécurité vous demande de prouver que vos collaborateurs ont pris connaissance de la charte informatique. Quelle preuve présentez-vous ?
+    *   A) Une affirmation orale du technicien informatique.
+    *   B) La charte informatique signée individuellement par chaque collaborateur ou validée électroniquement avec preuve de réception *(Bonne réponse)*.
+    *   C) Le code source de votre outil d'IAM.
+*   **Guide d'animation (pour le mentor) :** Soulignez que la gouvernance et l'audit exigent des preuves documentaires tangibles (Accountability) pour valider la conformité aux normes comme l'ISO 27001.
 
 ## 5. Aide-mémoire / Fiche de révision
 

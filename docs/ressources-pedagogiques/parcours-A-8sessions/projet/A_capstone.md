@@ -55,3 +55,39 @@ Un jeu de diapositives structuré pour un pitch de **10 minutes strictes** :
 * **Le Pitch** : Chaque équipe dispose de **10 minutes** de présentation orale. Tous les membres du groupe doivent prendre la parole de manière équilibrée.
 * **Questions-Réponses** : 10 minutes de questions posées par le mentor (qui joue le rôle de Mme Legrand) et par les autres apprenants de la classe.
 * **Évaluation par les pairs** : Chaque apprenant devra remplir une grille d'évaluation constructive pour deux autres groupes.
+
+---
+
+## 5. Alternative d'animation interactive (Spécial Webinaire / Livestorm)
+
+Si le cours est animé sous forme de webinaire interactif devant un public nombreux ou passif, la soutenance classique en groupe est remplacée par un **atelier d'audit interactif collectif** mené par le mentor.
+
+### Fonctionnement de l'atelier :
+Le mentor prend le rôle d'auditeur principal de MedDistri. Il partage son écran et déroule le diagnostic technique sous forme de scénario décisionnel. Pour chaque problème identifié, le mentor lance un sondage Livestorm auprès du public.
+
+### Liste des Sondages à soumettre au public :
+
+1. **Sondage 1 : L'accès distant vulnérable**
+   * *Question :* Les ports SSH (22) et RDP (3389) de MedDistri sont ouverts à tous vents sur Internet. Quelle est la première mesure d'urgence à appliquer ?
+     * A) Installer un antivirus gratuit sur le serveur.
+     * B) Fermer les ports sur Internet et mettre en œuvre un accès VPN protégé par MFA *(Bonne réponse)*.
+     * C) Modifier le mot de passe administrateur par un mot de passe de 20 caractères.
+     * D) Ne rien changer pour ne pas perturber les commerciaux.
+2. **Sondage 2 : La politique de sauvegarde**
+   * *Question :* Le disque dur externe de sauvegarde est branché en permanence sur le serveur local de MedDistri. Quel est le risque majeur en cas d'attaque de type ransomware ?
+     * A) Le disque dur externe peut être volé physiquement.
+     * B) Les fichiers de sauvegarde présents sur le disque connecté seront également chiffrés par le ransomware *(Bonne réponse)*.
+     * C) La sauvegarde va saturer le disque dur trop rapidement.
+3. **Sondage 3 : L'authentification M365**
+   * *Question :* La direction refuse le MFA sur Office 365, affirmant que c'est "trop contraignant". Quel argument est le plus adapté ?
+     * A) Rappeler que le MFA bloque plus de 99% des attaques par usurpation de compte et évite une paralysie totale *(Bonne réponse)*.
+     * B) Désactiver tous les comptes pour forcer le respect des consignes.
+     * C) Recommander des mots de passe de 30 caractères sans MFA.
+4. **Sondage 4 : Priorisation du budget**
+   * *Question :* Le budget cyber annuel de MedDistri est limité à 2 000 €. Où devez-vous l'allouer en priorité ?
+     * A) Réaliser un test d'intrusion par un cabinet externe.
+     * B) Activer le MFA gratuit, souscrire à une solution de sauvegarde cloud immuable externe et former les utilisateurs *(Bonne réponse)*.
+     * C) Embaucher un RSSI externe à temps partiel.
+
+### Débriefing par le mentor :
+Après chaque vote, le mentor analyse en direct les statistiques de réponse du public (ex. *"Vous êtes 80% à avoir voté pour le VPN avec MFA, et vous avez tout à fait raison : ouvrir RDP directement sur Internet équivaut à laisser la porte de l'entrepôt grande ouverte avec une pancarte explicative..."*) et fait le lien avec les notions théoriques vues durant le parcours.

@@ -122,25 +122,30 @@ Pour comprendre comment un attaquant initie ses recherches, on étudie la **surf
 
 ---
 
-### Exercice d'application
-**Titre** : Classification d'incidents cyber selon la triade CIA
+### Exercice d'application (Quiz Interactif - Livestorm)
 
-### Énoncé
-Lisez attentivement les trois situations fictives ci-dessous et déterminez pour chacune quel(s) pilier(s) de la triade CIA a/ont été compromis, en justifiant votre choix en une ou deux phrases.
+**Consignes pour le mentor :** Lancez les sondages suivants sur la plateforme Livestorm l'un après l'autre, puis commentez les résultats avec les explications associées.
 
-1. **Cas n°1** : Le serveur contenant le site web d'un cabinet comptable subit une attaque par déni de service. Les clients ne peuvent plus accéder à leur espace client pour téléverser leurs documents fiscaux pendant 12 heures.
-2. **Cas n°2** : Un pirate s'infiltre dans la base de données d'un laboratoire d'analyses et modifie les valeurs de glycémie de plusieurs dizaines de dossiers de patients sans les supprimer.
-3. **Cas n°3** : Un employé envoie par e-mail un fichier Excel non chiffré contenant la liste complète des salaires et des adresses personnelles des salariés de l'entreprise à un destinataire externe par erreur de saisie d'adresse.
+*   **Sondage 1 :** Un ransomware chiffre la base de données comptable d'une entreprise. Quel pilier de la triade CIA est principalement rompu ?
+    *   A) Confidentialité
+    *   B) Intégrité
+    *   C) Disponibilité *(Bonne réponse)*
+    *   D) Non-répudiation
+*   **Sondage 2 :** Un attaquant intercepte des e-mails RH contenant des fiches de paie sans les modifier. Quel pilier est violé ?
+    *   A) Confidentialité *(Bonne réponse)*
+    *   B) Intégrité
+    *   C) Disponibilité
+    *   D) Authenticité
+*   **Sondage 3 :** Un administrateur modifie par erreur un droit d'accès, permettant à n'importe quel employé de modifier les données de vente. Quel pilier est compromis ?
+    *   A) Confidentialité
+    *   B) Intégrité *(Bonne réponse)*
+    *   C) Disponibilité
+    *   D) Résilience
 
-
-
-### Corrigé de l'exercice
-1. **Cas n°1 : Disponibilité compromise**. Le système est temporairement hors service et inaccessible pour les utilisateurs légitimes. La confidentialité et l'intégrité n'ont en revanche pas été altérées car aucune donnée n'a été volée ni modifiée.
-2. **Cas n°2 : Intégrité compromise**. Les données de santé ont été altérées à l'insu du laboratoire, faussant la fiabilité des informations. Cela pose un danger vital immédiat en raison du risque de mauvais diagnostic médical.
-3. **Cas n°3 : Confidentialité compromise**. Des données personnelles et sensibles (salaires, adresses) ont été divulguées à un tiers non autorisé qui n'avait pas le droit d'y accéder.
-
----
-
+**Éléments de débriefing (pour le mentor) :**
+- Le chiffrement bloque l'accès aux données (Disponibilité).
+- L'interception d'e-mails RH viole le secret des informations (Confidentialité).
+- La modification non autorisée ou accidentelle des ventes fausse la validité des données (Intégrité).
 
 ### Cas d'usages et exemples concrets
 
@@ -180,16 +185,14 @@ Pour mettre en œuvre une stratégie globale de défense en profondeur et antici
 * [ANSSI - Menaces Cyber](https://cyber.gouv.fr)
 * [Cybermalveillance - Actualités](https://www.cybermalveillance.gouv.fr)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Dilemme Décisionnel - Livestorm)
 
-- **Objectif :** Analyse d'impact sur cas réel.
-- **Consignes :**
-    1. Étudiez le cas d'une attaque par Ransomware ayant ciblé un hôpital régional fictif.
-    2. Identifiez l'impact précis de cette attaque sur chacun des trois piliers de la Triade CIA.
-    3. Proposez une mesure d'urgence pour restaurer la "Disponibilité" et une mesure préventive pour éviter que la "Confidentialité" ne soit compromise à l'avenir.
-- **Correction pour le mentor :** Le mentor validera que les apprenants ont bien identifié que le chiffrement des données de santé bloque la *Disponibilité*, que la fuite potentielle de dossiers médicaux affecte la *Confidentialité*, et que la modification sauvage de fiches d'administration de médicaments menace l'*Intégrité*. La restauration depuis des sauvegardes hors-ligne sécurisées est la réponse pour la disponibilité, tandis que le chiffrement des bases de données et la restriction des droits d'accès protègent la confidentialité.
-
----
+*   **Objectif :** Analyse d'impact rapide et priorisation.
+*   **Sondage Livestorm :** Une attaque par Ransomware cible un hôpital. Les dossiers médicaux sont inaccessibles. Quelle est la première action d'urgence à voter ?
+    *   A) Payer immédiatement la rançon demandée.
+    *   B) Isoler physiquement le réseau et éteindre les liaisons réseau des machines affectées pour confiner l'attaque *(Bonne réponse)*.
+    *   C) Reconstruire les serveurs à partir des sauvegardes sur le même réseau actif.
+*   **Guide d'animation (pour le mentor) :** Expliquez pourquoi isoler le réseau (B) est indispensable pour couper la propagation latérale avant d'envisager la restauration. Le paiement de la rançon (A) n'offre aucune garantie et finance le cybercrime.
 
 ## 5. Aide-mémoire / Fiche de révision
 

@@ -170,17 +170,14 @@ La centralisation des logs d'événements, leur normalisation (parsing) et leur 
 * [ANSSI - Recommandations pour la journalisation](https://cyber.gouv.fr)
 * [CNIL - Tracer les accès](https://www.cnil.fr)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Sondage Analyse de Logs - Livestorm)
 
-- **Objectif :** Analyse d'une règle de corrélation SIEM logique.
-- **Consignes :**
-    1. Vous devez rédiger la logique d'une règle de corrélation SIEM pour détecter une attaque par force brute réussie sur votre serveur Active Directory.
-    2. Utilisez des conditions logiques liant l'Event ID Windows `4625` (Logon Failure) et l'Event ID Windows `4624` (Logon Success). Définissez le seuil de nombre d'échecs et l'intervalle de temps.
-- **Correction pour le mentor :** La règle logique attendue est :
-  - **Condition** : *SI* [Nombre d'événements d'EventID `4625`] > 10 depuis la même [Adresse IP source] vers le même [Nom d'utilisateur] dans un intervalle de temps <= 60 secondes, *ET* suivis de 1 événement [EventID `4624`] depuis cette même [Adresse IP source] vers ce même [Nom d'utilisateur].
-  - **Action** : Générer une alerte de sévérité Haute intitulée *"Force Brute Active Directory Réussie - Isolation Requise"*. Le mentor validera que l'étudiant a bien intégré la détection de la réussite après les échecs.
-
----
+*   **Objectif :** Détection de balayages réseau.
+*   **Sondage Livestorm :** Vous observez dans les logs d'accès réseau 500 connexions échouées en 10 secondes sur des ports différents (21, 22, 80, 443, 3389) provenant de la même IP externe. Quelle activité détectez-vous ?
+    *   A) Un test de connexion normal d'un utilisateur.
+    *   B) Un balayage de ports (Port Scanning) automatisé par un attaquant cherchant des services ouverts *(Bonne réponse)*.
+    *   C) Une mise à jour du pare-feu.
+*   **Guide d'animation (pour le mentor) :** Expliquez que le balayage de ports est l'étape préliminaire classique d'une attaque (Reconnaissance) pour repérer les points d'entrée.
 
 ## 5. Aide-mémoire / Fiche de révision
 

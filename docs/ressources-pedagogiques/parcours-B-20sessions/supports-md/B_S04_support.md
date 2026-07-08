@@ -165,15 +165,14 @@ Pour lutter contre l'ingénierie sociale et sensibiliser les employés (facteur 
 * [Cybermalveillance - Phishing](https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-reflexes/hameconnage-phishing)
 * [CNIL - Ingénierie sociale](https://www.cnil.fr/fr/spam-phishing-arnaques-signaler-pour-agir)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Sondage de Vigilance - Livestorm)
 
-- **Objectif :** Conception d'un guide de réflexes face au Vishing.
-- **Consignes :**
-    1. Rédigez une fiche mémo (3 points clés) à destination des téléconseillers d'un service client pour leur apprendre à réagir face à des appels suspects d'usurpation d'identité.
-    2. Intégrez-y une procédure simple de validation hors canal (Out-of-Band verification).
-- **Correction pour le mentor :** La fiche doit contenir : 1. Repérer les signaux d'alarme (l'appelant insiste sur l'urgence ou menace d'escalade hiérarchique). 2. Ne jamais divulguer d'identifiants, de codes MFA ou de données sensibles au téléphone. 3. Appliquer la validation hors canal : raccrocher, trouver le numéro officiel de la personne dans l'annuaire interne ou de l'organisme partenaire, et passer l'appel de vérification soi-même. Le mentor s'assurera de la clarté et de l'aspect pratique des consignes.
-
----
+*   **Objectif :** Détection de signaux faibles d'hameçonnage.
+*   **Sondage Livestorm :** Vous recevez un e-mail d'un fournisseur habituel contenant une facture. Quelle anomalie doit vous alerter en premier ?
+    *   A) Le montant de la facture est élevé.
+    *   B) L'adresse de l'expéditeur a un domaine légèrement modifié (ex. `support@st0rmshield.fr` au lieu de `stormshield.fr`) *(Bonne réponse)*.
+    *   C) L'e-mail a été envoyé à 14h.
+*   **Guide d'animation (pour le mentor) :** Montrez l'importance du typosquattage (changement de caractères subtils comme un zéro au lieu d'un 'o') comme vecteur classique pour tromper les utilisateurs.
 
 ## 5. Aide-mémoire / Fiche de révision
 

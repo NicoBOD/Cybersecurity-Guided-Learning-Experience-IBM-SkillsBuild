@@ -112,27 +112,17 @@ La feuille de route permet d'organiser dans le temps le déploiement des recomma
 
 ---
 
-### Exercice d'application
-**Titre** : Préparer la réponse aux objections d'un dirigeant de PME
+### Exercice d'application (Débat Décisionnel : Objections Métier - Livestorm)
 
-### Énoncé
-Dans le cadre de votre soutenance, le chef d'entreprise fictif (joué par le mentor) vous interrompt et vous oppose l'objection suivante :
-*"Vous me demandez d'activer l'authentification multifacteur (MFA) pour tous les accès cloud de mes commerciaux et de mes comptables. Mais cela va ralentir leur travail quotidien de devoir manipuler leur téléphone personnel toutes les 5 minutes pour entrer des codes SMS. Je refuse de pénaliser la productivité de mes équipes pour des craintes théoriques de piratage."*
+**Consignes pour le mentor :** Lancez le sondage pour confronter le public aux réalités du terrain.
 
-Rédigez un argumentaire de réponse structuré en 3 points pour lever cette objection tout en maintenant votre recommandation.
+*   **Sondage :** La directrice refuse d'imposer l'authentification multifacteur (MFA) car elle craint que les commerciaux ne perdent du temps lors de leurs connexions quotidiennes. Quel argument de sensibilisation est le plus percutant ?
+    *   A) Le MFA protège de 99% des attaques par vol d'identifiants, et l'arrêt d'activité en cas de piratage coûtera bien plus cher que 3 secondes par connexion *(Bonne réponse)*.
+    *   B) Le MFA est obligatoire par la loi sur la protection des données personnelles.
+    *   C) Les commerciaux n'ont pas leur mot à dire sur les choix de sécurité.
 
-
-
-### Corrigé de l'exercice
-1. **Point 1 : Reconnaissance et empathie (Valider la préoccupation de l'interlocuteur)** :
-   * *Argument* : "Je comprends tout à fait votre préoccupation concernant le confort de travail et la productivité de vos équipes. Une sécurité qui paralyse l'activité est une sécurité qui sera contournée."
-2. **Point 2 : Ajustement technique pour minimiser l'impact (Démontrer la flexibilité)** :
-   * *Argument* : "Pour éviter de ralentir vos commerciaux, nous ne leur demanderons pas de s'authentifier par MFA à chaque connexion, mais uniquement lors de la première connexion depuis un nouvel équipement ou s'ils se connectent hors de vos locaux de l'entreprise (en déplacement). De plus, l'utilisation de notifications push rapides sur application d'authentification évite la saisie manuelle de longs codes SMS."
-3. **Point 3 : Rappel du coût du risque (Démontrer le bénéfice/risque financier)** :
-   * *Argument* : "Le coût en temps d'une validation MFA est de 5 secondes par jour. Le coût moyen d'une compromission de compte de messagerie (phishing) pour une PME est de plusieurs milliers d'euros en factures détournées ou en rançon, sans compter la paralysie potentielle de votre activité pendant plusieurs jours si vos serveurs sont chiffrés. Le MFA est votre assurance la plus rentable pour éviter ce scénario."
-
----
-
+**Éléments de débriefing (pour le mentor) :**
+- La sécurité doit être présentée sous l'angle du risque financier et opérationnel (Business Enablement). Le MFA moderne (notifications push) est aujourd'hui très fluide.
 
 ### Cas d'usages et exemples concrets
 
@@ -172,16 +162,14 @@ Pour synthétiser les audits de sécurité, piloter le plan de remédiation et d
 * [ANSSI - Certification et formations](https://cyber.gouv.fr/formations)
 * [IBM SkillsBuild - Catalogue](https://skillsbuild.org/)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Sondage Bilan - Livestorm)
 
-- **Objectif :** Jeu de rôles de restitution d'audit de sécurité.
-- **Consignes :**
-    1. Répartissez-vous en binômes : l'un joue le rôle du RSSI (Responsable Sécurité) qui vient de mener l'audit, l'autre joue le rôle du Directeur Général (DG) qui n'y connaît rien en technique et souhaite minimiser les coûts.
-    2. Le RSSI doit convaincre le DG de débloquer un budget de 5 000 € pour sécuriser les accès par mot de passe en imposant le MFA.
-    3. Le DG doit poser des questions sur la gêne occasionnée pour les employés et le retour sur investissement de cette dépense.
-- **Correction pour le mentor :** Le mentor évaluera la capacité du "RSSI" à vulgariser la menace (ex. expliquer qu'un mot de passe volé peut paralyser l'entreprise) et à utiliser des arguments business (le coût moyen d'une cyberattaque dépasse largement les 5000 € de budget demandés). Le "DG" devra être convaincu par des exemples simples plutôt que par du jargon sur les protocoles d'authentification.
-
----
+*   **Objectif :** Évaluation globale de la posture d'hygiène.
+*   **Sondage Livestorm :** Quelle mesure de sécurité simple et gratuite présente le meilleur retour sur investissement immédiat pour une TPE/PME ?
+    *   A) Acheter un pare-feu à 5 000 €.
+    *   B) Mettre en œuvre une politique de mots de passe robustes associée au MFA gratuit et sensibiliser les collaborateurs *(Bonne réponse)*.
+    *   C) Rédiger une charte informatique de 80 pages.
+*   **Guide d'animation (pour le mentor) :** Rappelez que l'hygiène cyber de base bloque la majorité des attaques opportunistes sans nécessiter de budgets importants.
 
 ## 5. Aide-mémoire / Fiche de révision
 

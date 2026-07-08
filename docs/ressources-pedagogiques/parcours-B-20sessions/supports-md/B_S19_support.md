@@ -176,16 +176,14 @@ Pour automatiser la réponse à incident et préserver les preuves numériques �
 * [ANSSI - Organiser un exercice de crise cyber](https://cyber.gouv.fr/publications/organiser-un-exercice-de-gestion-de-crise-cyber)
 * [CNIL - Notification de violation](https://www.cnil.fr/fr/notifier-une-violation-de-donnees-personnelles)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Sondage Forensics - Livestorm)
 
-- **Objectif :** Simulation de réponse à incident (Incident Response) et coordination.
-- **Consignes :**
-    1. Un malware de type infostealer (voleur de mots de passe) a infecté la machine d'une assistante de direction. Le SOC a détecté l'envoi de fichiers sensibles vers une adresse IP malveillante connue.
-    2. Rédigez le plan d'action chronologique détaillé (les 4 premières étapes de la réponse) à exécuter immédiatement par l'équipe d'incident.
-    3. Indiquez la règle de préservation des preuves numériques à respecter lors de l'isolation du poste de travail pour l'analyse judiciaire (Forensics).
-- **Correction pour le mentor :** Le plan attendu : 1. Isolation réseau immédiate du poste (confinement). 2. Révocation immédiate et réinitialisation de tous les mots de passe de l'utilisatrice (session, e-mails, VPN). 3. Collecte de la mémoire vive (RAM dump) et sauvegarde des logs du système (préservation). 4. Analyse et suppression des fichiers malveillants du poste (éradication). Pour la préservation des preuves : il ne faut pas éteindre brutalement la machine (ce qui détruirait le contenu de la mémoire RAM contenant les clés de chiffrement et processus volatils), mais la débrancher du réseau logique.
-
----
+*   **Objectif :** Compréhension de la préservation des preuves.
+*   **Sondage Livestorm :** Un employé a cliqué sur un lien suspect et a entré ses identifiants. Vous suspectez une intrusion. Pourquoi ne devez-vous pas réinstaller immédiatement le système ?
+    *   A) Parce que cela coûte trop cher.
+    *   B) Pour préserver les traces de l'attaque afin d'analyser comment le pirate est entré et ce qu'il a volé *(Bonne réponse)*.
+    *   C) Parce que la réinstallation va propager le virus.
+*   **Guide d'animation (pour le mentor) :** Expliquez le but du forensics : comprendre l'origine et l'étendue de l'attaque pour éviter qu'elle ne se reproduise le lendemain de la réinstallation.
 
 ## 5. Aide-mémoire / Fiche de révision
 

@@ -114,36 +114,22 @@ Voici comment se structure une table de filtrage (règles ordonnées de haut en 
 
 ---
 
-### Exercice d'application
-**Titre** : Modélisation d'une architecture réseau sécurisée pour un commerce
+### Exercice d'application (Scénario de Filtrage Réseau - Livestorm)
 
-### Énoncé
-Vous devez concevoir la segmentation réseau d'une boutique connectée comprenant :
+**Consignes pour le mentor :** Présentez la situation et lancez le sondage pour valider la règle de filtrage la plus sûre.
 
-- 2 caisses enregistreuses informatiques (traitant des données financières sensibles).
-- 1 ordinateur de bureau pour le gérant (utilisé pour les commandes fournisseurs et la comptabilité).
-- 1 borne Wi-Fi gratuite mise à la disposition des clients de la boutique.
+*   **Sondage 1 :** Pour appliquer le principe du moindre privilège sur un pare-feu d'entreprise, quelle règle de base devez-vous configurer ?
+    *   A) Tout autoriser par défaut, et bloquer uniquement les adresses IP suspectes signalées.
+    *   B) Tout interdire par défaut, et autoriser uniquement les flux et ports explicitement nécessaires au métier *(Bonne réponse)*.
+    *   C) Autoriser tout le trafic provenant des employés sans restriction.
+*   **Sondage 2 :** Un serveur web public doit communiquer avec une base de données interne. Où devez-vous placer ce serveur web ?
+    *   A) Directement sur le réseau local interne (LAN) avec les postes de travail.
+    *   B) Dans une zone démilitarisée (DMZ) séparée du réseau interne par un pare-feu *(Bonne réponse)*.
+    *   C) Sur Internet directement sans aucune protection.
 
-1. Proposez un schéma logique de segmentation en créant 3 zones réseau distinctes.
-2. Définissez les droits d'accès réseau :
-   * La borne Wi-Fi clients peut-elle communiquer avec les caisses ?
-   * Les caisses peuvent-elles communiquer avec l'ordinateur du gérant ?
-   * Quelles zones doivent avoir accès à Internet ?
-
-
-
-### Corrigé de l'exercice
-1. **Zones proposées** :
-   * *Zone 1 : Réseau Caisses (Strictement sécurisé)*
-   * *Zone 2 : Réseau Gestion (Gérant)*
-   * *Zone 3 : Réseau Invités (Clients)*
-2. **Droits d'accès et règles de filtrage** :
-   * **Non**, la borne Wi-Fi clients doit être totalement isolée du réseau des caisses et du réseau gestion pour éviter toute tentative d'intrusion de la part de clients malveillants.
-   * **Non**, les caisses ne doivent pas initier de communications vers l'ordinateur du gérant. Elles doivent uniquement envoyer les transactions vers le serveur de paiement externe.
-   * **Accès Internet** : La zone Clients doit avoir accès à Internet uniquement (ports 80/443). La zone Caisses doit avoir un accès limité uniquement aux adresses IP du serveur de traitement des cartes bancaires. La zone Gestion doit avoir un accès web global pour son activité.
-
----
-
+**Éléments de débriefing (pour le mentor) :**
+- La règle "Tout interdire par défaut" (Default Deny) est le fondement de la sécurité réseau.
+- Placer le serveur web en DMZ évite qu'un pirate compromettant le site puisse accéder directement aux postes internes.
 
 ### Cas d'usages et exemples concrets
 
@@ -183,16 +169,14 @@ La sécurité des systèmes et réseaux repose sur des pare-feux et des outils d
 * [ANSSI - Guide hygiène informatique](https://cyber.gouv.fr/publications/guide-dhygiene-informatique)
 * [OWASP - Top 10](https://owasp.org/www-project-top-ten/)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Quiz Confinement DMZ - Livestorm)
 
-- **Objectif :** Conception d'architecture réseau sécurisée.
-- **Consignes :**
-    1. Vous devez concevoir le schéma réseau simplifié d'une clinique. Placez les éléments suivants dans les bonnes zones (Internet, DMZ, LAN Interne, Réseau Médical) : Serveur web public, Postes des secrétaires, Appareils d'imagerie médicale (IRM/Scanners), Base de données des patients.
-    2. Justifiez la séparation du Réseau Médical par rapport au LAN Interne classique.
-    3. Indiquez quelle règle de filtrage principale doit s'appliquer sur le pare-feu pour protéger la base de données des patients.
-- **Correction pour le mentor :** Le serveur web va en DMZ ; les postes des secrétaires dans le LAN Interne ; les IRM et la base de données dans le Réseau Médical (zone ultra-sécurisée). La séparation protège les dispositifs de santé critiques d'une infection provenant d'une secrétaire ayant cliqué sur un mail malveillant. La règle principale doit être : interdire tout trafic direct depuis Internet vers la base de données, et n'autoriser que les requêtes provenant de l'application métier validée.
-
----
+*   **Objectif :** Compréhension du cloisonnement réseau.
+*   **Sondage Livestorm :** Un serveur web situé en DMZ est compromis par un pirate. Qu'est-ce qui l'empêche d'accéder au serveur de comptabilité interne ?
+    *   A) L'antivirus du serveur web.
+    *   B) La règle de pare-feu interdisant tout flux initié de la DMZ vers le réseau interne *(Bonne réponse)*.
+    *   C) Le mot de passe du serveur web.
+*   **Guide d'animation (pour le mentor) :** Rappelez que même si un serveur exposé est compromis, la segmentation réseau limite strictement les mouvements latéraux du pirate.
 
 ## 5. Aide-mémoire / Fiche de révision
 

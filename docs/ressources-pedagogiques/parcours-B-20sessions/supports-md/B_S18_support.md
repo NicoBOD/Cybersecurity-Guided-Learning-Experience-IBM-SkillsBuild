@@ -210,16 +210,14 @@ Pour mener des investigations après incident et cartographier les vulnérabilit
 * [ANSSI - Gestion des incidents cyber](https://cyber.gouv.fr)
 * [Cybermalveillance - Victime d'attaque](https://www.cybermalveillance.gouv.fr)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Sondage CVSS - Livestorm)
 
-- **Objectif :** Analyse d'une vulnérabilité critique et plan d'action de remédiation.
-- **Consignes :**
-    1. Soit la vulnérabilité CVE-2024-XXXX affectant votre serveur de messagerie externe, notée 9.8 sur l'échelle CVSS. L'exploit est public et activement utilisé dans le monde.
-    2. Rédigez le plan d'action d'urgence en 3 étapes à présenter à vos techniciens pour traiter cette menace.
-    3. Quelle mesure temporaire (Workaround) pouvez-vous appliquer si aucun correctif n'est encore disponible ?
-- **Correction pour le mentor :** Plan attendu : 1. Isoler le serveur de messagerie d'Internet temporairement si possible ou restreindre les flux. 2. Télécharger et appliquer le patch officiel de l'éditeur de messagerie. 3. Mener une analyse de logs pour vérifier si le serveur n'a pas déjà été compromis avant l'application du patch. Mesure temporaire (Workaround) : Bloquer le port spécifique utilisé par la faille sur le pare-feu externe ou désactiver la fonctionnalité vulnérable dans la configuration du logiciel.
-
----
+*   **Objectif :** Évaluation des risques liés aux correctifs.
+*   **Sondage Livestorm :** L'éditeur d'un logiciel métier publie un correctif de sécurité urgent. Le technicien refuse de l'installer immédiatement par crainte de bloquer la production. Quelle est la meilleure approche ?
+    *   A) Ne jamais installer la mise à jour pour préserver la stabilité.
+    *   B) Tester le correctif sur un poste de test pendant 24h avant de le déployer à grande échelle *(Bonne réponse)*.
+    *   C) Forcer le déploiement sur tous les serveurs à 14h sans prévenir les équipes.
+*   **Guide d'animation (pour le mentor) :** Débattez du compromis permanent en cybersécurité entre la sécurité (appliquer les patchs) et la disponibilité opérationnelle (tester pour ne pas casser la production).
 
 ## 5. Aide-mémoire / Fiche de révision
 

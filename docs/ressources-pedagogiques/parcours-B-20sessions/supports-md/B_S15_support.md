@@ -149,16 +149,14 @@ Le maintien de la conformité RGPD et la gestion des cookies/consentements des s
 * [CNIL - Comprendre le RGPD](https://www.cnil.fr/fr/comprendre-le-rgpd)
 * [CNIL - Violations de données](https://www.cnil.fr/fr/notifier-une-violation-de-donnees-personnelles)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Sondage traceurs CNIL - Livestorm)
 
-- **Objectif :** Audit de conformité RGPD d'un formulaire web.
-- **Consignes :**
-    1. Vous devez auditer le formulaire de contact d'une PME. Le formulaire demande les champs suivants : Nom, Prénom, E-mail, Numéro de Sécurité Sociale, Date de naissance, et comporte une case pré-cochée "Je souhaite recevoir des offres promotionnelles".
-    2. Identifiez au moins 2 violations majeures des principes du RGPD dans ce formulaire.
-    3. Proposez les corrections nécessaires pour mettre ce site en parfaite conformité.
-- **Correction pour le mentor :** Violations : 1. Non-respect du principe de *minimisation des données* (le numéro de sécurité sociale et la date de naissance ne sont pas nécessaires pour un simple formulaire de contact). 2. Absence de *consentement libre et explicite* (la case promotionnelle est pré-cochée). Corrections : supprimer les champs inutiles (sécurité sociale et date de naissance) et décocher par défaut la case d'inscription marketing, en ajoutant un lien vers la politique de confidentialité.
-
----
+*   **Objectif :** Conformité réglementaire des sites internet.
+*   **Sondage Livestorm :** Un site web d'entreprise utilise des traceurs publicitaires. Que devez-vous implémenter pour être conforme aux directives de la CNIL/RGPD ?
+    *   A) Un bandeau d'information simple sans bouton de refus.
+    *   B) Une plateforme de gestion du consentement (CMP) permettant de refuser ou d'accepter facilement les traceurs avant tout dépôt *(Bonne réponse)*.
+    *   C) Rien, les cookies publicitaires ne sont pas réglementés.
+*   **Guide d'animation (pour le mentor) :** Expliquez le rôle des CMP (Consent Management Platforms) comme Didomi ou Klaro! et les risques de sanctions financières en cas de non-conformité.
 
 ## 5. Aide-mémoire / Fiche de révision
 

@@ -204,15 +204,14 @@ Pour évaluer, documenter et suivre les plans de traitement des risques de sécu
 * [Cybermalveillance - Assurance cyber](https://www.cybermalveillance.gouv.fr/)
 * [ANSSI - Cartographie des risques](https://cyber.gouv.fr/la-methode-ebios-risk-manager)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Dilemme Analyse de Risques - Livestorm)
 
-- **Objectif :** Élaboration d'un registre de risques cyber (Matrice de risques).
-- **Consignes :**
-    1. Soit un système de vente en ligne. Identifiez les 3 risques principaux liés aux menaces courantes (ex. Vol de base de données clients, Indisponibilité du site suite à DDoS, Modification des prix par un pirate).
-    2. Pour chaque risque, construisez une ligne du registre : Actif concerné, Scénario de menace, Impact (1 à 4), Vraisemblance (1 à 4), Score brut (P×I) et Option de traitement choisie.
-- **Correction pour le mentor :** Le mentor validera la structure cohérente du tableau. Exemple pour le vol de données : Actif = Base SQL ; Menace = Injection SQL par un hacker ; Impact = 4 (fuite massive, amende CNIL) ; Vraisemblance = 2 (site protégé par pare-feu basique) ; Score = 8. Traitement = Réduire le risque (mise en place d'un pare-feu applicatif WAF et correctif régulier du code).
-
----
+*   **Objectif :** Choix des stratégies de traitement des risques.
+*   **Sondage Livestorm :** L'analyse de risques montre qu'une coupure électrique majeure paralyserait l'entrepôt. Le coût d'un groupe électrogène est de 50 000 €, tandis que la perte d'une panne est de 5 000 €. Quelle décision de traitement des risques devez-vous proposer ?
+    *   A) Réduire le risque en achetant le groupe électrogène.
+    *   B) Accepter le risque (ou souscrire une assurance spécifique) car le coût de la mesure dépasse largement la perte potentielle *(Bonne réponse)*.
+    *   C) Ignorer l'analyse de risques.
+*   **Guide d'animation (pour le mentor) :** Expliquez la notion d'adéquation coût/bénéfice. La sécurité doit être proportionnée aux enjeux financiers de la structure.
 
 ## 5. Aide-mémoire / Fiche de révision
 

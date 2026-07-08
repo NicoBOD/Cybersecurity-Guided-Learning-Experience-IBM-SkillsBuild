@@ -161,15 +161,14 @@ Pour sécuriser et chiffrer les flux réseau d'entreprise via des solutions VPN 
 * [ANSSI - Recommandations TLS](https://cyber.gouv.fr/publications/recommandations-de-securite-relatives-tls)
 * [ANSSI - WiFi Sécurisé](https://cyber.gouv.fr)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Sondage Tunnel VPN - Livestorm)
 
-- **Objectif :** Analyse du chiffrement lors d'une session Web sécurisée.
-- **Consignes :**
-    1. Expliquez brièvement comment le navigateur de l'utilisateur vérifie l'identité d'un site web bancaire lors de la phase initiale de connexion HTTPS. (Quel est le rôle du certificat X.509 et des Autorités de Certification ?).
-    2. Pourquoi utilise-t-on le chiffrement asymétrique au début de la connexion, puis le chiffrement symétrique pour le transfert des données ?
-- **Correction pour le mentor :** Le navigateur vérifie le certificat X.509 fourni par le serveur bancaire en vérifiant s'il est signé par une Autorité de Certification (CA) de confiance pré-enregistrée dans le système. Le chiffrement asymétrique (lent mais sûr sans clé partagée au départ) sert uniquement à échanger de manière sécurisée une clé de session temporaire. Le chiffrement symétrique (très rapide) prend le relais pour chiffrer l'ensemble des données échangées avec cette clé commune.
-
----
+*   **Objectif :** Analyse de la sécurité des accès nomades.
+*   **Sondage Livestorm :** Quelle est la différence majeure entre un VPN et un proxy web simple ?
+    *   A) Le proxy est payant, pas le VPN.
+    *   B) Le VPN chiffre la totalité du trafic réseau de la machine, tandis que le proxy ne fait que relayer le trafic applicatif (souvent web) sans chiffrement global *(Bonne réponse)*.
+    *   C) Il n'y a aucune différence technique.
+*   **Guide d'animation (pour le mentor) :** Montrez pourquoi le VPN d'entreprise est indispensable pour les connexions distantes, protégeant l'ensemble des protocoles de la machine.
 
 ## 5. Aide-mémoire / Fiche de révision
 

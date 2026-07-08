@@ -161,16 +161,14 @@ L'analyse de Threat Intelligence et la veille sur les cybermenaces requièrent d
 * [CERT-FR - Centre gouvernemental de veille](https://www.cert.ssi.gouv.fr/)
 * [Cybermalveillance - Rapport d'activité](https://www.cybermalveillance.gouv.fr)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Sondage CTI - Livestorm)
 
-- **Objectif :** Profilage de menace et analyse de Threat Intelligence.
-- **Consignes :**
-    1. Vous devez mener des recherches (ou simuler une analyse) sur un acteur de menace réel connu (ex. Cozy Bear / APT29 ou LockBit).
-    2. Rédigez une fiche profil synthétique de cet acteur : motivations (financières, étatiques, géopolitiques), cibles privilégiées et techniques d'attaque récurrentes.
-    3. Listez 2 indicateurs de compromission (IOC) typiques que cet acteur pourrait laisser sur votre réseau.
-- **Correction pour le mentor :** Le mentor s'assurera que les profils rédigés par les apprenants distinguent bien les motivations cybercriminelles (gain rapide de LockBit via rançongiciel) des motivations d'espionnage (infiltration silencieuse et à long terme d'APT29). Les IOC mentionnés doivent être pertinents (ex. adresses IP de serveurs de commande C2 connus, empreintes SHA-256 de fichiers malveillants récurrents).
-
----
+*   **Objectif :** Exploitation pratique des flux de menaces.
+*   **Sondage Livestorm :** Vous découvrez sur un forum du Dark Web qu'un groupe de rançonneurs cible spécifiquement votre secteur d'activité en exploitant une faille sur les serveurs VPN. Quelle est votre action prioritaire ?
+    *   A) Changer tous les mots de passe des utilisateurs.
+    *   B) Mettre à jour immédiatement le micrologiciel (firmware) de vos passerelles VPN *(Bonne réponse)*.
+    *   C) Fermer temporairement l'entreprise.
+*   **Guide d'animation (pour le mentor) :** Montrez comment la Threat Intelligence permet d'anticiper les attaques en appliquant les correctifs sur les cibles prioritaires avant que les attaquants ne frappent.
 
 ## 5. Aide-mémoire / Fiche de révision
 

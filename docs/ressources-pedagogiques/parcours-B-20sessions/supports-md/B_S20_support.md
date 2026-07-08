@@ -167,16 +167,14 @@ Pour tester la solidité d'une infrastructure cyber, mener des exercices de cris
 * [ANSSI - Métiers de la cybersécurité](https://cyber.gouv.fr/formations)
 * [IBM SkillsBuild](https://skillsbuild.org/)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Sondage Bilan - Livestorm)
 
-- **Objectif :** Préparation à la soutenance devant un comité exécutif.
-- **Consignes :**
-    1. Vous devez présenter la synthèse de votre projet de sécurisation (Capstone) d'une clinique médicale devant le Conseil d'Administration.
-    2. Rédigez les 3 diapositives clés de votre support de présentation : Diapo 1 (Les 3 vulnérabilités majeures identifiées), Diapo 2 (Le plan d'action prioritaire et son coût), Diapo 3 (La réduction attendue du risque cyber et l'intérêt pour l'activité).
-    3. Formulez vos arguments sans jargon technique pour justifier l'achat d'outils de sécurité.
-- **Correction pour le mentor :** Le mentor évaluera l'effort de vulgarisation des apprenants. Les vulnérabilités doivent être traduites en impacts business (ex: "le manque de sauvegardes déconnectées fait risquer une fermeture définitive de la clinique en cas de rançongiciel" plutôt que "manque d'immuabilité sur Veeam"). Le plan d'action doit être clair, pragmatique et justifié par la continuité des soins et la protection légale des données médicales des patients (RGPD).
-
----
+*   **Objectif :** Évaluation globale de la posture d'hygiène.
+*   **Sondage Livestorm :** Quelle mesure de sécurité simple et gratuite présente le meilleur retour sur investissement immédiat pour une TPE/PME ?
+    *   A) Acheter un pare-feu à 5 000 €.
+    *   B) Mettre en œuvre une politique de mots de passe robustes associée au MFA gratuit et sensibiliser les collaborateurs *(Bonne réponse)*.
+    *   C) Rédiger une charte informatique de 80 pages.
+*   **Guide d'animation (pour le mentor) :** Rappelez que l'hygiène cyber de base bloque la majorité des attaques opportunistes sans nécessiter de budgets importants.
 
 ## 5. Aide-mémoire / Fiche de révision
 

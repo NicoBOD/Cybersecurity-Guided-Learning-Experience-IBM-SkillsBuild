@@ -72,3 +72,38 @@ Un jeu de diapositives clair et impactant pour un pitch oral de **7 minutes stri
 *   **Le Pitch (7 minutes)** : Présentation orale chronométrée. Chaque membre de l'équipe doit prendre la parole de façon équitable.
 *   **Questions-Réponses (8 minutes)** : Le mentor (jouant le rôle de Mme Legrand et d'un auditeur technique) et les autres apprenants interrogent le groupe sur ses choix d'architecture, son budget et ses priorités.
 *   **Évaluation croisée** : Chaque groupe évalue les présentations de deux autres équipes en remplissant une grille d'évaluation constructive.
+
+---
+
+## 5. Alternative d'animation interactive (Spécial Webinaire / Livestorm)
+
+Si le cours est animé sous forme de webinaire interactif devant un public nombreux ou passif, la soutenance classique en groupe est remplacée par un **atelier d'audit interactif de synthèse** mené par le mentor.
+
+### Fonctionnement de l'atelier :
+Le mentor présente le diagnostic complet de MedDistri. Il partage son écran et déroule les préconisations techniques et de gouvernance. Le public participe en votant sur des questions de priorisation et de choix d'architecture.
+
+### Liste des Sondages à soumettre au public :
+
+1. **Sondage 1 : Cloisonnement réseau**
+   * *Question :* Quel schéma de segmentation réseau proposez-vous en priorité pour MedDistri pour mettre fin au réseau à plat ?
+     * A) Mettre tous les postes sur le Wi-Fi invités.
+     * B) Créer 3 VLANs distincts (LAN Administratif, LAN Logistique, DMZ pour serveurs exposés) isolés par un pare-feu *(Bonne réponse)*.
+     * C) Acheter un commutateur supplémentaire sans configuration de VLAN.
+2. **Sondage 2 : Sécurisation des accès des nomades**
+   * *Question :* Les 15 commerciaux utilisent des réseaux Wi-Fi publics non sécurisés lors de leurs déplacements. Quelle solution technique déployer ?
+     * A) Interdire l'utilisation du Wi-Fi dans les gares/hôtels.
+     * B) Installer un VPN WireGuard ou IPsec d'entreprise avec MFA obligatoire pour toute connexion à distance *(Bonne réponse)*.
+     * C) Installer uniquement un bloqueur de publicité sur leur navigateur.
+3. **Sondage 3 : Sauvegarde immuable**
+   * *Question :* La base de données contient des historiques d'équipements médicaux. Comment assurer la résilience contre un ransomware avec la règle 3-2-1 ?
+     * A) Stocker 3 copies locales sur des clés USB branchées au serveur.
+     * B) Mettre en place 3 copies des données sur 2 supports physiques différents, dont au moins 1 copie stockée hors ligne ou dans un cloud immuable externe *(Bonne réponse)*.
+     * C) Faire confiance à la réplication de données en temps réel de Microsoft OneDrive.
+4. **Sondage 4 : Arbitrage du budget et GRC**
+   * *Question :* Mme Legrand dispose d'une enveloppe de 5 000 €. Quelle est la répartition la plus cohérente de cette enveloppe ?
+     * A) 100% dans l'achat d'un pare-feu de marque très chère.
+     * B) Investissement dans des licences VPN/MFA légères, activation de sauvegardes externalisées cryptées, formation des équipes et audit de conformité RGPD de base *(Bonne réponse)*.
+     * C) Payer un cabinet d'avocats pour rédiger une charte informatique de 150 pages.
+
+### Débriefing par le mentor :
+Pour chaque vote, le mentor affiche les statistiques à l'écran, valide la réponse majoritaire ou explique les erreurs courantes (ex. *"Vous avez voté à 35% pour OneDrive : attention, OneDrive synchronise en temps réel. Si le ransomware chiffre vos fichiers locaux, la version chiffrée écrasera instantanément les versions dans le cloud ! OneDrive n'est pas une sauvegarde immuable..."*). Il conclut en résumant le plan de remédiation global.

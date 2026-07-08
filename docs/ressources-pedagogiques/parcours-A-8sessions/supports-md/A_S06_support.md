@@ -118,36 +118,21 @@ Voici une simulation de feuille de route de remédiation basée sur un scan de s
 
 ---
 
-### Exercice d'application
-**Titre** : Décryptage d'une alerte SOC à partir d'un journal d'événements
+### Exercice d'application (Analyse de Gravité de Vulnérabilités - Livestorm)
 
-### Énoncé
-Vous êtes analyste de sécurité junior dans un SOC. Le SIEM vient de lever une alerte de niveau élevé concernant le serveur de fichiers de l'entreprise. Vous disposez de l'extrait de logs suivant pour analyser la situation :
+**Consignes pour le mentor :** Lancez le sondage pour tester la compréhension de la priorisation des vulnérabilités.
 
-```text
-[16:45:01] LOGIN_FAILED | IP: 198.51.100.12 (Russie) | User: admin
-[16:45:03] LOGIN_FAILED | IP: 198.51.100.12 (Russie) | User: administrator
-[16:45:05] LOGIN_FAILED | IP: 198.51.100.12 (Russie) | User: root
-[16:45:08] LOGIN_SUCCESS | IP: 198.51.100.12 (Russie) | User: admin
-[16:45:15] FILE_DOWNLOAD | IP: 198.51.100.12 (Russie) | User: admin | File: /Shared/R&D/brevets-2026.zip
-```
+*   **Sondage 1 :** Un scan de vulnérabilités révèle une faille avec un score CVSS de 9.8. Comment qualifiez-vous cette faille et quelle doit être votre réaction ?
+    *   A) Faible — À corriger lors de la prochaine maintenance annuelle.
+    *   B) Critique — Nécessite une remédiation urgente ou l'application immédiate du patch constructeur *(Bonne réponse)*.
+    *   C) Moyenne — À corriger d'ici la fin du mois.
+*   **Sondage 2 :** Une faille de score 8.5 (Haute) touche un serveur web interne non exposé sur Internet. Une faille de score 7.5 (Haute) touche un serveur web de production exposé publiquement. Laquelle patchez-vous en premier ?
+    *   A) La faille de score 8.5 car son score brut est plus élevé.
+    *   B) La faille de score 7.5 car l'exposition sur Internet augmente drastiquement la probabilité d'exploitation réelle *(Bonne réponse)*.
+    *   C) Aucune, j'attends le prochain audit externe.
 
-1. Décrivez l'attaque qui s'est déroulée en précisant sa chronologie.
-2. Quel pilier de la triade CIA a été compromis en fin de séquence ?
-3. Quelle action de confinement d'urgence devez-vous ordonner immédiatement au niveau du pare-feu ?
-
-
-
-### Corrigé de l'exercice
-1. **Description de l'attaque** :
-   * Une adresse IP externe localisée en Russie a tenté de se connecter au serveur de fichiers en testant plusieurs identifiants d'administration courants (*admin*, *administrator*, *root*). Il s'agit d'une attaque par force brute ou par dictionnaire d'identifiants.
-   * À 16:45:08, une tentative de connexion réussit sur le compte *admin* (mot de passe probablement trop simple ou par défaut).
-   * À 16:45:15, l'attaquant télécharge un fichier de propriété intellectuelle très sensible (`brevets-2026.zip`).
-2. **Pilier compromis : La Confidentialité**. Des données secrètes et stratégiques (brevets de l'entreprise) ont été divulguées à un tiers non autorisé.
-3. **Action d'urgence** : Bloquer immédiatement tout trafic provenant de l'adresse IP `198.51.100.12` sur le pare-feu périphérique, réinitialiser immédiatement le mot de passe du compte *admin* sur le serveur de fichiers et suspendre temporairement sa session active pour stopper le vol de données en cours.
-
----
-
+**Éléments de débriefing (pour le mentor) :**
+- La criticité réelle dépend du score CVSS brut ET du contexte d'exposition de la machine (surface d'attaque).
 
 ### Cas d'usages et exemples concrets
 
@@ -187,18 +172,14 @@ Pour orchestrer les opérations de sécurité (SOC) et cartographier les vulnér
 * [CERT-FR - Alertes de sécurité](https://www.cert.ssi.gouv.fr/)
 * [OWASP - Top 10 Web](https://owasp.org/www-project-top-ten/)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Sondage Mises à Jour - Livestorm)
 
-- **Objectif :** Priorisation de vulnérabilités CVSS.
-- **Consignes :**
-    1. Vous êtes analyste de sécurité. Le scanner de vulnérabilités remonte 3 failles logicielles sur vos serveurs :
-       - Faute A (CVSS 9.8) : Exécution de code à distance sans authentification sur le serveur web externe.
-       - Faute B (CVSS 7.2) : Élévation de privilèges locaux sur un poste de travail interne.
-       - Faute C (CVSS 5.0) : Divulgation d'informations de version de serveur sur l'intranet.
-    2. Dans quel ordre devez-vous patcher ces vulnérabilités ? Justifiez votre choix en analysant la criticité et l'accessibilité de chaque faille.
-- **Correction pour le mentor :** L'ordre doit être : Faute A, puis Faute B, puis Faute C. La Faute A est critique (9.8), exploitable à distance par n'importe qui sans mot de passe, directement sur Internet. Elle présente le plus grand risque de compromission totale immédiate. La Faute B est importante (7.2) mais nécessite déjà un accès initial au poste interne pour être exploitée. La Faute C est mineure et purement informative.
-
----
+*   **Objectif :** Évaluation des risques liés aux correctifs.
+*   **Sondage Livestorm :** L'éditeur d'un logiciel métier publie un correctif de sécurité urgent. Le technicien refuse de l'installer immédiatement par crainte de bloquer la production. Quelle est la meilleure approche ?
+    *   A) Ne jamais installer la mise à jour pour préserver la stabilité.
+    *   B) Tester le correctif sur un poste de test pendant 24h avant de le déployer à grande échelle *(Bonne réponse)*.
+    *   C) Forcer le déploiement sur tous les serveurs à 14h sans prévenir les équipes.
+*   **Guide d'animation (pour le mentor) :** Débattez du compromis permanent en cybersécurité entre la sécurité (appliquer les patchs) et la disponibilité opérationnelle (tester pour ne pas casser la production).
 
 ## 5. Aide-mémoire / Fiche de révision
 

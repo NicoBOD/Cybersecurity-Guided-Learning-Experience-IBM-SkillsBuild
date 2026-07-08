@@ -198,17 +198,14 @@ L'analyse de protocoles et la surveillance de la couche réseau reposent sur les
 * [ANSSI - Recommandations réseaux](https://cyber.gouv.fr)
 * [CERT-FR - Menaces réseaux](https://www.cert.ssi.gouv.fr/)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Démonstration Live interactive - Livestorm)
 
-- **Objectif :** Lecture d'en-tête de paquet et analyse logique de ports réseau.
-- **Consignes :**
-    1. Soit l'extrait d'un en-tête de paquet réseau intercepté par un pare-feu :
-       `PROTO: TCP | SRC_IP: 192.168.1.15 | DST_IP: 10.0.0.4 | SRC_PORT: 51234 | DST_PORT: 443 | STATE: SYN`
-    2. Identifiez quel protocole de couche applicative est ciblé par cette connexion. Est-ce un protocole sécurisé ?
-    3. Expliquez à quoi correspond le drapeau `SYN` dans l'établissement de la liaison TCP.
-- **Correction pour le mentor :** Le port de destination est le **443**, ce qui correspond au protocole **HTTPS** (couche applicative). C'est un protocole sécurisé car les données y sont chiffrées en TLS. Le drapeau `SYN` (Synchronize) indique que la machine source (`192.168.1.15`) tente d'initier la première étape de la poignée de main à trois voies (Three-way Handshake) TCP avec le serveur cible.
-
----
+*   **Objectif :** Lecture de requêtes HTTP non sécurisées.
+*   **Sondage Livestorm :** Le mentor montre à l'écran une capture de paquet contenant la ligne : `POST /login.php HTTP/1.1` suivie de `username=admin&password=Password123`. Quelle vulnérabilité est visible ?
+    *   A) Une attaque par déni de service.
+    *   B) Une transmission d'identifiants en clair via le protocole HTTP non chiffré *(Bonne réponse)*.
+    *   C) Une tentative d'injection SQL.
+*   **Guide d'animation (pour le mentor) :** Soulignez l'importance du protocole TLS (HTTPS) pour chiffrer les données sensibles en transit et empêcher l'espionnage sur le réseau local (sniffing).
 
 ## 5. Aide-mémoire / Fiche de révision
 

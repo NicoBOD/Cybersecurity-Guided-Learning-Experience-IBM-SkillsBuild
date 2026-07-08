@@ -87,3 +87,16 @@ Le serveur de commandes en ligne de MedDistri a subi des requêtes suspectes. En
     *   *Identification de la menace* : Identification de l'adresse IP attaquante, de la faille ciblée et du succès ou de l'échec de la tentative (justifié par les codes de statut HTTP).
     *   *Signature technique* : Extraction de la ligne de log exacte montrant l'injection de code malveillant.
 2.  **Plan de blocage immédiat** : Règle de pare-feu d'urgence à appliquer pour bannir l'attaquant et mesures correctives à court terme sur le code de l'application web.
+
+---
+
+## Alternative d'animation interactive pour Webinaire (Livestorm)
+
+Si l'audience est nombreuse et passive, les mini-projets ne font pas l'objet d'un rendu individuel ou en équipe. Le mentor les anime sous forme de **démonstrations guidées par des sondages rapides (Option B)**.
+
+### Exemples d'animation pour chaque mini-projet :
+
+*   **Mini-projet 1 (Réseau sécurisé) :** Le mentor partage un schéma réseau plat à l'écran, puis lance un sondage demandant au public de voter pour les équipements à séparer en priorité. Le mentor dessine le schéma cible en direct au tableau blanc ou via un outil de modélisation (ex. Draw.io) à partir des résultats du vote.
+*   **Mini-projet 2 (Plan de protection) :** Le mentor présente un fichier Excel fictif de la comptabilité contenant des données bancaires et demande au public de classer cette donnée (Publique, Interne, Confidentielle) via un sondage. Il fait ensuite voter sur l'opportunité d'activer BitLocker sur un poste nomade de commercial.
+*   **Mini-projet 3 (Analyse de risques & PSSI) :** Le mentor anime un scénario d'EBIOS RM simplifié. Il affiche 3 scénarios (Ransomware, vol de portable, fraude au président) et demande au public de coter la Vraisemblance (1 à 4) de chacun à l'aide de sondages Livestorm successifs.
+*   **Mini-projet 4 (Analyse de logs) :** Le mentor partage 5 lignes de logs Apache à l'écran et met en surbrillance trois chaînes suspectes. Il lance un sondage pour demander au public de repérer laquelle représente une injection SQL, puis réalise la démo live de configuration de la règle de blocage sur le pare-feu.

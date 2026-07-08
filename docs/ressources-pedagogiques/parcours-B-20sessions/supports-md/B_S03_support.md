@@ -164,16 +164,14 @@ Pour analyser les fichiers suspects et cartographier les tactiques d'attaque sel
 * [Cybermalveillance - Fiche Ransomware](https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-reflexes/rancongiciels-ransomwares)
 * [OWASP - Vulnérabilités](https://owasp.org/)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Analyse de Charge Utile - Livestorm)
 
-- **Objectif :** Analyse d'une chaîne d'attaque (Cyber Kill Chain).
-- **Consignes :**
-    1. Soit l'attaque suivante : un pirate trouve des informations professionnelles sur LinkedIn, envoie un e-mail avec un document Word vérolé, l'utilisateur l'ouvre, le document télécharge un malware qui chiffre le serveur.
-    2. Décomposez cette attaque selon 4 étapes de la Cyber Kill Chain (Reconnaissance, Armement, Livraison, Exploitation/Action).
-    3. Proposez une mesure défensive spécifique à mettre en place pour bloquer l'attaque à l'étape de la "Livraison".
-- **Correction pour le mentor :** Reconnaissance : recherche LinkedIn. Armement : création du document Word malveillant. Livraison : envoi de l'e-mail. Exploitation/Action : ouverture du document et chiffrement du serveur. Pour bloquer l'attaque à la Livraison, on peut déployer une passerelle de messagerie sécurisée (filtre anti-spam/anti-malware) qui analyse et bloque les pièces jointes suspectes avant qu'elles n'arrivent dans la boîte de l'employé.
-
----
+*   **Objectif :** Compréhension des mécanismes d'obfuscation.
+*   **Sondage Livestorm :** Un fichier joint nommé `rapport.docx` contient des macros VBA désactivées par défaut par Microsoft Word. L'utilisateur clique sur "Activer le contenu" car le document lui demande pour "déchiffrer le texte". Que se passe-t-il ?
+    *   A) Le document est déchiffré de manière sécurisée.
+    *   B) Le code malveillant de la macro s'exécute et télécharge un chargeur (loader) en mémoire *(Bonne réponse)*.
+    *   C) L'antivirus bloque systématiquement l'action sans alerte.
+*   **Guide d'animation (pour le mentor) :** Expliquez que l'activation de macros est une technique d'ingénierie sociale classique pour contourner les protections par défaut de l'OS.
 
 ## 5. Aide-mémoire / Fiche de révision
 

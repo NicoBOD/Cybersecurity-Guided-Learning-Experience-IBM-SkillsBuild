@@ -122,29 +122,21 @@ La matrice RBAC permet de cartographier de manière logique et synthétique les 
 
 ---
 
-### Exercice d'application
-**Titre** : Audit de résilience et plan de sauvegarde 3-2-1 d'une petite agence web
+### Exercice d'application (Dilemme d'Architecture de Sauvegarde - Livestorm)
 
-### Énoncé
-Une petite agence de création web stocke ses créations graphiques et ses bases de données clients sur un serveur NAS local installé dans sa salle de réunion. Chaque soir, un script automatique copie les dossiers du serveur NAS sur un disque dur USB externe branché en permanence sur ce même serveur.
+**Consignes pour le mentor :** Présentez le cas et lancez le sondage.
 
-1. Identifiez les failles majeures de cette politique de sauvegarde.
-2. Proposez une réorganisation conforme à la règle 3-2-1 en indiquant précisément les supports et l'emplacement des 3 copies requises.
+*   **Sondage :** Un administrateur système sauvegarde ses bases de données tous les soirs sur un NAS de stockage réseau connecté en permanence. Un ransomware s'exécute le week-end avec des privilèges élevés. Quel est le risque majeur pour les sauvegardes ?
+    *   A) Les sauvegardes sont protégées car elles sont sur un serveur différent (NAS).
+    *   B) Le ransomware va chiffrer les sauvegardes accessibles sur le réseau local *(Bonne réponse)*.
+    *   C) La sauvegarde hebdomadaire va échouer par manque de place.
+*   **Sondage 2 :** Quelle est la solution la plus efficace pour bloquer ce risque dans la règle 3-2-1 ?
+    *   A) Faire des sauvegardes deux fois par jour sur le même NAS.
+    *   B) Utiliser une sauvegarde externalisée immuable (non modifiable) ou déconnectée physiquement du réseau *(Bonne réponse)*.
+    *   C) Utiliser des clés USB alternées laissées branchées sur le serveur.
 
-
-
-### Corrigé de l'exercice
-1. **Failles identifiées** :
-   * *Risque physique commun* : Si un incendie ou un dégât des eaux touche la salle de réunion, le serveur NAS et son disque dur externe associé seront tous deux détruits simultanément.
-   * *Risque cyber (Ransomware)* : Le disque dur de sauvegarde externe étant branché en permanence en USB sur le NAS, un rançongiciel qui infecterait le serveur NAS chiffrera également et immédiatement les données du disque externe connecté.
-   * *Absence de copie hors site* : Aucune copie n'est externalisée en dehors des locaux physiques de l'agence.
-2. **Proposition de plan de sauvegarde 3-2-1** :
-   * **Copie 1 (Production)** : Les fichiers de travail actifs sur les postes des graphistes et sur le serveur de stockage actif de l'agence.
-   * **Copie 2 (Sauvegarde locale sur support différent)** : Sauvegarde automatisée sur le serveur NAS de l'agence (déconnecté des postes de travail ordinaires sauf lors de la tâche de sauvegarde), ou sur une bande magnétique stockée localement dans une armoire ignifugée.
-   * **Copie 3 (Sauvegarde hors site)** : Sauvegarde chiffrée automatisée envoyée chaque nuit vers un espace de stockage cloud sécurisé (ex. AWS S3 Glacier ou Microsoft Azure Archive), configurée en mode "lecture seule" (sauvegardes immuables) pour empêcher un ransomware local de la supprimer.
-
----
-
+**Éléments de débriefing (pour le mentor) :**
+- Les ransomwares modernes cherchent et chiffrent systématiquement les sauvegardes accessibles en réseau. Une copie hors ligne (Air-gapped) ou immuable est indispensable.
 
 ### Cas d'usages et exemples concrets
 
@@ -183,15 +175,14 @@ La sécurisation du cloud, des données et de l'identité exige des solutions de
 * [CNIL - Recommandations mots de passe](https://www.cnil.fr/fr/mots-de-passe-une-nouvelle-recommandation-pour-maitriser-sa-securite)
 * [ANSSI - Authentification multifacteur](https://cyber.gouv.fr/publications/recommandations-relatives-lauthentification-multifacteur-et-aux-mots-de-passe)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Dilemme Sauvegarde 3-2-1 - Livestorm)
 
-- **Objectif :** Élaboration d'une politique de gestion des accès et sauvegardes.
-- **Consignes :**
-    1. Pour une entreprise de 50 personnes utilisant un outil de travail collaboratif en cloud (ex. Microsoft 365 ou Google Workspace), listez 3 règles d'accès obligatoires à imposer aux utilisateurs.
-    2. Proposez une application pratique de la règle de sauvegarde "3-2-1" pour le serveur de fichiers de cette entreprise.
-- **Correction pour le mentor :** Règle d'accès : MFA obligatoire pour tous, complexité des mots de passe (15 caractères minimum), révocation automatique des accès dès le départ d'un employé. Sauvegarde 3-2-1 : 3 copies des données (production + sauvegarde 1 + sauvegarde 2), sur 2 supports différents (disque dur local du serveur + serveur NAS d'entreprise), avec 1 copie hors-site (stockage cloud chiffré et déconnecté/immuable).
-
----
+*   **Objectif :** Application de la résilience opérationnelle.
+*   **Sondage Livestorm :** Un incendie détruit intégralement les bureaux de l'entreprise. Vos sauvegardes sont stockées sur deux disques durs externes dans les mêmes locaux. Que se passe-t-il ?
+    *   A) Les données sont sauvées car il y a deux disques.
+    *   B) Les données sont définitivement perdues car aucun support n'était externalisé *(Bonne réponse)*.
+    *   C) Les données peuvent être récupérées dans le cloud automatiquement sans configuration préalable.
+*   **Guide d'animation (pour le mentor) :** Utilisez ce cas tragique mais classique pour justifier l'obligation d'avoir au moins une copie hors site (physique ou cloud) dans la règle 3-2-1.
 
 ## 5. Aide-mémoire / Fiche de révision
 

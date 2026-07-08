@@ -170,16 +170,14 @@ Pour assurer la confidentialité des données (DLP) et appliquer la règle de sa
 * [CNIL - Guide sécurité des données](https://www.cnil.fr/fr/guide-de-la-securite-des-donnees-personnelles)
 * [Cybermalveillance - Protéger ses données](https://www.cybermalveillance.gouv.fr/)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Dilemme Sauvegarde 3-2-1 - Livestorm)
 
-- **Objectif :** Conception d'un plan de sauvegarde anti-ransomware.
-- **Consignes :**
-    1. Vous devez concevoir la stratégie de sauvegarde d'une agence de design. Les fichiers critiques représentent 2 To de données.
-    2. Proposez une architecture technique respectant scrupuleusement la règle 3-2-1 (détaillez les types de supports et de réseaux utilisés).
-    3. Expliquez l'intérêt de la "sauvegarde hors-ligne" (Offline/Air-gapped) face à une attaque par rançongiciel.
-- **Correction pour le mentor :** L'architecture doit prévoir : 3 copies des données (les fichiers de travail sur les postes, une sauvegarde sur un serveur NAS local en réseau, et une sauvegarde sur un stockage cloud externe). La sauvegarde locale NAS doit être isolée par des accès d'administration distincts, et la sauvegarde cloud doit être programmée en mode "immuable" ou déconnectée périodiquement. Le point clé est d'expliquer que si la sauvegarde reste connectée en permanence au réseau avec les mêmes droits d'accès, le ransomware chiffrera également les sauvegardes.
-
----
+*   **Objectif :** Application de la résilience opérationnelle.
+*   **Sondage Livestorm :** Un incendie détruit intégralement les bureaux de l'entreprise. Vos sauvegardes sont stockées sur deux disques durs externes dans les mêmes locaux. Que se passe-t-il ?
+    *   A) Les données sont sauvées car il y a deux disques.
+    *   B) Les données sont définitivement perdues car aucun support n'était externalisé *(Bonne réponse)*.
+    *   C) Les données peuvent être récupérées dans le cloud automatiquement sans configuration préalable.
+*   **Guide d'animation (pour le mentor) :** Utilisez ce cas tragique mais classique pour justifier l'obligation d'avoir au moins une copie hors site (physique ou cloud) dans la règle 3-2-1.
 
 ## 5. Aide-mémoire / Fiche de révision
 

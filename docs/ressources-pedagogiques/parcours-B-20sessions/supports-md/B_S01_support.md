@@ -176,16 +176,14 @@ Pour mettre en œuvre une stratégie globale de défense en profondeur et antici
 * [ANSSI - Introduction à la cybersécurité](https://cyber.gouv.fr/)
 * [CNIL - Sécurité des données](https://www.cnil.fr)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Dilemme Décisionnel - Livestorm)
 
-- **Objectif :** Analyse d'impact sur cas réel.
-- **Consignes :**
-    1. Étudiez le cas d'une attaque par Ransomware ayant ciblé un hôpital régional fictif.
-    2. Identifiez l'impact précis de cette attaque sur chacun des trois piliers de la Triade CIA.
-    3. Proposez une mesure d'urgence pour restaurer la "Disponibilité" et une mesure préventive pour éviter que la "Confidentialité" ne soit compromise à l'avenir.
-- **Correction pour le mentor :** Le mentor validera que les apprenants ont bien identifié que le chiffrement des données de santé bloque la *Disponibilité*, que la fuite potentielle de dossiers médicaux affecte la *Confidentialité*, et que la modification sauvage de fiches d'administration de médicaments menace l'*Intégrité*. La restauration depuis des sauvegardes hors-ligne sécurisées est la réponse pour la disponibilité, tandis que le chiffrement des bases de données et la restriction des droits d'accès protègent la confidentialité.
-
----
+*   **Objectif :** Analyse d'impact rapide et priorisation.
+*   **Sondage Livestorm :** Une attaque par Ransomware cible un hôpital. Les dossiers médicaux sont inaccessibles. Quelle est la première action d'urgence à voter ?
+    *   A) Payer immédiatement la rançon demandée.
+    *   B) Isoler physiquement le réseau et éteindre les liaisons réseau des machines affectées pour confiner l'attaque *(Bonne réponse)*.
+    *   C) Reconstruire les serveurs à partir des sauvegardes sur le même réseau actif.
+*   **Guide d'animation (pour le mentor) :** Expliquez pourquoi isoler le réseau (B) est indispensable pour couper la propagation latérale avant d'envisager la restauration. Le paiement de la rançon (A) n'offre aucune garantie et finance le cybercrime.
 
 ## 5. Aide-mémoire / Fiche de révision
 

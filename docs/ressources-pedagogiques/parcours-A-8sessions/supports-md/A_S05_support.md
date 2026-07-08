@@ -135,33 +135,22 @@ Les entreprises projettent les risques identifiés dans une matrice visuelle pou
 
 ---
 
-### Exercice d'application
-**Titre** : Analyse et traitement d'un scénario de risque PME
+### Exercice d'application (Scénario RGPD & Conformité - Livestorm)
 
-### Énoncé
-Une PME de 15 salariés stocke son fichier client contenant les coordonnées et numéros de cartes de fidélité de ses 10 000 clients sur un ordinateur connecté à Internet sans antivirus à jour et dont le mot de passe d'accès est "123456".
+**Consignes pour le mentor :** Lancez les sondages de conformité RGPD.
 
-1. Identifiez la vulnérabilité et la menace dans cette situation.
-2. À l'aide de la matrice de focus pratique ci-dessus, attribuez une note de vraisemblance (1 à 4) et d'impact (1 à 4) au risque de vol et de divulgation de ce fichier client. Calculez sa criticité brute.
-3. Proposez trois mesures concrètes de réduction de ce risque.
+*   **Sondage 1 :** En cas de fuite de données personnelles (ex. intrusion et vol de fichier clients), quelle est l'obligation légale de l'entreprise selon le RGPD ?
+    *   A) Notifier la CNIL dans un délai maximal de 72 heures *(Bonne réponse)*.
+    *   B) Attendre la fin de l'enquête interne (sans limite de temps) avant d'en parler.
+    *   C) Publier immédiatement un communiqué dans la presse sans prévenir la CNIL.
+*   **Sondage 2 :** Un client demande à consulter toutes les données personnelles que vous stockez sur lui. Avez-vous le droit de lui facturer cette recherche ?
+    *   A) Oui, pour couvrir les frais de traitement informatique.
+    *   B) Non, l'accès à ses propres données est gratuit d'après le droit d'accès du RGPD *(Bonne réponse)*.
+    *   C) Oui, uniquement s'il n'est plus client chez vous.
 
-
-
-### Corrigé de l'exercice
-1. **Identification** :
-   * *Vulnérabilités* : Absence d'antivirus à jour, mot de passe d'accès extrêmement faible ("123456").
-   * *Menace* : Un cybercriminel ou un robot automatisé qui scanne Internet à la recherche de machines mal configurées pour y dérober des données.
-2. **Cotation du risque** :
-   * *Vraisemblance* : **4 (Presque sûr)**. Avec un mot de passe aussi trivial et sans protection, la machine sera compromise très rapidement.
-   * *Impact* : **3 (Majeur)**. La divulgation des coordonnées de 10 000 clients nuira gravement à la réputation de la PME et l'exposera à des sanctions de la CNIL (non-respect des obligations de sécurité du RGPD).
-   * *Criticité brute* : 4 × 3 = 12 (Risque situé dans la zone Élevée / Rouge de la matrice).
-3. **Mesures de réduction** :
-   * Forcer le changement du mot de passe pour une phrase de passe complexe (ex. minimum 14 caractères).
-   * Installer et maintenir à jour un logiciel antivirus/antimalware de niveau professionnel.
-   * Chiffrer le dossier contenant le fichier client et n'accorder l'accès qu'aux seuls collaborateurs autorisés.
-
----
-
+**Éléments de débriefing (pour le mentor) :**
+- Le délai de 72h pour notifier la CNIL est strict.
+- Le droit d'accès est gratuit. L'entreprise doit avoir un processus prêt pour extraire ces données.
 
 ### Cas d'usages et exemples concrets
 
@@ -200,17 +189,14 @@ Pour piloter la conformité RGPD, la gouvernance de sécurité (ISO 27001) et l'
 * [CNIL - Guide sécurité des données](https://www.cnil.fr/fr/guide-de-la-securite-des-donnees-personnelles)
 * [CNIL - Comprendre le RGPD](https://www.cnil.fr/fr/comprendre-le-rgpd)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Débat RGPD - Livestorm)
 
-- **Objectif :** Rédaction d'une matrice d'analyse de risques simplifiée.
-- **Consignes :**
-    1. Soit l'actif critique : "Le site e-commerce de l'entreprise générant 20k€ de CA par jour".
-    2. Identifiez un scénario de menace (ex. Attaque DDoS par des hacktivistes).
-    3. Évaluez le Risque Brut en estimant la Vraisemblance (échelle 1 à 4) et l'Impact (échelle 1 à 4). Calculez le score (Vraisemblance × Impact).
-    4. Proposez une mesure de traitement pour réduire ce risque.
-- **Correction pour le mentor :** Le scénario identifié est le DDoS. Vraisemblance estimée : 3 (menace courante sur les sites marchands) ; Impact estimé : 4 (indisponibilité totale = perte financière et de réputation). Score de risque = 12/16 (Risque critique). Mesure de traitement recommandée : Souscrire à un service cloud de protection anti-DDoS (ex. Cloudflare) pour filtrer les requêtes illégitimes, ramenant la vraisemblance résiduelle à 1 et le score à 4 (Risque acceptable).
-
----
+*   **Objectif :** Responsabilisation sur la collecte de données.
+*   **Sondage Livestorm :** Pour un fichier de prospection commerciale de base, avez-vous le droit de collecter les numéros de sécurité sociale des prospects ?
+    *   A) Oui, cela permet une identification unique et sans doublons.
+    *   B) Non, cela viole le principe de minimisation des données du RGPD *(Bonne réponse)*.
+    *   C) Oui, si les prospects ont coché une case générique d'acceptation.
+*   **Guide d'animation (pour le mentor) :** Expliquez le principe de minimisation : on ne doit collecter que les données strictement nécessaires à l'objectif du traitement.
 
 ## 5. Aide-mémoire / Fiche de révision
 

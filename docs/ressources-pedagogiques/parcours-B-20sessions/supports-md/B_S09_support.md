@@ -204,16 +204,14 @@ La gestion des identités et des accès (IAM) et l'authentification forte (MFA/S
 * [CNIL - Sécuriser vos mots de passe](https://www.cnil.fr/fr/mots-de-passe-une-nouvelle-recommandation-pour-maitriser-sa-securite)
 * [ANSSI - Sécurité des mots de passe](https://cyber.gouv.fr/publications/recommandations-relatives-lauthentification-multifacteur-et-aux-mots-de-passe)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Sondage MFA Fatigue - Livestorm)
 
-- **Objectif :** Conception d'une matrice de droits d'accès basée sur les rôles (RBAC).
-- **Consignes :**
-    1. Soit un projet logiciel dans une PME. Définissez 3 rôles de collaborateurs distincts (Développeur, Testeur, Chef de Projet).
-    2. Remplissez une matrice de droits pour les 3 ressources suivantes du projet : Code Source, Rapports d'anomalies, Environnement de Production. Utilisez les droits : Aucun, Lecture, Écriture, Déploiement.
-    3. Justifiez la restriction appliquée au rôle "Développeur" sur la "Production".
-- **Correction pour le mentor :** Le tableau attendu doit attribuer des droits limités. Développeur: Code Source (Lecture/Écriture), Rapports (Lecture/Écriture), Production (Aucun ou Lecture). Testeur: Code Source (Aucun), Rapports (Lecture/Écriture), Production (Aucun). Chef de projet: Code Source (Lecture), Rapports (Lecture/Écriture), Production (Lecture). La restriction du développeur sur la production respecte le principe de séparation des tâches : on évite qu'un développeur pousse du code non testé ou malveillant directement en production sans validation.
-
----
+*   **Objectif :** Compréhension des attaques par fatigue d'authentification.
+*   **Sondage Livestorm :** Un attaquant possède le mot de passe d'un utilisateur et envoie des dizaines de notifications push MFA sur son smartphone au milieu de la nuit jusqu'à ce que l'utilisateur clique sur "Accepter" par exaspération. Comment contrer cette attaque ?
+    *   A) Désactiver complètement le MFA.
+    *   B) Activer le "Number Matching" (l'utilisateur doit saisir sur son téléphone un numéro affiché à l'écran de connexion) *(Bonne réponse)*.
+    *   C) Rendre le mot de passe encore plus complexe.
+*   **Guide d'animation (pour le mentor) :** Expliquez la technique de la "fatigue MFA" et comment le Number Matching (ou la correspondance de nombres) élimine cette vulnérabilité comportementale.
 
 ## 5. Aide-mémoire / Fiche de révision
 

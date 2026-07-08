@@ -173,20 +173,14 @@ La mise en place de défenses réseau robustes s'appuie sur des équipements de 
 * [ANSSI - Passerelles d'accès à Internet](https://cyber.gouv.fr)
 * [OWASP - Network Security](https://owasp.org/)
 
-## 4. Exercice bonus
+## 4. Exercice bonus (Quiz Confinement DMZ - Livestorm)
 
-- **Objectif :** Conception de règles de filtrage pour pare-feu (ACL).
-- **Consignes :**
-    1. Vous devez configurer les règles de sécurité du pare-feu d'une PME. Remplissez le tableau de règles (Source, Destination, Port, Action) pour respecter les contraintes suivantes :
-       - Autoriser les utilisateurs du LAN interne (`192.168.10.0/24`) à naviguer sur le Web (HTTP/HTTPS).
-       - Autoriser les connexions depuis Internet vers le serveur web public de la DMZ (`10.0.5.8`) uniquement sur le port sécurisé HTTPS.
-       - Interdire tout autre trafic par défaut (Implicit Deny).
-- **Correction pour le mentor :** Le tableau final doit comprendre :
-  - Règle 1 : Src=`192.168.10.0/24`, Dst=`Any`, Port=`80, 443`, Action=`ALLOW`
-  - Règle 2 : Src=`Any`, Dst=`10.0.5.8`, Port=`443`, Action=`ALLOW`
-  - Règle 3 : Src=`Any`, Dst=`Any`, Port=`Any`, Action=`DENY` (Implicit Deny en fin de liste). Le mentor validera la présence de la règle de rejet par défaut à la fin.
-
----
+*   **Objectif :** Compréhension du cloisonnement réseau.
+*   **Sondage Livestorm :** Un serveur web situé en DMZ est compromis par un pirate. Qu'est-ce qui l'empêche d'accéder au serveur de comptabilité interne ?
+    *   A) L'antivirus du serveur web.
+    *   B) La règle de pare-feu interdisant tout flux initié de la DMZ vers le réseau interne *(Bonne réponse)*.
+    *   C) Le mot de passe du serveur web.
+*   **Guide d'animation (pour le mentor) :** Rappelez que même si un serveur exposé est compromis, la segmentation réseau limite strictement les mouvements latéraux du pirate.
 
 ## 5. Aide-mémoire / Fiche de révision
 
