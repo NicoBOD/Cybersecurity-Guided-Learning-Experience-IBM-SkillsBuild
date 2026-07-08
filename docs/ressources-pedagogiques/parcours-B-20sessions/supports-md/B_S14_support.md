@@ -1,6 +1,28 @@
 # Session B14 — Gestion des risques
 
-## Objectifs de la session
+---
+
+!!! abstract "Résumé"
+    Ce document synthétise les concepts essentiels de la session. Vous y découvrirez notamment :
+    - Qu'est-ce qu'un risque cyber ? (L'équation du risque)
+    - Le Registre des risques et la Matrice de Criticité 4x4
+    - Les 4 options de traitement du risque
+    L'objectif est de vous fournir les bases théoriques et pratiques nécessaires pour maîtriser ces notions.
+
+---
+
+## 1. Introduction
+
+*   Un **risque cyber** naît de la rencontre d'une menace et d'une vulnérabilité sur un actif de valeur pour l'entreprise.
+*   L'évaluation du risque croise sa **vraisemblance** (probabilité d'occurrence) et sa **gravité** (impact financier, juridique ou d'image).
+*   La **criticité brute** priorise les risques, tandis que la **criticité résiduelle** mesure le risque subsistant après l'application des contrôles de sécurité.
+*   Il existe 4 réponses stratégiques au risque : **Réduire** (sécuriser), **Transférer** (assurance), **Éviter** (renoncer), ou **Accepter** (décision de direction).
+
+---
+
+## 2. Développement
+
+### Objectifs de la session
 À la fin de cette session, vous serez capable de :
 
 * Expliquer et articuler les composantes d'un risque cyber : atout (actif), menace, vulnérabilité, impact et probabilité.
@@ -9,13 +31,20 @@
 
 ---
 
-## Concepts clés
+### Glossaire
+*   **Actif (Asset)** — Tout élément physique, virtuel ou humain ayant de la valeur pour la réalisation de la mission de l'entreprise.
+*   **Vulnérabilité** — Faille ou faiblesse logique, physique ou organisationnelle permettant à un attaquant de compromettre un système.
+*   **Shadow IT** — Utilisation de systèmes, logiciels ou services informatiques par des employés sans l'autorisation ou le contrôle formel de la DSI.
+*   **Risque Résiduel** — Niveau de risque subsistant après la mise en œuvre des mesures de traitement et des contrôles de sécurité.
 
-### 1. Qu'est-ce qu'un risque cyber ? (L'équation du risque)
+---
+
+### Concepts clés
 
 !!! info "À retenir"
     La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
 
+### 1. Qu'est-ce qu'un risque cyber ? (L'équation du risque)
 En sécurité de l'information, le risque n'est pas un concept abstrait. Il se définit comme la possibilité qu'un événement indésirable survienne et affecte l'activité de l'entreprise. 
 
 Pour caractériser un risque, on décompose l'équation en plusieurs éléments :
@@ -56,8 +85,7 @@ Une fois les risques identifiés et évalués, l'entreprise doit décider commen
 
 ---
 
-## Activités / exercices
-
+### Activités / exercices
 ### Exercice 1 — Élaboration d'une ligne de registre des risques pour l'entreprise "EcoLog"
 **Objectif :** Rédiger et coter un risque cyber concret de l'identification initiale (Brute) à la mise en place de mesures correctives (Résiduelle).
 
@@ -96,48 +124,37 @@ Rédigez la ligne de registre pour ce risque en suivant les consignes de cotatio
 
 ---
 
-## Questions de réflexion
+### Questions de réflexion
 1. Quelle est la différence entre le risque *Brut* et le risque *Résiduel* ? Pourquoi un risque résiduel n'est-il presque jamais égal à zéro ?
 2. Une entreprise décide d'acheter une cyber-assurance pour couvrir les pertes financières en cas de rançongiciel. A-t-elle éliminé son risque ? Quelle composante du risque (vraisemblance ou gravité de l'impact) l'assurance permet-elle de transférer ?
 
 ---
 
-!!! abstract "Résumé"
-    / points à retenir
-    *   Un **risque cyber** naît de la rencontre d'une menace et d'une vulnérabilité sur un actif de valeur pour l'entreprise.
-    *   L'évaluation du risque croise sa **vraisemblance** (probabilité d'occurrence) et sa **gravité** (impact financier, juridique ou d'image).
-    *   La **criticité brute** priorise les risques, tandis que la **criticité résiduelle** mesure le risque subsistant après l'application des contrôles de sécurité.
-    *   Il existe 4 réponses stratégiques au risque : **Réduire** (sécuriser), **Transférer** (assurance), **Éviter** (renoncer), ou **Accepter** (décision de direction).
+## 3. Ressources Complémentaires
 
----
-
-## Glossaire de la session
-*   **Actif (Asset)** — Tout élément physique, virtuel ou humain ayant de la valeur pour la réalisation de la mission de l'entreprise.
-*   **Vulnérabilité** — Faille ou faiblesse logique, physique ou organisationnelle permettant à un attaquant de compromettre un système.
-*   **Shadow IT** — Utilisation de systèmes, logiciels ou services informatiques par des employés sans l'autorisation ou le contrôle formel de la DSI.
-*   **Risque Résiduel** — Niveau de risque subsistant après la mise en œuvre des mesures de traitement et des contrôles de sécurité.
-
----
-
-## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Cybersecurity Governance and Risk Management - Part 2"* (durée estimée : 1h30).
 *   **Recherche de méthodologie** : Rechercher les grandes lignes de la méthode d'analyse de risques française **EBIOS RM** (développée par l'ANSSI) pour comprendre comment l'État et les grandes organisations modélisent les scénarios de cyberattaques.
 
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
-## Exercice Bonus (Temps additionnel)
+---
+
+## 4. Exercice Bonus (Si vous avez de l'avance)
+
 **Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.
 
-## Aide-mémoire / Fiche de révision
+---
+
+## 5. Aide-mémoire / Fiche de révision
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Concept clé** | À compléter selon la session |
-
-## Ressources pour aller plus loin
-
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
+| **Actif (Asset)** | Tout élément physique, virtuel ou humain ayant de la valeur pour la réalisation de la mission de l'entreprise. |
+| **Vulnérabilité** | Faille ou faiblesse logique, physique ou organisationnelle permettant à un attaquant de compromettre un système. |
+| **Shadow IT** | Utilisation de systèmes, logiciels ou services informatiques par des employés sans l'autorisation ou le contrôle formel de la DSI. |
+| **Risque Résiduel** | Niveau de risque subsistant après la mise en œuvre des mesures de traitement et des contrôles de sécurité. |

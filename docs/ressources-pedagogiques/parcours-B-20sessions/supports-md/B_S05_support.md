@@ -1,6 +1,28 @@
 # Session B05 — Fondamentaux réseau pour la sécurité
 
-## Objectifs de la session
+---
+
+!!! abstract "Résumé"
+    Ce document synthétise les concepts essentiels de la session. Vous y découvrirez notamment :
+    - Les Modèles OSI et TCP/IP sous l'angle de la sécurité
+    - Protocoles et ports de communication majeurs
+    - Adressage IP et En-têtes de paquets
+    L'objectif est de vous fournir les bases théoriques et pratiques nécessaires pour maîtriser ces notions.
+
+---
+
+## 1. Introduction
+
+*   Les couches réseau (Liaison, Réseau, Transport, Application) structurent la façon dont les données transitent et définissent les différents types d'attaques cyber.
+*   Chaque service réseau standard écoute sur un **port de communication** spécifique (22 pour SSH, 53 pour DNS, 80/443 pour HTTP/S, 3389 pour RDP).
+*   Une capture de paquets (trame réseau) révèle l'origine (IP/MAC source), la destination (IP/MAC destination), le protocole et le contenu applicatif du flux.
+*   Bloquer les ports inutilisés et analyser le trafic anormal sont des réflexes indispensables pour assurer la sécurité réseau.
+
+---
+
+## 2. Développement
+
+### Objectifs de la session
 À la fin de cette session, vous serez capable de :
 
 * Expliquer les couches clés des modèles OSI et TCP/IP à travers le prisme de la sécurité en identifiant où se situent les principales attaques et défenses.
@@ -9,13 +31,20 @@
 
 ---
 
-## Concepts clés
+### Glossaire
+*   **MAC Address (Adresse MAC)** — Identifiant physique unique gravé en usine sur chaque carte réseau.
+*   **IP Address (Adresse IP)** — Identifiant logique attribué à chaque machine connectée à un réseau, permettant son routage.
+*   **DNS Tunneling (Tunneling DNS)** — Technique de détournement consistant à encapsuler du trafic non-DNS dans des requêtes DNS pour contourner les pare-feux.
+*   **TTL (Time To Live)** — Valeur dans l'en-tête IP indiquant le nombre maximal de sauts de routeurs autorisés avant la destruction du paquet.
 
-### 1. Les Modèles OSI et TCP/IP sous l'angle de la sécurité
+---
+
+### Concepts clés
 
 !!! info "À retenir"
     La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
 
+### 1. Les Modèles OSI et TCP/IP sous l'angle de la sécurité
 Pour faire communiquer des ordinateurs, les données doivent être formatées et transmises selon des règles strictes. Le modèle théorique **OSI** (en 7 couches) et le modèle pratique **TCP/IP** (en 4 couches) décrivent ce processus. En cybersécurité, chaque couche représente une surface d'attaque spécifique et nécessite des défenses adaptées.
 
 *   **Couche 2 : Liaison (*Data Link*)** — Gère la communication physique locale entre cartes réseau via les adresses **MAC** (*Media Access Control*).
@@ -71,8 +100,7 @@ Lorsqu'un paquet est envoyé, il contient un **en-tête IP** contenant les méta
 
 ---
 
-## Activités / exercices
-
+### Activités / exercices
 ### Exercice 1 — Analyse d'un paquet réseau tracé (Wireshark simplifié)
 **Objectif :** Analyser des captures de trames réseau simplifiées au format texte afin d'identifier les flux d'informations et repérer une activité suspecte.
 
@@ -112,48 +140,37 @@ Analysez les deux extraits de paquets ci-dessous et répondez aux questions :
 
 ---
 
-## Questions de réflexion
+### Questions de réflexion
 1. Pourquoi est-il dangereux de laisser le protocole RDP (port 3389) directement ouvert et accessible depuis Internet sur un serveur d'entreprise ? Quelle solution réseau intermédiaire permettrait de sécuriser cet accès ?
 2. Si un pare-feu bloque le trafic sur le port 80 (HTTP) mais laisse passer le trafic sur le port 53 (DNS), comment un attaquant peut-il utiliser cette configuration pour exfiltrer des fichiers ?
 
 ---
 
-!!! abstract "Résumé"
-    / points à retenir
-    *   Les couches réseau (Liaison, Réseau, Transport, Application) structurent la façon dont les données transitent et définissent les différents types d'attaques cyber.
-    *   Chaque service réseau standard écoute sur un **port de communication** spécifique (22 pour SSH, 53 pour DNS, 80/443 pour HTTP/S, 3389 pour RDP).
-    *   Une capture de paquets (trame réseau) révèle l'origine (IP/MAC source), la destination (IP/MAC destination), le protocole et le contenu applicatif du flux.
-    *   Bloquer les ports inutilisés et analyser le trafic anormal sont des réflexes indispensables pour assurer la sécurité réseau.
+## 3. Ressources Complémentaires
 
----
-
-## Glossaire de la session
-*   **MAC Address (Adresse MAC)** — Identifiant physique unique gravé en usine sur chaque carte réseau.
-*   **IP Address (Adresse IP)** — Identifiant logique attribué à chaque machine connectée à un réseau, permettant son routage.
-*   **DNS Tunneling (Tunneling DNS)** — Technique de détournement consistant à encapsuler du trafic non-DNS dans des requêtes DNS pour contourner les pare-feux.
-*   **TTL (Time To Live)** — Valeur dans l'en-tête IP indiquant le nombre maximal de sauts de routeurs autorisés avant la destruction du paquet.
-
----
-
-## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Network Security - Part 1"* (durée estimée : 1h30).
 *   **Action pratique** : Ouvrez un terminal sur votre machine et tapez la commande `ping -c 4 cyber.gouv.fr`. Observez le temps de réponse et la valeur de TTL renvoyée par le serveur.
 
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
-## Exercice Bonus (Temps additionnel)
+---
+
+## 4. Exercice Bonus (Si vous avez de l'avance)
+
 **Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.
 
-## Aide-mémoire / Fiche de révision
+---
+
+## 5. Aide-mémoire / Fiche de révision
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Concept clé** | À compléter selon la session |
-
-## Ressources pour aller plus loin
-
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
+| **MAC Address (Adresse MAC)** | Identifiant physique unique gravé en usine sur chaque carte réseau. |
+| **IP Address (Adresse IP)** | Identifiant logique attribué à chaque machine connectée à un réseau, permettant son routage. |
+| **DNS Tunneling (Tunneling DNS)** | Technique de détournement consistant à encapsuler du trafic non-DNS dans des requêtes DNS pour contourner les pare-feux. |
+| **TTL (Time To Live)** | Valeur dans l'en-tête IP indiquant le nombre maximal de sauts de routeurs autorisés avant la destruction du paquet. |

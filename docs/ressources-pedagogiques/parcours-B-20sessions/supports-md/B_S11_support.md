@@ -1,6 +1,28 @@
 # Session B11 — Sécurité du cloud
 
-## Objectifs de la session
+---
+
+!!! abstract "Résumé"
+    Ce document synthétise les concepts essentiels de la session. Vous y découvrirez notamment :
+    - Le Modèle de Responsabilité Partagée
+    - Les risques majeurs liés aux mauvaises configurations cloud
+    - Règles d'or de la gouvernance des accès Cloud
+    L'objectif est de vous fournir les bases théoriques et pratiques nécessaires pour maîtriser ces notions.
+
+---
+
+## 1. Introduction
+
+*   La sécurité dans le cloud est une **responsabilité partagée** : le fournisseur sécurise l'infrastructure physique (*sécurité du cloud*), le client sécurise ses configurations et données (*sécurité dans le cloud*).
+*   En **IaaS**, le client gère le système d'exploitation et le réseau virtuel. En **SaaS**, le client ne gère que ses données et les droits d'accès de ses utilisateurs.
+*   Les **mauvaises configurations** (comme les buckets de stockage S3 laissés publics ou l'écriture de clés d'API en dur dans le code) sont les principales sources d'incidents cyber dans le cloud.
+*   L'administration d'infrastructures cloud requiert une isolation stricte du compte **Root**, le déploiement généralisé du **MFA** et l'application du moindre privilège via l'**IAM**.
+
+---
+
+## 2. Développement
+
+### Objectifs de la session
 À la fin de cette session, vous serez capable de :
 
 * Analyser le modèle de responsabilité partagée et attribuer les devoirs de sécurité entre le client et le fournisseur pour les services IaaS, PaaS et SaaS.
@@ -9,13 +31,20 @@
 
 ---
 
-## Concepts clés
+### Glossaire
+*   **IaaS (Infrastructure as a Service)** — Modèle de cloud où le client loue des ressources matérielles virtualisées (serveurs, stockage, réseaux).
+*   **PaaS (Platform as a Service)** — Modèle fournissant une plateforme complète d'exécution pour développer et héberger des applications sans gérer les OS.
+*   **SaaS (Software as a Service)** — Logiciel applicatif complet clé en main hébergé et administré directement par le fournisseur cloud.
+*   **Bucket de stockage** — Conteneur logique de stockage d'objets (fichiers, images, sauvegardes) dans le cloud public.
 
-### 1. Le Modèle de Responsabilité Partagée
+---
+
+### Concepts clés
 
 !!! info "À retenir"
     La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
 
+### 1. Le Modèle de Responsabilité Partagée
 Contrairement à une infrastructure classique hébergée en local (on-premise) où l'entreprise gère tout, du câblage au logiciel, le cloud repose sur un partage des responsabilités de sécurité entre le **fournisseur de services cloud** (CSP — *Cloud Service Provider*) et le **client**.
 
 *   **Sécurité DU cloud (Responsabilité du fournisseur)** : Concerne les infrastructures physiques (bâtiments sécurisés, serveurs physiques, alimentation électrique, réseaux de communication physiques) et la couche de virtualisation (l'hyperviseur).
@@ -46,8 +75,7 @@ Pour sécuriser les consoles d'administration cloud, appliquez la politique du m
 
 ---
 
-## Activités / exercices
-
+### Activités / exercices
 ### Exercice 1 — La Matrice de responsabilité Cloud
 **Objectif :** Maîtriser le modèle de responsabilité partagée en attribuant correctement les tâches de sécurité à l'acteur concerné (Client ou Fournisseur Cloud) selon le type d'architecture.
 
@@ -78,48 +106,37 @@ Pour les 6 tâches de sécurité listées ci-dessous, écrivez dans la colonne c
 
 ---
 
-## Questions de réflexion
+### Questions de réflexion
 1. Si un pirate vole les accès d'un développeur et modifie le code source d'un site web hébergé en PaaS pour y ajouter une porte dérobée, le fournisseur de cloud est-il responsable de cet incident ? Justifiez votre réponse à l'aide de la matrice de responsabilité.
 2. Pourquoi le cloud public augmente-t-il les risques liés aux erreurs humaines de configuration par rapport à un centre de données classique interne ?
 
 ---
 
-!!! abstract "Résumé"
-    / points à retenir
-    *   La sécurité dans le cloud est une **responsabilité partagée** : le fournisseur sécurise l'infrastructure physique (*sécurité du cloud*), le client sécurise ses configurations et données (*sécurité dans le cloud*).
-    *   En **IaaS**, le client gère le système d'exploitation et le réseau virtuel. En **SaaS**, le client ne gère que ses données et les droits d'accès de ses utilisateurs.
-    *   Les **mauvaises configurations** (comme les buckets de stockage S3 laissés publics ou l'écriture de clés d'API en dur dans le code) sont les principales sources d'incidents cyber dans le cloud.
-    *   L'administration d'infrastructures cloud requiert une isolation stricte du compte **Root**, le déploiement généralisé du **MFA** et l'application du moindre privilège via l'**IAM**.
+## 3. Ressources Complémentaires
 
----
-
-## Glossaire de la session
-*   **IaaS (Infrastructure as a Service)** — Modèle de cloud où le client loue des ressources matérielles virtualisées (serveurs, stockage, réseaux).
-*   **PaaS (Platform as a Service)** — Modèle fournissant une plateforme complète d'exécution pour développer et héberger des applications sans gérer les OS.
-*   **SaaS (Software as a Service)** — Logiciel applicatif complet clé en main hébergé et administré directement par le fournisseur cloud.
-*   **Bucket de stockage** — Conteneur logique de stockage d'objets (fichiers, images, sauvegardes) dans le cloud public.
-
----
-
-## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Cloud Security Fundamentals"* (durée estimée : 1h30).
 *   **Recherche complémentaire** : Visiter le site de l'OWASP et rechercher le top 10 des vulnérabilités de sécurité spécifiques au Cloud (OWASP Cloud Security Top 10) pour en comprendre les menaces courantes.
 
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
-## Exercice Bonus (Temps additionnel)
+---
+
+## 4. Exercice Bonus (Si vous avez de l'avance)
+
 **Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.
 
-## Aide-mémoire / Fiche de révision
+---
+
+## 5. Aide-mémoire / Fiche de révision
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Concept clé** | À compléter selon la session |
-
-## Ressources pour aller plus loin
-
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
+| **IaaS (Infrastructure as a Service)** | Modèle de cloud où le client loue des ressources matérielles virtualisées (serveurs, stockage, réseaux). |
+| **PaaS (Platform as a Service)** | Modèle fournissant une plateforme complète d'exécution pour développer et héberger des applications sans gérer les OS. |
+| **SaaS (Software as a Service)** | Logiciel applicatif complet clé en main hébergé et administré directement par le fournisseur cloud. |
+| **Bucket de stockage** | Conteneur logique de stockage d'objets (fichiers, images, sauvegardes) dans le cloud public. |

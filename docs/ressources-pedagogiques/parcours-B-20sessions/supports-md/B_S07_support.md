@@ -1,6 +1,28 @@
 # Session B07 — Communications sécurisées
 
-## Objectifs de la session
+---
+
+!!! abstract "Résumé"
+    Ce document synthétise les concepts essentiels de la session. Vous y découvrirez notamment :
+    - Sécuriser le web : Le protocole TLS/SSL
+    - Les Réseaux Privés Virtuels (VPN)
+    - La sécurité des communications sans-fil (Wi-Fi)
+    L'objectif est de vous fournir les bases théoriques et pratiques nécessaires pour maîtriser ces notions.
+
+---
+
+## 1. Introduction
+
+*   **HTTPS/TLS** protège les données applicatives en transit en combinant la cryptographie asymétrique (échange de clés) et symétrique (chiffrement des flux).
+*   La validation du **certificat numérique** par le navigateur empêche les attaques par interception *Man-in-the-Middle* (MitM).
+*   Le **VPN** sécurise les flux de transport sur des réseaux publics en créant un tunnel chiffré (IPsec pour le site-à-site, WireGuard/OpenVPN pour le nomade).
+*   La sécurité Wi-Fi moderne requiert l'abandon de WEP/WPA2-PSK au profit de **WPA3** et de **WPA-Enterprise** pour l'authentification individuelle.
+
+---
+
+## 2. Développement
+
+### Objectifs de la session
 À la fin de cette session, vous serez capable de :
 
 * Expliquer les étapes du protocole de négociation (*handshake*) TLS/SSL dans la sécurisation des échanges web (HTTPS) et le rôle des autorités de certification.
@@ -9,13 +31,20 @@
 
 ---
 
-## Concepts clés
+### Glossaire
+*   **Handshake TLS** — Phase de négociation initiale où le client et le serveur s'authentifient et définissent la clé de chiffrement de leur session.
+*   **CA (Certificate Authority)** — Organisme tiers de confiance chargé de générer, valider et révoquer les certificats numériques d'identité des serveurs.
+*   **Man-in-the-Middle (MitM)** — Attaque d'interception où un pirate s'interpose secrètement entre deux parties pour lire ou modifier leurs communications.
+*   **RADIUS Server** — Serveur centralisant l'authentification, les autorisations et la traçabilité des accès utilisateurs sur un réseau d'entreprise (802.1X).
 
-### 1. Sécuriser le web : Le protocole TLS/SSL
+---
+
+### Concepts clés
 
 !!! info "À retenir"
     La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
 
+### 1. Sécuriser le web : Le protocole TLS/SSL
 Lorsque vous naviguez sur un site web en HTTP classique, toutes les informations (mots de passe, numéros de carte bancaire) transitent en texte clair sur le réseau. Le protocole **HTTPS** sécurise ces échanges en encapsulant le trafic HTTP au sein d'un tunnel chiffré par le protocole **TLS** (*Transport Layer Security* — successeur du SSL).
 
 *   *L'analogie* : Naviguer en HTTP équivaut à envoyer une carte postale sans enveloppe (tous les intermédiaires peuvent la lire). Naviguer en HTTPS équivaut à glisser le message dans un coffre-fort blindé portatif dont seul le destinataire possède le code.
@@ -48,8 +77,7 @@ Les ondes radio du Wi-Fi traversent les murs, ce qui permet à n'importe qui à 
 
 ---
 
-## Activités / exercices
-
+### Activités / exercices
 ### Exercice 1 — Scénarisation de connexions distantes sécurisées
 **Objectif :** Analyser le besoin d'une entreprise nomade et rédiger des préconisations de sécurité réseau adaptées pour protéger les flux de données.
 
@@ -77,48 +105,37 @@ Rédigez une fiche de préconisations techniques et d'usages en répondant aux 3
 
 ---
 
-## Questions de réflexion
+### Questions de réflexion
 1. Si vous utilisez un site web HTTPS (chiffré) tout en étant connecté au Wi-Fi public gratuit d'un aéroport sans activer de VPN, quelles informations un attaquant espionnant le réseau peut-il tout de même intercepter ? (Indice : Pensez aux requêtes de résolution de nom DNS et à la couche IP).
 2. Pourquoi une Autorité de Certification (CA) est-elle considérée comme la clé de voûte de la confiance sur Internet ? Que se passerait-il si un attaquant parvenait à pirater une CA et à émettre de faux certificats ?
 
 ---
 
-!!! abstract "Résumé"
-    / points à retenir
-    *   **HTTPS/TLS** protège les données applicatives en transit en combinant la cryptographie asymétrique (échange de clés) et symétrique (chiffrement des flux).
-    *   La validation du **certificat numérique** par le navigateur empêche les attaques par interception *Man-in-the-Middle* (MitM).
-    *   Le **VPN** sécurise les flux de transport sur des réseaux publics en créant un tunnel chiffré (IPsec pour le site-à-site, WireGuard/OpenVPN pour le nomade).
-    *   La sécurité Wi-Fi moderne requiert l'abandon de WEP/WPA2-PSK au profit de **WPA3** et de **WPA-Enterprise** pour l'authentification individuelle.
+## 3. Ressources Complémentaires
 
----
-
-## Glossaire de la session
-*   **Handshake TLS** — Phase de négociation initiale où le client et le serveur s'authentifient et définissent la clé de chiffrement de leur session.
-*   **CA (Certificate Authority)** — Organisme tiers de confiance chargé de générer, valider et révoquer les certificats numériques d'identité des serveurs.
-*   **Man-in-the-Middle (MitM)** — Attaque d'interception où un pirate s'interpose secrètement entre deux parties pour lire ou modifier leurs communications.
-*   **RADIUS Server** — Serveur centralisant l'authentification, les autorisations et la traçabilité des accès utilisateurs sur un réseau d'entreprise (802.1X).
-
----
-
-## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Secure Protocols & Cryptography Basics"* (durée estimée : 1h30).
 *   **Recherche complémentaire** : Ouvrez un site d'actualité cyber et recherchez des cas d'attaques historiques de type "MitM" ou des compromissions d'Autorités de Certification (comme l'affaire *DigiNotar* en 2011) pour comprendre les enjeux géopolitiques de la confiance numérique.
 
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
-## Exercice Bonus (Temps additionnel)
+---
+
+## 4. Exercice Bonus (Si vous avez de l'avance)
+
 **Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.
 
-## Aide-mémoire / Fiche de révision
+---
+
+## 5. Aide-mémoire / Fiche de révision
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Concept clé** | À compléter selon la session |
-
-## Ressources pour aller plus loin
-
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
+| **Handshake TLS** | Phase de négociation initiale où le client et le serveur s'authentifient et définissent la clé de chiffrement de leur session. |
+| **CA (Certificate Authority)** | Organisme tiers de confiance chargé de générer, valider et révoquer les certificats numériques d'identité des serveurs. |
+| **Man-in-the-Middle (MitM)** | Attaque d'interception où un pirate s'interpose secrètement entre deux parties pour lire ou modifier leurs communications. |
+| **RADIUS Server** | Serveur centralisant l'authentification, les autorisations et la traçabilité des accès utilisateurs sur un réseau d'entreprise (802.1X). |

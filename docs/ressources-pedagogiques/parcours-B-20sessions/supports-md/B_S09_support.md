@@ -1,6 +1,28 @@
 # Session B09 — Gestion des identités et des accès (IAM)
 
-## Objectifs de la session
+---
+
+!!! abstract "Résumé"
+    Ce document synthétise les concepts essentiels de la session. Vous y découvrirez notamment :
+    - Les 4 piliers de l'IAM (Identity and Access Management)
+    - RBAC vs ABAC : Comment attribuer les droits ?
+    - SSO (Single Sign-On)
+    L'objectif est de vous fournir les bases théoriques et pratiques nécessaires pour maîtriser ces notions.
+
+---
+
+## 1. Introduction
+
+*   L'**Identification** déclare qui vous êtes, l'**Authentification** le prouve, l'**Autorisation** accorde les droits d'accès et l'**Audit** trace vos actions.
+*   Le **MFA** combine au moins deux facteurs de natures différentes (ce que je sais, ce que je possède, ce que je suis) pour neutraliser le vol simple de mot de passe.
+*   Le modèle **RBAC** structure les droits par rôles métier, tandis que le modèle **ABAC** utilise des variables dynamiques (IP, heure, lieu) pour une plus grande granularité.
+*   Le **SSO** simplifie l'expérience utilisateur et renforce la sécurité des accès en centralisant l'authentification.
+
+---
+
+## 2. Développement
+
+### Objectifs de la session
 À la fin de cette session, vous serez capable de :
 
 * Distinguer et expliquer les quatre étapes fondamentales de l'IAM : Identification, Authentification, Autorisation et Audit.
@@ -9,13 +31,20 @@
 
 ---
 
-## Concepts clés
+### Glossaire
+*   **IAM (Identity and Access Management)** — Système et ensemble de règles gérant les identités numériques et contrôlant les droits d'accès aux ressources.
+*   **MFA (Multi-Factor Authentication)** — Méthode de validation d'identité requérant l'association de plusieurs preuves de catégories distinctes.
+*   **RBAC (Role-Based Access Control)** — Mécanisme de contrôle d'accès dans lequel les autorisations système sont liées à des rôles professionnels plutôt qu'à des personnes.
+*   **SSO (Single Sign-On)** — Technologie d'authentification unique permettant à un utilisateur d'accéder à plusieurs applications avec un seul compte d'accès.
 
-### 1. Les 4 piliers de l'IAM (Identity and Access Management)
+---
+
+### Concepts clés
 
 !!! info "À retenir"
     La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
 
+### 1. Les 4 piliers de l'IAM (Identity and Access Management)
 L'IAM regroupe les processus et technologies visant à garantir que les bonnes personnes ont accès aux bonnes ressources, au bon moment et pour les bonnes raisons. Il repose sur quatre étapes distinctes et successives :
 
 *   **Identification** : L'acte de déclarer qui vous êtes. C'est l'identifiant publique de l'utilisateur (nom d'utilisateur, adresse e-mail, matricule).
@@ -55,8 +84,7 @@ Le **SSO** (ou Authentification Unique) est un mécanisme permettant à un utili
 
 ---
 
-## Activités / exercices
-
+### Activités / exercices
 ### Exercice 1 — La Matrice RBAC de l'entreprise "MediDistri"
 **Objectif :** Concevoir une matrice de contrôle d'accès logique basée sur les rôles (RBAC) pour respecter le principe du moindre privilège.
 
@@ -101,48 +129,37 @@ Pour chaque intersection, attribuez l'un des droits suivants :
 
 ---
 
-## Questions de réflexion
+### Questions de réflexion
 1. Si un attaquant parvient à voler le mot de passe d'un utilisateur sur un site web non protégé par MFA, comment le MFA l'empêcherait-il de compromettre le compte ? Quel facteur d'authentification bloquerait l'attaquant ?
 2. Imaginez qu'une entreprise adopte le Single Sign-On (SSO). Si le compte SSO unique d'un utilisateur est piraté, quelles en sont les conséquences ? Quelles mesures de sécurité compensatoires doit-on obligatoirement mettre en place sur ce compte unique ?
 
 ---
 
-!!! abstract "Résumé"
-    / points à retenir
-    *   L'**Identification** déclare qui vous êtes, l'**Authentification** le prouve, l'**Autorisation** accorde les droits d'accès et l'**Audit** trace vos actions.
-    *   Le **MFA** combine au moins deux facteurs de natures différentes (ce que je sais, ce que je possède, ce que je suis) pour neutraliser le vol simple de mot de passe.
-    *   Le modèle **RBAC** structure les droits par rôles métier, tandis que le modèle **ABAC** utilise des variables dynamiques (IP, heure, lieu) pour une plus grande granularité.
-    *   Le **SSO** simplifie l'expérience utilisateur et renforce la sécurité des accès en centralisant l'authentification.
+## 3. Ressources Complémentaires
 
----
-
-## Glossaire de la session
-*   **IAM (Identity and Access Management)** — Système et ensemble de règles gérant les identités numériques et contrôlant les droits d'accès aux ressources.
-*   **MFA (Multi-Factor Authentication)** — Méthode de validation d'identité requérant l'association de plusieurs preuves de catégories distinctes.
-*   **RBAC (Role-Based Access Control)** — Mécanisme de contrôle d'accès dans lequel les autorisations système sont liées à des rôles professionnels plutôt qu'à des personnes.
-*   **SSO (Single Sign-On)** — Technologie d'authentification unique permettant à un utilisateur d'accéder à plusieurs applications avec un seul compte d'accès.
-
----
-
-## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Identity and Access Management Fundamentals"* (durée estimée : 1h30).
 *   **Recherche complémentaire** : Renseignez-vous sur le protocole standard ouvert **SAML 2.0** et sur le protocole **OIDC (OpenID Connect)**. Découvrez comment ils permettent au SSO d'échanger des preuves d'identité sécurisées entre applications.
 
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
-## Exercice Bonus (Temps additionnel)
+---
+
+## 4. Exercice Bonus (Si vous avez de l'avance)
+
 **Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.
 
-## Aide-mémoire / Fiche de révision
+---
+
+## 5. Aide-mémoire / Fiche de révision
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Concept clé** | À compléter selon la session |
-
-## Ressources pour aller plus loin
-
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
+| **IAM (Identity and Access Management)** | Système et ensemble de règles gérant les identités numériques et contrôlant les droits d'accès aux ressources. |
+| **MFA (Multi-Factor Authentication)** | Méthode de validation d'identité requérant l'association de plusieurs preuves de catégories distinctes. |
+| **RBAC (Role-Based Access Control)** | Mécanisme de contrôle d'accès dans lequel les autorisations système sont liées à des rôles professionnels plutôt qu'à des personnes. |
+| **SSO (Single Sign-On)** | Technologie d'authentification unique permettant à un utilisateur d'accéder à plusieurs applications avec un seul compte d'accès. |

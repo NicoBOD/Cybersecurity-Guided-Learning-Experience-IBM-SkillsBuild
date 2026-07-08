@@ -1,6 +1,28 @@
 # Session B06 — Défenses réseau
 
-## Objectifs de la session
+---
+
+!!! abstract "Résumé"
+    Ce document synthétise les concepts essentiels de la session. Vous y découvrirez notamment :
+    - Les Pare-feux (Firewalls) et leurs évolutions
+    - IDS et IPS : La surveillance du trafic
+    - La segmentation réseau et la DMZ
+    L'objectif est de vous fournir les bases théoriques et pratiques nécessaires pour maîtriser ces notions.
+
+---
+
+## 1. Introduction
+
+*   Un pare-feu filtre les paquets selon le principe du **Default Deny** (tout ce qui n'est pas permis est interdit).
+*   Les pare-feux évoluent du filtrage simple (*stateless*) au maintien de session (*stateful*), jusqu'à l'inspection applicative profonde (*NGFW*).
+*   L'**IDS** détecte passivement les intrusions pour alerter, tandis que l'**IPS** s'interpose pour bloquer activement l'attaque en cours de route.
+*   La **segmentation réseau** consiste à isoler les hôtes dans différentes zones (LAN, WAN, DMZ) pour confiner les incidents et empêcher les mouvements latéraux des attaquants.
+
+---
+
+## 2. Développement
+
+### Objectifs de la session
 À la fin de cette session, vous serez capable de :
 
 * Expliquer le fonctionnement des pare-feux et comparer les technologies de filtrage sans état (*stateless*), à état (*stateful*) et de nouvelle génération (NGFW).
@@ -9,13 +31,20 @@
 
 ---
 
-## Concepts clés
+### Glossaire
+*   **Default Deny (Rejet par défaut)** — Politique de sécurité réseau qui consiste à bloquer toutes les communications par défaut, sauf celles explicitement autorisées.
+*   **DMZ (Zone Démilitarisée)** — Sous-réseau physique ou logique isolé contenant les serveurs exposés à l'extérieur, servant de zone tampon avec le réseau interne.
+*   **IDS (Intrusion Detection System)** — Équipement ou logiciel réseau analysant le trafic de manière passive pour détecter des comportements suspects ou des signatures d'attaques.
+*   **IPS (Intrusion Prevention System)** — Équipement réseau actif capable d'analyser les paquets et de bloquer immédiatement les flux identifiés comme malveillants.
 
-### 1. Les Pare-feux (Firewalls) et leurs évolutions
+---
+
+### Concepts clés
 
 !!! info "À retenir"
     La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
 
+### 1. Les Pare-feux (Firewalls) et leurs évolutions
 Un pare-feu est un équipement de sécurité réseau chargé de filtrer les flux d'informations entrants et sortants selon des règles prédéfinies. Le principe fondamental d'un pare-feu est le **Default Deny** (Rejet par défaut) : tout trafic qui n'est pas explicitement autorisé par une règle est bloqué.
 
 On distingue plusieurs générations de pare-feux :
@@ -46,8 +75,7 @@ Pour éviter qu'un pirate ayant compromis une machine n'accède facilement à to
 
 ---
 
-## Activités / exercices
-
+### Activités / exercices
 ### Exercice 1 — Zonage réseau et table de filtrage de l'entreprise "EcoLog"
 **Objectif :** Concevoir le schéma d'architecture réseau segmenté et configurer la table de règles pare-feu de base pour protéger les infrastructures d'une entreprise.
 
@@ -88,48 +116,37 @@ Rédigez la table de règles du pare-feu central (contenant 4 règles clés + la
 
 ---
 
-## Questions de réflexion
+### Questions de réflexion
 1. Pourquoi est-il déconseillé de configurer une règle permettant à un serveur web situé en DMZ d'initier une connexion vers la base de données de production située dans le LAN interne ? Comment contourner ce besoin de manière sécurisée ?
 2. Un pare-feu de nouvelle génération (NGFW) détecte un flux HTTPS sur le port 443 contenant un malware connu. Pourquoi un pare-feu traditionnel de type "stateful" n'aurait pas pu bloquer cette menace ?
 
 ---
 
-!!! abstract "Résumé"
-    / points à retenir
-    *   Un pare-feu filtre les paquets selon le principe du **Default Deny** (tout ce qui n'est pas permis est interdit).
-    *   Les pare-feux évoluent du filtrage simple (*stateless*) au maintien de session (*stateful*), jusqu'à l'inspection applicative profonde (*NGFW*).
-    *   L'**IDS** détecte passivement les intrusions pour alerter, tandis que l'**IPS** s'interpose pour bloquer activement l'attaque en cours de route.
-    *   La **segmentation réseau** consiste à isoler les hôtes dans différentes zones (LAN, WAN, DMZ) pour confiner les incidents et empêcher les mouvements latéraux des attaquants.
+## 3. Ressources Complémentaires
 
----
-
-## Glossaire de la session
-*   **Default Deny (Rejet par défaut)** — Politique de sécurité réseau qui consiste à bloquer toutes les communications par défaut, sauf celles explicitement autorisées.
-*   **DMZ (Zone Démilitarisée)** — Sous-réseau physique ou logique isolé contenant les serveurs exposés à l'extérieur, servant de zone tampon avec le réseau interne.
-*   **IDS (Intrusion Detection System)** — Équipement ou logiciel réseau analysant le trafic de manière passive pour détecter des comportements suspects ou des signatures d'attaques.
-*   **IPS (Intrusion Prevention System)** — Équipement réseau actif capable d'analyser les paquets et de bloquer immédiatement les flux identifiés comme malveillants.
-
----
-
-## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Network Security - Part 2"* (durée estimée : 1h30).
 *   **Ressource complémentaire** : Dessiner un schéma réseau simple à l'aide d'un outil en ligne gratuit (comme draw.io) en représentant une architecture comprenant un pare-feu, un switch, une DMZ et un LAN.
 
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
-## Exercice Bonus (Temps additionnel)
+---
+
+## 4. Exercice Bonus (Si vous avez de l'avance)
+
 **Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.
 
-## Aide-mémoire / Fiche de révision
+---
+
+## 5. Aide-mémoire / Fiche de révision
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Concept clé** | À compléter selon la session |
-
-## Ressources pour aller plus loin
-
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
+| **Default Deny (Rejet par défaut)** | Politique de sécurité réseau qui consiste à bloquer toutes les communications par défaut, sauf celles explicitement autorisées. |
+| **DMZ (Zone Démilitarisée)** | Sous-réseau physique ou logique isolé contenant les serveurs exposés à l'extérieur, servant de zone tampon avec le réseau interne. |
+| **IDS (Intrusion Detection System)** | Équipement ou logiciel réseau analysant le trafic de manière passive pour détecter des comportements suspects ou des signatures d'attaques. |
+| **IPS (Intrusion Prevention System)** | Équipement réseau actif capable d'analyser les paquets et de bloquer immédiatement les flux identifiés comme malveillants. |

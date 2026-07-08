@@ -1,6 +1,28 @@
 # Session B08 — Durcissement des systèmes & endpoints
 
-## Objectifs de la session
+---
+
+!!! abstract "Résumé"
+    Ce document synthétise les concepts essentiels de la session. Vous y découvrirez notamment :
+    - Le Principe du Moindre Privilège
+    - Le Durcissement Système (Hardening)
+    - Antivirus Traditionnel vs EDR
+    L'objectif est de vous fournir les bases théoriques et pratiques nécessaires pour maîtriser ces notions.
+
+---
+
+## 1. Introduction
+
+*   Le **principe du moindre privilège** protège le système en limitant les droits des utilisateurs au strict nécessaire pour leurs tâches courantes.
+*   Le **durcissement (hardening)** réduit la surface d'attaque en fermant les ports locaux, en désactivant les services superflus et en chiffrant les données au repos.
+*   La gestion des correctifs de sécurité (*patching*) est l'arme la plus efficace contre l'exploitation des failles de sécurité publiques (CVE).
+*   L'**EDR** surpasse l'antivirus classique en analysant en continu les comportements des processus pour contrer les attaques inconnues et automatiser la réaction.
+
+---
+
+## 2. Développement
+
+### Objectifs de la session
 À la fin de cette session, vous serez capable de :
 
 * Appliquer le principe du moindre privilège sur un système d'exploitation Windows ou Linux pour restreindre la surface d'attaque.
@@ -10,13 +32,20 @@
 
 ---
 
-## Concepts clés
+### Glossaire
+*   **GPO (Group Policy Object)** — Outil de l'infrastructure Microsoft Active Directory permettant de configurer de manière centralisée les règles de sécurité d'un parc de machines Windows.
+*   **Hardening (Durcissement)** — Processus de sécurisation d'un système d'exploitation par réduction de sa surface d'exposition et verrouillage de ses configurations.
+*   **EDR (Endpoint Detection and Response)** — Solution de sécurité installée sur les terminaux surveillant les comportements pour détecter et bloquer les attaques sophistiquées en temps réel.
+*   **UAC (User Account Control)** — Mécanisme de sécurité Windows demandant l'approbation de l'utilisateur pour accorder des privilèges d'administration temporaires à un programme.
 
-### 1. Le Principe du Moindre Privilège
+---
+
+### Concepts clés
 
 !!! info "À retenir"
     La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
 
+### 1. Le Principe du Moindre Privilège
 Le principe du moindre privilège (*Least Privilege*) stipule qu'un utilisateur, un programme ou un processus ne doit posséder que les droits d'accès strictement nécessaires à l'accomplissement de sa tâche, et rien de plus.
 
 *   **En pratique** : Les utilisateurs ne doivent jamais travailler au quotidien avec un compte disposant de privilèges d'administration globaux (compte Administrateur sous Windows ou `root` sous Linux).
@@ -46,8 +75,7 @@ La protection des machines hôtes (*endpoints*) a fortement évolué pour faire 
 
 ---
 
-## Activités / exercices
-
+### Activités / exercices
 ### Exercice 1 — Élaboration d'une checklist de durcissement système (Hardening)
 **Objectif :** Rédiger des règles techniques concrètes d'application de sécurité pour durcir un poste de travail Windows 11 en entreprise.
 
@@ -76,48 +104,37 @@ L'entreprise "EcoLog" déploie 50 nouveaux ordinateurs portables Windows 11 pour
 
 ---
 
-## Questions de réflexion
+### Questions de réflexion
 1. Si une entreprise déploie des EDR de dernière génération sur tous ses postes, peut-elle se dispenser d'appliquer les mises à jour de sécurité de son système d'exploitation ? Pourquoi la défense en profondeur reste-t-elle indispensable ?
 2. Quelle est la différence fondamentale entre le rôle d'un administrateur système qui fait du "durcissement" et un analyste SOC qui surveille les alertes EDR ? Comment ces deux activités se complètent-elles ?
 
 ---
 
-!!! abstract "Résumé"
-    / points à retenir
-    *   Le **principe du moindre privilège** protège le système en limitant les droits des utilisateurs au strict nécessaire pour leurs tâches courantes.
-    *   Le **durcissement (hardening)** réduit la surface d'attaque en fermant les ports locaux, en désactivant les services superflus et en chiffrant les données au repos.
-    *   La gestion des correctifs de sécurité (*patching*) est l'arme la plus efficace contre l'exploitation des failles de sécurité publiques (CVE).
-    *   L'**EDR** surpasse l'antivirus classique en analysant en continu les comportements des processus pour contrer les attaques inconnues et automatiser la réaction.
+## 3. Ressources Complémentaires
 
----
-
-## Glossaire de la session
-*   **GPO (Group Policy Object)** — Outil de l'infrastructure Microsoft Active Directory permettant de configurer de manière centralisée les règles de sécurité d'un parc de machines Windows.
-*   **Hardening (Durcissement)** — Processus de sécurisation d'un système d'exploitation par réduction de sa surface d'exposition et verrouillage de ses configurations.
-*   **EDR (Endpoint Detection and Response)** — Solution de sécurité installée sur les terminaux surveillant les comportements pour détecter et bloquer les attaques sophistiquées en temps réel.
-*   **UAC (User Account Control)** — Mécanisme de sécurité Windows demandant l'approbation de l'utilisateur pour accorder des privilèges d'administration temporaires à un programme.
-
----
-
-## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"System Hardening and Patch Management"* (durée estimée : 1h30).
 *   **Ressource complémentaire** : Visiter le site de l'ANSSI (cyber.gouv.fr) et consulter le "Guide de configuration d'un système Windows" ou les recommandations de durcissement Linux pour observer le niveau d'exigence technique requis en milieu professionnel.
 
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
-## Exercice Bonus (Temps additionnel)
+---
+
+## 4. Exercice Bonus (Si vous avez de l'avance)
+
 **Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.
 
-## Aide-mémoire / Fiche de révision
+---
+
+## 5. Aide-mémoire / Fiche de révision
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Concept clé** | À compléter selon la session |
-
-## Ressources pour aller plus loin
-
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
+| **GPO (Group Policy Object)** | Outil de l'infrastructure Microsoft Active Directory permettant de configurer de manière centralisée les règles de sécurité d'un parc de machines Windows. |
+| **Hardening (Durcissement)** | Processus de sécurisation d'un système d'exploitation par réduction de sa surface d'exposition et verrouillage de ses configurations. |
+| **EDR (Endpoint Detection and Response)** | Solution de sécurité installée sur les terminaux surveillant les comportements pour détecter et bloquer les attaques sophistiquées en temps réel. |
+| **UAC (User Account Control)** | Mécanisme de sécurité Windows demandant l'approbation de l'utilisateur pour accorder des privilèges d'administration temporaires à un programme. |

@@ -1,6 +1,28 @@
 # Session B03 — Types d'attaques & vecteurs
 
-## Objectifs de la session
+---
+
+!!! abstract "Résumé"
+    Ce document synthétise les concepts essentiels de la session. Vous y découvrirez notamment :
+    - La typologie des logiciels malveillants (*malwares*)
+    - Modéliser l'attaque : Cyber Kill Chain & MITRE ATT&CK
+    - Attaques d'infrastructure et d'applications
+    L'objectif est de vous fournir les bases théoriques et pratiques nécessaires pour maîtriser ces notions.
+
+---
+
+## 1. Introduction
+
+*   Les malwares se différencient par leur propagation (vers autonomes vs virus dépendants) et leurs buts (ransomwares pour rançonner, spywares pour espionner).
+*   Un DDoS utilise des machines infectées à distance (botnets) pour surcharger et mettre hors ligne des serveurs web.
+*   La Cyber Kill Chain modélise une attaque en 7 étapes : perturber une seule de ces étapes permet de stopper l'intrusion.
+*   Le framework MITRE ATT&CK offre un langage universel pour classifier les tactiques (buts) et techniques (moyens) observées chez les attaquants.
+
+---
+
+## 2. Développement
+
+### Objectifs de la session
 À la fin de cette session, vous serez capable de :
 
 * Classifier les principales familles de logiciels malveillants (*malwares*) en fonction de leur mode de propagation et de leur objectif.
@@ -10,13 +32,20 @@
 
 ---
 
-## Concepts clés
+### Glossaire
+*   **Worm (Ver)** — Logiciel malveillant capable de se propager de manière autonome dans un réseau en exploitant des vulnérabilités sans intervention humaine.
+*   **Trojan (Cheval de Troie)** — Programme nuisible camouflé sous l'apparence d'un logiciel légitime pour tromper l'utilisateur et infecter son système.
+*   **Cyber Kill Chain** — Modèle en 7 étapes théorisé par Lockheed Martin décrivant le cycle de vie d'une attaque ciblée.
+*   **Command & Control (C2)** — Serveur externe contrôlé par un attaquant servant à envoyer des commandes à des systèmes piratés au sein d'un réseau cible.
 
-### 1. La typologie des logiciels malveillants (*malwares*)
+---
+
+### Concepts clés
 
 !!! info "À retenir"
     La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
 
+### 1. La typologie des logiciels malveillants (*malwares*)
 Un *malware* (contraction de *malicious software*) est un programme développé dans le but de nuire à un système informatique. On les classe selon leur mode d'action et de propagation :
 
 *   **Le virus** : Un programme qui s'attache à un fichier ou à un programme légitime. Il a besoin d'une action humaine (comme l'ouverture d'une application ou d'un fichier infecté) pour s'exécuter et se propager.
@@ -50,8 +79,7 @@ En dehors des logiciels malveillants, les attaquants ciblent les capacités phys
 
 ---
 
-## Activités / exercices
-
+### Activités / exercices
 ### Exercice 1 — Reconstruction d'incident (Cyber Kill Chain)
 **Objectif :** Analyser le scénario chronologique d'un piratage d'entreprise et associer chaque événement réel à l'une des 7 étapes de la *Cyber Kill Chain*.
 
@@ -81,48 +109,37 @@ En dehors des logiciels malveillants, les attaquants ciblent les capacités phys
 
 ---
 
-## Questions de réflexion
+### Questions de réflexion
 1. Pourquoi la phase de Commandement et Contrôle (C2) de la Kill Chain nécessite-t-elle généralement une connexion *sortante* (du réseau de l'entreprise vers Internet) plutôt qu'une connexion *entrante* ? (Indice : Pensez au comportement par défaut des pare-feu réseau).
 2. Si vous bloquez l'envoi des e-mails malveillants (étape de Livraison), l'attaquant peut-il tout de même compromettre vos serveurs ? Pourquoi la défense doit-elle être organisée en "couches" ?
 
 ---
 
-!!! abstract "Résumé"
-    / points à retenir
-    *   Les malwares se différencient par leur propagation (vers autonomes vs virus dépendants) et leurs buts (ransomwares pour rançonner, spywares pour espionner).
-    *   Un DDoS utilise des machines infectées à distance (botnets) pour surcharger et mettre hors ligne des serveurs web.
-    *   La Cyber Kill Chain modélise une attaque en 7 étapes : perturber une seule de ces étapes permet de stopper l'intrusion.
-    *   Le framework MITRE ATT&CK offre un langage universel pour classifier les tactiques (buts) et techniques (moyens) observées chez les attaquants.
+## 3. Ressources Complémentaires
 
----
-
-## Glossaire de la session
-*   **Worm (Ver)** — Logiciel malveillant capable de se propager de manière autonome dans un réseau en exploitant des vulnérabilités sans intervention humaine.
-*   **Trojan (Cheval de Troie)** — Programme nuisible camouflé sous l'apparence d'un logiciel légitime pour tromper l'utilisateur et infecter son système.
-*   **Cyber Kill Chain** — Modèle en 7 étapes théorisé par Lockheed Martin décrivant le cycle de vie d'une attaque ciblée.
-*   **Command & Control (C2)** — Serveur externe contrôlé par un attaquant servant à envoyer des commandes à des systèmes piratés au sein d'un réseau cible.
-
----
-
-## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Introduction to Cybersecurity Tools & Cyber Attacks"* (~1h30).
 *   **Ressource complémentaire** : Visiter le site officiel d'ATT&CK (attack.mitre.org) et cliquer sur la technique "Phishing" (T1566) pour observer comment les techniques sont documentées mondialement.
 
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
-## Exercice Bonus (Temps additionnel)
+---
+
+## 4. Exercice Bonus (Si vous avez de l'avance)
+
 **Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.
 
-## Aide-mémoire / Fiche de révision
+---
+
+## 5. Aide-mémoire / Fiche de révision
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Concept clé** | À compléter selon la session |
-
-## Ressources pour aller plus loin
-
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
+| **Worm (Ver)** | Logiciel malveillant capable de se propager de manière autonome dans un réseau en exploitant des vulnérabilités sans intervention humaine. |
+| **Trojan (Cheval de Troie)** | Programme nuisible camouflé sous l'apparence d'un logiciel légitime pour tromper l'utilisateur et infecter son système. |
+| **Cyber Kill Chain** | Modèle en 7 étapes théorisé par Lockheed Martin décrivant le cycle de vie d'une attaque ciblée. |
+| **Command & Control (C2)** | Serveur externe contrôlé par un attaquant servant à envoyer des commandes à des systèmes piratés au sein d'un réseau cible. |

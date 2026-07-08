@@ -1,6 +1,28 @@
 # Session B19 — Simulation de crise cyber (Tabletop exercise)
 
-## Objectifs de la session
+---
+
+!!! abstract "Résumé"
+    Ce document synthétise les concepts essentiels de la session. Vous y découvrirez notamment :
+    - Qu'est-ce qu'un Tabletop Exercise ?
+    - Organisation de la cellule de crise cyber
+    - Les règles d'or de la communication de crise
+    L'objectif est de vous fournir les bases théoriques et pratiques nécessaires pour maîtriser ces notions.
+
+---
+
+## 1. Introduction
+
+*   Un **Tabletop Exercise** est un entraînement théorique permettant de tester la capacité décisionnelle d'une entreprise face à un scénario de cyberattaque.
+*   La gestion de crise réunit la **Direction**, l'**IT**, la **Communication** et le **Juridique/DPO** pour coordonner la réponse technique, légale et réputationnelle.
+*   La communication de crise doit être **factuelle, empathique, et centralisée** autour d'un porte-parole unique.
+*   Toute fuite de données personnelles impose une notification rapide aux autorités de contrôle (**CNIL**) et aux personnes concernées.
+
+---
+
+## 2. Développement
+
+### Objectifs de la session
 À la fin de cette session, vous serez capable de :
 
 * Expliquer le fonctionnement et l'intérêt d'une simulation de crise sur table (*Tabletop Exercise*) pour une organisation.
@@ -9,13 +31,19 @@
 
 ---
 
-## Concepts clés
+### Glossaire
+*   **Tabletop Exercise** — Simulation sur table d'un incident de sécurité permettant de tester les plans de réponse sans impact réel sur la production.
+*   **Inject (Stimulus)** — Nouvelle information ou rebondissement introduit par l'animateur d'une simulation pour faire évoluer le scénario de crise.
+*   **Communication Hors Bande (Out-of-band)** — Utilisation de réseaux de communication indépendants du système d'information principal (ex. téléphones personnels, applications de messagerie chiffrée grand public) lorsque le réseau d'entreprise est compromis.
 
-### 1. Qu'est-ce qu'un Tabletop Exercise ?
+---
+
+### Concepts clés
 
 !!! info "À retenir"
     La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
 
+### 1. Qu'est-ce qu'un Tabletop Exercise ?
 Un **Tabletop Exercise** (ou exercice sur table) est une simulation de crise théorique durant laquelle les décisionnaires d'une entreprise se réunissent pour réagir en temps réel à un scénario de cyberattaque fictif.
 
 *   **Le Maître du Jeu (MJ)** : Il anime la session et apporte régulièrement de nouvelles informations perturbatrices (appelées **injects**), telles que : la découverte d'une fuite sur Twitter, la demande de rançon d'un pirate, l'appel téléphonique d'un client en colère ou d'un journaliste.
@@ -44,8 +72,7 @@ En période de crise cyber, une mauvaise communication peut causer plus de dég�
 
 ---
 
-## Activités / exercices
-
+### Activités / exercices
 ### Exercice 1 — Rédaction d'un communiqué de crise externe
 **Objectif :** Rédiger un communiqué de presse officiel après une cyberattaque par ransomware avec fuite de données, en veillant à la précision factuelle et à la préservation de la réputation de l'entreprise.
 
@@ -91,47 +118,36 @@ Contact Presse unique : service.presse@ecolog.fr
 
 ---
 
-## Questions de réflexion
+### Questions de réflexion
 1. Pourquoi est-il déconseillé d'annoncer publiquement le montant d'une rançon exigée par des pirates, ou même le fait que l'on négocie avec eux ?
 2. En cas de blocage complet du système de messagerie interne de l'entreprise lors d'une cyberattaque, comment la cellule de crise peut-elle communiquer de manière sécurisée avec ses membres et ses collaborateurs ? (Pensez aux canaux de communication dits "hors bande" ou *out-of-band*).
 
 ---
 
-!!! abstract "Résumé"
-    / points à retenir
-    *   Un **Tabletop Exercise** est un entraînement théorique permettant de tester la capacité décisionnelle d'une entreprise face à un scénario de cyberattaque.
-    *   La gestion de crise réunit la **Direction**, l'**IT**, la **Communication** et le **Juridique/DPO** pour coordonner la réponse technique, légale et réputationnelle.
-    *   La communication de crise doit être **factuelle, empathique, et centralisée** autour d'un porte-parole unique.
-    *   Toute fuite de données personnelles impose une notification rapide aux autorités de contrôle (**CNIL**) et aux personnes concernées.
+## 3. Ressources Complémentaires
 
----
-
-## Glossaire de la session
-*   **Tabletop Exercise** — Simulation sur table d'un incident de sécurité permettant de tester les plans de réponse sans impact réel sur la production.
-*   **Inject (Stimulus)** — Nouvelle information ou rebondissement introduit par l'animateur d'une simulation pour faire évoluer le scénario de crise.
-*   **Communication Hors Bande (Out-of-band)** — Utilisation de réseaux de communication indépendants du système d'information principal (ex. téléphones personnels, applications de messagerie chiffrée grand public) lorsque le réseau d'entreprise est compromis.
-
----
-
-## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Incident Response Fundamentals"* (durée estimée : 1h30).
 *   **Guide pratique** : Rechercher et lire le document *"Organiser un exercice de gestion de crise cyber"* édité par l'ANSSI pour comprendre comment concevoir un scénario de simulation complet de A à Z.
 
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
-## Exercice Bonus (Temps additionnel)
+---
+
+## 4. Exercice Bonus (Si vous avez de l'avance)
+
 **Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.
 
-## Aide-mémoire / Fiche de révision
+---
+
+## 5. Aide-mémoire / Fiche de révision
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Concept clé** | À compléter selon la session |
-
-## Ressources pour aller plus loin
-
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
+| **Tabletop Exercise** | Simulation sur table d'un incident de sécurité permettant de tester les plans de réponse sans impact réel sur la production. |
+| **Inject (Stimulus)** | Nouvelle information ou rebondissement introduit par l'animateur d'une simulation pour faire évoluer le scénario de crise. |
+| **Communication Hors Bande (Out-of-band)** | Utilisation de réseaux de communication indépendants du système d'information principal (ex. téléphones personnels, applications de messagerie chiffrée grand public) lorsque le réseau d'entreprise est compromis. |

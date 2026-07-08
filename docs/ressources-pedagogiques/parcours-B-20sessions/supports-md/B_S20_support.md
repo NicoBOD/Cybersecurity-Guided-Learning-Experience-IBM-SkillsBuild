@@ -1,6 +1,28 @@
 # Session B20 — Soutenance finale & Clôture (Validation Capstone B)
 
-## Objectifs de la session
+---
+
+!!! abstract "Résumé"
+    Ce document synthétise les concepts essentiels de la session. Vous y découvrirez notamment :
+    - Le Capstone Project B : Une synthèse transverse
+    - Réussir une soutenance de projet cyber
+    - Capitalisation professionnelle et veille continue
+    L'objectif est de vous fournir les bases théoriques et pratiques nécessaires pour maîtriser ces notions.
+
+---
+
+## 1. Introduction
+
+*   Le **Capstone Project B** valide la capacité à analyser globalement la sécurité d'une PME (MedDistri) sous les angles technique et organisationnel.
+*   Présenter un audit cyber exige de **traduire les failles techniques en risques métiers** compréhensibles par la Direction Générale.
+*   Une soutenance orale réussie repose sur un pitch de **7 minutes structuré**, suivi d'un échange argumenté avec le jury pour justifier ses choix.
+*   La cybersécurité exige un engagement de **formation continue et de veille active** (bulletins du CERT-FR) tout au long de sa carrière professionnelle.
+
+---
+
+## 2. Développement
+
+### Objectifs de la session
 À la fin de cette session, vous serez capable de :
 
 * Présenter et soutenir oralement en équipe les conclusions de votre audit et votre plan d'action pour la PME MedDistri.
@@ -9,13 +31,19 @@
 
 ---
 
-## Concepts clés
+### Glossaire
+*   **Soutenance de Projet** — Présentation orale synthétique devant un jury visant à démontrer la pertinence et la faisabilité des solutions proposées.
+*   **CVE (Common Vulnerabilities and Exposures)** — Système d'identification et de référencement public des vulnérabilités logicielles connues.
+*   **CERT-FR** — Centre de veille, d'alerte et de réponse aux attaques informatiques de l'État français, rattaché à l'ANSSI.
 
-### 1. Le Capstone Project B : Une synthèse transverse
+---
+
+### Concepts clés
 
 !!! info "À retenir"
     La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
 
+### 1. Le Capstone Project B : Une synthèse transverse
 Le **Capstone Project B** marque l'aboutissement de votre parcours de formation de 30 heures. Il simule une mission de conseil cyber réelle pour la PME fictive **MedDistri** (distributeur de matériel médical critique).
 
 Ce projet a requis l'application pratique de l'ensemble des modules étudiés :
@@ -43,8 +71,7 @@ La fin de la formation n'est pas la fin de votre apprentissage. Le paysage de la
 
 ---
 
-## Activités / exercices
-
+### Activités / exercices
 ### Exercice 1 — Grille d'évaluation et de notation pour l'auto-évaluation du projet Capstone
 **Objectif :** Réaliser une auto-évaluation rigoureuse de la prestation écrite et orale de son équipe avant de soumettre le livrable au jury, afin d'identifier les zones de faiblesse à corriger.
 
@@ -71,47 +98,36 @@ Utilisez la grille critériée ci-dessous pour évaluer votre livrable *« Audit
 
 ---
 
-## Questions de réflexion
+### Questions de réflexion
 1. Pourquoi est-il indispensable qu'un auditeur en cybersécurité conserve une posture de neutralité absolue et de bienveillance lorsqu'il présente des vulnérabilités critiques aux équipes techniques d'une entreprise auditée ? (Pensez à la gestion de la susceptibilité professionnelle).
 2. Si vous deviez choisir une seule mesure de sécurité à mettre en œuvre d'urgence dans une entreprise manquant totalement de budget, laquelle choisiriez-vous et pourquoi ?
 
 ---
 
-!!! abstract "Résumé"
-    / points à retenir
-    *   Le **Capstone Project B** valide la capacité à analyser globalement la sécurité d'une PME (MedDistri) sous les angles technique et organisationnel.
-    *   Présenter un audit cyber exige de **traduire les failles techniques en risques métiers** compréhensibles par la Direction Générale.
-    *   Une soutenance orale réussie repose sur un pitch de **7 minutes structuré**, suivi d'un échange argumenté avec le jury pour justifier ses choix.
-    *   La cybersécurité exige un engagement de **formation continue et de veille active** (bulletins du CERT-FR) tout au long de sa carrière professionnelle.
+## 3. Ressources Complémentaires
 
----
-
-## Glossaire de la session
-*   **Soutenance de Projet** — Présentation orale synthétique devant un jury visant à démontrer la pertinence et la faisabilité des solutions proposées.
-*   **CVE (Common Vulnerabilities and Exposures)** — Système d'identification et de référencement public des vulnérabilités logicielles connues.
-*   **CERT-FR** — Centre de veille, d'alerte et de réponse aux attaques informatiques de l'État français, rattaché à l'ANSSI.
-
----
-
-## Pour aller plus loin (self-paced)
 *   **Après la formation** : Ajoutez vos certifications et badges de réussite **IBM SkillsBuild** sur votre profil LinkedIn pour valoriser vos nouvelles compétences auprès des recruteurs.
 *   **Veille continue** : Créez un compte sur le portail de veille cyber de l'ANSSI ou abonnez-vous au flux RSS du site de référence *cyber.gouv.fr* pour suivre en direct l'actualité des menaces nationales et internationales.
 
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
-## Exercice Bonus (Temps additionnel)
+---
+
+## 4. Exercice Bonus (Si vous avez de l'avance)
+
 **Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.
 
-## Aide-mémoire / Fiche de révision
+---
+
+## 5. Aide-mémoire / Fiche de révision
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Concept clé** | À compléter selon la session |
-
-## Ressources pour aller plus loin
-
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
+| **Soutenance de Projet** | Présentation orale synthétique devant un jury visant à démontrer la pertinence et la faisabilité des solutions proposées. |
+| **CVE (Common Vulnerabilities and Exposures)** | Système d'identification et de référencement public des vulnérabilités logicielles connues. |
+| **CERT-FR** | Centre de veille, d'alerte et de réponse aux attaques informatiques de l'État français, rattaché à l'ANSSI. |

@@ -1,6 +1,28 @@
 # Session B10 — Cryptographie essentielle
 
-## Objectifs de la session
+---
+
+!!! abstract "Résumé"
+    Ce document synthétise les concepts essentiels de la session. Vous y découvrirez notamment :
+    - Chiffrement symétrique vs asymétrique
+    - Le Hachage et l'intégrité des données
+    - PKI et Certificats X.509
+    L'objectif est de vous fournir les bases théoriques et pratiques nécessaires pour maîtriser ces notions.
+
+---
+
+## 1. Introduction
+
+*   Le **chiffrement symétrique** utilise une seule clé partagée (ultra-rapide, idéal pour les gros volumes de données au repos).
+*   Le **chiffrement asymétrique** utilise un couple clé publique/privée (plus lent, idéal pour l'authentification et l'échange sécurisé de clés sur Internet).
+*   La fonction de **hachage** (ex. SHA-256) crée une empreinte unique et irréversible permettant de vérifier l'**intégrité** d'un fichier grâce à l'**effet d'avalanche**.
+*   Les **certificats X.509** et les **Autorités de Certification (AC)** constituent la base de confiance asymétrique nécessaire au chiffrement web (HTTPS).
+
+---
+
+## 2. Développement
+
+### Objectifs de la session
 À la fin de cette session, vous serez capable de :
 
 * Expliquer la différence de fonctionnement et d'usage entre le chiffrement symétrique (clé unique) et le chiffrement asymétrique (couple de clés).
@@ -9,13 +31,20 @@
 
 ---
 
-## Concepts clés
+### Glossaire
+*   **Chiffrement symétrique** — Algorithme cryptographique utilisant la même clé secrète pour chiffrer et déchiffrer les données.
+*   **Chiffrement asymétrique** — Algorithme utilisant un couple de clés (publique pour chiffrer, privée pour déchiffrer).
+*   **Hachage (Hashing)** — Transformation mathématique irréversible d'une donnée d'entrée en une empreinte de taille fixe garantissant l'intégrité.
+*   **Effet d'avalanche** — Propriété d'une fonction de hachage où une infime modification de l'entrée change radicalement l'empreinte finale.
 
-### 1. Chiffrement symétrique vs asymétrique
+---
+
+### Concepts clés
 
 !!! info "À retenir"
     La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
 
+### 1. Chiffrement symétrique vs asymétrique
 La cryptographie protège la confidentialité des données à l'aide de formules mathématiques. Il existe deux grandes familles d'algorithmes de chiffrement :
 
 *   **Chiffrement symétrique** : Utilise une seule et unique clé secrète partagée pour chiffrer et déchiffrer les données. C'est un protocole extrêmement rapide, idéal pour chiffrer de grands volumes de données (ex. chiffrement de disques durs ou de bases de données avec l'algorithme **AES**).
@@ -50,8 +79,7 @@ Comment être sûr que la clé publique de `banque.com` appartient bien à votre
 
 ---
 
-## Activités / exercices
-
+### Activités / exercices
 ### Exercice 1 — Vérification d'intégrité et effet d'avalanche
 **Objectif :** Analyser le rôle d'une fonction de hachage (SHA-256) pour détecter une modification de texte et comprendre le concept d'effet d'avalanche.
 
@@ -80,48 +108,37 @@ Considérez les deux phrases suivantes, quasiment identiques à l'exception des 
 
 ---
 
-## Questions de réflexion
+### Questions de réflexion
 1. Pourquoi utilise-t-on le chiffrement symétrique (rapide) pour chiffrer l'ensemble d'un disque dur plutôt que le chiffrement asymétrique ?
 2. Si un pirate réussit à modifier le contenu d'un fichier téléchargé ainsi que la page web qui affiche le hachage SHA-256 de ce fichier, comment l'utilisateur peut-il s'apercevoir de l'attaque ? Quel mécanisme cryptographique (lié aux certificats de sites) protège la page web affichant le hash ?
 
 ---
 
-!!! abstract "Résumé"
-    / points à retenir
-    *   Le **chiffrement symétrique** utilise une seule clé partagée (ultra-rapide, idéal pour les gros volumes de données au repos).
-    *   Le **chiffrement asymétrique** utilise un couple clé publique/privée (plus lent, idéal pour l'authentification et l'échange sécurisé de clés sur Internet).
-    *   La fonction de **hachage** (ex. SHA-256) crée une empreinte unique et irréversible permettant de vérifier l'**intégrité** d'un fichier grâce à l'**effet d'avalanche**.
-    *   Les **certificats X.509** et les **Autorités de Certification (AC)** constituent la base de confiance asymétrique nécessaire au chiffrement web (HTTPS).
+## 3. Ressources Complémentaires
 
----
-
-## Glossaire de la session
-*   **Chiffrement symétrique** — Algorithme cryptographique utilisant la même clé secrète pour chiffrer et déchiffrer les données.
-*   **Chiffrement asymétrique** — Algorithme utilisant un couple de clés (publique pour chiffrer, privée pour déchiffrer).
-*   **Hachage (Hashing)** — Transformation mathématique irréversible d'une donnée d'entrée en une empreinte de taille fixe garantissant l'intégrité.
-*   **Effet d'avalanche** — Propriété d'une fonction de hachage où une infime modification de l'entrée change radicalement l'empreinte finale.
-
----
-
-## Pour aller plus loin (self-paced)
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Cryptography Basics"* (durée estimée : 1h30).
 *   **Activité pratique** : Ouvrez un terminal sur votre ordinateur de test et tapez la commande de hachage sur un court texte pour observer le résultat (ex. sous Linux/macOS : `echo -n "Bonjour" | sha256sum`). Modifiez une lettre et observez la différence.
 
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
-## Exercice Bonus (Temps additionnel)
+---
+
+## 4. Exercice Bonus (Si vous avez de l'avance)
+
 **Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.
 
-## Aide-mémoire / Fiche de révision
+---
+
+## 5. Aide-mémoire / Fiche de révision
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Concept clé** | À compléter selon la session |
-
-## Ressources pour aller plus loin
-
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
+| **Chiffrement symétrique** | Algorithme cryptographique utilisant la même clé secrète pour chiffrer et déchiffrer les données. |
+| **Chiffrement asymétrique** | Algorithme utilisant un couple de clés (publique pour chiffrer, privée pour déchiffrer). |
+| **Hachage (Hashing)** | Transformation mathématique irréversible d'une donnée d'entrée en une empreinte de taille fixe garantissant l'intégrité. |
+| **Effet d'avalanche** | Propriété d'une fonction de hachage où une infime modification de l'entrée change radicalement l'empreinte finale. |
