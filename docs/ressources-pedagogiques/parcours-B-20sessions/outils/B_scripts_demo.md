@@ -93,14 +93,14 @@ Parcours : B 20 sessions  |  Module : Démonstrations Pratiques  |  Format : Scr
 2.  **Cotation Brute (sans mesures de sécurité) (3 min)** :
     *   *Vraisemblance (V)* : 3/4 (Fréquent : les commerciaux voyagent beaucoup dans les trains et gares).
     *   *Impact (I)* : 3/4 (Grave : les dossiers clients et contrats confidentiels sont stockés en clair sur l'appareil).
-    *   *Criticité Brute* : $3 \times 3 = 9$ (Risque Élevé / Inacceptable).
+    *   *Criticité Brute* : 3 × 3 = 9 (Risque Élevé / Inacceptable).
 3.  **Application des mesures de traitement (3 min)** :
     *   Mesure 1 : Activation du chiffrement BitLocker sur tous les postes nomades.
     *   Mesure 2 : Déploiement d'un outil de verrouillage à distance.
 4.  **Cotation Résiduelle (après mesures) (2 min)** :
     *   *Vraisemblance (V)* : Reste à 3/4 (La probabilité de perdre ou de se faire voler le PC physique est la même).
     *   *Impact (I)* : Descend à 1/4 (Négligeable : les données étant chiffrées sur le disque dur, le voleur ne peut rien lire).
-    *   *Criticité Résiduelle* : $3 \times 1 = 3$ (Risque Faible / Acceptable).
+    *   *Criticité Résiduelle* : 3 × 1 = 3 (Risque Faible / Acceptable).
 
 ---
 

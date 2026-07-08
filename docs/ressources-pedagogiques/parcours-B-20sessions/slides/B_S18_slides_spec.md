@@ -166,7 +166,7 @@ Parcours : B 20 sessions  |  Module : E — Opérations, détection & réponse  
 ### Slide 12 — Conclusion & Travail autonome
 - **Type** : récap
 - **Points clés (bullets)** :
-  - **Résumé** : Cycle des vulnérabilités (détecter, évaluer, corriger, vérifier), CVE (failles spécifiques), CWE (faiblesses de code), score CVSS (gravité $0$ à $10$), et traitement (patch, mesures compensatoires).
+  - **Résumé** : Cycle des vulnérabilités (détecter, évaluer, corriger, vérifier), CVE (failles spécifiques), CWE (faiblesses de code), score CVSS (gravité 0 à 10), et traitement (patch, mesures compensatoires).
   - **Devoirs** : Compléter le module *"Vulnerability Assessment and Remediation"* sur IBM SkillsBuild (~1h30).
   - **Recherche** : Visiter le site de la base de données de référence du NIST (NVD - National Vulnerability Database) et rechercher la fiche de la célèbre faille *Log4Shell*.
   - Prochaine session : *Réponse aux incidents & bases du forensics (B19)*.

@@ -4,11 +4,24 @@ Parcours : A 8 sessions  |  Module : Réseau & Infrastructure  |  Niveau : Débu
 ---
 
 !!! abstract "Résumé"
-    Le réseau est le système nerveux de toute infrastructure informatique. Sécuriser les flux de données qui y transitent et contrôler les accès extérieurs sont des exigences opérationnelles incontournables. Ce support de cours examine les technologies clés de la sécurité réseau. Vous découvrirez le fonctionnement d'un pare-feu (*firewall*), barrière de contrôle des flux entrants et sortants. Nous aborderons les réseaux privés virtuels (*VPN*), indispensables pour le travail à distance sécurisé, et analyserons la différence essentielle entre les protocoles HTTP (en clair) et HTTPS (chiffré). Enfin, nous étudierons la segmentation réseau, une stratégie défensive qui consiste à diviser le réseau d'une entreprise en zones isolées pour empêcher un attaquant de s'y déplacer librement en cas d'intrusion.
+    Ce document synthétise les concepts essentiels de la session. Vous y découvrirez notamment :
+    - Le filtrage réseau : Le pare-feu (*Firewall*)
+    - Le tunnel sécurisé : Le VPN (*Virtual Private Network*)
+    - HTTPS vs HTTP : Protéger la navigation web
+    - La segmentation réseau et la DMZ
+    L'objectif est de vous fournir les bases théoriques et pratiques nécessaires pour maîtriser ces notions.
 
 ---
 
-## Glossaire de la session
+## 1. Introduction
+
+Le réseau est le système nerveux de toute infrastructure informatique. Sécuriser les flux de données qui y transitent et contrôler les accès extérieurs sont des exigences opérationnelles incontournables. Ce support de cours examine les technologies clés de la sécurité réseau. Vous découvrirez le fonctionnement d'un pare-feu (*firewall*), barrière de contrôle des flux entrants et sortants. Nous aborderons les réseaux privés virtuels (*VPN*), indispensables pour le travail à distance sécurisé, et analyserons la différence essentielle entre les protocoles HTTP (en clair) et HTTPS (chiffré). Enfin, nous étudierons la segmentation réseau, une stratégie défensive qui consiste à diviser le réseau d'une entreprise en zones isolées pour empêcher un attaquant de s'y déplacer librement en cas d'intrusion.
+
+---
+
+## 2. Développement
+
+### Glossaire
 * **Pare-feu (Firewall)** : Dispositif matériel ou logiciel analysant et filtrant les paquets de données circulant entre un réseau privé et un réseau public (Internet) selon des règles de sécurité.
 * **VPN (Virtual Private Network)** : Technologie créant un tunnel chiffré et sécurisé sur un réseau public pour acheminer de manière confidentielle les données d'un poste de travail vers le réseau de l'entreprise.
 * **HTTPS (HyperText Transfer Protocol Secure)** : Version sécurisée du protocole HTTP utilisée pour le web, chiffrant les échanges entre le navigateur de l'utilisateur et le serveur web pour empêcher l'interception.
@@ -17,8 +30,6 @@ Parcours : A 8 sessions  |  Module : Réseau & Infrastructure  |  Niveau : Débu
 * **DMZ (Zone Démilitarisée)** : Sous-réseau d'une entreprise isolé du réseau interne, hébergeant les serveurs devant être accessibles depuis Internet (ex. serveur web public) afin de protéger les postes internes de toute intrusion sur ces serveurs.
 
 ---
-
-## Contenu théorique
 
 ### 1. Le filtrage réseau : Le pare-feu (*Firewall*)
 
@@ -36,7 +47,7 @@ Le filtrage traditionnel s'appuie sur des règles basées sur trois critères pr
 
 *Exemple de règle simple* : Autoriser tous les ordinateurs du réseau interne à envoyer du trafic vers Internet uniquement sur le port 443 (HTTPS), et bloquer toutes les connexions entrantes provenant d'Internet initiées vers le réseau interne.
 
----
+
 
 ### 2. Le tunnel sécurisé : Le VPN (*Virtual Private Network*)
 
@@ -48,14 +59,14 @@ Le VPN résout ce problème en créant un **tunnel chiffré** entre l'ordinateur
 * Elles transitent par Internet de manière totalement illisible pour les intermédiaires (fournisseurs d'accès, pirates).
 * Elles arrivent à la passerelle VPN de l'entreprise qui les déchiffre et les transmet au réseau interne comme si l'utilisateur était physiquement assis à son bureau dans l'entreprise.
 
----
+
 
 ### 3. HTTPS vs HTTP : Protéger la navigation web
 
 * Le protocole **HTTP** transmet toutes les données en clair. Si vous saisissez un mot de passe ou un numéro de carte bancaire sur un site HTTP, un pirate connecté sur le même réseau peut le lire sans effort.
 * Le protocole **HTTPS** utilise le protocole TLS pour chiffrer la communication. Même interceptées, les données apparaissent comme une suite incohérente de caractères aléatoires. De plus, HTTPS fournit un certificat numérique garantissant l'identité du site visité (pour éviter que l'utilisateur ne se connecte à un faux site).
 
----
+
 
 ### 4. La segmentation réseau et la DMZ
 
@@ -69,8 +80,7 @@ Pour empêcher cela, on segmente le réseau en zones logiques étanches séparé
 
 ---
 
-## Focus pratique : Analyse d'une règle de pare-feu simplifiée
-
+### Focus pratique
 Voici comment se structure une table de filtrage (règles ordonnées de haut en bas ; la première règle correspondante s'applique) :
 
 | Priorité | Source | Destination | Protocole / Port | Action | Commentaire |
@@ -82,7 +92,7 @@ Voici comment se structure une table de filtrage (règles ordonnées de haut en 
 
 ---
 
-## Exercice d'application (self-paced)
+### Exercice d'application
 **Titre** : Modélisation d'une architecture réseau sécurisée pour un commerce
 
 ### Énoncé
@@ -98,7 +108,7 @@ Vous devez concevoir la segmentation réseau d'une boutique connectée comprenan
    * Les caisses peuvent-elles communiquer avec l'ordinateur du gérant ?
    * Quelles zones doivent avoir accès à Internet ?
 
----
+
 
 ### Corrigé de l'exercice
 1. **Zones proposées** :
@@ -112,14 +122,28 @@ Vous devez concevoir la segmentation réseau d'une boutique connectée comprenan
 
 ---
 
+## 3. Ressources Complémentaires
 
-## Exercice Bonus (Temps additionnel)
+* **IBM SkillsBuild** : Cours "Network Security Fundamentals".
+* **ANSSI** : Recommandations sur la sécurisation des architectures réseaux.
+* **Wireshark (outil tiers)** : Outil d'analyse de protocoles réseaux (pour observer la structure des paquets).
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
+
+---
+
+## 4. Exercice Bonus (Si vous avez de l'avance)
+
 **Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.
 
-## Aide-mémoire / Fiche de révision
+---
+
+## 5. Aide-mémoire / Fiche de révision
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
@@ -129,12 +153,3 @@ Vous devez concevoir la segmentation réseau d'une boutique connectée comprenan
 | **SSL / TLS** | Protocoles de sécurisation des échanges sur Internet, servant de socle de chiffrement pour HTTPS. |
 | **Segmentation réseau** | Technique consistant à partitionner un réseau informatique en plusieurs sous-réseaux (VLANs, DMZ) distincts pour limiter la propagation des menaces. |
 | **DMZ (Zone Démilitarisée)** | Sous-réseau d'une entreprise isolé du réseau interne, hébergeant les serveurs devant être accessibles depuis Internet (ex. serveur web public) afin de protéger les postes internes de toute intrusion sur ces serveurs. |
-
-## Ressources pour aller plus loin
-* **IBM SkillsBuild** : Cours "Network Security Fundamentals".
-* **ANSSI** : Recommandations sur la sécurisation des architectures réseaux.
-* **Wireshark (outil tiers)** : Outil d'analyse de protocoles réseaux (pour observer la structure des paquets).
-
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

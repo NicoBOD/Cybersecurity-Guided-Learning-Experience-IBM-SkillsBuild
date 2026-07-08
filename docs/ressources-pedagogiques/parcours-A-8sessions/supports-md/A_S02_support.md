@@ -4,11 +4,23 @@ Parcours : A 8 sessions  |  Module : Menaces Cyber  |  Niveau : Débutant
 ---
 
 !!! abstract "Résumé"
-    Les cyberattaques modernes ciblent de plus en plus le maillon réputé le plus vulnérable de la chaîne de sécurité : l'être humain. Ce support de cours détaille les mécanismes de l'ingénierie sociale, l'art de manipuler les personnes pour contourner les protections technologiques. Vous étudierez les principaux types de logiciels malveillants (*malware*), du rançongiciel destructeur au cheval de Troie discret. Nous décrypterons également les ressorts psychologiques du phishing (hameçonnage), du vishing (par téléphone) et les grandes étapes de la *Cyber Kill Chain*, le modèle théorique qui décrit le déroulement d'une attaque de son ciblage initial jusqu'à sa conclusion logique. L'objectif est de vous donner les clés pour identifier instantanément les signaux d'alerte et adopter des réflexes d'hygiène numérique indispensables.
+    Ce document synthétise les concepts essentiels de la session. Vous y découvrirez notamment :
+    - La typologie des logiciels malveillants (*Malwares*)
+    - Les mécanismes de l'ingénierie sociale
+    - La Cyber Kill Chain : Comprendre le parcours de l'attaquant
+    L'objectif est de vous fournir les bases théoriques et pratiques nécessaires pour maîtriser ces notions.
 
 ---
 
-## Glossaire de la session
+## 1. Introduction
+
+Les cyberattaques modernes ciblent de plus en plus le maillon réputé le plus vulnérable de la chaîne de sécurité : l'être humain. Ce support de cours détaille les mécanismes de l'ingénierie sociale, l'art de manipuler les personnes pour contourner les protections technologiques. Vous étudierez les principaux types de logiciels malveillants (*malware*), du rançongiciel destructeur au cheval de Troie discret. Nous décrypterons également les ressorts psychologiques du phishing (hameçonnage), du vishing (par téléphone) et les grandes étapes de la *Cyber Kill Chain*, le modèle théorique qui décrit le déroulement d'une attaque de son ciblage initial jusqu'à sa conclusion logique. L'objectif est de vous donner les clés pour identifier instantanément les signaux d'alerte et adopter des réflexes d'hygiène numérique indispensables.
+
+---
+
+## 2. Développement
+
+### Glossaire
 * **Malware (Logiciel malveillant)** : Terme générique désignant tout programme conçu pour nuire à un système informatique (virus, ver, rançongiciel, etc.).
 * **Ransomware (Rançongiciel)** : Malware qui chiffre les fichiers d'un utilisateur ou d'une entreprise et réclame le paiement d'une rançon en échange de la clé de déchiffrement.
 * **Phishing (Hameçonnage)** : Technique frauduleuse par e-mail visant à tromper le destinataire pour lui soutirer des informations confidentielles (mots de passe, numéros de carte bancaire) en usurpant l'identité d'une marque de confiance.
@@ -17,8 +29,6 @@ Parcours : A 8 sessions  |  Module : Menaces Cyber  |  Niveau : Débutant
 * **Cyber Kill Chain** : Cadre conceptuel décrivant les 7 étapes chronologiques d'une cyberattaque réussie, développé par Lockheed Martin.
 
 ---
-
-## Contenu théorique
 
 ### 1. La typologie des logiciels malveillants (*Malwares*)
 
@@ -40,7 +50,7 @@ Des outils discrets installés sur le système pour collecter des données à l'
 #### D. Les Vers (*Worms*)
 Des malwares autonomes capables de se propager d'ordinateur en ordinateur à travers le réseau en exploitant des failles de sécurité, sans nécessiter d'interaction humaine (contrairement aux virus traditionnels qui nécessitent l'exécution d'un fichier hôte).
 
----
+
 
 ### 2. Les mécanismes de l'ingénierie sociale
 
@@ -58,7 +68,7 @@ L'ingénierie sociale repose sur l'exploitation de biais psychologiques humains.
 * **Smishing** : Hameçonnage par SMS (ex. "Votre colis a rencontré un problème de livraison, visitez...").
 * **Vishing** : Hameçonnage par téléphone (ex. le faux conseiller bancaire appelant pour faire annuler de "fausses transactions frauduleuses").
 
----
+
 
 ### 3. La Cyber Kill Chain : Comprendre le parcours de l'attaquant
 
@@ -78,8 +88,7 @@ La *Cyber Kill Chain* permet aux défenseurs de comprendre la séquence logique 
 
 ---
 
-## Focus pratique : Anatomie d'un e-mail de phishing
-
+### Focus pratique
 Savoir identifier les indices visuels d'un e-mail malveillant est une compétence d'autodéfense numérique cruciale.
 
 ```text
@@ -102,7 +111,7 @@ L'équipe Netflix.
 
 ---
 
-## Exercice d'application (self-paced)
+### Exercice d'application
 **Titre** : Simulation de réaction face à un appel suspect (Vishing)
 
 ### Énoncé
@@ -112,7 +121,7 @@ Vous recevez un appel sur votre téléphone professionnel. L'appelant se présen
 2. Identifiez les leviers psychologiques exploités par l'attaquant.
 3. Rédigez la réponse précise que vous feriez à l'interlocuteur et l'action immédiate que vous entreprendriez.
 
----
+
 
 ### Corrigé de l'exercice
 1. **Technique utilisée** : Vishing (hameçonnage vocal / par téléphone) combiné à une tentative de contournement de la double authentification (demande du code SMS OTP).
@@ -125,14 +134,28 @@ Vous recevez un appel sur votre téléphone professionnel. L'appelant se présen
 
 ---
 
+## 3. Ressources Complémentaires
 
-## Exercice Bonus (Temps additionnel)
+* **IBM SkillsBuild** : Cours sur l'ingénierie sociale et la sensibilisation au phishing.
+* **Cybermalveillance.gouv.fr (ou organisme national équivalent)** : Fiches pratiques sur les rançongiciels et l'hameçonnage.
+* **MITRE ATT&CK Framework** : Base de connaissances mondiale sur les tactiques et techniques réelles des attaquants (consulter la matrice simplifiée).
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
+
+---
+
+## 4. Exercice Bonus (Si vous avez de l'avance)
+
 **Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.
 
-## Aide-mémoire / Fiche de révision
+---
+
+## 5. Aide-mémoire / Fiche de révision
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
@@ -142,12 +165,3 @@ Vous recevez un appel sur votre téléphone professionnel. L'appelant se présen
 | **Spear-phishing (Hameçonnage ciblé)** | Variante hautement personnalisée du phishing, ciblant un individu ou une organisation spécifique en exploitant des détails personnels collectés à l'avance. |
 | **Ingénierie sociale (Social Engineering)** | Manipulation psychologique visant à extorquer des informations confidentielles ou à faire accomplir des actions dangereuses à une victime. |
 | **Cyber Kill Chain** | Cadre conceptuel décrivant les 7 étapes chronologiques d'une cyberattaque réussie, développé par Lockheed Martin. |
-
-## Ressources pour aller plus loin
-* **IBM SkillsBuild** : Cours sur l'ingénierie sociale et la sensibilisation au phishing.
-* **Cybermalveillance.gouv.fr (ou organisme national équivalent)** : Fiches pratiques sur les rançongiciels et l'hameçonnage.
-* **MITRE ATT&CK Framework** : Base de connaissances mondiale sur les tactiques et techniques réelles des attaquants (consulter la matrice simplifiée).
-
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

@@ -4,11 +4,23 @@ Parcours : A 8 sessions  |  Module : Réponse aux Incidents  |  Niveau : Débuta
 ---
 
 !!! abstract "Résumé"
-    Même avec les meilleures protections logicielles et humaines, le risque zéro n'existe pas : toute entreprise sera confrontée un jour ou l'autre à un incident de sécurité. Ce qui différencie une organisation résiliente d'une organisation qui s'effondre est la qualité de sa préparation et de sa réaction. Ce support de cours vous présente le cycle méthodologique de la réponse aux incidents (modèle international du NIST et du SANS) pour savoir comment réagir étape par étape lors d'une attaque. Nous aborderons les bases du *forensics* (investigation numérique) afin de comprendre comment les analystes collectent et préservent les preuves d'une intrusion en respectant la chaîne de contrôle. Enfin, nous définirons le cadre légal du piratage éthique en France, afin de clarifier les limites juridiques indispensables aux métiers de la cybersécurité.
+    Ce document synthétise les concepts essentiels de la session. Vous y découvrirez notamment :
+    - Le cycle de réponse aux incidents (IR) : Les 6 étapes clés
+    - Introduction au Forensics et préservation des preuves
+    - Cadre légal : Piratage éthique vs Intrusions illégales
+    L'objectif est de vous fournir les bases théoriques et pratiques nécessaires pour maîtriser ces notions.
 
 ---
 
-## Glossaire de la session
+## 1. Introduction
+
+Même avec les meilleures protections logicielles et humaines, le risque zéro n'existe pas : toute entreprise sera confrontée un jour ou l'autre à un incident de sécurité. Ce qui différencie une organisation résiliente d'une organisation qui s'effondre est la qualité de sa préparation et de sa réaction. Ce support de cours vous présente le cycle méthodologique de la réponse aux incidents (modèle international du NIST et du SANS) pour savoir comment réagir étape par étape lors d'une attaque. Nous aborderons les bases du *forensics* (investigation numérique) afin de comprendre comment les analystes collectent et préservent les preuves d'une intrusion en respectant la chaîne de contrôle. Enfin, nous définirons le cadre légal du piratage éthique en France, afin de clarifier les limites juridiques indispensables aux métiers de la cybersécurité.
+
+---
+
+## 2. Développement
+
+### Glossaire
 * **Réponse aux incidents (Incident Response - IR)** : Processus structuré permettant à une organisation de détecter, de contenir, d'éradiquer et de se relever d'une cyberattaque.
 * **Forensics (Investigation numérique)** : Discipline scientifique consistant à collecter, analyser et préserver les preuves numériques à la suite d'un incident de sécurité en vue de procédures internes ou judiciaires.
 * **Chaîne de contrôle (Chain of Custody)** : Documentation chronologique stricte recensant l'historique des personnes ayant manipulé, transféré et analysé une preuve physique ou numérique, afin de garantir qu'elle n'a subie aucune altération.
@@ -17,8 +29,6 @@ Parcours : A 8 sessions  |  Module : Réponse aux Incidents  |  Niveau : Débuta
 * **Piratage éthique (Ethical Hacking)** : Pratique consistant à utiliser les mêmes techniques d'intrusion qu'un pirate malveillant, mais de manière légale, encadrée et autorisée, afin d'identifier et de corriger les faiblesses d'un système.
 
 ---
-
-## Contenu théorique
 
 ### 1. Le cycle de réponse aux incidents (IR) : Les 6 étapes clés
 
@@ -39,7 +49,7 @@ Pour éviter la panique et les erreurs de manipulation lors d'une cyberattaque (
 5. **Restauration** : Remettre en production les systèmes nettoyés et restaurer les données à partir de sauvegardes saines, tout en surveillant attentivement l'activité pour s'assurer que le pirate ne revient pas.
 6. **Leçons apprises** : Analyser l'incident a posteriori pour comprendre comment il s'est produit, évaluer l'efficacité de la réaction et modifier les défenses pour éviter qu'il ne se reproduise.
 
----
+
 
 ### 2. Introduction au Forensics et préservation des preuves
 
@@ -57,7 +67,7 @@ Pour qu'une preuve numérique soit acceptée devant un tribunal, l'enquêteur do
 
 * *Comment ?* On réalise une **copie bit-à-bit** (clone exact) du disque dur d'origine. On calcule ensuite l'**empreinte numérique** (hachage) du clone. Si l'empreinte correspond exactement à celle du disque d'origine, on prouve que la copie est identique. Toutes les analyses sont ensuite menées uniquement sur la copie, l'original restant scellé sous clé.
 
----
+
 
 ### 3. Cadre légal : Piratage éthique vs Intrusions illégales
 
@@ -68,8 +78,7 @@ En France, la loi encadre strictement l'accès aux systèmes informatiques. Les 
 
 ---
 
-## Focus pratique : Ordre de volatilité et processus de collecte
-
+### Focus pratique
 Lors d'un incident sur un poste de travail, voici l'ordre dans lequel les éléments techniques doivent être capturés par l'équipe de réponse à incident :
 
 | Niveau de volatilité | Élément technique | Méthode d'acquisition | Risque de perte |
@@ -81,7 +90,7 @@ Lors d'un incident sur un poste de travail, voici l'ordre dans lequel les élém
 
 ---
 
-## Exercice d'application (self-paced)
+### Exercice d'application
 **Titre** : Gestion d'une réaction sur incident de rançongiciel
 
 ### Énoncé
@@ -93,7 +102,7 @@ Lors d'un incident sur un poste de travail, voici l'ordre dans lequel les élém
    * **Action B** : Éteindre immédiatement l'ordinateur en restant appuyé sur le bouton d'alimentation physique afin de stopper le chiffrement des fichiers.
 3. Quelle sera la phase d'éradication pour ce poste ?
 
----
+
 
 ### Corrigé de l'exercice
 1. **Étape à engager : Le Confinement**. Il faut empêcher le rançongiciel de se propager via le réseau local aux autres postes de travail et surtout aux serveurs de sauvegarde ou serveurs de fichiers partagés de l'entreprise.
@@ -103,14 +112,28 @@ Lors d'un incident sur un poste de travail, voici l'ordre dans lequel les élém
 
 ---
 
+## 3. Ressources Complémentaires
 
-## Exercice Bonus (Temps additionnel)
+* **IBM SkillsBuild** : Cours sur l'investigation numérique (Digital Forensics) et la réponse à incident.
+* **SANS Institute** : Fiches de référence sur la réponse aux incidents (Incident Handler's Handbook).
+* **Légifrance** : Consulter la section du Code pénal sur les atteintes aux systèmes de traitement automatisé de données (articles 323-1 à 323-7).
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
+
+---
+
+## 4. Exercice Bonus (Si vous avez de l'avance)
+
 **Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.
 
-## Aide-mémoire / Fiche de révision
+---
+
+## 5. Aide-mémoire / Fiche de révision
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
@@ -120,12 +143,3 @@ Lors d'un incident sur un poste de travail, voici l'ordre dans lequel les élém
 | **Confinement** | Phase de la réponse aux incidents visant à isoler le système d'information ou les hôtes compromis pour empêcher la propagation de l'attaque. |
 | **Mémoire volatile (RAM)** | Mémoire temporaire d'un ordinateur contenant les données actives des programmes en cours d'exécution. Elle s'efface dès que la machine est éteinte. |
 | **Piratage éthique (Ethical Hacking)** | Pratique consistant à utiliser les mêmes techniques d'intrusion qu'un pirate malveillant, mais de manière légale, encadrée et autorisée, afin d'identifier et de corriger les faiblesses d'un système. |
-
-## Ressources pour aller plus loin
-* **IBM SkillsBuild** : Cours sur l'investigation numérique (Digital Forensics) et la réponse à incident.
-* **SANS Institute** : Fiches de référence sur la réponse aux incidents (Incident Handler's Handbook).
-* **Légifrance** : Consulter la section du Code pénal sur les atteintes aux systèmes de traitement automatisé de données (articles 323-1 à 323-7).
-
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

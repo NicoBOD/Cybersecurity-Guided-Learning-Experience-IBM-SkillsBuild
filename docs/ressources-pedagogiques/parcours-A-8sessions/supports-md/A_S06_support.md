@@ -4,11 +4,23 @@ Parcours : A 8 sessions  |  Module : SecOps & Vulnérabilités  |  Niveau : Déb
 ---
 
 !!! abstract "Résumé"
-    Une politique de sécurité robuste ne se limite pas à installer des protections statiques : elle exige une surveillance active et continue. Ce support de cours détaille le fonctionnement des centres d'opérations de sécurité (*SOC*) et des outils de corrélation de journaux d'événements (*SIEM*), qui constituent les yeux et les oreilles de la cybersécurité moderne. Vous étudierez la notion essentielle de journalisation (*logs*), trace numérique indispensable pour détecter et comprendre les attaques. Nous aborderons ensuite la gestion des vulnérabilités logicielles, en apprenant à faire la différence entre un scan automatisé et un test d'intrusion. Enfin, vous apprendrez à déchiffrer et à interpréter les scores du système de notation internationale *CVSS* afin de planifier et prioriser de manière pragmatique l'application des correctifs de sécurité (*patchs*) sans impacter l'activité opérationnelle de votre entreprise.
+    Ce document synthétise les concepts essentiels de la session. Vous y découvrirez notamment :
+    - La surveillance active : Le couple SOC et SIEM
+    - Identifier les failles : Scans de vulnérabilités vs Test d'intrusion
+    - Prioriser la remédiation : Comprendre le score CVSS
+    L'objectif est de vous fournir les bases théoriques et pratiques nécessaires pour maîtriser ces notions.
 
 ---
 
-## Glossaire de la session
+## 1. Introduction
+
+Une politique de sécurité robuste ne se limite pas à installer des protections statiques : elle exige une surveillance active et continue. Ce support de cours détaille le fonctionnement des centres d'opérations de sécurité (*SOC*) et des outils de corrélation de journaux d'événements (*SIEM*), qui constituent les yeux et les oreilles de la cybersécurité moderne. Vous étudierez la notion essentielle de journalisation (*logs*), trace numérique indispensable pour détecter et comprendre les attaques. Nous aborderons ensuite la gestion des vulnérabilités logicielles, en apprenant à faire la différence entre un scan automatisé et un test d'intrusion. Enfin, vous apprendrez à déchiffrer et à interpréter les scores du système de notation internationale *CVSS* afin de planifier et prioriser de manière pragmatique l'application des correctifs de sécurité (*patchs*) sans impacter l'activité opérationnelle de votre entreprise.
+
+---
+
+## 2. Développement
+
+### Glossaire
 * **SOC (Security Operations Center)** : Centre opérationnel où des analystes surveillent et analysent en continu la sécurité du système d'information pour détecter les incidents.
 * **SIEM (Security Information and Event Management)** : Logiciel centralisant les journaux d'événements (logs) de divers équipements réseau et serveurs pour y appliquer des règles de corrélation et lever des alertes en cas de comportement suspect.
 * **Log (Journal d'événements)** : Fichier texte généré automatiquement par un système, une application ou un équipement, enregistrant les actions, connexions et erreurs survenues chronologiquement.
@@ -18,8 +30,6 @@ Parcours : A 8 sessions  |  Module : SecOps & Vulnérabilités  |  Niveau : Déb
 * **Patch (Correctif)** : Mise à jour logicielle publiée par un éditeur pour corriger des erreurs de programmation ou combler des failles de sécurité.
 
 ---
-
-## Contenu théorique
 
 ### 1. La surveillance active : Le couple SOC et SIEM
 
@@ -45,7 +55,7 @@ Le SIEM reçoit des millions de lignes de logs par jour provenant de toutes les 
 #### C. Le SOC : Les analystes humains
 L'alerte générée par le SIEM est prise en charge par un analyste SOC. L'analyste doit rapidement qualifier l'alerte : s'agit-il d'un **vrai incident** exigeant une réaction immédiate, ou d'un **faux positif** (une alerte déclenchée à tort par une activité bénigne) ?
 
----
+
 
 ### 2. Identifier les failles : Scans de vulnérabilités vs Test d'intrusion
 
@@ -54,7 +64,7 @@ Maintenir un bon niveau de sécurité nécessite de tester activement ses défen
 * **Le scan de vulnérabilités** : Outil logiciel automatisé (ex. Nessus, OpenVAS) qui scanne le réseau et compare les versions des programmes installés avec une base de données de failles connues (la base des **CVE**). Il est rapide, peu coûteux et peut être exécuté fréquemment, mais il génère des faux positifs et ne détecte pas les failles logiques complexes.
 * **Le test d'intrusion (*Pentest*)** : Audit mené par un expert humain (un *pentester* ou hacker éthique) qui cherche manuellement à s'introduire dans le réseau en exploitant et en combinant plusieurs vulnérabilités, y compris des faiblesses logiques ou humaines. Il est plus coûteux mais reflète fidèlement la réalité d'une attaque ciblée.
 
----
+
 
 ### 3. Prioriser la remédiation : Comprendre le score CVSS
 
@@ -75,8 +85,7 @@ Le score CVSS varie de **0.0 à 10.0** et s'appuie sur plusieurs critères d'év
 
 ---
 
-## Focus pratique : Utilisation des CVE & CVSS pour la priorisation
-
+### Focus pratique
 Voici une simulation de feuille de route de remédiation basée sur un scan de sécurité :
 
 | Identifiant CVE | Description simplifiée | Score CVSS | Expositions / Contexte | Priorité de traitement | Action proposée |
@@ -87,7 +96,7 @@ Voici une simulation de feuille de route de remédiation basée sur un scan de s
 
 ---
 
-## Exercice d'application (self-paced)
+### Exercice d'application
 **Titre** : Décryptage d'une alerte SOC à partir d'un journal d'événements
 
 ### Énoncé
@@ -105,7 +114,7 @@ Vous êtes analyste de sécurité junior dans un SOC. Le SIEM vient de lever une
 2. Quel pilier de la triade CIA a été compromis en fin de séquence ?
 3. Quelle action de confinement d'urgence devez-vous ordonner immédiatement au niveau du pare-feu ?
 
----
+
 
 ### Corrigé de l'exercice
 1. **Description de l'attaque** :
@@ -117,14 +126,28 @@ Vous êtes analyste de sécurité junior dans un SOC. Le SIEM vient de lever une
 
 ---
 
+## 3. Ressources Complémentaires
 
-## Exercice Bonus (Temps additionnel)
+* **IBM SkillsBuild** : Cours sur le fonctionnement d'un SIEM et le métier d'analyste SOC.
+* **NIST** : Base de données nationale des vulnérabilités (NVD - National Vulnerability Database) pour rechercher des identifiants CVE.
+* **FIRST.org** : Calculateur officiel des scores CVSS (pour comprendre l'impact des différentes variables de cotation).
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
+
+---
+
+## 4. Exercice Bonus (Si vous avez de l'avance)
+
 **Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.
 
-## Aide-mémoire / Fiche de révision
+---
+
+## 5. Aide-mémoire / Fiche de révision
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
@@ -135,12 +158,3 @@ Vous êtes analyste de sécurité junior dans un SOC. Le SIEM vient de lever une
 | **CVE (Common Vulnerabilities and Exposures)** | Dictionnaire public recensant et identifiant de manière unique les failles de sécurité logicielles et matérielles connues (ex. CVE-2021-44228). |
 | **CVSS (Common Vulnerability Scoring System)** | Système de notation standardisé évaluant la gravité d'une vulnérabilité informatique sur une échelle de 0.0 (inoffensive) à 10.0 (critique). |
 | **Patch (Correctif)** | Mise à jour logicielle publiée par un éditeur pour corriger des erreurs de programmation ou combler des failles de sécurité. |
-
-## Ressources pour aller plus loin
-* **IBM SkillsBuild** : Cours sur le fonctionnement d'un SIEM et le métier d'analyste SOC.
-* **NIST** : Base de données nationale des vulnérabilités (NVD - National Vulnerability Database) pour rechercher des identifiants CVE.
-* **FIRST.org** : Calculateur officiel des scores CVSS (pour comprendre l'impact des différentes variables de cotation).
-
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

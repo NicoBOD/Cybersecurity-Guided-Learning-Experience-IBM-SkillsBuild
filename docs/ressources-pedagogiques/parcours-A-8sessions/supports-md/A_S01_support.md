@@ -4,11 +4,24 @@ Parcours : A 8 sessions  |  Module : Fondements Cyber  |  Niveau : Débutant
 ---
 
 !!! abstract "Résumé"
-    Bienvenue dans le monde de la cybersécurité. À l'ère numérique, la protection des informations est devenue une priorité absolue pour les individus, les entreprises et les gouvernements. Ce support pose les bases indispensables de la discipline. Vous y découvrirez la triade "CIA" (Confidentialité, Intégrité, Disponibilité), le modèle conceptuel de base pour évaluer la sécurité de tout système d'information. Nous étudierons également les différences fondamentales entre l'approche offensive (comprendre comment attaquent les pirates) et défensive (sécuriser les infrastructures), avant de cartographier les profils d'attaquants modernes et leurs motivations réelles, souvent bien éloignées des clichés du cinéma. Ce module constitue votre porte d'entrée vers une posture de vigilance active.
+    Ce document synthétise les concepts essentiels de la session. Vous y découvrirez notamment :
+    - La Triade CIA : La boussole de la cybersécurité
+    - Le triptyque : Vulnérabilité, Menace, Risque
+    - Offense vs Défense : Deux facettes d'une même pièce
+    - Qui sont les attaquants modernes ?
+    L'objectif est de vous fournir les bases théoriques et pratiques nécessaires pour maîtriser ces notions.
 
 ---
 
-## Glossaire de la session
+## 1. Introduction
+
+Bienvenue dans le monde de la cybersécurité. À l'ère numérique, la protection des informations est devenue une priorité absolue pour les individus, les entreprises et les gouvernements. Ce support pose les bases indispensables de la discipline. Vous y découvrirez la triade "CIA" (Confidentialité, Intégrité, Disponibilité), le modèle conceptuel de base pour évaluer la sécurité de tout système d'information. Nous étudierons également les différences fondamentales entre l'approche offensive (comprendre comment attaquent les pirates) et défensive (sécuriser les infrastructures), avant de cartographier les profils d'attaquants modernes et leurs motivations réelles, souvent bien éloignées des clichés du cinéma. Ce module constitue votre porte d'entrée vers une posture de vigilance active.
+
+---
+
+## 2. Développement
+
+### Glossaire
 * **Triade CIA (Confidentialité, Intégrité, Disponibilité)** : Le modèle de référence de la sécurité de l'information. Chaque action de sécurité vise à garantir l'un ou plusieurs de ces piliers.
 * **Confidentialité** : Garantie que seules les personnes autorisées ont accès aux données.
 * **Intégrité** : Garantie que les données ne sont pas modifiées, altérées ou supprimées de manière accidentelle ou malveillante.
@@ -20,8 +33,6 @@ Parcours : A 8 sessions  |  Module : Fondements Cyber  |  Niveau : Débutant
 * **Sécurité défensive** : Ensemble des mesures de protection, de surveillance et de réaction déployées pour sécuriser un système (ex. gestion des pare-feux, surveillance SOC, réponse sur incident).
 
 ---
-
-## Contenu théorique
 
 ### 1. La Triade CIA : La boussole de la cybersécurité
 
@@ -46,7 +57,7 @@ La disponibilité assure que les systèmes informatiques, les réseaux et les do
 
 * *Mécanismes de protection* : La redondance des infrastructures (serveurs de secours), les sauvegardes régulières, et la maintenance préventive du matériel.
 
----
+
 
 ### 2. Le triptyque : Vulnérabilité, Menace, Risque
 
@@ -58,14 +69,14 @@ En sécurité, ces trois termes ont des sens bien distincts qu'il convient de ne
 
 Sécuriser un système consiste à réduire les vulnérabilités pour minimiser la probabilité de réalisation du risque.
 
----
+
 
 ### 3. Offense vs Défense : Deux facettes d'une même pièce
 
 * **La Sécurité Offensive (Offense)** cherche à penser comme l'attaquant. Elle utilise des méthodes de tests d'intrusion pour découvrir les failles avant qu'elles ne soient exploitées par des cybercriminels. Elle est indispensable pour valider la robustesse réelle des systèmes.
 * **La Sécurité Défensive (Défense)** englobe toutes les mesures passives et actives de protection. Elle installe les barrières (antivirus, pare-feux), surveille les accès en continu et met en œuvre les processus de réaction et de reconstruction. Elle représente le travail quotidien de sécurisation.
 
----
+
 
 ### 4. Qui sont les attaquants modernes ?
 
@@ -78,8 +89,7 @@ Le cliché de l'adolescent isolé piratant la NASA depuis sa chambre est obsolè
 
 ---
 
-## Focus pratique : Cartographie théorique de la surface d'exposition
-
+### Focus pratique
 Pour comprendre comment un attaquant initie ses recherches, on étudie la **surface d'exposition numérique**. Il s'agit de l'ensemble des points d'entrée d'une organisation qui sont visibles et accessibles depuis Internet.
 
 | Élément de la surface d'exposition | Risque associé | Mesure d'hygiène de base |
@@ -91,7 +101,7 @@ Pour comprendre comment un attaquant initie ses recherches, on étudie la **surf
 
 ---
 
-## Exercice d'application (self-paced)
+### Exercice d'application
 **Titre** : Classification d'incidents cyber selon la triade CIA
 
 ### Énoncé
@@ -101,7 +111,7 @@ Lisez attentivement les trois situations fictives ci-dessous et déterminez pour
 2. **Cas n°2** : Un pirate s'infiltre dans la base de données d'un laboratoire d'analyses et modifie les valeurs de glycémie de plusieurs dizaines de dossiers de patients sans les supprimer.
 3. **Cas n°3** : Un employé envoie par e-mail un fichier Excel non chiffré contenant la liste complète des salaires et des adresses personnelles des salariés de l'entreprise à un destinataire externe par erreur de saisie d'adresse.
 
----
+
 
 ### Corrigé de l'exercice
 1. **Cas n°1 : Disponibilité compromise**. Le système est temporairement hors service et inaccessible pour les utilisateurs légitimes. La confidentialité et l'intégrité n'ont en revanche pas été altérées car aucune donnée n'a été volée ni modifiée.
@@ -110,14 +120,28 @@ Lisez attentivement les trois situations fictives ci-dessous et déterminez pour
 
 ---
 
+## 3. Ressources Complémentaires
 
-## Exercice Bonus (Temps additionnel)
+* **IBM SkillsBuild** : Cours "Introduction to Cybersecurity" pour approfondir l'histoire et les fondamentaux.
+* **ANSSI (ou agence cyber locale)** : Guide d'hygiène informatique (consulter la section sur la sensibilisation et les notions de base).
+* **NIST SP 800-12** : Guide d'introduction à la sécurité de l'information pour comprendre le cycle de protection.
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
+
+---
+
+## 4. Exercice Bonus (Si vous avez de l'avance)
+
 **Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.
 
-## Aide-mémoire / Fiche de révision
+---
+
+## 5. Aide-mémoire / Fiche de révision
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
@@ -130,12 +154,3 @@ Lisez attentivement les trois situations fictives ci-dessous et déterminez pour
 | **Risque** | La probabilité qu'une menace exploite une vulnérabilité et provoque un impact négatif (Risque = Menace × Vulnérabilité × Impact). |
 | **Sécurité offensive** | Approche proactive consistant à tester les défenses en simulant des attaques réelles (ex. pentesting, red teaming). |
 | **Sécurité défensive** | Ensemble des mesures de protection, de surveillance et de réaction déployées pour sécuriser un système (ex. gestion des pare-feux, surveillance SOC, réponse sur incident). |
-
-## Ressources pour aller plus loin
-* **IBM SkillsBuild** : Cours "Introduction to Cybersecurity" pour approfondir l'histoire et les fondamentaux.
-* **ANSSI (ou agence cyber locale)** : Guide d'hygiène informatique (consulter la section sur la sensibilisation et les notions de base).
-* **NIST SP 800-12** : Guide d'introduction à la sécurité de l'information pour comprendre le cycle de protection.
-
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

@@ -4,11 +4,23 @@ Parcours : A 8 sessions  |  Module : Consolidation & Soutenance  |  Niveau : Dé
 ---
 
 !!! abstract "Résumé"
-    Le Projet Capstone constitue l'aboutissement de votre parcours de formation de 8 sessions. C'est l'occasion de démontrer votre autonomie et de mettre en pratique l'ensemble des compétences acquises (triade CIA, analyse de menaces, sécurité des réseaux, cloud, RGPD, gestion des risques et réponse aux incidents) en vous confrontant à une étude de cas d'entreprise réelle ou fictive (une PME ayant besoin d'un audit de sécurité). Ce support de cours vous guidera dans la structuration de vos livrables finaux et dans la préparation de votre présentation orale. Vous y apprendrez à formaliser une feuille de route de remédiation cyber réaliste et à pitcher vos recommandations devant un jury d'évaluation (composé de votre mentor et de vos pairs). C'est la dernière étape pour décrocher votre badge numérique d'achèvement de formation.
+    Ce document synthétise les concepts essentiels de la session. Vous y découvrirez notamment :
+    - Objectifs du Projet Capstone
+    - Structurer son rapport d'évaluation finale (Livrable écrit)
+    - Réussir son pitch de soutenance (Livrable oral)
+    L'objectif est de vous fournir les bases théoriques et pratiques nécessaires pour maîtriser ces notions.
 
 ---
 
-## Glossaire de la session
+## 1. Introduction
+
+Le Projet Capstone constitue l'aboutissement de votre parcours de formation de 8 sessions. C'est l'occasion de démontrer votre autonomie et de mettre en pratique l'ensemble des compétences acquises (triade CIA, analyse de menaces, sécurité des réseaux, cloud, RGPD, gestion des risques et réponse aux incidents) en vous confrontant à une étude de cas d'entreprise réelle ou fictive (une PME ayant besoin d'un audit de sécurité). Ce support de cours vous guidera dans la structuration de vos livrables finaux et dans la préparation de votre présentation orale. Vous y apprendrez à formaliser une feuille de route de remédiation cyber réaliste et à pitcher vos recommandations devant un jury d'évaluation (composé de votre mentor et de vos pairs). C'est la dernière étape pour décrocher votre badge numérique d'achèvement de formation.
+
+---
+
+## 2. Développement
+
+### Glossaire
 * **Projet Capstone** : Un travail d'évaluation final synthétisant l'ensemble des compétences pratiques et théoriques développées tout au long d'un parcours d'apprentissage.
 * **Feuille de route de remédiation (Remediation Roadmap)** : Plan d'action chronologique et priorisé décrivant les étapes techniques et organisationnelles à accomplir pour corriger les vulnérabilités identifiées lors d'un audit.
 * **Synthèse managériale (Executive Summary)** : Courte introduction synthétique (1 page max) rédigée à l'intention des dirigeants de l'entreprise, résumant les menaces majeures découvertes et le budget requis, exempte de jargon technique trop complexe.
@@ -16,8 +28,6 @@ Parcours : A 8 sessions  |  Module : Consolidation & Soutenance  |  Niveau : Dé
 * **Évaluation par les pairs (Peer Review)** : Méthode d'évaluation collaborative où les apprenants analysent et notent de manière constructive le travail de leurs pairs à l'aide d'une grille de critères partagée.
 
 ---
-
-## Contenu théorique
 
 ### 1. Objectifs du Projet Capstone
 
@@ -33,7 +43,7 @@ Vos recommandations doivent respecter trois critères :
 * **Le réalisme économique** : Une PME de 20 personnes ne peut pas s'offrir un SOC interne disponible 24/7 de 10 personnes ou des outils de chiffrement coûtant des dizaines de milliers d'euros. Vous devez privilégier l'hygiène informatique et des solutions managées externes ou open-source à coût modéré.
 * **L'acceptabilité humaine** : Vos propositions ne doivent pas paralyser le travail quotidien des employés de la PME sous peine d'être contournées (ex. éviter de forcer le changement hebdomadaire des mots de passe sans gestionnaire de mots de passe adapté).
 
----
+
 
 ### 2. Structurer son rapport d'évaluation finale (Livrable écrit)
 
@@ -45,7 +55,7 @@ Votre rapport d'évaluation (3 à 5 pages) doit être organisé selon la structu
 4. **Recommandations détaillées** : Propositions de mesures techniques et d'organisation (politique de mots de passe, segmentation réseau, politique de sauvegarde 3-2-1, processus de gestion des patchs et sensibilisation des équipes).
 5. **Feuille de route et plan d'action** : Calendrier de déploiement des recommandations classées en trois catégories : Court terme (priorités immédiates à coût zéro/faible), Moyen terme (projets d'infrastructure réseau/cloud) et Long terme (surveillance continue et audits annuels).
 
----
+
 
 ### 3. Réussir son pitch de soutenance (Livrable oral)
 
@@ -61,8 +71,7 @@ Vous disposez de **10 minutes strictes** pour convaincre votre jury. Une bonne s
 
 ---
 
-## Focus pratique : Modèle de feuille de route de remédiation chronologique
-
+### Focus pratique
 La feuille de route permet d'organiser dans le temps le déploiement des recommandations de sécurité proposées à l'issue de l'audit.
 
 ```text
@@ -84,7 +93,7 @@ La feuille de route permet d'organiser dans le temps le déploiement des recomma
 
 ---
 
-## Exercice d'application (self-paced)
+### Exercice d'application
 **Titre** : Préparer la réponse aux objections d'un dirigeant de PME
 
 ### Énoncé
@@ -93,7 +102,7 @@ Dans le cadre de votre soutenance, le chef d'entreprise fictif (joué par le men
 
 Rédigez un argumentaire de réponse structuré en 3 points pour lever cette objection tout en maintenant votre recommandation.
 
----
+
 
 ### Corrigé de l'exercice
 1. **Point 1 : Reconnaissance et empathie (Valider la préoccupation de l'interlocuteur)** :
@@ -105,14 +114,28 @@ Rédigez un argumentaire de réponse structuré en 3 points pour lever cette obj
 
 ---
 
+## 3. Ressources Complémentaires
 
-## Exercice Bonus (Temps additionnel)
+* **IBM SkillsBuild** : Section méthodologie de gestion de projet informatique et restitution orale.
+* **ANSSI** : "La cybersécurité pour les TPE/PME en 12 questions" (Guide pratique d'aide à la décision).
+* **Cybermalveillance.gouv.fr** : Kit de sensibilisation aux risques numériques pour les entreprises.
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
+
+---
+
+## 4. Exercice Bonus (Si vous avez de l'avance)
+
 **Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.
 
-## Aide-mémoire / Fiche de révision
+---
+
+## 5. Aide-mémoire / Fiche de révision
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
@@ -121,12 +144,3 @@ Rédigez un argumentaire de réponse structuré en 3 points pour lever cette obj
 | **Synthèse managériale (Executive Summary)** | Courte introduction synthétique (1 page max) rédigée à l'intention des dirigeants de l'entreprise, résumant les menaces majeures découvertes et le budget requis, exempte de jargon technique trop complexe. |
 | **Hygiène informatique (Cyber Hygiene)** | Ensemble des règles élémentaires de sécurité à appliquer de manière systématique pour minimiser la majorité des cybermenaces courantes (ex. mises à jour, mots de passe complexes, sauvegardes). |
 | **Évaluation par les pairs (Peer Review)** | Méthode d'évaluation collaborative où les apprenants analysent et notent de manière constructive le travail de leurs pairs à l'aide d'une grille de critères partagée. |
-
-## Ressources pour aller plus loin
-* **IBM SkillsBuild** : Section méthodologie de gestion de projet informatique et restitution orale.
-* **ANSSI** : "La cybersécurité pour les TPE/PME en 12 questions" (Guide pratique d'aide à la décision).
-* **Cybermalveillance.gouv.fr** : Kit de sensibilisation aux risques numériques pour les entreprises.
-
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)

@@ -4,11 +4,23 @@ Parcours : A 8 sessions  |  Module : GRC & Vie Privée  |  Niveau : Débutant
 ---
 
 !!! abstract "Résumé"
-    La cybersécurité n'est pas uniquement une affaire de configurations techniques et de pare-feux. Pour être efficace, elle doit être intégrée dans la stratégie globale de l'entreprise à travers la Gouvernance, la Gestion des Risques et la Conformité (GRC). Ce support de cours détaille le cadre organisationnel de la cybersécurité. Vous découvrirez les référentiels de sécurité internationaux indispensables comme la norme ISO 27001 et le NIST CSF, qui guident les entreprises dans la structuration de leur sécurité. Nous étudierons ensuite la méthodologie de l'analyse de risques pour apprendre à prioriser les efforts de protection selon l'impact et la probabilité des menaces. Enfin, nous aborderons le RGPD, le règlement qui encadre la protection de la vie privée et des données personnelles, devenu un enjeu juridique et de réputation majeur pour toutes les organisations.
+    Ce document synthétise les concepts essentiels de la session. Vous y découvrirez notamment :
+    - La Gouvernance et ses référentiels : ISO 27001 & NIST CSF
+    - La Gestion des Risques : Évaluer pour mieux investir
+    - La Conformité et la Vie Privée : Le RGPD
+    L'objectif est de vous fournir les bases théoriques et pratiques nécessaires pour maîtriser ces notions.
 
 ---
 
-## Glossaire de la session
+## 1. Introduction
+
+La cybersécurité n'est pas uniquement une affaire de configurations techniques et de pare-feux. Pour être efficace, elle doit être intégrée dans la stratégie globale de l'entreprise à travers la Gouvernance, la Gestion des Risques et la Conformité (GRC). Ce support de cours détaille le cadre organisationnel de la cybersécurité. Vous découvrirez les référentiels de sécurité internationaux indispensables comme la norme ISO 27001 et le NIST CSF, qui guident les entreprises dans la structuration de leur sécurité. Nous étudierons ensuite la méthodologie de l'analyse de risques pour apprendre à prioriser les efforts de protection selon l'impact et la probabilité des menaces. Enfin, nous aborderons le RGPD, le règlement qui encadre la protection de la vie privée et des données personnelles, devenu un enjeu juridique et de réputation majeur pour toutes les organisations.
+
+---
+
+## 2. Développement
+
+### Glossaire
 * **GRC (Gouvernance, Risques et Conformité)** : Approche intégrée visant à aligner l'informatique sur les objectifs de l'entreprise, à gérer les risques associés et à respecter les obligations réglementaires.
 * **ISO/CEI 27001** : Norme internationale décrivant les exigences pour la mise en place d'un Système de Management de la Sécurité de l'Information (SMSI).
 * **NIST CSF (Cybersecurity Framework)** : Cadre méthodologique du gouvernement américain structuré autour de 5 fonctions clés (Identifier, Protéger, Détecter, Répondre, Récupérer) pour améliorer la cybersécurité des infrastructures critiques.
@@ -18,8 +30,6 @@ Parcours : A 8 sessions  |  Module : GRC & Vie Privée  |  Niveau : Débutant
 * **CNIL (Commission Nationale de l'Informatique et des Libertés)** : Autorité administrative publique française chargée de veiller au respect de la protection des données personnelles (les équivalents existent dans chaque État européen).
 
 ---
-
-## Contenu théorique
 
 ### 1. La Gouvernance et ses référentiels : ISO 27001 & NIST CSF
 
@@ -44,7 +54,7 @@ Très utilisé à l'international, il structure la sécurité en 5 fonctions op�
 4. **Répondre** (*Respond*) : Réagir aux incidents détectés (confinement, communication).
 5. **Récupérer** (*Recover*) : Restaurer les systèmes pour revenir à la normale après un incident.
 
----
+
 
 ### 2. La Gestion des Risques : Évaluer pour mieux investir
 
@@ -55,7 +65,7 @@ Un risque se caractérise par deux facteurs :
 * **La Vraisemblance (ou Probabilité)** : Quelle est la chance que l'événement redouté se produise (de 1 - Très improbable à 4 - Presque certain) ?
 * **L'Impact (ou Gravité)** : Si l'événement se produit, quels seront les dommages financiers, juridiques ou de réputation (de 1 - Négligeable à 4 - Catastrophique) ?
 
-$$\text{Criticité brute} = \text{Vraisemblance} \times \text{Impact}$$
+**Criticité brute** = *Vraisemblance* × *Impact*
 
 #### Les 4 stratégies de traitement du risque :
 1. **Réduire** : Mettre en place des mesures de sécurité pour baisser l'impact ou la vraisemblance (ex. installer un pare-feu).
@@ -63,7 +73,7 @@ $$\text{Criticité brute} = \text{Vraisemblance} \times \text{Impact}$$
 3. **Éviter** : Supprimer l'activité qui génère le risque (ex. renoncer à héberger un fichier contenant des données hautement sensibles).
 4. **Accepter** : Décider de ne rien faire car le coût de la protection est plus élevé que le coût de l'impact potentiel du risque.
 
----
+
 
 ### 3. La Conformité et la Vie Privée : Le RGPD
 
@@ -79,8 +89,7 @@ En cas de non-respect, les autorités de contrôle (comme la CNIL en France) peu
 
 ---
 
-## Focus pratique : Utilisation de la matrice 4x4 de cotation des risques
-
+### Focus pratique
 Les entreprises projettent les risques identifiés dans une matrice visuelle pour cibler les risques prioritaires (ceux situés dans la zone rouge).
 
 ```text
@@ -99,7 +108,7 @@ Les entreprises projettent les risques identifiés dans une matrice visuelle pou
 
 ---
 
-## Exercice d'application (self-paced)
+### Exercice d'application
 **Titre** : Analyse et traitement d'un scénario de risque PME
 
 ### Énoncé
@@ -109,7 +118,7 @@ Une PME de 15 salariés stocke son fichier client contenant les coordonnées et 
 2. À l'aide de la matrice de focus pratique ci-dessus, attribuez une note de vraisemblance (1 à 4) et d'impact (1 à 4) au risque de vol et de divulgation de ce fichier client. Calculez sa criticité brute.
 3. Proposez trois mesures concrètes de réduction de ce risque.
 
----
+
 
 ### Corrigé de l'exercice
 1. **Identification** :
@@ -118,7 +127,7 @@ Une PME de 15 salariés stocke son fichier client contenant les coordonnées et 
 2. **Cotation du risque** :
    * *Vraisemblance* : **4 (Presque sûr)**. Avec un mot de passe aussi trivial et sans protection, la machine sera compromise très rapidement.
    * *Impact* : **3 (Majeur)**. La divulgation des coordonnées de 10 000 clients nuira gravement à la réputation de la PME et l'exposera à des sanctions de la CNIL (non-respect des obligations de sécurité du RGPD).
-   * *Criticité brute* : $4 \times 3 = 12$ (Risque situé dans la zone Élevée / Rouge de la matrice).
+   * *Criticité brute* : 4 × 3 = 12 (Risque situé dans la zone Élevée / Rouge de la matrice).
 3. **Mesures de réduction** :
    * Forcer le changement du mot de passe pour une phrase de passe complexe (ex. minimum 14 caractères).
    * Installer et maintenir à jour un logiciel antivirus/antimalware de niveau professionnel.
@@ -126,14 +135,28 @@ Une PME de 15 salariés stocke son fichier client contenant les coordonnées et 
 
 ---
 
+## 3. Ressources Complémentaires
 
-## Exercice Bonus (Temps additionnel)
+* **IBM SkillsBuild** : Modules sur les principes de la GRC et le RGPD.
+* **CNIL (France)** : Guide de la sécurité des données personnelles (un outil indispensable pour auditer sa conformité).
+* **NIST (USA)** : Documentation officielle du Cybersecurity Framework v2.0.
+
+* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
+* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
+
+---
+
+## 4. Exercice Bonus (Si vous avez de l'avance)
+
 **Si vous avez terminé en avance (avant les 1h30 de session) :**
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
 - **Correction :** Le mentor validera les réflexions et apportera son expertise.
 
-## Aide-mémoire / Fiche de révision
+---
+
+## 5. Aide-mémoire / Fiche de révision
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
@@ -144,12 +167,3 @@ Une PME de 15 salariés stocke son fichier client contenant les coordonnées et 
 | **RGPD (Règlement Général sur la Protection des Données)** | Texte réglementaire européen encadrant le traitement des données personnelles au sein de l'Union européenne ou ciblant ses citoyens. |
 | **Donnée personnelle** | Toute information se rapportant à une personne physique identifiée ou identifiable (ex. nom, e-mail, adresse IP, numéro de téléphone, données de santé). |
 | **CNIL (Commission Nationale de l'Informatique et des Libertés)** | Autorité administrative publique française chargée de veiller au respect de la protection des données personnelles (les équivalents existent dans chaque État européen). |
-
-## Ressources pour aller plus loin
-* **IBM SkillsBuild** : Modules sur les principes de la GRC et le RGPD.
-* **CNIL (France)** : Guide de la sécurité des données personnelles (un outil indispensable pour auditer sa conformité).
-* **NIST (USA)** : Documentation officielle du Cybersecurity Framework v2.0.
-
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
