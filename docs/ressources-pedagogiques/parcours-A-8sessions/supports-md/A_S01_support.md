@@ -21,6 +21,22 @@ Bienvenue dans le monde de la cybersécurité. À l'ère numérique, la protecti
 
 ## 2. Développement
 
+### Approfondissement technique pour le mentor (Contenu dense)
+
+**1. Évolution historique du paysage des menaces**
+Prenez le temps d'expliquer comment nous sommes passés de virus informatiques créés par des passionnés (années 90) cherchant la notoriété, à une véritable industrie du cybercrime (Ransomware-as-a-Service, courtiers en accès initiaux). Détaillez la notion d'économie souterraine : les attaquants achètent des vulnérabilités sur le Dark Web comme on achète un service légal.
+
+**2. La Triade CIA dans le détail**
+- **Confidentialité** : Évoquez l'importance des contrôles d'accès physiques (badges) et logiques (chiffrement AES-256).
+- **Intégrité** : Expliquez comment le hachage (SHA-256) permet de garantir qu'une donnée n'a pas été altérée par un "Man-in-the-Middle".
+- **Disponibilité** : Abordez les plans de reprise d'activité (PRA), le rôle des clusters de serveurs, et l'impact d'une attaque DDoS sur les serveurs DNS.
+
+**3. Discussion ouverte (15 minutes)**
+Demandez aux apprenants d'identifier l'actif le plus critique de leur entreprise actuelle ou passée, et de classer les risques (Perte de CA vs Perte de réputation).
+
+
+---
+
 ### Glossaire
 * **Triade CIA (Confidentialité, Intégrité, Disponibilité)** : Le modèle de référence de la sécurité de l'information. Chaque action de sécurité vise à garantir l'un ou plusieurs de ces piliers.
 * **Confidentialité** : Garantie que seules les personnes autorisées ont accès aux données.

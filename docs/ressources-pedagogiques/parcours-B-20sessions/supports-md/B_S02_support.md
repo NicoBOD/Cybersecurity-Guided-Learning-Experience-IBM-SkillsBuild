@@ -21,6 +21,9 @@
 ---
 
 ## 2. Développement
+Prenez 30 minutes pour classifier les acteurs de la menace : Script Kiddies (faible compétence, outils clés en main), Cybercriminels (financier, ransomwares), Hacktivistes (Anonymous, idéologie), et APT / États-Nations (Ressources illimitées, furtivité extrême). Expliquez la notion de surface d'attaque en constante expansion (IoT, télétravail).
+
+---
 
 ### Objectifs de la session
 À la fin de cette session, vous serez capable de :

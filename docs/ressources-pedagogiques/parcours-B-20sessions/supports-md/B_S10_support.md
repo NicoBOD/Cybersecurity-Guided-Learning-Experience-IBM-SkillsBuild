@@ -21,6 +21,9 @@
 ---
 
 ## 2. Développement
+Différenciez la cryptographie Symétrique (AES, rapide, une seule clé secrète) et Asymétrique (RSA, lent, paire de clés Publique/Privée). Expliquez le défi de l'échange des clés résolu par la cryptographie hybride (TLS). Détaillez le Hachage (SHA-256) : fonction irréversible utilisée pour stocker les mots de passe avec ajout d'un 'Sel' (Salt) pour contrer les Rainbow Tables.
+
+---
 
 ### Objectifs de la session
 À la fin de cette session, vous serez capable de :

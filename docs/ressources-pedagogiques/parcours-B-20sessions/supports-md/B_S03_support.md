@@ -21,6 +21,9 @@
 ---
 
 ## 2. Développement
+Plongez dans les détails de la Cyber Kill Chain de Lockheed Martin. Décortiquez chaque étape : Reconnaissance, Armement, Livraison, Exploitation, Installation, Commandement & Contrôle (C2), et Actions sur les objectifs. Montrez comment l'interruption de la chaîne à n'importe quelle étape fait échouer l'attaque complète.
+
+---
 
 ### Objectifs de la session
 À la fin de cette session, vous serez capable de :

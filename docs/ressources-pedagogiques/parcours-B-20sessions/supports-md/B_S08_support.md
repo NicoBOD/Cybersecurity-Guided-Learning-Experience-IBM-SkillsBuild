@@ -21,6 +21,9 @@
 ---
 
 ## 2. Développement
+Expliquez le principe de durcissement (Hardening). Prenez l'exemple du Center for Internet Security (CIS) Benchmarks : désactiver l'exécution automatique des clés USB, renommer le compte administrateur local, appliquer les principes du moindre privilège via les GPO (Group Policy Objects) sur Active Directory. Distinguez l'Antivirus classique de l'EDR (Endpoint Detection and Response) basé sur l'analyse comportementale.
+
+---
 
 ### Objectifs de la session
 À la fin de cette session, vous serez capable de :

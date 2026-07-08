@@ -21,6 +21,9 @@
 ---
 
 ## 2. Développement
+Détaillez le modèle de responsabilité partagée du Cloud. En IaaS, le client gère tout depuis l'OS jusqu'à l'application. En PaaS, le fournisseur gère l'OS. En SaaS, le fournisseur gère tout, sauf la donnée et l'identité des utilisateurs. Discutez des erreurs de configuration courantes : buckets AWS S3 laissés publics accidentellement.
+
+---
 
 ### Objectifs de la session
 À la fin de cette session, vous serez capable de :

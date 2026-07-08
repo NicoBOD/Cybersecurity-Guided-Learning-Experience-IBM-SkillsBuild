@@ -20,6 +20,9 @@
 ---
 
 ## 2. Développement
+Détaillez la différence entre la Sécurité Opérationnelle (Pare-feu) et la Gouvernance. L'ISO 27001 ne prescrit aucune solution technique, elle impose la création d'un Système de Management (SMSI) avec des processus, des politiques écrites (PSSI), des audits réguliers et l'implication formelle de la direction générale.
+
+---
 
 ### Objectifs de la session
 À la fin de cette session, vous serez capable de :

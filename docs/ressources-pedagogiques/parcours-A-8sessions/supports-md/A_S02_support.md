@@ -20,6 +20,23 @@ Les cyberattaques modernes ciblent de plus en plus le maillon réputé le plus v
 
 ## 2. Développement
 
+### Approfondissement technique pour le mentor (Contenu dense)
+
+**1. Psychologie de l'Ingénierie Sociale**
+Détaillez les ressorts psychologiques exploités par les attaquants : l'urgence (faux e-mail du PDG demandant un virement sous 2 heures), la peur (fausse amende gouvernementale), ou la cupidité (faux gain à un concours). Insistez sur le fait que l'humain est souvent le maillon faible malgré les meilleurs pare-feux.
+
+**2. Anatomie d'une attaque de Spear-Phishing**
+Décomposez une attaque ciblée étape par étape :
+- *Reconnaissance* (OSINT) : Collecte d'informations sur l'organigramme via LinkedIn.
+- *Fabrication de l'arme* : Création d'un e-mail reprenant la signature exacte du directeur financier.
+- *Exploitation* : L'utilisateur clique sur une pièce jointe Excel contenant une macro malveillante.
+
+**3. Ateliers pratiques de détection**
+Passez 20 minutes à disséquer des exemples visuels de phishing : montrez comment inspecter les en-têtes d'un e-mail, vérifier le domaine de l'expéditeur (typosquatting comme `amaz0n.com`) et survoler les liens hypertextes sans cliquer.
+
+
+---
+
 ### Glossaire
 * **Malware (Logiciel malveillant)** : Terme générique désignant tout programme conçu pour nuire à un système informatique (virus, ver, rançongiciel, etc.).
 * **Ransomware (Rançongiciel)** : Malware qui chiffre les fichiers d'un utilisateur ou d'une entreprise et réclame le paiement d'une rançon en échange de la clé de déchiffrement.

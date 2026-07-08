@@ -22,6 +22,9 @@
 ---
 
 ## 2. Développement
+Focalisez-vous sur la classification des données (Publique, Interne, Confidentielle, Secrète). Expliquez que le chiffrement (BitLocker) protège un disque volé éteint, mais que pour empêcher la fuite de documents depuis un PC allumé par un employé malveillant, il faut utiliser des solutions de DLP (Data Loss Prevention) qui bloquent l'envoi de pièces jointes classifiées.
+
+---
 
 ### Objectifs de la session
 À la fin de cette session, vous serez capable de :

@@ -21,6 +21,9 @@
 ---
 
 ## 2. Développement
+Détaillez le fonctionnement d'un Pare-feu de Nouvelle Génération (NGFW). Contrairement à un firewall stateful classique qui regarde juste IP/Port, le NGFW fait du *Deep Packet Inspection* (DPI). Il peut voir qu'un flux sur le port 443 autorisé n'est pas du HTTPS normal, mais un tunnel malveillant. Expliquez la différence avec un IPS (actif) et un IDS (passif).
+
+---
 
 ### Objectifs de la session
 À la fin de cette session, vous serez capable de :

@@ -22,6 +22,27 @@
 
 ## 2. Développement
 
+### Approfondissement technique pour le mentor (Contenu dense)
+
+**1. Modèle de Responsabilité Partagée du Cloud**
+Il est crucial de passer 20 minutes sur ce concept. Détaillez les différences entre IaaS, PaaS et SaaS. 
+- En IaaS (ex: AWS EC2), l'entreprise doit patcher le système d'exploitation Windows/Linux.
+- En SaaS (ex: Microsoft 365), Microsoft gère l'OS, mais l'entreprise reste responsable de la configuration du MFA, de la gestion des identités, et de la sauvegarde de ses e-mails.
+
+**2. IAM et Authentification Avancée**
+Plongez dans le fonctionnement de l'IAM :
+- Le cycle de vie d'une identité (Onboarding, JML - Joiner Mover Leaver).
+- La différence entre l'Authentification (Qui suis-je ?) et l'Autorisation (Que puis-je faire ?).
+- Le fonctionnement technique du MFA (TOTP avec Google Authenticator vs clés matérielles FIDO2/YubiKey) et pourquoi les SMS (SS7) ne sont plus considérés comme totalement sécurisés.
+
+**3. Chiffrement "At Rest" vs "In Transit"**
+Expliquez l'utilisation de BitLocker / LUKS pour protéger les données au repos sur un disque dur volé, par opposition au protocole TLS utilisé pour protéger les données en transit sur le réseau Internet.
+
+
+*(Même que A_S04 étendu)*. Détaillez le modèle RBAC (Role-Based Access Control) par rapport au contrôle discrétionnaire (DAC). Expliquez pourquoi le SSO (Single Sign-On) est un double tranchant : il améliore le confort et la sécurité des mots de passe, mais crée un point de défaillance unique, rendant l'activation du MFA (Authentification Multifacteur) indispensable.
+
+---
+
 ### Objectifs de la session
 À la fin de cette session, vous serez capable de :
 

@@ -21,6 +21,9 @@
 ---
 
 ## 2. Développement
+Détaillez le Vishing (téléphone), le Smishing (SMS) et le Baiting (clé USB piégée laissée sur un parking). Passez 20 minutes sur le concept du BEC (Business Email Compromise) / Fraude au Président : comment les pirates usurpent l'identité du grand patron pour ordonner un virement urgent à l'étranger le vendredi soir.
+
+---
 
 ### Objectifs de la session
 À la fin de cette session, vous serez capable de :

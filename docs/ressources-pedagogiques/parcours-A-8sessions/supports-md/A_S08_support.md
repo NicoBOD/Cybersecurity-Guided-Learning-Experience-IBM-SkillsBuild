@@ -20,6 +20,20 @@ Le Projet Capstone constitue l'aboutissement de votre parcours de formation de 8
 
 ## 2. Développement
 
+### Approfondissement technique pour le mentor (Contenu dense)
+
+**1. Restitution et Synthèse Managériale**
+Expliquez aux apprenants comment vulgariser un concept cyber complexe pour convaincre un Comité de Direction. Le Comex ne comprend pas les adresses IP ou les CVSS, il comprend le risque financier, juridique et réputationnel. Montrez comment transformer "Vulnérabilité SQLi sur le serveur" en "Risque de vol de l'intégralité du fichier client entraînant une sanction CNIL de 500k€".
+
+**2. Audit des livrables (Capstone)**
+Prenez le temps d'auditer publiquement 2 ou 3 livrables de la salle. Félicitez la structure, pointez du doigt les oublis courants (absence de l'évaluation financière du risque, recommandations trop vagues comme "améliorer la sécurité").
+
+**3. Plan de développement des compétences**
+Terminez la session (30 minutes) en orientant les apprenants vers l'avenir : quelles certifications viser (Sec+, CEH, CISSP) ? Comment configurer un laboratoire virtuel (TryHackMe, HackTheBox) pour continuer la pratique ? Comment suivre l'actualité cyber (veille technologique).
+
+
+---
+
 ### Glossaire
 * **Projet Capstone** : Un travail d'évaluation final synthétisant l'ensemble des compétences pratiques et théoriques développées tout au long d'un parcours d'apprentissage.
 * **Feuille de route de remédiation (Remediation Roadmap)** : Plan d'action chronologique et priorisé décrivant les étapes techniques et organisationnelles à accomplir pour corriger les vulnérabilités identifiées lors d'un audit.

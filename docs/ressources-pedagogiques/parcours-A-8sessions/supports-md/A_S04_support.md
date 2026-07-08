@@ -21,6 +21,25 @@ Parcours : A 8 sessions  |  Module : Cloud & Données  |  Niveau : Débutant
 
 ## 2. Développement
 
+### Approfondissement technique pour le mentor (Contenu dense)
+
+**1. Modèle de Responsabilité Partagée du Cloud**
+Il est crucial de passer 20 minutes sur ce concept. Détaillez les différences entre IaaS, PaaS et SaaS. 
+- En IaaS (ex: AWS EC2), l'entreprise doit patcher le système d'exploitation Windows/Linux.
+- En SaaS (ex: Microsoft 365), Microsoft gère l'OS, mais l'entreprise reste responsable de la configuration du MFA, de la gestion des identités, et de la sauvegarde de ses e-mails.
+
+**2. IAM et Authentification Avancée**
+Plongez dans le fonctionnement de l'IAM :
+- Le cycle de vie d'une identité (Onboarding, JML - Joiner Mover Leaver).
+- La différence entre l'Authentification (Qui suis-je ?) et l'Autorisation (Que puis-je faire ?).
+- Le fonctionnement technique du MFA (TOTP avec Google Authenticator vs clés matérielles FIDO2/YubiKey) et pourquoi les SMS (SS7) ne sont plus considérés comme totalement sécurisés.
+
+**3. Chiffrement "At Rest" vs "In Transit"**
+Expliquez l'utilisation de BitLocker / LUKS pour protéger les données au repos sur un disque dur volé, par opposition au protocole TLS utilisé pour protéger les données en transit sur le réseau Internet.
+
+
+---
+
 ### Glossaire
 * **IAM (Identity and Access Management)** : Ensemble des processus et outils technologiques servant à gérer l'identité des utilisateurs et à réguler leurs privilèges d'accès aux ressources informatiques.
 * **MFA (Multi-Factor Authentication)** : Processus d'authentification exigeant de l'utilisateur qu'il fournisse au moins deux facteurs de preuve distincts (ex. un mot de passe + un code unique envoyé sur smartphone) avant d'autoriser l'accès.

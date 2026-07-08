@@ -21,6 +21,9 @@
 ---
 
 ## 2. Développement
+Faites un exercice de lecture de Logs. Montrez à quoi ressemble une log Windows Event 4624 (Logon Success) vs 4625 (Logon Failed). Expliquez l'intérêt d'un SIEM : si l'outil reçoit 50 logs 4625 en 2 minutes depuis l'IP X, suivi d'un 4624, il corrèle ces événements disparates pour lever une alerte 'Attaque par force brute réussie'.
+
+---
 
 ### Objectifs de la session
 À la fin de cette session, vous serez capable de :

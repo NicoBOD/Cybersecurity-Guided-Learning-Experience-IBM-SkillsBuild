@@ -22,6 +22,26 @@
 
 ## 2. Développement
 
+### Approfondissement technique pour le mentor (Contenu dense)
+
+**1. Les 4 phases de la Réponse aux Incidents (NIST SP 800-61)**
+Détaillez le cycle de vie d'une attaque :
+1. *Préparation* : Création des playbooks, cellules de crise, outillage.
+2. *Détection et Analyse* : Qualifier l'alerte. S'agit-il d'un ransomware ou d'une erreur admin ?
+3. *Confinement, Éradication et Recouvrement* : Couper le réseau (Confinement), supprimer les backdoors (Éradication), restaurer les sauvegardes (Recouvrement).
+4. *Activité post-incident (Leçons apprises)* : L'étape la plus critique pour ne pas subir la même attaque le mois suivant.
+
+**2. Ordre de volatilité et Forensics**
+Expliquez pourquoi on ne doit **jamais** éteindre un ordinateur infecté par un ransomware : l'extinction vide la mémoire RAM qui contient potentiellement les clés de chiffrement et les preuves de l'attaque. L'ordre légal exige de d'abord dumper la RAM, puis les caches réseau, et enfin cloner le disque dur physique.
+
+**3. Exercice de Tabletop (Simulation)**
+Passez 20 minutes à faire un jeu de rôle avec la salle : "Il est 8h00, tous les écrans affichent une demande de rançon. Qui appelez-vous en premier ? Comment communiquez-vous si les e-mails sont coupés ?"
+
+
+*(Même que A_S07 étendu)*. Insistez sur la notion de 'Leçons apprises' (Post-Incident Review). Une fois le système restauré, si on ne corrige pas la faille d'origine (ex: VPN non patché), l'entreprise sera repiratée la semaine suivante. Discutez de l'importance de ne pas détruire les preuves (ne pas formater les disques immédiatement).
+
+---
+
 ### Objectifs de la session
 À la fin de cette session, vous serez capable de :
 

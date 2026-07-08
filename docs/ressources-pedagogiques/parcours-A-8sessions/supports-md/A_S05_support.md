@@ -20,6 +20,28 @@ La cybersécurité n'est pas uniquement une affaire de configurations techniques
 
 ## 2. Développement
 
+### Approfondissement technique pour le mentor (Contenu dense)
+
+**1. La méthodologie de Gestion des Risques (EBIOS RM)**
+Expliquez que le risque ne s'élimine jamais totalement, il se gère. Détaillez les 4 stratégies de traitement du risque :
+- *Accepter* le risque (impact faible).
+- *Réduire* le risque (mettre en place un pare-feu).
+- *Transférer* le risque (souscrire une assurance cyber ou externaliser au cloud).
+- *Éviter* le risque (fermer le service exposé).
+
+**2. Les exigences critiques du RGPD**
+Passez 20 minutes sur le RGPD avec des cas concrets :
+- Le principe du *"Privacy by Design"* (la sécurité intégrée dès la conception).
+- Le *"Registre des traitements"* obligatoire pour cartographier les données.
+- La procédure stricte de *notification sous 72h* à la CNIL en cas de fuite de données avérée.
+- Le rôle indépendant et stratégique du DPO (Data Protection Officer) par rapport au RSSI.
+
+**3. Les normes ISO 27000**
+Démystifiez l'ISO 27001 : expliquez qu'il s'agit d'un système de management (SMSI) basé sur l'amélioration continue (Roue de Deming : Plan-Do-Check-Act) et non d'une liste de logiciels à acheter.
+
+
+---
+
 ### Glossaire
 * **GRC (Gouvernance, Risques et Conformité)** : Approche intégrée visant à aligner l'informatique sur les objectifs de l'entreprise, à gérer les risques associés et à respecter les obligations réglementaires.
 * **ISO/CEI 27001** : Norme internationale décrivant les exigences pour la mise en place d'un Système de Management de la Sécurité de l'Information (SMSI).

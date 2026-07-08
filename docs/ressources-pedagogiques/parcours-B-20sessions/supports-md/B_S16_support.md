@@ -22,6 +22,25 @@
 
 ## 2. Développement
 
+### Approfondissement technique pour le mentor (Contenu dense)
+
+**1. Le fonctionnement d'un SOC (Security Operations Center)**
+Détaillez l'organisation d'un SOC en Niveaux (Tier 1, Tier 2, Tier 3). 
+- Le T1 trie les événements bruts du SIEM (Security Information and Event Management) et gère les faux positifs.
+- Le T2 investigue les incidents confirmés.
+- Le T3 fait du *Threat Hunting* proactif pour trouver des menaces invisibles.
+
+**2. Gestion des vulnérabilités et scoring CVSS**
+Expliquez comment fonctionne le système CVSS (Common Vulnerability Scoring System). Montrez qu'une faille notée 9.8 (Critique) signifie souvent qu'elle est exploitable à distance, sans authentification, et avec un impact total sur le système. Discutez de la priorisation des patchs (*Patch Management*).
+
+**3. L'automatisation : du SIEM au SOAR**
+Prenez 15 minutes pour expliquer la "fatigue des alertes" subie par les analystes. Introduisez la technologie SOAR (Security Orchestration, Automation, and Response) qui permet de créer des *Playbooks* automatisés (ex: isoler automatiquement un poste de travail du réseau s'il communique avec une adresse IP malveillante connue).
+
+
+*(Même que A_S06 étendu)*. Expliquez la notion de SOC externalisé (MSSP). Pourquoi les PME sous-traitent-elles le SOC ? Parce que la surveillance 24/7 (3x8) requiert au minimum 8 à 10 analystes, ce qui coûte très cher. Détaillez le rôle de la *Threat Intelligence* (CTI) pour enrichir le SOC avec des IOCs (Indicators of Compromise) provenant du monde entier.
+
+---
+
 ### Objectifs de la session
 À la fin de cette session, vous serez capable de :
 

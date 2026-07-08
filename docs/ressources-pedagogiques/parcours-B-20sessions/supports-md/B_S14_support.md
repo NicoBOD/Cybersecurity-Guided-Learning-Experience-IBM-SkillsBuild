@@ -22,6 +22,30 @@
 
 ## 2. Développement
 
+### Approfondissement technique pour le mentor (Contenu dense)
+
+**1. La méthodologie de Gestion des Risques (EBIOS RM)**
+Expliquez que le risque ne s'élimine jamais totalement, il se gère. Détaillez les 4 stratégies de traitement du risque :
+- *Accepter* le risque (impact faible).
+- *Réduire* le risque (mettre en place un pare-feu).
+- *Transférer* le risque (souscrire une assurance cyber ou externaliser au cloud).
+- *Éviter* le risque (fermer le service exposé).
+
+**2. Les exigences critiques du RGPD**
+Passez 20 minutes sur le RGPD avec des cas concrets :
+- Le principe du *"Privacy by Design"* (la sécurité intégrée dès la conception).
+- Le *"Registre des traitements"* obligatoire pour cartographier les données.
+- La procédure stricte de *notification sous 72h* à la CNIL en cas de fuite de données avérée.
+- Le rôle indépendant et stratégique du DPO (Data Protection Officer) par rapport au RSSI.
+
+**3. Les normes ISO 27000**
+Démystifiez l'ISO 27001 : expliquez qu'il s'agit d'un système de management (SMSI) basé sur l'amélioration continue (Roue de Deming : Plan-Do-Check-Act) et non d'une liste de logiciels à acheter.
+
+
+*(Même que A_S05 étendu)*. Réalisez un atelier de calcul de risque au tableau : Risque = Vraisemblance × Impact. Discutez du concept de 'Risque Résiduel' (le risque qui subsiste après la mise en place du pare-feu, car la sécurité à 100% n'existe pas). Expliquez le rôle des assurances cyber pour transférer l'impact financier du risque résiduel.
+
+---
+
 ### Objectifs de la session
 À la fin de cette session, vous serez capable de :
 

@@ -21,6 +21,9 @@
 ---
 
 ## 2. Développement
+L'exercice Tabletop. Organisez la classe en cellule de crise (Directeur, DRH, DSI, Juriste). Donnez-leur un scénario (Injection SQL avec fuite de la base de données clients, rançon de 100 000€ demandée sur Twitter). Chronométrez-les et demandez-leur quelles sont leurs 3 premières actions. Faites-les débattre sur 'Faut-il payer la rançon ?' (Spoiler : Non).
+
+---
 
 ### Objectifs de la session
 À la fin de cette session, vous serez capable de :

@@ -21,6 +21,23 @@ Le réseau est le système nerveux de toute infrastructure informatique. Sécuri
 
 ## 2. Développement
 
+### Approfondissement technique pour le mentor (Contenu dense)
+
+**1. Modèle OSI et Sécurité en couches**
+Prenez le temps d'expliquer les couches clés du modèle OSI (Liaison, Réseau, Transport, Application). Expliquez pourquoi un pare-feu traditionnel (Couche 3/4) ne peut pas bloquer une attaque d'injection SQL (Couche 7), justifiant ainsi le besoin d'un WAF (Web Application Firewall).
+
+**2. Segmentation réseau et DMZ**
+Illustrez sur un tableau blanc (ou virtuel) l'architecture d'un réseau sécurisé :
+- La **DMZ** (Zone Démilitarisée) qui héberge les serveurs publics (Serveur Web).
+- Le **LAN** interne qui héberge la base de données.
+Expliquez la règle d'or : la DMZ peut être interrogée par Internet, mais ne doit jamais initier de connexion non sollicitée vers le LAN interne.
+
+**3. Vulnérabilités des protocoles historiques**
+Discutez des failles inhérentes aux vieux protocoles (Telnet, FTP, HTTP) qui font transiter les mots de passe en clair sur le réseau. Expliquez la mécanique d'interception (Sniffing) et la transition obligatoire vers SSH, SFTP et HTTPS.
+
+
+---
+
 ### Glossaire
 * **Pare-feu (Firewall)** : Dispositif matériel ou logiciel analysant et filtrant les paquets de données circulant entre un réseau privé et un réseau public (Internet) selon des règles de sécurité.
 * **VPN (Virtual Private Network)** : Technologie créant un tunnel chiffré et sécurisé sur un réseau public pour acheminer de manière confidentielle les données d'un poste de travail vers le réseau de l'entreprise.

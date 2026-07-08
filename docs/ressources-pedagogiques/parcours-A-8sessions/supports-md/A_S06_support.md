@@ -20,6 +20,23 @@ Une politique de sécurité robuste ne se limite pas à installer des protection
 
 ## 2. Développement
 
+### Approfondissement technique pour le mentor (Contenu dense)
+
+**1. Le fonctionnement d'un SOC (Security Operations Center)**
+Détaillez l'organisation d'un SOC en Niveaux (Tier 1, Tier 2, Tier 3). 
+- Le T1 trie les événements bruts du SIEM (Security Information and Event Management) et gère les faux positifs.
+- Le T2 investigue les incidents confirmés.
+- Le T3 fait du *Threat Hunting* proactif pour trouver des menaces invisibles.
+
+**2. Gestion des vulnérabilités et scoring CVSS**
+Expliquez comment fonctionne le système CVSS (Common Vulnerability Scoring System). Montrez qu'une faille notée 9.8 (Critique) signifie souvent qu'elle est exploitable à distance, sans authentification, et avec un impact total sur le système. Discutez de la priorisation des patchs (*Patch Management*).
+
+**3. L'automatisation : du SIEM au SOAR**
+Prenez 15 minutes pour expliquer la "fatigue des alertes" subie par les analystes. Introduisez la technologie SOAR (Security Orchestration, Automation, and Response) qui permet de créer des *Playbooks* automatisés (ex: isoler automatiquement un poste de travail du réseau s'il communique avec une adresse IP malveillante connue).
+
+
+---
+
 ### Glossaire
 * **SOC (Security Operations Center)** : Centre opérationnel où des analystes surveillent et analysent en continu la sécurité du système d'information pour détecter les incidents.
 * **SIEM (Security Information and Event Management)** : Logiciel centralisant les journaux d'événements (logs) de divers équipements réseau et serveurs pour y appliquer des règles de corrélation et lever des alertes en cas de comportement suspect.

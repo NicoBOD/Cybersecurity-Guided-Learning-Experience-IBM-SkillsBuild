@@ -21,6 +21,9 @@
 ---
 
 ## 2. Développement
+Passez 30 minutes sur la cryptographie de transport. Expliquez le fonctionnement du Handshake TLS : négociation des algorithmes, authentification du serveur par un certificat numérique, et génération de la clé de session symétrique. Abordez les risques liés à l'utilisation des Wi-Fi publics (Evil Twin, écoute de trames).
+
+---
 
 ### Objectifs de la session
 À la fin de cette session, vous serez capable de :

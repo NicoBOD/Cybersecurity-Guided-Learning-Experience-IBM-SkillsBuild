@@ -21,6 +21,9 @@
 ---
 
 ## 2. Développement
+Passez 25 minutes sur les 6 principes majeurs du RGPD : Licéité/Transparence, Limitation des finalités, Minimisation des données, Exactitude, Limitation de conservation, Intégrité/Confidentialité. Illustrez le concept de *Privacy by Design* (pseudonymisation dès la conception de la BDD). Rappelez l'obligation de notification d'incident sous 72 heures.
+
+---
 
 ### Objectifs de la session
 À la fin de cette session, vous serez capable de :

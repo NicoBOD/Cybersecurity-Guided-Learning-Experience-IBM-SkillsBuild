@@ -21,6 +21,9 @@
 ---
 
 ## 2. Développement
+Approfondissez les protocoles. Expliquez le fonctionnement du DNS (résolution de nom) et pourquoi les pirates utilisent le *DNS Spoofing* pour rediriger le trafic, ou le *DNS Tunneling* pour exfiltrer des données à travers des requêtes apparemment inoffensives. Rappelez le fonctionnement d'ARP et les attaques d'empoisonnement local (ARP Poisoning).
+
+---
 
 ### Objectifs de la session
 À la fin de cette session, vous serez capable de :
