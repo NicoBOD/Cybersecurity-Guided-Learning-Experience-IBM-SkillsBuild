@@ -583,17 +583,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : A**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Faux Positif (FP) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 8 : Compréhension du terme RBAC
-Quel concept technique est défini par l'affirmation suivante ?
-« Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
-
-* A. Soutenance de Projet
-* B. RBAC (Role-Based Access Control)
-* C. Trojan (Cheval de Troie)
-* **Réponse correcte : B**
-* *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. RBAC (Role-Based Access Control) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
-
-### Question 9 : Compréhension du terme Inject
+### Question 8 : Compréhension du terme Inject
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -603,7 +593,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : B**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Inject (Stimulus) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 10 : Compréhension du terme Normalisation
+### Question 9 : Compréhension du terme Normalisation
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -612,6 +602,18 @@ Quel concept technique est défini par l'affirmation suivante ?
 * C. APT (Advanced Persistent Threat)
 * **Réponse correcte : A**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Normalisation (Parsing) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
+
+---
+
+### Question 10 : Compréhension du terme Zero Trust
+Quel concept technique est défini par l'affirmation suivante ?
+« Modèle de sécurité basé sur le principe de ne faire confiance à aucun utilisateur ou appareil par défaut. »
+
+* A. Zero Trust
+* B. Vulnérabilité Zero-Day
+* C. Ransomware
+* **Réponse correcte : A**
+* *Explication* : En cybersécurité, Zero Trust correspond précisément à cette définition. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
 ---
 
@@ -757,17 +759,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : B**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Hardening (Durcissement) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 5 : Compréhension du terme EDR
-Quel concept technique est défini par l'affirmation suivante ?
-« Solution de sécurité installée sur les terminaux surveillant les comportements pour détecter et bloquer les attaques sophistiquées en temps réel. »
-
-* A. RaaS (Ransomware-as-a-Service)
-* B. EDR (Endpoint Detection and Response)
-* C. Soutenance de Projet
-* **Réponse correcte : B**
-* *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. EDR (Endpoint Detection and Response) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
-
-### Question 6 : Compréhension du terme UAC
+### Question 5 : Compréhension du terme UAC
 Quel concept technique est défini par l'affirmation suivante ?
 « Mécanisme de sécurité Windows demandant l'approbation de l'utilisateur pour accorder des privilèges d'administration temporaires à un programme. »
 
@@ -777,7 +769,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : B**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. UAC (User Account Control) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 7 : Compréhension du terme Handshake
+### Question 6 : Compréhension du terme Handshake
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -787,7 +779,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : B**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Handshake TLS correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 8 : Compréhension du terme CIA
+### Question 7 : Compréhension du terme CIA
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -797,7 +789,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : A**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. CIA Triad (Triade CIA) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 9 : Compréhension du terme DPO
+### Question 8 : Compréhension du terme DPO
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -807,7 +799,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : B**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. DPO (Data Protection Officer) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 10 : Compréhension du terme APT
+### Question 9 : Compréhension du terme APT
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -816,6 +808,18 @@ Quel concept technique est défini par l'affirmation suivante ?
 * C. Chiffrement en transit (In Transit)
 * **Réponse correcte : B**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. APT (Advanced Persistent Threat) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
+
+---
+
+### Question 10 : Compréhension du terme Vulnérabilité Zero-Day
+Quel concept technique est défini par l'affirmation suivante ?
+« Faille de sécurité informatique inconnue du développeur du logiciel et pour laquelle aucun correctif n'existe encore. »
+
+* A. Pentest
+* B. Vulnérabilité Zero-Day
+* C. VPN
+* **Réponse correcte : B**
+* *Explication* : En cybersécurité, Vulnérabilité Zero-Day correspond précisément à cette définition. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
 ---
 
@@ -859,17 +863,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : C**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. MFA (Multi-Factor Authentication) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 5 : Compréhension du terme RBAC
-Quel concept technique est défini par l'affirmation suivante ?
-« Mécanisme de contrôle d'accès dans lequel les autorisations système sont liées à des rôles professionnels plutôt qu'à des personnes. »
-
-* A. RBAC (Role-Based Access Control)
-* B. Soutenance de Projet
-* C. MAC Address (Adresse MAC)
-* **Réponse correcte : A**
-* *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. RBAC (Role-Based Access Control) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
-
-### Question 6 : Compréhension du terme SSO
+### Question 5 : Compréhension du terme SSO
 Quel concept technique est défini par l'affirmation suivante ?
 « Technologie d'authentification unique permettant à un utilisateur d'accéder à plusieurs applications avec un seul compte d'accès. »
 
@@ -879,7 +873,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : A**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. SSO (Single Sign-On) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 7 : Compréhension du terme CNIL
+### Question 6 : Compréhension du terme CNIL
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -889,7 +883,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : B**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. CNIL correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 8 : Compréhension du terme Handshake
+### Question 7 : Compréhension du terme Handshake
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -899,7 +893,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : C**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Handshake TLS correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 9 : Compréhension du terme Ransomware
+### Question 8 : Compréhension du terme Ransomware
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -909,7 +903,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : A**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Ransomware (Rançongiciel) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 10 : Compréhension du terme Syslog
+### Question 9 : Compréhension du terme Syslog
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -918,6 +912,18 @@ Quel concept technique est défini par l'affirmation suivante ?
 * C. Vishing (Hameçonnage vocal)
 * **Réponse correcte : B**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Syslog correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
+
+---
+
+### Question 10 : Compréhension du terme Pentest
+Quel concept technique est défini par l'affirmation suivante ?
+« Test d'intrusion consistant à simuler une attaque informatique pour identifier les vulnérabilités d'un système. »
+
+* A. Pentest
+* B. MFA
+* C. Phishing
+* **Réponse correcte : A**
+* *Explication* : En cybersécurité, Pentest correspond précisément à cette définition. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
 ---
 
@@ -1001,17 +1007,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : C**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. GPO (Group Policy Object) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 9 : Compréhension du terme MAC
-Quel concept technique est défini par l'affirmation suivante ?
-« Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
-
-* A. RBAC (Role-Based Access Control)
-* B. MAC Address (Adresse MAC)
-* C. Soutenance de Projet
-* **Réponse correcte : B**
-* *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. MAC Address (Adresse MAC) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
-
-### Question 10 : Compréhension du terme Spear-phishing
+### Question 9 : Compréhension du terme Spear-phishing
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -1020,6 +1016,18 @@ Quel concept technique est défini par l'affirmation suivante ?
 * C. Shadow IT
 * **Réponse correcte : A**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Spear-phishing (Hameçonnage ciblé) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
+
+---
+
+### Question 10 : Compréhension du terme VPN
+Quel concept technique est défini par l'affirmation suivante ?
+« Réseau privé virtuel créant un tunnel sécurisé et chiffré sur un réseau public. »
+
+* A. Phishing
+* B. Zero Trust
+* C. VPN
+* **Réponse correcte : C**
+* *Explication* : En cybersécurité, VPN correspond précisément à cette définition. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
 ---
 
@@ -1330,16 +1338,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 ---
 
 ## Session B14 : Gestion des risques
-### Question 1 : Le calcul de la criticité du risque
-Dans une méthode d'analyse de risques (comme EBIOS RM), comment calcule-t-on le niveau de criticité brute d'un scénario de risque ?
-
-* A. Criticité = Nombre de serveurs concernés + Coût de la licence antivirus.
-* B. Criticité = Vraisemblance (Probabilité d'occurrence) x Gravité (Intensité de l'impact).
-* C. Criticité = Durée de la formation des salariés / Nombre d'attaques subies par an.
-* **Réponse correcte : B**
-* *Explication* : La formule universelle d'évaluation du risque croise la vraisemblance (chance que la menace se réalise) et l'impact (dégâts financiers, légaux, réputationnels subis).
-
-### Question 2 : Le transfert du risque cyber
+### Question 1 : Le transfert du risque cyber
 Quelle action correspond à une stratégie de **Transfert** du risque cyber ?
 
 * A. Souscrire un contrat d'assurance cyber spécifique auprès d'une compagnie d'assurance.
@@ -1349,7 +1348,7 @@ Quelle action correspond à une stratégie de **Transfert** du risque cyber ?
 * *Explication* : Transférer le risque consiste à en faire porter l'impact financier ou opérationnel à un tiers (une assurance cyber ou un sous-traitant engagé contractuellement). Former réduit le risque, et migrer modifie la nature du risque mais ne le transfère pas entièrement.
 
 
-### Question 3 : Compréhension du terme Actif
+### Question 2 : Compréhension du terme Actif
 Quel concept technique est défini par l'affirmation suivante ?
 « Tout élément physique, virtuel ou humain ayant de la valeur pour la réalisation de la mission de l'entreprise. »
 
@@ -1359,7 +1358,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : A**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Actif (Asset) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 4 : Compréhension du terme Vulnérabilité
+### Question 3 : Compréhension du terme Vulnérabilité
 Quel concept technique est défini par l'affirmation suivante ?
 « Faille ou faiblesse logique, physique ou organisationnelle permettant à un attaquant de compromettre un système. »
 
@@ -1369,17 +1368,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : C**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Vulnérabilité correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 5 : Compréhension du terme Shadow
-Quel concept technique est défini par l'affirmation suivante ?
-« Utilisation de systèmes, logiciels ou services informatiques par des employés sans l'autorisation ou le contrôle formel de la DSI. »
-
-* A. Shadow IT
-* B. CA (Certificate Authority)
-* C. Soutenance de Projet
-* **Réponse correcte : A**
-* *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Shadow IT correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
-
-### Question 6 : Compréhension du terme Risque
+### Question 4 : Compréhension du terme Risque
 Quel concept technique est défini par l'affirmation suivante ?
 « Niveau de risque subsistant après la mise en œuvre des mesures de traitement et des contrôles de sécurité. »
 
@@ -1389,7 +1378,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : A**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Risque Résiduel correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 7 : Compréhension du terme TTL
+### Question 5 : Compréhension du terme TTL
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -1399,7 +1388,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : C**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. TTL (Time To Live) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 8 : Compréhension du terme APT
+### Question 6 : Compréhension du terme APT
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -1409,7 +1398,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : A**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. APT (Advanced Persistent Threat) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 9 : Compréhension du terme Mémoire
+### Question 7 : Compréhension du terme Mémoire
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -1419,7 +1408,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : A**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Mémoire Volatile (RAM) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 10 : Compréhension du terme DLP
+### Question 8 : Compréhension du terme DLP
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -1428,6 +1417,28 @@ Quel concept technique est défini par l'affirmation suivante ?
 * C. Hachage (Hashing)
 * **Réponse correcte : B**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. DLP (Data Loss Prevention) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
+
+---
+
+### Question 9 : Compréhension du terme VPN
+Quel concept technique est défini par l'affirmation suivante ?
+« Réseau privé virtuel créant un tunnel sécurisé et chiffré sur un réseau public. »
+
+* A. VPN
+* B. Firewall
+* C. Pentest
+* **Réponse correcte : A**
+* *Explication* : En cybersécurité, VPN correspond précisément à cette définition. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
+
+### Question 10 : Compréhension du terme Pentest
+Quel concept technique est défini par l'affirmation suivante ?
+« Test d'intrusion consistant à simuler une attaque informatique pour identifier les vulnérabilités d'un système. »
+
+* A. Pentest
+* B. DDoS
+* C. Chiffrement AES
+* **Réponse correcte : A**
+* *Explication* : En cybersécurité, Pentest correspond précisément à cette définition. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
 ---
 
@@ -1655,17 +1666,7 @@ Quelle requête HTTP suspecte dans un fichier de logs Apache révèle une tentat
 * *Explication* : La chaîne `%20OR%201=1` (décodée en `OR 1=1`) est une signature classique d'injection SQL visant à forcer la base de données à renvoyer des informations confidentielles en rendant la condition toujours vraie.
 
 
-### Question 3 : Compréhension du terme SIEM
-Quel concept technique est défini par l'affirmation suivante ?
-« Outil de gestion centralisée des logs et des alertes de sécurité en temps réel. »
-
-* A. SIEM (Security Information and Event Management)
-* B. Soutenance de Projet
-* C. IPS (Intrusion Prevention System)
-* **Réponse correcte : A**
-* *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. SIEM (Security Information and Event Management) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
-
-### Question 4 : Compréhension du terme Log
+### Question 3 : Compréhension du terme Log
 Quel concept technique est défini par l'affirmation suivante ?
 « Fichier texte généré automatiquement par un système ou une application décrivant les événements survenus. »
 
@@ -1675,7 +1676,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : A**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Log (Journal) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 5 : Compréhension du terme Normalisation
+### Question 4 : Compréhension du terme Normalisation
 Quel concept technique est défini par l'affirmation suivante ?
 « Processus de conversion de formats de journaux d'événements diversifiés dans un format de données unifié. »
 
@@ -1685,17 +1686,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : A**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Normalisation (Parsing) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 6 : Compréhension du terme Syslog
-Quel concept technique est défini par l'affirmation suivante ?
-« Protocole réseau standard utilisé pour le transfert de messages de journaux d'événements d'une machine vers un serveur central. »
-
-* A. Syslog
-* B. EDR (Endpoint Detection and Response)
-* C. Soutenance de Projet
-* **Réponse correcte : A**
-* *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Syslog correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
-
-### Question 7 : Compréhension du terme Risque
+### Question 5 : Compréhension du terme Risque
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -1705,7 +1696,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : A**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Risque Résiduel correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 8 : Compréhension du terme EDR
+### Question 6 : Compréhension du terme EDR
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -1715,7 +1706,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : C**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. EDR (Endpoint Detection and Response) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 9 : Compréhension du terme Vishing
+### Question 7 : Compréhension du terme Vishing
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -1725,7 +1716,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : A**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Vishing (Hameçonnage vocal) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 10 : Compréhension du terme Normalisation
+### Question 8 : Compréhension du terme Normalisation
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -1734,6 +1725,28 @@ Quel concept technique est défini par l'affirmation suivante ?
 * C. DLP (Data Loss Prevention)
 * **Réponse correcte : B**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Normalisation (Parsing) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
+
+---
+
+### Question 9 : Compréhension du terme SIEM
+Quel concept technique est défini par l'affirmation suivante ?
+« Outil centralisant et corrélant les journaux d'événements pour détecter des activités suspectes. »
+
+* A. SIEM
+* B. Phishing
+* C. Vulnérabilité Zero-Day
+* **Réponse correcte : A**
+* *Explication* : En cybersécurité, SIEM correspond précisément à cette définition. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
+
+### Question 10 : Compréhension du terme Pentest
+Quel concept technique est défini par l'affirmation suivante ?
+« Test d'intrusion consistant à simuler une attaque informatique pour identifier les vulnérabilités d'un système. »
+
+* A. Pentest
+* B. VPN
+* C. Firewall
+* **Réponse correcte : A**
+* *Explication* : En cybersécurité, Pentest correspond précisément à cette définition. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
 ---
 
@@ -1859,17 +1872,7 @@ Quelle est l'attitude recommandée pour la communication externe d'une entrepris
 * *Explication* : La transparence contrôlée rassure les clients et partenaires. Mentir ou cacher l'incident (réponse A) aggrave le scandale réputationnel en cas de fuite ultérieure. Donner des détails techniques sensibles (réponse C) fragilise l'entreprise face à d'autres attaquants.
 
 
-### Question 3 : Compréhension du terme Tabletop
-Quel concept technique est défini par l'affirmation suivante ?
-« Simulation sur table d'un incident de sécurité permettant de tester les plans de réponse sans impact réel sur la production. »
-
-* A. Tabletop Exercise
-* B. IAM (Identity and Access Management)
-* C. Soutenance de Projet
-* **Réponse correcte : A**
-* *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Tabletop Exercise correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
-
-### Question 4 : Compréhension du terme Inject
+### Question 3 : Compréhension du terme Inject
 Quel concept technique est défini par l'affirmation suivante ?
 « Nouvelle information ou rebondissement introduit par l'animateur d'une simulation pour faire évoluer le scénario de crise. »
 
@@ -1879,7 +1882,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : C**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Inject (Stimulus) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 5 : Compréhension du terme Communication
+### Question 4 : Compréhension du terme Communication
 Quel concept technique est défini par l'affirmation suivante ?
 « Utilisation de réseaux de communication indépendants du système d'information principal (ex. téléphones personnels, applications de messagerie chiffrée grand public) lorsque le réseau d'entreprise est compromis. »
 
@@ -1889,7 +1892,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : B**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Communication Hors Bande (Out-of-band) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 6 : Compréhension du terme Phishing
+### Question 5 : Compréhension du terme Phishing
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -1899,7 +1902,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : C**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Phishing (Hameçonnage) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 7 : Compréhension du terme Hachage
+### Question 6 : Compréhension du terme Hachage
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -1909,7 +1912,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : B**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Hachage (Hashing) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 8 : Compréhension du terme Handshake
+### Question 7 : Compréhension du terme Handshake
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -1919,7 +1922,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : B**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Handshake TLS correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 9 : Compréhension du terme MTTD
+### Question 8 : Compréhension du terme MTTD
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -1929,7 +1932,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : B**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. MTTD (Mean Time To Detect) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 10 : Compréhension du terme RBAC
+### Question 9 : Compréhension du terme RBAC
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -1938,6 +1941,18 @@ Quel concept technique est défini par l'affirmation suivante ?
 * C. CNIL
 * **Réponse correcte : A**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. RBAC (Role-Based Access Control) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
+
+---
+
+### Question 10 : Compréhension du terme MFA
+Quel concept technique est défini par l'affirmation suivante ?
+« Authentification multifacteur exigeant au moins deux preuves d'identité différentes. »
+
+* A. Pentest
+* B. Zero Trust
+* C. MFA
+* **Réponse correcte : C**
+* *Explication* : En cybersécurité, MFA correspond précisément à cette définition. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
 ---
 
@@ -1960,17 +1975,7 @@ Qu'implique une démarche de veille technologique régulière en cybersécurité
 * **Réponse correcte : B**
 * *Explication* : La sécurité n'est pas un état figé mais un processus continu. Consulter les CVE et les alertes du CERT-FR permet de patcher les failles critiques avant qu'elles ne soient exploitées par des pirates de manière automatisée.
 
-### Question 3 : Compréhension du terme Soutenance
-Quel concept technique est défini par l'affirmation suivante ?
-« Présentation orale synthétique devant un jury visant à démontrer la pertinence et la faisabilité des solutions proposées. »
-
-* A. Playbook
-* B. Hachage (Hashing)
-* C. Soutenance de Projet
-* **Réponse correcte : C**
-* *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Soutenance de Projet correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
-
-### Question 4 : Compréhension du terme CVE
+### Question 3 : Compréhension du terme CVE
 Quel concept technique est défini par l'affirmation suivante ?
 « Système d'identification et de référencement public des vulnérabilités logicielles connues. »
 
@@ -1980,7 +1985,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : A**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. CVE (Common Vulnerabilities and Exposures) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 5 : Compréhension du terme CERT-FR
+### Question 4 : Compréhension du terme CERT-FR
 Quel concept technique est défini par l'affirmation suivante ?
 « Centre de veille, d'alerte et de réponse aux attaques informatiques de l'État français, rattaché à l'ANSSI. »
 
@@ -1990,7 +1995,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : C**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. CERT-FR correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 6 : Compréhension du terme CERT-FR
+### Question 5 : Compréhension du terme CERT-FR
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -2000,7 +2005,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : B**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. CERT-FR correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 7 : Compréhension du terme Default
+### Question 6 : Compréhension du terme Default
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -2010,7 +2015,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : B**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Default Deny (Rejet par défaut) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 8 : Compréhension du terme Chiffrement
+### Question 7 : Compréhension du terme Chiffrement
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -2020,7 +2025,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : C**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Chiffrement symétrique correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 9 : Compréhension du terme Phishing
+### Question 8 : Compréhension du terme Phishing
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -2030,7 +2035,7 @@ Quel concept technique est défini par l'affirmation suivante ?
 * **Réponse correcte : A**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. Phishing (Hameçonnage) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
-### Question 10 : Compréhension du terme SaaS
+### Question 9 : Compréhension du terme SaaS
 Quel concept technique est défini par l'affirmation suivante ?
 « Un concept technique essentiel pour garantir la protection des systèmes informatiques et la résilience de l'entreprise face aux menaces. »
 
@@ -2039,6 +2044,18 @@ Quel concept technique est défini par l'affirmation suivante ?
 * C. MAC Address (Adresse MAC)
 * **Réponse correcte : A**
 * *Explication* : En cybersécurité, il est fondamental de maîtriser ce vocabulaire. SaaS (Software as a Service) correspond précisément à cette définition. Pour un débutant, retenez que cela sert de base pour structurer la défense de l'entreprise. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
+
+---
+
+### Question 10 : Compréhension du terme Ransomware
+Quel concept technique est défini par l'affirmation suivante ?
+« Logiciel malveillant qui chiffre les fichiers de la victime et demande le paiement d'une rançon. »
+
+* A. Ransomware
+* B. Pentest
+* C. Phishing
+* **Réponse correcte : A**
+* *Explication* : En cybersécurité, Ransomware correspond précisément à cette définition. L'utilisation correcte de ce terme permet aux équipes techniques et métiers de communiquer efficacement sans ambiguïté.
 
 ---
 

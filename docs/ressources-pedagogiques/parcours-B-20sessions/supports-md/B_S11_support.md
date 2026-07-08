@@ -117,7 +117,7 @@ Pour les 6 tâches de sécurité listées ci-dessous, écrivez dans la colonne c
 ---
 
 
-### Cas d'usages et Exemples Concrets (Pour les débutants)
+### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
     Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
@@ -129,7 +129,7 @@ Pour les 6 tâches de sécurité listées ci-dessous, écrivez dans la colonne c
 Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
 
 
-## 3. Ressources Complémentaires
+## 3. Ressources complémentaires
 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Cloud Security Fundamentals"* (durée estimée : 1h30).
 *   **Recherche complémentaire** : Visiter le site de l'OWASP et rechercher le top 10 des vulnérabilités de sécurité spécifiques au Cloud (OWASP Cloud Security Top 10) pour en comprendre les menaces courantes.
@@ -140,7 +140,7 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ---
 
-## 4. Exercice Bonus
+## 4. Exercice bonus
 
 - **Objectif :** Mise en pratique autonome.
 - **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
