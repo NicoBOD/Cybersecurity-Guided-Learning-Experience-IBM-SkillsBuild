@@ -106,7 +106,7 @@ L'équipe Netflix.
 ```
 
 * **Indice A** : L'adresse de l'expéditeur semble légitime mais contient des fautes discrètes (un '1' au lieu d'un 'l' dans netflix).
-* **Indice B** : Ton alarmiste incitant à agir sans réfléchir.
+* **Indice B** : votre alarmiste incitant à agir sans réfléchir.
 * **Indice C** : Le lien de destination réel (visible en survolant le bouton avec la souris sans cliquer) ne correspond pas au site officiel.
 
 ---
@@ -133,6 +133,19 @@ Vous recevez un appel sur votre téléphone professionnel. L'appelant se présen
    * Signaler l'incident au responsable sécurité de l'entreprise.
 
 ---
+
+
+### Cas d'usages et Exemples Concrets (Pour les débutants)
+
+!!! info "Explication simplifiée"
+    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
+    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
+    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
+    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+
+**Exemple d'application professionnelle :**
+Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+
 
 ## 3. Ressources Complémentaires
 
