@@ -123,11 +123,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Introduction to Data Privacy and GDPR"* (durée estimée : 1h30).
 *   **Activité pratique** : Rendez-vous sur le site de la CNIL (cnil.fr) et lisez le résumé d'une sanction récente prononcée à l'encontre d'une entreprise pour comprendre quels manquements techniques (mots de passe trop faibles, absence de chiffrement) ont été sanctionnés.
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [CNIL - Comprendre le RGPD](https://www.cnil.fr/fr/comprendre-le-rgpd)
+* [CNIL - Violations de données](https://www.cnil.fr/fr/notifier-une-violation-de-donnees-personnelles)
 
 ## 4. Exercice bonus
 

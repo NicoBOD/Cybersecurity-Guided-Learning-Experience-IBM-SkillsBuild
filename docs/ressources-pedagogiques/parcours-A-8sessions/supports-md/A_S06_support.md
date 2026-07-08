@@ -145,11 +145,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 * **NIST** : Base de données nationale des vulnérabilités (NVD - National Vulnerability Database) pour rechercher des identifiants CVE.
 * **FIRST.org** : Calculateur officiel des scores CVSS (pour comprendre l'impact des différentes variables de cotation).
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [CERT-FR - Alertes de sécurité](https://www.cert.ssi.gouv.fr/)
+* [OWASP - Top 10 Web](https://owasp.org/www-project-top-ten/)
 
 ## 4. Exercice bonus
 

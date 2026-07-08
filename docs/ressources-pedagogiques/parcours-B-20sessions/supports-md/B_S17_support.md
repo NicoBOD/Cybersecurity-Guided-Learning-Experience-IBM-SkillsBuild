@@ -143,11 +143,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Log Analysis and SIEM Concepts"* (durée estimée : 1h30).
 *   **Recherche de syntaxe** : Rechercher le format de journal standardisé **CEF** (*Common Event Format*) ou **LEEF** (*Log Event Extended Format*) pour comprendre comment l'industrie de la cybersécurité structure les données de logs partagées entre outils.
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [ANSSI - Recommandations pour la journalisation](https://cyber.gouv.fr)
+* [CNIL - Tracer les accès](https://www.cnil.fr)
 
 ## 4. Exercice bonus
 

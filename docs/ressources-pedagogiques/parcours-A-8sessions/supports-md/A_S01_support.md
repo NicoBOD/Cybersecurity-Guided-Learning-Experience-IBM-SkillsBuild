@@ -139,11 +139,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 * **ANSSI (ou agence cyber locale)** : Guide d'hygiène informatique (consulter la section sur la sensibilisation et les notions de base).
 * **NIST SP 800-12** : Guide d'introduction à la sécurité de l'information pour comprendre le cycle de protection.
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [ANSSI - Menaces Cyber](https://cyber.gouv.fr)
+* [Cybermalveillance - Actualités](https://www.cybermalveillance.gouv.fr)
 
 ## 4. Exercice bonus
 

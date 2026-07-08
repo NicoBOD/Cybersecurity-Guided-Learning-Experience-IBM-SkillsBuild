@@ -133,11 +133,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 * **ANSSI** : "La cybersécurité pour les TPE/PME en 12 questions" (Guide pratique d'aide à la décision).
 * **Cybermalveillance.gouv.fr** : Kit de sensibilisation aux risques numériques pour les entreprises.
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [ANSSI - Certification et formations](https://cyber.gouv.fr/formations)
+* [IBM SkillsBuild - Catalogue](https://skillsbuild.org/)
 
 ## 4. Exercice bonus
 

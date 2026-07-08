@@ -157,11 +157,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Identity and Access Management Fundamentals"* (durée estimée : 1h30).
 *   **Recherche complémentaire** : Renseignez-vous sur le protocole standard ouvert **SAML 2.0** et sur le protocole **OIDC (OpenID Connect)**. Découvrez comment ils permettent au SSO d'échanger des preuves d'identité sécurisées entre applications.
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [CNIL - Sécuriser vos mots de passe](https://www.cnil.fr/fr/mots-de-passe-une-nouvelle-recommandation-pour-maitriser-sa-securite)
+* [ANSSI - Sécurité des mots de passe](https://cyber.gouv.fr/publications/recommandations-relatives-lauthentification-multifacteur-et-aux-mots-de-passe)
 
 ## 4. Exercice bonus
 

@@ -146,11 +146,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Incident Response Fundamentals"* (durée estimée : 1h30).
 *   **Guide pratique** : Rechercher et lire le document *"Organiser un exercice de gestion de crise cyber"* édité par l'ANSSI pour comprendre comment concevoir un scénario de simulation complet de A à Z.
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [ANSSI - Organiser un exercice de crise cyber](https://cyber.gouv.fr/publications/organiser-un-exercice-de-gestion-de-crise-cyber)
+* [CNIL - Notification de violation](https://www.cnil.fr/fr/notifier-une-violation-de-donnees-personnelles)
 
 ## 4. Exercice bonus
 

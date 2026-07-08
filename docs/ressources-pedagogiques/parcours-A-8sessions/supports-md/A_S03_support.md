@@ -141,11 +141,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 * **ANSSI** : Recommandations sur la sécurisation des architectures réseaux.
 * **Wireshark (outil tiers)** : Outil d'analyse de protocoles réseaux (pour observer la structure des paquets).
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [ANSSI - Guide hygiène informatique](https://cyber.gouv.fr/publications/guide-dhygiene-informatique)
+* [OWASP - Top 10](https://owasp.org/www-project-top-ten/)
 
 ## 4. Exercice bonus
 

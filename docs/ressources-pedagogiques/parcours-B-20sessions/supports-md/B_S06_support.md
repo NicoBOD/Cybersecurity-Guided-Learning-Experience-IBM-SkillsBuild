@@ -144,11 +144,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Network Security - Part 2"* (durée estimée : 1h30).
 *   **Ressource complémentaire** : Dessiner un schéma réseau simple à l'aide d'un outil en ligne gratuit (comme draw.io) en représentant une architecture comprenant un pare-feu, un switch, une DMZ et un LAN.
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [ANSSI - Passerelles d'accès à Internet](https://cyber.gouv.fr)
+* [OWASP - Network Security](https://owasp.org/)
 
 ## 4. Exercice bonus
 

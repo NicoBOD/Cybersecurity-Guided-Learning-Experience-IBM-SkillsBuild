@@ -133,11 +133,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Secure Protocols & Cryptography Basics"* (durée estimée : 1h30).
 *   **Recherche complémentaire** : Ouvrez un site d'actualité cyber et recherchez des cas d'attaques historiques de type "MitM" ou des compromissions d'Autorités de Certification (comme l'affaire *DigiNotar* en 2011) pour comprendre les enjeux géopolitiques de la confiance numérique.
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [ANSSI - Recommandations TLS](https://cyber.gouv.fr/publications/recommandations-de-securite-relatives-tls)
+* [ANSSI - WiFi Sécurisé](https://cyber.gouv.fr)
 
 ## 4. Exercice bonus
 

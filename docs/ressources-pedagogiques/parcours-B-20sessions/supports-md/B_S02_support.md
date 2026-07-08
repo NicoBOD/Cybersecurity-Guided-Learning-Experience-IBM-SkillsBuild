@@ -133,11 +133,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Cybersecurity Threat Landscape"* (~1h30).
 *   **Action pratique** : Visiter le site du CERT-FR (cyber.gouv.fr/alertes) et lire la description d'une alerte "Active" pour comprendre comment les experts documentent une menace en temps réel.
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [CERT-FR - Centre gouvernemental de veille](https://www.cert.ssi.gouv.fr/)
+* [Cybermalveillance - Rapport d'activité](https://www.cybermalveillance.gouv.fr)
 
 ## 4. Exercice bonus
 

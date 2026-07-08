@@ -136,11 +136,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Cryptography Basics"* (durée estimée : 1h30).
 *   **Activité pratique** : Ouvrez un terminal sur votre ordinateur de test et tapez la commande de hachage sur un court texte pour observer le résultat (ex. sous Linux/macOS : `echo -n "Bonjour" | sha256sum`). Modifiez une lettre et observez la différence.
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [ANSSI - Cryptographie](https://cyber.gouv.fr/publications/mecanismes-cryptographiques)
+* [CNIL - Comprendre le chiffrement](https://www.cnil.fr)
 
 ## 4. Exercice bonus
 

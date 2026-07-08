@@ -126,11 +126,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 *   **Après la formation** : Ajoutez vos certifications et badges de réussite **IBM SkillsBuild** sur votre profil LinkedIn pour valoriser vos nouvelles compétences auprès des recruteurs.
 *   **Veille continue** : Créez un compte sur le portail de veille cyber de l'ANSSI ou abonnez-vous au flux RSS du site de référence *cyber.gouv.fr* pour suivre en direct l'actualité des menaces nationales et internationales.
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [ANSSI - Métiers de la cybersécurité](https://cyber.gouv.fr/formations)
+* [IBM SkillsBuild](https://skillsbuild.org/)
 
 ## 4. Exercice bonus
 

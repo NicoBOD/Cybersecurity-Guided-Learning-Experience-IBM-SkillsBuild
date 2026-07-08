@@ -133,11 +133,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Cybersecurity Fundamentals - Part 1"* (~1h30).
 *   **Ressource complémentaire** : Consulter la section "Actualités" du site cyber.gouv.fr (ANSSI) pour observer des exemples d'incidents cyber récents en France.
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [ANSSI - Introduction à la cybersécurité](https://cyber.gouv.fr/)
+* [CNIL - Sécurité des données](https://www.cnil.fr)
 
 ## 4. Exercice bonus
 

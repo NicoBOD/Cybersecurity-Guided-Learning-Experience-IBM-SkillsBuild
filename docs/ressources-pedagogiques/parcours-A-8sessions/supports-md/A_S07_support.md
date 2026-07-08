@@ -131,11 +131,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 * **SANS Institute** : Fiches de référence sur la réponse aux incidents (Incident Handler's Handbook).
 * **Légifrance** : Consulter la section du Code pénal sur les atteintes aux systèmes de traitement automatisé de données (articles 323-1 à 323-7).
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [ANSSI - Exercice de crise cyber](https://cyber.gouv.fr/publications/organiser-un-exercice-de-gestion-de-crise-cyber)
+* [Cybermalveillance - Que faire en cas de cyberattaque](https://www.cybermalveillance.gouv.fr)
 
 ## 4. Exercice bonus
 

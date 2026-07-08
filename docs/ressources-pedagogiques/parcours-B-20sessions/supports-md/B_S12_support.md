@@ -140,11 +140,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Data Security and Privacy"* (durée estimée : 1h30).
 *   **Recherche complémentaire** : Renseignez-vous sur la directive de conformité **RGPD** (Règlement Général sur la Protection des Données). Identifiez comment la classification et la pseudonymisation des données personnelles aident à se conformer à la législation européenne.
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [CNIL - Guide sécurité des données](https://www.cnil.fr/fr/guide-de-la-securite-des-donnees-personnelles)
+* [Cybermalveillance - Protéger ses données](https://www.cybermalveillance.gouv.fr/)
 
 ## 4. Exercice bonus
 

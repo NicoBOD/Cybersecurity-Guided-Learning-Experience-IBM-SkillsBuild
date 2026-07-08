@@ -137,11 +137,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Introduction to Cybersecurity Tools & Cyber Attacks"* (~1h30).
 *   **Ressource complémentaire** : Visiter le site officiel d'ATT&CK (attack.mitre.org) et cliquer sur la technique "Phishing" (T1566) pour observer comment les techniques sont documentées mondialement.
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [Cybermalveillance - Fiche Ransomware](https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-reflexes/rancongiciels-ransomwares)
+* [OWASP - Vulnérabilités](https://owasp.org/)
 
 ## 4. Exercice bonus
 

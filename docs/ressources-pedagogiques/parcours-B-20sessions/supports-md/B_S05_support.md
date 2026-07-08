@@ -168,11 +168,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Network Security - Part 1"* (durée estimée : 1h30).
 *   **Action pratique** : Ouvrez un terminal sur votre machine et tapez la commande `ping -c 4 cyber.gouv.fr`. Observez le temps de réponse et la valeur de TTL renvoyée par le serveur.
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [ANSSI - Recommandations réseaux](https://cyber.gouv.fr)
+* [CERT-FR - Menaces réseaux](https://www.cert.ssi.gouv.fr/)
 
 ## 4. Exercice bonus
 

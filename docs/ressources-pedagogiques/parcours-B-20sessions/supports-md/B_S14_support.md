@@ -152,11 +152,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Cybersecurity Governance and Risk Management - Part 2"* (durée estimée : 1h30).
 *   **Recherche de méthodologie** : Rechercher les grandes lignes de la méthode d'analyse de risques française **EBIOS RM** (développée par l'ANSSI) pour comprendre comment l'État et les grandes organisations modélisent les scénarios de cyberattaques.
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [Cybermalveillance - Assurance cyber](https://www.cybermalveillance.gouv.fr/)
+* [ANSSI - Cartographie des risques](https://cyber.gouv.fr/la-methode-ebios-risk-manager)
 
 ## 4. Exercice bonus
 

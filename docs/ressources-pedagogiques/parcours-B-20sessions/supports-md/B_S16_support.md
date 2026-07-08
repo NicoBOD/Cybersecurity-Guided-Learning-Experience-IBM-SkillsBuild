@@ -131,11 +131,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Security Operations Center (SOC) Fundamentals"* (durée estimée : 1h30).
 *   **Activité pratique** : Rechercher la définition d'un outil **SOAR** (*Security Orchestration, Automation, and Response*). Comprendre comment l'automatisation permet de bloquer automatiquement une machine compromise sans intervention humaine pour réduire le MTTR à quelques secondes.
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [CERT-FR - Signalement d'incidents](https://www.cert.ssi.gouv.fr/)
+* [ANSSI - Externalisation SOC](https://cyber.gouv.fr)
 
 ## 4. Exercice bonus
 

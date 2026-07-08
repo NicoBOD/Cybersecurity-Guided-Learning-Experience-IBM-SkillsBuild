@@ -154,11 +154,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 * **CNIL (France)** : Guide de la sécurité des données personnelles (un outil indispensable pour auditer sa conformité).
 * **NIST (USA)** : Documentation officielle du Cybersecurity Framework v2.0.
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [CNIL - Guide sécurité des données](https://www.cnil.fr/fr/guide-de-la-securite-des-donnees-personnelles)
+* [CNIL - Comprendre le RGPD](https://www.cnil.fr/fr/comprendre-le-rgpd)
 
 ## 4. Exercice bonus
 

@@ -153,11 +153,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 * **Cybermalveillance.gouv.fr (ou organisme national équivalent)** : Fiches pratiques sur les rançongiciels et l'hameçonnage.
 * **MITRE ATT&CK Framework** : Base de connaissances mondiale sur les tactiques et techniques réelles des attaquants (consulter la matrice simplifiée).
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [Cybermalveillance - Fiche Phishing](https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-reflexes/hameconnage-phishing)
+* [CNIL - Phishing](https://www.cnil.fr/fr/spam-phishing-arnaques-signaler-pour-agir)
 
 ## 4. Exercice bonus
 

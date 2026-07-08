@@ -140,11 +140,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 * **ANSSI** : Recommandations pour la sécurisation des sauvegardes contre les rançongiciels.
 * **Cloud Security Alliance (CSA)** : Le guide des menaces critiques liées au cloud computing (notamment les configurations défaillantes).
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [CNIL - Recommandations mots de passe](https://www.cnil.fr/fr/mots-de-passe-une-nouvelle-recommandation-pour-maitriser-sa-securite)
+* [ANSSI - Authentification multifacteur](https://cyber.gouv.fr/publications/recommandations-relatives-lauthentification-multifacteur-et-aux-mots-de-passe)
 
 ## 4. Exercice bonus
 

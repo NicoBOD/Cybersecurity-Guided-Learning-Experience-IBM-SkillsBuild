@@ -138,11 +138,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Introduction to Cybersecurity Tools & Cyber Attacks - Social Engineering"* (~1h00).
 *   **Recherche autonome** : Se renseigner sur le concept d'OSINT (*Open Source Intelligence*) pour comprendre comment les attaquants collectent légalement des informations publiques sur les entreprises.
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [Cybermalveillance - Phishing](https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-reflexes/hameconnage-phishing)
+* [CNIL - Ingénierie sociale](https://www.cnil.fr/fr/spam-phishing-arnaques-signaler-pour-agir)
 
 ## 4. Exercice bonus
 

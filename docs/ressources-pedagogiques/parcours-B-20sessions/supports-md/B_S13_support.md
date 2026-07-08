@@ -126,11 +126,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Cybersecurity Governance and Risk Management - Part 1"* (durée estimée : 1h30).
 *   **Ressource complémentaire** : Visiter le site de l'ANSSI (cyber.gouv.fr) et télécharger le document *"La PSSI en 10 principes de base"* pour observer comment un État structure ses exigences nationales.
 
-* [ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/)
-* [Cybermalveillance.gouv.fr](https://www.cybermalveillance.gouv.fr/)
-* [OWASP - Open Worldwide Application Security Project](https://owasp.org/)
 
 ---
+
+* [ANSSI - EBIOS RM](https://cyber.gouv.fr/la-methode-ebios-risk-manager)
+* [CNIL - PIA / Analyse d'impact](https://www.cnil.fr)
 
 ## 4. Exercice bonus
 
