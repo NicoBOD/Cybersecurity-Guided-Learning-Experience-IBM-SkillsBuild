@@ -148,6 +148,20 @@ Rédigez la table de règles du pare-feu central (contenant 4 règles clés + la
 Une entreprise sépare ses ordinateurs de bureau de son réseau industriel (machines-outils). Suite à l'infection d'un poste administratif par un rançongiciel, la segmentation réseau par VLAN et l'IDS/IPS détectent le trafic suspect et bloquent la propagation à la couche réseau, sauvant ainsi la chaîne de production d'un chiffrement catastrophique.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+La mise en place de défenses réseau robustes s'appuie sur des équipements de routage et de filtrage NGFW :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **Fortinet FortiGate** : Pare-feu de nouvelle génération (NGFW) leader mondial en termes de rapport performances/coût, très populaire auprès des PME et grandes entreprises.
+    *   **Palo Alto Networks (PA-Series)** : Solution NGFW haut de gamme offrant le niveau de détection applicative le plus précis, leader historique du Magic Quadrant de Gartner.
+    *   **Stormshield Network Security (SNS)** : Solution de pare-feu souveraine française (certifiée par l'ANSSI au plus haut niveau de sécurité), idéale pour la conformité et la protection des infrastructures critiques.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **pfSense Community Edition** : L'un des pare-feux open-source les plus puissants du marché. Basé sur FreeBSD, il offre des fonctionnalités d'administration complètes (filtrage, VPN, routage, IDS/IPS).
+    *   **OPNsense** : Fork moderne de pfSense, apprécié pour son interface utilisateur intuitive et ses intégrations de sécurité régulières.
+    *   **IPFire** : Pare-feu open-source basé sur Linux, réputé pour sa modularité et sa faible empreinte matérielle sur de petits serveurs.
+    *   **VyOS** : Système d'exploitation réseau open-source basé sur Debian, permettant de créer des routeurs et pare-feux virtuels robustes.
+
 ## 3. Ressources complémentaires
 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Network Security - Part 2"* (durée estimée : 1h30).

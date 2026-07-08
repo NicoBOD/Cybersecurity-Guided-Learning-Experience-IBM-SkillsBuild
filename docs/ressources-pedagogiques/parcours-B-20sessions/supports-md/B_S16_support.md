@@ -150,6 +150,18 @@ Vous êtes analyste SOC L1 de garde pour l'entreprise EcoLog. Les 3 alertes suiv
 Dans le SOC d'une multinationale, l'analyste L1 reçoit une alerte d'un ordinateur exécutant un outil d'administration suspect à 2h du matin. Il vérifie le profil de l'employé (il s'agit d'un comptable non connecté à ces heures). Il escalade l'incident au L2 qui confirme une compromission par cheval de Troie et isole la machine du réseau local en moins de 30 minutes, contenant ainsi la propagation.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+Pour équiper un SOC (Security Operations Center) moderne et coordonner la réponse aux alertes via des playbooks :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **Palo Alto Cortex XSOAR** : Leader incontesté du marché des SOAR, offrant l'automatisation complète de la réponse, la gestion intégrée des incidents et des playbooks interactifs.
+    *   **Splunk SOAR (anciennement Phantom)** : Plateforme d'orchestration permettant d'automatiser les tâches de sécurité et d'accélérer les investigations lors d'alertes complexes.
+    *   **Microsoft Sentinel / IBM QRadar SOAR** : Outils de corrélation SIEM/SOAR natifs cloud facilitant le travail d'escalade des analystes L1, L2 et L3.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **TheHive & Cortex** : Le duo open-source de référence pour la réponse à incident. TheHive sert de console de gestion des cas (tickets d'incident), tandis que Cortex exécute des analyses d'indicateurs (IOC) à l'aide de centaines de connecteurs gratuits.
+    *   **Shuffle** : Solution SOAR open-source moderne permettant de lier et d'automatiser visuellement la réaction entre différents systèmes de sécurité (ex. isoler un hôte Wazuh lors d'une alerte).
+
 ## 3. Ressources complémentaires
 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Security Operations Center (SOC) Fundamentals"* (durée estimée : 1h30).

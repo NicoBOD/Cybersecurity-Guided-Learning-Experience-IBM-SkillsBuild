@@ -147,6 +147,19 @@ Rédigez un argumentaire de réponse structuré en 3 points pour lever cette obj
 À la suite d'un audit de sécurité d'un mois, un prestataire présente ses conclusions au comité de direction d'un fabricant industriel. Au lieu de noyer les dirigeants sous le jargon technique, il utilise une échelle de risques claire : la mise en place du MFA sur la messagerie et la segmentation réseau entre l'usine et les bureaux sont présentées comme les deux chantiers prioritaires pour éviter un arrêt total de la production.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+Pour synthétiser les audits de sécurité, piloter le plan de remédiation et documenter la conformité d'une infrastructure :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **Tugboat Logic (OneTrust)** : Solution automatisée de préparation aux audits de sécurité (ISO 27001, SOC 2), très prisée des start-ups et PME pour générer des politiques.
+    *   **AuditBoard** : Plateforme collaborative pour gérer l'évaluation des contrôles de sécurité et le reporting d'audit auprès de la direction.
+    *   **ServiceNow Policy and Compliance** : Solution haut de gamme de suivi et de validation continue des plans de remédiation.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **OpenCTI** : Plateforme ouverte de gestion de la Threat Intelligence permettant d'organiser et de restituer visuellement les menaces pesant sur un secteur d'activité.
+    *   **Gitea / GitLab Community Edition** : Utilisés en sécurité pour suivre l'avancement des tickets de remédiation technique sous forme de kanbans collaboratifs.
+    *   **Doxygen / Sphinx** : Outils de génération automatique de documentation technique pour maintenir à jour les cartographies de serveurs et les PSSI de manière collaborative et gratuite.
+
 ## 3. Ressources complémentaires
 
 * **IBM SkillsBuild** : Section méthodologie de gestion de projet informatique et restitution orale.

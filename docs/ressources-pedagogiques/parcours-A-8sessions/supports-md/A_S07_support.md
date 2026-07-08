@@ -149,6 +149,19 @@ Lors d'un incident sur un poste de travail, voici l'ordre dans lequel les élém
 Une PME subit une attaque par Ransomware. Le serveur de comptabilité commence à chiffrer ses fichiers. La procédure d'incident est immédiatement déclenchée : le serveur est isolé du réseau en moins de 15 minutes, limitant l'infection. Les logs de pare-feu et les journaux systèmes sont copiés de façon intègre (forensics) avant de restaurer le serveur à partir des sauvegardes de la veille.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+Lors d'un incident de sécurité ou pour mener une investigation numérique (forensics), des outils spécialisés sont indispensables :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **EnCase Forensic / FTK (Forensic Toolkit)** : Standards industriels reconnus par la justice et les experts cyber pour l'acquisition intègre de disques durs et l'investigation numérique approfondie.
+    *   **CrowdStrike Falcon Forensics** : Outil d'investigation cloud permettant aux analystes de collecter rapidement des artefacts système à distance lors d'un incident actif.
+    *   **Veeam Incident Recovery** : Solution de restauration d'urgence après ransomware, garantissant que les données réinjectées sont exemptes de malwares.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **Autopsy (The Sleuth Kit)** : Plateforme d'investigation numérique open-source la plus connue. Elle permet d'analyser des images de disques durs, de récupérer des fichiers supprimés et d'explorer l'historique d'un système.
+    *   **Volatility** : Outil open-source leader pour l'analyse judiciaire de la mémoire vive (RAM forensics), permettant d'extraire des connexions réseau actives et des clés de chiffrement en mémoire.
+    *   **Velociraptor** : Outil open-source d'investigation rapide d'endpoints et de réponse active à grande échelle.
+
 ## 3. Ressources complémentaires
 
 * **IBM SkillsBuild** : Cours sur l'investigation numérique (Digital Forensics) et la réponse à incident.

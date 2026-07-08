@@ -175,6 +175,19 @@ Une PME de 15 salariés stocke son fichier client contenant les coordonnées et 
 Une PME du secteur médical souhaite lancer une application mobile de suivi de patients. Avant le développement, le RSSI mène une analyse de risques (impact d'une fuite de données de santé) et s'assure de la conformité réglementaire (RGPD). L'entreprise nomme un DPO (Délégué à la Protection des Données), crypte les bases de données et met en place un registre d'activités de traitement pour documenter la conformité.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+Pour piloter la conformité RGPD, la gouvernance de sécurité (ISO 27001) et l'analyse de risques, voici les solutions de référence :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **OneTrust GRC** : Leader du marché pour la gestion de la conformité réglementaire (RGPD/CCPA), de la confidentialité et de la gouvernance des risques tiers.
+    *   **ServiceNow GRC** : Plateforme intégrée haut de gamme pour l'analyse de risques d'entreprise et le suivi de la conformité aux audits ISO 27001.
+    *   **Securiti.ai** : Solution axée sur la détection automatique des données personnelles et la conformité RGPD multi-cloud.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **PIA Tool (CNIL)** : Logiciel open-source gratuit fourni par la CNIL française pour mener des Analyses d'Impact sur la Protection des Données (AIPD/PIA) réglementaires.
+    *   **Monarc** : Outil open-source de gestion de risques développé par le gouvernement luxembourgeois, permettant de mener des évaluations de risques conformes à ISO 27005.
+    *   **EBIOS RM Manager** : Modèles d'analyse de risques libres basés sur la méthodologie de l'ANSSI pour structurer la gouvernance cyber.
+
 ## 3. Ressources complémentaires
 
 * **IBM SkillsBuild** : Modules sur les principes de la GRC et le RGPD.

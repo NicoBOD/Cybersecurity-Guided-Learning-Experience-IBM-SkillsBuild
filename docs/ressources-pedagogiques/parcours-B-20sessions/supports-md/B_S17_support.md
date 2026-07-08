@@ -146,6 +146,19 @@ Ligne 4 : 203.0.113.88 - - [29/Jun/2026:10:01:25] "GET /admin/../../etc/passwd H
 Un serveur web e-commerce subit des attaques répétées. En configurant son SIEM, le RSSI met en place une règle de corrélation : si une adresse IP externe effectue plus de 20 requêtes contenant le caractère de apostrophe `'` (tentative d'injection SQL) en moins de 10 secondes et reçoit un code HTTP 200 (succès), le SIEM doit immédiatement générer une alerte critique.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+La centralisation des logs d'événements, leur normalisation (parsing) et leur corrélation nécessitent des outils de SIEM :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **Splunk Enterprise Security** : Le leader historique des SIEM sur site et cloud, réputé pour sa puissance d'analyse de données et la flexibilité de ses requêtes de détection.
+    *   **Microsoft Sentinel** : SIEM cloud-natif hautement évolutif qui s'intègre parfaitement aux logs Office 365, Active Directory et Azure pour un coût opérationnel maîtrisé.
+    *   **Elastic Security** : Solution SIEM construite sur la base de données Elasticsearch, reconnue pour ses performances de recherche rapides.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **Wazuh** : Plateforme d'XDR/SIEM open-source centralisant les logs des agents serveurs et postes, capable d'appliquer des règles de détection complexes et de bloquer activement les attaques.
+    *   **Elastic Stack (ELK : Elasticsearch, Logstash, Kibana)** : Stack open-source classique pour collecter (Logstash), stocker (Elasticsearch) et visualiser (Kibana) les journaux d'événements informatiques.
+    *   **Graylog Open** : Solution de gestion de logs open-source puissante et facile d'accès, idéale pour le stockage et l'analyse de gros volumes de logs Syslog.
+
 ## 3. Ressources complémentaires
 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Log Analysis and SIEM Concepts"* (durée estimée : 1h30).

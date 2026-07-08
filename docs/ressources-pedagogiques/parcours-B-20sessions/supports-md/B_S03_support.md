@@ -140,6 +140,19 @@ En dehors des logiciels malveillants, les attaquants ciblent les capacités phys
 Dans une usine de production, une clé USB piégée est introduite sur un poste. Le malware installé exploite une faille non corrigée pour se propager de façon autonome (comportement de ver) à l'ensemble des automates industriels du réseau interne non segmenté, provoquant l'arrêt complet de la chaîne de production.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+Pour analyser les fichiers suspects et cartographier les tactiques d'attaque selon le framework MITRE ATT&CK :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **Any.Run** : Service de sandbox interactif en ligne, permettant d'exécuter des malwares dans un navigateur et d'observer leurs comportements réseau et système en temps réel.
+    *   **Joe Sandbox** : Outil d'analyse de malware automatisé haut de gamme pour les fichiers Windows, macOS, Android et Linux.
+    *   **Palo Alto Networks WildFire** : Moteur d'analyse comportementale de fichiers dans le cloud, intégré nativement aux pare-feux Palo Alto pour bloquer les menaces Zero-day.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **Cuckoo Sandbox / CAPE Sandbox** : Logiciels open-source d'analyse de malware automatisée. Ils permettent de lancer un fichier suspect dans une machine virtuelle isolée et de générer un rapport détaillé sur ses activités.
+    *   **Yara** : Outil d'analyse open-source permettant de créer des règles textuelles pour identifier et classer les fichiers malveillants sur la base de patterns binaires ou textuels.
+    *   **MITRE ATT&CK Navigator** : Outil web libre d'exploration pour cartographier les défenses d'une entreprise par rapport aux tactiques réelles des attaquants.
+
 ## 3. Ressources complémentaires
 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Introduction to Cybersecurity Tools & Cyber Attacks"* (~1h30).

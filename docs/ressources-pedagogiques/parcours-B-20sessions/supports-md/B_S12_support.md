@@ -146,6 +146,19 @@ Proposez une mise en œuvre concrète de la règle 3-2-1 en complétant le sché
 Une PME de santé met en œuvre la règle 3-2-1 pour ses dossiers médicaux. Lorsqu'une cyberattaque par ransomware frappe les postes internes et chiffre tous les disques durs connectés, l'administrateur peut restaurer l'intégralité du système en quelques heures grâce à la copie externe déconnectée stockée hors-site.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+Pour assurer la confidentialité des données (DLP) et appliquer la règle de sauvegarde 3-2-1 de manière robuste :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **Veeam Backup & Replication** : Le leader mondial de la sauvegarde pour environnements physiques, virtuels et cloud, offrant le chiffrement AES-256 et des référentiels de stockage immuables.
+    *   **Forcepoint DLP (Data Loss Prevention)** : Solution de référence pour analyser, classifier et empêcher l'exfiltration de fichiers sensibles sur les postes de travail, le réseau et le cloud.
+    *   **Rubrik / Commvault** : Plateformes de sauvegarde et de gestion de données haut de gamme, axées sur la détection des ransomwares et la restauration rapide des fichiers.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **Duplicati** : Logiciel de sauvegarde open-source gratuit fonctionnant sous Windows, macOS et Linux. Il compresse, chiffre et envoie les sauvegardes vers des destinations cloud locales ou distantes.
+    *   **BorgBackup / Restic** : Outils de sauvegarde en ligne de commande ultra-rapides et légers sous Linux, supportant la déduplication des données et le chiffrement authentifié.
+    *   **OpenDLP** : Scanner open-source permettant de rechercher et d'identifier les données personnelles (cartes de crédit, données de santé) stockées à l'insu de l'entreprise sur ses disques.
+
 ## 3. Ressources complémentaires
 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Data Security and Privacy"* (durée estimée : 1h30).

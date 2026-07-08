@@ -128,6 +128,19 @@ L'entreprise de logistique "EcoLog" souhaite intégrer une section "Sécurité d
 Une entreprise industrielle de 500 salariés souhaite travailler pour des clients étatiques. Elle doit prouver son niveau de sécurité. Le RSSI pilote la rédaction de la PSSI, définit les politiques de mots de passe et met en place un SMSI (Système de Management de la Sécurité). En s'appuyant sur le référentiel ISO 27001, l'entreprise obtient une certification officielle qui rassure ses clients et lui permet de signer ses contrats.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+Le pilotage de la gouvernance de sécurité et l'établissement d'une PSSI s'appuient sur les outils GRC suivants :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **Tugboat Logic (OneTrust)** : Outil de conformité automatisé guidant pas à pas les PME et start-ups dans la rédaction de leurs politiques de sécurité et la préparation à la certification ISO 27001.
+    *   **AuditBoard** : Plateforme de premier plan pour gérer les programmes de conformité, l'audit interne et le suivi des exigences de sécurité auprès des collaborateurs.
+    *   **ServiceNow Policy and Compliance** : Solution d'entreprise haut de gamme pour centraliser et valider le respect des processus internes par rapport aux réglementations.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **EBIOS RM Manager** : Modèles d'analyse et de documents en accès libre pour structurer la rédaction d'une PSSI conformément aux normes françaises de l'ANSSI.
+    *   **PIA Tool (CNIL)** : Solution open-source gratuite pour cartographier et analyser la conformité des traitements de données personnelles.
+    *   **Monarc** : Outil open-source de gestion de la conformité et des risques de sécurité de l'information développé au Luxembourg, idéal pour aligner sa PSSI sur l'ISO 27001.
+
 ## 3. Ressources complémentaires
 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Cybersecurity Governance and Risk Management - Part 1"* (durée estimée : 1h30).

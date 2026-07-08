@@ -158,6 +158,19 @@ Vous devez concevoir la segmentation réseau d'une boutique connectée comprenan
 Une PME de logistique héberge son site web public sur un serveur en DMZ. Suite à une faille sur le site, le serveur est compromis. Grâce au pare-feu interne et à la segmentation réseau, le pirate est confiné dans la DMZ et ne peut pas rebondir vers le réseau interne où sont stockés les fichiers clients et les bases de données comptables.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+La sécurité des systèmes et réseaux repose sur des pare-feux et des outils de chiffrement des communications :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **Fortinet FortiGate** : Pare-feu de nouvelle génération (NGFW) leader mondial en termes de rapport performances/coût, très populaire auprès des PME et grandes entreprises.
+    *   **Palo Alto Networks (PA-Series)** : Solution NGFW haut de gamme offrant le niveau de détection applicative le plus précis, leader historique du Magic Quadrant de Gartner.
+    *   **Stormshield Network Security (SNS)** : Solution de pare-feu souveraine française (certifiée par l'ANSSI au plus haut niveau de sécurité), idéale pour la conformité et la protection des infrastructures critiques.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **pfSense Community Edition** : L'un des pare-feux open-source les plus puissants du marché. Basé sur FreeBSD, il offre des fonctionnalités d'administration complètes (filtrage, VPN, routage, IDS/IPS).
+    *   **OPNsense** : Fork moderne de pfSense, apprécié pour son interface utilisateur intuitive et ses intégrations de sécurité régulières.
+    *   **OpenVPN / WireGuard** : Protocoles et logiciels VPN open-source pour sécuriser les accès distants et connecter des sites distants de manière chiffrée.
+
 ## 3. Ressources complémentaires
 
 * **IBM SkillsBuild** : Cours "Network Security Fundamentals".

@@ -137,6 +137,19 @@ La **CTI** (Renseignement sur les cybermenaces) consiste à collecter, analyser 
 Une entreprise technologique subit une intrusion discrète. Les outils de Threat Intelligence permettent de corréler les signatures techniques (IOCs) laissées par l'attaquant avec le mode opératoire documenté d'un groupe APT étatique. Grâce à ces données, l'équipe de sécurité comprend que l'attaquant cible spécifiquement les fichiers de R&D et applique immédiatement des mesures de confinement adaptées.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+L'analyse de Threat Intelligence et la veille sur les cybermenaces requièrent des outils capables de consolider des indicateurs de compromission :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **Recorded Future** : Leader mondial de la Threat Intelligence, intégrant l'analyse automatisée du Dark Web et la notation en temps réel du risque IP/Domaine.
+    *   **CrowdStrike Falcon Intelligence** : Service de Threat Intelligence corrélant les données de millions d'agents de sécurité dans le monde pour cartographier les TTPs des groupes d'attaquants.
+    *   **Mandiant Threat Intelligence (Google Cloud)** : Base de connaissances hautement qualifiée sur les menaces étatiques et les attaques ciblées avancées.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **MISP (Malware Information Sharing Platform)** : Plateforme open-source leader mondiale pour le partage et le stockage d'indicateurs de compromission (IOC). Très utilisée par les CERTs et les entreprises pour synchroniser leurs listes de blocage.
+    *   **OpenCTI** : Solution open-source développée en France pour structurer, modéliser et visualiser les connaissances sur les cybermenaces.
+    *   **AlienVault OTX (Open Threat Exchange)** : Plus grande communauté gratuite d'échange d'IOCs au monde, facilement intégrable dans les outils de détection.
+
 ## 3. Ressources complémentaires
 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Cybersecurity Threat Landscape"* (~1h30).

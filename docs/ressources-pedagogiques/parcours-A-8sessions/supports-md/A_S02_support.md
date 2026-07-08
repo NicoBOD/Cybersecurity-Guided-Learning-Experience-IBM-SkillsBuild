@@ -169,6 +169,19 @@ Vous recevez un appel sur votre téléphone professionnel. L'appelant se présen
 Dans une start-up, un comptable reçoit un SMS urgent (Smishing) prétendument de la banque, lui demandant de cliquer sur un lien pour annuler un débit frauduleux de 15 000 €. En panique (levier d'urgence), il clique et saisit ses codes d'accès. Grâce à la formation à la vigilance, il réalise son erreur 2 minutes après et appelle le service de sécurité informatique qui désactive immédiatement le compte avant que le pirate n'initie de virement.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+Pour lutter contre l'ingénierie sociale et sécuriser la messagerie d'entreprise (principal vecteur d'attaque), voici les outils recommandés :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **KnowBe4 Security Awareness Training** : Leader incontesté pour la formation à la sensibilisation des employés et les simulations d'hameçonnage automatisées.
+    *   **Proofpoint Security Awareness / SEG (Secure Email Gateway)** : Solution haut de gamme de filtrage de messagerie et de sensibilisation des collaborateurs, réputée pour bloquer le Business Email Compromise (BEC).
+    *   **SoSafe** : Plateforme européenne (conforme RGPD) de sensibilisation au phishing basée sur la gamification et la psychologie comportementale.
+    *   **Mimecast Email Security** : Passerelle de messagerie cloud-native offrant une protection avancée contre le phishing ciblé, les malwares et le vol d'identifiants.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **GoPhish** : Le framework open-source de simulation de phishing le plus populaire. Il permet aux administrateurs réseau de concevoir et lancer leurs propres campagnes de tests internes pour mesurer la vigilance des équipes.
+    *   **Phishing-Initiative** : Projet citoyen et collaboratif (soutenu par l'ANSSI) permettant de signaler les adresses de phishing pour qu'elles soient bloquées dans les navigateurs du monde entier.
+
 ## 3. Ressources complémentaires
 
 * **IBM SkillsBuild** : Cours sur l'ingénierie sociale et la sensibilisation au phishing.

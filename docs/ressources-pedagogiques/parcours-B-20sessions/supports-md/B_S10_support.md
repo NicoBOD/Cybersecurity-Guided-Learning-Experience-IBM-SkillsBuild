@@ -137,6 +137,19 @@ Considérez les deux phrases suivantes, quasiment identiques à l'exception des 
 Une entreprise utilise le chiffrement asymétrique pour établir une connexion SSL/TLS sécurisée avec ses clients. Les clés publiques et privées servent uniquement à s'authentifier et à échanger une clé temporaire unique. La suite des communications chiffrées s'effectue en chiffrement symétrique pour garantir un débit rapide des données.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+Pour déployer des PKI d'entreprise, gérer des clés cryptographiques et stocker des secrets de manière sécurisée :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **Thales Luna HSM (Hardware Security Module)** : Équipements physiques ultra-sécurisés pour la génération et le stockage physique de clés cryptographiques de niveau militaire.
+    *   **DigiCert Enterprise PKI** : Solution commerciale leader pour la gestion automatisée des certificats numériques et des clés à grande échelle.
+    *   **Entrust PKI** : Plateforme robuste pour gérer l'infrastructure de clés publiques d'entreprises financières et gouvernementales.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **HashiCorp Vault** : L'outil open-source leader mondial pour la gestion des secrets, le stockage des clés cryptographiques d'API, de bases de données et la génération dynamique de certificats.
+    *   **EJBCA Community Edition** : Plateforme de PKI open-source de niveau entreprise, permettant de construire sa propre Autorité de Certification (CA) interne de manière robuste.
+    *   **OpenSSL** : Boîte à outils cryptographique en ligne de commande open-source universelle, utilisée pour générer des clés, des demandes de signature de certificat (CSR) et chiffrer des fichiers.
+
 ## 3. Ressources complémentaires
 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Cryptography Basics"* (durée estimée : 1h30).

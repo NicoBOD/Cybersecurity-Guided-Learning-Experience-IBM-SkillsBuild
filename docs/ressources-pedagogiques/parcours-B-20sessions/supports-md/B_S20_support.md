@@ -143,6 +143,19 @@ Utilisez la grille critériée ci-dessous pour évaluer votre livrable *« Audit
 À la suite d'un audit de sécurité d'un mois, un prestataire présente ses conclusions au comité de direction d'un fabricant industriel. Au lieu de noyer les dirigeants sous le jargon technique, il utilise une échelle de risques claire : la mise en place du MFA sur la messagerie et la segmentation réseau entre l'usine et les bureaux sont présentées comme les deux chantiers prioritaires pour éviter un arrêt total de la production.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+Pour tester la solidité d'une infrastructure cyber, mener des exercices de crise ou réaliser un audit technique final :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **Immersive Labs / Mandiant Crisis Simulations** : Plateformes interactives de pointe permettant de tester la prise de décision des comités de direction lors de simulations de crises cyber (tabletop interactives).
+    *   **XM Cyber** : Solution commerciale de simulation d'attaque continue (BAS - Breach and Attack Simulation), révélant en continu les chemins d'attaque menant aux actifs critiques.
+    *   **AuditBoard** : Plateforme collaborative pour gérer l'évaluation des contrôles de sécurité et le reporting d'audit auprès de la direction.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **OpenEx** : Plateforme open-source de planification et d'exécution d'exercices de crise cyber développée à l'origine en France (ANSSI/communauté). Elle permet de simuler des e-mails frauduleux, des appels téléphoniques et des posts sur de faux réseaux sociaux pour entraîner les équipes.
+    *   **CISA Cyber Security Tabletop Exercises** : Banques gratuites de scénarios et de guides d'animation d'exercices de crise à destination des organisations privées et publiques.
+    *   **OpenCTI** : Outil open-source permettant de consigner et de visualiser la cartographie des menaces modélisées lors de l'audit initial.
+
 ## 3. Ressources complémentaires
 
 *   **Après la formation** : Ajoutez vos certifications et badges de réussite **IBM SkillsBuild** sur votre profil LinkedIn pour valoriser vos nouvelles compétences auprès des recruteurs.

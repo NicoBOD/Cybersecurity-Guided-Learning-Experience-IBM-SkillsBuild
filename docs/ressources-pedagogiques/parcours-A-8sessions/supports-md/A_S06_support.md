@@ -162,6 +162,19 @@ Vous êtes analyste de sécurité junior dans un SOC. Le SIEM vient de lever une
 Dans une banque, le SIEM détecte qu'un compte utilisateur s'est connecté depuis la France puis depuis la Chine 10 minutes plus tard. Le SOC qualifie cette alerte de "Vrai Positif" (vitesse de déplacement impossible) et bloque immédiatement la session de l'utilisateur, évitant ainsi le vol de données bancaires.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+Pour orchestrer les opérations de sécurité (SOC) et cartographier les vulnérabilités système, plusieurs outils se distinguent :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **Tenable Nessus / Tenable.io** : Référence mondiale pour le scan et le management des vulnérabilités, offrant une détection précise des CVE et des configurations défectueuses.
+    *   **Qualys VMDR** : Plateforme SaaS leader de détection des vulnérabilités et de priorisation des correctifs en temps réel.
+    *   **Splunk Enterprise Security / Microsoft Sentinel** : Leaders du marché des SIEM et du SOAR pour centraliser les logs et corréler les menaces à l'échelle de l'entreprise.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **Greenbone Community Edition (OpenVAS)** : Scanner de vulnérabilités open-source très complet pour évaluer les vulnérabilités de réseau local et de serveurs.
+    *   **Wazuh** : Outil open-source de centralisation de logs et de détection d'intrusions (HIDS/SIEM), idéal pour les PME souhaitant mettre en place une première brique de SOC.
+    *   **TheHive & Cortex** : Plateforme open-source d'orchestration de réponse aux incidents (SOAR light) permettant de gérer les alertes cyber et d'automatiser les analyses d'indicateurs (IOC).
+
 ## 3. Ressources complémentaires
 
 * **IBM SkillsBuild** : Cours sur le fonctionnement d'un SIEM et le métier d'analyste SOC.

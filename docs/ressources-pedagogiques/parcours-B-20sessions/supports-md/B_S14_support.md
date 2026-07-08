@@ -181,6 +181,18 @@ Rédigez la ligne de registre pour ce risque en suivant les consignes de cotatio
 Une PME souhaite ouvrir sa base de données de production à ses prestataires externes. L'analyse de risques montre qu'une mauvaise configuration peut entraîner le vol de la base. Pour traiter ce risque, le RSSI décide de réduire le risque en imposant un accès via un VPN avec MFA, et de le transférer en mettant à jour la police d'assurance cyber.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+Pour évaluer, documenter et suivre les plans de traitement des risques de sécurité (méthode EBIOS RM ou ISO 27005) :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **Archer GRC (anciennement RSA Archer)** : Suite logicielle haut de gamme et leader historique pour la gestion intégrée des risques (IRM) et l'évaluation quantitative des risques cyber.
+    *   **Tenable.ad / Tenable Risk Manager** : Solution d'évaluation continue de l'exposition aux risques techniques sur l'Active Directory et les infrastructures associées.
+    *   **ServiceNow Risk Management** : Intégration complète du flux d'évaluation des risques dans les processus de gestion des services informatiques (ITIL).
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **Monarc** : Outil de gestion des risques open-source réputé pour sa conformité avec ISO 27005, permettant de générer automatiquement des arbres de menaces et des plans de traitement.
+    *   **PIA Tool (CNIL)** : Le logiciel open-source de la CNIL qui permet de mener une analyse de risques sur les données personnelles en évaluant l'impact et la vraisemblance des menaces de manière structurée.
+
 ## 3. Ressources complémentaires
 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Cybersecurity Governance and Risk Management - Part 2"* (durée estimée : 1h30).

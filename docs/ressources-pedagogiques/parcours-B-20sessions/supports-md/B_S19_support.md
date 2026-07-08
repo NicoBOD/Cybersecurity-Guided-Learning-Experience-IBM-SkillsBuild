@@ -152,6 +152,19 @@ Contact Presse unique : service.presse@ecolog.fr
 Une PME subit une attaque par Ransomware. Le serveur de comptabilité commence à chiffrer ses fichiers. La procédure d'incident est immédiatement déclenchée : le serveur est isolé du réseau en moins de 15 minutes, limitant l'infection. Les logs de pare-feu et les journaux systèmes sont copiés de façon intègre (forensics) avant de restaurer le serveur à partir des sauvegardes de la veille.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+Pour automatiser la réponse à incident et préserver les preuves numériques à des fins d'analyse forensic :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **EnCase Forensic / FTK (Forensic Toolkit)** : Standards industriels reconnus par la justice et les experts cyber pour l'acquisition intègre de disques durs et l'investigation numérique approfondie.
+    *   **CrowdStrike Falcon Forensics** : Outil d'investigation cloud permettant aux analystes de collecter rapidement des artefacts système à distance lors d'un incident actif.
+    *   **Microsoft Defender Incident Response** : Suite de services et de détection automatique permettant de contenir les attaques de type rançongiciel à l'échelle du domaine Windows.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **Autopsy (The Sleuth Kit)** : Plateforme d'investigation numérique open-source la plus connue. Elle permet d'analyser des images de disques durs, de récupérer des fichiers supprimés et d'explorer l'historique d'un système.
+    *   **Volatility** : Outil open-source leader pour l'analyse judiciaire de la mémoire vive (RAM forensics), permettant d'extraire des connexions réseau actives et des clés de chiffrement en mémoire.
+    *   **Velociraptor** : Outil open-source puissant de visibilité système et de réponse sur incident rapide permettant de collecter des artefacts en quelques secondes sur des milliers de machines simultanément.
+
 ## 3. Ressources complémentaires
 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Incident Response Fundamentals"* (durée estimée : 1h30).

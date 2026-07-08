@@ -158,6 +158,19 @@ Une petite agence de création web stocke ses créations graphiques et ses bases
 Une start-up stocke les factures de ses clients sur un service de stockage cloud (S3). Lors d'un audit de sécurité, le responsable s'aperçoit que les factures sont accessibles publiquement sans mot de passe suite à une erreur humaine de configuration. Il applique immédiatement le modèle de responsabilité partagée en modifiant la politique d'accès du bucket pour exiger une authentification forte (MFA) et active le chiffrement automatique des données au repos.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+La sécurisation du cloud, des données et de l'identité exige des solutions de sauvegarde et de contrôle d'accès :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **Veeam Backup & Replication** : Le leader absolu de la sauvegarde d'entreprise, offrant des sauvegardes physiques, virtuelles et cloud avec gestion de l'immuabilité contre les ransomwares.
+    *   **Microsoft Entra ID (anciennement Azure Active Directory)** : La solution cloud leader pour l'IAM, l'authentification multifacteur (MFA) et le Single Sign-On (SSO) en entreprise.
+    *   **Okta Workforce Identity Cloud** : Plateforme IAM indépendante majeure, reconnue pour sa simplicité d'intégration SSO multi-cloud.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **Keycloak** : Solution open-source robuste d'IAM et de Single Sign-On (SSO) développée par Red Hat, supportant OpenID Connect et SAML 2.0.
+    *   **Duplicati / BorgBackup** : Outils de sauvegarde open-source chiffrés et incrémentaux, parfaits pour sécuriser les données locales vers un stockage distant de manière économique.
+    *   **Vaultwarden (Bitwarden)** : Gestionnaire de mots de passe auto-hébergé open-source, permettant de stocker et partager les identifiants d'entreprise de manière hautement sécurisée sans licence payante.
+
 ## 3. Ressources complémentaires
 
 * **IBM SkillsBuild** : Cours sur l'IAM (Identity and Access Management) et la sécurité Cloud.

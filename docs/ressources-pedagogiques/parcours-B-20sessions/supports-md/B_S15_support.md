@@ -126,6 +126,18 @@ L'entreprise EcoLog lance une plateforme e-commerce. Le service marketing a éba
 Une plateforme e-commerce française collecte les données de ses clients pour livrer ses produits. Suite à une mise en conformité RGPD, elle modifie son formulaire d'inscription : les cases d'inscription à la newsletter ne sont plus pré-cochées (consentement explicite), et les comptes inactifs depuis plus de 3 ans sont automatiquement supprimés (limitation de la conservation). Elle nomme également un DPO externe.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+Le maintien de la conformité RGPD et la gestion des cookies/consentements des sites Web s'appuient sur les outils suivants :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **OneTrust Privacy** : Solution leader mondial pour la gestion intégrée du registre de traitement RGPD, le suivi des droits des personnes et la gestion des consentements en ligne (bandeau de cookies).
+    *   **Didomi** : Plateforme européenne majeure de gestion du consentement (CMP) et de conformité de la collecte de données privées sur le web et les applications mobiles.
+    *   **Axeptio** : Solution de gestion des cookies reconnue pour son approche visuelle ludique et ergonomique facilitant le respect du RGPD pour les PME.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **PIA Tool (CNIL)** : Outil officiel open-source et gratuit de la CNIL française pour mener l'Analyse d'Impact relative à la Protection des Données (AIPD/PIA) obligatoire pour les traitements de données sensibles.
+    *   **Klaro!** : Gestionnaire de cookies et de consentement web open-source très léger, permettant de bloquer les scripts de suivi tiers sans licence commerciale payante.
+
 ## 3. Ressources complémentaires
 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Introduction to Data Privacy and GDPR"* (durée estimée : 1h30).

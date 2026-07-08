@@ -180,6 +180,19 @@ Pour chaque intersection, attribuez l'un des droits suivants :
 Une entreprise déploie une solution IAM centralisée. Suite au départ soudain d'un collaborateur, le service RH désactive son compte dans l'annuaire d'entreprise unique. Instantanément, tous ses accès VPN, courriels et logiciels Cloud (SaaS) sont révoqués via le SSO, éliminant tout risque de sabotage post-départ.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+La gestion des identités et des accès (IAM) et l'authentification forte (MFA/SSO) sont indispensables pour contrôler les comptes d'accès :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **Microsoft Entra ID (anciennement Azure Active Directory)** : Le leader absolu de la gestion d'identités d'entreprise et du SSO, particulièrement optimisé pour l'écosystème Office 365.
+    *   **Okta Workforce Identity Cloud** : Plateforme IAM neutre et indépendante leader sur le marché, facilitant l'authentification unique (SSO) multi-cloud.
+    *   **Duo Security (Cisco)** : Solution de référence pour la mise en place d'authentification multifacteur (MFA) ergonomique et de contrôle des accès Zero Trust.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **Keycloak** : Solution d'IAM et de Single Sign-On (SSO) open-source développée par Red Hat. Elle prend en charge les protocoles standards comme SAML 2.0, OpenID Connect et OAuth 2.0.
+    *   **Authentik** : Fournisseur d'identité open-source moderne et flexible, intégrant nativement la gestion des accès applicatifs, du MFA et des portails de connexion.
+    *   **Authelia** : Portail d'authentification unique léger et open-source, parfait pour sécuriser des applications web auto-hébergées avec du MFA (TOTP / clés de sécurité physiques YubiKey).
+
 ## 3. Ressources complémentaires
 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Identity and Access Management Fundamentals"* (durée estimée : 1h30).

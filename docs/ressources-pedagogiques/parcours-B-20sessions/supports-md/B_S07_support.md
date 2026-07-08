@@ -136,6 +136,20 @@ Rédigez une fiche de préconisations techniques et d'usages en répondant aux 3
 Un consultant travaille depuis le réseau Wi-Fi public d'un hôtel. Pour sécuriser sa session, il active son VPN d'entreprise (IPsec). Même si un attaquant à proximité intercepte les ondes radio du Wi-Fi de l'hôtel (attaque de l'homme du milieu), toutes les données transmises (identifiants, documents de travail) sont encapsulées dans le tunnel chiffré du VPN et restent totalement illisibles.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+Pour sécuriser et chiffrer les flux réseau d'entreprise via des solutions VPN et des certificats de confiance :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **Cisco Secure Client (anciennement AnyConnect)** : L'un des clients VPN SSL/IPsec d'entreprise les plus déployés dans le monde, offrant un accès à distance sécurisé.
+    *   **F5 BIG-IP Access Policy Manager (APM)** : Passerelle d'accès réseau sécurisée haut de gamme, gérant le chiffrement SSL à très grande échelle.
+    *   **DigiCert / Sectigo Enterprise PKI** : Autorités de certification commerciales pour la gestion du cycle de vie des certificats SSL/TLS d'entreprise.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **OpenVPN** : Solution open-source classique de VPN SSL permettant de connecter de manière chiffrée des clients distants ou des réseaux entiers.
+    *   **WireGuard** : Protocole VPN open-source moderne et extrêmement rapide, intégré directement au noyau Linux, offrant d'excellentes performances par rapport aux protocoles plus anciens.
+    *   **StrongSwan** : Implémentation VPN IPsec open-source, idéale pour établir des liaisons directes sécurisées site-à-site entre serveurs.
+    *   **Let's Encrypt** : Autorité de certification gratuite et automatisée fournissant des certificats SSL/TLS X.509 valides pour sécuriser les sites Web.
+
 ## 3. Ressources complémentaires
 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Secure Protocols & Cryptography Basics"* (durée estimée : 1h30).

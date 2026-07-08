@@ -141,6 +141,19 @@ La sécurité humaine repose sur des réflexes simples mais rigoureux, que l'on 
 Dans une grande entreprise, un pirate appelle la réceptionniste du standard téléphonique (Vishing). Se faisant passer pour le directeur technique bloqué à l'aéroport avant un conseil d'administration urgent (combinaison d'autorité et d'urgence), il lui demande de lui générer un mot de passe temporaire pour accéder à sa messagerie. La réceptionniste, formée à cette menace, refuse poliment et applique la procédure de sécurité en rappelant le directeur technique sur son numéro officiel.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+Pour lutter contre l'ingénierie sociale et sensibiliser les employés (facteur humain), les outils suivants se détachent :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **KnowBe4 Security Awareness Training** : Leader incontesté pour la formation à la sensibilisation des employés et les simulations d'hameçonnage automatisées.
+    *   **Proofpoint Security Awareness / SEG (Secure Email Gateway)** : Solution haut de gamme de filtrage de messagerie et de sensibilisation des collaborateurs, réputée pour bloquer le Business Email Compromise (BEC).
+    *   **SoSafe** : Plateforme européenne (conforme RGPD) de sensibilisation au phishing basée sur la gamification et la psychologie comportementale.
+    *   **Mimecast Email Security** : Passerelle de messagerie cloud-native offrant une protection avancée contre le phishing ciblé, les malwares et le vol d'identifiants.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **GoPhish** : Le framework open-source de simulation de phishing le plus populaire. Il permet aux administrateurs réseau de concevoir et lancer leurs propres campagnes de tests internes pour mesurer la vigilance des équipes.
+    *   **Phishing-Initiative** : Projet citoyen et collaboratif (soutenu par l'ANSSI) permettant de signaler les adresses de phishing pour qu'elles soient bloquées dans les navigateurs du monde entier.
+
 ## 3. Ressources complémentaires
 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Introduction to Cybersecurity Tools & Cyber Attacks - Social Engineering"* (~1h00).

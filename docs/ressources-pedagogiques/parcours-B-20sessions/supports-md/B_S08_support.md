@@ -136,6 +136,19 @@ L'entreprise "EcoLog" déploie 50 nouveaux ordinateurs portables Windows 11 pour
 Dans le cadre d'un projet de sécurisation, le service informatique applique une politique de durcissement sur les serveurs de fichiers : désactivation du protocole vulnérable SMBv1, fermeture des ports SSH d'administration directe, et restriction stricte des droits d'accès administrateurs locaux. Quelques mois plus tard, un malware s'exécute sur le réseau interne mais ne peut pas se propager car les services réseau vulnérables ont été désactivés.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+Le durcissement des systèmes d'exploitation et la protection des endpoints nécessitent des solutions EDR comportementales :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **CrowdStrike Falcon** : Référence absolue des EDR cloud-natifs pour surveiller l'activité des endpoints et stopper les attaques "sans fichier" en temps réel.
+    *   **SentinelOne Singularity** : Solution EDR/XDR utilisant l'intelligence artificielle pour bloquer les comportements suspects de manière autonome sur l'appareil.
+    *   **Microsoft Defender for Endpoint** : Solution EPP/EDR nativement intégrée dans l'écosystème Windows, simplifiant le déploiement et l'administration.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **Wazuh** : Plateforme d'XDR open-source qui intègre des fonctions avancées de détection d'intrusions sur l'hôte, de vérification des fichiers critiques (FIM) et de détection des configurations non conformes.
+    *   **OpenSCAP** : Outil open-source d'analyse de conformité permettant de vérifier automatiquement qu'un système Linux ou Windows respecte les guides de durcissement officiels (ex. guides CIS ou de l'ANSSI).
+    *   **OSSEC** : Système open-source de détection d'intrusions basé sur l'hôte effectuant l'analyse de logs et le contrôle d'intégrité.
+
 ## 3. Ressources complémentaires
 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"System Hardening and Patch Management"* (durée estimée : 1h30).

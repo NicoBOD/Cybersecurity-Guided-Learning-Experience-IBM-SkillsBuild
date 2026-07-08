@@ -137,6 +137,19 @@ Pour les 6 tâches de sécurité listées ci-dessous, écrivez dans la colonne c
 Une start-up stocke les factures de ses clients sur un service de stockage cloud (S3). Lors d'un audit de sécurité, le responsable s'aperçoit que les factures sont accessibles publiquement sans mot de passe suite à une erreur humaine de configuration. Il applique immédiatement le modèle de responsabilité partagée en modifiant la politique d'accès du bucket pour exiger une authentification forte (MFA) et active le chiffrement automatique des données au repos.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+Pour surveiller la configuration de sécurité dans le Cloud (CSPM) et identifier les mauvaises configurations de ressources :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **Wiz.io** : Leader de la sécurité cloud (CNAPP) qui analyse en profondeur et sans agent les ressources AWS, Azure et GCP pour cartographier les risques et vecteurs d'attaque.
+    *   **Palo Alto Prisma Cloud** : Plateforme complète de protection cloud couvrant la conformité, la sécurité des conteneurs et les vulnérabilités de l'infrastructure-as-code (IaC).
+    *   **Microsoft Defender for Cloud** : Outil CSPM/CWPP de référence pour surveiller la posture de sécurité des environnements hybrides et multi-cloud.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **Prowler** : Outil open-source de référence écrit en Python pour évaluer la sécurité d'AWS, d'Azure et de GCP par rapport aux meilleures pratiques CIS (Center for Internet Security).
+    *   **Scout Suite** : Outil d'audit de sécurité multi-cloud open-source qui utilise les APIs des fournisseurs cloud pour présenter les risques dans un rapport HTML clair.
+    *   **Checkov / Terrascan** : Analyseurs statiques open-source pour scanner le code d'infrastructure (Terraform, CloudFormation, Kubernetes) afin de détecter les failles avant le déploiement.
+
 ## 3. Ressources complémentaires
 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Cloud Security Fundamentals"* (durée estimée : 1h30).

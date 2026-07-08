@@ -173,6 +173,20 @@ Analysez les deux extraits de paquets ci-dessous et répondez aux questions :
 Un administrateur réseau utilise l'outil Wireshark pour analyser les paquets de données qui transitent sur le réseau de son entreprise. Il repère une anomalie : un serveur interne effectue des requêtes DNS (port 53 UDP) anormalement fréquentes vers une adresse IP inconnue à l'étranger. Cette analyse au niveau de la couche transport et réseau lui permet de détecter une tentative d'exfiltration de données masquée par tunnel DNS.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+L'analyse de protocoles et la surveillance de la couche réseau reposent sur les solutions de captures de paquets suivantes :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **NetScout nGeniusONE** : Solution d'analyse réseau d'entreprise haut de gamme pour surveiller les performances et identifier les anomalies de flux sur les réseaux télécoms et bancaires.
+    *   **Riverbed AppResponse** : Outil d'analyse du trafic réseau permettant de capturer tous les paquets à des vitesses très élevées pour le diagnostic et la sécurité.
+    *   **Cisco DNA Center / Cisco ThousandEyes** : Visibilité réseau approfondie et surveillance active des connexions utilisateur multi-sites.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **Wireshark** : L'analyseur de paquets réseau open-source standard du marché, incontournable pour capturer et disséquer les protocoles réseau locaux.
+    *   **tcpdump** : Outil d'analyse en ligne de commande ultra-léger disponible sur tous les systèmes Linux/Unix pour capturer des paquets sans interface graphique.
+    *   **Zeek (anciennement Bro)** : Framework d'analyse réseau open-source qui convertit le trafic réseau brut en logs structurés hautement qualifiés pour la détection de menaces.
+    *   **Suricata** : Moteur d'IDS/IPS open-source capable d'analyser le trafic réseau en temps réel et de générer des alertes de sécurité.
+
 ## 3. Ressources complémentaires
 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Network Security - Part 1"* (durée estimée : 1h30).

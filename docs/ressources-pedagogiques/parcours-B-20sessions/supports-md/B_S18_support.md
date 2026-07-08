@@ -187,6 +187,18 @@ ou des fichiers professionnels impossibles à ouvrir avec une extension ".locked
 Un scanner de vulnérabilités remonte une faille critique de type exécution de code à distance (CVE-2021-44228) affectant plusieurs serveurs d'une entreprise. Grâce aux scores CVSS et à l'analyse de l'exposition internet des serveurs, l'équipe de sécurité priorise le patch de la machine externe en moins de 24h, neutralisant le risque avant toute intrusion.
 
 
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+Pour mener des investigations après incident et cartographier les vulnérabilités de l'infrastructure logicielle (CVE) :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **Tenable Nessus / Tenable.io** : Référence mondiale pour le scan et le management des vulnérabilités, offrant une détection précise des CVE et des configurations défectueuses.
+    *   **Qualys VMDR** : Plateforme SaaS leader de détection des vulnérabilités et de priorisation des correctifs en temps réel.
+    *   **Rapid7 InsightVM** : Solution d'évaluation des vulnérabilités fournissant une visibilité en continu sur l'exposition et les menaces actives.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **Greenbone Community Edition (OpenVAS)** : Scanner de vulnérabilités open-source très complet pour évaluer les vulnérabilités de réseau local et de serveurs.
+    *   **Wazuh** : Outil open-source qui intègre un module de détection automatique des vulnérabilités logicielles en corrélant la liste des paquets installés sur les agents avec la base de données CVE officielle.
+
 ## 3. Ressources complémentaires
 
 *   **Sur IBM SkillsBuild** : Suivre le cours *"Incident Response Fundamentals"* (durée estimée : 1h30).
