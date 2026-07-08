@@ -12,13 +12,13 @@ Le projet est structuré selon l'arborescence standardisée suivante :
    /plans-de-seance/      A_S01_plan.md … A_S08_plan.md
    /supports-md/          A_S01_support.md … A_S08_support.md
    /slides/               A_S01_slides.pptx (+ A_S01_slides_spec.md)
-   /projet/               A_capstone.md, A_grille_notation.md
+   /projet/               A_capstone.md
    /outils/               A_banque_quiz.md, A_scripts_demo.md, A_messages.md
 /parcours-B-20sessions/
    /plans-de-seance/      B_S01_plan.md … B_S20_plan.md
    /supports-md/          B_S01_support.md … B_S20_support.md
    /slides/               B_S01_slides.pptx (+ B_S01_slides_spec.md)
-   /projet/               B_capstone.md, B_miniprojets.md, B_grille_notation.md
+   /projet/               B_capstone.md, B_miniprojets.md
    /outils/               B_banque_quiz.md, B_scripts_demo.md, B_messages.md
 /00_MANIFESTE.md          (Index global + état d'avancement + glossaire commun)
 ```
@@ -29,7 +29,7 @@ Toutes les productions respecteront les conventions de nommage `<Parcours>_S<NN>
 
 ## 2. Index & Cartographie des Parcours
 
-### 2.1 Parcours A — 8 sessions (Fondamentaux + Capstone)
+### 2.1 Parcours A — 8 sessions (Fondamentaux + Atelier d'Audit Final)
 *Cible : Certification de type « Cybersecurity Fundamentals ». Charge self-paced estimée : 1h30 à 3h par session (~12h à 24h au total).*
 
 * **A1 — Découverte de la cybersécurité & paysage des menaces**
@@ -60,8 +60,8 @@ Toutes les productions respecteront les conventions de nommage `<Parcours>_S<NN>
   * **Objectifs clés** : Dérouler les phases du cycle de réponse sur incident ; analyser des traces/logs simples ; expliquer le cadre éthique et légal du piratage éthique ; concevoir un plan d'urgence de communication post-incident.
   * **Prérequis** : A6.
   * **Lien de progression** : Clôture le cycle opérationnel d'apprentissage (prévenir, détecter, réagir, analyser) et prépare le projet de fin d'études.
-* **A8 — Projet capstone — restitution & synthèse**
-  * **Objectifs clés** : Réaliser une évaluation de sécurité simplifiée pour une PME ; prioriser un plan de remédiation pragmatique ; présenter les recommandations à un comité de direction fictif ; évaluer le projet de ses pairs.
+* **A8 — Grand Atelier d'Audit & Synthèse**
+  * **Objectifs clés** : Résoudre l'Atelier d'Audit Interactif MedDistri en direct ; évaluer la posture et la résilience cyber de la PME ; décider collectivement des priorités de remédiation ; valider les acquis du parcours.
   * **Prérequis** : A1 à A7.
   * **Lien de progression** : Consolidateur final du parcours évaluant l'autonomie et l'intégration des compétences.
 
@@ -156,9 +156,9 @@ Toutes les productions respecteront les conventions de nommage `<Parcours>_S<NN>
   * **Prérequis** : B17, B18.
   * **Lien** : Clôture le module opérations. Prépare à l'exercice d'intégration global (B20).
 
-#### Module F — Capstone (S20)
-* **B20 : Projet capstone — restitution & clôture**
-  * **Objectifs** : Intégrer les compétences acquises (risques, réseau, cloud, logs, réponse) sur un cas d'ETI fictive ; concevoir une stratégie globale de défense ; soutenir ses préconisations devant un jury technique et exécutif ; évaluer les travaux de ses pairs.
+#### Module F — Grand Atelier d'Audit (S20)
+* **B20 : Grand Atelier d'Audit & Clôture**
+  * **Objectifs** : Résoudre collectivement le cas d'audit MedDistri et simuler une gestion de crise Ransomware en direct ; décider des actions de remédiation par des votes interactifs ; valider la fin de formation.
   * **Prérequis** : B1 à B19.
   * **Lien** : Consolidateur et évaluateur final du certificat de formation.
 
@@ -184,7 +184,7 @@ Toutes les productions respecteront les conventions de nommage `<Parcours>_S<NN>
 | **A6** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
 | **A7** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
 | **A8** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **Projet** | `A_capstone.md` : 🟡 Produit (En validation) | `A_grille_notation.md` : 🟡 Produit (En validation) | - | - |
+| **Projet** | `A_capstone.md` : 🟡 Produit (En validation) | - | - | - |
 | **Outils** | `A_banque_quiz.md` : 🟡 Produit (En validation) | `A_scripts_demo.md` : 🟡 Produit (En validation) | `A_messages.md` : 🟡 Produit (En validation) | - |
 
 ### 3.3 Livrables Parcours B (20 sessions)
@@ -210,7 +210,7 @@ Toutes les productions respecteront les conventions de nommage `<Parcours>_S<NN>
 | **B18** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
 | **B19** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
 | **B20** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **Projet** | `B_capstone.md` : 🟡 Produit (En validation) | `B_miniprojets.md` : 🟡 Produit (En validation) | `B_grille_notation.md` : 🟡 Produit (En validation) | - |
+| **Projet** | `B_capstone.md` : 🟡 Produit (En validation) | `B_miniprojets.md` : 🟡 Produit (En validation) | - | - |
 | **Outils** | `B_banque_quiz.md` : 🟡 Produit (En validation) | `B_scripts_demo.md` : 🟡 Produit (En validation) | `B_messages.md` : 🟡 Produit (En validation) | - |
 
 ---

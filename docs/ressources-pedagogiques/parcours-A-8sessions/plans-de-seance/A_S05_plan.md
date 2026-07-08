@@ -45,8 +45,8 @@ Module : GRC & Vie Privée  |  Durée : 90 min  |  Parcours : A 8 sessions
 - "Si un collaborateur envoie par erreur la feuille de paie de toute l'entreprise à tous les employés, quelles règles du RGPD sont violées ?" (Focus confidentialité & minimisation des données)
 - "Pourquoi la mise en conformité au RGPD est-elle considérée comme un levier de confiance commerciale et pas seulement comme une contrainte légale ?" (Focus valeur business de la conformité)
 
-## Articulation avec le projet
-- Cette session fournit les fondations organisationnelles et réglementaires pour le **Projet Capstone**. Les apprenants devront insérer une analyse de risques initiale de la PME et vérifier sa conformité RGPD de base (droits d'accès des clients, formulaires de collecte de données, registre de traitements).
+## Articulation avec l'atelier de fin de parcours
+- Cette session fournit les notions de conformité et de traitement de risques pour l'Atelier d'Audit Interactif MedDistri, permettant d'adopter une posture de conseil sur le RGPD et l'allocation du budget cyber.
 
 ## Self-paced APRÈS la séance (~90 min) & évaluation formative
 - Suivre le cours en ligne d'introduction à la protection des données personnelles (RGPD) ou le module équivalent d'un organisme national (type CNIL en France).

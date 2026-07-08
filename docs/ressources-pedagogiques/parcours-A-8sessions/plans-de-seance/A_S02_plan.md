@@ -44,8 +44,8 @@ Module : Menaces  |  Durée : 90 min  |  Parcours : A 8 sessions
 - "Les logiciels antivirus suffisent-ils à bloquer une cyberattaque si un collaborateur donne volontairement son mot de passe au téléphone ?" (Focus facteur humain)
 - "Pourquoi la phase de reconnaissance (1ère étape de la Kill Chain) est-elle essentielle pour que l'attaquant réussisse son ingénierie sociale ?" (Focus lien de progression)
 
-## Articulation avec le projet
-- Dans le **Projet Capstone**, les apprenants devront analyser l'exposition des collaborateurs de la PME aux attaques d'ingénierie sociale et proposer des protocoles organisationnels (double validation, procédures de vérification) pour contrer ces vecteurs d'entrée.
+## Articulation avec l'atelier de fin de parcours
+- Cette session fournit les briques sur le facteur humain pour l'Atelier d'Audit Interactif MedDistri. Les apprenants y mobilisent les contre-mesures face à l'ingénierie sociale pour conseiller la directrice.
 
 ## Self-paced APRÈS la séance (~120 min) & évaluation formative
 - Suivre le module interactif sur la sensibilisation à la sécurité et à la détection de l'ingénierie sociale.

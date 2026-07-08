@@ -45,8 +45,8 @@ Module : Réseaux & Systèmes  |  Durée : 90 min  |  Parcours : A 8 sessions
 - "Quelle analogie du monde réel pourriez-vous utiliser pour expliquer la différence entre un pare-feu (filtrage) et un VPN (tunnel sécurisé) à un non-technicien ?" (Focus vulgarisation)
 - "En cas d'attaque par ransomware sur le poste de l'accueil, comment la segmentation du réseau protège-t-elle le serveur de base de données de production ?" (Focus confinement de la menace)
 
-## Articulation avec le projet
-- Les livrables de cette session fournissent la brique "Réseau" du **Projet Capstone**. Les apprenants devront concevoir et justifier le plan d'architecture réseau cible sécurisé pour la PME fictive afin de remédier à ses vulnérabilités d'infrastructure actuelles.
+## Articulation avec l'atelier de fin de parcours
+- Les concepts de cette session fournissent la base réseau de l'Atelier d'Audit Interactif MedDistri. Les apprenants y décident de la meilleure architecture de filtrage et de segmentation à adopter pour isoler les serveurs.
 
 ## Self-paced APRÈS la séance (~90 min) & évaluation formative
 - Suivre le module d'auto-formation sur la sécurité des réseaux (pare-feux et VPN).

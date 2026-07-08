@@ -7,9 +7,9 @@ Parcours : B 20 sessions  |  Module : E — Opérations, détection & réponse  
 - **Type** : titre
 - **Points clés (bullets)** :
   - SIEM, journalisation & détection
-  - Centralisation des logs, règles de corrélation, et Mini-projet 4
+  - Centralisation des logs, règles de corrélation et Atelier de Synthèse Pratique 4
   - Parcours B — Session B17
-- **Notes orateur** : Bienvenue dans notre dix-septième session. Aujourd'hui, nous allons plonger au cœur technique de la surveillance : le SIEM et la journalisation. Nous allons comprendre comment collecter des journaux d'événements, comment les corréler pour détecter des attaques complexes et comment analyser des lignes de logs en console. Enfin, nous lancerons le Mini-projet 4, notre dernier mini-projet avant le Capstone.
+- **Notes orateur** : Bienvenue dans notre dix-septième session. Aujourd'hui, nous allons plonger au cœur technique de la surveillance : le SIEM et la journalisation. Nous allons comprendre comment collecter des journaux d'événements, comment les corréler pour détecter des attaques complexes et comment analyser des lignes de logs en console. Enfin, nous lancerons notre quatrième Atelier de Synthèse Pratique.
 - **Visuel suggéré** : Des flux lumineux de logs numériques en lignes de texte vertes convergeant depuis des serveurs virtuels vers une console centrale d'analyse 3D de sécurité.
   - **alt-text** : Rapprochement et centralisation des flux de journaux vers un concentrateur sécurisé.
 - **Élément interactif** : Question sondage : "Qui a déjà ouvert l'observateur d'événements Windows ou lu les fichiers de logs sous /var/log/ sous Linux ?"
@@ -22,9 +22,9 @@ Parcours : B 20 sessions  |  Module : E — Opérations, détection & réponse  
   - Expliquer le fonctionnement d'un SIEM (centralisation, normalisation, corrélation).
   - Identifier les logs système et applicatifs clés pour la sécurité d'une infrastructure.
   - Analyser et interpréter des lignes de logs pour isoler une attaque de type bruteforce.
-  - Extraire et analyser des informations de logs pour le **Mini-projet 4**.
-  - Sommaire : Principes du SIEM (20 min), Les Logs clés de sécurité (20 min), Analyse pratique de logs (20 min), Lancement du Mini-projet 4 (20 min), Quiz (10 min).
-- **Notes orateur** : Nous étudierons en premier lieu l'architecture et les principes de fonctionnement d'un SIEM. Nous verrons ensuite quels sont les logs à collecter en priorité. Nous passerons à de l'analyse pratique en console pour repérer une attaque par force brute, avant d'expliquer les livrables du Mini-projet 4 et de réaliser le quiz de validation.
+  - Extraire et analyser des informations de logs pour l'Atelier de Synthèse Pratique 4.
+  - Sommaire : Principes du SIEM (20 min), Les Logs clés de sécurité (20 min), Analyse pratique de logs (20 min), Atelier de Synthèse Pratique 4 (20 min), Quiz (10 min).
+- **Notes orateur** : Nous étudierons en premier lieu l'architecture et les principes de fonctionnement d'un SIEM. Nous verrons ensuite quels sont les logs à collecter en priorité. Nous passerons à de l'analyse pratique en console pour repérer une attaque par force brute, avant de mener notre quatrième Atelier de Synthèse Pratique et de réaliser le quiz de validation.
 - **Visuel suggéré** : Planning de la séance minuté sous forme d'un tableau à droite, avec les compétences cibles illustrées à gauche par des icônes.
   - **alt-text** : Tableau d'agenda minuté de la session synchrone d'analyse de logs.
 
@@ -52,7 +52,7 @@ Parcours : B 20 sessions  |  Module : E — Opérations, détection & réponse  
   - Exemple de règle de corrélation simple :
     - Événement A : 10 échecs de connexion SSH sur un serveur en moins de 30 secondes.
     - Événement B : 1 connexion réussie sur ce même serveur depuis la même adresse IP dans la foulée.
-    - **Règle** : Si Événement A + Événement B $\rightarrow$ Alerte : Attaque Brute Force Réussie !
+    - **Règle** : Si Événement A + Événement B -> Alerte : Attaque Brute Force Réussie !
 - **Notes orateur** : Sans moteur de corrélation, un échec de connexion est un non-événement. Des utilisateurs qui se trompent de mot de passe, cela arrive tout le temps. Mais si le SIEM détecte 50 échecs de connexion sur des comptes différents depuis la même adresse IP externe en 2 minutes, le moteur de corrélation comprend qu'il s'agit d'un scan de force brute et génère une alerte d'urgence.
 - **Visuel suggéré** : Une équation visuelle liant des icônes d'échecs répétés (cadenas rouges) suivis d'un succès (cadenas vert), pointant vers une sirène de sécurité d'alerte rouge.
   - **alt-text** : Exemple logique d'une règle de corrélation d'événements.
@@ -107,35 +107,35 @@ Parcours : B 20 sessions  |  Module : E — Opérations, détection & réponse  
 
 ---
 
-### Slide 8 — Présentation du Mini-projet 4 : Analyse de logs chez EcoLog
+### Slide 8 — Présentation de l'Atelier de Synthèse 4 : Analyse de logs chez MedDistri
 - **Type** : étude de cas
 - **Points clés (bullets)** :
-  - **Contexte** : EcoLog a mis en place un concentrateur de logs. Cette nuit, le SOC a levé une alerte suspecte d'élévation de privilèges sur le serveur de fichiers de production.
-  - **Objectif** : Analyser l'extrait de logs fourni pour reconstituer le scénario de l'attaque.
-- **Notes orateur** : C'est le moment d'aborder le Mini-projet 4. Vous allez recevoir un fichier de logs d'EcoLog correspondant à un incident survenu la nuit dernière. Votre rôle en tant qu'analyste de sécurité est de mener l'enquête : comprendre comment le pirate s'est connecté, quel compte il a compromis et ce qu'il a tenté de faire sur le serveur.
-- **Visuel suggéré** : Silhouette d'un détective numérique observant des lignes de logs à la loupe avec le logo d'EcoLog en arrière-plan.
-  - **alt-text** : Fiche d'introduction du Mini-projet 4 d'analyse forensique de logs.
+  - **Contexte** : MedDistri a mis en place un concentrateur de logs. Cette nuit, le pare-feu applicatif a levé une alerte suspecte d'injection SQL sur l'un de ses formulaires.
+  - **Objectif** : Analyser collectivement l'extrait de logs fourni pour valider l'impact et la réussite de la tentative.
+- **Notes orateur** : C'est le moment d'aborder notre quatrième Atelier de Synthèse Pratique. Nous allons analyser à l'écran un extrait de logs de MedDistri correspondant à un incident suspect de force brute SQL. Notre rôle est de mener l'enquête collectivement et de répondre aux questions de détection.
+- **Visuel suggéré** : Silhouette d'un détective numérique observant des lignes de logs à la loupe avec le logo de MedDistri en arrière-plan.
+  - **alt-text** : Fiche d'introduction de l'Atelier de Synthèse Pratique 4 d'analyse de logs.
 
 ---
 
-### Slide 9 — Livrables attendus pour le Mini-projet 4
+### Slide 9 — Démarche d'analyse pour l'Atelier de Synthèse 4
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - Votre rapport d'analyse d'incident doit détailler :
-    - 1. **La chronologie précise de l'attaque** (Date, heure, minutes de chaque événement clé).
-    - 2. **Le vecteur d'entrée et la méthode de compromission** (ex: force brute, exploitation de faille).
-    - 3. **L'évaluation de l'impact** (Quels fichiers ont été accédés ou modifiés ?).
-    - 4. **Trois recommandations de sécurité immédiates** pour empêcher que cette attaque ne se reproduise chez EcoLog.
-- **Notes orateur** : Ce mini-projet va vous initier à la rédaction de rapports d'incident. Vous devez livrer une frise chronologique précise des événements, expliquer comment l'attaquant s'est introduit, mesurer l'étendue des dégâts sur les fichiers d'EcoLog et proposer trois mesures techniques concrètes pour bloquer cette faille.
-- **Visuel suggéré** : Icône de rapport d'audit tamponné "Résolu" avec la liste ordonnée des 4 sections attendues dans le livrable.
-  - **alt-text** : Plan de rédaction et livrables requis pour le Mini-projet 4.
+  - Notre analyse collective de logs doit identifier :
+    - 1. **La chronologie précise de la tentative** (Heures et secondes de chaque requête).
+    - 2. **Le vecteur d'attaque et la méthode de compromission** (ex: injection SQL).
+    - 3. **Le code statut de retour HTTP** (Déterminer si la requête a abouti ou a été bloquée).
+    - 4. **Deux recommandations de sécurité immédiates** pour remédier au problème applicatif et bloquer l'IP source.
+- **Notes orateur** : Cet atelier va nous initier à la lecture rapide et à l'interprétation de logs réels. Nous allons déterminer en direct l'adresse IP de l'attaquant, le succès ou l'échec de la tentative en fonction du code retour HTTP, et proposer des mesures immédiates à prendre sur le pare-feu applicatif.
+- **Visuel suggéré** : Icône d'analyse de logs avec affichage des questions clés à se poser devant une ligne brute.
+  - **alt-text** : Méthodologie d'analyse de logs d'incident.
 
 ---
 
-### Slide 10 — Atelier de lecture de logs en groupe
+### Slide 10 — Exercice de lecture de logs collectifs
 - **Type** : étude de cas
 - **Points clés (bullets)** :
-  - En groupes de 3 ou 4 apprenants (durée : 15 min).
+  - En plénière (durée : 15 min).
   - **Exercice** : Analyser les lignes de logs suivantes et répondre :
     - `10:05:12 - Firewall blocked traffic from 198.51.100.12 to Port 80`
     - `10:05:14 - Firewall blocked traffic from 198.51.100.12 to Port 443`
@@ -144,7 +144,7 @@ Parcours : B 20 sessions  |  Module : E — Opérations, détection & réponse  
 - **Notes orateur** : Commençons par un entraînement collectif. Regardez ces trois lignes de logs réseau issues de notre pare-feu. Une même adresse IP externe tente de se connecter successivement à différents ports fermés de notre entreprise. Que fait ce système distant à votre avis ? Oui, il réalise un scan de ports pour chercher une entrée.
 - **Visuel suggéré** : Tableau des événements du pare-feu avec l'IP externe surlignée en jaune pour faire ressortir la répétition.
   - **alt-text** : Exercice pratique de détection de scan de ports à partir de logs pare-feu.
-- **Élément interactif** : Analyse participative en équipe avec mise en commun orale.
+- **Élément interactif** : Analyse participative collective avec réponses dans le chat.
 
 ---
 
@@ -164,10 +164,10 @@ Parcours : B 20 sessions  |  Module : E — Opérations, détection & réponse  
 ### Slide 12 — Conclusion & Travail autonome
 - **Type** : récap
 - **Points clés (bullets)** :
-  - **Résumé** : SIEM (collecte, normalisation, corrélation), ciblage des logs d'intérêt, lecture de logs (Qui, Quand, Où, Quoi), et Mini-projet 4.
-  - **Travail personnel** : Rédaction et dépôt de votre rapport d'analyse d'incident (Mini-projet 4).
+  - **Résumé** : SIEM (collecte, normalisation, corrélation), ciblage des logs d'intérêt, lecture de logs (Qui, Quand, Où, Quoi), et Atelier de Synthèse 4.
+  - **Travail personnel** : S'entraîner à lire des logs d'authentification sur des VM locales.
   - **IBM SkillsBuild** : Suivre le cours *"Security Monitoring and Log Analysis"* (~1h30).
   - Prochaine session : *Gestion des vulnérabilités (B18)*.
-- **Notes orateur** : Nous avons posé les bases de l'analyse de logs ! C'est maintenant à vous de jouer pour rédiger le rapport d'incident d'EcoLog du Mini-projet 4. N'oubliez pas de suivre le module SkillsBuild associé. La semaine prochaine, nous verrons comment identifier et corriger les vulnérabilités de nos systèmes avant que les attaquants ne les exploitent. Bonne semaine !
+- **Notes orateur** : Nous avons posé les bases de l'analyse de logs ! Validez votre quiz de synthèse et continuez à vous exercer sur votre temps libre en lisant des logs système. N'oubliez pas de suivre le module SkillsBuild associé. La semaine prochaine, nous verrons comment identifier et corriger les vulnérabilités de nos systèmes avant que les attaquants ne les exploitent. Bonne semaine !
 - **Visuel suggéré** : Badge d'achèvement de cours d'IBM SkillsBuild pour la surveillance et l'analyse de logs.
   - **alt-text** : Badge de réussite du cours Log Analysis d'IBM SkillsBuild.

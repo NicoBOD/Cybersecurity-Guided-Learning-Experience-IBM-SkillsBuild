@@ -44,8 +44,8 @@ Module : Cloud, Données & Identités  |  Durée : 90 min  |  Parcours : A 8 ses
 - "Pourquoi n'est-il pas recommandé de sauvegarder les fichiers de travail d'un ordinateur de bureau uniquement sur un disque dur externe branché en permanence en USB sur cette même machine ?" (Focus résilience face aux rançongiciels et règle 3-2-1)
 - "Quelle est la différence concrète entre chiffrer un e-mail en transit (TLS) et chiffrer un fichier de base de données au repos sur un disque dur ?" (Focus transit vs repos)
 
-## Articulation avec le projet
-- Cette session apporte la dimension "Identité & Données" du **Projet Capstone**. Les apprenants devront analyser l'architecture de stockage cloud de la PME et concevoir les recommandations adéquates : déploiement d'un gestionnaire de mots de passe, activation obligatoire de la MFA sur les comptes d'administration, définition d'une matrice de droits logiques simplifiée et élaboration d'une politique de sauvegarde 3-2-1.
+## Articulation avec l'atelier de fin de parcours
+- Cette session apporte la dimension "Identité & Données" de l'Atelier d'Audit Interactif MedDistri. Les notions de MFA, VPN et de règle de sauvegarde 3-2-1 y sont testées lors des choix décisionnels.
 
 ## Self-paced APRÈS la séance (~90 min) & évaluation formative
 - Suivre le module sur la gestion des identités, le contrôle des accès dans les infrastructures cloud et la protection des données.

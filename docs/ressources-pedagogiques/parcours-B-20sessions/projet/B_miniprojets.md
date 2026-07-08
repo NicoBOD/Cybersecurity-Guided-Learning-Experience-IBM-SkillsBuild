@@ -1,102 +1,60 @@
-# Guide des Mini-projets intermédiaires — Parcours B
-Parcours : B 20 sessions  |  Module : Projets d'application pratiques  |  Format : Énoncés et consignes
-
-Les mini-projets sont des travaux pratiques réalisés en équipe tout au long de la formation. Ils permettent d'appliquer les connaissances théoriques acquises à la fin de chaque module thématique et servent de jalons pour la construction du livrable final (le Projet Capstone).
+# Ateliers de Synthèse Pratiques (Visioconférence)
+Parcours : B 20 sessions  |  Module : Consolidation Pratique  |  Format : Ateliers Collectifs Synchrone (Livestorm)
 
 ---
 
-## Sommaire des mini-projets
-1.  **Mini-projet 1** (Session B08) : Conception d'une architecture réseau segmentée et sécurisée.
-2.  **Mini-projet 2** (Session B12) : Conception d'un plan de protection des données (M365, BitLocker, Sauvegardes).
-3.  **Mini-projet 3** (Session B15) : Analyse de risques simplifiée & Rédaction d'une ébauche de PSSI.
-4.  **Mini-projet 4** (Session B17) : Analyse de logs et détection d'une attaque web.
+## Fonctionnement des Ateliers de Synthèse
+Dans le cadre de cette formation en visioconférence à forte audience, les apprenants ne réalisent pas de projets écrits individuels hors session. Le mentor anime des **Ateliers de Synthèse Pratiques** répartis tout au long du parcours. Ces ateliers d'une durée de 30 minutes remplacent les anciens mini-projets. 
+
+Le mentor présente une problématique concrète sur son écran (un cas technique, un log, un schéma), et le public collabore via le **Chat** et les **Sondages (Polls)** Livestorm pour résoudre le problème.
 
 ---
 
-## Mini-projet 1 — Conception d'une architecture réseau sécurisée
-*   **Jalon** : Fin du Module B (Systèmes & réseaux — Session B08)
-*   **Objectifs pédagogiques** :
-    *   Concevoir un schéma de réseau cloisonné et sécurisé pour une PME.
-    *   Définir les flux autorisés et interdits entre différentes zones réseau à l'aide d'un pare-feu.
-    *   Proposer une solution d'accès distant sécurisé pour les utilisateurs nomades (VPN).
-
-### Énoncé & Consignes :
-À partir du contexte de la PME **MedDistri**, proposez une nouvelle architecture réseau sous forme de schéma conceptuel (Mermaid ou outil de dessin) résolvant le problème de réseau local plat.
-Votre proposition doit cloisonner :
-
-1.  Le réseau interne administratif et comptable (LAN Administratif).
-2.  Le réseau de l'entrepôt et des logisticiens (LAN Logistique).
-3.  Un réseau d'accueil pour les smartphones des clients ou visiteurs (LAN Visiteurs).
-4.  Une zone démilitarisée (DMZ) contenant les serveurs de fichiers accessibles depuis l'extérieur.
-
-### Livrables attendus :
-1.  **Le Schéma Réseau Cible** : Une modélisation claire montrant l'emplacement du pare-feu, des commutateurs (switches), des bornes Wi-Fi, des serveurs et des postes clients de chaque zone.
-2.  **La Table de Filtrage Pare-feu (Matrice des flux)** : Un tableau spécifiant : Source, Destination, Protocole, Port, Action (Autoriser/Bloquer) et la justification métier de chaque règle.
-3.  **Une note technique (1 page)** décrivant la technologie VPN recommandée pour les 15 commerciaux nomades et le protocole de chiffrement associé.
+## Atelier de Synthèse 1 (Session B08) — Architecture & Segmentation Réseau
+*   **Objectif** : Valider l'isolement du réseau de la PME MedDistri à la suite du module réseau.
+*   **Méthodologie sur Livestorm** :
+    1.  *Présentation* : Le mentor affiche un schéma de réseau local à plat (sans routeur ni pare-feu).
+    2.  *Sondage* : Quelle est la meilleure position pour installer la DMZ hébergeant le serveur web ?
+        *   A) Directement branché sur le commutateur des postes de travail administratifs.
+        *   B) Connecté à un port dédié du pare-feu avec des règles de filtrage étanches *(Bonne réponse)*.
+    3.  *Discussion* : Le mentor dessine le schéma cible sur son tableau blanc interactif et définit la table de flux pare-feu à partir des suggestions écrites par les apprenants dans le chat.
 
 ---
 
-## Mini-projet 2 — Plan de protection des données
-*   **Jalon** : Fin du Module C (Identités, cloud & données — Session B12)
-*   **Objectifs pédagogiques** :
-    *   Identifier et classifier les données sensibles d'une organisation.
-    *   Concevoir une politique de protection des terminaux mobiles et des données locales.
-    *   Structurer une politique de sauvegarde conforme à la règle 3-2-1.
-
-### Énoncé & Consignes :
-Concevez le plan de protection des données de MedDistri. Vous devez identifier les différents types de données de l'entreprise (données clients, brevets, RH, facturation), leur attribuer un niveau de sensibilité et proposer des solutions pratiques de sécurisation pour les données stockées localement et sur le Cloud Microsoft 365.
-
-### Livrables attendus :
-1.  **La Table de Classification des Données** : Classification en 3 niveaux (Publique, Interne, Confidentielle) avec les règles de stockage et d'accès correspondantes.
-2.  **Plan de durcissement des identités (Microsoft 365)** : Description des règles de complexité des mots de passe et du protocole MFA à déployer pour les commerciaux.
-3.  **Plan de durcissement des terminaux (Postes nomades)** : Recommandations pour le chiffrement des disques durs (ex. BitLocker) et la gestion des privilèges (limitation du compte administrateur local).
-4.  **Schéma de sauvegarde 3-2-1** : Modélisation indiquant précisément les 3 copies, les 2 supports différents et la copie externe (hors ligne/immuable).
+## Atelier de Synthèse 2 (Session B12) — Plan de durcissement et conformité
+*   **Objectif** : Concevoir la politique de durcissement des accès et des terminaux d'une PME.
+*   **Méthodologie sur Livestorm** :
+    1.  *Présentation* : Le mentor liste les contraintes logistiques (employés en déplacement, accès cloud, mots de passe enregistrés sur navigateur).
+    2.  *Sondage 1 (MFA)* : Quelle méthode de MFA préconisez-vous pour les 15 commerciaux nomades ?
+        *   A) Authentification par SMS.
+        *   B) Application d'authentification (ex. Microsoft Authenticator) ou clé physique FIDO2 *(Bonne réponse)*.
+    3.  *Sondage 2 (Classification)* : Les fiches de paie stockées sur OneDrive doivent être classées :
+        *   A) Internes.
+        *   B) Confidentielles *(Bonne réponse)*.
+    4.  *Discussion* : Le mentor rédige en direct la liste des 5 règles de sécurité de base d'accès cloud en fonction des votes et des commentaires des participants.
 
 ---
 
-## Mini-projet 3 — Évaluation des risques & Ébauche de PSSI
-*   **Jalon** : Fin du Module D (Gouvernance, risques & conformité — Session B15)
-*   **Objectifs pédagogiques** :
-    *   Identifier, évaluer et coter des risques cyber à l'aide d'une matrice qualitative.
-    *   Rédiger des règles de sécurité claires et contraignantes sous forme de PSSI.
-    *   Prendre en compte les contraintes réglementaires (RGPD) et métiers de l'organisation.
-
-### Énoncé & Consignes :
-Réalisez une analyse de risques simplifiée pour MedDistri en sélectionnant 3 scénarios de menaces critiques (ex. Ransomware chiffrant les données de santé, Vol d'un ordinateur de commercial, Usurpation d'identité d'un dirigeant pour fraude au virement). Estimez la vraisemblance ($V$) et l'impact ($I$) sur une échelle de 1 à 4 pour calculer la criticité brute ($C$). Rédigez ensuite une charte de sécurité (PSSI) de 5 règles clés pour les salariés de l'entreprise.
-
-### Livrables attendus :
-1.  **La Matrice de Cotation des Risques (Tableau)** : Description du scénario (Menace + Vulnérabilité), Cotation Brute ($V \times I$), Mesures de traitement proposées, et Cotation Résiduelle estimée.
-2.  **L'Ébauche de la PSSI (5 Règles d'Or)** : Rédigez 5 directives de sécurité rédigées de manière impérative (ex. *"Tout utilisateur doit..."*) couvrant l'usage des mots de passe, le télétravail, la gestion des emails suspects, la sécurité physique des bureaux, et le signalement des anomalies au technicien.
-3.  **Note de conformité RGPD** : Liste des 3 actions d'urgence à mener pour que le fichier clients contenant des historiques de commandes de matériel médical respecte le RGPD.
+## Atelier de Synthèse 3 (Session B15) — Analyse de Risques & Matrice 4x4
+*   **Objectif** : Identifier et évaluer 3 menaces critiques pour MedDistri.
+*   **Méthodologie sur Livestorm** :
+    1.  *Présentation* : Le mentor présente les scénarios de menace (Ransomware, Vol d'un ordinateur de commercial, Usurpation d'identité pour fraude au virement).
+    2.  *Sondage (Côtation)* : Pour le scénario "Ransomware sur la base de données comptables", comment évaluez-vous l'impact sur l'activité ?
+        *   A) Faible (1) - B) Moyen (2) - C) Majeur (3) - D) Critique (4) *(Majeur ou Critique selon le débat)*.
+    3.  *Discussion* : Les apprenants justifient leur choix dans le chat (ex. *« C'est critique car la comptabilité bloque les salaires et la facturation »*). Le mentor remplit la matrice 4x4 de risques en direct en synthétisant l'avis général.
 
 ---
 
-## Mini-projet 4 — Analyse de logs et détection d'une attaque web
-*   **Jalon** : Module E (Opérations, détection & réponse — Session B17)
-*   **Objectifs pédagogiques** :
-    *   Lire et interpréter les champs d'un fichier de logs serveur (Timestamp, IP, Requête HTTP, Code Statut, User-Agent).
-    *   Reconnaître les signatures typiques d'une attaque web (Injection SQL, Traversée de répertoires).
-    *   Proposer des contre-mesures techniques immédiates pour bloquer l'attaquant.
-
-### Énoncé & Consignes :
-Le serveur de commandes en ligne de MedDistri a subi des requêtes suspectes. En tant qu'analyste SOC, on vous transmet un extrait de 10 lignes du fichier de logs Apache (`access.log`). Vous devez analyser ce fichier pour identifier la nature de l'attaque, isoler l'adresse IP de la machine attaquante et formuler des recommandations techniques d'urgence pour le pare-feu et le site web.
-
-### Livrables attendus :
-1.  **Rapport d'Analyse d'Incident (1 page)** :
-    *   *Chronologie* : Horodatage précis du début et de la fin de l'attaque suspectée.
-    *   *Identification de la menace* : Identification de l'adresse IP attaquante, de la faille ciblée et du succès ou de l'échec de la tentative (justifié par les codes de statut HTTP).
-    *   *Signature technique* : Extraction de la ligne de log exacte montrant l'injection de code malveillant.
-2.  **Plan de blocage immédiat** : Règle de pare-feu d'urgence à appliquer pour bannir l'attaquant et mesures correctives à court terme sur le code de l'application web.
-
----
-
-## Alternative d'animation interactive pour Webinaire (Livestorm)
-
-Si l'audience est nombreuse et passive, les mini-projets ne font pas l'objet d'un rendu individuel ou en équipe. Le mentor les anime sous forme de **démonstrations guidées par des sondages rapides (Option B)**.
-
-### Exemples d'animation pour chaque mini-projet :
-
-*   **Mini-projet 1 (Réseau sécurisé) :** Le mentor partage un schéma réseau plat à l'écran, puis lance un sondage demandant au public de voter pour les équipements à séparer en priorité. Le mentor dessine le schéma cible en direct au tableau blanc ou via un outil de modélisation (ex. Draw.io) à partir des résultats du vote.
-*   **Mini-projet 2 (Plan de protection) :** Le mentor présente un fichier Excel fictif de la comptabilité contenant des données bancaires et demande au public de classer cette donnée (Publique, Interne, Confidentielle) via un sondage. Il fait ensuite voter sur l'opportunité d'activer BitLocker sur un poste nomade de commercial.
-*   **Mini-projet 3 (Analyse de risques & PSSI) :** Le mentor anime un scénario d'EBIOS RM simplifié. Il affiche 3 scénarios (Ransomware, vol de portable, fraude au président) et demande au public de coter la Vraisemblance (1 à 4) de chacun à l'aide de sondages Livestorm successifs.
-*   **Mini-projet 4 (Analyse de logs) :** Le mentor partage 5 lignes de logs Apache à l'écran et met en surbrillance trois chaînes suspectes. Il lance un sondage pour demander au public de repérer laquelle représente une injection SQL, puis réalise la démo live de configuration de la règle de blocage sur le pare-feu.
+## Atelier de Synthèse 4 (Session B17) — Analyse de Logs & Détection
+*   **Objectif** : Lire et interpréter un extrait de fichier `access.log` Apache suspect.
+*   **Méthodologie sur Livestorm** :
+    1.  *Présentation* : Le mentor affiche un extrait de 5 lignes de logs web :
+        `192.168.1.50 - - [08/Jul/2026:21:00:15] "GET /product.php?id=1' OR 1=1 HTTP/1.1" 200 4522`
+    2.  *Sondage 1* : Quelle est l'attaque en cours de tentative dans ce log ?
+        *   A) Traversée de répertoire (Path Traversal).
+        *   B) Injection SQL (SQLi) *(Bonne réponse)*.
+        *   C) Déni de service (DDoS).
+    3.  *Sondage 2* : D'après le code statut HTTP `200`, la tentative a-t-elle potentiellement réussi ?
+        *   A) Oui, le serveur a répondu favorablement à la requête *(Bonne réponse)*.
+        *   B) Non, la ressource a été bloquée.
+    4.  *Discussion* : Le mentor explique les contre-mesures immédiates à prendre sur le pare-feu applicatif (WAF) pour bloquer l'IP `192.168.1.50` et assainir la requête SQL.

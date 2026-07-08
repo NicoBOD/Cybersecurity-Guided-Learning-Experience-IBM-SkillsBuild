@@ -5,7 +5,7 @@ Bienvenue sur le portail d'apprentissage guidé en cybersécurité, aligné avec
 Ce portail est conçu pour accompagner :
 
 *   **:material-account-tie: Les Mentors** dans la préparation, l'animation et l'évaluation des séances synchrones.
-*   **:material-account: Les Apprenants** dans l'acquisition de compétences clés à travers des supports de cours structurés, des quiz d'auto-évaluation et des projets pratiques (Mini-projets et Capstone).
+*   **:material-account: Les Apprenants** dans l'acquisition de compétences clés à travers des supports de cours structurés, des quiz d'auto-évaluation et des ateliers interactifs de synthèse.
 
 ---
 
@@ -31,7 +31,7 @@ Sélectionnez le parcours adapté à vos objectifs de formation pour accéder au
 
     **Approfondissement & Pratique**
 
-    Parcours technique complet (~30h synchrones) comprenant 4 mini-projets pratiques (réseau, pare-feu, OWASP, logs) et un audit final de PME.
+    Parcours technique complet (~30h synchrones) comprenant des ateliers de synthèse pratiques en direct et un grand audit interactif final de PME.
 
     [Accéder au Parcours B :octicons-arrow-right-24:](#parcours-b-approfondissement-pratique-operationnelle-20-sessions)
 
@@ -52,12 +52,11 @@ Ce parcours court se concentre sur les fondamentaux théoriques et les règles d
 *   **:material-folder: Module 3 : Gouvernance, Risques & Opérations** (Sessions A05 et A06)
     *   [A05 : Gouvernance, risque, conformité & vie privée](ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S05_support.md)
     *   [A06 : Opérations de sécurité & gestion des vulnérabilités](ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S06_support.md)
-*   **:material-folder: Module 4 : Réponse aux Incidents & Capstone** (Sessions A07 et A08)
+*   **:material-folder: Module 4 : Réponse aux Incidents & Synthèse** (Sessions A07 et A08)
     *   [A07 : Réponse aux incidents & introduction au forensics](ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S07_support.md)
-    *   [A08 : Projet capstone — restitution & synthèse](ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S08_support.md)
-*   **:material-trophy: Projet Capstone A** :
-    *   [Sujet du Projet Capstone A](ressources-pedagogiques/parcours-A-8sessions/projet/A_capstone.md)
-    *   [Grille d'évaluation et barème du Jury](ressources-pedagogiques/parcours-A-8sessions/projet/A_grille_notation.md)
+    *   [A08 : Grand Atelier d'Audit & Synthèse](ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S08_support.md)
+*   **:material-trophy: Atelier d'Audit A** :
+    *   [Atelier d'Audit Interactif MedDistri](ressources-pedagogiques/parcours-A-8sessions/projet/A_capstone.md)
 *   **:material-tools: Outils complémentaires** :
     *   [Banque de Quiz A](ressources-pedagogiques/parcours-A-8sessions/outils/A_banque_quiz.md) | [Scripts de Démos](ressources-pedagogiques/parcours-A-8sessions/outils/A_scripts_demo.md) | [Messages Asynchrones](ressources-pedagogiques/parcours-A-8sessions/outils/A_messages.md)
 
@@ -65,7 +64,7 @@ Ce parcours court se concentre sur les fondamentaux théoriques et les règles d
 
 ## :material-shield-lock: Parcours B : Approfondissement & Pratique Opérationnelle (20 Sessions)
 
-Ce parcours long est hautement technique et pratique. Il inclut 4 mini-projets pratiques intermédiaires et un projet d'audit complet de PME (Capstone B).
+Ce parcours long est hautement technique et pratique. Il inclut 4 ateliers de synthèse intermédiaires et un grand audit de PME interactif final.
 
 *   **:material-folder: Module 1 : Fondations & Posture** (Sessions B01 à B04)
     *   [B01 : Introduction à la cybersécurité & triade CIA](ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S01_support.md)
@@ -91,10 +90,9 @@ Ce parcours long est hautement technique et pratique. Il inclut 4 mini-projets p
     *   [B17 : Outils SIEM & Analyse de logs](ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S17_support.md)
     *   [B18 : Introduction à la réponse aux incidents](ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S18_support.md)
     *   [B19 : Simulation de crise cyber (Tabletop exercise)](ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S19_support.md)
-    *   [B20 : Soutenance finale & Clôture (Validation Capstone B)](ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S20_support.md)
-*   **:material-trophy: Mini-projets et Projet Capstone B** :
-    *   [Les 4 Mini-projets Pratiques (Réseau, Protection, Audit Web, Incident)](ressources-pedagogiques/parcours-B-20sessions/projet/B_miniprojets.md)
-    *   [Sujet du Projet Capstone B](ressources-pedagogiques/parcours-B-20sessions/projet/B_capstone.md)
-    *   [Grille d'évaluation et barème du Jury](ressources-pedagogiques/parcours-B-20sessions/projet/B_grille_notation.md)
+    *   [B20 : Grand Atelier d'Audit & Clôture](ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S20_support.md)
+*   **:material-trophy: Ateliers de Synthèse & Audit B** :
+    *   [Les 4 Ateliers de Synthèse Pratiques](ressources-pedagogiques/parcours-B-20sessions/projet/B_miniprojets.md)
+    *   [Grand Atelier d'Audit MedDistri (Avancé)](ressources-pedagogiques/parcours-B-20sessions/projet/B_capstone.md)
 *   **:material-tools: Outils complémentaires** :
     *   [Banque de Quiz B](ressources-pedagogiques/parcours-B-20sessions/outils/B_banque_quiz.md) | [Scripts de Démos Techniques](ressources-pedagogiques/parcours-B-20sessions/outils/B_scripts_demo.md) | [Messages Asynchrones](ressources-pedagogiques/parcours-B-20sessions/outils/B_messages.md)

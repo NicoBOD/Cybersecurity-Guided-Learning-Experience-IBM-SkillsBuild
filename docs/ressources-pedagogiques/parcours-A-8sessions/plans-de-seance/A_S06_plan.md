@@ -45,8 +45,8 @@ Module : SecOps & Vulnérabilités  |  Durée : 90 min  |  Parcours : A 8 sessio
 - "Pourquoi ne peut-on pas appliquer immédiatement et automatiquement tous les correctifs de sécurité sur tous les serveurs d'une entreprise à la minute où ils sortent ?" (Focus risques de régression applicative ou interruption d'activité)
 - "Dans l'analogie d'une maison, à quoi correspondent respectivement les journaux d'événements (logs) et le SIEM ?" (Focus vulgarisation SecOps)
 
-## Articulation avec le projet
-- Dans le **Projet Capstone**, les apprenants devront inclure une recommandation opérationnelle sur la mise en place d'une surveillance (externalisation vers un SOC managé) et la création d'un calendrier périodique de gestion des correctifs (patching) pour maintenir le niveau de sécurité à jour.
+## Articulation avec l'atelier de fin de parcours
+- Cette session apporte les notions de gestion de correctifs et de priorisation des vulnérabilités, utiles pour le calcul du score de résilience lors de l'Atelier d'Audit Interactif.
 
 ## Self-paced APRÈS la séance (~90 min) & évaluation formative
 - Suivre le module d'auto-formation en ligne sur l'évaluation des vulnérabilités logicielles (CVE et CVSS).

@@ -44,8 +44,8 @@ Module : Fondamentaux  |  Durée : 90 min  |  Parcours : A 8 sessions
 - "Si un pirate s'introduit dans un système de santé et modifie discrètement les groupes sanguins des dossiers de patients sans rien bloquer, quelles sont les conséquences ? Quel pilier est touché ?" (Focus Intégrité)
 - "Pourquoi un employé mécontent (menace interne) peut-il parfois causer plus de dégâts qu'un groupe de hackers externe ?" (Focus Acteurs de la menace)
 
-## Articulation avec le projet
-- Cette session pose les fondations du projet final **Capstone PME**. Les apprenants devront cartographier les actifs critiques de l'entreprise étudiée en s'appuyant sur la triade CIA et évaluer à quelles catégories d'attaquants elle est le plus exposée.
+## Articulation avec l'atelier de fin de parcours
+- Cette session pose les fondations de l'Atelier d'Audit Interactif MedDistri. Les notions de triade CIA et de profils d'attaquants y sont mobilisées pour évaluer la criticité des données et les menaces pesant sur la PME.
 
 ## Self-paced APRÈS la séance (~120 min) & évaluation formative
 - Suivre le module en ligne d'introduction à la cybersécurité (concepts de base et vocabulaire).

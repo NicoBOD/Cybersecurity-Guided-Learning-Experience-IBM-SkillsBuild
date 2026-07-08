@@ -1,20 +1,19 @@
-# Support de cours — Session 08 : Projet capstone — restitution & synthèse
-Parcours : A 8 sessions  |  Module : Consolidation & Soutenance  |  Niveau : Débutant / Intermédiaire
+# Support de cours — Session 08 : Grand Atelier d'Audit & Synthèse du Parcours
+Parcours : A 8 sessions  |  Module : Consolidation & Clôture  |  Niveau : Débutant / Intermédiaire
 
 ---
 
 !!! abstract "Résumé"
-    Ce document synthétise les concepts essentiels de la session. Vous y découvrirez notamment :
-    - Objectifs du Projet Capstone
-    - Structurer son rapport d'évaluation finale (Livrable écrit)
-    - Réussir son pitch de soutenance (Livrable oral)
-    L'objectif est de vous fournir les bases théoriques et pratiques nécessaires pour maîtriser ces notions.
+    Ce document synthétise les concepts essentiels de la session de clôture. Vous y découvrirez :
+    - La méthodologie de l'Atelier d'Audit Interactif MedDistri
+    - Les clés d'une synthèse managériale efficace pour un dirigeant
+    - La valorisation de vos compétences et la suite de votre apprentissage
 
 ---
 
 ## 1. Introduction
 
-Le Projet Capstone constitue l'aboutissement de votre parcours de formation de 8 sessions. C'est l'occasion de démontrer votre autonomie et de mettre en pratique l'ensemble des compétences acquises (triade CIA, analyse de menaces, sécurité des réseaux, cloud, RGPD, gestion des risques et réponse aux incidents) en vous confrontant à une étude de cas d'entreprise réelle ou fictive (une PME ayant besoin d'un audit de sécurité). Ce support de cours vous guidera dans la structuration de vos livrables finaux et dans la préparation de votre présentation orale. Vous y apprendrez à formaliser une feuille de route de remédiation cyber réaliste et à pitcher vos recommandations devant un jury d'évaluation (composé de votre mentor et de vos pairs). C'est la dernière étape pour décrocher votre badge numérique d'achèvement de formation.
+Cette huitième session constitue la clôture du parcours A. Elle remplace l'évaluation académique traditionnelle par un **Grand Atelier d'Audit Interactif** mené en direct en visioconférence. L'objectif est de mobiliser l'ensemble des connaissances acquises (fondations, sécurité réseau, protection des identités, gouvernance, RGPD et réponse aux incidents) pour résoudre collectivement l'étude de cas d'une PME vulnérable, **MedDistri**, et formaliser sa feuille de route de remédiation cyber.
 
 ---
 
@@ -23,92 +22,40 @@ Le Projet Capstone constitue l'aboutissement de votre parcours de formation de 8
 ### Approfondissement technique pour le mentor (Contenu dense)
 
 **1. Restitution et Synthèse Managériale**
-Expliquez aux apprenants comment vulgariser un concept cyber complexe pour convaincre un Comité de Direction. Le Comex ne comprend pas les adresses IP ou les CVSS, il comprend le risque financier, juridique et réputationnel. Montrez comment transformer "Vulnérabilité SQLi sur le serveur" en "Risque de vol de l'intégralité du fichier client entraînant une sanction CNIL de 500k€".
+Expliquez aux apprenants comment vulgariser un concept cyber complexe pour convaincre un Comité de Direction. Le Comex ne comprend pas le jargon technique, il comprend le risque financier, juridique et réputationnel. Montrez comment transformer "Vulnérabilité SQLi sur le serveur" en "Risque de vol de l'intégralité du fichier client entraînant une sanction CNIL de 500k€".
 
-**2. Audit des livrables (Capstone)**
-Prenez le temps d'auditer publiquement 2 ou 3 livrables de la salle. Félicitez la structure, pointez du doigt les oublis courants (absence de l'évaluation financière du risque, recommandations trop vagues comme "améliorer la sécurité").
+**2. Audit Interactif**
+Utilisez les sondages Livestorm pour engager l'auditoire. Laissez 1 minute par vote, puis débriefez en direct les choix faits par le public. Expliquez les forces et faiblesses de chaque option.
 
 **3. Plan de développement des compétences**
-Terminez la session (30 minutes) en orientant les apprenants vers l'avenir : quelles certifications viser (Sec+, CEH, CISSP) ? Comment configurer un laboratoire virtuel (TryHackMe, HackTheBox) pour continuer la pratique ? Comment suivre l'actualité cyber (veille technologique).
-
+Terminez la session (30 minutes) en orientant les apprenants vers l'avenir : quelles certifications viser (Sec+, CEH) ? Comment configurer un laboratoire virtuel (TryHackMe, HackTheBox) pour continuer la pratique ? Comment suivre l'actualité cyber (veille technologique).
 
 ---
 
 ### Glossaire
 
 *   **Audit de sécurité** — Évaluation méthodique de l'état de sécurité d'une organisation par rapport à des normes ou des règles de l'art.
-*   **Capstone** — Projet de synthèse final permettant d'appliquer l'ensemble des compétences théoriques et pratiques acquises à un cas concret.
 *   **Feuille de route de remédiation (Remediation Roadmap)** — Plan d'action chronologique et priorisé décrivant les étapes techniques et organisationnelles à accomplir pour corriger les vulnérabilités identifiées lors d'un audit.
 *   **Hygiène informatique (Cyber Hygiene)** — Ensemble des règles élémentaires de sécurité à appliquer de manière systématique pour minimiser la majorité des cybermenaces courantes (ex. mises à jour, mots de passe complexes, sauvegardes).
-*   **Plan de remédiation** — Document structuré détaillant la liste ordonnée des actions correctives à mener pour corriger les vulnérabilités identifiées.
-*   **Projet Capstone** — Un travail d'évaluation final synthétisant l'ensemble des compétences pratiques et théoriques développées tout au long d'un parcours d'apprentissage.
+*   **Plan de remédiation** — Document de synthèse ordonnant les mesures correctives techniques, physiques et organisationnelles pour corriger les failles.
 *   **Synthèse managériale (Executive Summary)** — Courte introduction synthétique (1 page max) rédigée à l'intention des dirigeants de l'entreprise, résumant les menaces majeures découvertes et le budget requis, exempte de jargon technique trop complexe.
 *   **Vulgarisation** — Traduction de concepts techniques complexes en termes simples et compréhensibles par des non-experts (ex. dirigeants business).
-*   **Évaluation par les pairs (Peer Review)** — Méthode d'évaluation collaborative où les apprenants analysent et notent de manière constructive le travail de leurs pairs à l'aide d'une grille de critères partagée.
 
 ---
 
-### 1. Objectifs du Projet Capstone
+### Concepts clés de l'Atelier MedDistri
 
-!!! info "À retenir"
-    La maîtrise de ces concepts est fondamentale pour comprendre les enjeux pratiques de ce module.
+#### 1. L'évaluation de l'existant
+L'analyse de l'infrastructure de MedDistri révèle des failles communes à de nombreuses PME :
+*   **L'exposition directe d'outils d'administration (ports 22, 3389)** sur Internet sans filtrage IP est une invitation ouverte au piratage par force brute.
+*   **L'absence de MFA** sur les messageries cloud Microsoft 365 expose l'entreprise au vol d'identité et à la compromission de factures clients.
+*   **La sauvegarde permanente USB** rend la sauvegarde sensible au chiffrement immédiat par un ransomware.
 
-
-L'objectif principal du Projet Capstone est de vous placer dans la posture d'un consultant en cybersécurité junior chargé d'accompagner une PME dans sa transition sécuritaire. Vous devez être capable de traduire des concepts techniques en enjeux métiers intelligibles pour un chef d'entreprise (qui n'est pas un informaticien).
-
-Vos recommandations doivent respecter trois critères :
-
-* **La pertinence technique** : Vos solutions doivent cibler les failles réelles identifiées dans l'énoncé.
-* **Le réalisme économique** : Une PME de 20 personnes ne peut pas s'offrir un SOC interne disponible 24/7 de 10 personnes ou des outils de chiffrement coûtant des dizaines de milliers d'euros. Vous devez privilégier l'hygiène informatique et des solutions managées externes ou open-source à coût modéré.
-* **L'acceptabilité humaine** : Vos propositions ne doivent pas paralyser le travail quotidien des employés de la PME sous peine d'être contournées (ex. éviter de forcer le changement hebdomadaire des mots de passe sans gestionnaire de mots de passe adapté).
-
-
-
-### 2. Structurer son rapport d'évaluation finale (Livrable écrit)
-
-Votre rapport d'évaluation (3 à 5 pages) doit être organisé selon la structure standard suivante :
-
-1. **Executive Summary (Synthèse managériale)** : Un résumé de 500 mots maximum à l'attention du dirigeant détaillant le niveau de risque global de la PME et la feuille de route de remédiation (priorités, budgets et bénéfices).
-2. **Analyse de risques** : Présentation des 3 risques majeurs menaçant la PME (exfiltration de données clients, rançongiciel paralysant, ou vol d'identité d'administration) avec cotation en criticité brute.
-3. **Diagnostic technique et organisationnel** : Analyse critique de l'architecture réseau actuelle de la PME, de la gestion de ses données/sauvegardes et de son niveau de conformité RGPD.
-4. **Recommandations détaillées** : Propositions de mesures techniques et d'organisation (politique de mots de passe, segmentation réseau, politique de sauvegarde 3-2-1, processus de gestion des patchs et sensibilisation des équipes).
-5. **Feuille de route et plan d'action** : Calendrier de déploiement des recommandations classées en trois catégories : Court terme (priorités immédiates à coût zéro/faible), Moyen terme (projets d'infrastructure réseau/cloud) et Long terme (surveillance continue et audits annuels).
-
-
-
-### 3. Réussir son pitch de soutenance (Livrable oral)
-
-Vous disposez de **10 minutes strictes** pour convaincre votre jury. Une bonne soutenance orale s'appuie sur une répartition temporelle rigoureuse de vos diapositives :
-
-* **Minute 1** : Présentation du groupe et résumé du contexte de la PME.
-* **Minutes 2–3** : Présentation des risques prioritaires (les "zones rouges" de votre matrice de risques).
-* **Minutes 4–7** : Vos recommandations concrètes (divisées de manière équilibrée : Sécurité Réseau, Cloud & Identités, Gouvernance & RGPD).
-* **Minutes 8–9** : Présentation de la feuille de route chronologique et du plan de réponse aux incidents.
-* **Minute 10** : Conclusion et ouverture vers la phase de questions-réponses.
-
-*Conseils de posture* : Ne lisez pas vos notes ou vos diapositives. Soyez clairs, synthétiques et justifiez vos choix en liant chaque mesure technique à une réduction concrète de risque financier ou d'impact juridique pour la PME.
-
----
-
-### Focus pratique
-La feuille de route permet d'organiser dans le temps le déploiement des recommandations de sécurité proposées à l'issue de l'audit.
-
-```text
-  [ PRIORITÉS IMMÉDIATES - Mois 1 ] ➔ 1. Forcer l'activation du MFA sur tous les accès.
-
-                                         2. Mettre en place un gestionnaire de mots de passe.
-                                         3. Déployer un antivirus mis à jour sur tous les postes.
-                                         
-  [ PROJETS MOYEN TERME - Mois 2-3 ] ➔  1. Configurer la règle de sauvegarde 3-2-1 (copie cloud).
-
-                                         2. Segmenter le réseau de la PME (VLANs / DMZ).
-                                         3. Rédiger la PSSI de base et le registre RGPD.
-                                         
-  [ CONTINU & LONG TERME - Mois 6+ ] ➔  1. Lancer une campagne annuelle de sensibilisation au phishing.
-
-                                         2. Externaliser la surveillance vers un SOC managé.
-                                         3. Planifier un scan de vulnérabilités bi-annuel.
-```
+#### 2. Priorisation et réalisme budgétaire
+Une PME ne dispose pas de ressources infinies. La feuille de route proposée doit diviser les chantiers dans le temps :
+*   **Court terme (Mois 1 — Budget quasi-nul)** : Fermeture des accès ouverts sur le WAN, mise en place du MFA, modification des mots de passe par défaut.
+*   **Moyen terme (Mois 2-3 — Investissements de base)** : Tunnelisation des flux via VPN, règle de sauvegarde 3-2-1 isolée, conformité RGPD.
+*   **Long terme (Mois 6+ — Consolidation)** : Sensibilisation des employés, scans de vulnérabilités planifiés.
 
 ---
 
@@ -122,45 +69,30 @@ La feuille de route permet d'organiser dans le temps le déploiement des recomma
     *   C) Les commerciaux n'ont pas leur mot à dire sur les choix de sécurité.
 
 **Éléments de débriefing (pour le mentor) :**
-- La sécurité doit être présentée sous l'angle du risque financier et opérationnel (Business Enablement). Le MFA moderne (notifications push) est aujourd'hui très fluide.
-
-### Cas d'usages et exemples concrets
-
-!!! info "Explication simplifiée"
-    Pour bien comprendre la restitution d'un projet de fin d'études en sécurité (Capstone), imaginez le rôle d'un **architecte en bâtiment menant l'audit d'une maison ancienne** :
-    - Vous visitez la maison de la cave au grenier, testez la solidité des murs, vérifiez si l'électricité respecte les normes et si les serrures des portes fonctionnent (audit de sécurité).
-    - Vous ne vous contentez pas de dire "tout est dangereux". Vous rédigez un rapport clair pour le propriétaire.
-    - Vous listez les travaux à réaliser du plus urgent (réparer le toit qui fuit - CVSS critique) au moins urgent (repeindre le portail - hygiène de base).
-    - Vous expliquez le projet avec des mots simples pour que le propriétaire comprenne pourquoi ces dépenses sont nécessaires pour sa sécurité quotidienne.
-
-**Exemple d'application professionnelle :**
-À la suite d'un audit de sécurité d'un mois, un prestataire présente ses conclusions au comité de direction d'un fabricant industriel. Au lieu de noyer les dirigeants sous le jargon technique, il utilise une échelle de risques claire : la mise en place du MFA sur la messagerie et la segmentation réseau entre l'usine et les bureaux sont présentées comme les deux chantiers prioritaires pour éviter un arrêt total de la production.
-
-
-### Panorama des solutions du marché (Commerciales & Open-Source)
-
-Pour synthétiser les audits de sécurité, piloter le plan de remédiation et documenter la conformité d'une infrastructure :
-
-*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
-    *   **Tugboat Logic (OneTrust)** : Solution automatisée de préparation aux audits de sécurité (ISO 27001, SOC 2), très prisée des start-ups et PME pour générer des politiques.
-    *   **AuditBoard** : Plateforme collaborative pour gérer l'évaluation des contrôles de sécurité et le reporting d'audit auprès de la direction.
-    *   **ServiceNow Policy and Compliance** : Solution haut de gamme de suivi et de validation continue des plans de remédiation.
-*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
-    *   **OpenCTI** : Plateforme ouverte de gestion de la Threat Intelligence permettant d'organiser et de restituer visuellement les menaces pesant sur un secteur d'activité.
-    *   **Gitea / GitLab Community Edition** : Utilisés en sécurité pour suivre l'avancement des tickets de remédiation technique sous forme de kanbans collaboratifs.
-    *   **Doxygen / Sphinx** : Outils de génération automatique de documentation technique pour maintenir à jour les cartographies de serveurs et les PSSI de manière collaborative et gratuite.
-
-## 3. Ressources complémentaires
-
-* **IBM SkillsBuild** : Section méthodologie de gestion de projet informatique et restitution orale.
-* **ANSSI** : "La cybersécurité pour les TPE/PME en 12 questions" (Guide pratique d'aide à la décision).
-* **Cybermalveillance.gouv.fr** : Kit de sensibilisation aux risques numériques pour les entreprises.
-
+- La sécurité doit être présentée sous l'angle du risque financier et opérationnel. Le MFA moderne (notifications push) est aujourd'hui très fluide.
 
 ---
 
-* [ANSSI - Certification et formations](https://cyber.gouv.fr/formations)
-* [IBM SkillsBuild - Catalogue](https://skillsbuild.org/)
+### Panorama des solutions du marché (Commerciales & Open-Source)
+
+Pour piloter le plan de remédiation, suivre les vulnérabilités et formaliser la gouvernance :
+
+*   **Solutions Leaders du Marché (Propriétaires / Payantes) :**
+    *   **Tugboat Logic (OneTrust)** : Solution automatisée d'aide à la préparation d'audits (ISO 27001, SOC 2), très prisée pour générer des politiques adaptées aux PME.
+    *   **AuditBoard** : Plateforme collaborative pour piloter l'évaluation des contrôles de sécurité et le reporting d'audit auprès de la direction.
+*   **Alternatives Open-Source et Gratuites (Idéal PME) :**
+    *   **OpenEx** : Plateforme open-source pour simuler des scénarios de crise cyber développée à l'origine en France (ANSSI/communauté).
+    *   **Gitea / GitLab Community Edition** : Utilisés en sécurité pour suivre l'avancement des tickets de remédiation technique sous forme de kanbans collaboratifs.
+
+---
+
+## 3. Ressources complémentaires
+
+* **IBM SkillsBuild** : Explorez les cours pour continuer votre parcours d'apprentissage en cybersécurité.
+* **ANSSI** : Guide "La cybersécurité pour les TPE/PME en 12 questions".
+* **Cybermalveillance.gouv.fr** : Fiches pratiques de sensibilisation pour les entreprises.
+
+---
 
 ## 4. Exercice bonus (Sondage Bilan - Livestorm)
 
@@ -171,17 +103,15 @@ Pour synthétiser les audits de sécurité, piloter le plan de remédiation et d
     *   C) Rédiger une charte informatique de 80 pages.
 *   **Guide d'animation (pour le mentor) :** Rappelez que l'hygiène cyber de base bloque la majorité des attaques opportunistes sans nécessiter de budgets importants.
 
+---
+
 ## 5. Aide-mémoire / Fiche de révision
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
 | **Audit de sécurité** | Évaluation méthodique de l'état de sécurité d'une organisation par rapport à des normes ou des règles de l'art. |
-| **Capstone** | Projet de synthèse final permettant d'appliquer l'ensemble des compétences théoriques et pratiques acquises à un cas concret. |
 | **Feuille de route de remédiation (Remediation Roadmap)** | Plan d'action chronologique et priorisé décrivant les étapes techniques et organisationnelles à accomplir pour corriger les vulnérabilités identifiées lors d'un audit. |
-| **Hygiène informatique (Cyber Hygiene)** | Ensemble des règles élémentaires de sécurité à appliquer de manière systématique pour minimiser la majorité des cybermenaces courantes (ex. mises à jour, mots de passe complexes, sauvegardes). |
-| **Plan de remédiation** | Document structuré détaillant la liste ordonnée des actions correctives à mener pour corriger les vulnérabilités identifiées. |
-| **Projet Capstone** | Un travail d'évaluation final synthétisant l'ensemble des compétences pratiques et théoriques développées tout au long d'un parcours d'apprentissage. |
-| **Synthèse managériale (Executive Summary)** | Courte introduction synthétique (1 page max) rédigée à l'intention des dirigeants de l'entreprise, résumant les menaces majeures découvertes et le budget requis, exempte de jargon technique trop complexe. |
-| **Vulgarisation** | Traduction de concepts techniques complexes en termes simples et compréhensibles par des non-experts (ex. dirigeants business). |
-| **Évaluation par les pairs (Peer Review)** | Méthode d'évaluation collaborative où les apprenants analysent et notent de manière constructive le travail de leurs pairs à l'aide d'une grille de critères partagée. |
-
+| **Hygiène informatique (Cyber Hygiene)** | Ensemble des règles de base à appliquer systématiquement (mises à jour, mots de passe complexes, sauvegardes). |
+| **Plan de remédiation** | Document structuré détaillant la liste ordonnée des actions correctives à mener pour corriger les failles. |
+| **Synthèse managériale (Executive Summary)** | Résumé d'une page vulgarisé résumant les menaces majeures découvertes et le budget requis pour la direction générale. |
+| **Vulgarisation** | Traduction de concepts techniques complexes en termes simples et compréhensibles par des non-experts. |

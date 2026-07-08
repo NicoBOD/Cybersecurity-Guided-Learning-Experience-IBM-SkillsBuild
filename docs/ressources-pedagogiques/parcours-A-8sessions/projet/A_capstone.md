@@ -1,93 +1,61 @@
-# Énoncé du Projet Capstone — Parcours A (8 sessions)
-Parcours : A 8 sessions  |  Module : Consolidation  |  Format : Guide de projet
+# Grand Atelier d'Audit Interactif — MedDistri
+Parcours : A 8 sessions  |  Module : Consolidation & Clôture  |  Format : Atelier Decisionnel Collectif (Livestorm)
 
 ---
 
 ## 1. Contexte de l'entreprise : "MedDistri"
 
-Vous êtes consultant junior en cybersécurité pour le cabinet "CyberSûr". Vous venez de décrocher une mission d'évaluation auprès de **MedDistri**, une PME de 25 salariés spécialisée dans la distribution de matériel médical (pansements, masques, petits instruments) pour les cliniques et hôpitaux.
+Mme Legrand est la Directrice Générale de **MedDistri**, une PME de 25 salariés spécialisée dans la distribution de matériel médical (pansements, masques, petits instruments) pour les cliniques et hôpitaux. Elle n'a pas de profil informatique et s'inquiète de la recrudescence des cyberattaques visant le secteur de la santé.
 
-### L'infrastructure informatique de MedDistri :
-* **Effectifs** : 15 commerciaux en télétravail ou déplacement régulier, 5 personnes en logistique (entrepôt), 4 personnes en administration (RH, compta, direction) et 1 technicien informatique polyvalent jouant le rôle d'administrateur système de manière informelle.
+### L'infrastructure informatique actuelle de MedDistri :
+* **Effectifs** : 15 commerciaux en télétravail ou déplacement régulier, 5 logisticiens (entrepôt), 4 administratifs (RH, compta, direction) et 1 technicien informatique polyvalent jouant le rôle d'administrateur système de manière informelle.
 * **Systèmes locaux** : Un serveur de fichiers physique situé dans un placard à balai dans l'entrepôt. Il stocke les dossiers administratifs, la comptabilité et les fichiers de propriété industrielle de l'entreprise (plans de produits, brevets).
 * **Accès distant** : Pour accéder au serveur à distance, le technicien a configuré un accès ouvert sur Internet sur le port 22 (SSH) et le port 3389 (Bureau à distance Windows) sans restriction d'adresses IP. Le mot de passe du compte administrateur est `Admin@MedDistri2025`.
 * **Services Cloud** : L'entreprise utilise la suite Microsoft 365 pour les courriels, Teams et le partage de documents commerciaux sur OneDrive. L'authentification multifacteur (MFA) n'est pas activée car les utilisateurs trouvent cela "trop lourd au quotidien".
-* **Sauvegardes** : Le technicien informatique effectue une sauvegarde manuelle de la base de données de ventes chaque vendredi soir sur un disque dur externe branché en permanence au serveur de l'entrepôt.
+* **Sauvegardes** : Le technicien informatique effectue une sauvegarde de la base de données de ventes chaque vendredi soir sur un disque dur externe branché en permanence au serveur de l'entrepôt.
 * **Sécurité & Vie Privée** : L'entreprise n'a pas de Politique de Sécurité des Systèmes d'Information (PSSI) écrite ni de registre de traitement des données RGPD, bien qu'elle gère des fichiers contenant des données nominatives de ses clients (médecins, directeurs de cliniques) et les historiques de commandes.
 
 ---
 
-## 2. Votre Mission
+## 2. Déroulement de l'Atelier en Visioconférence (Livestorm)
 
-En groupes de **3 à 4 apprenants**, vous devez réaliser l'audit de sécurité simplifié de MedDistri et proposer un plan d'action d'hygiène cyber réaliste et pragmatique. Votre livrable doit être adapté à la taille de la structure (PME) et compréhensible pour sa directrice générale, Mme Legrand, qui n'a pas de profil informatique.
+Cet atelier n'exige aucun rendu écrit ni travail de groupe hors séance. Il s'agit d'une simulation collective où les participants conseillent Mme Legrand et le technicien de MedDistri en direct en répondant à des sondages interactifs. Le mentor anime la séance en commentant les choix faits par l'auditoire et en mettant à jour le **Score de Résilience Cyber** de la PME (qui commence à 10%).
 
----
+### Phase 1 : Diagnostic d'urgence (Fermer les portes d'entrée)
 
-## 3. Livrables Attendus
+* **Sondage 1 : L'accès RDP et SSH ouvert sur Internet**
+  * *Question :* Les ports RDP (3389) et SSH (22) de MedDistri sont accessibles depuis n'importe quelle adresse IP publique avec un mot de passe connu (`Admin@MedDistri2025`). Quelle est l'action prioritaire absolue ?
+    * A) Installer un pare-feu local gratuit sur chaque poste et changer le mot de passe tous les ans.
+    * B) Fermer l'accès direct aux ports 22 et 3389 depuis Internet, déployer un serveur VPN d'accès distant et activer le MFA sur ce VPN *(Bonne réponse — Gain : +25% de résilience)*.
+    * C) Ne rien changer car les commerciaux ont besoin d'accéder aux données et le mot de passe est complexe.
+  * *Explication du mentor :* Ouvrir le port 3389 directement sur Internet est la cause n°1 d'infection par ransomware. Les cybercriminels scannent le web en continu pour forcer ces accès. Le VPN avec MFA est la seule méthode d'accès nomade sécurisée.
 
-### Livrable 1 : Le Rapport d'Audit écrit (format PDF / Markdown)
-Votre rapport de 3 à 5 pages devra comprendre les quatre sections suivantes :
-
-1. **Executive Summary (Synthèse managériale)** : Un résumé de 500 mots maximum vulgarisé à l'attention de Mme Legrand, décrivant la situation, le risque financier global de faillite en cas d'attaque, et le coût estimé de vos recommandations de base.
-2. **Analyse de risques** : L'identification de 3 risques prioritaires sous forme de tableau, cotés selon la formule $C = V \times I$ (Matrice 4x4 apprise en session 5). Chaque risque doit être décrit en termes de Menace, Vulnérabilité et Impact.
-3. **Diagnostic technique et organisationnel** :
-   * Analyse critique de l'architecture d'accès à distance (ports 22 et 3389).
-   * Analyse critique de la politique de sauvegarde face à la menace des rançongiciels.
-   * Évaluation de la conformité RGPD (fichiers clients).
-4. **Feuille de route de remédiation** : Une chronologie claire divisée en trois étapes :
-   * *Court terme (Mois 1 — Budget quasi-nul)* : Actions immédiates d'urgence.
-   * *Moyen terme (Mois 2-3 — Investissements de base)* : Projets d'infrastructure et d'IAM.
-   * *Long terme (Mois 6+ — Consolidation)* : Suivi, formation et audits.
-
-### Livrable 2 : Présentation de soutenance (5 Diapositives)
-Un jeu de diapositives structuré pour un pitch de **10 minutes strictes** :
-
-* Slide 1 : Titre et contexte de MedDistri.
-* Slide 2 : La matrice des 3 risques majeurs identifiés.
-* Slide 3 : Recommandations techniques urgentes (MFA, VPN, ports).
-* Slide 4 : Règle de sauvegarde 3-2-1 et plan d'hygiène informatique.
-* Slide 5 : Feuille de route chronologique et argumentaire face aux objections de productivité.
+* **Sondage 2 : L'absence de MFA sur Microsoft 365**
+  * *Question :* Mme Legrand craint que l'activation du MFA sur Microsoft 365 ne ralentisse le travail des commerciaux nomades. Comment la convaincre ?
+    * A) Lui expliquer que le MFA élimine plus de 99% des piratages de comptes Microsoft et que le vol d'un compte mail permettrait d'envoyer de fausses factures à vos clients *(Bonne réponse — Gain : +20% de résilience)*.
+    * B) Mettre en place un mot de passe obligatoire de 30 caractères sans MFA.
+    * C) Menacer de couper l'accès aux serveurs aux employés récalcitrants.
+  * *Explication du mentor :* Le vol d'identité par hameçonnage est massif. Les mots de passe complexes ne protègent pas contre un site de phishing ; seul le MFA bloque la connexion du pirate.
 
 ---
 
-## 4. Modalités de la soutenance (Session 08)
+### Phase 2 : Assurer la résilience (La survie après l'attaque)
 
-* **Le Pitch** : Chaque équipe dispose de **10 minutes** de présentation orale. Tous les membres du groupe doivent prendre la parole de manière équilibrée.
-* **Questions-Réponses** : 10 minutes de questions posées par le mentor (qui joue le rôle de Mme Legrand) et par les autres apprenants de la classe.
-* **Évaluation par les pairs** : Chaque apprenant devra remplir une grille d'évaluation constructive pour deux autres groupes.
+* **Sondage 3 : Analyse critique des sauvegardes**
+  * *Question :* La sauvegarde manuelle hebdomadaire de MedDistri est copiée sur un disque dur externe branché en permanence en USB sur le serveur de fichiers local. Pourquoi cette méthode est-elle obsolète ?
+    * A) Le disque dur externe est trop lent et chauffe.
+    * B) En cas d'attaque par ransomware, le disque dur connecté sera également chiffré par l'attaquant, rendant la sauvegarde inutile *(Bonne réponse — Gain : +25% de résilience)*.
+    * C) La sauvegarde manuelle du vendredi soir fatigue le technicien informatique.
+  * *Explication du mentor :* Pour se protéger des rançongiciels, la sauvegarde doit respecter la règle 3-2-1. La copie de sauvegarde principale doit être stockée de manière déconnectée (hors ligne) ou dans un espace de stockage cloud immuable (non modifiable par le réseau).
+
+* **Sondage 4 : Répartition du budget cyber**
+  * *Question :* Le budget cyber annuel total de MedDistri est limité à 2 000 €. Quelle est l'allocation la plus efficace ?
+    * A) Acheter un équipement pare-feu haut de gamme d'une valeur de 2 000 € et conserver les systèmes actuels sans mise à jour.
+    * B) Investir dans des licences VPN/MFA légères, mettre en place une sauvegarde cloud cryptée et former les collaborateurs aux risques numériques *(Bonne réponse — Gain : +20% de résilience)*.
+    * C) Réaliser un test de pénétration complet par un cabinet d'audit externe à 2 000 €.
+  * *Explication du mentor :* Une PME doit allouer son budget sur l'hygiène informatique de base (sauvegarde, identités, sensibilisation) plutôt que sur des outils coûteux et isolés.
 
 ---
 
-## 5. Alternative d'animation interactive (Spécial Webinaire / Livestorm)
-
-Si le cours est animé sous forme de webinaire interactif devant un public nombreux ou passif, la soutenance classique en groupe est remplacée par un **atelier d'audit interactif collectif** mené par le mentor.
-
-### Fonctionnement de l'atelier :
-Le mentor prend le rôle d'auditeur principal de MedDistri. Il partage son écran et déroule le diagnostic technique sous forme de scénario décisionnel. Pour chaque problème identifié, le mentor lance un sondage Livestorm auprès du public.
-
-### Liste des Sondages à soumettre au public :
-
-1. **Sondage 1 : L'accès distant vulnérable**
-   * *Question :* Les ports SSH (22) et RDP (3389) de MedDistri sont ouverts à tous vents sur Internet. Quelle est la première mesure d'urgence à appliquer ?
-     * A) Installer un antivirus gratuit sur le serveur.
-     * B) Fermer les ports sur Internet et mettre en œuvre un accès VPN protégé par MFA *(Bonne réponse)*.
-     * C) Modifier le mot de passe administrateur par un mot de passe de 20 caractères.
-     * D) Ne rien changer pour ne pas perturber les commerciaux.
-2. **Sondage 2 : La politique de sauvegarde**
-   * *Question :* Le disque dur externe de sauvegarde est branché en permanence sur le serveur local de MedDistri. Quel est le risque majeur en cas d'attaque de type ransomware ?
-     * A) Le disque dur externe peut être volé physiquement.
-     * B) Les fichiers de sauvegarde présents sur le disque connecté seront également chiffrés par le ransomware *(Bonne réponse)*.
-     * C) La sauvegarde va saturer le disque dur trop rapidement.
-3. **Sondage 3 : L'authentification M365**
-   * *Question :* La direction refuse le MFA sur Office 365, affirmant que c'est "trop contraignant". Quel argument est le plus adapté ?
-     * A) Rappeler que le MFA bloque plus de 99% des attaques par usurpation de compte et évite une paralysie totale *(Bonne réponse)*.
-     * B) Désactiver tous les comptes pour forcer le respect des consignes.
-     * C) Recommander des mots de passe de 30 caractères sans MFA.
-4. **Sondage 4 : Priorisation du budget**
-   * *Question :* Le budget cyber annuel de MedDistri est limité à 2 000 €. Où devez-vous l'allouer en priorité ?
-     * A) Réaliser un test d'intrusion par un cabinet externe.
-     * B) Activer le MFA gratuit, souscrire à une solution de sauvegarde cloud immuable externe et former les utilisateurs *(Bonne réponse)*.
-     * C) Embaucher un RSSI externe à temps partiel.
-
-### Débriefing par le mentor :
-Après chaque vote, le mentor analyse en direct les statistiques de réponse du public (ex. *"Vous êtes 80% à avoir voté pour le VPN avec MFA, et vous avez tout à fait raison : ouvrir RDP directement sur Internet équivaut à laisser la porte de l'entrepôt grande ouverte avec une pancarte explicative..."*) et fait le lien avec les notions théoriques vues durant le parcours.
+## 3. Bilan de l'Atelier
+À l'issue de cet atelier décisionnel, le mentor compile les scores de l'auditoire. Si le score de résilience de la PME MedDistri atteint ou dépasse **80%**, l'audit est validé avec succès par la communauté des apprenants.

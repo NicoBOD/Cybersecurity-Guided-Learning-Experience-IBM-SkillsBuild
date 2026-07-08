@@ -167,8 +167,8 @@ Parcours : B 20 sessions  |  Module : E — Opérations, détection & réponse  
 - **Points clés (bullets)** :
   - **Résumé** : Processus SANS/NIST de réponse, isolation réseau (pas d'extinction brute), forensics (chaîne de contrôle, hashs d'intégrité), approche de pentest et structure du RPI.
   - **Devoirs** : Compléter le module *"Incident Response Fundamentals"* sur IBM SkillsBuild (~1h30).
-  - **Préparation** : Finaliser le Mini-projet 4 et commencer à réfléchir à la structure globale du **Projet Capstone** (Session B20).
-  - Prochaine session : *Projet capstone — Restitution & clôture du parcours (B20)*.
-- **Notes orateur** : Nous avons terminé notre module dédié aux opérations de détection et de réponse à incident ! Déposez votre Mini-projet 4 et validez votre cours SkillsBuild. La semaine prochaine sera notre dernière session synchrone. Ce sera l'heure des soutenances de vos projets Capstone et de la clôture de ce parcours de formation en cybersécurité. Travaillez bien et à la semaine prochaine pour le grand final !
+  - **Préparation** : Relire les supports de cours des sessions B01 à B19 pour se préparer au **Grand Atelier d'Audit Final** (Session B20).
+  - Prochaine session : *Grand Atelier d'Audit & Clôture du parcours (B20)*.
+- **Notes orateur** : Nous avons terminé notre module dédié aux opérations de détection et de réponse à incident ! Validez votre cours SkillsBuild et révisez bien les notions du parcours. La semaine prochaine sera notre dernière session synchrone. Ce sera notre grand atelier d'audit interactif MedDistri et la clôture de ce parcours de formation en cybersécurité. Révisez bien et à la semaine prochaine pour le grand final !
 - **Visuel suggéré** : Badge d'achèvement de cours d'IBM SkillsBuild pour la réponse aux incidents de sécurité.
   - **alt-text** : Badge de réussite du cours Incident Response d'IBM SkillsBuild.

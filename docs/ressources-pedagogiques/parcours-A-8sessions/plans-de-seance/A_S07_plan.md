@@ -20,7 +20,7 @@ Module : Réponse aux Incidents  |  Durée : 90 min  |  Parcours : A 8 sessions
 | 35–55 | Activité 1 : Reconstitution de la timeline d'un incident | Travail en binôme | Fiche d'activité A_S07 (Logs & Chronologie) |
 | 55–75 | Apport de contenu 2 : Introduction au Forensics & Cadre légal du Pentesting | Exposé interactif | Slides chain of custody & cadre pénal |
 | 75–85 | Démo 7 : Simulation narrative de gestion de crise + Quiz | Démo narrative + Quiz | Script de démo & Banque de quiz (Thème A7) |
-| 85–90 | Clôture de la session et consignes pour le Capstone (Session A8) | Plénière | Slide de fin & consignes soutenances |
+| 85–90 | Clôture de la session et consignes pour le Grand Atelier d'Audit (Session A08) | Plénière | Slide de fin & consignes atelier |
 
 ## Activités détaillées
 - **Activité 1 — Reconstitution de la chronologie d'une attaque (Incident Timeline)** :
@@ -45,17 +45,16 @@ Module : Réponse aux Incidents  |  Durée : 90 min  |  Parcours : A 8 sessions
 - "Si un expert en cybersécurité découvre une vulnérabilité critique sur le site public de sa banque et décide de l'exploiter pour prouver qu'il dit vrai, que risque-t-il ?" (Focus distinction pénal intrusion légale vs illégale)
 - "Que signifie l'expression 'chaîne de contrôle' pour un disque dur saisi lors d'une attaque ?" (Focus intégrité de la preuve)
 
-## Articulation avec le projet
-- Dans cette dernière phase avant la soutenance, les apprenants finalisent le plan de réponse aux incidents pour la PME fictive du **Projet Capstone** : qui contacter en cas d'attaque, comment isoler les machines vulnérables et comment tirer les leçons de l'incident.
+## Articulation avec l'atelier de fin de parcours
+- Cette session fournit les concepts de réponse à incident nécessaires pour le scénario de crise de l'Atelier d'Audit Interactif de la session A08.
 
 ## Self-paced APRÈS la séance (~120 min) & évaluation formative
-- Finaliser les livrables écrits du Projet Capstone (Rapport d'évaluation de sécurité pour la PME).
-- Répéter la présentation orale en sous-groupe pour la soutenance de la session A8.
+- Revoir les supports des sessions A01 à A07 pour se préparer à l'Atelier d'Audit et au Quiz de Synthèse.
 - Quiz d'auto-évaluation en ligne (10 questions théoriques sur la réponse aux incidents et le cadre légal).
 
 ## Checklist matériel mentor
 - [x] Supports de présentation (Slides S07)
 - [x] Fiche d'activité A_S07 (Les 5 cartes événements mélangées)
-- [x] Script narratif interactif de crise cyber (dans `A_scripts_demo.md`)
+- [x] Script de démo (dans `A_scripts_demo.md`)
 - [x] Grille chronologique vierge à distribuer ou projeter
 - [x] Support complet de cours en format `.MD` (`A_S07_support.md`)

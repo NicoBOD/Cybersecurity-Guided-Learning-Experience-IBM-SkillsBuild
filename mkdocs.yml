@@ -135,8 +135,7 @@ nav:
   
   - "Parcours A (8 sessions)":
     - "Présentation & Évaluation":
-      - "Sujet du Projet Capstone A": ressources-pedagogiques/parcours-A-8sessions/projet/A_capstone.md
-      - "Grille d'évaluation": ressources-pedagogiques/parcours-A-8sessions/projet/A_grille_notation.md
+      - "Atelier d'Audit Interactif MedDistri": ressources-pedagogiques/parcours-A-8sessions/projet/A_capstone.md
     - "Supports de Cours":
       - "A01 — Découverte de la Cybersécurité & Paysage des Menaces": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S01_support.md
       - "A02 — Menaces, Attaques & Ingénierie Sociale": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S02_support.md
@@ -145,7 +144,7 @@ nav:
       - "A05 — Gouvernance, Risque, Conformité & Vie Privée": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S05_support.md
       - "A06 — Opérations de Sécurité & Gestion des Vulnérabilités": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S06_support.md
       - "A07 — Réponse aux Incidents & Introduction au Forensics": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S07_support.md
-      - "A08 — Projet Capstone — Restitution & Synthèse": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S08_support.md
+      - "A08 — Grand Atelier d'Audit & Synthèse": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S08_support.md
     - "Plans d'Animation (Mentor)":
       - "Session A01": ressources-pedagogiques/parcours-A-8sessions/plans-de-seance/A_S01_plan.md
       - "Session A02": ressources-pedagogiques/parcours-A-8sessions/plans-de-seance/A_S02_plan.md
@@ -171,9 +170,8 @@ nav:
 
   - "Parcours B (20 sessions)":
     - "Présentation & Évaluation":
-      - "Les 4 Mini-projets Pratiques": ressources-pedagogiques/parcours-B-20sessions/projet/B_miniprojets.md
-      - "Sujet du Projet Capstone B": ressources-pedagogiques/parcours-B-20sessions/projet/B_capstone.md
-      - "Grille d'évaluation": ressources-pedagogiques/parcours-B-20sessions/projet/B_grille_notation.md
+      - "Les 4 Ateliers de Synthèse Pratiques": ressources-pedagogiques/parcours-B-20sessions/projet/B_miniprojets.md
+      - "Grand Atelier d'Audit MedDistri (Avancé)": ressources-pedagogiques/parcours-B-20sessions/projet/B_capstone.md
     - "Supports de Cours":
       - "B01 — Introduction & Triade CIA": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S01_support.md
       - "B02 — Paysage des Menaces & Acteurs": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S02_support.md
@@ -194,7 +192,7 @@ nav:
       - "B17 — Outils SIEM & Analyse de Logs": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S17_support.md
       - "B18 — Introduction à la Réponse aux Incidents": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S18_support.md
       - "B19 — Simulation de Crise Cyber (Tabletop)": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S19_support.md
-      - "B20 — Soutenance Finale & Clôture": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S20_support.md
+      - "B20 — Grand Atelier d'Audit & Clôture": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S20_support.md
     - "Plans d'Animation (Mentor)":
       - "Session B01": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S01_plan.md
       - "Session B02": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S02_plan.md
