@@ -38,12 +38,17 @@ Passez 20 minutes à disséquer des exemples visuels de phishing : montrez comme
 ---
 
 ### Glossaire
-* **Malware (Logiciel malveillant)** : Terme générique désignant tout programme conçu pour nuire à un système informatique (virus, ver, rançongiciel, etc.).
-* **Ransomware (Rançongiciel)** : Malware qui chiffre les fichiers d'un utilisateur ou d'une entreprise et réclame le paiement d'une rançon en échange de la clé de déchiffrement.
-* **Phishing (Hameçonnage)** : Technique frauduleuse par e-mail visant à tromper le destinataire pour lui soutirer des informations confidentielles (mots de passe, numéros de carte bancaire) en usurpant l'identité d'une marque de confiance.
-* **Spear-phishing (Hameçonnage ciblé)** : Variante hautement personnalisée du phishing, ciblant un individu ou une organisation spécifique en exploitant des détails personnels collectés à l'avance.
-* **Ingénierie sociale (Social Engineering)** : Manipulation psychologique visant à extorquer des informations confidentielles ou à faire accomplir des actions dangereuses à une victime.
-* **Cyber Kill Chain** : Cadre conceptuel décrivant les 7 étapes chronologiques d'une cyberattaque réussie, développé par Lockheed Martin.
+
+*   **BEC (Business Email Compromise)** — Fraude par compromission de la messagerie professionnelle, où un pirate usurpe l'identité d'un dirigeant pour ordonner des virements frauduleux.
+*   **Cyber Kill Chain** — Cadre conceptuel décrivant les 7 étapes chronologiques d'une cyberattaque réussie, développé par Lockheed Martin.
+*   **Ingénierie sociale (Social Engineering)** — Manipulation psychologique visant à extorquer des informations confidentielles ou à faire accomplir des actions dangereuses à une victime.
+*   **Malware (Logiciel malveillant)** — Terme générique désignant tout programme conçu pour nuire à un système informatique (virus, ver, rançongiciel, etc.).
+*   **Phishing (Hameçonnage)** — Technique frauduleuse par e-mail visant à tromper le destinataire pour lui soutirer des informations confidentielles (mots de passe, numéros de carte bancaire) en usurpant l'identité d'une marque de confiance.
+*   **Ransomware (Rançongiciel)** — Malware qui chiffre les fichiers d'un utilisateur ou d'une entreprise et réclame le paiement d'une rançon en échange de la clé de déchiffrement.
+*   **Smishing** — Attaque d'ingénierie sociale réalisée par SMS pour pousser la victime à visiter un site malveillant ou à divulguer des données.
+*   **Spear-phishing (Hameçonnage ciblé)** — Variante hautement personnalisée du phishing, ciblant un individu ou une organisation spécifique en exploitant des détails personnels collectés à l'avance.
+*   **Spear-phishing (Hameçonnage ciblé)** — Technique d'hameçonnage hautement personnalisée visant un individu ou une organisation spécifique à l'aide d'informations ciblées.
+*   **Vishing (Hameçonnage vocal)** — Technique de manipulation par téléphone où l'attaquant usurpe l'identité d'un tiers de confiance (ex. conseiller bancaire) pour extorquer des informations.
 
 ---
 
@@ -155,13 +160,13 @@ Vous recevez un appel sur votre téléphone professionnel. L'appelant se présen
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Pour comprendre la manipulation psychologique en cybersécurité, imaginez l'analogie d'un **imposteur habillé en agent du gaz** :
+    - L'imposteur ne force pas la serrure (pas de faille technique). Il frappe à la porte, montre un faux badge, et utilise l'urgence ("fuite détectée dans la rue") pour que vous le laissiez entrer de votre plein gré.
+    - Le **Phishing** est un e-mail envoyé à 1000 personnes en espérant qu'une seule laisse entrer l'imposteur.
+    - Le **Spear-phishing** est un e-mail hautement personnalisé où l'imposteur connaît votre nom, le nom de votre chien, et prétend être envoyé par votre syndic de copropriété.
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Dans une start-up, un comptable reçoit un SMS urgent (Smishing) prétendument de la banque, lui demandant de cliquer sur un lien pour annuler un débit frauduleux de 15 000 €. En panique (levier d'urgence), il clique et saisit ses codes d'accès. Grâce à la formation à la vigilance, il réalise son erreur 2 minutes après et appelle le service de sécurité informatique qui désactive immédiatement le compte avant que le pirate n'initie de virement.
 
 
 ## 3. Ressources complémentaires
@@ -178,9 +183,12 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Conception d'une campagne de sensibilisation au phishing.
+- **Consignes :**
+    1. Rédigez le texte d'un faux e-mail de phishing à visée pédagogique (simulation interne) ciblant l'équipe des Ressources Humaines.
+    2. Identifiez au moins 3 indicateurs de suspicion (indices) que les employés doivent repérer pour détecter l'e-mail.
+    3. Déterminez les 2 métriques clés que vous suivrez pendant cette campagne pour évaluer le niveau de vigilance.
+- **Correction pour le mentor :** Le mentor validera que l'e-mail de phishing créé utilise des leviers psychologiques pertinents (ex. changement de grille de salaire urgent). Les indices à repérer doivent inclure : adresse d'expédition suspecte, lien pointant vers un domaine étranger, fautes de syntaxe subtiles. Les métriques recommandées sont le *taux de clic* (à minimiser) et le *taux de signalement au SOC/IT* (à maximiser).
 
 ---
 
@@ -188,9 +196,13 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Malware (Logiciel malveillant)** | Terme générique désignant tout programme conçu pour nuire à un système informatique (virus, ver, rançongiciel, etc.). |
-| **Ransomware (Rançongiciel)** | Malware qui chiffre les fichiers d'un utilisateur ou d'une entreprise et réclame le paiement d'une rançon en échange de la clé de déchiffrement. |
-| **Phishing (Hameçonnage)** | Technique frauduleuse par e-mail visant à tromper le destinataire pour lui soutirer des informations confidentielles (mots de passe, numéros de carte bancaire) en usurpant l'identité d'une marque de confiance. |
-| **Spear-phishing (Hameçonnage ciblé)** | Variante hautement personnalisée du phishing, ciblant un individu ou une organisation spécifique en exploitant des détails personnels collectés à l'avance. |
-| **Ingénierie sociale (Social Engineering)** | Manipulation psychologique visant à extorquer des informations confidentielles ou à faire accomplir des actions dangereuses à une victime. |
+| **BEC (Business Email Compromise)** | Fraude par compromission de la messagerie professionnelle, où un pirate usurpe l'identité d'un dirigeant pour ordonner des virements frauduleux. |
 | **Cyber Kill Chain** | Cadre conceptuel décrivant les 7 étapes chronologiques d'une cyberattaque réussie, développé par Lockheed Martin. |
+| **Ingénierie sociale (Social Engineering)** | Manipulation psychologique visant à extorquer des informations confidentielles ou à faire accomplir des actions dangereuses à une victime. |
+| **Malware (Logiciel malveillant)** | Terme générique désignant tout programme conçu pour nuire à un système informatique (virus, ver, rançongiciel, etc.). |
+| **Phishing (Hameçonnage)** | Technique frauduleuse par e-mail visant à tromper le destinataire pour lui soutirer des informations confidentielles (mots de passe, numéros de carte bancaire) en usurpant l'identité d'une marque de confiance. |
+| **Ransomware (Rançongiciel)** | Malware qui chiffre les fichiers d'un utilisateur ou d'une entreprise et réclame le paiement d'une rançon en échange de la clé de déchiffrement. |
+| **Smishing** | Attaque d'ingénierie sociale réalisée par SMS pour pousser la victime à visiter un site malveillant ou à divulguer des données. |
+| **Spear-phishing (Hameçonnage ciblé)** | Variante hautement personnalisée du phishing, ciblant un individu ou une organisation spécifique en exploitant des détails personnels collectés à l'avance. |
+| **Vishing (Hameçonnage vocal)** | Technique de manipulation par téléphone où l'attaquant usurpe l'identité d'un tiers de confiance (ex. conseiller bancaire) pour extorquer des informations. |
+

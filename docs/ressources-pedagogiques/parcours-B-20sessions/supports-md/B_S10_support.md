@@ -35,10 +35,13 @@ Différenciez la cryptographie Symétrique (AES, rapide, une seule clé secrète
 ---
 
 ### Glossaire
-*   **Chiffrement symétrique** — Algorithme cryptographique utilisant la même clé secrète pour chiffrer et déchiffrer les données.
+
 *   **Chiffrement asymétrique** — Algorithme utilisant un couple de clés (publique pour chiffrer, privée pour déchiffrer).
-*   **Hachage (Hashing)** — Transformation mathématique irréversible d'une donnée d'entrée en une empreinte de taille fixe garantissant l'intégrité.
+*   **Chiffrement symétrique** — Algorithme cryptographique utilisant la même clé secrète pour chiffrer et déchiffrer les données.
 *   **Effet d'avalanche** — Propriété d'une fonction de hachage où une infime modification de l'entrée change radicalement l'empreinte finale.
+*   **Hachage (Hashing)** — Transformation mathématique irréversible d'une donnée d'entrée en une empreinte de taille fixe garantissant l'intégrité.
+*   **Hachage (Hashing)** — Algorithme à sens unique convertissant une donnée de taille variable en une empreinte de taille fixe, garantissant l'intégrité.
+*   **PKI (Infrastructure de Clés Publiques)** — Système de délivrance et de gestion de certificats numériques X.509 permettant de certifier l'identité des serveurs et des clés.
 
 ---
 
@@ -125,13 +128,13 @@ Considérez les deux phrases suivantes, quasiment identiques à l'exception des 
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Imaginez les différents concepts de la cryptographie moderne avec les analogies suivantes :
+    - **Le Chiffrement Symétrique** : C'est comme un **coffre-fort à clé unique**. Vous verrouillez le coffre avec la clé physique, puis vous devez donner cette *exacte même clé* au destinataire pour qu'il puisse l'ouvrir. C'est rapide, mais l'envoi de la clé pose un défi de sécurité.
+    - **Le Chiffrement Asymétrique** : C'est comme une **boîte aux lettres dotée de deux clés**. La fente de la boîte est ouverte à tous : n'importe qui peut y déposer une lettre (clé publique de chiffrement disponible pour le monde entier). En revanche, seul le propriétaire possède la clé pour ouvrir la porte et lire le courrier (clé privée de déchiffrement).
+    - **Le Hachage** : C'est comme une **empreinte digitale**. Si vous modifiez un seul cheveu de la personne, l'empreinte change totalement (effet d'avalanche). On ne peut pas recréer la personne à partir de son empreinte, mais on peut vérifier si c'est bien elle (intégrité).
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Une entreprise utilise le chiffrement asymétrique pour établir une connexion SSL/TLS sécurisée avec ses clients. Les clés publiques et privées servent uniquement à s'authentifier et à échanger une clé temporaire unique. La suite des communications chiffrées s'effectue en chiffrement symétrique pour garantir un débit rapide des données.
 
 
 ## 3. Ressources complémentaires
@@ -147,9 +150,12 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Validation pratique de l'intégrité par hachage.
+- **Consignes :**
+    1. Vous devez mettre à jour un logiciel critique sur vos serveurs internes. Vous téléchargez le fichier compressé `update.zip` depuis Internet.
+    2. L'éditeur du logiciel indique sur son site officiel l'empreinte SHA-256 suivante : `d3f1a9a4b8...`
+    3. Expliquez la procédure technique pas à pas pour valider que le fichier n'a pas été modifié ou corrompu pendant le transfert avant de l'exécuter.
+- **Correction pour le mentor :** L'apprenant doit expliquer qu'il faut générer localement le hash du fichier téléchargé à l'aide d'une commande système (ex. `sha256sum update.zip` sous Linux ou `Get-FileHash` sous PowerShell). Ensuite, il faut comparer le résultat avec le hash fourni par l'éditeur. Si les deux chaînes de caractères correspondent à l'identique, l'intégrité du fichier est garantie. Si elles diffèrent, le fichier doit être rejeté car il a été altéré ou piraté.
 
 ---
 
@@ -157,7 +163,9 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Chiffrement symétrique** | Algorithme cryptographique utilisant la même clé secrète pour chiffrer et déchiffrer les données. |
 | **Chiffrement asymétrique** | Algorithme utilisant un couple de clés (publique pour chiffrer, privée pour déchiffrer). |
-| **Hachage (Hashing)** | Transformation mathématique irréversible d'une donnée d'entrée en une empreinte de taille fixe garantissant l'intégrité. |
+| **Chiffrement symétrique** | Algorithme cryptographique utilisant la même clé secrète pour chiffrer et déchiffrer les données. |
 | **Effet d'avalanche** | Propriété d'une fonction de hachage où une infime modification de l'entrée change radicalement l'empreinte finale. |
+| **Hachage (Hashing)** | Transformation mathématique irréversible d'une donnée d'entrée en une empreinte de taille fixe garantissant l'intégrité. |
+| **PKI (Infrastructure de Clés Publiques)** | Système de délivrance et de gestion de certificats numériques X.509 permettant de certifier l'identité des serveurs et des clés. |
+

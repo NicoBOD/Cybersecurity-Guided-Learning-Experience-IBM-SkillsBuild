@@ -35,9 +35,13 @@ Détaillez le Vishing (téléphone), le Smishing (SMS) et le Baiting (clé USB p
 ---
 
 ### Glossaire
+
+*   **BEC (Business Email Compromise)** — Fraude au président consistant à pirater ou usurper la boîte e-mail d'un dirigeant pour ordonner des transactions financières frauduleuses.
 *   **Phishing (Hameçonnage)** — Envoi massif d'e-mails frauduleux pour dérober des données confidentielles.
-*   **Spear-phishing (Hameçonnage ciblé)** — Variante d'hameçonnage hautement personnalisée visant un individu ou une organisation spécifique.
+*   **Phishing (Hameçonnage)** — Envoi massif d'e-mails frauduleux usurpant l'identité de tiers de confiance pour voler des informations sensibles.
 *   **Smishing** — Hameçonnage réalisé par le biais de messages textes (SMS).
+*   **Spear-phishing** — Hameçonnage ciblé et hautement personnalisé visant un individu ou une entreprise précise à l'aide d'informations préalablement collectées.
+*   **Spear-phishing (Hameçonnage ciblé)** — Variante d'hameçonnage hautement personnalisée visant un individu ou une organisation spécifique.
 *   **Vishing (Hameçonnage vocal)** — Technique d'ingénierie sociale par téléphone visant à extorquer des informations confidentielles.
 
 ---
@@ -127,13 +131,14 @@ La sécurité humaine repose sur des réflexes simples mais rigoureux, que l'on 
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Pour comprendre la psychologie de l'ingénierie sociale, imaginez un **usurpateur d'identité** :
+    - L'usurpateur ne cherche pas à défoncer la porte blindée de votre maison. Il s'habille en électricien et tient un bloc-notes à la main.
+    - Il utilise la **sympathie** ("Bonjour, je viens faire la révision annuelle, cela ne prendra que 5 minutes") pour que vous baissiez votre garde.
+    - Il utilise **l'autorité** ("C'est obligatoire, le syndic de l'immeuble m'a envoyé en urgence") pour vous dissuader de lui poser des questions ou de vérifier ses affirmations.
+    - Il profite de votre confiance pour dérober vos clés de maison restées sur la table.
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Dans une grande entreprise, un pirate appelle la réceptionniste du standard téléphonique (Vishing). Se faisant passer pour le directeur technique bloqué à l'aéroport avant un conseil d'administration urgent (combinaison d'autorité et d'urgence), il lui demande de lui générer un mot de passe temporaire pour accéder à sa messagerie. La réceptionniste, formée à cette menace, refuse poliment et applique la procédure de sécurité en rappelant le directeur technique sur son numéro officiel.
 
 
 ## 3. Ressources complémentaires
@@ -149,9 +154,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Conception d'un guide de réflexes face au Vishing.
+- **Consignes :**
+    1. Rédigez une fiche mémo (3 points clés) à destination des téléconseillers d'un service client pour leur apprendre à réagir face à des appels suspects d'usurpation d'identité.
+    2. Intégrez-y une procédure simple de validation hors canal (Out-of-Band verification).
+- **Correction pour le mentor :** La fiche doit contenir : 1. Repérer les signaux d'alarme (l'appelant insiste sur l'urgence ou menace d'escalade hiérarchique). 2. Ne jamais divulguer d'identifiants, de codes MFA ou de données sensibles au téléphone. 3. Appliquer la validation hors canal : raccrocher, trouver le numéro officiel de la personne dans l'annuaire interne ou de l'organisme partenaire, et passer l'appel de vérification soi-même. Le mentor s'assurera de la clarté et de l'aspect pratique des consignes.
 
 ---
 
@@ -159,7 +166,9 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
+| **BEC (Business Email Compromise)** | Fraude au président consistant à pirater ou usurper la boîte e-mail d'un dirigeant pour ordonner des transactions financières frauduleuses. |
 | **Phishing (Hameçonnage)** | Envoi massif d'e-mails frauduleux pour dérober des données confidentielles. |
-| **Spear-phishing (Hameçonnage ciblé)** | Variante d'hameçonnage hautement personnalisée visant un individu ou une organisation spécifique. |
 | **Smishing** | Hameçonnage réalisé par le biais de messages textes (SMS). |
+| **Spear-phishing (Hameçonnage ciblé)** | Variante d'hameçonnage hautement personnalisée visant un individu ou une organisation spécifique. |
 | **Vishing (Hameçonnage vocal)** | Technique d'ingénierie sociale par téléphone visant à extorquer des informations confidentielles. |
+

@@ -35,9 +35,14 @@ Faites un exercice de lecture de Logs. Montrez à quoi ressemble une log Windows
 ---
 
 ### Glossaire
-*   **SIEM (Security Information and Event Management)** — Outil de gestion centralisée des logs et des alertes de sécurité en temps réel.
+
+*   **Log (Journal d'événements)** — Fichier texte généré automatiquement décrivant un événement survenu sur un système ou une application.
 *   **Log (Journal)** — Fichier texte généré automatiquement par un système ou une application décrivant les événements survenus.
-*   **Normalisation (Parsing)** : Processus de conversion de formats de journaux d'événements diversifiés dans un format de données unifié.
+*   **Normalisation (Parsing)** — Processus de conversion de formats de journaux d'événements diversifiés dans un format de données unifié.
+*   **Normalisation (Parsing)** — Processus de transformation de données brutes hétérogènes dans un schéma ou format unique standardisé.
+*   **Règle de corrélation** — Instruction logique croisant plusieurs événements distants pour identifier un comportement d'attaque complexe.
+*   **SIEM (Security Information and Event Management)** — Outil de gestion centralisée des logs et des alertes de sécurité en temps réel.
+*   **SIEM (Security Information and Event Management)** — Système logiciel centralisant, normalisant et corrélant les logs de sécurité pour détecter des incidents en temps réel.
 *   **Syslog** — Protocole réseau standard utilisé pour le transfert de messages de journaux d'événements d'une machine vers un serveur central.
 
 ---
@@ -132,13 +137,13 @@ Ligne 4 : 203.0.113.88 - - [29/Jun/2026:10:01:25] "GET /admin/../../etc/passwd H
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Imaginez le travail d'un SIEM et l'analyse de logs comme une **enquête policière criminelle** :
+    - **Les Logs (journaux d'événements)** sont les indices bruts laissés partout : les enregistrements de la caméra du hall, l'historique du badge à l'ascenseur, le registre des visiteurs de la réception.
+    - **La Normalisation (Parsing)** consiste à traduire ces indices écrits dans des langues ou formats différents en fiches standardisées et comparables dans la base de données du détective.
+    - **La Corrélation (les règles logiques)** est le raisonnement du détective : "Si la même personne a badgé à l'entrée à Paris à 14h00 ET a badgé à l'entrée à Lyon à 14h15, alors il y a fraude ou usurpation d'identité." Une seule ligne de log n'a pas de sens, c'est leur croisement logique qui révèle l'attaque.
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Un serveur web e-commerce subit des attaques répétées. En configurant son SIEM, le RSSI met en place une règle de corrélation : si une adresse IP externe effectue plus de 20 requêtes contenant le caractère de apostrophe `'` (tentative d'injection SQL) en moins de 10 secondes et reçoit un code HTTP 200 (succès), le SIEM doit immédiatement générer une alerte critique.
 
 
 ## 3. Ressources complémentaires
@@ -154,9 +159,13 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Analyse d'une règle de corrélation SIEM logique.
+- **Consignes :**
+    1. Vous devez rédiger la logique d'une règle de corrélation SIEM pour détecter une attaque par force brute réussie sur votre serveur Active Directory.
+    2. Utilisez des conditions logiques liant l'Event ID Windows `4625` (Logon Failure) et l'Event ID Windows `4624` (Logon Success). Définissez le seuil de nombre d'échecs et l'intervalle de temps.
+- **Correction pour le mentor :** La règle logique attendue est :
+  - **Condition** : *SI* [Nombre d'événements d'EventID `4625`] > 10 depuis la même [Adresse IP source] vers le même [Nom d'utilisateur] dans un intervalle de temps <= 60 secondes, *ET* suivis de 1 événement [EventID `4624`] depuis cette même [Adresse IP source] vers ce même [Nom d'utilisateur].
+  - **Action** : Générer une alerte de sévérité Haute intitulée *"Force Brute Active Directory Réussie - Isolation Requise"*. Le mentor validera que l'étudiant a bien intégré la détection de la réussite après les échecs.
 
 ---
 
@@ -164,7 +173,9 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **SIEM (Security Information and Event Management)** | Outil de gestion centralisée des logs et des alertes de sécurité en temps réel. |
 | **Log (Journal)** | Fichier texte généré automatiquement par un système ou une application décrivant les événements survenus. |
 | **Normalisation (Parsing)** | Processus de conversion de formats de journaux d'événements diversifiés dans un format de données unifié. |
+| **Règle de corrélation** | Instruction logique croisant plusieurs événements distants pour identifier un comportement d'attaque complexe. |
+| **SIEM (Security Information and Event Management)** | Outil de gestion centralisée des logs et des alertes de sécurité en temps réel. |
 | **Syslog** | Protocole réseau standard utilisé pour le transfert de messages de journaux d'événements d'une machine vers un serveur central. |
+

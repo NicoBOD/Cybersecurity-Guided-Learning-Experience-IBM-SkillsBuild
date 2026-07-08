@@ -52,10 +52,15 @@ Passez 20 minutes à faire un jeu de rôle avec la salle : "Il est 8h00, tous le
 ---
 
 ### Glossaire
-*   **Playbook** — Procédure de sécurité documentée détaillant pas à pas les actions à mener face à un type d'incident spécifique.
+
+*   **CVE (Common Vulnerabilities and Exposures)** — Répertoire public attribuant un identifiant unique à chaque vulnérabilité logicielle connue.
+*   **CVSS (Common Vulnerability Scoring System)** — Standard industriel évaluant de 0 à 10 la sévérité technique d'une vulnérabilité.
+*   **CWE (Common Weakness Enumeration)** — Dictionnaire catégorisant les types de faiblesses architecturales ou de code logicielles sous-jacentes.
 *   **Mémoire Volatile (RAM)** — Mémoire informatique à accès rapide effacée dès que l'alimentation électrique est coupée.
-*   **REX (Retour d'Expérience)** : Analyse menée après la clôture d'un incident pour identifier les failles du processus de réponse et s'améliorer.
 *   **NIST SP 800-61** — Guide de référence du gouvernement américain détaillant les bonnes pratiques de gestion des incidents de sécurité.
+*   **Patch (Correctif de sécurité)** — Mise à jour logicielle publiée par un éditeur pour combler une faille de sécurité identifiée.
+*   **Playbook** — Procédure de sécurité documentée détaillant pas à pas les actions à mener face à un type d'incident spécifique.
+*   **REX (Retour d'Expérience)** — Analyse menée après la clôture d'un incident pour identifier les failles du processus de réponse et s'améliorer.
 
 ---
 
@@ -172,13 +177,14 @@ ou des fichiers professionnels impossibles à ouvrir avec une extension ".locked
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Imaginez le processus de gestion des vulnérabilités comme l'**entretien de la plomberie d'un grand immeuble** :
+    - **L'identification** consiste à inspecter tous les tuyaux pour trouver des fuites ou des zones de rouille (scans de vulnérabilités répertoriant les faiblesses logicielles).
+    - **Le score CVSS** est l'évaluation de la gravité d'un tuyau rouillé : si c'est la conduite d'alimentation d'eau principale qui risque d'éclater au sous-sol (CVSS 9.8 - critique), il faut la remplacer immédiatement. Si c'est un robinet qui goutte dans un bureau inutilisé (CVSS 3.0), cela peut attendre.
+    - **La remédiation (Patching)** consiste à réparer le tuyau ou à souder un renforcement (appliquer la mise à jour corrective).
+    - **La différence entre CVE et CWE** : La *CVE* est l'adresse de la fuite sur un tuyau précis acheté chez un constructeur (ex. la faille Log4j sur tel logiciel). La *CWE* est la cause générale du défaut de construction (ex. utiliser des métaux de mauvaise qualité).
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Un scanner de vulnérabilités remonte une faille critique de type exécution de code à distance (CVE-2021-44228) affectant plusieurs serveurs d'une entreprise. Grâce aux scores CVSS et à l'analyse de l'exposition internet des serveurs, l'équipe de sécurité priorise le patch de la machine externe en moins de 24h, neutralisant le risque avant toute intrusion.
 
 
 ## 3. Ressources complémentaires
@@ -194,9 +200,12 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Analyse d'une vulnérabilité critique et plan d'action de remédiation.
+- **Consignes :**
+    1. Soit la vulnérabilité CVE-2024-XXXX affectant votre serveur de messagerie externe, notée 9.8 sur l'échelle CVSS. L'exploit est public et activement utilisé dans le monde.
+    2. Rédigez le plan d'action d'urgence en 3 étapes à présenter à vos techniciens pour traiter cette menace.
+    3. Quelle mesure temporaire (Workaround) pouvez-vous appliquer si aucun correctif n'est encore disponible ?
+- **Correction pour le mentor :** Plan attendu : 1. Isoler le serveur de messagerie d'Internet temporairement si possible ou restreindre les flux. 2. Télécharger et appliquer le patch officiel de l'éditeur de messagerie. 3. Mener une analyse de logs pour vérifier si le serveur n'a pas déjà été compromis avant l'application du patch. Mesure temporaire (Workaround) : Bloquer le port spécifique utilisé par la faille sur le pare-feu externe ou désactiver la fonctionnalité vulnérable dans la configuration du logiciel.
 
 ---
 
@@ -204,7 +213,12 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Playbook** | Procédure de sécurité documentée détaillant pas à pas les actions à mener face à un type d'incident spécifique. |
+| **CVE (Common Vulnerabilities and Exposures)** | Répertoire public attribuant un identifiant unique à chaque vulnérabilité logicielle connue. |
+| **CVSS (Common Vulnerability Scoring System)** | Standard industriel évaluant de 0 à 10 la sévérité technique d'une vulnérabilité. |
+| **CWE (Common Weakness Enumeration)** | Dictionnaire catégorisant les types de faiblesses architecturales ou de code logicielles sous-jacentes. |
 | **Mémoire Volatile (RAM)** | Mémoire informatique à accès rapide effacée dès que l'alimentation électrique est coupée. |
-| **REX (Retour d'Expérience)** | Analyse menée après la clôture d'un incident pour identifier les failles du processus de réponse et s'améliorer. |
 | **NIST SP 800-61** | Guide de référence du gouvernement américain détaillant les bonnes pratiques de gestion des incidents de sécurité. |
+| **Patch (Correctif de sécurité)** | Mise à jour logicielle publiée par un éditeur pour combler une faille de sécurité identifiée. |
+| **Playbook** | Procédure de sécurité documentée détaillant pas à pas les actions à mener face à un type d'incident spécifique. |
+| **REX (Retour d'Expérience)** | Analyse menée après la clôture d'un incident pour identifier les failles du processus de réponse et s'améliorer. |
+

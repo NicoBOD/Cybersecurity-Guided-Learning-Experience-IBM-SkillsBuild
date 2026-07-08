@@ -48,9 +48,14 @@ Terminez la session (30 minutes) en orientant les apprenants vers l'avenir : que
 ---
 
 ### Glossaire
-*   **Soutenance de Projet** — Présentation orale synthétique devant un jury visant à démontrer la pertinence et la faisabilité des solutions proposées.
-*   **CVE (Common Vulnerabilities and Exposures)** — Système d'identification et de référencement public des vulnérabilités logicielles connues.
+
+*   **Audit de sécurité** — Évaluation formelle et technique de la conformité et de la vulnérabilité d'un système d'information.
+*   **Capstone Project** — Projet intégrateur de fin de formation évaluant la capacité à structurer une politique de sécurité complète sur un cas pratique d'entreprise.
 *   **CERT-FR** — Centre de veille, d'alerte et de réponse aux attaques informatiques de l'État français, rattaché à l'ANSSI.
+*   **CVE (Common Vulnerabilities and Exposures)** — Système d'identification et de référencement public des vulnérabilités logicielles connues.
+*   **Plan de remédiation** — Document de synthèse ordonnant les mesures correctives techniques, physiques et organisationnelles pour corriger les failles.
+*   **Restitution** — Action de présenter ses travaux et ses conclusions techniques devant un public de décideurs non techniques.
+*   **Soutenance de Projet** — Présentation orale synthétique devant un jury visant à démontrer la pertinence et la faisabilité des solutions proposées.
 
 ---
 
@@ -128,13 +133,14 @@ Utilisez la grille critériée ci-dessous pour évaluer votre livrable *« Audit
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Pour bien comprendre la restitution d'un projet de fin d'études en sécurité (Capstone), imaginez le rôle d'un **architecte en bâtiment menant l'audit d'une maison ancienne** :
+    - Vous visitez la maison de la cave au grenier, testez la solidité des murs, vérifiez si l'électricité respecte les normes et si les serrures des portes fonctionnent (audit de sécurité).
+    - Vous ne vous contentez pas de dire "tout est dangereux". Vous rédigez un rapport clair pour le propriétaire.
+    - Vous listez les travaux à réaliser du plus urgent (réparer le toit qui fuit - CVSS critique) au moins urgent (repeindre le portail - hygiène de base).
+    - Vous expliquez le projet avec des mots simples pour que le propriétaire comprenne pourquoi ces dépenses sont nécessaires pour sa sécurité quotidienne.
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+À la suite d'un audit de sécurité d'un mois, un prestataire présente ses conclusions au comité de direction d'un fabricant industriel. Au lieu de noyer les dirigeants sous le jargon technique, il utilise une échelle de risques claire : la mise en place du MFA sur la messagerie et la segmentation réseau entre l'usine et les bureaux sont présentées comme les deux chantiers prioritaires pour éviter un arrêt total de la production.
 
 
 ## 3. Ressources complémentaires
@@ -150,9 +156,12 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Préparation à la soutenance devant un comité exécutif.
+- **Consignes :**
+    1. Vous devez présenter la synthèse de votre projet de sécurisation (Capstone) d'une clinique médicale devant le Conseil d'Administration.
+    2. Rédigez les 3 diapositives clés de votre support de présentation : Diapo 1 (Les 3 vulnérabilités majeures identifiées), Diapo 2 (Le plan d'action prioritaire et son coût), Diapo 3 (La réduction attendue du risque cyber et l'intérêt pour l'activité).
+    3. Formulez vos arguments sans jargon technique pour justifier l'achat d'outils de sécurité.
+- **Correction pour le mentor :** Le mentor évaluera l'effort de vulgarisation des apprenants. Les vulnérabilités doivent être traduites en impacts business (ex: "le manque de sauvegardes déconnectées fait risquer une fermeture définitive de la clinique en cas de rançongiciel" plutôt que "manque d'immuabilité sur Veeam"). Le plan d'action doit être clair, pragmatique et justifié par la continuité des soins et la protection légale des données médicales des patients (RGPD).
 
 ---
 
@@ -160,6 +169,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Soutenance de Projet** | Présentation orale synthétique devant un jury visant à démontrer la pertinence et la faisabilité des solutions proposées. |
-| **CVE (Common Vulnerabilities and Exposures)** | Système d'identification et de référencement public des vulnérabilités logicielles connues. |
+| **Audit de sécurité** | Évaluation formelle et technique de la conformité et de la vulnérabilité d'un système d'information. |
+| **Capstone Project** | Projet intégrateur de fin de formation évaluant la capacité à structurer une politique de sécurité complète sur un cas pratique d'entreprise. |
 | **CERT-FR** | Centre de veille, d'alerte et de réponse aux attaques informatiques de l'État français, rattaché à l'ANSSI. |
+| **CVE (Common Vulnerabilities and Exposures)** | Système d'identification et de référencement public des vulnérabilités logicielles connues. |
+| **Plan de remédiation** | Document de synthèse ordonnant les mesures correctives techniques, physiques et organisationnelles pour corriger les failles. |
+| **Restitution** | Action de présenter ses travaux et ses conclusions techniques devant un public de décideurs non techniques. |
+| **Soutenance de Projet** | Présentation orale synthétique devant un jury visant à démontrer la pertinence et la faisabilité des solutions proposées. |
+

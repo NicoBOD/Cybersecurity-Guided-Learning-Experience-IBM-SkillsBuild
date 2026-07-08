@@ -35,10 +35,15 @@ Approfondissez les protocoles. Expliquez le fonctionnement du DNS (résolution d
 ---
 
 ### Glossaire
-*   **MAC Address (Adresse MAC)** — Identifiant physique unique gravé en usine sur chaque carte réseau.
-*   **IP Address (Adresse IP)** — Identifiant logique attribué à chaque machine connectée à un réseau, permettant son routage.
+
 *   **DNS Tunneling (Tunneling DNS)** — Technique de détournement consistant à encapsuler du trafic non-DNS dans des requêtes DNS pour contourner les pare-feux.
+*   **IP Address (Adresse IP)** — Identifiant logique attribué à chaque machine connectée à un réseau, permettant son routage.
+*   **MAC Address (Adresse MAC)** — Identifiant physique unique gravé en usine sur chaque carte réseau.
+*   **Modèle OSI** — Cadre théorique décrivant en 7 couches distinctes le processus de communication des systèmes informatiques sur un réseau.
+*   **TCP (Transmission Control Protocol)** — Protocole de transport réseau orienté connexion garantissant la transmission fiable et ordonnée des paquets de données.
 *   **TTL (Time To Live)** — Valeur dans l'en-tête IP indiquant le nombre maximal de sauts de routeurs autorisés avant la destruction du paquet.
+*   **UDP (User Datagram Protocol)** — Protocole de transport réseau rapide sans connexion ne garantissant pas la livraison ni l'ordre des paquets.
+*   **Wireshark** — Logiciel analyseur de protocoles réseau open-source permettant de capturer et d'inspecter les paquets circulant sur un segment de réseau.
 
 ---
 
@@ -157,13 +162,15 @@ Analysez les deux extraits de paquets ci-dessous et répondez aux questions :
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Imaginez le fonctionnement d'un réseau informatique et le modèle OSI comme l'envoi d'une **lettre par la poste** :
+    - **Couches Applicative / Présentation / Session** : Vous écrivez votre lettre en français (Données), la pliez et l'insérez dans une enveloppe scellée.
+    - **Couche Transport (TCP/UDP)** : Vous décidez d'envoyer la lettre en recommandé avec accusé de réception (TCP, fiable et ordonné) ou par courrier normal sans garantie (UDP, rapide mais sans suivi).
+    - **Couche Réseau (IP)** : Vous inscrivez l'adresse IP de destination et de départ sur l'enveloppe.
+    - **Couche Liaison de données (MAC / Ethernet)** : Le facteur trie l'enveloppe et l'associe au camion postal physique correspondant à votre rue (liaison physique locale).
+    - **Couche Physique** : La lettre circule sous forme de signaux physiques (impulsions électriques sur fils de cuivre ou lumière dans la fibre optique).
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Un administrateur réseau utilise l'outil Wireshark pour analyser les paquets de données qui transitent sur le réseau de son entreprise. Il repère une anomalie : un serveur interne effectue des requêtes DNS (port 53 UDP) anormalement fréquentes vers une adresse IP inconnue à l'étranger. Cette analyse au niveau de la couche transport et réseau lui permet de détecter une tentative d'exfiltration de données masquée par tunnel DNS.
 
 
 ## 3. Ressources complémentaires
@@ -179,9 +186,13 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Lecture d'en-tête de paquet et analyse logique de ports réseau.
+- **Consignes :**
+    1. Soit l'extrait d'un en-tête de paquet réseau intercepté par un pare-feu :
+       `PROTO: TCP | SRC_IP: 192.168.1.15 | DST_IP: 10.0.0.4 | SRC_PORT: 51234 | DST_PORT: 443 | STATE: SYN`
+    2. Identifiez quel protocole de couche applicative est ciblé par cette connexion. Est-ce un protocole sécurisé ?
+    3. Expliquez à quoi correspond le drapeau `SYN` dans l'établissement de la liaison TCP.
+- **Correction pour le mentor :** Le port de destination est le **443**, ce qui correspond au protocole **HTTPS** (couche applicative). C'est un protocole sécurisé car les données y sont chiffrées en TLS. Le drapeau `SYN` (Synchronize) indique que la machine source (`192.168.1.15`) tente d'initier la première étape de la poignée de main à trois voies (Three-way Handshake) TCP avec le serveur cible.
 
 ---
 
@@ -189,7 +200,12 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **MAC Address (Adresse MAC)** | Identifiant physique unique gravé en usine sur chaque carte réseau. |
-| **IP Address (Adresse IP)** | Identifiant logique attribué à chaque machine connectée à un réseau, permettant son routage. |
 | **DNS Tunneling (Tunneling DNS)** | Technique de détournement consistant à encapsuler du trafic non-DNS dans des requêtes DNS pour contourner les pare-feux. |
+| **IP Address (Adresse IP)** | Identifiant logique attribué à chaque machine connectée à un réseau, permettant son routage. |
+| **MAC Address (Adresse MAC)** | Identifiant physique unique gravé en usine sur chaque carte réseau. |
+| **Modèle OSI** | Cadre théorique décrivant en 7 couches distinctes le processus de communication des systèmes informatiques sur un réseau. |
+| **TCP (Transmission Control Protocol)** | Protocole de transport réseau orienté connexion garantissant la transmission fiable et ordonnée des paquets de données. |
 | **TTL (Time To Live)** | Valeur dans l'en-tête IP indiquant le nombre maximal de sauts de routeurs autorisés avant la destruction du paquet. |
+| **UDP (User Datagram Protocol)** | Protocole de transport réseau rapide sans connexion ne garantissant pas la livraison ni l'ordre des paquets. |
+| **Wireshark** | Logiciel analyseur de protocoles réseau open-source permettant de capturer et d'inspecter les paquets circulant sur un segment de réseau. |
+

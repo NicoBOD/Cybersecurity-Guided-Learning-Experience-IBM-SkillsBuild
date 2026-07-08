@@ -38,15 +38,20 @@ Demandez aux apprenants d'identifier l'actif le plus critique de leur entreprise
 ---
 
 ### Glossaire
-* **Triade CIA (Confidentialité, Intégrité, Disponibilité)** : Le modèle de référence de la sécurité de l'information. Chaque action de sécurité vise à garantir l'un ou plusieurs de ces piliers.
-* **Confidentialité** : Garantie que seules les personnes autorisées ont accès aux données.
-* **Intégrité** : Garantie que les données ne sont pas modifiées, altérées ou supprimées de manière accidentelle ou malveillante.
-* **Disponibilité** : Garantie que les données et les systèmes sont accessibles par les utilisateurs autorisés au moment où ils en ont besoin.
-* **Vulnérabilité** : Une faiblesse ou une faille présente dans un système, un logiciel, une procédure ou un comportement humain, susceptible d'être exploitée.
-* **Menace** : Un événement ou une entité externe ayant le potentiel d'exploiter une vulnérabilité et de causer des dommages.
-* **Risque** : La probabilité qu'une menace exploite une vulnérabilité et provoque un impact négatif (Risque = Menace × Vulnérabilité × Impact).
-* **Sécurité offensive** : Approche proactive consistant à tester les défenses en simulant des attaques réelles (ex. pentesting, red teaming).
-* **Sécurité défensive** : Ensemble des mesures de protection, de surveillance et de réaction déployées pour sécuriser un système (ex. gestion des pare-feux, surveillance SOC, réponse sur incident).
+
+*   **AES-256** — Standard de chiffrement symétrique hautement sécurisé utilisant des clés de 256 bits, considéré comme inviolable par la force brute actuelle.
+*   **Confidentialité** — Garantie que seules les personnes autorisées ont accès aux données.
+*   **DDoS (Distributed Denial of Service)** — Attaque par déni de service distribué visant à rendre un serveur ou un réseau indisponible en le submergeant de requêtes provenant de multiples sources.
+*   **Disponibilité** — Garantie que les données et les systèmes sont accessibles par les utilisateurs autorisés au moment où ils en ont besoin.
+*   **Intégrité** — Garantie que les données ne sont pas modifiées, altérées ou supprimées de manière accidentelle ou malveillante.
+*   **Menace** — Un événement ou une entité externe ayant le potentiel d'exploiter une vulnérabilité et de causer des dommages.
+*   **RaaS (Ransomware-as-a-Service)** — Modèle économique cybercriminel où des développeurs vendent ou louent des rançongiciels à des affiliés qui exécutent les attaques.
+*   **Risque** — La probabilité qu'une menace exploite une vulnérabilité et provoque un impact négatif (Risque = Menace × Vulnérabilité × Impact).
+*   **SHA-256** — Algorithme de hachage cryptographique produisant une empreinte numérique unique de 256 bits pour vérifier l'intégrité d'une donnée.
+*   **Sécurité défensive** — Ensemble des mesures de protection, de surveillance et de réaction déployées pour sécuriser un système (ex. gestion des pare-feux, surveillance SOC, réponse sur incident).
+*   **Sécurité offensive** — Approche proactive consistant à tester les défenses en simulant des attaques réelles (ex. pentesting, red teaming).
+*   **Triade CIA (Confidentialité, Intégrité, Disponibilité)** — Le modèle de référence de la sécurité de l'information. Chaque action de sécurité vise à garantir l'un ou plusieurs de ces piliers.
+*   **Vulnérabilité** — Une faiblesse ou une faille présente dans un système, un logiciel, une procédure ou un comportement humain, susceptible d'être exploitée.
 
 ---
 
@@ -140,13 +145,14 @@ Lisez attentivement les trois situations fictives ci-dessous et déterminez pour
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Pour bien comprendre la cybersécurité, imaginez l'analogie d'un **château fort médiéval** :
+    - **Les Douves et le Pont-levis** agissent comme le pare-feu : ils filtrent les accès et n'autorisent le passage que par une seule entrée surveillée.
+    - **Les Gardes à l'intérieur de la cour** sont l'Antivirus/EDR : s'il y a un intrus ou une bagarre dans la cour, ils interviennent immédiatement.
+    - **La Salle du trésor (donjon)** représente les données sensibles. Elle nécessite plusieurs clés et l'accord de plusieurs officiers (Authentification Multifacteur - MFA).
+    - **Les Espions et éclaireurs** représentent la sécurité offensive : ils étudient les faiblesses des murs du château pour les réparer avant qu'une armée ennemie ne les attaque.
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Dans un cabinet de conseil financier, un consultant perd son ordinateur portable dans le train. Grâce à la *défense en profondeur*, le disque dur de la machine est chiffré en AES-256 (Confidentialité préservée), les comptes d'accès sont désactivés à distance (Disponibilité contrôlée), et aucun attaquant ne peut usurper son identité car le MFA est requis pour se connecter au réseau de l'entreprise. Chaque couche de sécurité a joué son rôle pour éviter la catastrophe.
 
 
 ## 3. Ressources complémentaires
@@ -163,9 +169,12 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Analyse d'impact sur cas réel.
+- **Consignes :**
+    1. Étudiez le cas d'une attaque par Ransomware ayant ciblé un hôpital régional fictif.
+    2. Identifiez l'impact précis de cette attaque sur chacun des trois piliers de la Triade CIA.
+    3. Proposez une mesure d'urgence pour restaurer la "Disponibilité" et une mesure préventive pour éviter que la "Confidentialité" ne soit compromise à l'avenir.
+- **Correction pour le mentor :** Le mentor validera que les apprenants ont bien identifié que le chiffrement des données de santé bloque la *Disponibilité*, que la fuite potentielle de dossiers médicaux affecte la *Confidentialité*, et que la modification sauvage de fiches d'administration de médicaments menace l'*Intégrité*. La restauration depuis des sauvegardes hors-ligne sécurisées est la réponse pour la disponibilité, tandis que le chiffrement des bases de données et la restriction des droits d'accès protègent la confidentialité.
 
 ---
 
@@ -173,12 +182,17 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Triade CIA (Confidentialité, Intégrité, Disponibilité)** | Le modèle de référence de la sécurité de l'information. Chaque action de sécurité vise à garantir l'un ou plusieurs de ces piliers. |
+| **AES-256** | Standard de chiffrement symétrique hautement sécurisé utilisant des clés de 256 bits, considéré comme inviolable par la force brute actuelle. |
 | **Confidentialité** | Garantie que seules les personnes autorisées ont accès aux données. |
-| **Intégrité** | Garantie que les données ne sont pas modifiées, altérées ou supprimées de manière accidentelle ou malveillante. |
+| **DDoS (Distributed Denial of Service)** | Attaque par déni de service distribué visant à rendre un serveur ou un réseau indisponible en le submergeant de requêtes provenant de multiples sources. |
 | **Disponibilité** | Garantie que les données et les systèmes sont accessibles par les utilisateurs autorisés au moment où ils en ont besoin. |
-| **Vulnérabilité** | Une faiblesse ou une faille présente dans un système, un logiciel, une procédure ou un comportement humain, susceptible d'être exploitée. |
+| **Intégrité** | Garantie que les données ne sont pas modifiées, altérées ou supprimées de manière accidentelle ou malveillante. |
 | **Menace** | Un événement ou une entité externe ayant le potentiel d'exploiter une vulnérabilité et de causer des dommages. |
+| **RaaS (Ransomware-as-a-Service)** | Modèle économique cybercriminel où des développeurs vendent ou louent des rançongiciels à des affiliés qui exécutent les attaques. |
 | **Risque** | La probabilité qu'une menace exploite une vulnérabilité et provoque un impact négatif (Risque = Menace × Vulnérabilité × Impact). |
-| **Sécurité offensive** | Approche proactive consistant à tester les défenses en simulant des attaques réelles (ex. pentesting, red teaming). |
+| **SHA-256** | Algorithme de hachage cryptographique produisant une empreinte numérique unique de 256 bits pour vérifier l'intégrité d'une donnée. |
 | **Sécurité défensive** | Ensemble des mesures de protection, de surveillance et de réaction déployées pour sécuriser un système (ex. gestion des pare-feux, surveillance SOC, réponse sur incident). |
+| **Sécurité offensive** | Approche proactive consistant à tester les défenses en simulant des attaques réelles (ex. pentesting, red teaming). |
+| **Triade CIA (Confidentialité, Intégrité, Disponibilité)** | Le modèle de référence de la sécurité de l'information. Chaque action de sécurité vise à garantir l'un ou plusieurs de ces piliers. |
+| **Vulnérabilité** | Une faiblesse ou une faille présente dans un système, un logiciel, une procédure ou un comportement humain, susceptible d'être exploitée. |
+

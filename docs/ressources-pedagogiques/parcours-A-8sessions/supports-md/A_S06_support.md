@@ -38,13 +38,18 @@ Prenez 15 minutes pour expliquer la "fatigue des alertes" subie par les analyste
 ---
 
 ### Glossaire
-* **SOC (Security Operations Center)** : Centre opérationnel où des analystes surveillent et analysent en continu la sécurité du système d'information pour détecter les incidents.
-* **SIEM (Security Information and Event Management)** : Logiciel centralisant les journaux d'événements (logs) de divers équipements réseau et serveurs pour y appliquer des règles de corrélation et lever des alertes en cas de comportement suspect.
-* **Log (Journal d'événements)** : Fichier texte généré automatiquement par un système, une application ou un équipement, enregistrant les actions, connexions et erreurs survenues chronologiquement.
-* **Faux Positif** : Une alerte de sécurité déclenchée à tort par un outil de surveillance face à une activité légitime (ex. un employé légitime qui se trompe de mot de passe trois fois).
-* **CVE (Common Vulnerabilities and Exposures)** : Dictionnaire public recensant et identifiant de manière unique les failles de sécurité logicielles et matérielles connues (ex. CVE-2021-44228).
-* **CVSS (Common Vulnerability Scoring System)** : Système de notation standardisé évaluant la gravité d'une vulnérabilité informatique sur une échelle de 0.0 (inoffensive) à 10.0 (critique).
-* **Patch (Correctif)** : Mise à jour logicielle publiée par un éditeur pour corriger des erreurs de programmation ou combler des failles de sécurité.
+
+*   **CVE (Common Vulnerabilities and Exposures)** — Dictionnaire public recensant et identifiant de manière unique les failles de sécurité logicielles et matérielles connues (ex. CVE-2021-44228).
+*   **CVE (Common Vulnerabilities and Exposures)** — Base de données publique répertoriant les vulnérabilités de sécurité logicielle connues de façon unique.
+*   **CVSS (Common Vulnerability Scoring System)** — Système de notation standardisé évaluant la gravité d'une vulnérabilité informatique sur une échelle de 0.0 (inoffensive) à 10.0 (critique).
+*   **CVSS (Common Vulnerability Scoring System)** — Système de notation standardisé évaluant la gravité d'une vulnérabilité informatique sur une échelle de 0 à 10.
+*   **Faux Positif** — Une alerte de sécurité déclenchée à tort par un outil de surveillance face à une activité légitime (ex. un employé légitime qui se trompe de mot de passe trois fois).
+*   **Log (Journal d'événements)** — Fichier texte généré automatiquement par un système, une application ou un équipement, enregistrant les actions, connexions et erreurs survenues chronologiquement.
+*   **Patch (Correctif)** — Mise à jour logicielle publiée par un éditeur pour corriger des erreurs de programmation ou combler des failles de sécurité.
+*   **SIEM (Security Information and Event Management)** — Logiciel centralisant les journaux d'événements (logs) de divers équipements réseau et serveurs pour y appliquer des règles de corrélation et lever des alertes en cas de comportement suspect.
+*   **SIEM (Security Information and Event Management)** — Solution logicielle qui centralise, normalise et corrèle les logs de sécurité pour identifier des menaces.
+*   **SOC (Security Operations Center)** — Centre opérationnel où des analystes surveillent et analysent en continu la sécurité du système d'information pour détecter les incidents.
+*   **SOC (Security Operations Center)** — Centre opérationnel composé d'experts chargé de surveiller, détecter et répondre aux alertes de sécurité en temps réel.
 
 ---
 
@@ -147,13 +152,14 @@ Vous êtes analyste de sécurité junior dans un SOC. Le SIEM vient de lever une
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Imaginez la surveillance de la sécurité de votre entreprise comme la protection d'un **centre commercial** :
+    - **Le SOC (Security Operations Center)** est le PC de sécurité central où les agents surveillent en temps réel les caméras de surveillance (logs d'événements).
+    - **Le SIEM** est le système d'alarme intelligent qui analyse toutes les caméras en même temps : si un détecteur s'active à la porte A et qu'une personne court vers la sortie B 5 secondes après, il génère une alerte d'intrusion automatique.
+    - **Le Scan de vulnérabilités** est le garde qui fait sa ronde la nuit pour vérifier physiquement si des fenêtres sont restées ouvertes ou si des serrures sont endommagées.
+    - **Le Score CVSS** est la note d'urgence attribuée à une vitre brisée : une vitre brisée au rez-de-chaussée (CVSS 9.8) est bien plus urgente à réparer qu'une poignée de porte lâche au 3ème étage (CVSS 3.0).
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Dans une banque, le SIEM détecte qu'un compte utilisateur s'est connecté depuis la France puis depuis la Chine 10 minutes plus tard. Le SOC qualifie cette alerte de "Vrai Positif" (vitesse de déplacement impossible) et bloque immédiatement la session de l'utilisateur, évitant ainsi le vol de données bancaires.
 
 
 ## 3. Ressources complémentaires
@@ -170,9 +176,14 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Priorisation de vulnérabilités CVSS.
+- **Consignes :**
+    1. Vous êtes analyste de sécurité. Le scanner de vulnérabilités remonte 3 failles logicielles sur vos serveurs :
+       - Faute A (CVSS 9.8) : Exécution de code à distance sans authentification sur le serveur web externe.
+       - Faute B (CVSS 7.2) : Élévation de privilèges locaux sur un poste de travail interne.
+       - Faute C (CVSS 5.0) : Divulgation d'informations de version de serveur sur l'intranet.
+    2. Dans quel ordre devez-vous patcher ces vulnérabilités ? Justifiez votre choix en analysant la criticité et l'accessibilité de chaque faille.
+- **Correction pour le mentor :** L'ordre doit être : Faute A, puis Faute B, puis Faute C. La Faute A est critique (9.8), exploitable à distance par n'importe qui sans mot de passe, directement sur Internet. Elle présente le plus grand risque de compromission totale immédiate. La Faute B est importante (7.2) mais nécessite déjà un accès initial au poste interne pour être exploitée. La Faute C est mineure et purement informative.
 
 ---
 
@@ -180,10 +191,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **SOC (Security Operations Center)** | Centre opérationnel où des analystes surveillent et analysent en continu la sécurité du système d'information pour détecter les incidents. |
-| **SIEM (Security Information and Event Management)** | Logiciel centralisant les journaux d'événements (logs) de divers équipements réseau et serveurs pour y appliquer des règles de corrélation et lever des alertes en cas de comportement suspect. |
-| **Log (Journal d'événements)** | Fichier texte généré automatiquement par un système, une application ou un équipement, enregistrant les actions, connexions et erreurs survenues chronologiquement. |
-| **Faux Positif** | Une alerte de sécurité déclenchée à tort par un outil de surveillance face à une activité légitime (ex. un employé légitime qui se trompe de mot de passe trois fois). |
 | **CVE (Common Vulnerabilities and Exposures)** | Dictionnaire public recensant et identifiant de manière unique les failles de sécurité logicielles et matérielles connues (ex. CVE-2021-44228). |
 | **CVSS (Common Vulnerability Scoring System)** | Système de notation standardisé évaluant la gravité d'une vulnérabilité informatique sur une échelle de 0.0 (inoffensive) à 10.0 (critique). |
+| **Faux Positif** | Une alerte de sécurité déclenchée à tort par un outil de surveillance face à une activité légitime (ex. un employé légitime qui se trompe de mot de passe trois fois). |
+| **Log (Journal d'événements)** | Fichier texte généré automatiquement par un système, une application ou un équipement, enregistrant les actions, connexions et erreurs survenues chronologiquement. |
 | **Patch (Correctif)** | Mise à jour logicielle publiée par un éditeur pour corriger des erreurs de programmation ou combler des failles de sécurité. |
+| **SIEM (Security Information and Event Management)** | Logiciel centralisant les journaux d'événements (logs) de divers équipements réseau et serveurs pour y appliquer des règles de corrélation et lever des alertes en cas de comportement suspect. |
+| **SOC (Security Operations Center)** | Centre opérationnel où des analystes surveillent et analysent en continu la sécurité du système d'information pour détecter les incidents. |
+

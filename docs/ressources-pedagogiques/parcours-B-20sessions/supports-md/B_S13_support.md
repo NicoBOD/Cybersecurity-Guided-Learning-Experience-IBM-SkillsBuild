@@ -34,10 +34,13 @@ Détaillez la différence entre la Sécurité Opérationnelle (Pare-feu) et la G
 ---
 
 ### Glossaire
-*   **PSSI** — Politique de Sécurité des Systèmes d'Information. Document de référence traduisant la stratégie de sécurité de l'entreprise en règles opérationnelles.
-*   **SMSI** — Système de Management de la Sécurité de l'Information. Cadre organisationnel (processus, personnes, technologies) visant à protéger l'information d'une entreprise.
-*   **RSSI (CISO)** — Responsable de la Sécurité des Systèmes d'Information. Expert technique et organisationnel chargé de piloter la sécurité informatique de l'organisation.
+
+*   **ISO 27001** — Norme internationale définissant les exigences de mise en place et de certification d'un SMSI.
+*   **NIST CSF (Cybersecurity Framework)** — Cadre de référence américain de cybersécurité structuré en 5 fonctions clés (Identifier, Protéger, Détecter, Répondre, Restaurer).
 *   **PDCA (Plan, Do, Check, Act)** — Cycle d'amélioration continue (ou roue de Deming) à la base du management de la qualité et des normes ISO.
+*   **PSSI** — Politique de Sécurité des Systèmes d'Information. Document de référence traduisant la stratégie de sécurité de l'entreprise en règles opérationnelles.
+*   **RSSI (CISO)** — Responsable de la Sécurité des Systèmes d'Information. Expert technique et organisationnel chargé de piloter la sécurité informatique de l'organisation.
+*   **SMSI** — Système de Management de la Sécurité de l'Information. Cadre organisationnel (processus, personnes, technologies) visant à protéger l'information d'une entreprise.
 
 ---
 
@@ -115,13 +118,14 @@ L'entreprise de logistique "EcoLog" souhaite intégrer une section "Sécurité d
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Imaginez la gouvernance de la sécurité et la PSSI comme la **gestion de la sécurité routière d'un pays** :
+    - **La PSSI (Politique de Sécurité)** est comparable au Code de la Route : elle définit les règles, les comportements obligatoires (porter la ceinture, respecter la vitesse) et les sanctions en cas de manquement.
+    - **La Direction Générale (le Gouvernement)** valide le budget, vote les lois de sécurité et fixe les objectifs globaux de réduction des accidents.
+    - **Le RSSI (le Ministère de la Sécurité Routière)** propose les règles techniques, surveille l'état des routes, sensibilise les conducteurs et analyse les causes des accidents.
+    - **Les cadres comme ISO 27001 ou le NIST CSF** sont les normes internationales de construction des autoroutes et des voitures que le pays applique pour rester performant.
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Une entreprise industrielle de 500 salariés souhaite travailler pour des clients étatiques. Elle doit prouver son niveau de sécurité. Le RSSI pilote la rédaction de la PSSI, définit les politiques de mots de passe et met en place un SMSI (Système de Management de la Sécurité). En s'appuyant sur le référentiel ISO 27001, l'entreprise obtient une certification officielle qui rassure ses clients et lui permet de signer ses contrats.
 
 
 ## 3. Ressources complémentaires
@@ -137,9 +141,12 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Rédaction d'une clause de PSSI (BYOD).
+- **Consignes :**
+    1. Dans le cadre de la rédaction de la PSSI de votre entreprise, vous devez rédiger la clause encadrant l'usage des smartphones personnels des employés pour accéder aux e-mails professionnels (règle BYOD).
+    2. Rédigez 3 règles d'usage simples mais contraignantes pour le collaborateur (ex. verrouillage d'écran obligatoire).
+    3. Indiquez la mesure technique que le département informatique doit déployer sur le téléphone pour séparer les données privées des données pro.
+- **Correction pour le mentor :** Les règles d'usage rédigées doivent imposer : 1. Un mot de passe ou schéma de déverrouillage fort obligatoire sur le smartphone. 2. L'interdiction de prêter le téléphone à des tiers (famille, amis) pour un usage professionnel. 3. L'obligation de signaler immédiatement la perte ou le vol du mobile. La mesure technique attendue est le déploiement d'un conteneur sécurisé ou d'une solution MDM/MAM (Mobile Device Management) pour isoler les applications professionnelles et permettre leur effacement à distance sans altérer les photos personnelles.
 
 ---
 
@@ -147,7 +154,10 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **PSSI** | Politique de Sécurité des Systèmes d'Information. Document de référence traduisant la stratégie de sécurité de l'entreprise en règles opérationnelles. |
-| **SMSI** | Système de Management de la Sécurité de l'Information. Cadre organisationnel (processus, personnes, technologies) visant à protéger l'information d'une entreprise. |
-| **RSSI (CISO)** | Responsable de la Sécurité des Systèmes d'Information. Expert technique et organisationnel chargé de piloter la sécurité informatique de l'organisation. |
+| **ISO 27001** | Norme internationale définissant les exigences de mise en place et de certification d'un SMSI. |
+| **NIST CSF (Cybersecurity Framework)** | Cadre de référence américain de cybersécurité structuré en 5 fonctions clés (Identifier, Protéger, Détecter, Répondre, Restaurer). |
 | **PDCA (Plan, Do, Check, Act)** | Cycle d'amélioration continue (ou roue de Deming) à la base du management de la qualité et des normes ISO. |
+| **PSSI** | Politique de Sécurité des Systèmes d'Information. Document de référence traduisant la stratégie de sécurité de l'entreprise en règles opérationnelles. |
+| **RSSI (CISO)** | Responsable de la Sécurité des Systèmes d'Information. Expert technique et organisationnel chargé de piloter la sécurité informatique de l'organisation. |
+| **SMSI** | Système de Management de la Sécurité de l'Information. Cadre organisationnel (processus, personnes, technologies) visant à protéger l'information d'une entreprise. |
+

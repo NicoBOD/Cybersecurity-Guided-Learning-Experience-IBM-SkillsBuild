@@ -39,12 +39,16 @@ Passez 20 minutes à faire un jeu de rôle avec la salle : "Il est 8h00, tous le
 ---
 
 ### Glossaire
-* **Réponse aux incidents (Incident Response - IR)** : Processus structuré permettant à une organisation de détecter, de contenir, d'éradiquer et de se relever d'une cyberattaque.
-* **Forensics (Investigation numérique)** : Discipline scientifique consistant à collecter, analyser et préserver les preuves numériques à la suite d'un incident de sécurité en vue de procédures internes ou judiciaires.
-* **Chaîne de contrôle (Chain of Custody)** : Documentation chronologique stricte recensant l'historique des personnes ayant manipulé, transféré et analysé une preuve physique ou numérique, afin de garantir qu'elle n'a subie aucune altération.
-* **Confinement** : Phase de la réponse aux incidents visant à isoler le système d'information ou les hôtes compromis pour empêcher la propagation de l'attaque.
-* **Mémoire volatile (RAM)** : Mémoire temporaire d'un ordinateur contenant les données actives des programmes en cours d'exécution. Elle s'efface dès que la machine est éteinte.
-* **Piratage éthique (Ethical Hacking)** : Pratique consistant à utiliser les mêmes techniques d'intrusion qu'un pirate malveillant, mais de manière légale, encadrée et autorisée, afin d'identifier et de corriger les faiblesses d'un système.
+
+*   **Chaîne de contrôle (Chain of Custody)** — Documentation chronologique stricte recensant l'historique des personnes ayant manipulé, transféré et analysé une preuve physique ou numérique, afin de garantir qu'elle n'a subie aucune altération.
+*   **Confinement** — Phase de la réponse aux incidents visant à isoler le système d'information ou les hôtes compromis pour empêcher la propagation de l'attaque.
+*   **Forensics (Investigation numérique)** — Discipline scientifique consistant à collecter, analyser et préserver les preuves numériques à la suite d'un incident de sécurité en vue de procédures internes ou judiciaires.
+*   **Forensics (Investigation numérique)** — Discipline scientifique et légale consistant à collecter, analyser et préserver les preuves numériques après un incident.
+*   **Mémoire volatile (RAM)** — Mémoire temporaire d'un ordinateur contenant les données actives des programmes en cours d'exécution. Elle s'efface dès que la machine est éteinte.
+*   **Piratage éthique (Ethical Hacking)** — Pratique consistant à utiliser les mêmes techniques d'intrusion qu'un pirate malveillant, mais de manière légale, encadrée et autorisée, afin d'identifier et de corriger les faiblesses d'un système.
+*   **Réponse aux incidents (Incident Response - IR)** — Processus structuré permettant à une organisation de détecter, de contenir, d'éradiquer et de se relever d'une cyberattaque.
+*   **Sauvegarde immuable** — Sauvegarde dont le contenu ne peut être modifié, modifié ou effacé, même par un administrateur système, protégeant des rançongiciels.
+*   **Éradication** — Phase consistant à éliminer définitivement la source de l'incident (ex. supprimer un code malveillant ou fermer un compte piraté).
 
 ---
 
@@ -134,13 +138,15 @@ Lors d'un incident sur un poste de travail, voici l'ordre dans lequel les élém
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Imaginez la réponse sur incident de cybersécurité comme l'intervention des **pompiers après un départ de feu** :
+    - **La Détection** : L'alarme incendie se déclenche (l'alerte remonte au SOC).
+    - **Le Confinement (Containment)** : Fermer les portes coupe-feu pour éviter que les flammes ne se propagent au reste du bâtiment (ex. débrancher la machine infectée du réseau local).
+    - **L'Éradication** : Éteindre le foyer du feu avec de l'eau et s'assurer qu'il ne reste plus de braises chaudes (ex. nettoyer le malware et supprimer le script malveillant).
+    - **La Reconstruction (Recovery)** : Aérer les pièces, nettoyer la suie et rouvrir les bureaux (ex. réinstaller le système propre et restaurer les fichiers depuis la dernière sauvegarde saine).
+    - **Le Forensics** : L'enquêteur de police cherche l'origine du départ de feu pour savoir s'il est criminel ou accidentel (ex. analyser les logs systèmes pour trouver l'adresse IP d'origine de l'intrus).
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Une PME subit une attaque par Ransomware. Le serveur de comptabilité commence à chiffrer ses fichiers. La procédure d'incident est immédiatement déclenchée : le serveur est isolé du réseau en moins de 15 minutes, limitant l'infection. Les logs de pare-feu et les journaux systèmes sont copiés de façon intègre (forensics) avant de restaurer le serveur à partir des sauvegardes de la veille.
 
 
 ## 3. Ressources complémentaires
@@ -157,9 +163,12 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Simulation de gestion d'incident de sécurité (Ransomware).
+- **Consignes :**
+    1. Vous êtes responsable informatique. Un utilisateur vous appelle en disant que tous ses fichiers ont l'extension `.locked` et qu'une note réclame 2 bitcoins.
+    2. Rédigez la liste des 3 premières actions réflexes que vous effectuez dans les 10 premières minutes pour limiter l'impact.
+    3. Rédigez le message d'alerte court et rassurant à envoyer à l'ensemble des employés de l'entreprise.
+- **Correction pour le mentor :** Actions de base : 1. Ordonner à l'utilisateur de débrancher immédiatement le câble réseau et d'éteindre sa machine (confinement). 2. Vérifier sur la console EDR/antivirus si d'autres alertes similaires sont en cours. 3. Bloquer temporairement les accès VPN et partages de fichiers réseau. Message aux employés : "Bonjour à tous, nous rencontrons actuellement un incident technique sur notre réseau. Par mesure de sécurité, merci de ne pas ouvrir vos partages réseau et de signaler immédiatement au support tout comportement anormal sur vos postes. Nos équipes sont mobilisées." 
 
 ---
 
@@ -167,9 +176,12 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Réponse aux incidents (Incident Response - IR)** | Processus structuré permettant à une organisation de détecter, de contenir, d'éradiquer et de se relever d'une cyberattaque. |
-| **Forensics (Investigation numérique)** | Discipline scientifique consistant à collecter, analyser et préserver les preuves numériques à la suite d'un incident de sécurité en vue de procédures internes ou judiciaires. |
 | **Chaîne de contrôle (Chain of Custody)** | Documentation chronologique stricte recensant l'historique des personnes ayant manipulé, transféré et analysé une preuve physique ou numérique, afin de garantir qu'elle n'a subie aucune altération. |
 | **Confinement** | Phase de la réponse aux incidents visant à isoler le système d'information ou les hôtes compromis pour empêcher la propagation de l'attaque. |
+| **Forensics (Investigation numérique)** | Discipline scientifique consistant à collecter, analyser et préserver les preuves numériques à la suite d'un incident de sécurité en vue de procédures internes ou judiciaires. |
 | **Mémoire volatile (RAM)** | Mémoire temporaire d'un ordinateur contenant les données actives des programmes en cours d'exécution. Elle s'efface dès que la machine est éteinte. |
 | **Piratage éthique (Ethical Hacking)** | Pratique consistant à utiliser les mêmes techniques d'intrusion qu'un pirate malveillant, mais de manière légale, encadrée et autorisée, afin d'identifier et de corriger les faiblesses d'un système. |
+| **Réponse aux incidents (Incident Response - IR)** | Processus structuré permettant à une organisation de détecter, de contenir, d'éradiquer et de se relever d'une cyberattaque. |
+| **Sauvegarde immuable** | Sauvegarde dont le contenu ne peut être modifié, modifié ou effacé, même par un administrateur système, protégeant des rançongiciels. |
+| **Éradication** | Phase consistant à éliminer définitivement la source de l'incident (ex. supprimer un code malveillant ou fermer un compte piraté). |
+

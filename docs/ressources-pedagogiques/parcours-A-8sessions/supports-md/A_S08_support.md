@@ -35,11 +35,16 @@ Terminez la session (30 minutes) en orientant les apprenants vers l'avenir : que
 ---
 
 ### Glossaire
-* **Projet Capstone** : Un travail d'évaluation final synthétisant l'ensemble des compétences pratiques et théoriques développées tout au long d'un parcours d'apprentissage.
-* **Feuille de route de remédiation (Remediation Roadmap)** : Plan d'action chronologique et priorisé décrivant les étapes techniques et organisationnelles à accomplir pour corriger les vulnérabilités identifiées lors d'un audit.
-* **Synthèse managériale (Executive Summary)** : Courte introduction synthétique (1 page max) rédigée à l'intention des dirigeants de l'entreprise, résumant les menaces majeures découvertes et le budget requis, exempte de jargon technique trop complexe.
-* **Hygiène informatique (Cyber Hygiene)** : Ensemble des règles élémentaires de sécurité à appliquer de manière systématique pour minimiser la majorité des cybermenaces courantes (ex. mises à jour, mots de passe complexes, sauvegardes).
-* **Évaluation par les pairs (Peer Review)** : Méthode d'évaluation collaborative où les apprenants analysent et notent de manière constructive le travail de leurs pairs à l'aide d'une grille de critères partagée.
+
+*   **Audit de sécurité** — Évaluation méthodique de l'état de sécurité d'une organisation par rapport à des normes ou des règles de l'art.
+*   **Capstone** — Projet de synthèse final permettant d'appliquer l'ensemble des compétences théoriques et pratiques acquises à un cas concret.
+*   **Feuille de route de remédiation (Remediation Roadmap)** — Plan d'action chronologique et priorisé décrivant les étapes techniques et organisationnelles à accomplir pour corriger les vulnérabilités identifiées lors d'un audit.
+*   **Hygiène informatique (Cyber Hygiene)** — Ensemble des règles élémentaires de sécurité à appliquer de manière systématique pour minimiser la majorité des cybermenaces courantes (ex. mises à jour, mots de passe complexes, sauvegardes).
+*   **Plan de remédiation** — Document structuré détaillant la liste ordonnée des actions correctives à mener pour corriger les vulnérabilités identifiées.
+*   **Projet Capstone** — Un travail d'évaluation final synthétisant l'ensemble des compétences pratiques et théoriques développées tout au long d'un parcours d'apprentissage.
+*   **Synthèse managériale (Executive Summary)** — Courte introduction synthétique (1 page max) rédigée à l'intention des dirigeants de l'entreprise, résumant les menaces majeures découvertes et le budget requis, exempte de jargon technique trop complexe.
+*   **Vulgarisation** — Traduction de concepts techniques complexes en termes simples et compréhensibles par des non-experts (ex. dirigeants business).
+*   **Évaluation par les pairs (Peer Review)** — Méthode d'évaluation collaborative où les apprenants analysent et notent de manière constructive le travail de leurs pairs à l'aide d'une grille de critères partagée.
 
 ---
 
@@ -132,13 +137,14 @@ Rédigez un argumentaire de réponse structuré en 3 points pour lever cette obj
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Pour bien comprendre la restitution d'un projet de fin d'études en sécurité (Capstone), imaginez le rôle d'un **architecte en bâtiment menant l'audit d'une maison ancienne** :
+    - Vous visitez la maison de la cave au grenier, testez la solidité des murs, vérifiez si l'électricité respecte les normes et si les serrures des portes fonctionnent (audit de sécurité).
+    - Vous ne vous contentez pas de dire "tout est dangereux". Vous rédigez un rapport clair pour le propriétaire.
+    - Vous listez les travaux à réaliser du plus urgent (réparer le toit qui fuit - CVSS critique) au moins urgent (repeindre le portail - hygiène de base).
+    - Vous expliquez le projet avec des mots simples pour que le propriétaire comprenne pourquoi ces dépenses sont nécessaires pour sa sécurité quotidienne.
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+À la suite d'un audit de sécurité d'un mois, un prestataire présente ses conclusions au comité de direction d'un fabricant industriel. Au lieu de noyer les dirigeants sous le jargon technique, il utilise une échelle de risques claire : la mise en place du MFA sur la messagerie et la segmentation réseau entre l'usine et les bureaux sont présentées comme les deux chantiers prioritaires pour éviter un arrêt total de la production.
 
 
 ## 3. Ressources complémentaires
@@ -155,9 +161,12 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Jeu de rôles de restitution d'audit de sécurité.
+- **Consignes :**
+    1. Répartissez-vous en binômes : l'un joue le rôle du RSSI (Responsable Sécurité) qui vient de mener l'audit, l'autre joue le rôle du Directeur Général (DG) qui n'y connaît rien en technique et souhaite minimiser les coûts.
+    2. Le RSSI doit convaincre le DG de débloquer un budget de 5 000 € pour sécuriser les accès par mot de passe en imposant le MFA.
+    3. Le DG doit poser des questions sur la gêne occasionnée pour les employés et le retour sur investissement de cette dépense.
+- **Correction pour le mentor :** Le mentor évaluera la capacité du "RSSI" à vulgariser la menace (ex. expliquer qu'un mot de passe volé peut paralyser l'entreprise) et à utiliser des arguments business (le coût moyen d'une cyberattaque dépasse largement les 5000 € de budget demandés). Le "DG" devra être convaincu par des exemples simples plutôt que par du jargon sur les protocoles d'authentification.
 
 ---
 
@@ -165,8 +174,13 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Projet Capstone** | Un travail d'évaluation final synthétisant l'ensemble des compétences pratiques et théoriques développées tout au long d'un parcours d'apprentissage. |
+| **Audit de sécurité** | Évaluation méthodique de l'état de sécurité d'une organisation par rapport à des normes ou des règles de l'art. |
+| **Capstone** | Projet de synthèse final permettant d'appliquer l'ensemble des compétences théoriques et pratiques acquises à un cas concret. |
 | **Feuille de route de remédiation (Remediation Roadmap)** | Plan d'action chronologique et priorisé décrivant les étapes techniques et organisationnelles à accomplir pour corriger les vulnérabilités identifiées lors d'un audit. |
-| **Synthèse managériale (Executive Summary)** | Courte introduction synthétique (1 page max) rédigée à l'intention des dirigeants de l'entreprise, résumant les menaces majeures découvertes et le budget requis, exempte de jargon technique trop complexe. |
 | **Hygiène informatique (Cyber Hygiene)** | Ensemble des règles élémentaires de sécurité à appliquer de manière systématique pour minimiser la majorité des cybermenaces courantes (ex. mises à jour, mots de passe complexes, sauvegardes). |
+| **Plan de remédiation** | Document structuré détaillant la liste ordonnée des actions correctives à mener pour corriger les vulnérabilités identifiées. |
+| **Projet Capstone** | Un travail d'évaluation final synthétisant l'ensemble des compétences pratiques et théoriques développées tout au long d'un parcours d'apprentissage. |
+| **Synthèse managériale (Executive Summary)** | Courte introduction synthétique (1 page max) rédigée à l'intention des dirigeants de l'entreprise, résumant les menaces majeures découvertes et le budget requis, exempte de jargon technique trop complexe. |
+| **Vulgarisation** | Traduction de concepts techniques complexes en termes simples et compréhensibles par des non-experts (ex. dirigeants business). |
 | **Évaluation par les pairs (Peer Review)** | Méthode d'évaluation collaborative où les apprenants analysent et notent de manière constructive le travail de leurs pairs à l'aide d'une grille de critères partagée. |
+

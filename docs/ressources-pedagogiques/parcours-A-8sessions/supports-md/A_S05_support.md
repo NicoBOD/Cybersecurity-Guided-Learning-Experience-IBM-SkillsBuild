@@ -43,13 +43,18 @@ Démystifiez l'ISO 27001 : expliquez qu'il s'agit d'un système de management (S
 ---
 
 ### Glossaire
-* **GRC (Gouvernance, Risques et Conformité)** : Approche intégrée visant à aligner l'informatique sur les objectifs de l'entreprise, à gérer les risques associés et à respecter les obligations réglementaires.
-* **ISO/CEI 27001** : Norme internationale décrivant les exigences pour la mise en place d'un Système de Management de la Sécurité de l'Information (SMSI).
-* **NIST CSF (Cybersecurity Framework)** : Cadre méthodologique du gouvernement américain structuré autour de 5 fonctions clés (Identifier, Protéger, Détecter, Répondre, Récupérer) pour améliorer la cybersécurité des infrastructures critiques.
-* **PSSI (Politique de Sécurité des Systèmes d'Information)** : Document de référence formalisant les règles, directives et exigences de sécurité devant être respectées au sein d'une organisation.
-* **RGPD (Règlement Général sur la Protection des Données)** : Texte réglementaire européen encadrant le traitement des données personnelles au sein de l'Union européenne ou ciblant ses citoyens.
-* **Donnée personnelle** : Toute information se rapportant à une personne physique identifiée ou identifiable (ex. nom, e-mail, adresse IP, numéro de téléphone, données de santé).
-* **CNIL (Commission Nationale de l'Informatique et des Libertés)** : Autorité administrative publique française chargée de veiller au respect de la protection des données personnelles (les équivalents existent dans chaque État européen).
+
+*   **Analyse de risques** — Processus méthodique consistant à identifier, évaluer et hiérarchiser les risques pesant sur les actifs numériques d'un organisme.
+*   **BYOD (Bring Your Own Device)** — Pratique consistant pour les collaborateurs à utiliser leurs équipements personnels (ordinateurs, smartphones) dans le cadre professionnel.
+*   **CNIL (Commission Nationale de l'Informatique et des Libertés)** — Autorité administrative publique française chargée de veiller au respect de la protection des données personnelles (les équivalents existent dans chaque État européen).
+*   **Donnée personnelle** — Toute information se rapportant à une personne physique identifiée ou identifiable (ex. nom, e-mail, adresse IP, numéro de téléphone, données de santé).
+*   **DPO (Data Protection Officer)** — Délégué à la protection des données chargé de veiller à la conformité de l'organisme vis-à-vis du RGPD.
+*   **GRC (Gouvernance, Risques et Conformité)** — Approche intégrée visant à aligner l'informatique sur les objectifs de l'entreprise, à gérer les risques associés et à respecter les obligations réglementaires.
+*   **ISO/CEI 27001** — Norme internationale décrivant les exigences pour la mise en place d'un Système de Management de la Sécurité de l'Information (SMSI).
+*   **NIST CSF (Cybersecurity Framework)** — Cadre méthodologique du gouvernement américain structuré autour de 5 fonctions clés (Identifier, Protéger, Détecter, Répondre, Récupérer) pour améliorer la cybersécurité des infrastructures critiques.
+*   **PSSI (Politique de Sécurité des Systèmes d'Information)** — Document de référence formalisant les règles, directives et exigences de sécurité devant être respectées au sein d'une organisation.
+*   **RGPD (Règlement Général sur la Protection des Données)** — Texte réglementaire européen encadrant le traitement des données personnelles au sein de l'Union européenne ou ciblant ses citoyens.
+*   **RGPD (Règlement Général sur la Protection des Données)** — Cadre juridique européen imposant des règles strictes sur la collecte, le traitement et le stockage des données personnelles.
 
 ---
 
@@ -161,13 +166,13 @@ Une PME de 15 salariés stocke son fichier client contenant les coordonnées et 
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Pour comprendre la Gouvernance, le Risque et la Conformité (GRC), imaginez la conduite d'une **voiture de course** :
+    - **Le Risque** c'est l'accident de la route. Pour le gérer, vous portez un casque, installez des airbags et vérifiez l'usure de vos pneus avant de partir.
+    - **La Conformité (RGPD)** ce sont les règles du code de la route et les limitations de vitesse imposées par la loi sous peine de fortes amendes.
+    - **La Gouvernance** c'est le pilote et son équipe qui décident de la destination de la voiture, du budget disponible pour l'entretien et des règles internes de sécurité pour l'équipe technique.
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Une PME du secteur médical souhaite lancer une application mobile de suivi de patients. Avant le développement, le RSSI mène une analyse de risques (impact d'une fuite de données de santé) et s'assure de la conformité réglementaire (RGPD). L'entreprise nomme un DPO (Délégué à la Protection des Données), crypte les bases de données et met en place un registre d'activités de traitement pour documenter la conformité.
 
 
 ## 3. Ressources complémentaires
@@ -184,9 +189,13 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Rédaction d'une matrice d'analyse de risques simplifiée.
+- **Consignes :**
+    1. Soit l'actif critique : "Le site e-commerce de l'entreprise générant 20k€ de CA par jour".
+    2. Identifiez un scénario de menace (ex. Attaque DDoS par des hacktivistes).
+    3. Évaluez le Risque Brut en estimant la Vraisemblance (échelle 1 à 4) et l'Impact (échelle 1 à 4). Calculez le score (Vraisemblance × Impact).
+    4. Proposez une mesure de traitement pour réduire ce risque.
+- **Correction pour le mentor :** Le scénario identifié est le DDoS. Vraisemblance estimée : 3 (menace courante sur les sites marchands) ; Impact estimé : 4 (indisponibilité totale = perte financière et de réputation). Score de risque = 12/16 (Risque critique). Mesure de traitement recommandée : Souscrire à un service cloud de protection anti-DDoS (ex. Cloudflare) pour filtrer les requêtes illégitimes, ramenant la vraisemblance résiduelle à 1 et le score à 4 (Risque acceptable).
 
 ---
 
@@ -194,10 +203,14 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
+| **Analyse de risques** | Processus méthodique consistant à identifier, évaluer et hiérarchiser les risques pesant sur les actifs numériques d'un organisme. |
+| **BYOD (Bring Your Own Device)** | Pratique consistant pour les collaborateurs à utiliser leurs équipements personnels (ordinateurs, smartphones) dans le cadre professionnel. |
+| **CNIL (Commission Nationale de l'Informatique et des Libertés)** | Autorité administrative publique française chargée de veiller au respect de la protection des données personnelles (les équivalents existent dans chaque État européen). |
+| **Donnée personnelle** | Toute information se rapportant à une personne physique identifiée ou identifiable (ex. nom, e-mail, adresse IP, numéro de téléphone, données de santé). |
+| **DPO (Data Protection Officer)** | Délégué à la protection des données chargé de veiller à la conformité de l'organisme vis-à-vis du RGPD. |
 | **GRC (Gouvernance, Risques et Conformité)** | Approche intégrée visant à aligner l'informatique sur les objectifs de l'entreprise, à gérer les risques associés et à respecter les obligations réglementaires. |
 | **ISO/CEI 27001** | Norme internationale décrivant les exigences pour la mise en place d'un Système de Management de la Sécurité de l'Information (SMSI). |
 | **NIST CSF (Cybersecurity Framework)** | Cadre méthodologique du gouvernement américain structuré autour de 5 fonctions clés (Identifier, Protéger, Détecter, Répondre, Récupérer) pour améliorer la cybersécurité des infrastructures critiques. |
 | **PSSI (Politique de Sécurité des Systèmes d'Information)** | Document de référence formalisant les règles, directives et exigences de sécurité devant être respectées au sein d'une organisation. |
 | **RGPD (Règlement Général sur la Protection des Données)** | Texte réglementaire européen encadrant le traitement des données personnelles au sein de l'Union européenne ou ciblant ses citoyens. |
-| **Donnée personnelle** | Toute information se rapportant à une personne physique identifiée ou identifiable (ex. nom, e-mail, adresse IP, numéro de téléphone, données de santé). |
-| **CNIL (Commission Nationale de l'Informatique et des Libertés)** | Autorité administrative publique française chargée de veiller au respect de la protection des données personnelles (les équivalents existent dans chaque État européen). |
+

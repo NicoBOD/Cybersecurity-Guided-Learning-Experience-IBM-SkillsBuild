@@ -35,10 +35,15 @@ Détaillez le modèle de responsabilité partagée du Cloud. En IaaS, le client 
 ---
 
 ### Glossaire
-*   **IaaS (Infrastructure as a Service)** — Modèle de cloud où le client loue des ressources matérielles virtualisées (serveurs, stockage, réseaux).
-*   **PaaS (Platform as a Service)** — Modèle fournissant une plateforme complète d'exécution pour développer et héberger des applications sans gérer les OS.
-*   **SaaS (Software as a Service)** — Logiciel applicatif complet clé en main hébergé et administré directement par le fournisseur cloud.
+
 *   **Bucket de stockage** — Conteneur logique de stockage d'objets (fichiers, images, sauvegardes) dans le cloud public.
+*   **IaaS (Infrastructure as a Service)** — Modèle de cloud où le client loue des ressources matérielles virtualisées (serveurs, stockage, réseaux).
+*   **IaaS (Infrastructure as a Service)** — Modèle cloud offrant un accès à des ressources matérielles brutes (serveurs virtuels, disques), le client gérant l'OS et le reste.
+*   **PaaS (Platform as a Service)** — Modèle fournissant une plateforme complète d'exécution pour développer et héberger des applications sans gérer les OS.
+*   **PaaS (Platform as a Service)** — Modèle cloud où le fournisseur gère le système d'exploitation et l'infrastructure, laissant le client gérer ses applications et codes.
+*   **Responsabilité Partagée** — Principe fondamental délimitant les rôles de sécurité entre le fournisseur cloud (sécurité du cloud) et l'entreprise cliente (sécurité dans le cloud).
+*   **SaaS (Software as a Service)** — Logiciel applicatif complet clé en main hébergé et administré directement par le fournisseur cloud.
+*   **SaaS (Software as a Service)** — Modèle cloud où l'application complète est hébergée et gérée à 100% par le fournisseur (ex. Salesforce, Microsoft 365).
 
 ---
 
@@ -123,13 +128,13 @@ Pour les 6 tâches de sécurité listées ci-dessous, écrivez dans la colonne c
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Imaginez le modèle de responsabilité partagée dans le cloud comme la **location d'un appartement** :
+    - **Le Propriétaire (Fournisseur Cloud - AWS/Azure/GCP)** est responsable des murs, de la solidité du toit, de la porte d'entrée de l'immeuble et des canalisations (sécurité physique et de l'infrastructure globale).
+    - **Le Locataire (Votre entreprise)** est responsable d'installer une serrure robuste sur sa propre porte, de fermer les fenêtres en partant, et de décider qui a le droit d'entrer dans l'appartement (sécurité des données, des accès et des configurations).
+    - Si vous laissez votre porte grande ouverte et que vous vous faites cambrioler, c'est de votre responsabilité, pas de celle du propriétaire de l'immeuble.
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Une start-up stocke les factures de ses clients sur un service de stockage cloud (S3). Lors d'un audit de sécurité, le responsable s'aperçoit que les factures sont accessibles publiquement sans mot de passe suite à une erreur humaine de configuration. Il applique immédiatement le modèle de responsabilité partagée en modifiant la politique d'accès du bucket pour exiger une authentification forte (MFA) et active le chiffrement automatique des données au repos.
 
 
 ## 3. Ressources complémentaires
@@ -145,9 +150,12 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Analyse d'une faille de configuration Cloud.
+- **Consignes :**
+    1. Étudiez le cas réel ou fictif d'une fuite de données causée par un "Bucket S3" (espace de stockage en ligne Amazon) laissé ouvert publiquement sur Internet.
+    2. Identifiez qui est responsable de cette faille selon le modèle de responsabilité partagée (AWS ou le client ?). Justifiez votre réponse.
+    3. Proposez deux mesures d'audit automatique à mettre en place pour détecter ces faiblesses avant qu'un attaquant ne les trouve.
+- **Correction pour le mentor :** Le client est responsable à 100% de la mauvaise configuration d'accès aux données dans le cloud, tandis qu'Amazon fournit l'infrastructure physique sécurisée. Pour prévenir ce risque, les apprenants doivent proposer : l'activation d'outils d'audit de configuration (ex. AWS Security Hub ou des scanners comme Prowler) et la mise en place de politiques de restriction d'accès globales interdisant par défaut le partage public des conteneurs de stockage.
 
 ---
 
@@ -155,7 +163,9 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
+| **Bucket de stockage** | Conteneur logique de stockage d'objets (fichiers, images, sauvegardes) dans le cloud public. |
 | **IaaS (Infrastructure as a Service)** | Modèle de cloud où le client loue des ressources matérielles virtualisées (serveurs, stockage, réseaux). |
 | **PaaS (Platform as a Service)** | Modèle fournissant une plateforme complète d'exécution pour développer et héberger des applications sans gérer les OS. |
+| **Responsabilité Partagée** | Principe fondamental délimitant les rôles de sécurité entre le fournisseur cloud (sécurité du cloud) et l'entreprise cliente (sécurité dans le cloud). |
 | **SaaS (Software as a Service)** | Logiciel applicatif complet clé en main hébergé et administré directement par le fournisseur cloud. |
-| **Bucket de stockage** | Conteneur logique de stockage d'objets (fichiers, images, sauvegardes) dans le cloud public. |
+

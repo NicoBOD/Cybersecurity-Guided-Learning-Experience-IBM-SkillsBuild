@@ -53,10 +53,15 @@ Expliquez l'utilisation de BitLocker / LUKS pour protéger les données au repos
 ---
 
 ### Glossaire
+
 *   **IAM (Identity and Access Management)** — Système et ensemble de règles gérant les identités numériques et contrôlant les droits d'accès aux ressources.
+*   **IAM (Identity and Access Management)** — Ensemble des technologies et politiques régissant l'identification, l'authentification et l'autorisation des utilisateurs.
 *   **MFA (Multi-Factor Authentication)** — Méthode de validation d'identité requérant l'association de plusieurs preuves de catégories distinctes.
+*   **MFA (Multi-Factor Authentication)** — Mécanisme d'accès exigeant la validation d'au moins deux facteurs de preuve (savoir, possession, biométrie).
 *   **RBAC (Role-Based Access Control)** — Mécanisme de contrôle d'accès dans lequel les autorisations système sont liées à des rôles professionnels plutôt qu'à des personnes.
+*   **RBAC (Role-Based Access Control)** — Contrôle d'accès logique où les autorisations sont affectées à des rôles prédéfinis plutôt qu'à des individus.
 *   **SSO (Single Sign-On)** — Technologie d'authentification unique permettant à un utilisateur d'accéder à plusieurs applications avec un seul compte d'accès.
+*   **SSO (Single Sign-On)** — Authentification unique permettant à un utilisateur d'accéder à plusieurs applications après s'être identifié une seule fois.
 
 ---
 
@@ -164,13 +169,15 @@ Pour chaque intersection, attribuez l'un des droits suivants :
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Imaginez le fonctionnement de la gestion des identités et des accès (IAM) comme la sécurité d'un **laboratoire de recherche secret** :
+    - **L'Identification** : Vous vous présentez à l'accueil et donnez votre nom (votre identifiant/login).
+    - **L'Authentification** : Vous devez prouver qui vous êtes en glissant votre badge et en scannant votre empreinte digitale (Authentification Multifacteur - MFA).
+    - **L'Autorisation (RBAC)** : Les portes d'accès aux salles ne s'ouvrent que si votre rôle de "Chercheur en chimie" est enregistré dans le système informatique central. Un employé administratif (rôle différent) ne verra pas la porte s'ouvrir.
+    - **L'Audit** : Le journal du système enregistre précisément l'heure d'entrée et de sortie de chaque pièce pour assurer la traçabilité.
+    - **Le SSO (Single Sign-On)** : Vous passez le grand portail principal sécurisé une fois, ce qui déverrouille automatiquement toutes les portes intérieures auxquelles vous avez droit pour la journée.
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Une entreprise déploie une solution IAM centralisée. Suite au départ soudain d'un collaborateur, le service RH désactive son compte dans l'annuaire d'entreprise unique. Instantanément, tous ses accès VPN, courriels et logiciels Cloud (SaaS) sont révoqués via le SSO, éliminant tout risque de sabotage post-départ.
 
 
 ## 3. Ressources complémentaires
@@ -186,9 +193,12 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Conception d'une matrice de droits d'accès basée sur les rôles (RBAC).
+- **Consignes :**
+    1. Soit un projet logiciel dans une PME. Définissez 3 rôles de collaborateurs distincts (Développeur, Testeur, Chef de Projet).
+    2. Remplissez une matrice de droits pour les 3 ressources suivantes du projet : Code Source, Rapports d'anomalies, Environnement de Production. Utilisez les droits : Aucun, Lecture, Écriture, Déploiement.
+    3. Justifiez la restriction appliquée au rôle "Développeur" sur la "Production".
+- **Correction pour le mentor :** Le tableau attendu doit attribuer des droits limités. Développeur: Code Source (Lecture/Écriture), Rapports (Lecture/Écriture), Production (Aucun ou Lecture). Testeur: Code Source (Aucun), Rapports (Lecture/Écriture), Production (Aucun). Chef de projet: Code Source (Lecture), Rapports (Lecture/Écriture), Production (Lecture). La restriction du développeur sur la production respecte le principe de séparation des tâches : on évite qu'un développeur pousse du code non testé ou malveillant directement en production sans validation.
 
 ---
 
@@ -200,3 +210,4 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 | **MFA (Multi-Factor Authentication)** | Méthode de validation d'identité requérant l'association de plusieurs preuves de catégories distinctes. |
 | **RBAC (Role-Based Access Control)** | Mécanisme de contrôle d'accès dans lequel les autorisations système sont liées à des rôles professionnels plutôt qu'à des personnes. |
 | **SSO (Single Sign-On)** | Technologie d'authentification unique permettant à un utilisateur d'accéder à plusieurs applications avec un seul compte d'accès. |
+

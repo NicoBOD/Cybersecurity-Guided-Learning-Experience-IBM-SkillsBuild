@@ -35,10 +35,15 @@ Passez 30 minutes sur la cryptographie de transport. Expliquez le fonctionnement
 ---
 
 ### Glossaire
-*   **Handshake TLS** — Phase de négociation initiale où le client et le serveur s'authentifient et définissent la clé de chiffrement de leur session.
+
 *   **CA (Certificate Authority)** — Organisme tiers de confiance chargé de générer, valider et révoquer les certificats numériques d'identité des serveurs.
+*   **Handshake TLS** — Phase de négociation initiale où le client et le serveur s'authentifient et définissent la clé de chiffrement de leur session.
 *   **Man-in-the-Middle (MitM)** — Attaque d'interception où un pirate s'interpose secrètement entre deux parties pour lire ou modifier leurs communications.
+*   **Man-in-the-Middle (MitM)** — Attaque consistant pour un pirate à intercepter et éventuellement altérer les communications secrètes entre deux cibles légitimes.
+*   **PKI (Infrastructure de Clés Publiques)** — Système de serveurs, de logiciels et de procédures délivrant et gérant des certificats numériques de confiance (certificats X.509).
 *   **RADIUS Server** — Serveur centralisant l'authentification, les autorisations et la traçabilité des accès utilisateurs sur un réseau d'entreprise (802.1X).
+*   **TLS/SSL** — Protocole de sécurisation des échanges réseau chiffrant les flux applicatifs (comme HTTPS) et garantissant l'identité du serveur.
+*   **VPN (Réseau Privé Virtuel)** — Réseau virtuel sécurisé créant un tunnel chiffré pour le transit de données sur un réseau public.
 
 ---
 
@@ -122,13 +127,13 @@ Rédigez une fiche de préconisations techniques et d'usages en répondant aux 3
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Imaginez la sécurité des communications sur Internet à l'aide de l'analogie d'une **valise diplomatique verrouillée** :
+    - Envoyer un message en HTTP simple, c'est comme écrire une carte postale sans enveloppe. Le facteur, le trieur et le destinataire peuvent lire le texte écrit (vol de mot de passe en clair).
+    - Envoyer un message en HTTPS (avec chiffrement TLS), c'est glisser la lettre dans une boîte métallique fermée par un cadenas à combinaison dont seuls vous et le destinataire possédez le code. Le facteur voit la boîte passer, mais ne peut pas lire le contenu.
+    - Le **VPN (Virtual Private Network)** est comparable à une autoroute souterraine privée et blindée reliant votre domicile directement aux locaux de votre entreprise. Personne dans la rue ne peut voir qui y circule ni ce que transportent les camions.
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Un consultant travaille depuis le réseau Wi-Fi public d'un hôtel. Pour sécuriser sa session, il active son VPN d'entreprise (IPsec). Même si un attaquant à proximité intercepte les ondes radio du Wi-Fi de l'hôtel (attaque de l'homme du milieu), toutes les données transmises (identifiants, documents de travail) sont encapsulées dans le tunnel chiffré du VPN et restent totalement illisibles.
 
 
 ## 3. Ressources complémentaires
@@ -144,9 +149,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Analyse du chiffrement lors d'une session Web sécurisée.
+- **Consignes :**
+    1. Expliquez brièvement comment le navigateur de l'utilisateur vérifie l'identité d'un site web bancaire lors de la phase initiale de connexion HTTPS. (Quel est le rôle du certificat X.509 et des Autorités de Certification ?).
+    2. Pourquoi utilise-t-on le chiffrement asymétrique au début de la connexion, puis le chiffrement symétrique pour le transfert des données ?
+- **Correction pour le mentor :** Le navigateur vérifie le certificat X.509 fourni par le serveur bancaire en vérifiant s'il est signé par une Autorité de Certification (CA) de confiance pré-enregistrée dans le système. Le chiffrement asymétrique (lent mais sûr sans clé partagée au départ) sert uniquement à échanger de manière sécurisée une clé de session temporaire. Le chiffrement symétrique (très rapide) prend le relais pour chiffrer l'ensemble des données échangées avec cette clé commune.
 
 ---
 
@@ -154,7 +161,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Handshake TLS** | Phase de négociation initiale où le client et le serveur s'authentifient et définissent la clé de chiffrement de leur session. |
 | **CA (Certificate Authority)** | Organisme tiers de confiance chargé de générer, valider et révoquer les certificats numériques d'identité des serveurs. |
+| **Handshake TLS** | Phase de négociation initiale où le client et le serveur s'authentifient et définissent la clé de chiffrement de leur session. |
 | **Man-in-the-Middle (MitM)** | Attaque d'interception où un pirate s'interpose secrètement entre deux parties pour lire ou modifier leurs communications. |
+| **PKI (Infrastructure de Clés Publiques)** | Système de serveurs, de logiciels et de procédures délivrant et gérant des certificats numériques de confiance (certificats X.509). |
 | **RADIUS Server** | Serveur centralisant l'authentification, les autorisations et la traçabilité des accès utilisateurs sur un réseau d'entreprise (802.1X). |
+| **TLS/SSL** | Protocole de sécurisation des échanges réseau chiffrant les flux applicatifs (comme HTTPS) et garantissant l'identité du serveur. |
+| **VPN (Réseau Privé Virtuel)** | Réseau virtuel sécurisé créant un tunnel chiffré pour le transit de données sur un réseau public. |
+

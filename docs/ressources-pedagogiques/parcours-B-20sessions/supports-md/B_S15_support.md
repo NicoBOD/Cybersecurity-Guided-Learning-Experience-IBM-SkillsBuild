@@ -36,10 +36,14 @@ Passez 25 minutes sur les 6 principes majeurs du RGPD : Licéité/Transparence, 
 ---
 
 ### Glossaire
-*   **Donnée personnelle** — Toute information se rapportant à une personne physique identifiée ou identifiable de manière directe ou indirecte.
-*   **Traitement de données** — Toute opération ou ensemble d'opérations portant sur des données personnelles (collecte, hébergement, modification, transfert).
+
 *   **CNIL** — Commission Nationale de l'Informatique et des Libertés. Autorité administrative publique française de régulation des données personnelles.
+*   **Donnée personnelle** — Toute information se rapportant à une personne physique identifiée ou identifiable de manière directe ou indirecte.
 *   **DPO (Data Protection Officer)** — Délégué à la Protection des Données. Expert interne ou externe chargé de veiller à l'application du RGPD au sein de l'organisme.
+*   **DPO (Data Protection Officer)** — Délégué à la protection des données chargé d'assurer la conformité RGPD au sein de l'organisation.
+*   **Minimisation des données** — Principe du RGPD exigeant de ne collecter que les données personnelles adéquates, pertinentes et limitées au strict nécessaire.
+*   **RGPD (Règlement Général sur la Protection des Données)** — Règlement européen imposant des obligations sur la protection et le traitement des données personnelles.
+*   **Traitement de données** — Toute opération ou ensemble d'opérations portant sur des données personnelles (collecte, hébergement, modification, transfert).
 
 ---
 
@@ -112,13 +116,14 @@ L'entreprise EcoLog lance une plateforme e-commerce. Le service marketing a éba
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Imaginez le respect du RGPD et de la conformité en cybersécurité comme les **normes d'hygiène obligatoires d'un restaurant** :
+    - La loi vous impose d'avoir une cuisine propre, d'afficher la provenance des viandes et de jeter les produits périmés sous peine de fermeture par l'inspecteur d'hygiène (la CNIL).
+    - **Le consentement (Opt-In)** correspond au fait de demander explicitement au client s'il souhaite des épices dans son plat, plutôt que de lui en mettre d'office et de le forcer à les retirer (Opt-Out).
+    - **La minimisation des données** consiste à ne pas demander le groupe sanguin de votre client simplement pour lui livrer une pizza. On ne demande que le strict nécessaire (nom, adresse).
+    - **Le DPO (Délégué à la Protection)** est le chef hygiéniste du restaurant qui contrôle régulièrement les frigos et forme les cuisiniers aux règles légales.
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Une plateforme e-commerce française collecte les données de ses clients pour livrer ses produits. Suite à une mise en conformité RGPD, elle modifie son formulaire d'inscription : les cases d'inscription à la newsletter ne sont plus pré-cochées (consentement explicite), et les comptes inactifs depuis plus de 3 ans sont automatiquement supprimés (limitation de la conservation). Elle nomme également un DPO externe.
 
 
 ## 3. Ressources complémentaires
@@ -134,9 +139,12 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Audit de conformité RGPD d'un formulaire web.
+- **Consignes :**
+    1. Vous devez auditer le formulaire de contact d'une PME. Le formulaire demande les champs suivants : Nom, Prénom, E-mail, Numéro de Sécurité Sociale, Date de naissance, et comporte une case pré-cochée "Je souhaite recevoir des offres promotionnelles".
+    2. Identifiez au moins 2 violations majeures des principes du RGPD dans ce formulaire.
+    3. Proposez les corrections nécessaires pour mettre ce site en parfaite conformité.
+- **Correction pour le mentor :** Violations : 1. Non-respect du principe de *minimisation des données* (le numéro de sécurité sociale et la date de naissance ne sont pas nécessaires pour un simple formulaire de contact). 2. Absence de *consentement libre et explicite* (la case promotionnelle est pré-cochée). Corrections : supprimer les champs inutiles (sécurité sociale et date de naissance) et décocher par défaut la case d'inscription marketing, en ajoutant un lien vers la politique de confidentialité.
 
 ---
 
@@ -144,7 +152,10 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Donnée personnelle** | Toute information se rapportant à une personne physique identifiée ou identifiable de manière directe ou indirecte. |
-| **Traitement de données** | Toute opération ou ensemble d'opérations portant sur des données personnelles (collecte, hébergement, modification, transfert). |
 | **CNIL** | Commission Nationale de l'Informatique et des Libertés. Autorité administrative publique française de régulation des données personnelles. |
+| **Donnée personnelle** | Toute information se rapportant à une personne physique identifiée ou identifiable de manière directe ou indirecte. |
 | **DPO (Data Protection Officer)** | Délégué à la Protection des Données. Expert interne ou externe chargé de veiller à l'application du RGPD au sein de l'organisme. |
+| **Minimisation des données** | Principe du RGPD exigeant de ne collecter que les données personnelles adéquates, pertinentes et limitées au strict nécessaire. |
+| **RGPD (Règlement Général sur la Protection des Données)** | Règlement européen imposant des obligations sur la protection et le traitement des données personnelles. |
+| **Traitement de données** | Toute opération ou ensemble d'opérations portant sur des données personnelles (collecte, hébergement, modification, transfert). |
+

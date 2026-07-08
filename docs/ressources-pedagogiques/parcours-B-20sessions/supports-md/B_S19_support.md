@@ -35,9 +35,14 @@ L'exercice Tabletop. Organisez la classe en cellule de crise (Directeur, DRH, DS
 ---
 
 ### Glossaire
-*   **Tabletop Exercise** — Simulation sur table d'un incident de sécurité permettant de tester les plans de réponse sans impact réel sur la production.
-*   **Inject (Stimulus)** — Nouvelle information ou rebondissement introduit par l'animateur d'une simulation pour faire évoluer le scénario de crise.
+
+*   **Chain of Custody (Chaîne de contrôle)** — Processus documentant la collecte, le transfert et l'analyse des preuves numériques pour garantir leur validité devant un tribunal.
 *   **Communication Hors Bande (Out-of-band)** — Utilisation de réseaux de communication indépendants du système d'information principal (ex. téléphones personnels, applications de messagerie chiffrée grand public) lorsque le réseau d'entreprise est compromis.
+*   **Confinement (Containment)** — Phase visant à limiter la propagation et l'impact d'un incident de sécurité en isolant l'élément compromis.
+*   **Incident Response (Réponse aux incidents)** — Processus méthodique consistant à identifier, contenir et éradiquer une cyberattaque tout en restaurant les systèmes.
+*   **Inject (Stimulus)** — Nouvelle information ou rebondissement introduit par l'animateur d'une simulation pour faire évoluer le scénario de crise.
+*   **RETEX (Retour d'Expérience)** — Réunion post-incident permettant d'analyser les défaillances et d'améliorer les processus de défense futurs.
+*   **Tabletop Exercise** — Simulation sur table d'un incident de sécurité permettant de tester les plans de réponse sans impact réel sur la production.
 
 ---
 
@@ -135,13 +140,16 @@ Contact Presse unique : service.presse@ecolog.fr
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Imaginez le cycle de réponse aux incidents de sécurité comme la **réaction d'une équipe de secours face à un accident de la route** :
+    - **La Préparation** : Avoir une trousse de premiers secours, un plan de communication et des numéros d'urgence prêts dans la voiture (outils d'analyse, playbooks et équipe d'astreinte).
+    - **La Détection & Qualification** : Un témoin appelle les secours pour signaler l'accident (l'alerte du SOC qualifiée en incident).
+    - **Le Confinement (Containment)** : Poser des balises autour de l'accident pour éviter d'autres collisions et couper le moteur de la voiture qui fuit (isoler la machine réseau et couper les comptes d'accès).
+    - **L'Éradication** : Extraire la victime de la voiture et nettoyer l'huile sur la chaussée (supprimer le malware et fermer la faille).
+    - **Le Rétablissement (Recovery)** : Remorquer la voiture et rouvrir l'autoroute à la circulation (restaurer les serveurs à partir de sauvegardes saines).
+    - **Le RETEX (Retour d'Expérience)** : Se réunir pour analyser pourquoi l'accident a eu lieu et comment améliorer le virage de la route pour l'avenir.
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Une PME subit une attaque par Ransomware. Le serveur de comptabilité commence à chiffrer ses fichiers. La procédure d'incident est immédiatement déclenchée : le serveur est isolé du réseau en moins de 15 minutes, limitant l'infection. Les logs de pare-feu et les journaux systèmes sont copiés de façon intègre (forensics) avant de restaurer le serveur à partir des sauvegardes de la veille.
 
 
 ## 3. Ressources complémentaires
@@ -157,9 +165,12 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Simulation de réponse à incident (Incident Response) et coordination.
+- **Consignes :**
+    1. Un malware de type infostealer (voleur de mots de passe) a infecté la machine d'une assistante de direction. Le SOC a détecté l'envoi de fichiers sensibles vers une adresse IP malveillante connue.
+    2. Rédigez le plan d'action chronologique détaillé (les 4 premières étapes de la réponse) à exécuter immédiatement par l'équipe d'incident.
+    3. Indiquez la règle de préservation des preuves numériques à respecter lors de l'isolation du poste de travail pour l'analyse judiciaire (Forensics).
+- **Correction pour le mentor :** Le plan attendu : 1. Isolation réseau immédiate du poste (confinement). 2. Révocation immédiate et réinitialisation de tous les mots de passe de l'utilisatrice (session, e-mails, VPN). 3. Collecte de la mémoire vive (RAM dump) et sauvegarde des logs du système (préservation). 4. Analyse et suppression des fichiers malveillants du poste (éradication). Pour la préservation des preuves : il ne faut pas éteindre brutalement la machine (ce qui détruirait le contenu de la mémoire RAM contenant les clés de chiffrement et processus volatils), mais la débrancher du réseau logique.
 
 ---
 
@@ -167,6 +178,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Tabletop Exercise** | Simulation sur table d'un incident de sécurité permettant de tester les plans de réponse sans impact réel sur la production. |
-| **Inject (Stimulus)** | Nouvelle information ou rebondissement introduit par l'animateur d'une simulation pour faire évoluer le scénario de crise. |
+| **Chain of Custody (Chaîne de contrôle)** | Processus documentant la collecte, le transfert et l'analyse des preuves numériques pour garantir leur validité devant un tribunal. |
 | **Communication Hors Bande (Out-of-band)** | Utilisation de réseaux de communication indépendants du système d'information principal (ex. téléphones personnels, applications de messagerie chiffrée grand public) lorsque le réseau d'entreprise est compromis. |
+| **Confinement (Containment)** | Phase visant à limiter la propagation et l'impact d'un incident de sécurité en isolant l'élément compromis. |
+| **Incident Response (Réponse aux incidents)** | Processus méthodique consistant à identifier, contenir et éradiquer une cyberattaque tout en restaurant les systèmes. |
+| **Inject (Stimulus)** | Nouvelle information ou rebondissement introduit par l'animateur d'une simulation pour faire évoluer le scénario de crise. |
+| **RETEX (Retour d'Expérience)** | Réunion post-incident permettant d'analyser les défaillances et d'améliorer les processus de défense futurs. |
+| **Tabletop Exercise** | Simulation sur table d'un incident de sécurité permettant de tester les plans de réponse sans impact réel sur la production. |
+

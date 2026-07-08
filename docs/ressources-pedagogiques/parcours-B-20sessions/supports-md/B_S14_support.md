@@ -56,10 +56,15 @@ Démystifiez l'ISO 27001 : expliquez qu'il s'agit d'un système de management (S
 ---
 
 ### Glossaire
+
 *   **Actif (Asset)** — Tout élément physique, virtuel ou humain ayant de la valeur pour la réalisation de la mission de l'entreprise.
-*   **Vulnérabilité** — Faille ou faiblesse logique, physique ou organisationnelle permettant à un attaquant de compromettre un système.
-*   **Shadow IT** — Utilisation de systèmes, logiciels ou services informatiques par des employés sans l'autorisation ou le contrôle formel de la DSI.
+*   **Assurance Cyber** — Contrat d'assurance spécifique destiné à couvrir les pertes financières et les frais de remédiation consécutifs à une cyberattaque.
+*   **Impact** — Conséquence négative (financière, légale, opérationnelle, réputationnelle) découlant de la réalisation d'un risque.
+*   **Registre des risques** — Document centralisant l'ensemble des risques identifiés dans un organisme, leurs évaluations et les actions de traitement associées.
 *   **Risque Résiduel** — Niveau de risque subsistant après la mise en œuvre des mesures de traitement et des contrôles de sécurité.
+*   **Shadow IT** — Utilisation de systèmes, logiciels ou services informatiques par des employés sans l'autorisation ou le contrôle formel de la DSI.
+*   **Vraisemblance (Likelihood)** — Estimation de la probabilité ou de la fréquence à laquelle un scénario de menace cyber peut se produire.
+*   **Vulnérabilité** — Faille ou faiblesse logique, physique ou organisationnelle permettant à un attaquant de compromettre un système.
 
 ---
 
@@ -162,13 +167,18 @@ Rédigez la ligne de registre pour ce risque en suivant les consignes de cotatio
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Imaginez la gestion des risques cyber à l'aide de l'analogie d'une **expédition d'alpinisme en montagne** :
+    - **L'actif critique** est votre vie et celle de votre équipe.
+    - **La menace** est le danger naturel : une avalanche ou une tempête.
+    - **La vulnérabilité** est le fait de ne pas avoir de doudoune chaude ou d'attaquer la paroi sans cordes d'assurance.
+    - **Le traitement du risque** se décline en 4 options :
+      - **Réduire (Mitigation)** : Porter un casque, prendre une corde et un guide de haute montagne (mettre un pare-feu et MFA).
+      - **Transférer (Transfer)** : Souscrire à une assurance assistance rapatriement en hélicoptère (assurance cyber).
+      - **Éviter (Avoidance)** : Annuler l'ascension de ce sommet dangereux et choisir une randonnée plate (renoncer à utiliser une application risquée).
+      - **Accepter (Acceptance)** : Savoir que le risque existe, mais décider d'y aller quand même en assumant les conséquences financières.
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Une PME souhaite ouvrir sa base de données de production à ses prestataires externes. L'analyse de risques montre qu'une mauvaise configuration peut entraîner le vol de la base. Pour traiter ce risque, le RSSI décide de réduire le risque en imposant un accès via un VPN avec MFA, et de le transférer en mettant à jour la police d'assurance cyber.
 
 
 ## 3. Ressources complémentaires
@@ -184,9 +194,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Élaboration d'un registre de risques cyber (Matrice de risques).
+- **Consignes :**
+    1. Soit un système de vente en ligne. Identifiez les 3 risques principaux liés aux menaces courantes (ex. Vol de base de données clients, Indisponibilité du site suite à DDoS, Modification des prix par un pirate).
+    2. Pour chaque risque, construisez une ligne du registre : Actif concerné, Scénario de menace, Impact (1 à 4), Vraisemblance (1 à 4), Score brut (P×I) et Option de traitement choisie.
+- **Correction pour le mentor :** Le mentor validera la structure cohérente du tableau. Exemple pour le vol de données : Actif = Base SQL ; Menace = Injection SQL par un hacker ; Impact = 4 (fuite massive, amende CNIL) ; Vraisemblance = 2 (site protégé par pare-feu basique) ; Score = 8. Traitement = Réduire le risque (mise en place d'un pare-feu applicatif WAF et correctif régulier du code).
 
 ---
 
@@ -195,6 +207,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
 | **Actif (Asset)** | Tout élément physique, virtuel ou humain ayant de la valeur pour la réalisation de la mission de l'entreprise. |
-| **Vulnérabilité** | Faille ou faiblesse logique, physique ou organisationnelle permettant à un attaquant de compromettre un système. |
-| **Shadow IT** | Utilisation de systèmes, logiciels ou services informatiques par des employés sans l'autorisation ou le contrôle formel de la DSI. |
+| **Assurance Cyber** | Contrat d'assurance spécifique destiné à couvrir les pertes financières et les frais de remédiation consécutifs à une cyberattaque. |
+| **Impact** | Conséquence négative (financière, légale, opérationnelle, réputationnelle) découlant de la réalisation d'un risque. |
+| **Registre des risques** | Document centralisant l'ensemble des risques identifiés dans un organisme, leurs évaluations et les actions de traitement associées. |
 | **Risque Résiduel** | Niveau de risque subsistant après la mise en œuvre des mesures de traitement et des contrôles de sécurité. |
+| **Shadow IT** | Utilisation de systèmes, logiciels ou services informatiques par des employés sans l'autorisation ou le contrôle formel de la DSI. |
+| **Vraisemblance (Likelihood)** | Estimation de la probabilité ou de la fréquence à laquelle un scénario de menace cyber peut se produire. |
+| **Vulnérabilité** | Faille ou faiblesse logique, physique ou organisationnelle permettant à un attaquant de compromettre un système. |
+

@@ -138,14 +138,14 @@ nav:
       - "Sujet du Projet Capstone A": ressources-pedagogiques/parcours-A-8sessions/projet/A_capstone.md
       - "Grille d'évaluation": ressources-pedagogiques/parcours-A-8sessions/projet/A_grille_notation.md
     - "Supports de Cours":
-      - "A01 — Fondations & Triade CIA": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S01_support.md
-      - "A02 — Menaces, malwares & Phishing": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S02_support.md
-      - "A03 — Sécurité Réseau & Architectures": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S03_support.md
-      - "A04 — Sécurité Physique & Cloud": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S04_support.md
-      - "A05 — RGPD, Conformité & Risques": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S05_support.md
-      - "A06 — Vulnérabilités & Score CVSS": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S06_support.md
-      - "A07 — IAM, MFA & Gestion des accès": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S07_support.md
-      - "A08 — Gestion d'incidents & Restitution": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S08_support.md
+      - "A01 — Découverte de la Cybersécurité & Paysage des Menaces": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S01_support.md
+      - "A02 — Menaces, Attaques & Ingénierie Sociale": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S02_support.md
+      - "A03 — Sécurité des Systèmes & Réseaux": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S03_support.md
+      - "A04 — Sécurité du Cloud, des Données & des Identités": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S04_support.md
+      - "A05 — Gouvernance, Risque, Conformité & Vie Privée": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S05_support.md
+      - "A06 — Opérations de Sécurité & Gestion des Vulnérabilités": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S06_support.md
+      - "A07 — Réponse aux Incidents & Introduction au Forensics": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S07_support.md
+      - "A08 — Projet Capstone — Restitution & Synthèse": ressources-pedagogiques/parcours-A-8sessions/supports-md/A_S08_support.md
     - "Plans d'Animation (Mentor)":
       - "Session A01": ressources-pedagogiques/parcours-A-8sessions/plans-de-seance/A_S01_plan.md
       - "Session A02": ressources-pedagogiques/parcours-A-8sessions/plans-de-seance/A_S02_plan.md
@@ -175,26 +175,26 @@ nav:
       - "Sujet du Projet Capstone B": ressources-pedagogiques/parcours-B-20sessions/projet/B_capstone.md
       - "Grille d'évaluation": ressources-pedagogiques/parcours-B-20sessions/projet/B_grille_notation.md
     - "Supports de Cours":
-      - "B01 — Fondations & CIA": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S01_support.md
-      - "B02 — Menaces & Ransomwares": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S02_support.md
-      - "B03 — Ingénierie Sociale & Hameçonnage": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S03_support.md
-      - "B04 — Posture & Hygiène Cyber": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S04_support.md
-      - "B05 — Protocoles Réseau & OSI": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S05_support.md
-      - "B06 — Sécurisation & Segmentation Réseau (VLAN, VPN)": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S06_support.md
-      - "B07 — Configuration de Pare-feux (Firewalls/ACLs)": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S07_support.md
-      - "B08 — Détection d'Intrusions (IDS/IPS, Wireshark)": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S08_support.md
-      - "B09 — IAM, MFA & SSO": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S09_support.md
-      - "B10 — Cryptographie & Chiffrement": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S10_support.md
-      - "B11 — Sécurité Cloud": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S11_support.md
-      - "B12 — Sauvegardes & Résilience 3-2-1": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S12_support.md
-      - "B13 — OWASP Top 10": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S13_support.md
-      - "B14 — DevSecOps & CI/CD": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S14_support.md
-      - "B15 — Vulnérabilités & Scans CVSS": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S15_support.md
-      - "B16 — Supervision & SIEM (SOC)": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S16_support.md
-      - "B17 — Gouvernance, PSSI & ISO 27001": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S17_support.md
-      - "B18 — Analyse de Risques & EBIOS RM Light": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S18_support.md
-      - "B19 — Réponse aux Incidents (Playbooks, Ransomware)": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S19_support.md
-      - "B20 — Clôture de la formation & Soutenance Capstone": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S20_support.md
+      - "B01 — Introduction & Triade CIA": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S01_support.md
+      - "B02 — Paysage des Menaces & Acteurs": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S02_support.md
+      - "B03 — Types d'Attaques & Vecteurs": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S03_support.md
+      - "B04 — Ingénierie Sociale & Facteur Humain": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S04_support.md
+      - "B05 — Fondamentaux Réseau pour la Sécurité": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S05_support.md
+      - "B06 — Défenses Réseau": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S06_support.md
+      - "B07 — Communications Sécurisées": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S07_support.md
+      - "B08 — Durcissement des Systèmes & Endpoints": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S08_support.md
+      - "B09 — Gestion des Identités & des Accès (IAM)": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S09_support.md
+      - "B10 — Cryptographie Essentielle": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S10_support.md
+      - "B11 — Sécurité du Cloud": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S11_support.md
+      - "B12 — Sécurité & Confidentialité des Données": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S12_support.md
+      - "B13 — Gouvernance & Cadres de Sécurité": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S13_support.md
+      - "B14 — Gestion des Risques": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S14_support.md
+      - "B15 — Conformité & Réglementations Vie Privée": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S15_support.md
+      - "B16 — Centre des Opérations de Sécurité (SOC) & Supervision": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S16_support.md
+      - "B17 — Outils SIEM & Analyse de Logs": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S17_support.md
+      - "B18 — Introduction à la Réponse aux Incidents": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S18_support.md
+      - "B19 — Simulation de Crise Cyber (Tabletop)": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S19_support.md
+      - "B20 — Soutenance Finale & Clôture": ressources-pedagogiques/parcours-B-20sessions/supports-md/B_S20_support.md
     - "Plans d'Animation (Mentor)":
       - "Session B01": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S01_plan.md
       - "Session B02": ressources-pedagogiques/parcours-B-20sessions/plans-de-seance/B_S02_plan.md

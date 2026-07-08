@@ -39,12 +39,17 @@ Discutez des failles inhérentes aux vieux protocoles (Telnet, FTP, HTTP) qui fo
 ---
 
 ### Glossaire
-* **Pare-feu (Firewall)** : Dispositif matériel ou logiciel analysant et filtrant les paquets de données circulant entre un réseau privé et un réseau public (Internet) selon des règles de sécurité.
-* **VPN (Virtual Private Network)** : Technologie créant un tunnel chiffré et sécurisé sur un réseau public pour acheminer de manière confidentielle les données d'un poste de travail vers le réseau de l'entreprise.
-* **HTTPS (HyperText Transfer Protocol Secure)** : Version sécurisée du protocole HTTP utilisée pour le web, chiffrant les échanges entre le navigateur de l'utilisateur et le serveur web pour empêcher l'interception.
-* **SSL / TLS** : Protocoles de sécurisation des échanges sur Internet, servant de socle de chiffrement pour HTTPS.
-* **Segmentation réseau** : Technique consistant à partitionner un réseau informatique en plusieurs sous-réseaux (VLANs, DMZ) distincts pour limiter la propagation des menaces.
-* **DMZ (Zone Démilitarisée)** : Sous-réseau d'une entreprise isolé du réseau interne, hébergeant les serveurs devant être accessibles depuis Internet (ex. serveur web public) afin de protéger les postes internes de toute intrusion sur ces serveurs.
+
+*   **DMZ (Demilitarized Zone)** — Zone réseau intermédiaire isolée du réseau interne et d'Internet, hébergeant les serveurs devant être accessibles depuis l'extérieur.
+*   **DMZ (Zone Démilitarisée)** — Sous-réseau d'une entreprise isolé du réseau interne, hébergeant les serveurs devant être accessibles depuis Internet (ex. serveur web public) afin de protéger les postes internes de toute intrusion sur ces serveurs.
+*   **Firewall (Pare-feu)** — Équipement ou logiciel réseau filtrant les paquets de données entrants et sortants selon des règles de sécurité prédéfinies.
+*   **HTTPS (HyperText Transfer Protocol Secure)** — Version sécurisée du protocole HTTP utilisée pour le web, chiffrant les échanges entre le navigateur de l'utilisateur et le serveur web pour empêcher l'interception.
+*   **Pare-feu (Firewall)** — Dispositif matériel ou logiciel analysant et filtrant les paquets de données circulant entre un réseau privé et un réseau public (Internet) selon des règles de sécurité.
+*   **Segmentation réseau** — Technique consistant à partitionner un réseau informatique en plusieurs sous-réseaux (VLANs, DMZ) distincts pour limiter la propagation des menaces.
+*   **SSL / TLS** — Protocoles de sécurisation des échanges sur Internet, servant de socle de chiffrement pour HTTPS.
+*   **VLAN (Virtual Local Area Network)** — Technologie permettant de segmenter un réseau physique unique en plusieurs réseaux locaux logiques indépendants.
+*   **VPN (Virtual Private Network)** — Technologie créant un tunnel chiffré et sécurisé sur un réseau public pour acheminer de manière confidentielle les données d'un poste de travail vers le réseau de l'entreprise.
+*   **VPN (Virtual Private Network)** — Réseau privé virtuel créant un tunnel chiffré pour acheminer de manière sécurisée les communications sur un réseau non sûr comme Internet.
 
 ---
 
@@ -143,13 +148,14 @@ Vous devez concevoir la segmentation réseau d'une boutique connectée comprenan
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Imaginez que le réseau informatique de votre entreprise est un **grand immeuble de bureaux** :
+    - **Le Pare-feu (Firewall)** est le guichet de réception à l'entrée. Il contrôle l'identité de chaque visiteur et refuse systématiquement ceux qui ne sont pas sur la liste d'invités.
+    - **La DMZ (Zone Démilitarisée)** est la salle d'attente à l'accueil. Les visiteurs externes peuvent s'y installer, mais des portes blindées et verrouillées les empêchent d'accéder aux bureaux internes.
+    - **La segmentation réseau (VLAN)** correspond aux badges d'accès par étage : la comptabilité ne peut pas monter à l'étage de la R&D sans badge spécifique.
+    - **Le VPN** est un tunnel souterrain sécurisé et invisible menant directement de votre domicile à votre bureau, empêchant quiconque dans la rue de voir vos déplacements.
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Une PME de logistique héberge son site web public sur un serveur en DMZ. Suite à une faille sur le site, le serveur est compromis. Grâce au pare-feu interne et à la segmentation réseau, le pirate est confiné dans la DMZ et ne peut pas rebondir vers le réseau interne où sont stockés les fichiers clients et les bases de données comptables.
 
 
 ## 3. Ressources complémentaires
@@ -166,9 +172,12 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Conception d'architecture réseau sécurisée.
+- **Consignes :**
+    1. Vous devez concevoir le schéma réseau simplifié d'une clinique. Placez les éléments suivants dans les bonnes zones (Internet, DMZ, LAN Interne, Réseau Médical) : Serveur web public, Postes des secrétaires, Appareils d'imagerie médicale (IRM/Scanners), Base de données des patients.
+    2. Justifiez la séparation du Réseau Médical par rapport au LAN Interne classique.
+    3. Indiquez quelle règle de filtrage principale doit s'appliquer sur le pare-feu pour protéger la base de données des patients.
+- **Correction pour le mentor :** Le serveur web va en DMZ ; les postes des secrétaires dans le LAN Interne ; les IRM et la base de données dans le Réseau Médical (zone ultra-sécurisée). La séparation protège les dispositifs de santé critiques d'une infection provenant d'une secrétaire ayant cliqué sur un mail malveillant. La règle principale doit être : interdire tout trafic direct depuis Internet vers la base de données, et n'autoriser que les requêtes provenant de l'application métier validée.
 
 ---
 
@@ -176,9 +185,12 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Pare-feu (Firewall)** | Dispositif matériel ou logiciel analysant et filtrant les paquets de données circulant entre un réseau privé et un réseau public (Internet) selon des règles de sécurité. |
-| **VPN (Virtual Private Network)** | Technologie créant un tunnel chiffré et sécurisé sur un réseau public pour acheminer de manière confidentielle les données d'un poste de travail vers le réseau de l'entreprise. |
-| **HTTPS (HyperText Transfer Protocol Secure)** | Version sécurisée du protocole HTTP utilisée pour le web, chiffrant les échanges entre le navigateur de l'utilisateur et le serveur web pour empêcher l'interception. |
-| **SSL / TLS** | Protocoles de sécurisation des échanges sur Internet, servant de socle de chiffrement pour HTTPS. |
-| **Segmentation réseau** | Technique consistant à partitionner un réseau informatique en plusieurs sous-réseaux (VLANs, DMZ) distincts pour limiter la propagation des menaces. |
 | **DMZ (Zone Démilitarisée)** | Sous-réseau d'une entreprise isolé du réseau interne, hébergeant les serveurs devant être accessibles depuis Internet (ex. serveur web public) afin de protéger les postes internes de toute intrusion sur ces serveurs. |
+| **Firewall (Pare-feu)** | Équipement ou logiciel réseau filtrant les paquets de données entrants et sortants selon des règles de sécurité prédéfinies. |
+| **HTTPS (HyperText Transfer Protocol Secure)** | Version sécurisée du protocole HTTP utilisée pour le web, chiffrant les échanges entre le navigateur de l'utilisateur et le serveur web pour empêcher l'interception. |
+| **Pare-feu (Firewall)** | Dispositif matériel ou logiciel analysant et filtrant les paquets de données circulant entre un réseau privé et un réseau public (Internet) selon des règles de sécurité. |
+| **Segmentation réseau** | Technique consistant à partitionner un réseau informatique en plusieurs sous-réseaux (VLANs, DMZ) distincts pour limiter la propagation des menaces. |
+| **SSL / TLS** | Protocoles de sécurisation des échanges sur Internet, servant de socle de chiffrement pour HTTPS. |
+| **VLAN (Virtual Local Area Network)** | Technologie permettant de segmenter un réseau physique unique en plusieurs réseaux locaux logiques indépendants. |
+| **VPN (Virtual Private Network)** | Technologie créant un tunnel chiffré et sécurisé sur un réseau public pour acheminer de manière confidentielle les données d'un poste de travail vers le réseau de l'entreprise. |
+

@@ -38,10 +38,15 @@ Focalisez-vous sur la classification des données (Publique, Interne, Confidenti
 ---
 
 ### Glossaire
+
 *   **Chiffrement au repos (At Rest)** — Protection des données écrites sur un support de stockage statique (disque dur, base de données) par chiffrement cryptographique.
+*   **Chiffrement au repos (At-Rest)** — Chiffrement des données stockées sur un disque ou support physique, les protégeant en cas de vol matériel.
 *   **Chiffrement en transit (In Transit)** — Protection des données en cours de déplacement sur un réseau de communication à l'aide de protocoles sécurisés.
 *   **DLP (Data Loss Prevention)** — Technologie logicielle de surveillance et de blocage conçue pour empêcher l'exfiltration accidentelle ou malveillante de données d'entreprise.
+*   **DLP (Data Loss Prevention)** — Système de prévention des fuites de données analysant les flux pour bloquer l'exfiltration d'informations confidentielles.
+*   **Sauvegarde 3-2-1** — Méthodologie de sauvegarde imposant de conserver au moins 3 copies des données, sur 2 supports différents, avec 1 copie délocalisée hors-site.
 *   **Sauvegarde hors ligne (Offline Backup)** — Copie de sauvegarde stockée sur un support physiquement déconnecté du réseau informatique (bandes, disques débranchés), isolée des attaques cyber.
+*   **Sauvegarde immuable** — Sauvegarde dont le contenu est protégé contre toute écriture, modification ou suppression pendant une période définie, idéale contre les rançongiciels.
 
 ---
 
@@ -129,13 +134,16 @@ Proposez une mise en œuvre concrète de la règle 3-2-1 en complétant le sché
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Imaginez la protection et la sauvegarde de vos données d'entreprise à l'aide de l'analogie d'une **collection de photos de famille précieuses** :
+    - Conserver toutes vos photos sur un seul ordinateur portable chez vous, c'est courir un risque majeur en cas de vol ou d'incendie.
+    - **La règle de sauvegarde 3-2-1** s'applique ainsi :
+      - Vous gardez les photos originales sur votre ordinateur (Copie 1).
+      - Vous copiez ces photos sur un disque dur externe chez vous (Copie 2, support physique différent).
+      - Vous envoyez une copie chiffrée de ces photos sur un serveur de stockage en ligne cloud (Copie 3, hors-site dans un lieu géographique différent).
+    - Pour éviter qu'un cambrioleur (rançongiciel) ne détruise votre disque de sauvegarde en même temps que votre ordinateur, vous le débranchez du réseau et le mettez dans un coffre-fort (sauvegarde hors-ligne/immuable).
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Une PME de santé met en œuvre la règle 3-2-1 pour ses dossiers médicaux. Lorsqu'une cyberattaque par ransomware frappe les postes internes et chiffre tous les disques durs connectés, l'administrateur peut restaurer l'intégralité du système en quelques heures grâce à la copie externe déconnectée stockée hors-site.
 
 
 ## 3. Ressources complémentaires
@@ -151,9 +159,12 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Conception d'un plan de sauvegarde anti-ransomware.
+- **Consignes :**
+    1. Vous devez concevoir la stratégie de sauvegarde d'une agence de design. Les fichiers critiques représentent 2 To de données.
+    2. Proposez une architecture technique respectant scrupuleusement la règle 3-2-1 (détaillez les types de supports et de réseaux utilisés).
+    3. Expliquez l'intérêt de la "sauvegarde hors-ligne" (Offline/Air-gapped) face à une attaque par rançongiciel.
+- **Correction pour le mentor :** L'architecture doit prévoir : 3 copies des données (les fichiers de travail sur les postes, une sauvegarde sur un serveur NAS local en réseau, et une sauvegarde sur un stockage cloud externe). La sauvegarde locale NAS doit être isolée par des accès d'administration distincts, et la sauvegarde cloud doit être programmée en mode "immuable" ou déconnectée périodiquement. Le point clé est d'expliquer que si la sauvegarde reste connectée en permanence au réseau avec les mêmes droits d'accès, le ransomware chiffrera également les sauvegardes.
 
 ---
 
@@ -164,4 +175,7 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 | **Chiffrement au repos (At Rest)** | Protection des données écrites sur un support de stockage statique (disque dur, base de données) par chiffrement cryptographique. |
 | **Chiffrement en transit (In Transit)** | Protection des données en cours de déplacement sur un réseau de communication à l'aide de protocoles sécurisés. |
 | **DLP (Data Loss Prevention)** | Technologie logicielle de surveillance et de blocage conçue pour empêcher l'exfiltration accidentelle ou malveillante de données d'entreprise. |
+| **Sauvegarde 3-2-1** | Méthodologie de sauvegarde imposant de conserver au moins 3 copies des données, sur 2 supports différents, avec 1 copie délocalisée hors-site. |
 | **Sauvegarde hors ligne (Offline Backup)** | Copie de sauvegarde stockée sur un support physiquement déconnecté du réseau informatique (bandes, disques débranchés), isolée des attaques cyber. |
+| **Sauvegarde immuable** | Sauvegarde dont le contenu est protégé contre toute écriture, modification ou suppression pendant une période définie, idéale contre les rançongiciels. |
+

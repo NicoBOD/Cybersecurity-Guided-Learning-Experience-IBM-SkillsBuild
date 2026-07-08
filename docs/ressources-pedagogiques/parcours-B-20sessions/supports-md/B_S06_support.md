@@ -35,10 +35,15 @@ Détaillez le fonctionnement d'un Pare-feu de Nouvelle Génération (NGFW). Cont
 ---
 
 ### Glossaire
+
 *   **Default Deny (Rejet par défaut)** — Politique de sécurité réseau qui consiste à bloquer toutes les communications par défaut, sauf celles explicitement autorisées.
 *   **DMZ (Zone Démilitarisée)** — Sous-réseau physique ou logique isolé contenant les serveurs exposés à l'extérieur, servant de zone tampon avec le réseau interne.
+*   **DMZ (Zone Démilitarisée)** — Sous-réseau isolé hébergeant les ressources publiques pour empêcher tout accès direct au réseau interne depuis Internet.
+*   **Firewall (Pare-feu)** — Équipement filtrant les flux réseau entrants et sortants sur la base d'une politique de sécurité (ACL).
 *   **IDS (Intrusion Detection System)** — Équipement ou logiciel réseau analysant le trafic de manière passive pour détecter des comportements suspects ou des signatures d'attaques.
+*   **IDS (Intrusion Detection System)** — Système passif détectant et signalant les comportements réseau suspects ou les signatures d'attaques connues.
 *   **IPS (Intrusion Prevention System)** — Équipement réseau actif capable d'analyser les paquets et de bloquer immédiatement les flux identifiés comme malveillants.
+*   **IPS (Intrusion Prevention System)** — Système actif capable de détecter et de bloquer automatiquement les flux malveillants identifiés sur un réseau.
 
 ---
 
@@ -133,13 +138,14 @@ Rédigez la table de règles du pare-feu central (contenant 4 règles clés + la
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Imaginez les défenses et la segmentation d'un réseau comme la sécurité d'un **aéroport sécurisé** :
+    - **La DMZ (Zone Démilitarisée)** est la zone publique d'accueil (enregistrement, boutiques). Tout le monde peut y entrer depuis la rue (Internet), mais des barrières de sécurité et des portiques de contrôle empêchent les visiteurs de passer plus loin sans vérification.
+    - **Le Pare-feu (Firewall)** est le poste de contrôle des frontières. Il examine les billets (paquets de données) et vérifie si le passager est autorisé à passer.
+    - **L'IDS / IPS** correspond aux agents de sécurité en patrouille. L'IDS surveille et signale un comportement louche. L'IPS intervient directement pour menotter et expulser l'intrus (bloquer la connexion).
+    - **La segmentation par VLAN** correspond aux portes réservées aux employés avec lecteurs de badges : un passager du LAN public ne peut pas entrer dans la zone de tri des bagages.
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Une entreprise sépare ses ordinateurs de bureau de son réseau industriel (machines-outils). Suite à l'infection d'un poste administratif par un rançongiciel, la segmentation réseau par VLAN et l'IDS/IPS détectent le trafic suspect et bloquent la propagation à la couche réseau, sauvant ainsi la chaîne de production d'un chiffrement catastrophique.
 
 
 ## 3. Ressources complémentaires
@@ -155,9 +161,16 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Conception de règles de filtrage pour pare-feu (ACL).
+- **Consignes :**
+    1. Vous devez configurer les règles de sécurité du pare-feu d'une PME. Remplissez le tableau de règles (Source, Destination, Port, Action) pour respecter les contraintes suivantes :
+       - Autoriser les utilisateurs du LAN interne (`192.168.10.0/24`) à naviguer sur le Web (HTTP/HTTPS).
+       - Autoriser les connexions depuis Internet vers le serveur web public de la DMZ (`10.0.5.8`) uniquement sur le port sécurisé HTTPS.
+       - Interdire tout autre trafic par défaut (Implicit Deny).
+- **Correction pour le mentor :** Le tableau final doit comprendre :
+  - Règle 1 : Src=`192.168.10.0/24`, Dst=`Any`, Port=`80, 443`, Action=`ALLOW`
+  - Règle 2 : Src=`Any`, Dst=`10.0.5.8`, Port=`443`, Action=`ALLOW`
+  - Règle 3 : Src=`Any`, Dst=`Any`, Port=`Any`, Action=`DENY` (Implicit Deny en fin de liste). Le mentor validera la présence de la règle de rejet par défaut à la fin.
 
 ---
 
@@ -167,5 +180,7 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 | :--- | :--- |
 | **Default Deny (Rejet par défaut)** | Politique de sécurité réseau qui consiste à bloquer toutes les communications par défaut, sauf celles explicitement autorisées. |
 | **DMZ (Zone Démilitarisée)** | Sous-réseau physique ou logique isolé contenant les serveurs exposés à l'extérieur, servant de zone tampon avec le réseau interne. |
+| **Firewall (Pare-feu)** | Équipement filtrant les flux réseau entrants et sortants sur la base d'une politique de sécurité (ACL). |
 | **IDS (Intrusion Detection System)** | Équipement ou logiciel réseau analysant le trafic de manière passive pour détecter des comportements suspects ou des signatures d'attaques. |
 | **IPS (Intrusion Prevention System)** | Équipement réseau actif capable d'analyser les paquets et de bloquer immédiatement les flux identifiés comme malveillants. |
+

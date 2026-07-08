@@ -36,9 +36,14 @@ Expliquez le principe de durcissement (Hardening). Prenez l'exemple du Center fo
 ---
 
 ### Glossaire
+
+*   **Durcissement (Hardening)** — Processus de configuration visant à sécuriser un système d'exploitation ou une application en réduisant sa surface d'attaque.
+*   **EDR (Endpoint Detection and Response)** — Solution de sécurité installée sur les terminaux surveillant les comportements pour détecter et bloquer les attaques sophistiquées en temps réel.
+*   **EDR (Endpoint Detection and Response)** — Logiciel de sécurité surveillant en continu les comportements des postes de travail et serveurs pour y bloquer les menaces avancées.
 *   **GPO (Group Policy Object)** — Outil de l'infrastructure Microsoft Active Directory permettant de configurer de manière centralisée les règles de sécurité d'un parc de machines Windows.
 *   **Hardening (Durcissement)** — Processus de sécurisation d'un système d'exploitation par réduction de sa surface d'exposition et verrouillage de ses configurations.
-*   **EDR (Endpoint Detection and Response)** — Solution de sécurité installée sur les terminaux surveillant les comportements pour détecter et bloquer les attaques sophistiquées en temps réel.
+*   **Moindre privilège** — Principe de sécurité consistant à n'accorder à un utilisateur ou processus que les droits strictement nécessaires à l'accomplissement de sa tâche.
+*   **Patch Management** — Processus systématique de déploiement des mises à jour correctives logicielles pour combler les failles de sécurité.
 *   **UAC (User Account Control)** — Mécanisme de sécurité Windows demandant l'approbation de l'utilisateur pour accorder des privilèges d'administration temporaires à un programme.
 
 ---
@@ -121,13 +126,14 @@ L'entreprise "EcoLog" déploie 50 nouveaux ordinateurs portables Windows 11 pour
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Imaginez le durcissement d'un système informatique (Hardening) comme la sécurisation d'une **maison neuve** :
+    - Par défaut, le constructeur installe de nombreuses fenêtres, des portes de service et laisse parfois des clés standard.
+    - **Le durcissement (Hardening)** consiste à condamner les fenêtres inutilisées (désactiver les services et ports inutiles), à changer les codes par défaut, et à installer des serrures multipoints (le moindre privilège).
+    - **L'Antivirus classique** est comparable à une liste de photos de cambrioleurs connus affichée à l'entrée. Si le voleur se déguise, l'antivirus le laisse passer.
+    - **L'EDR (Endpoint Detection and Response)** est similaire à un détective privé et des capteurs de mouvements installés dans chaque pièce : il analyse les comportements inhabituels (quelqu'un tente de casser un mur à l'intérieur) et bloque l'action immédiatement.
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Dans le cadre d'un projet de sécurisation, le service informatique applique une politique de durcissement sur les serveurs de fichiers : désactivation du protocole vulnérable SMBv1, fermeture des ports SSH d'administration directe, et restriction stricte des droits d'accès administrateurs locaux. Quelques mois plus tard, un malware s'exécute sur le réseau interne mais ne peut pas se propager car les services réseau vulnérables ont été désactivés.
 
 
 ## 3. Ressources complémentaires
@@ -143,9 +149,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Conception d'une checklist de durcissement (OS Hardening).
+- **Consignes :**
+    1. Vous devez sécuriser un serveur Windows ou Linux nouvellement installé en entreprise. Rédigez une checklist de 5 actions concrètes de durcissement technique à appliquer avant sa mise en production.
+    2. Pour chaque action, expliquez brièvement le risque de sécurité que vous éliminez.
+- **Correction pour le mentor :** Actions attendues dans la checklist : 1. Modifier les identifiants d'administration par défaut (bloque les attaques par force brute simples). 2. Désactiver les services et protocoles inutiles comme Telnet ou SMBv1 (réduit la surface d'exposition aux failles logicielles). 3. Configurer les mises à jour automatiques de sécurité (corrige les failles connues). 4. Limiter les connexions SSH/administrateur à des adresses IP spécifiques (réduit les tentatives externes). 5. Activer le pare-feu local du système.
 
 ---
 
@@ -153,7 +161,11 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
+| **Durcissement (Hardening)** | Processus de configuration visant à sécuriser un système d'exploitation ou une application en réduisant sa surface d'attaque. |
+| **EDR (Endpoint Detection and Response)** | Solution de sécurité installée sur les terminaux surveillant les comportements pour détecter et bloquer les attaques sophistiquées en temps réel. |
 | **GPO (Group Policy Object)** | Outil de l'infrastructure Microsoft Active Directory permettant de configurer de manière centralisée les règles de sécurité d'un parc de machines Windows. |
 | **Hardening (Durcissement)** | Processus de sécurisation d'un système d'exploitation par réduction de sa surface d'exposition et verrouillage de ses configurations. |
-| **EDR (Endpoint Detection and Response)** | Solution de sécurité installée sur les terminaux surveillant les comportements pour détecter et bloquer les attaques sophistiquées en temps réel. |
+| **Moindre privilège** | Principe de sécurité consistant à n'accorder à un utilisateur ou processus que les droits strictement nécessaires à l'accomplissement de sa tâche. |
+| **Patch Management** | Processus systématique de déploiement des mises à jour correctives logicielles pour combler les failles de sécurité. |
 | **UAC (User Account Control)** | Mécanisme de sécurité Windows demandant l'approbation de l'utilisateur pour accorder des privilèges d'administration temporaires à un programme. |
+

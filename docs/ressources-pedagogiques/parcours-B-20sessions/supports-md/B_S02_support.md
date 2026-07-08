@@ -35,10 +35,15 @@ Prenez 30 minutes pour classifier les acteurs de la menace : Script Kiddies (fai
 ---
 
 ### Glossaire
+
 *   **APT (Advanced Persistent Threat)** — Groupe d'attaquants sophistiqué, souvent étatique, menant des campagnes d'intrusion ciblées et à long terme.
-*   **RaaS (Ransomware-as-a-Service)** — Modèle de location logicielle où des criminels louent un ransomware clé en main en échange d'un pourcentage sur la rançon extorquée.
-*   **IoC (Indicators of Compromise)** — Signes techniques (IP, empreinte numérique de fichier) indiquant qu'un système d'information a probablement été compromis par un intrus.
+*   **APT (Advanced Persistent Threat)** — Groupe d'attaquants hautement qualifié (généralement soutenu par un État) menant des cyberattaques ciblées et furtives sur le long terme.
+*   **Dark Web** — Partie d'Internet accessible uniquement via des réseaux spécifiques (ex. Tor) où se déroulent des activités cybercriminelles comme la vente d'exploits.
 *   **Insider Threat (Menace interne)** — Risque cyber provenant d'un employé, prestataire ou partenaire ayant des droits d'accès légitimes sur le réseau de l'entreprise.
+*   **IOC (Indicator of Compromise)** — Indicateur de compromission technique (adresse IP, hash de fichier, domaine) signalant une activité potentiellement malveillante sur un système.
+*   **IoC (Indicators of Compromise)** — Signes techniques (IP, empreinte numérique de fichier) indiquant qu'un système d'information a probablement été compromis par un intrus.
+*   **RaaS (Ransomware-as-a-Service)** — Modèle de location logicielle où des criminels louent un ransomware clé en main en échange d'un pourcentage sur la rançon extorquée.
+*   **Threat Intelligence** — Renseignements sur les cybermenaces consistant à collecter, analyser et organiser des informations sur les attaquants et leurs techniques.
 
 ---
 
@@ -122,13 +127,14 @@ La **CTI** (Renseignement sur les cybermenaces) consiste à collecter, analyser 
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Imaginez le paysage des menaces cyber comme la **criminalité dans le monde physique** :
+    - **Le voleur de rue** correspond au cybercriminel opportuniste : il cherche des portes déverrouillées (logiciels non mis à jour) pour voler ce qu'il peut (argent, données à revendre).
+    - **L'espion industriel ou le commando militaire** représente l'APT (État-Nation) : il dispose de budgets colossaux, d'équipements de pointe et peut planifier son intrusion pendant des mois pour voler des plans secrets.
+    - **Le manifestant devant un siège social** est le hacktiviste : il veut dégrader votre vitrine (défigurer votre site web) pour diffuser ses revendications politiques.
+    - **Le garde corrompu ou l'employé négligent** est la menace interne.
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Une entreprise technologique subit une intrusion discrète. Les outils de Threat Intelligence permettent de corréler les signatures techniques (IOCs) laissées par l'attaquant avec le mode opératoire documenté d'un groupe APT étatique. Grâce à ces données, l'équipe de sécurité comprend que l'attaquant cible spécifiquement les fichiers de R&D et applique immédiatement des mesures de confinement adaptées.
 
 
 ## 3. Ressources complémentaires
@@ -144,9 +150,12 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Profilage de menace et analyse de Threat Intelligence.
+- **Consignes :**
+    1. Vous devez mener des recherches (ou simuler une analyse) sur un acteur de menace réel connu (ex. Cozy Bear / APT29 ou LockBit).
+    2. Rédigez une fiche profil synthétique de cet acteur : motivations (financières, étatiques, géopolitiques), cibles privilégiées et techniques d'attaque récurrentes.
+    3. Listez 2 indicateurs de compromission (IOC) typiques que cet acteur pourrait laisser sur votre réseau.
+- **Correction pour le mentor :** Le mentor s'assurera que les profils rédigés par les apprenants distinguent bien les motivations cybercriminelles (gain rapide de LockBit via rançongiciel) des motivations d'espionnage (infiltration silencieuse et à long terme d'APT29). Les IOC mentionnés doivent être pertinents (ex. adresses IP de serveurs de commande C2 connus, empreintes SHA-256 de fichiers malveillants récurrents).
 
 ---
 
@@ -155,6 +164,9 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
 | **APT (Advanced Persistent Threat)** | Groupe d'attaquants sophistiqué, souvent étatique, menant des campagnes d'intrusion ciblées et à long terme. |
-| **RaaS (Ransomware-as-a-Service)** | Modèle de location logicielle où des criminels louent un ransomware clé en main en échange d'un pourcentage sur la rançon extorquée. |
-| **IoC (Indicators of Compromise)** | Signes techniques (IP, empreinte numérique de fichier) indiquant qu'un système d'information a probablement été compromis par un intrus. |
+| **Dark Web** | Partie d'Internet accessible uniquement via des réseaux spécifiques (ex. Tor) où se déroulent des activités cybercriminelles comme la vente d'exploits. |
 | **Insider Threat (Menace interne)** | Risque cyber provenant d'un employé, prestataire ou partenaire ayant des droits d'accès légitimes sur le réseau de l'entreprise. |
+| **IoC (Indicators of Compromise)** | Signes techniques (IP, empreinte numérique de fichier) indiquant qu'un système d'information a probablement été compromis par un intrus. |
+| **RaaS (Ransomware-as-a-Service)** | Modèle de location logicielle où des criminels louent un ransomware clé en main en échange d'un pourcentage sur la rançon extorquée. |
+| **Threat Intelligence** | Renseignements sur les cybermenaces consistant à collecter, analyser et organiser des informations sur les attaquants et leurs techniques. |
+

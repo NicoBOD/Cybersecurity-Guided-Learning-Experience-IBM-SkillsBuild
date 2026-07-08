@@ -36,10 +36,14 @@ Plongez dans les détails de la Cyber Kill Chain de Lockheed Martin. Décortique
 ---
 
 ### Glossaire
-*   **Worm (Ver)** — Logiciel malveillant capable de se propager de manière autonome dans un réseau en exploitant des vulnérabilités sans intervention humaine.
-*   **Trojan (Cheval de Troie)** — Programme nuisible camouflé sous l'apparence d'un logiciel légitime pour tromper l'utilisateur et infecter son système.
-*   **Cyber Kill Chain** — Modèle en 7 étapes théorisé par Lockheed Martin décrivant le cycle de vie d'une attaque ciblée.
+
 *   **Command & Control (C2)** — Serveur externe contrôlé par un attaquant servant à envoyer des commandes à des systèmes piratés au sein d'un réseau cible.
+*   **Cyber Kill Chain** — Modèle en 7 étapes théorisé par Lockheed Martin décrivant le cycle de vie d'une attaque ciblée.
+*   **Trojan (Cheval de Troie)** — Programme nuisible camouflé sous l'apparence d'un logiciel légitime pour tromper l'utilisateur et infecter son système.
+*   **Trojan (Cheval de Troie)** — Logiciel d'apparence légitime contenant une charge malveillante masquée pour ouvrir des accès secrets sur un système.
+*   **Worm (Ver informatique)** — Logiciel malveillant capable de se propager de manière autonome à travers un réseau sans intervention humaine.
+*   **Worm (Ver)** — Logiciel malveillant capable de se propager de manière autonome dans un réseau en exploitant des vulnérabilités sans intervention humaine.
+*   **Zero-day (Vulnérabilité 0-jour)** — Faille de sécurité logicielle récemment découverte qui n'a pas encore fait l'objet d'un correctif par son éditeur.
 
 ---
 
@@ -126,13 +130,14 @@ En dehors des logiciels malveillants, les attaquants ciblent les capacités phys
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Imaginez les différents malwares et méthodes d'attaque informatique à l'aide d'une **comparaison biologique et historique** :
+    - **Le virus** est comme un virus biologique : il a besoin de s'accrocher à un hôte (un fichier légitime, comme un document Word) et attend qu'un humain l'exécute pour se propager.
+    - **Le ver (worm)** est comme une bactérie autonome : il n'a besoin de personne pour s'exécuter. Il se déplace tout seul dans les canalisations (le réseau) de machine en machine en exploitant des vulnérabilités.
+    - **Le Cheval de Troie (Trojan)** est identique au mythe grec : il ressemble à un cadeau inoffensif (un logiciel gratuit, un PDF de facture) mais contient en réalité des attaquants cachés.
+    - **L'attaque Zero-day** correspond à l'émergence d'une nouvelle maladie dont personne ne possède encore le vaccin (aucun correctif existant).
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Dans une usine de production, une clé USB piégée est introduite sur un poste. Le malware installé exploite une faille non corrigée pour se propager de façon autonome (comportement de ver) à l'ensemble des automates industriels du réseau interne non segmenté, provoquant l'arrêt complet de la chaîne de production.
 
 
 ## 3. Ressources complémentaires
@@ -148,9 +153,12 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Analyse d'une chaîne d'attaque (Cyber Kill Chain).
+- **Consignes :**
+    1. Soit l'attaque suivante : un pirate trouve des informations professionnelles sur LinkedIn, envoie un e-mail avec un document Word vérolé, l'utilisateur l'ouvre, le document télécharge un malware qui chiffre le serveur.
+    2. Décomposez cette attaque selon 4 étapes de la Cyber Kill Chain (Reconnaissance, Armement, Livraison, Exploitation/Action).
+    3. Proposez une mesure défensive spécifique à mettre en place pour bloquer l'attaque à l'étape de la "Livraison".
+- **Correction pour le mentor :** Reconnaissance : recherche LinkedIn. Armement : création du document Word malveillant. Livraison : envoi de l'e-mail. Exploitation/Action : ouverture du document et chiffrement du serveur. Pour bloquer l'attaque à la Livraison, on peut déployer une passerelle de messagerie sécurisée (filtre anti-spam/anti-malware) qui analyse et bloque les pièces jointes suspectes avant qu'elles n'arrivent dans la boîte de l'employé.
 
 ---
 
@@ -158,7 +166,9 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **Worm (Ver)** | Logiciel malveillant capable de se propager de manière autonome dans un réseau en exploitant des vulnérabilités sans intervention humaine. |
-| **Trojan (Cheval de Troie)** | Programme nuisible camouflé sous l'apparence d'un logiciel légitime pour tromper l'utilisateur et infecter son système. |
-| **Cyber Kill Chain** | Modèle en 7 étapes théorisé par Lockheed Martin décrivant le cycle de vie d'une attaque ciblée. |
 | **Command & Control (C2)** | Serveur externe contrôlé par un attaquant servant à envoyer des commandes à des systèmes piratés au sein d'un réseau cible. |
+| **Cyber Kill Chain** | Modèle en 7 étapes théorisé par Lockheed Martin décrivant le cycle de vie d'une attaque ciblée. |
+| **Trojan (Cheval de Troie)** | Programme nuisible camouflé sous l'apparence d'un logiciel légitime pour tromper l'utilisateur et infecter son système. |
+| **Worm (Ver)** | Logiciel malveillant capable de se propager de manière autonome dans un réseau en exploitant des vulnérabilités sans intervention humaine. |
+| **Zero-day (Vulnérabilité 0-jour)** | Faille de sécurité logicielle récemment découverte qui n'a pas encore fait l'objet d'un correctif par son éditeur. |
+

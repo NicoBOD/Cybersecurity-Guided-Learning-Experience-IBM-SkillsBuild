@@ -51,10 +51,15 @@ Prenez 15 minutes pour expliquer la "fatigue des alertes" subie par les analyste
 ---
 
 ### Glossaire
-*   **SOC (Security Operations Center)** — Centre d'Opérations de Sécurité. Équipe centralisée chargée de la supervision cyber et de la réponse aux alertes.
+
 *   **Faux Positif (FP)** — Alerte de sécurité déclenchée par un événement informatique légitime et sans danger pour le système.
 *   **MTTD (Mean Time To Detect)** — Temps moyen nécessaire pour identifier la présence d'une intrusion ou d'un incident de sécurité.
+*   **MTTD (Mean Time To Detect)** — Indicateur mesurant le temps moyen écoulé entre le début d'une intrusion et sa détection par l'équipe de sécurité.
 *   **MTTR (Mean Time To Respond)** — Temps moyen nécessaire pour contenir, éradiquer et corriger un incident après sa détection.
+*   **MTTR (Mean Time To Respond)** — Indicateur mesurant le temps moyen écoulé entre la détection d'une alerte et la neutralisation de l'incident.
+*   **Playbook de sécurité** — Procédure documentée décrivant pas à pas les actions obligatoires à mener par l'analyste face à un type d'alerte spécifique.
+*   **SOC (Security Operations Center)** — Centre d'Opérations de Sécurité. Équipe centralisée chargée de la supervision cyber et de la réponse aux alertes.
+*   **SOC (Security Operations Center)** — Équipe et centre opérationnel chargés de surveiller et analyser la sécurité d'une organisation en continu (24/7).
 
 ---
 
@@ -136,13 +141,13 @@ Vous êtes analyste SOC L1 de garde pour l'entreprise EcoLog. Les 3 alertes suiv
 ### Cas d'usages et exemples concrets
 
 !!! info "Explication simplifiée"
-    Pour bien comprendre ces concepts techniques, imaginez l'analogie suivante : la cybersécurité de votre entreprise est comme la sécurité d'une maison physique.
-    - **Le Pare-feu (Firewall)** agit comme la porte d'entrée blindée : il filtre qui entre et qui sort.
-    - **L'Antivirus / EDR** est comme le système d'alarme intérieur : s'il détecte un mouvement suspect, il bloque l'intrus.
-    - **La Politique de mots de passe et le MFA** correspondent aux serrures multipoints et au digicode : posséder la clé ne suffit pas toujours, il faut aussi connaître le code secret.
+    Imaginez l'organisation et le fonctionnement d'un SOC (Security Operations Center) comme le personnel des **urgences d'un grand hôpital** :
+    - **L'analyste L1 (Triage)** est l'infirmier d'accueil. Il reçoit le flux continu de patients (alertes de sécurité), écarte les cas inoffensifs (un faux positif, comme une fausse alerte de toux), et escalade immédiatement les cas graves (un vrai positif, comme un arrêt cardiaque) vers le niveau supérieur.
+    - **L'analyste L2 (Investigation)** est le médecin de garde. Il examine les antécédents médicaux du patient, demande des analyses de sang poussées (forensics de la machine) pour poser un diagnostic précis et rédiger la prescription (les étapes de nettoyage).
+    - **L'analyste L3 (Incident Response & Threat Hunter)** est le chirurgien spécialiste. Il intervient d'urgence en salle d'opération pour traiter les cas critiques complexes et mène des recherches préventives de nouvelles maladies (chasse aux menaces cachées).
 
 **Exemple d'application professionnelle :**
-Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. Il enverra un e-mail frauduleux (Phishing) à un employé des ressources humaines. Si l'employé clique, le logiciel malveillant tente de s'installer. C'est ici que la *défense en profondeur* intervient : le filtre anti-spam aurait dû bloquer l'e-mail, l'antivirus aurait dû bloquer l'exécution, et l'absence de droits administrateurs de l'employé aurait empêché l'installation. Chaque couche est vitale.
+Dans le SOC d'une multinationale, l'analyste L1 reçoit une alerte d'un ordinateur exécutant un outil d'administration suspect à 2h du matin. Il vérifie le profil de l'employé (il s'agit d'un comptable non connecté à ces heures). Il escalade l'incident au L2 qui confirme une compromission par cheval de Troie et isole la machine du réseau local en moins de 30 minutes, contenant ainsi la propagation.
 
 
 ## 3. Ressources complémentaires
@@ -158,9 +163,20 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 ## 4. Exercice bonus
 
-- **Objectif :** Mise en pratique autonome.
-- **Consignes :** Réfléchissez à un exemple réel ou une actualité récente liée au sujet de cette session. Discutez en groupe de la manière dont les concepts vus s'appliquent à cet exemple.
-- **Correction :** Le mentor validera les réflexions et apportera son expertise.
+- **Objectif :** Qualification opérationnelle d'alertes SOC et calcul de KPIs.
+- **Consignes :**
+    1. Calculez le MTTD (Temps Moyen de Détection) et le MTTR (Temps Moyen de Réponse) pour les 3 incidents suivants :
+       - Incident A : intrusion à 10h00, détectée à 10h10, neutralisée à 10h40.
+       - Incident B : intrusion à 14h00, détectée à 14h30, neutralisée à 15h30.
+       - Incident C : intrusion à 22h00, détectée à 22h05, neutralisée à 23h05.
+    2. Commentez les résultats obtenus et proposez une action pour réduire le MTTR d'une équipe.
+- **Correction pour le mentor :** Calcul des temps :
+  - Incident A : Détection = 10 min, Réponse = 30 min.
+  - Incident B : Détection = 30 min, Réponse = 60 min.
+  - Incident C : Détection = 5 min, Réponse = 60 min.
+  - **MTTD Moyen** = (10 + 30 + 5) / 3 = 15 minutes.
+  - **MTTR Moyen** = (30 + 60 + 60) / 3 = 50 minutes.
+  Pour réduire le MTTR, les apprenants doivent proposer l'automatisation d'actions de confinement via des *playbooks* ou un outil SOAR (ex. isolation automatique d'une machine suspecte en quelques secondes).
 
 ---
 
@@ -168,7 +184,9 @@ Dans une PME, un attaquant tentera rarement de forcer les serveurs directement. 
 
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
-| **SOC (Security Operations Center)** | Centre d'Opérations de Sécurité. Équipe centralisée chargée de la supervision cyber et de la réponse aux alertes. |
 | **Faux Positif (FP)** | Alerte de sécurité déclenchée par un événement informatique légitime et sans danger pour le système. |
 | **MTTD (Mean Time To Detect)** | Temps moyen nécessaire pour identifier la présence d'une intrusion ou d'un incident de sécurité. |
 | **MTTR (Mean Time To Respond)** | Temps moyen nécessaire pour contenir, éradiquer et corriger un incident après sa détection. |
+| **Playbook de sécurité** | Procédure documentée décrivant pas à pas les actions obligatoires à mener par l'analyste face à un type d'alerte spécifique. |
+| **SOC (Security Operations Center)** | Centre d'Opérations de Sécurité. Équipe centralisée chargée de la supervision cyber et de la réponse aux alertes. |
+
