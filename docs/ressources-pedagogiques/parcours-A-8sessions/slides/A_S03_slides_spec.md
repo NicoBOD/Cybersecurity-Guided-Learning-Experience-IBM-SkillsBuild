@@ -1,5 +1,7 @@
 # Spécifications des slides — Session 03 : Sécurité des systèmes & réseaux
-Parcours : A 8 sessions  |  Module : Réseaux Sécurisés  |  Format : Spécifications Markdown
+Parcours : A 8 sessions  |  Module : Réseau & Infrastructure  |  Format : Spécifications Markdown  |  Modalité : Webinaire Livestorm
+
+> **Principe directeur** : le texte affiché reste minimal ; le contenu riche est dans les notes du présentateur et dans le [plan d'animation minuté](../plans-de-seance/A_S03_plan.md), qui fait référence pour les verbatims et débriefs. Les numéros de sondages renvoient à la checklist Livestorm du plan.
 
 ---
 
@@ -12,9 +14,8 @@ Parcours : A 8 sessions  |  Module : Réseaux Sécurisés  |  Format : Spécific
   * Nom du Mentor / IBM SkillsBuild
 * **Visuels suggérés** : Schéma épuré représentant un mur de briques incandescent (pare-feu) protégeant des serveurs contre un nuage Internet. Logo officiel dans un angle.
 * **Notes du présentateur** :
-  * Accueillir les apprenants.
-  * Faire le point sur le travail autonome de la session A2 (les indices de phishing trouvés).
-  * Introduire le sujet : comment structurer et chiffrer les flux de données pour empêcher les attaquants de s'immiscer dans notre réseau.
+  * Accueillir les apprenants ; retour sur les devoirs d'A2 : « qui a trouvé un phishing dans sa boîte ? Racontez dans le chat » — lire 2-3 trouvailles.
+  * Pivot : A2 = l'attaquant entre par la manipulation ; A3 = les remparts techniques qui confinent les dégâts.
 
 ---
 
@@ -22,147 +23,204 @@ Parcours : A 8 sessions  |  Module : Réseaux Sécurisés  |  Format : Spécific
 * **Layout** : Deux colonnes (Gauche : Objectifs, Droite : Sommaire)
 * **Texte affiché sur la slide** :
   * **Nos objectifs aujourd'hui** :
-    * Expliquer le rôle d'un pare-feu (*firewall*) et ses règles de filtrage.
-    * Comprendre l'utilité et le fonctionnement d'un *VPN*.
-    * Différencier les protocoles *HTTP* et *HTTPS / TLS*.
-    * Structurer une architecture réseau sécurisée simple (*DMZ*).
+    * Expliquer le rôle d'un pare-feu et la logique de ses règles.
+    * Comprendre l'utilité (et les limites) d'un *VPN*.
+    * Différencier *HTTP* et *HTTPS / TLS*.
+    * Concevoir une segmentation réseau simple (LAN, Wi-Fi invités, *DMZ*).
   * **Sommaire de la séance** :
-    * 1. Brise-glace : Le courrier postal vs le réseau (10 min)
-    * 2. Le pare-feu : Le gardien du réseau (20 min)
-    * 3. Le VPN et le protocole HTTPS (20 min)
-    * 4. Activité pratique 1 : Architecture sécurisée (20 min)
-    * 5. Démo 3 : Inspection de règles de pare-feu (10 min)
-    * 6. Quiz de validation & Clôture (10 min)
+    * 1. Brise-glace : le serveur-appât (6 min)
+    * 2. La carte postale : comment circule l'info (5 min)
+    * 3. Pare-feu, VPN & HTTPS (22 min)
+    * 4. Segmentation & DMZ (8 min)
+    * 5. Activité : L'Architecte Réseau (14 min)
+    * 6. Démo : audit de règles de pare-feu (8 min)
+    * 7. Cas réels Target & Mirai, quiz & synthèse (27 min)
 * **Visuels suggérés** : Icônes cibles pour les objectifs et icône de liste pour le sommaire.
 * **Notes du présentateur** :
-  * Présenter les objectifs en rassurant sur le fait que l'on va vulgariser les notions techniques réseaux (ports, protocoles, etc.).
+  * Rassurer : toutes les notions techniques (ports, protocoles) seront vulgarisées par des analogies du quotidien.
+  * Annoncer le rythme : un sondage ou une question chat toutes les 8 minutes environ.
 
 ---
 
-## Slide 3 : Rappel & Brise-glace interactif
-* **Layout** : Plein écran interactif
+## Slide 3 : Brise-glace — Le serveur-appât
+* **Layout** : Plein écran interactif (sondage)
 * **Texte affiché sur la slide** :
-  * **Brise-glace : La métaphore de la carte postale**
-  * *Comment circule l'information sur Internet ?*
-    * Imaginez que vous envoyez une carte postale par la poste sans enveloppe.
-    * Qui peut la lire durant son voyage ? Le facteur, le trieur, le voisin ?
-    * Quel protocole internet ressemble à cette carte postale ? Et comment la protéger ?
-* **Visuels suggérés** : Photo ou dessin humoristique d'une carte postale classique avec des informations secrètes écrites au dos.
+  * **📊 Sondage n°1 — À votre avis...**
+  * *Vous branchez un serveur tout neuf sur Internet, sans aucune protection. Combien de temps avant les premières tentatives de connexion malveillantes ?*
+    * A) Quelques minutes  ·  B) Quelques jours  ·  C) Quelques semaines  ·  D) Seulement si l'on est ciblé
+  * (Réponse révélée après le vote)
+* **Visuels suggérés** : Pot de miel stylisé entouré d'abeilles-robots ; après le vote, un chronomètre affichant « quelques minutes » en très grand.
 * **Notes du présentateur** :
-  * Laisser 3 minutes de réflexion.
-  * Faire le lien : le protocole HTTP classique est comme une carte postale (tout circule en texte clair). HTTPS est comme une lettre scellée dans une enveloppe blindée (le chiffrement).
-  * Introduire l'idée que la sécurité réseau utilise le chiffrement des flux et le filtrage des accès.
+  * Lancer le sondage n°1, laisser 60-90 s.
+  * Débrief : réponse A — les études par honeypots montrent un balayage permanent d'Internet par des scanners automatisés. Enterrer le mythe D : l'exposition suffit, pas besoin d'être « intéressant » (rappel A1 : l'attaquant teste tout).
 
 ---
 
-## Slide 4 : Le pare-feu (Firewall)
-* **Layout** : Contenu structuré avec tableau explicatif
+## Slide 4 : La carte postale
+* **Layout** : Plein écran interactif (chat)
 * **Texte affiché sur la slide** :
-  * **Le Pare-feu : Filtrer pour sécuriser**
-  * *Il inspecte chaque paquet de données selon 3 critères :*
-    * **Adresse IP source & destination** : D'où vient la donnée, où va-t-elle ?
-    * **Port réseau** : Quel service est demandé (ex. Port 80/443 pour le Web, Port 22 pour l'accès distant).
-    * **Action** : Autoriser (*Allow*) ou Bloquer (*Deny*).
-  * **Exemple de règle de filtrage** :
-    * *Règle* : Autoriser uniquement le trafic entrant depuis Internet vers le port 443 (HTTPS) de notre serveur web. Tout le reste est bloqué par défaut (*Default Deny*).
-* **Visuels suggérés** : Représentation schématique d'un pare-feu laissant passer certains paquets (verts) et bloquant d'autres (rouges).
+  * **💬 Dans le chat : vous envoyez une carte postale (sans enveloppe) avec un secret au dos.**
+  * *Qui peut la lire pendant le voyage ?*
+* **Visuels suggérés** : Dessin humoristique d'une carte postale avec « mot de passe : Azerty2024 » écrit au dos, passant de main en main.
 * **Notes du présentateur** :
-  * Expliquer la notion de port réseau par la métaphore des boîtes aux lettres ou des portes d'un immeuble (ex. porte 80 pour le courrier public, porte 22 pour le technicien d'entretien).
-  * Souligner l'importance de la règle "Tout ce qui n'est pas explicitement autorisé est interdit" (*Default Deny*).
+  * Lire les réponses (facteur, centre de tri, voisin, concierge...).
+  * Révéler l'analogie : HTTP = la carte postale (tout en clair) ; HTTPS = la même carte sous enveloppe blindée (TLS) ; le VPN = le convoyeur privé qui masque même le destinataire.
+  * Annoncer : « toute la session tient dans cette image ».
 
 ---
 
-## Slide 5 : Le tunnel sécurisé : Le VPN
+## Slide 5 : Le pare-feu (Firewall)
+* **Layout** : Contenu structuré avec tableau de règles
+* **Texte affiché sur la slide** :
+  * **Le Pare-feu : le douanier du réseau** — *3 critères : IP source/destination · Protocole · Port*
+  * **La table de filtrage (lue de haut en bas, première correspondance gagne) :**
+    * 1. LAN → Internet · 443 (HTTPS) · **AUTORISER**
+    * 2. Internet → Serveur Web (DMZ) · 443 · **AUTORISER**
+    * 3. DMZ → LAN · Tout · **BLOQUER**
+    * 4. Tout → Tout · Tout · **BLOQUER** *(Default Deny)*
+* **Visuels suggérés** : Schéma d'un pare-feu laissant passer des paquets verts et bloquant des paquets rouges ; la table de règles avec la dernière ligne en surbrillance.
+* **Notes du présentateur** :
+  * Métaphore des ports = portes numérotées de l'immeuble (443 : entrée visiteurs sécurisée ; 22 : entrée technicien).
+  * Marteler Default Deny : « on autorise le nécessaire, on n'énumère jamais le mal — la liste serait infinie ».
+  * Question rhétorique : « pourquoi ne pas tout autoriser et bloquer les méchants connus ? » (les méchants inconnus d'aujourd'hui dépassent les méchants connus d'hier).
+
+---
+
+## Slide 6 : Le tunnel sécurisé : Le VPN
 * **Layout** : Deux colonnes comparatives
 * **Texte affiché sur la slide** :
-  * **VPN (Virtual Private Network) : Le tunnel sécurisé**
-  * **Sans VPN (Connexion publique)** :
-    * Vos données transitent en clair sur le réseau wifi public (ex. hôtel, café).
-    * Risque d'interception par un attaquant situé sur le même réseau.
-  * **Avec VPN (Tunnel chiffré)** :
-    * Vos données sont chiffrées avant de quitter votre ordinateur.
-    * Un tunnel sécurisé relie votre machine au serveur VPN de l'entreprise.
-    * Vos données sont illisibles pour les intermédiaires.
-* **Visuels suggérés** : Schéma d'une connexion sans VPN (données exposées aux yeux d'un attaquant) vs connexion avec VPN (représentée par un tunnel bleu protégeant les données du regard extérieur).
+  * **VPN : le tunnel chiffré**
+  * **Sans VPN (Wi-Fi public)** : vos flux non chiffrés sont lisibles par quiconque partage le réseau (*sniffing*).
+  * **Avec VPN** : chiffrement dès votre machine → tunnel → passerelle de l'entreprise ; illisible pour tous les intermédiaires.
+  * **Deux limites à connaître :**
+    * Il protège le **transport**, pas le contenu (un malware voyage très bien chiffré).
+    * La passerelle VPN est elle-même exposée : elle **se met à jour** !
+* **Visuels suggérés** : Schéma « sans VPN » (données à nu sous l'œil d'un attaquant) vs « avec VPN » (tunnel bleu opaque) ; panneau « maintenance » sur la passerelle.
 * **Notes du présentateur** :
-  * Détailler l'importance du VPN pour le télétravail.
-  * Expliquer qu'un VPN protège le transport des données, mais ne garantit pas que la machine à l'extrémité n'est pas infectée par un virus.
+  * Cas d'usage : télétravail, déplacement, Wi-Fi d'hôtel.
+  * Distinguer sniffing (écoute passive) et Man-in-the-Middle (interposition active qui peut modifier les échanges).
+  * Teaser : « les passerelles VPN non maintenues sont devenues un vecteur d'intrusion majeur — chiffres dans quelques slides ».
 
 ---
 
-## Slide 6 : Le standard du Web chiffré : HTTPS & TLS
-* **Layout** : Deux colonnes
+## Slide 7 : Le standard du Web chiffré : HTTPS & TLS
+* **Layout** : Deux colonnes + sondage
 * **Texte affiché sur la slide** :
-  * **HTTP vs HTTPS : Repérer le cadenas**
-  * **HTTP (Non sécurisé)** :
-    * Les mots de passe et données bancaires circulent en clair.
-    * Risque d'écoute clandestine (*Man-in-the-Middle*).
-  * **HTTPS (Chiffré via TLS)** :
-    * Chiffrement des échanges entre le navigateur et le serveur.
-    * Authenticité du site web certifiée par un certificat numérique.
-    * Cadenas visible dans la barre d'adresse du navigateur.
-* **Visuels suggérés** : Captures d'écran de barre d'adresse de navigateur : l'une montrant "Non sécurisé" avec un panneau rouge (HTTP), l'autre montrant le cadenas fermé vert (HTTPS).
+  * **HTTP vs HTTPS : repérer le cadenas**
+  * **HTTP** : tout circule en clair — mots de passe lisibles par écoute (*sniffing*).
+  * **HTTPS (TLS)** : échanges chiffrés + certificat authentifiant le site (contre l'interposition *Man-in-the-Middle*).
+  * *NB : on dit « SSL » par habitude — le protocole moderne est TLS (SSL est déprécié).*
+  * **📊 Sondage n°2 : Wi-Fi d'hôtel + site bancaire en HTTPS — le gérant peut-il lire votre mot de passe ?**
+* **Visuels suggérés** : Deux barres d'adresse de navigateur (« Non sécurisé » rouge vs cadenas fermé) ; carte postale vs enveloppe blindée en rappel.
 * **Notes du présentateur** :
-  * Insister sur le fait que HTTPS garantit que la communication est privée et que le site est bien celui qu'il prétend être (authenticité), mais n'empêche pas un site malveillant d'être en HTTPS (un pirate peut aussi obtenir un certificat gratuit).
+  * Lancer le sondage n°2. Réponse : B (non) — mais nuance clé : contenu chiffré, métadonnées visibles (il voit QUE vous parlez à la banque) ; c'est ce que le VPN ajoute.
+  * Piège inverse à marteler : le cadenas ≠ site honnête — un site de phishing obtient un certificat gratuit en minutes (reboucler avec A2).
 
 ---
 
-## Slide 7 : Zone Démilitarisée (DMZ)
+## Slide 8 : Segmentation & DMZ — Protéger le cœur du réseau
 * **Layout** : Architecture réseau graphique
 * **Texte affiché sur la slide** :
-  * **La DMZ : Protéger le cœur du réseau**
-  * *Ne mélangez pas vos serveurs publics et vos données internes !*
-  * **Réseau Externe (Internet)** ➔ Accède au serveur Web public situé dans la **DMZ**.
-  * **DMZ (Zone Démilitarisée)** ➔ Zone tampon isolant les serveurs exposés à Internet.
-  * **Réseau Interne (LAN)** ➔ Zone hautement sécurisée hébergeant les bases de données et les ordinateurs de l'entreprise.
-* **Visuels suggérés** : Schéma à trois branches reliant Internet, la DMZ et le réseau local, séparés par un pare-feu double ou triple interface.
+  * **Le réseau plat : une maison sans portes intérieures** → un poste infecté = **déplacement latéral** vers tout le reste.
+  * **La parade : cloisonner en zones étanches**
+    * **LAN interne** : postes et données de l'entreprise
+    * **Wi-Fi invités** : Internet seul, zéro accès interne
+    * **DMZ** : serveurs exposés (web, mail) — interrogeable depuis Internet, **jamais** de connexion initiée vers le LAN
+* **Visuels suggérés** : Schéma à trois zones séparées par un pare-feu central multi-interfaces ; portes coupe-feu stylisées entre les zones.
 * **Notes du présentateur** :
-  * Expliquer pourquoi un serveur Web public piraté dans la DMZ ne doit pas permettre d'accéder directement au réseau de l'entreprise (étanchéité).
-  * Utiliser la métaphore du sas d'entrée d'une banque ou de l'accueil d'un bâtiment d'entreprise.
+  * Analogie de l'immeuble : guichet (pare-feu), salle d'attente aux portes blindées (DMZ), badges par étage (VLAN).
+  * Relier à A1 : la segmentation = la défense en profondeur version réseau ; chaque zone peut tomber sans entraîner les autres.
+  * Question rhétorique : « le Wi-Fi visiteurs de VOTRE entreprise mène-t-il quelque part ? En êtes-vous sûr ? » — transition vers l'activité.
 
 ---
 
-## Slide 8 : Démo 3 — Analyse de règles de pare-feu
+## Slide 9 : Activité — L'Architecte Réseau
+* **Layout** : Schéma + 3 sondages successifs
+* **Texte affiché sur la slide** :
+  * **🏗️ L'Architecte Réseau — 3 décisions, 3 votes**
+  * *Le réseau plat de la PME : postes, serveur web public, compta et Wi-Fi clients... tous ensemble !*
+    * **Décision 1** (📊 Sondage n°3) : un téléphone infecté rejoint le Wi-Fi — quel risque ?
+    * **Décision 2** (📊 Sondage n°4) : où placer le serveur web public ?
+    * **Décision 3** (📊 Sondage n°5) : quelle règle pour le Wi-Fi invités ?
+* **Visuels suggérés** : Schéma « avant » (réseau plat, tout relié à un seul switch) qui se transforme en schéma « après » (3 zones + pare-feu) au fil des débriefs.
+* **Notes du présentateur** :
+  * ~4-5 min par décision (vote + débrief). Réponses : déplacement latéral ; DMZ ; Internet seul.
+  * Débriefs clés : réseau plat = maison sans portes (teaser Target « à 200 M$ ») ; DMZ = sas sans porte vers l'intérieur (règle 3) ; « c'est pratique » = l'ennemi de la segmentation.
+  * Conclure sur le schéma cible : « trois votes = le travail d'un architecte sécurité ».
+
+---
+
+## Slide 10 : Démo 3 — Audit de règles de pare-feu
 * **Layout** : Console textuelle / Liste de règles
 * **Texte affiché sur la slide** :
-  * **Démonstration : Audit d'une table de filtrage**
-  * *Que font ces règles de pare-feu ?*
-    1. `Source: LAN | Dest: Internet | Port: ANY | Action: ALLOW`
-    2. `Source: Internet | Dest: Server_Web | Port: 443 | Action: ALLOW`
-    3. `Source: Internet | Dest: LAN | Port: ANY | Action: DENY`
-  * **Objectif** : Identifier quelle règle bloque les pirates et laquelle permet aux employés de naviguer sur Internet.
-* **Visuels suggérés** : Extrait de console d'administration de pare-feu simulée.
+  * **Démonstration : audit d'une table de filtrage**
+    1. `Source: LAN | Dest: Internet | Port: ANY | ALLOW`
+    2. `Source: Internet | Dest: Server_Web | Port: 443 | ALLOW`
+    3. `Source: Internet | Dest: LAN | Port: ANY | DENY`
+  * **💬 Prédiction dans le chat : que se passe-t-il si j'inverse les règles 2 et 3 ?**
+* **Visuels suggérés** : Extrait de console d'administration de pare-feu simulée ; flèches d'inversion animées entre les règles 2 et 3.
 * **Notes du présentateur** :
-  * Suivre les instructions du script de démo `A_scripts_demo.md#demo-3-firewall`.
-  * Expliquer l'ordre d'application des règles (généralement du haut vers le bas).
-  * Poser la question : "Que se passe-t-il si j'inverse la règle 2 et la règle 3 ?" (Tout accès au serveur web public est bloqué car la règle d'interdiction globale s'applique en premier).
+  * Suivre le [script de la Démo 3](../outils/A_scripts_demo.md#demo-3-firewall) ; lire la table de haut en bas.
+  * Faire voter les prédictions dans le chat, puis révéler : le site public devient inaccessible — la règle DENY, placée avant, capte tout : **l'ordre des règles compte autant que les règles**.
+  * Secours : la table est dans le support (Focus pratique), la démo se raconte avec les captures préparées.
 
 ---
 
-## Slide 9 : Quiz rapide & Validation
-* **Layout** : Contenu interactif (Quiz)
+## Slide 11 : Le réseau en chiffres
+* **Layout** : Mosaïque de grands chiffres (stat cards)
 * **Texte affiché sur la slide** :
-  * **Quiz : Validez vos acquis !**
-  * 1. *Quel protocole devez-vous utiliser pour naviguer en toute sécurité sur un site bancaire ?* ➔ **[HTTP / HTTPS / FTP ?]**
-  * 2. *Le VPN empêche-t-il votre ordinateur de télécharger un virus ?* ➔ **[Oui / Non ?]**
-  * 3. *Quel est l'emplacement idéal pour héberger le serveur web public d'une entreprise ?* ➔ **[Le LAN interne / La DMZ / Le cloud privé uniquement ?]**
-* **Visuels suggérés** : Code QR Kahoot/Wooclap de la session.
+  * **La réalité du terrain (sources citées)**
+  * **Quelques minutes** : délai avant les premières attaques sur une machine exposée *(études honeypots)*
+  * **Vecteur n°1** : l'exploitation d'équipements de bordure exposés — VPN, pare-feux *(ANSSI, Panorama 2024)*
+  * **~1 Tbit/s** : les DDoS records du botnet Mirai dès 2016 *(objets connectés compromis)*
+  * **> 200 M$** : coûts cumulés de la violation Target 2013 *(défaut de segmentation)*
+* **Visuels suggérés** : Cartes de statistiques, chiffres en très grand corps, sources en petit ; pictogrammes chronomètre, passerelle, caméra, caddie.
 * **Notes du présentateur** :
-  * Lancer le quiz. Corriger à voix haute.
-  * *Réponses* : 1. HTTPS ; 2. Non (il protège le transport, pas le contenu) ; 3. La DMZ.
+  * Les 3 messages : brancher = être attaqué (d'où Default Deny) ; les protections se protègent (mises à jour des équipements de sécurité) ; le maillon faible peut être un prestataire ou un objet connecté.
+  * Transition : « voyons ces deux histoires en détail ».
 
 ---
 
-## Slide 10 : Clôture & Devoirs
-* **Layout** : Fin de session / Devoirs
+## Slide 12 : Deux cas réels — Target (2013) & Mirai/Dyn (2016)
+* **Layout** : Deux panneaux « étude de cas » + question chat
 * **Texte affiché sur la slide** :
-  * **Vos devoirs avant la prochaine séance (Self-paced)** :
-    * Suivre le module IBM SkillsBuild : *Principes de la sécurité des identités et du cloud*.
-    * Durée estimée : ~75 min.
-    * Exercice pratique de préparation : Vérifier si votre e-mail personnel a été compromis dans une fuite connue (recherche sur un site de type *Have I Been Pwned*).
+  * **Target, 2013 — le climatiseur à 200 M$** : identifiants d'un prestataire de climatisation → déplacement latéral jusqu'aux caisses → **~40 M de cartes bancaires** volées.
+  * **Mirai/Dyn, 2016 — les caméras qui ont éteint le web** : mots de passe d'usine → botnet géant → DDoS ~1 Tbit/s → Twitter, Netflix, Spotify inaccessibles.
+  * **💬 Dans le chat : chez Target, qui ou quoi aurait dû bloquer le déplacement latéral ?**
+* **Visuels suggérés** : Deux cartes « dossier » : caddie + climatiseur (Target), caméra de surveillance + globe éteint (Mirai). Montants et chiffres en très grand.
+* **Notes du présentateur** :
+  * Raconter chronologiquement (le récit marque plus que les chiffres). Punchlines : « le climatiseur a coûté 200 millions » ; « des caméras à 40 € ont mis le web à genoux ».
+  * Relier explicitement Target aux 3 votes de l'activité (accès tiers, réseau plat, absence de sas) et Mirai au brise-glace (balayage permanent) + à la Disponibilité (triade A1).
+  * Question chat : réponse = un pare-feu interne entre zones (règle 3) — « la technologie existait, c'est l'architecture qui a manqué ».
+
+---
+
+## Slide 13 : Quiz de validation
+* **Layout** : Contenu interactif (3 sondages successifs)
+* **Texte affiché sur la slide** :
+  * **✅ Quiz de validation — 3 questions, 3 votes**
+  * **📊 Sondage n°6** : La règle de base du moindre privilège sur un pare-feu ? *(tout autoriser + liste noire / tout interdire + liste blanche / confiance aux employés)*
+  * **📊 Sondage n°7** : Le VPN empêche-t-il de télécharger un virus ? *(oui / non / seulement les virus connus)*
+  * **📊 Sondage n°8** : Vrai ou faux — cadenas HTTPS = site de confiance ?
+* **Visuels suggérés** : Trois cartes de questions révélées successivement, coche verte à la révélation.
+* **Notes du présentateur** :
+  * Réponses : Default Deny ; non (transport ≠ contenu) ; faux (chiffré ≠ honnête).
+  * Si le temps le permet, enchaîner le **📊 Sondage n°9** (bonus : serveur DMZ compromis — qu'est-ce qui protège le LAN ? → la règle DMZ→LAN bloquée). Sinon, le laisser en autonomie (il est dans le support).
+
+---
+
+## Slide 14 : Clôture & Devoirs
+* **Layout** : Fin de session / Synthèse
+* **Texte affiché sur la slide** :
+  * **Vos trois réflexes réseau :**
+    * 🛂 **FILTRER** — tout ce qui n'est pas autorisé est interdit
+    * ✉️ **CHIFFRER** — HTTPS/TLS et VPN : l'enveloppe blindée
+    * 🧱 **CLOISONNER** — chaque zone peut tomber sans entraîner les autres
+  * **💬 Dans le chat : le mot que vous retenez**
+  * **Devoirs avant A4** : module IBM SkillsBuild *Principes de la sécurité des identités et du cloud* (~75 min) + vérifier votre e-mail sur *Have I Been Pwned*.
   * **Prochaine séance** : *Sécurité du cloud, des données & des identités (A4)*.
-  * Merci à tous, restez connectés de manière sécurisée !
-* **Visuels suggérés** : Logo IBM SkillsBuild. Capture de l'interface Have I Been Pwned.
+* **Visuels suggérés** : Trois pictogrammes des réflexes ; capture de l'interface Have I Been Pwned ; logo IBM SkillsBuild.
 * **Notes du présentateur** :
-  * Expliquer brièvement comment fonctionne la vérification d'adresse e-mail compromise.
-  * Clôturer la séance.
+  * Lire 4-5 mots du chat à voix haute.
+  * Expliquer Have I Been Pwned en 30 secondes (base de fuites publiques, préparation directe d'A4 sur les identités).
+  * Teaser A4 : « pourquoi le MFA est la meilleure serrure du siècle ». Libérer à l'heure exacte.
