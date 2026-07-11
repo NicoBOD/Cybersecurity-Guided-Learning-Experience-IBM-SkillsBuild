@@ -67,8 +67,9 @@ Parcours : A 8 sessions  |  Module : Fondements Cyber  |  Format : Spécificatio
   * **Confidentialité** : Les données restent secrètes. Seuls les utilisateurs autorisés y accèdent (Ex. Chiffrement, Mots de passe).
   * **Intégrité** : Les données restent exactes et fiables. Pas de modification non autorisée (Ex. Signatures numériques, Hachage).
   * **Disponibilité** : Les systèmes restent accessibles quand on en a besoin (Ex. Sauvegardes, Redondance serveurs).
-* **Visuels suggérés** : Schéma en triangle (le triangle de la sécurité) reliant C, I et A avec des icônes explicites (Cadenas pour C, Coche/Sceau pour I, Horloge pour A).
+* **Visuels suggérés** : Schéma en triangle (le triangle de la sécurité) reliant **C, I et D** (initiales françaises : Confidentialité, Intégrité, Disponibilité) avec des icônes explicites (Cadenas pour C, Coche/Sceau pour I, Horloge pour D). En légende discrète : « CIA = acronyme anglais *Confidentiality, Integrity, Availability* ».
 * **Notes du présentateur** :
+  * Lever d'emblée le piège de l'acronyme : « CIA » vient de l'anglais (*Availability* = Disponibilité) ; dans la suite de la session, on utilise les initiales françaises C, I et D.
   * Dérouler les trois analogies du support : la lettre cachetée (C), le cachet de cire (I), la bibliothèque aux portes fermées (D).
   * Question rhétorique : « Si un pirate bloque vos fichiers avec un ransomware mais ne les vole pas, quel pilier est touché ? » (Disponibilité).
   * **💬 Question chat** : « C, I ou D : laquelle serait la plus grave à perdre dans VOTRE métier ? » Lire 4-5 réponses ; conclure : la réponse dépend du métier (hôpital → D, banque → I, cabinet d'avocats → C).

@@ -175,7 +175,7 @@ Toutes les productions respecteront les conventions de nommage `<Parcours>_S<NN>
 ### 3.1 Outils communs et Manifeste
 | Fichier | Type | Description / Thème | Statut |
 |---|---|---|---|
-| `00_MANIFESTE.md` | Manifeste global | Index, avancement & glossaire commun | **En cours (Phase 5)** |
+| `00_MANIFESTE.md` | Manifeste global | Index, avancement & glossaire commun | **En cours (Phase 6)** |
 
 ### 3.2 Livrables Parcours A (8 sessions)
 | Session | Plan de séance | Support de cours (.MD) | Spec Slides (.MD) |

@@ -76,6 +76,7 @@ Module : Fondamentaux  |  Durée : 90 min  |  Modalité : Webinaire Livestorm (g
 ### 0:11–0:23 — Séquence 1 : La triade CIA
 
 **Points de contenu à dérouler (support §1) :**
+- Lever d'emblée le piège de l'acronyme : « CIA » vient de l'anglais (*Confidentiality, Integrity, **A**vailability*) ; en français, le troisième pilier est la Disponibilité, d'où les initiales **C, I et D** utilisées dans toute la session.
 - **Confidentialité** : seules les personnes autorisées accèdent à l'information. Analogie : la carte postale (lisible par tous en chemin) contre la lettre cachetée (le chiffrement). Exemples : boîte mail piratée, dossier médical consulté sans autorisation.
 - **Intégrité** : l'information reste exacte et complète. Analogie : le cachet de cire — il ne cache pas le contenu, il prouve qu'il n'a pas été altéré (c'est le rôle du hachage SHA-256). Exemples : RIB remplacé dans un virement, doses faussées dans un logiciel médical.
 - **Disponibilité** : l'information est accessible quand on en a besoin. Analogie : la bibliothèque aux portes fermées — livres intacts, mais inutiles. Exemples : site e-commerce saturé pendant les soldes (DoS), clinique bloquée par un rançongiciel.

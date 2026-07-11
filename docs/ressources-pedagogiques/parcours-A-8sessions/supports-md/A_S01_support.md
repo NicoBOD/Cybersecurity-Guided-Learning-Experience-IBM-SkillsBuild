@@ -79,7 +79,7 @@ Demandez aux apprenants d'identifier l'actif le plus critique de leur entreprise
 *   **Surface d'exposition (ou surface d'attaque)** — Ensemble des points d'entrée d'une organisation visibles et accessibles depuis Internet, qu'un attaquant peut étudier puis exploiter.
 *   **Sécurité défensive** — Ensemble des mesures de protection, de surveillance et de réaction déployées pour sécuriser un système (ex. gestion des pare-feux, surveillance SOC, réponse sur incident).
 *   **Sécurité offensive** — Approche proactive consistant à tester les défenses en simulant des attaques réelles (ex. pentesting, red teaming).
-*   **Triade CIA (Confidentialité, Intégrité, Disponibilité)** — Le modèle de référence de la sécurité de l'information. Chaque action de sécurité vise à garantir l'un ou plusieurs de ces piliers.
+*   **Triade CIA (Confidentialité, Intégrité, Disponibilité)** — Le modèle de référence de la sécurité de l'information ; l'acronyme vient de l'anglais *Confidentiality, Integrity, Availability*. Chaque action de sécurité vise à garantir l'un ou plusieurs de ces piliers.
 *   **Vulnérabilité** — Une faiblesse ou une faille présente dans un système, un logiciel, une procédure ou un comportement humain, susceptible d'être exploitée.
 
 ---
@@ -90,6 +90,8 @@ Demandez aux apprenants d'identifier l'actif le plus critique de leur entreprise
     Face à n'importe quel incident de sécurité, posez-vous toujours la même question : *quel pilier de la triade est touché ?* C'est le réflexe d'analyse numéro un du professionnel de la cybersécurité.
 
 Toute stratégie de cybersécurité s'appuie sur trois piliers fondamentaux. Comprendre ces concepts permet de classifier les incidents et de concevoir des mesures de protection appropriées.
+
+Une précision d'emblée pour éviter toute confusion : l'acronyme « CIA » vient de l'anglais *Confidentiality, Integrity, **A**vailability*. En français, le troisième pilier est la **Disponibilité** — c'est pourquoi, dans la suite de ce cours, nous utilisons les initiales françaises **C, I et D**.
 
 #### A. Confidentialité (*Confidentiality*)
 La confidentialité consiste à s'assurer que l'information n'est divulguée qu'aux personnes ou processus autorisés. Si un pirate accède à votre boîte de messagerie ou si un employé consulte le dossier médical d'un patient sans autorisation, la confidentialité est compromise.
@@ -338,5 +340,5 @@ Pour mettre en œuvre une stratégie globale de défense en profondeur et antici
 | **Surface d'exposition** | Ensemble des points d'entrée d'une organisation visibles depuis Internet, qu'un attaquant peut étudier puis exploiter. |
 | **Sécurité défensive** | Ensemble des mesures de protection, de surveillance et de réaction déployées pour sécuriser un système (ex. gestion des pare-feux, surveillance SOC, réponse sur incident). |
 | **Sécurité offensive** | Approche proactive consistant à tester les défenses en simulant des attaques réelles (ex. pentesting, red teaming). |
-| **Triade CIA (Confidentialité, Intégrité, Disponibilité)** | Le modèle de référence de la sécurité de l'information. Chaque action de sécurité vise à garantir l'un ou plusieurs de ces piliers. |
+| **Triade CIA (Confidentialité, Intégrité, Disponibilité)** | Le modèle de référence de la sécurité de l'information ; acronyme anglais (*Confidentiality, Integrity, Availability*). Chaque action de sécurité vise à garantir l'un ou plusieurs de ces piliers. |
 | **Vulnérabilité** | Une faiblesse ou une faille présente dans un système, un logiciel, une procédure ou un comportement humain, susceptible d'être exploitée. |
