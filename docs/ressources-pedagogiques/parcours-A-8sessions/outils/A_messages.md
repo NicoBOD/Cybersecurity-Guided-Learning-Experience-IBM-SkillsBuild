@@ -72,31 +72,28 @@ Bien cordialement,
 
 ---
 
-## Message 4 : Lancement du Projet Capstone (Envoyé après la session 06)
+## Message 4 : Annonce du Grand Atelier d'Audit Interactif (Envoyé après la session 06)
 
 * **Canal** : Message sur le canal de discussion général.
 * **Texte** :
 
-🚀 **Avis à la promotion ! Lancement du Projet Capstone !**
+🚀 **Avis à la promotion ! Le Grand Atelier d'Audit Interactif approche !**
 
-Nous venons de terminer la session 06 sur la gestion des vulnérabilités logicielles et le score CVSS. Il est temps de mettre toutes vos compétences en pratique à travers le projet final de synthèse.
+Nous venons de terminer la session 06 sur les opérations de sécurité et la gestion des vulnérabilités. Lors de notre session finale (Session 08), vous mettrez toutes vos compétences en pratique en direct, lors d'un grand atelier d'audit interactif animé sur Livestorm.
 
-Vous allez travailler en groupes sur le cas de l'entreprise **MedDistri**, une PME qui a cruellement besoin de votre aide pour sécuriser ses accès distants, ses données commerciales et se mettre en conformité RGPD.
+Ensemble, nous auditerons le cas de l'entreprise **MedDistri**, une PME qui a cruellement besoin de votre aide pour sécuriser ses accès distants, ses données commerciales et se mettre en conformité RGPD. Vous voterez à chaque étape (sondages en direct) pour évaluer la criticité des failles et prioriser les remédiations, et vous argumenterez vos choix dans le chat.
 
-📂 **Vos ressources indispensables sont en ligne :**
+📂 **Votre ressource indispensable est en ligne :**
 
-* L'énoncé du projet : [A_capstone.md](../projet/A_capstone.md)
-* La grille d'évaluation (barème sur 20 points) : [A_grille_notation.md](../projet/A_grille_notation.md)
+* Le dossier de l'atelier : [A_capstone.md](../projet/A_capstone.md)
 
-**Les étapes clés :**
+**Pour en profiter au maximum :**
 
-1. Constituez vos groupes de 3 à 4 apprenants d'ici demain soir et inscrivez vos noms sur le registre.
-2. Travaillez de manière collaborative sur votre rapport d'audit écrit.
-3. Préparez votre pitch oral de 10 minutes pour notre session finale (Session 08).
+1. Relisez le contexte de l'entreprise MedDistri présenté dans le dossier de l'atelier.
+2. Parcourez vos aide-mémoires des sessions 01 à 06 (triade CIA, menaces, accès, RGPD, vulnérabilités).
+3. Préparez vos questions : la session 07 comprendra un point d'étape pour y répondre.
 
-Je serai disponible lors de la prochaine session (Session 07) pour un point d'étape et d'accompagnement sur vos projets.
-
-Bonne chance à toutes les équipes, impressionnez la direction de MedDistri ! 🛡️💪
+Rendez-vous à la session 08 pour jouer les auditeurs cyber, la direction de MedDistri compte sur vous ! 🛡️💪
 
 ---
 

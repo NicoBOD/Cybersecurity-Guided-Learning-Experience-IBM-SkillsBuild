@@ -8,20 +8,22 @@
 Le projet est structuré selon l'arborescence standardisée suivante :
 
 ```text
-/parcours-A-8sessions/
+docs/ressources-pedagogiques/parcours-A-8sessions/
    /plans-de-seance/      A_S01_plan.md … A_S08_plan.md
    /supports-md/          A_S01_support.md … A_S08_support.md
-   /slides/               A_S01_slides.pptx (+ A_S01_slides_spec.md)
+   /slides/               A_S01_slides_spec.md … A_S08_slides_spec.md
    /projet/               A_capstone.md
    /outils/               A_banque_quiz.md, A_scripts_demo.md, A_messages.md
-/parcours-B-20sessions/
+docs/ressources-pedagogiques/parcours-B-20sessions/
    /plans-de-seance/      B_S01_plan.md … B_S20_plan.md
    /supports-md/          B_S01_support.md … B_S20_support.md
-   /slides/               B_S01_slides.pptx (+ B_S01_slides_spec.md)
+   /slides/               B_S01_slides_spec.md … B_S20_slides_spec.md
    /projet/               B_capstone.md, B_miniprojets.md
    /outils/               B_banque_quiz.md, B_scripts_demo.md, B_messages.md
-/00_MANIFESTE.md          (Index global + état d'avancement + glossaire commun)
+docs/documents-de-travail/00_MANIFESTE.md   (Index global + état d'avancement + glossaire commun)
 ```
+
+Les diaporamas sont livrés sous forme de **spécifications Markdown** (`*_slides_spec.md`) décrivant chaque slide (layout, texte affiché, visuels suggérés, notes du présentateur). Aucun deck binaire (`.pptx`) n'est versionné dans le dépôt.
 
 Toutes les productions respecteront les conventions de nommage `<Parcours>_S<NN>_<type>.<ext>` avec des titres de H1 explicites à l'intérieur de chaque fichier.
 
@@ -143,18 +145,18 @@ Toutes les productions respecteront les conventions de nommage `<Parcours>_S<NN>
   * **Objectifs** : Décrire l'organisation interne et les rôles (L1, L2, L3) d'un SOC ; expliquer la remontée d'alertes et le traitement des faux positifs ; interpréter les métriques clés de performance d'un SOC (MTTD, MTTR).
   * **Prérequis** : Modules B, C.
   * **Lien** : Cadre humain et fonctionnel de la détection, avant l'outil technologique principal (B17).
-* **B17 : SIEM, journalisation & détection**
+* **B17 : Outils SIEM & analyse de logs**
   * **Objectifs** : Expliquer le fonctionnement d'un SIEM (corrélation, normalisation) ; cibler les logs d'intérêt pour la sécurité ; analyser des lignes de logs d'événements pour isoler une anomalie d'attaque.
   * **Prérequis** : B16.
-  * **Lien** : Rentre dans le dur de l'analyse opérationnelle. **Associe le Mini-projet 4 (Analyse de logs de SIEM fictif).** Initie à la prévention corrective (B18).
-* **B18 : Gestion des vulnérabilités**
-  * **Objectifs** : Expliquer les phases de gestion des vulnérabilités ; faire la différence entre CVE et CWE ; interpréter un score CVSS ; structurer et prioriser un plan de remédiation technique.
+  * **Lien** : Rentre dans le dur de l'analyse opérationnelle. **Associe l'Atelier de Synthèse 4 (Analyse de logs de SIEM fictif).** Initie à la réponse aux incidents (B18).
+* **B18 : Introduction à la réponse aux incidents**
+  * **Objectifs** : Expliquer le cycle de réponse à incident (SANS/NIST) ; énoncer les règles de préservation des preuves numériques (chaîne de contrôle) ; rédiger un rapport d'incident préliminaire ; identifier les acteurs à mobiliser (CSIRT/CERT, assurance, autorités).
   * **Prérequis** : B17.
-  * **Lien** : Réduit la surface d'attaque en continu, prélude au traitement des attaques subies et à l'investigation (B19).
-* **B19 : Réponse aux incidents & bases du forensics**
-  * **Objectifs** : Expliquer le cycle de réponse à incident (SANS/NIST) ; énoncer les règles de préservation des preuves numériques (chaîne de contrôle) ; définir le cadre juridique et méthodologique du pentest ; rédiger un rapport d'incident préliminaire.
-  * **Prérequis** : B17, B18.
-  * **Lien** : Clôture le module opérations. Prépare à l'exercice d'intégration global (B20).
+  * **Lien** : Formalise la méthode de réaction, mise en pratique lors de la simulation de crise (B19).
+* **B19 : Simulation de crise cyber (Tabletop)**
+  * **Objectifs** : Dérouler collectivement une cellule de crise face à un scénario de rançongiciel ; prendre des décisions sous pression via des votes interactifs ; appliquer les réflexes de communication de crise ; tirer les enseignements d'un retour d'expérience (RETEX).
+  * **Prérequis** : B18.
+  * **Lien** : Clôture le module opérations. Répétition générale avant l'exercice d'intégration global (B20).
 
 #### Module F — Grand Atelier d'Audit (S20)
 * **B20 : Grand Atelier d'Audit & Clôture**
@@ -164,9 +166,11 @@ Toutes les productions respecteront les conventions de nommage `<Parcours>_S<NN>
 
 ---
 
-## 3. Tableau d'avancement (Phase 2 : Production Supports Parcours A)
+## 3. Tableau d'avancement (Phase 6 : Enrichissement & fiabilisation Livestorm)
 
-*Statuts autorisés : `À faire`, `En cours (Phase X)`, `Produit (En validation)`, `Validé`.*
+*Statuts autorisés : `À faire`, `En cours (Phase X)`, `Produit (En validation)`, `Enrichi (En validation)`, `Validé`.*
+
+*La phase 6 enrichit chaque session par lots : statistiques sourcées et datées, études de cas réelles, interactions 100 % Livestorm (sondages + chat), plan d'animation en script minuté semi-verbatim, spécifications de slides alignées.*
 
 ### 3.1 Outils communs et Manifeste
 | Fichier | Type | Description / Thème | Statut |
@@ -174,44 +178,44 @@ Toutes les productions respecteront les conventions de nommage `<Parcours>_S<NN>
 | `00_MANIFESTE.md` | Manifeste global | Index, avancement & glossaire commun | **En cours (Phase 5)** |
 
 ### 3.2 Livrables Parcours A (8 sessions)
-| Session | Plan de séance | Support de cours (.MD) | Spec Slides (.MD) | Deck PPTX |
-|---|---|---|---|---|
-| **A1** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **A2** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **A3** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **A4** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **A5** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **A6** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **A7** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **A8** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **Projet** | `A_capstone.md` : 🟡 Produit (En validation) | - | - | - |
-| **Outils** | `A_banque_quiz.md` : 🟡 Produit (En validation) | `A_scripts_demo.md` : 🟡 Produit (En validation) | `A_messages.md` : 🟡 Produit (En validation) | - |
+| Session | Plan de séance | Support de cours (.MD) | Spec Slides (.MD) |
+|---|---|---|---|
+| **A1** | 🔵 Enrichi (En validation) | 🔵 Enrichi (En validation) | 🔵 Enrichi (En validation) |
+| **A2** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **A3** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **A4** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **A5** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **A6** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **A7** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **A8** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **Projet** | `A_capstone.md` : 🟡 Produit (En validation) | - | - |
+| **Outils** | `A_banque_quiz.md` : 🟡 Produit (En validation) | `A_scripts_demo.md` : 🟡 Produit (En validation) | `A_messages.md` : 🟡 Produit (En validation) |
 
 ### 3.3 Livrables Parcours B (20 sessions)
-| Session | Plan de séance | Support de cours (.MD) | Spec Slides (.MD) | Deck PPTX |
-|---|---|---|---|---|
-| **B1** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **B2** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **B3** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **B4** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **B5** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **B6** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **B7** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **B8** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **B9** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **B10** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **B11** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **B12** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **B13** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **B14** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **B15** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **B16** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **B17** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **B18** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **B19** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **B20** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) | ⬜ À faire |
-| **Projet** | `B_capstone.md` : 🟡 Produit (En validation) | `B_miniprojets.md` : 🟡 Produit (En validation) | - | - |
-| **Outils** | `B_banque_quiz.md` : 🟡 Produit (En validation) | `B_scripts_demo.md` : 🟡 Produit (En validation) | `B_messages.md` : 🟡 Produit (En validation) | - |
+| Session | Plan de séance | Support de cours (.MD) | Spec Slides (.MD) |
+|---|---|---|---|
+| **B1** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **B2** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **B3** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **B4** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **B5** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **B6** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **B7** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **B8** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **B9** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **B10** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **B11** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **B12** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **B13** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **B14** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **B15** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **B16** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **B17** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **B18** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **B19** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **B20** | 🟡 Produit (En validation) | 🟡 Produit (En validation) | 🟡 Produit (En validation) |
+| **Projet** | `B_capstone.md` : 🟡 Produit (En validation) | `B_miniprojets.md` : 🟡 Produit (En validation) | - |
+| **Outils** | `B_banque_quiz.md` : 🟡 Produit (En validation) | `B_scripts_demo.md` : 🟡 Produit (En validation) | `B_messages.md` : 🟡 Produit (En validation) |
 
 ---
 
