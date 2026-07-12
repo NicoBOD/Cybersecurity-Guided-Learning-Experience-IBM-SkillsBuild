@@ -32,7 +32,7 @@ Cet atelier n'exige aucun rendu écrit ni travail de groupe hors séance. Il s'a
 
 * **Sondage 2 : L'absence de MFA sur Microsoft 365**
   * *Question :* Mme Legrand craint que l'activation du MFA sur Microsoft 365 ne ralentisse le travail des commerciaux nomades. Comment la convaincre ?
-    * A) Lui expliquer que le MFA élimine plus de 99% des piratages de comptes Microsoft et que le vol d'un compte mail permettrait d'envoyer de fausses factures à vos clients *(Bonne réponse — Gain : +20% de résilience)*.
+    * A) Lui expliquer que, selon Microsoft, le MFA bloque plus de 99,9 % des attaques automatisées de compromission de comptes, et que le vol d'un compte mail permettrait d'envoyer de fausses factures à vos clients *(Bonne réponse — Gain : +20% de résilience)*.
     * B) Mettre en place un mot de passe obligatoire de 30 caractères sans MFA.
     * C) Menacer de couper l'accès aux serveurs aux employés récalcitrants.
   * *Explication du mentor :* Le vol d'identité par hameçonnage est massif. Les mots de passe complexes ne protègent pas contre un site de phishing ; seul le MFA bloque la connexion du pirate.
