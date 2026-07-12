@@ -58,7 +58,7 @@ L'ANSSI publie un guide complet pour organiser un exercice de gestion de crise c
 
 ### Glossaire
 
-*   **CERT / CSIRT** — Équipe spécialisée de réponse aux incidents de sécurité (Computer Emergency Response Team). Le CERT-FR, rattaché à l'ANSSI, est l'équipe nationale française.
+*   **CERT / CSIRT** — Deux appellations d'une équipe spécialisée de réponse aux incidents de sécurité : CERT (*Computer Emergency Response Team*) et CSIRT (*Computer Security Incident Response Team*). Le CERT-FR, rattaché à l'ANSSI, est l'équipe nationale française.
 *   **Chaîne de contrôle (Chain of Custody)** — Documentation chronologique stricte recensant l'historique des personnes ayant manipulé, transféré et analysé une preuve physique ou numérique, afin de garantir qu'elle n'a subi aucune altération.
 *   **Confinement** — Phase de la réponse aux incidents visant à isoler le système d'information ou les hôtes compromis pour empêcher la propagation de l'attaque.
 *   **Éradication** — Phase consistant à éliminer définitivement la source de l'incident (ex. supprimer un code malveillant ou fermer un compte piraté).

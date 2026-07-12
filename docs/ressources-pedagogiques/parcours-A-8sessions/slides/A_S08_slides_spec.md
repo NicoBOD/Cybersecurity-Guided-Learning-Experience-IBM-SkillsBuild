@@ -66,7 +66,7 @@ Parcours : A 8 sessions  |  Module : Consolidation & Clôture  |  Format : Spéc
     * 📋 **Ni PSSI, ni registre RGPD** — données nominatives de clients santé
     * 🧑‍🔧 1 technicien polyvalent, serveur dans un placard à balai
   * **💬 Dans le chat : quelle faille vous choque le plus ?**
-* **Visuels suggérés** : Plan stylisé de l'entrepôt avec les points faibles épinglés en rouge ; portrait néutre de « Mme Legrand ».
+* **Visuels suggérés** : Plan stylisé de l'entrepôt avec les points faibles épinglés en rouge ; portrait neutre de « Mme Legrand ».
 * **Notes du présentateur** :
   * Raconter comme une visite client (le placard à balai, le technicien débordé) SANS commenter les failles — c'est le travail de l'auditoire.
   * Lire 4-5 réponses du chat sans valider : « gardez vos intuitions, l'audit commence. »
