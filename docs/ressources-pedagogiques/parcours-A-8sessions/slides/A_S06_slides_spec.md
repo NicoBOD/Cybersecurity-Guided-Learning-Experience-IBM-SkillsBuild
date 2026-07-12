@@ -1,5 +1,7 @@
 # Spécifications des slides — Session 06 : Opérations de sécurité & gestion des vulnérabilités
-Parcours : A 8 sessions  |  Module : SecOps & Vulnérabilités  |  Format : Spécifications Markdown
+Parcours : A 8 sessions  |  Module : SecOps & Vulnérabilités  |  Format : Spécifications Markdown  |  Modalité : Webinaire Livestorm
+
+> **Principe directeur** : le texte affiché reste minimal ; le contenu riche est dans les notes du présentateur et dans le [plan d'animation minuté](../plans-de-seance/A_S06_plan.md), qui fait référence pour les verbatims et débriefs. Les numéros de sondages renvoient à la checklist Livestorm du plan.
 
 ---
 
@@ -12,9 +14,8 @@ Parcours : A 8 sessions  |  Module : SecOps & Vulnérabilités  |  Format : Spé
   * Nom du Mentor / IBM SkillsBuild
 * **Visuels suggérés** : Une salle de contrôle sombre avec des écrans de surveillance géants affichant des graphiques et des alertes de sécurité (style SOC). Logo officiel dans un angle.
 * **Notes du présentateur** :
-  * Accueillir les apprenants.
-  * Faire le bilan sur le devoir autonome (politique de confidentialité RGPD).
-  * Introduire le sujet : après avoir vu la gouvernance théorique, nous plongeons au cœur de la surveillance opérationnelle quotidienne d'un réseau d'entreprise.
+  * Accueillir ; retour devoirs A5 dans le chat : « la finalité la plus surprenante trouvée dans une politique de confidentialité ? » — lire 2-3 réponses.
+  * Pivot : « le chrono des 72 h d'A5 ne démarre que si quelqu'un VOIT la fuite. Aujourd'hui : comment on voit. »
 
 ---
 
@@ -22,151 +23,197 @@ Parcours : A 8 sessions  |  Module : SecOps & Vulnérabilités  |  Format : Spé
 * **Layout** : Deux colonnes (Gauche : Objectifs, Droite : Sommaire)
 * **Texte affiché sur la slide** :
   * **Nos objectifs aujourd'hui** :
-    * Décrire le rôle d'un SOC et le fonctionnement d'un outil SIEM.
-    * Comprendre l'importance de la journalisation active (*logs*).
-    * Différencier un scan de vulnérabilités automatisé d'un test d'intrusion.
-    * Prioriser les correctifs de sécurité en s'appuyant sur le score *CVSS*.
+    * Comprendre la chaîne de détection : logs → SIEM → SOC.
+    * Distinguer scan de vulnérabilités et test d'intrusion.
+    * Interpréter un score CVSS et le pondérer par l'exposition.
+    * Gérer les correctifs sans casser la production.
   * **Sommaire de la séance** :
-    * 1. Brise-glace : Le détective des traces (10 min)
-    * 2. Surveillance active : Le SOC et le SIEM (20 min)
-    * 3. Gestion des failles : Scans vs Pentest (20 min)
-    * 4. Activité pratique 1 : Analyse de logs d'attaque (20 min)
-    * 5. Priorisation des patchs : Le score CVSS (10 min)
-    * 6. Quiz de validation & Clôture (10 min)
+    * 1. Brise-glace : le déluge de failles (6 min)
+    * 2. Logs, SIEM, SOC (18 min)
+    * 3. Activité : L'Analyste SOC (14 min)
+    * 4. Scan vs Pentest & CVSS (10 min)
+    * 5. Démo : lire une attaque dans les logs (8 min)
+    * 6. Gestion des correctifs (8 min)
+    * 7. Cas réels Equifax & Log4Shell, quiz & synthèse (26 min)
 * **Visuels suggérés** : Icônes cibles pour les objectifs et icône de liste pour le sommaire.
 * **Notes du présentateur** :
-  * Expliquer aux apprenants qu'il s'agit d'une session très pratique où ils vont se glisser dans la peau d'un analyste de sécurité opérationnelle.
+  * Annoncer la promesse : « à la fin, vous saurez trier les alertes et les failles comme un professionnel ».
+  * Rythme : un sondage ou une question chat toutes les 8 minutes environ.
 
 ---
 
-## Slide 3 : Rappel & Brise-glace interactif
-* **Layout** : Plein écran interactif
+## Slide 3 : Brise-glace — Le déluge de failles
+* **Layout** : Plein écran interactif (sondage)
 * **Texte affiché sur la slide** :
-  * **Brise-glace : Les boîtes noires de l'entreprise**
-  * *Si un cambriolage a lieu dans un centre commercial durant la nuit, par quoi les enquêteurs commencent-ils pour comprendre ce qui s'est passé ?*
-    * A. Les enregistrements des caméras de surveillance.
-    * B. Le registre des entrées/sorties des vigiles.
-  * **En cybersécurité**, quel est l'équivalent de ces enregistrements vidéo ?
-* **Visuels suggérés** : Photo ou icône d'une caméra de sécurité braquée sur un couloir sombre.
+  * **📊 Sondage n°1 — À votre avis...**
+  * *Combien de nouvelles vulnérabilités (CVE) ont été publiées dans le monde en 2024 ?*
+    * A) ~4 000  ·  B) ~15 000  ·  C) ~40 000  ·  D) ~500
+  * (Réponse révélée après le vote)
+* **Visuels suggérés** : Compteur qui défile ; après le vote, « ~40 000 » en très grand avec « > 100 par jour » en dessous.
 * **Notes du présentateur** :
-  * Laisser 3 minutes de discussion.
-  * Faire le lien : en informatique, l'équivalent des caméras et registres physiques sont les **journaux d'événements (logs)**.
-  * Expliquer qu'un système sans log est un système aveugle en cas d'attaque.
+  * Lancer le sondage n°1, laisser 60-90 s.
+  * Débrief : réponse C — record historique. Message clé : personne ne peut tout corriger ; la sécurité opérationnelle est une affaire de PRIORISATION, pas de perfection.
 
 ---
 
-## Slide 4 : Surveiller en continu : Le SOC et le SIEM
-* **Layout** : Deux colonnes
+## Slide 4 : Les caméras que personne ne regarde
+* **Layout** : Plein écran interactif (chat)
 * **Texte affiché sur la slide** :
-  * **Le SIEM : Le moteur de corrélation**
-    * Centralise les logs de tous les équipements (serveurs, pare-feu, postes).
-    * Analyse les événements en temps réel.
-    * Déclenche des alertes automatiques selon des règles complexes (ex. 100 échecs de connexion en 1 min = suspicion d'attaque).
-  * **Le SOC : La tour de contrôle humaine**
-    * Équipe d'analystes de sécurité qui traitent les alertes du SIEM 24/7.
-    * Rôle : Qualifier l'alerte pour éliminer les **faux positifs** (alertes déclenchées à tort) et traiter les **vrais incidents**.
-* **Visuels suggérés** : Schéma d'entonnoir montrant des millions de logs bruts entrant, filtrés par le SIEM, et générant quelques alertes qualifiées par le SOC.
+  * **💬 Dans le chat : un centre commercial installe 200 caméras dernier cri... mais n'embauche personne au PC sécurité.**
+  * *Que valent ces caméras ? Et à quoi serviront-elles quand même, après un cambriolage ?*
+* **Visuels suggérés** : Mur d'écrans de vidéosurveillance allumés... devant une chaise vide.
 * **Notes du présentateur** :
-  * Expliquer le concept de faux positif par une métaphore simple (ex. l'alarme incendie qui se déclenche parce que quelqu'un a fait brûler du pain).
-  * Insister sur le fait que le SIEM automatise le tri, mais que l'analyste SOC prend la décision finale.
+  * Lire 3-4 réponses. Révéler : en direct, rien (personne ne regarde) ; après coup, de l'or (le film se reconstitue).
+  * Transposer : logs = caméras ; SIEM = alarme intelligente ; SOC = agents. La chaîne complète, maintenant en détail.
 
 ---
 
-## Slide 5 : Trouver les failles : Scans de vulnérabilités vs Pentest
+## Slide 5 : La chaîne de détection — Logs, SIEM, SOC
+* **Layout** : Schéma en trois étages
+* **Texte affiché sur la slide** :
+  * **1. Les LOGS** : chaque action laisse une trace écrite
+    * `2026-06-29 16:30:12 | IP: 192.168.1.100 | User: j.dupont | LOGIN_SUCCESS`
+  * **2. Le SIEM** : lit les **combinaisons** — *50 échecs de connexion + 10 Go sortants = alerte critique*
+  * **3. Le SOC** : les humains qui qualifient — vrai positif ou faux positif ?
+    * T1 trie · T2 investigue · T3 chasse (*threat hunting*) · le SOAR automatise (playbooks)
+* **Visuels suggérés** : Pyramide à trois étages (logs → SIEM → SOC) avec un flux d'événements qui se raréfie en montant ; pictogramme « fatigue des alertes » (cloche débordante).
+* **Notes du présentateur** :
+  * Lire la ligne de log champ par champ ; relier aux 72 h de la CNIL (A5) : sans logs, rien à notifier — ni à savoir.
+  * Marteler : chaque événement isolé est anodin, c'est la combinaison qui fait l'attaque.
+  * Question rhétorique : « quelle proportion d'alertes sont des faux positifs ? » (la majorité — le tri est LE métier).
+
+---
+
+## Slide 6 : Activité — L'Analyste SOC
+* **Layout** : Consignes d'activité + 3 sondages successifs
+* **Texte affiché sur la slide** :
+  * **🖥️ L'Analyste SOC — la garde du matin, 3 tickets, 3 votes**
+    * **Ticket 1** (📊 Sondage n°2) : compte connecté à Lyon 8h02... puis Singapour 8h31
+    * **Ticket 2** (📊 Sondage n°3) : alerte antivirus sur le fichier de test (EICAR) d'un technicien
+    * **Ticket 3** (📊 Sondage n°4) : deux failles « Élevées » — 8.5 interne ou 7.5 exposée, laquelle d'abord ?
+* **Visuels suggérés** : Interface de file de tickets SOC stylisée, trois cartes révélées une à une.
+* **Notes du présentateur** :
+  * ~4-5 min par ticket. Réponses : vrai positif probable + escalade ; faux positif documenté ; la 7.5 exposée.
+  * Débriefs clés : bloquer d'abord, s'excuser ensuite (n°2) ; un faux positif se documente toujours — tuning et anti-fatigue (n°3) ; le score dit la gravité, l'exposition dit l'urgence (n°4 — pont vers le CVSS).
+
+---
+
+## Slide 7 : Trouver les failles — Scan vs Pentest
 * **Layout** : Deux colonnes comparatives
 * **Texte affiché sur la slide** :
-  * **Vulnerability Scan (Scan automatisé)** :
-    * Outil logiciel automatique qui recherche les failles connues (CVE) dans une base de données.
-    * *Avantages* : Rapide, peu cher, automatisable à grande échelle.
-    * *Limites* : Nombreux faux positifs, ne trouve pas les failles logiques de conception.
-  * **Penetration Test (Pentest)** :
-    * Audit manuel mené par un hacker éthique humain qui simule une attaque réelle.
-    * *Avantages* : Analyse profonde, exploitation combinée de failles logiques et humaines.
-    * *Limites* : Coûteux, ponctuel.
-* **Visuels suggérés** : Icône d'un radar automatique de vitesse (le scanneur) vs icône d'un pilote professionnel testant les limites d'un véhicule (le pentester).
+  * **Le Scan de vulnérabilités** — *le radar automatique*
+    * Automatisé, fréquent, peu coûteux · compare le parc à la base **CVE** · faux positifs possibles, failles logiques ratées
+  * **Le Test d'intrusion (Pentest)** — *le pilote d'essai*
+    * Expert humain, combine et improvise · réaliste mais coûteux · **toujours avec autorisation écrite**
+  * **La bonne stratégie : les deux** — scans fréquents + pentest périodique
+* **Visuels suggérés** : Radar automatique vs pilote d'essai casqué ; logos neutres d'outils (scanner / loupe).
 * **Notes du présentateur** :
-  * Souligner la complémentarité des deux méthodes : le scan sert d'hygiène de base régulière, le pentest valide la robustesse globale une à deux fois par an.
+  * Citer Nessus/OpenVAS pour les scans ; rappeler le cadre légal du pentest (A1, approfondi en A7).
+  * Citer CVE-2021-44228 comme exemple d'identifiant : « retenez ce numéro, on le retrouve dans 20 minutes. »
 
 ---
 
-## Slide 6 : Prioriser la remédiation : Le score CVSS
-* **Layout** : Contenu structuré / Échelle de notation
+## Slide 8 : Prioriser — Le score CVSS
+* **Layout** : Échelle graduée + critères
 * **Texte affiché sur la slide** :
-  * **CVSS : Common Vulnerability Scoring System**
-  * *Une échelle de gravité de 0.0 à 10.0 pour prioriser le patching :*
-    * **Critique [9.0 - 10.0]** ➔ À corriger en urgence absolue (sous 24h).
-    * **Élevé [7.0 - 8.9]** ➔ À corriger rapidement (sous quelques jours).
-    * **Moyen [4.0 - 6.9]** ➔ À planifier lors des maintenances de routine.
-    * **Faible [0.0 - 3.9]** ➔ Risque marginal, correction non prioritaire.
-  * *Exemple de critères d'évaluation* : La faille est-elle exploitable à distance sans mot de passe ?
-* **Visuels suggérés** : Une jauge de température colorée allant du bleu (0.0) au rouge vif (10.0).
+  * **CVSS (v4.0) : la gravité d'une faille, de 0.0 à 10.0**
+  * Critères : exploitable à distance ? · facile à exploiter ? · privilèges requis ? · impact C-I-D ?
+  * `[0.0-3.9] Faible · [4.0-6.9] Moyenne · [7.0-8.9] Élevée · [9.0-10.0] Critique`
+  * **Règle d'or : le score dit la gravité, l'exposition dit l'urgence.**
+    * *9.8 exposée = correctif sous 24 h · 3.2 locale = maintenance planifiée*
+* **Visuels suggérés** : Thermomètre gradué en 4 zones colorées ; balance « score × exposition ».
 * **Notes du présentateur** :
-  * Expliquer qu'une entreprise a souvent trop de failles pour pouvoir toutes les corriger. Le score CVSS sert de boussole de priorisation.
-  * Mentionner le catalogue des CVE (dictionnaire public mondial des failles).
+  * Préciser : v4.0 = standard actuel (fin 2023), échelle commune avec la v3.1 encore répandue dans les outils.
+  * Reboucler avec le ticket 3 de l'activité : c'est le même raisonnement, formalisé.
+  * Question rhétorique : « une 10.0, ça existe ? » — « oui, et le monde entier l'a corrigée en pleine nuit. Patience. »
 
 ---
 
-## Slide 7 : Focus pratique — La feuille de route de remédiation
-* **Layout** : Tableau de synthèse
+## Slide 9 : Démo 6 — Lire une attaque dans les logs
+* **Layout** : Console textuelle (extrait de journal)
 * **Texte affiché sur la slide** :
-  * **Feuille de route de remédiation post-scan (Exemple)**
-  * *Comment organiser les travaux de correction :*
-  * **Priorité 1 : Immédiate** ➔ Faille critique (CVSS 9.8) sur le serveur web externe d'e-commerce (vulnérable à l'exécution de code à distance).
-  * **Priorité 2 : Sous 7 jours** ➔ Faille élevée (CVSS 7.8) sur la base de données interne contenant les salaires (élévation de privilèges).
-  * **Priorité 3 : Fin de mois** ➔ Faille moyenne (CVSS 4.3) sur les postes des employés (fuite d'informations mémoire locale).
-* **Visuels suggérés** : Tableau synthétique avec codes couleur (Rouge pour priorité 1, Orange pour 2, Vert pour 3).
+  * **Démonstration : 60 secondes de la vie d'un serveur SSH exposé**
+  * Extrait de journal d'authentification projeté (fictif)
+  * **💬 Dans le chat : que voyez-vous ? Vos hypothèses avant la révélation !**
+* **Visuels suggérés** : Terminal sombre avec les lignes de log qui apparaissent progressivement ; surlignage rouge sur la rafale d'échecs, vert sur la connexion réussie.
 * **Notes du présentateur** :
-  * Montrer comment le contexte d'exposition (serveur public sur Internet vs serveur interne) modifie l'urgence réelle de traitement, même si les scores CVSS bruts sont proches.
+  * Suivre le [script de la Démo 6](../outils/A_scripts_demo.md#demo-6-analyse-logs) : lecture ligne à ligne, chat en prédiction, révélation (force brute → succès → actions post-intrusion).
+  * Montrer la règle SIEM qui aurait détecté automatiquement ; rappeler A3 (ce port n'aurait pas dû être exposé sans filtrage).
+  * Secours : captures d'écran préparées, la démo se raconte.
 
 ---
 
-## Slide 8 : Activité 1 — Analyse de logs d'une alerte SOC
-* **Layout** : Consignes de travail (Activité pratique)
+## Slide 10 : Corriger — La gestion des correctifs
+* **Layout** : Tableau de feuille de route
 * **Texte affiché sur la slide** :
-  * **Activité 1 : Analyser une intrusion à partir de logs**
-  * *Analysez la séquence d'événements projetée à l'écran :*
-    * `16:45:01 | LOGIN_FAILED | IP: 198.51.100.12 | User: admin`
-    * `16:45:03 | LOGIN_FAILED | IP: 198.51.100.12 | User: administrator`
-    * `16:45:08 | LOGIN_SUCCESS | IP: 198.51.100.12 | User: admin`
-    * `16:45:15 | FILE_DOWNLOAD | IP: 198.51.100.12 | File: brevets-2026.zip`
-  * **Questions :**
-    * 1. Quelle attaque a eu lieu ? Comment s'est-elle soldée ?
-    * 2. Quel pilier CIA a été compromis ?
-    * 3. Quelle action d'urgence devez-vous mener ?
-  * **Consignes** : 15 min de réflexion en sous-salle de 3 apprenants.
-* **Visuels suggérés** : Capture de console de logs. Minuteur de 15 minutes.
+  * **La fenêtre critique : publication du correctif → application** *(les attaquants : quelques jours, parfois quelques heures)*
+  * **Feuille de route de remédiation :**
+    * `CVE-2021-44228 « Log4Shell » · 10.0 · exposée` → **immédiat (24 h)**
+    * `CVE-2021-4034 « PwnKit » · 7.8 · interne` → **sous 7 jours**
+    * `divulgation locale · 4.3 · postes internes` → **cycle mensuel**
+  * **Tester avant de déployer — mais tester n'est pas enterrer.**
+* **Visuels suggérés** : Tableau à trois lignes avec pastilles de priorité ; sablier « fenêtre critique ».
 * **Notes du présentateur** :
-  * Lancer l'activité.
-  * Circuler dans les groupes pour aider à la lecture syntaxique des logs.
-  * Lors de la mise en commun, expliquer comment l'adresse IP externe a réalisé un brute force réussi et insister sur la nécessité de bloquer cette IP d'urgence sur le pare-feu.
+  * Dérouler la feuille de route ligne par ligne : c'est le ticket 3 de l'activité, industrialisé.
+  * **💬 Chat** : « quand la sécurité dit "patch immédiat" et la production dit "pas maintenant"... qui tranche chez vous ? » — relier à la gouvernance d'A5.
 
 ---
 
-## Slide 9 : Quiz de validation & Débriefing
-* **Layout** : Contenu interactif (Quiz)
+## Slide 11 : La vulnérabilité en chiffres
+* **Layout** : Mosaïque de grands chiffres (stat cards)
 * **Texte affiché sur la slide** :
-  * **Quiz rapide de session :**
-    * 1. *Quel outil applique des règles de corrélation automatique sur les logs d'une entreprise ?* ➔ **[L'antivirus / Le SIEM / Le Pentest ?]**
-    * 2. *Qu'est-ce qu'un faux positif ?* ➔ **[Une vraie attaque non détectée / Une alerte de sécurité déclenchée à tort par une activité normale ?]**
-    * 3. *Quel est le score CVSS maximal d'une vulnérabilité informatique ?* ➔ **[5.0 / 10.0 / 100.0 ?]**
-* **Visuels suggérés** : QR code Kahoot/Wooclap de la session.
+  * **La réalité du terrain (sources citées)**
+  * **~40 000** CVE publiées en 2024 — record historique *(base CVE/NVD)*
+  * **Quelques jours** entre publication d'une faille critique et exploitation massive *(CERT/éditeurs)*
+  * **147 M** de personnes touchées par Equifax 2017 — un correctif non appliqué
+  * **Plusieurs mois** en moyenne pour confiner une intrusion *(IBM 2025 — rappel A1)*
+* **Visuels suggérés** : Cartes de statistiques, chiffres en très grand corps, sources en petit.
 * **Notes du présentateur** :
-  * Lancer le quiz. Corriger.
-  * *Réponses* : 1. Le SIEM ; 2. Une alerte déclenchée à tort ; 3. 10.0.
+  * Les 3 messages : le flux est industriel (prioriser ou se noyer) ; la course se joue en jours ; la détection est le multiplicateur de tout le reste.
+  * Transition : « deux histoires pour rendre tout cela très concret. »
 
 ---
 
-## Slide 10 : Clôture & Devoirs
-* **Layout** : Fin de session / Devoirs
+## Slide 12 : Deux cas réels — Equifax (2017) & Log4Shell (2021)
+* **Layout** : Deux panneaux « étude de cas » + question chat
 * **Texte affiché sur la slide** :
-  * **Vos devoirs avant la prochaine séance (Self-paced)** :
-    * Suivre le module IBM SkillsBuild : *Principes de la réponse aux incidents et bases de l'investigation numérique*.
-    * Durée estimée : ~70 min.
-    * Lire la documentation simplifiée sur le cycle de réponse à incident (lien fourni).
+  * **Equifax, 2017 — le correctif ignoré** : faille publiée en mars, correctif disponible le jour même → non appliqué → intrusion, **76 jours sans détection** → **147 M de personnes**, ~**700 M$** d'accord, PDG/DSI/RSSI partis.
+  * **Log4Shell, déc. 2021 — la faille du siècle** : CVE-2021-44228, **CVSS 10.0**, bibliothèque omniprésente → scanners malveillants en **quelques heures** → des mois de remédiation mondiale.
+  * **💬 Dans le chat : chez Equifax, le vrai maillon faible — technique, processus ou organisation ?**
+* **Visuels suggérés** : Deux cartes « dossier » : jauge de crédit fissurée (Equifax), bûche Java en flammes (Log4Shell). Chiffres en très grand.
+* **Notes du présentateur** :
+  * Raconter chronologiquement ; punchlines : « le correctif existait du premier au dernier jour » ; « l'outil compromis était celui qui écrit les logs ».
+  * Insister sur le triptyque préparé AVANT la crise : inventaire, scans, processus d'urgence.
+  * Chat : conclure processus + organisation — la GRC d'A5 rejoint la technique.
+
+---
+
+## Slide 13 : Quiz de validation
+* **Layout** : Contenu interactif (3 sondages successifs)
+* **Texte affiché sur la slide** :
+  * **✅ Quiz de validation — 3 questions, 3 votes**
+  * **📊 Sondage n°5** : Le rôle principal d'un SIEM ? *(bloquer les virus / centraliser et corréler les logs / remplacer les analystes / scanner les failles)*
+  * **📊 Sondage n°6** : Scan vs pentest : la différence fondamentale ?
+  * **📊 Sondage n°7** : CVSS 9.8 sur un serveur exposé : votre réaction ?
+* **Visuels suggérés** : Trois cartes de questions révélées successivement, coche verte à la révélation.
+* **Notes du présentateur** :
+  * Réponses : centraliser/corréler ; automate vs expert humain (avec autorisation écrite) ; correctif ou contournement sous 24 h.
+  * Si le temps le permet : **📊 Sondage n°8** (bonus : le technicien qui refuse le patch → tester 24 h puis déployer ; rappeler Equifax).
+
+---
+
+## Slide 14 : Clôture & Devoirs
+* **Layout** : Fin de session / Synthèse
+* **Texte affiché sur la slide** :
+  * **Vos trois réflexes de la session 06 :**
+    * 👁️ **VOIR** — logs, SIEM, et des humains qui trient
+    * ⚖️ **PRIORISER** — score CVSS × exposition
+    * ⏱️ **CORRIGER VITE** — la fenêtre se compte en jours
+  * **💬 Dans le chat : le mot que vous retenez**
+  * **Devoirs avant A7** : module IBM SkillsBuild sur la réponse aux incidents (~60 min) + s'abonner aux alertes du CERT-FR.
   * **Prochaine séance** : *Réponse aux incidents & introduction au forensics (A7)*.
-  * Merci pour votre attention, soyez vigilants aux traces numériques !
-* **Visuels suggérés** : Logo IBM SkillsBuild. Icône de loupe forensics.
+* **Visuels suggérés** : Trois pictogrammes des réflexes ; capture du fil d'alertes CERT-FR ; logo IBM SkillsBuild.
 * **Notes du présentateur** :
-  * Remercier la classe.
-  * Rappeler la prochaine date de session synchrone.
-  * Déconnecter.
+  * Lire 4-5 mots du chat.
+  * Teaser A7 : « l'alerte a sonné, l'attaque est confirmée : que fait-on dans les 60 premières minutes ? Indice : on n'éteint PAS la machine. »
+  * Libérer à l'heure exacte.

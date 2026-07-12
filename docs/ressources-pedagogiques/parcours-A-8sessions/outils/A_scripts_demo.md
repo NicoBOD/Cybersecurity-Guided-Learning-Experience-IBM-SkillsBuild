@@ -158,3 +158,45 @@ Parcours : A 8 sessions  |  Module : Démonstrations Mentor  |  Format : Scripts
    * Faire voter la vraisemblance puis l'impact via le chat (« tapez deux chiffres, ex. 3-2 »), saisir la cotation médiane en direct et laisser la matrice classer le risque.
    * *Synthèse* :
      *"Vous venez de faire en deux minutes ce qu'un comité des risques fait chaque trimestre. La méthode complète, côté professionnel, s'appelle EBIOS Risk Manager — c'est la méthode de l'ANSSI, référencée dans votre support."*
+
+---
+
+## Démo 6 (Session A6) : Lire une attaque dans les logs {#demo-6-analyse-logs}
+
+* **Objectif** : Apprendre à repérer une attaque par force brute dans un journal d'authentification et comprendre comment un SIEM la détecte automatiquement.
+* **Durée estimée** : 8 minutes.
+* **Outils utilisés** : Un simple extrait de journal (fictif) projeté à l'écran — aucun outil technique requis. Préparer des captures de secours.
+
+### Script pas-à-pas :
+
+1. **Mise en situation (1 min)** :
+   * *"Voici 60 secondes de la vie d'un serveur SSH exposé sur Internet — un journal d'authentification reconstitué. Lisez avec moi, et écrivez dans le chat ce que vous voyez. Ne vous censurez pas : toutes les hypothèses sont bonnes."*
+
+2. **Étape 1 : Projection et lecture collective (3 min)** :
+   * Projeter l'extrait (révéler les lignes progressivement si possible) :
+     ```text
+     03:14:07 | sshd | IP: 203.0.113.42 | user: admin   | FAILED_LOGIN
+     03:14:08 | sshd | IP: 203.0.113.42 | user: admin   | FAILED_LOGIN
+     03:14:09 | sshd | IP: 203.0.113.42 | user: root    | FAILED_LOGIN
+     03:14:10 | sshd | IP: 203.0.113.42 | user: test    | FAILED_LOGIN
+        [ ... 214 lignes similaires en 45 secondes ... ]
+     03:14:55 | sshd | IP: 203.0.113.42 | user: backup  | LOGIN_SUCCESS
+     03:15:12 | bash | user: backup | commande : téléchargement d'un outil depuis un site inconnu
+     03:15:48 | bash | user: backup | commande : lecture du fichier des utilisateurs du système
+     ```
+   * Lire à voix haute, lentement, en s'arrêtant sur trois indices : la **cadence** (plusieurs essais par seconde — aucun humain ne tape si vite), la **rotation des comptes** (admin, root, test, backup — un dictionnaire), et **l'heure** (3h du matin).
+
+3. **Étape 2 : Révélation et débrief (2 min)** :
+   * Lire les hypothèses du chat, valider : **attaque par force brute automatisée**, réussie sur le compte `backup` (mot de passe faible).
+   * *Explication en direct* :
+     *"Et regardez ce qui compte vraiment : ce n'est pas la rafale d'échecs — c'est ce qui vient APRÈS le succès. Un vrai utilisateur consulte ses fichiers ; celui-ci télécharge un outil et lit la liste des comptes. L'attaque commence maintenant."*
+
+4. **Étape 3 : La règle SIEM (2 min)** :
+   * Afficher (ou écrire en direct) la règle de corrélation :
+     ```text
+     SI plus de 20 FAILED_LOGIN depuis la même IP en moins de 60 secondes
+     ET LOGIN_SUCCESS depuis cette même IP dans les 5 minutes suivantes
+     ALORS alerte CRITIQUE "Force brute réussie présumée" → SOC niveau 1
+     ```
+   * *Synthèse pédagogique* :
+     *"Un humain ne peut pas lire des millions de lignes ; le SIEM, si — et il ne lit pas les lignes, il lit les combinaisons. Dernier rappel, venu de la session A3 : la vraie question n'est pas 'comment détecter la force brute sur ce port SSH exposé', c'est 'pourquoi ce port est-il exposé sans filtrage ni MFA ?'. La détection rattrape ce que l'architecture n'a pas empêché."*
