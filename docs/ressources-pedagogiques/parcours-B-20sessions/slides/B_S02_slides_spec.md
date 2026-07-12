@@ -1,159 +1,211 @@
 # Spécifications des slides — Session B02 : Paysage des menaces & acteurs
 Parcours : B 20 sessions  |  Module : A — Fondations  |  Format : Spécifications Markdown
 
+> **Principe** : le texte affiché reste minimal (mots-clés, chiffres, schémas) ; le contenu riche est dans les notes orateur et le [plan de séance minuté](../plans-de-seance/B_S02_plan.md). Toutes les interactions passent par les sondages et le chat Livestorm.
+
 ---
 
 ### Slide 1 — Page de garde
 - **Type** : titre
 - **Points clés (bullets)** :
-  - Paysage des menaces & acteurs de la cybercriminalité
-  - Qui nous attaque et pourquoi ?
+  - Paysage des menaces & acteurs
+  - Qui nous attaque, et pourquoi ?
   - Parcours B — Session B02
-- **Notes orateur** : Bonjour et bienvenue à cette deuxième session. Aujourd'hui, nous sortons du cadre théorique de la triade CIA pour explorer le profil réel des attaquants. Comprendre l'ennemi, ses motivations et ses ressources est la clé d'une défense ciblée et efficace.
+- **Notes orateur** : Accueillir, se présenter, faire écrire dans le chat le retour sur le module self-paced (fait / en cours / pas encore). Rappel express de B01 : la triade C-I-D et les deux cas français. Annonce : ce soir on change de camp — on étudie l'adversaire, jusqu'à un braquage de banque à 81 millions de dollars.
 - **Visuel suggéré** : Fond sombre avec une illustration stylisée montrant des silhouettes floues devant des écrans de contrôle.
   - **alt-text** : Silhouettes floutées d'acteurs de menace devant des écrans rétroéclairés de serveurs informatiques.
-- **Élément interactif** : Sondage rapide sur la perception du profil type d'un cyberattaquant moderne.
+- **Élément interactif** : Chat d'accueil — retour sur le travail en autonomie.
 
 ---
 
-### Slide 2 — Objectifs de la séance & Sommaire
+### Slide 2 — Objectifs & agenda
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - Catégoriser les quatre profils clés de cyberattaquants.
-  - Comprendre l'économie criminelle moderne (Ransomware-as-a-Service).
-  - Découvrir la Cyber Threat Intelligence (CTI) et ses outils de veille.
-  - Sommaire : Activité introductive (10 min), Typologie des acteurs (25 min), L'économie cybercriminelle (20 min), Activité Fiche APT (25 min), Quiz (10 min).
-- **Notes orateur** : Nous allons aujourd'hui casser certains clichés sur le "hacker" et analyser le modèle économique derrière la cybercriminalité moderne. Nous ferons ensuite un exercice pratique pour étudier le profil d'un groupe étatique réel.
-- **Visuel suggéré** : Deux colonnes claires séparant les objectifs opérationnels et le minutage de l'agenda.
-  - **alt-text** : Tableau ordonné présentant les objectifs d'apprentissage à gauche et les jalons horaires de la séance à droite.
+  - Catégoriser les 4 profils d'attaquants et leurs motivations.
+  - Expliquer l'économie du cybercrime (Ransomware-as-a-Service).
+  - Découvrir la veille sur les menaces (CTI, CERT-FR, MITRE ATT&CK).
+  - Agenda : typologie → économie RaaS → activité « Fiche d'identité » → 2 affaires réelles → CTI → quiz.
+- **Notes orateur** : Nous allons casser certains clichés sur le « hacker », analyser le modèle économique de la cybercriminalité moderne, puis remplir ensemble — par sondages — la fiche d'identité d'un groupe d'attaquants bien réel.
+- **Visuel suggéré** : Deux colonnes claires séparant les objectifs opérationnels et l'agenda de la séance.
+  - **alt-text** : Tableau présentant les objectifs d'apprentissage à gauche et les étapes de la séance à droite.
 
 ---
 
-### Slide 3 — Pourquoi attaque-t-on ?
-- **Type** : étude de cas
+### Slide 3 — Brise-glace : qui sont les premières victimes ?
+- **Type** : sondage
 - **Points clés (bullets)** :
-  - Quel est le point commun entre toutes les cyberattaques ?
-  - La diversité des motivations sous-jacentes.
-  - L'argent, la géopolitique, l'idéologie, la vengeance.
-- **Notes orateur** : Avant de détailler les profils, interrogeons-nous : qu'est-ce qui pousse des personnes à passer des semaines à chercher des vulnérabilités dans des systèmes informatiques ? Échangeons sur ce sujet.
-- **Visuel suggéré** : Schéma conceptuel reliant un globe terrestre, un symbole monétaire (dollar/euro), un mégaphone et une clé d'accès.
-  - **alt-text** : Diagramme conceptuel liant les quatre piliers de motivation cyber : gain financier, espionnage étatique, idéologie hacktiviste et rancœur interne.
-- **Élément interactif** : Discussion ouverte et recueil d'hypothèses sur le chat ou par micro.
+  - 📊 **Sondage n°1** : Selon l'ANSSI, qui sont les premières victimes des rançongiciels en France ?
+  - A) Les multinationales du CAC 40 — B) Les ministères — C) Les TPE/PME/ETI et collectivités
+- **Notes orateur** : Lancer le sondage n°1 (60-90 s). Réponse C (ANSSI, Panorama de la cybermenace 2024) : les structures qui se croient « trop petites pour intéresser les pirates » sont précisément les plus touchées, car la majorité des attaquants sont des opportunistes — ils attaquent ce qui est mal fermé, pas ce qui est prestigieux.
+- **Visuel suggéré** : Pictogrammes contrastés : un gratte-ciel barré face à une rangée de petites boutiques et une mairie mises en évidence.
+  - **alt-text** : Illustration opposant un grand siège social barré à des petites entreprises et une mairie ciblées par des flèches.
+- **Élément interactif** : 📊 Sondage Livestorm n°1 (brise-glace).
 
 ---
 
-### Slide 4 — Les quatre familles d'attaquants
+### Slide 4 — Le portrait-robot du pirate
+- **Type** : question chat
+- **Points clés (bullets)** :
+  - 💬 « Décrivez en UN mot le cyberattaquant tel que vous l'imaginez. »
+  - Capuche ? Génie ? Adolescent ? Solitaire ?
+- **Notes orateur** : Lire 5-6 mots du chat et regrouper les clichés. Synthèse : l'image du cinéma (capuche, génie solitaire) est fausse — la réalité est une industrie organisée, avec horaires de bureau et « service client ». Le cliché le plus dangereux est « génie » : la plupart des attaques réussissent par des moyens banals contre des cibles mal protégées.
+- **Visuel suggéré** : Silhouette à capuche dessinée à la craie, entourée de points d'interrogation, qui se fissure pour laisser apparaître un open space de bureau ordinaire.
+  - **alt-text** : Silhouette stéréotypée de pirate à capuche se fissurant et révélant un bureau d'entreprise banal derrière elle.
+- **Élément interactif** : 💬 Question chat — un mot pour décrire l'attaquant.
+
+---
+
+### Slide 5 — Les quatre familles d'attaquants
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - **Cybercriminels** : Gain financier.
-  - **États-nations (APT)** : Espionnage et géopolitique.
-  - **Hacktivistes** : Idéologie et contestation.
-  - **Menaces internes** : Malveillance ou négligence d'employés.
-- **Notes orateur** : On classe les attaquants en quatre grandes catégories distinctes. Chacune a des motivations, des cibles et des ressources différentes. Analysons comment cette distinction influence nos stratégies de défense.
-- **Visuel suggéré** : Une matrice ou un schéma en 4 quadrants présentant les profils avec des icônes distinctives : sac de pièces, radar géopolitique, poing levé et silhouette d'un utilisateur interne.
-  - **alt-text** : Grille à 4 quadrants présentant les types d'attaquants, leurs cibles principales et leurs budgets respectifs.
+  - **Cybercriminels** : le gain financier — les opportunistes du volume.
+  - **États-nations (APT)** : espionnage, sabotage — ressources quasi illimitées.
+  - **Hacktivistes** : idéologie — DDoS et défiguration pour la visibilité.
+  - **Menaces internes** : malveillance ou négligence — déjà à l'intérieur.
+  - (+ les *script kiddies* : peu doués, mais nombreux.)
+- **Notes orateur** : Dérouler les quatre profils avec les analogies du support : le voleur de rue, l'espion/commando, le manifestant, le garde corrompu — et le gamin qui teste les poignées de portes. Expliquer chaque mot d'APT : Advanced (moyens), Persistent (installé des mois), Threat. Insister : identifier QUI attaque, c'est du calibrage de défense.
+- **Visuel suggéré** : Matrice en 4 quadrants avec icônes distinctives : sac de pièces, radar géopolitique, poing levé, badge d'employé — et un petit personnage « script kiddie » en marge.
+  - **alt-text** : Grille à quatre quadrants présentant cybercriminels, États-nations, hacktivistes et menaces internes avec leurs icônes de motivation.
 
 ---
 
-### Slide 5 — Les Cybercriminels : Une industrie lucrative
-- **Type** : contenu
+### Slide 6 — Quatre profils, quatre défenses
+- **Type** : tableau
 - **Points clés (bullets)** :
-  - Motivation unique : le gain financier.
-  - Cibles : tout système vulnérable contenant de la valeur.
-  - Méthodes reines : Ransomware-as-a-Service, vols de cartes bancaires.
-  - La professionnalisation des services de support et de blanchiment.
-- **Notes orateur** : Les cybercriminels représentent la majorité des cyberattaques quotidiennes. Ce ne sont pas des pirates isolés, mais des organisations structurées comme des entreprises traditionnelles, dotées de développeurs, de négociateurs et même de services clients d'aide au paiement.
-- **Visuel suggéré** : Une image de coffre-fort numérique ouvert révélant des lignes de code et des pièces de monnaie numériques.
-  - **alt-text** : Coffre-fort virtuel entrouvert avec des flux de données et des symboles de cryptomonnaie dorés sur fond sombre.
+  - Cybercriminel opportuniste → hygiène de base : il ira voir ailleurs.
+  - APT étatique → détection avancée : il finira par entrer.
+  - Hacktiviste → protéger la vitrine (site web, DDoS).
+  - Menace interne → moindre privilège + journaux d'audit.
+- **Notes orateur** : Question rhétorique : se protège-t-on d'un voleur opportuniste comme d'un service de renseignement ? Non — et c'est le fil rouge de la session : la défense se calibre sur l'adversaire. L'hygiène décourage l'opportuniste ; contre le persistant, il faut le détecter avant qu'il n'agisse.
+- **Visuel suggéré** : Tableau à deux colonnes « Profil → Parade » avec un code couleur par famille d'attaquants.
+  - **alt-text** : Tableau associant chaque profil d'attaquant à la stratégie de défense adaptée, avec un code couleur par profil.
 
 ---
 
-### Slide 6 — Les États-nations & Groupes APT
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - **APT** : *Advanced Persistent Threat* (Menace persistante avancée).
-  - Motivation : Espionnage industriel, politique et sabotage géopolitique.
-  - Ressources : budgets gouvernementaux illimités, exploits inconnus (*zero-days*).
-  - Approche : persistance discrète pendant des mois ou des années.
-- **Notes orateur** : Les groupes APT sont parrainés par des gouvernements. Contrairement aux cybercriminels ordinaires, ils cherchent la discrétion absolue pour voler de la propriété intellectuelle ou se positionner dans des infrastructures critiques (réseaux d'eau, d'électricité) en vue de sabotages futurs.
-- **Visuel suggéré** : Icône de radar militaire ou de loupe analysant une cible discrète dans un système.
-  - **alt-text** : Radar circulaire vert scannant une carte du monde stylisée avec des points de connexion.
-
----
-
-### Slide 7 — Hacktivistes & Menaces internes
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - **Hacktivisme** : Pirater pour une cause politique ou sociale (Ex : DDoS, défiguration de sites).
-  - **Menace interne** : Un utilisateur légitime (employé, prestataire) qui abuse de ses accès.
-  - Motivation interne : appât du gain, vengeance de salarié licencié, ou simple négligence.
-  - La menace interne est la plus difficile à détecter car les actions sont légitimes au départ.
-- **Notes orateur** : D'un côté, les hacktivistes veulent de la visibilité pour leur cause en bloquant des sites web ou en publiant des documents confidentiels. De l'autre, la menace interne utilise ses privilèges existants au sein du réseau, ce qui la rend extrêmement difficile à détecter par des outils de sécurité réseau standards.
-- **Visuel suggéré** : Division verticale montrant à gauche un écran affichant un site défiguré (mégaphone) et à droite un badge d'accès d'entreprise posé à côté d'une clé USB.
-  - **alt-text** : Illustration comparative : à gauche un écran piraté avec un logo militant, à droite une clé USB insérée par un employé de bureau.
-
----
-
-### Slide 8 — L'économie criminelle moderne : Le RaaS
+### Slide 7 — L'économie du cybercrime : le RaaS
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - **Ransomware-as-a-Service (RaaS)** : Modèle d'affiliation cybercriminel.
-  - **Les Opérateurs** : Développent le logiciel malveillant et l'infrastructure.
-  - **Les Affiliés** : Achètent l'accès, pénètrent le réseau cible et déploient l'attaque.
-  - Partage des gains : 70-80 % pour l'affilié, 20-30 % pour l'opérateur.
-- **Notes orateur** : Le modèle du RaaS a révolutionné la cybercriminalité en permettant à des attaquants peu techniques de louer des outils de pointe. C'est cette division du travail qui explique l'explosion du nombre d'attaques par rançongiciel ces dernières années.
-- **Visuel suggéré** : Schéma conceptuel du flux RaaS : Opérateur (Code) $\rightarrow$ Plateforme de distribution $\rightarrow$ Affilié (Intrusion) $\rightarrow$ Victime (Rançon) $\rightarrow$ Partage des profits.
-  - **alt-text** : Diagramme du cycle d'affaires du Ransomware-as-a-Service décrivant les rôles de l'opérateur, de l'affilié et le flux de partage des cryptomonnaies.
+  - **Ransomware-as-a-Service** : l'opérateur développe, l'affilié attaque.
+  - Partage type de la rançon : 70-80 % affilié / 20-30 % opérateur.
+  - Spécialistes : courtiers d'accès (*Initial Access Brokers*), négociateurs, blanchisseurs.
+  - Places de marché, programmes d'affiliation... et « service client ».
+- **Notes orateur** : Oubliez le pirate solitaire : c'est une industrie avec division du travail. Détailler la chaîne : l'opérateur loue son code, l'affilié s'introduit (souvent via un accès acheté à un courtier), la rançon est partagée. Même la réputation compte : un groupe qui ne livre pas la clé après paiement perd ses « clients ». On n'affronte pas des individus, on affronte un secteur économique.
+- **Visuel suggéré** : Schéma de flux : Opérateur (code) → plateforme d'affiliation → Affilié (intrusion) → Victime (rançon) → partage des cryptomonnaies.
+  - **alt-text** : Diagramme du cycle d'affaires du Ransomware-as-a-Service décrivant opérateur, affilié, victime et flux de partage de la rançon.
 
 ---
 
-### Slide 9 — Cyber Threat Intelligence (CTI) : Connaître son ennemi
-- **Type** : contenu
+### Slide 8 — Le paysage en chiffres
+- **Type** : chiffres clés
 - **Points clés (bullets)** :
-  - **CTI** : Collecte et analyse d'informations sur les menaces actives.
-  - **IoC (Indicateurs de compromission)** : Signes techniques laissés par l'attaquant (IP, signatures de fichiers).
-  - Sources fiables : Bulletins d'alerte du CERT-FR, base de connaissances MITRE ATT&CK.
-  - Permet d'anticiper les attaques plutôt que de simplement y réagir.
-- **Notes orateur** : Pour se défendre efficacement, il faut faire de la veille. La Cyber Threat Intelligence nous donne les armes nécessaires : en étudiant les signatures de fichiers et les adresses IP utilisées par les groupes d'attaquants, nous pouvons bloquer proactivement leurs tentatives avant qu'ils n'atteignent nos systèmes.
-- **Visuel suggéré** : Logo de la base de données MITRE ATT&CK ou extrait d'un tableau d'indicateurs de compromission (IoC).
-  - **alt-text** : Capture de tableau structurant des indicateurs de compromission techniques avec des adresses IP malveillantes et des hashs MD5 associés.
+  - **+ de 1 milliard $** de rançons payées dans le monde en 2023 — record (Chainalysis).
+  - **~1,5 milliard $** de cryptomonnaies volées en un an par les groupes liés à la Corée du Nord, au plus fort de leur activité (Chainalysis).
+  - **Février 2024** : l'opération Cronos frappe LockBit.
+- **Notes orateur** : Trois lectures : (1) le cybercrime est une économie qui se mesure en milliards — d'où son professionnalisme ; (2) la frontière États/criminels est poreuse — certains États se financent par le braquage numérique (teaser de l'activité qui suit) ; (3) la riposte existe et gagne des batailles — on verra Cronos en détail. Relance chat : « un service client chez les rançonneurs, ça vous étonne ? »
+- **Visuel suggéré** : Trois grands chiffres en typographie XXL sur fond sombre, chacun avec sa source et son année en petit.
+  - **alt-text** : Trois statistiques géantes sur la cybercriminalité avec leurs sources : montants des rançons, vols de cryptomonnaies et opération Cronos.
 
 ---
 
-### Slide 10 — Activité pratique : Fiche d'identité APT
+### Slide 9 — Activité : la Fiche d'identité d'un attaquant
+- **Type** : activité (sondages)
+- **Points clés (bullets)** :
+  - Le dossier : **Lazarus Group** (APT38) — actif depuis 2009.
+  - Sony Pictures 2014 · Banque du Bangladesh 2016 · WannaCry 2017.
+  - 📊 **Sondages n°2, 3, 4** : Catégorie ? Motivation ? La leçon ?
+- **Notes orateur** : Lire le dossier à voix haute, puis lancer les trois sondages l'un après l'autre avec débrief entre chaque (scripts dans le plan). Piège du n°2 : la motivation financière ne suffit pas à classer — c'est le commanditaire qui compte. N°3 : un État sous sanctions se finance par le braquage numérique. N°4 : les frontières entre catégories sont poreuses — la classification sert à raisonner, pas à enfermer.
+- **Visuel suggéré** : Fiche d'identité de type dossier de renseignement avec champs à remplir (catégorie, origine, motivations, cibles) à côté d'une carte du monde.
+  - **alt-text** : Gabarit de fiche de renseignement cyber avec des champs vides pour documenter le profil du Lazarus Group.
+- **Élément interactif** : 📊 Sondages Livestorm n°2 à 4 — classification collective par votes.
+
+---
+
+### Slide 10 — Affaire n°1 : la Banque du Bangladesh (2016)
 - **Type** : étude de cas
 - **Points clés (bullets)** :
-  - **Cas d'étude** : Lazarus Group (APT38).
-  - Analyse d'un rapport de Threat Intelligence simplifié.
-  - **Consignes** : Remplir la fiche d'identité (25 min en groupes).
-    - Identifier : Catégorie d'acteur, origines, motivations, cibles et techniques clés.
-- **Notes orateur** : Nous allons maintenant réaliser une activité pratique. Vous allez étudier un résumé opérationnel sur le groupe Lazarus. Votre objectif est de dresser sa fiche d'identité afin de comprendre comment un État-nation peut utiliser la cybercriminalité financière pour contourner des sanctions internationales.
-- **Visuel suggéré** : Fiche d'identité à remplir affichant des champs vides (Nom, Origine, Cibles, Méthodes) à côté d'une photo conceptuelle de carte du monde.
-  - **alt-text** : Gabarit de document de renseignement cyber avec des zones de saisie vides pour documenter un profil d'attaquant.
-- **Élément interactif** : Travail collaboratif en équipe avec restitution sur un tableau partagé.
+  - Des mois d'infiltration · le réseau interbancaire SWIFT.
+  - Objectif : ~1 milliard $ — butin : **81 millions $**.
+  - Le grain de sable : une faute d'orthographe (« fandation »).
+- **Notes orateur** : Raconter chronologiquement : l'étude des procédures, la neutralisation des impressions de confirmation, le choix du jeudi soir (quatre jours de battement entre les week-ends du Bangladesh et de New York), les fonds évaporés vers des casinos asiatiques — et la coquille qui éveille les soupçons d'une banque intermédiaire. Leçon d'humilité : les défenses ont échoué, la chance a limité les dégâts. Face à un APT, la question est « comment le détecter avant qu'il n'agisse » (threat hunting, B16).
+- **Visuel suggéré** : Frise chronologique du casse avec un zoom loupe sur le mot mal orthographié dans l'ordre de virement.
+  - **alt-text** : Chronologie du braquage de la Banque du Bangladesh avec une loupe mettant en évidence la faute d'orthographe décisive.
 
 ---
 
-### Slide 11 — Quiz de validation
-- **Type** : quiz
+### Slide 11 — Affaire n°2 : LockBit & l'opération Cronos (2024)
+- **Type** : étude de cas
 - **Points clés (bullets)** :
-  - 1. Quel profil d'attaquant est motivé par l'espionnage géopolitique ?
-  - 2. Qu'est-ce qu'un "Initial Access Broker" ?
-  - 3. Que signifie l'acronyme CTI ?
-- **Notes orateur** : Évaluons rapidement ce que nous avons appris aujourd'hui. Lisez les questions affichées et sélectionnez la bonne réponse sur vos smartphones. Nous analyserons ensuite les points qui ont posé problème.
-- **Visuel suggéré** : QR code d'accès au questionnaire interactif avec trois questions à choix multiples à côté.
-  - **alt-text** : Code QR stylisé vert clair et questions de quiz affichées dans une police moderne sans-serif.
-- **Élément interactif** : Questionnaire de fin de session en temps réel.
+  - Février 2024 : le site du groupe affiche... une bannière de police.
+  - Coalition NCA · FBI · Europol · Gendarmerie nationale.
+  - Serveurs, code source, portefeuilles — et **clés de déchiffrement** saisis.
+  - Le talon d'Achille du RaaS : l'infrastructure et la **réputation**.
+- **Notes orateur** : LockBit — le groupe qui avait frappé l'hôpital de Corbeil-Essonnes vu en B01. Affiliés arrêtés, opérateur principal identifié et sanctionné ; le groupe tente de renaître, durablement discrédité. Punchline : des victimes de 2022 qui n'avaient pas payé ont récupéré leurs données en 2024 — déposer plainte n'est jamais inutile. Enchaîner immédiatement sur le débat de la slide suivante.
+- **Visuel suggéré** : Capture stylisée d'un site sombre recouvert d'une bannière officielle multi-agences de forces de l'ordre.
+  - **alt-text** : Page d'accueil d'un site de fuite de données recouverte par la bannière de saisie des forces de l'ordre internationales.
 
 ---
 
-### Slide 12 — Conclusion & Travail autonome
+### Slide 12 — Le grand débat : faut-il payer la rançon ?
+- **Type** : sondage (opinion)
+- **Points clés (bullets)** :
+  - 📊 **Sondage n°5** : votre organisation est paralysée — faut-il payer ?
+  - A) Oui, pour sauver l'activité — B) Non, jamais — C) Au cas par cas.
+  - Repères : recommandation ANSSI · loi LOPMI 2023 : plainte sous 72 h pour être indemnisé.
+- **Notes orateur** : Sondage d'opinion, pas de bonne réponse — mais des repères solides : pas de garantie de clé fonctionnelle, la victime se signale comme « bonne payeuse », chaque paiement alimente le milliard annuel. Depuis la LOPMI (2023), l'indemnisation d'une cyber-rançon par l'assurance exige un dépôt de plainte sous 72 heures. Argument final de Cronos : des victimes qui n'avaient pas payé ont récupéré leurs données gratuitement.
+- **Visuel suggéré** : Balance à deux plateaux : d'un côté une liasse de billets, de l'autre un marteau de justice et une clé de déchiffrement.
+  - **alt-text** : Balance mettant en regard le paiement d'une rançon et l'alternative judiciaire symbolisée par un marteau et une clé.
+- **Élément interactif** : 📊 Sondage Livestorm n°5 (opinion — débat).
+
+---
+
+### Slide 13 — 🤔 Que feriez-vous ? La veille qui sauve
+- **Type** : scénario
+- **Points clés (bullets)** :
+  - Votre veille signale : votre **secteur** est ciblé via une faille VPN.
+  - Rien d'anormal détecté chez vous... pour l'instant.
+  - A) Rien à faire — B) Corriger + vérifier les journaux — C) Tout débrancher.
+- **Notes orateur** : Réponses par chat (A, B ou C). Débrief : B — appliquer le correctif AVANT l'attaque et vérifier qu'on n'est pas déjà compromis. A confond « pas détecté » et « pas attaqué » ; C est disproportionné. Ce réflexe a un nom : la Cyber Threat Intelligence — transition vers la slide suivante.
+- **Visuel suggéré** : Écran de veille affichant une alerte sectorielle avec trois portes de sortie étiquetées A, B, C.
+  - **alt-text** : Tableau de bord de veille cyber affichant une alerte sur une faille VPN et trois options de réaction.
+- **Élément interactif** : 🤔 Mini-scénario — réponse A/B/C dans le chat.
+
+---
+
+### Slide 14 — La CTI : connaître son ennemi
+- **Type** : contenu
+- **Points clés (bullets)** :
+  - **CTI** : le renseignement sur les menaces — jouer avec un coup d'avance.
+  - **IoC** : les indices techniques (IP, empreintes, domaines) — à partager (MISP).
+  - **TTP** : le mode opératoire signature — documenté dans **MITRE ATT&CK**.
+  - Premier réflexe : s'abonner aux alertes du **CERT-FR** (gratuit).
+- **Notes orateur** : L'IoC est l'empreinte digitale laissée sur la scène ; la partager, c'est vacciner la communauté avec l'expérience des victimes. MITRE ATT&CK documente les modes opératoires groupe par groupe — la fiche « Lazarus Group » y existe. Le devoir de la semaine : s'abonner au CERT-FR et repérer une alerte récente (elle servira en B03).
+- **Visuel suggéré** : Pyramide ou entonnoir reliant IoC (indices bruts) → TTP (modes opératoires) → décisions de défense, avec les logos CERT-FR et MITRE ATT&CK.
+  - **alt-text** : Schéma reliant les indicateurs de compromission aux modes opératoires puis aux décisions de défense, avec les sources CERT-FR et MITRE ATT&CK.
+
+---
+
+### Slide 15 — Quiz de validation
+- **Type** : quiz (sondages)
+- **Points clés (bullets)** :
+  - 📊 **Sondage n°6** : comment la rançon est-elle partagée dans le RaaS ?
+  - 📊 **Sondage n°7** : qu'est-ce qu'un IoC ?
+  - 📊 **Sondage n°8** : pourquoi la menace interne est-elle si difficile à détecter ?
+- **Notes orateur** : Lancer les trois sondages à la suite (~2 min chacun), débriefs scriptés dans le support : l'économie du RaaS explique le volume d'attaques ; l'IoC partagé vaccine les autres ; l'interne est déjà dedans — d'où les journaux d'audit et le moindre privilège (module C). Si le temps le permet, enchaîner sur le sondage bonus n°9 (départ conflictuel d'un administrateur).
+- **Visuel suggéré** : Trois cartes de quiz numérotées 6, 7, 8 avec l'icône de sondage Livestorm.
+  - **alt-text** : Trois cartes de questions de quiz numérotées, associées à des sondages en direct.
+- **Élément interactif** : 📊 Sondages Livestorm n°6 à 8 (+ n°9 en tampon).
+
+---
+
+### Slide 16 — Synthèse & prochaine session
 - **Type** : récap
 - **Points clés (bullets)** :
-  - **Points clés** : 4 profils d'attaquants, modèle RaaS, utilisation des IoC et de la veille.
-  - **Devoirs** : Suivre le cours IBM SkillsBuild *"Cybersecurity Threat Landscape"* (~1h30).
-  - **Action pratique** : Consulter les alertes actives du CERT-FR sur leur site officiel.
-  - Prochaine session : *Types d'attaques & vecteurs (B03)*.
-- **Notes orateur** : Merci pour votre attention et vos échanges pertinents aujourd'hui ! Pour la prochaine fois, veuillez compléter le module SkillsBuild indiqué à l'écran. Cela vous préparera techniquement à analyser le déroulement précis d'une attaque lors de la session B03. Bonne semaine !
-- **Visuel suggéré** : Illustration d'un écran d'ordinateur affichant le portail d'IBM SkillsBuild et la page d'accueil du CERT-FR.
-  - **alt-text** : Visuel montrant les interfaces web d'IBM SkillsBuild et du site gouvernemental de cybersécurité CERT-FR.
+  - 4 familles d'attaquants → 4 défenses calibrées.
+  - Une économie en milliards (RaaS)... et une riposte qui gagne (Cronos).
+  - La veille : CERT-FR, IoC, TTP, MITRE ATT&CK.
+  - Self-paced : IBM SkillsBuild *« Cybersecurity Threat Landscape »* + abonnement CERT-FR.
+  - Prochaine session — B03 : Types d'attaques & vecteurs.
+- **Notes orateur** : Faire écrire dans le chat UN mot retenu de la session, en lire 4-5. Rappeler le double devoir : le module SkillsBuild et l'abonnement aux alertes du CERT-FR (repérer une alerte récente pour B03). Teaser B03 : « on ouvre l'arsenal — malwares, hameçonnage, déni de service, et l'histoire du ver qui a paralysé des hôpitaux entiers en un week-end. » Terminer à l'heure exacte.
+- **Visuel suggéré** : Récapitulatif visuel en quatre vignettes (familles, économie, riposte, veille) et un panneau « B03 » fléché.
+  - **alt-text** : Synthèse en quatre vignettes des thèmes de la session avec un panneau indiquant la prochaine session B03.
+- **Élément interactif** : Chat de clôture — « un mot que vous retenez ».
