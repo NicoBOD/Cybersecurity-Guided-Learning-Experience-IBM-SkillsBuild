@@ -200,3 +200,36 @@ Parcours : A 8 sessions  |  Module : Démonstrations Mentor  |  Format : Scripts
      ```
    * *Synthèse pédagogique* :
      *"Un humain ne peut pas lire des millions de lignes ; le SIEM, si — et il ne lit pas les lignes, il lit les combinaisons. Dernier rappel, venu de la session A3 : la vraie question n'est pas 'comment détecter la force brute sur ce port SSH exposé', c'est 'pourquoi ce port est-il exposé sans filtrage ni MFA ?'. La détection rattrape ce que l'architecture n'a pas empêché."*
+
+---
+
+## Démo 7 (Session A7) : Une nuit en cellule de crise (scénario à embranchements) {#demo-7-incident}
+
+* **Objectif** : Faire vivre les arbitrages du confinement et de la préservation des preuves à travers un scénario narratif de type « livre dont vous êtes le héros », voté en direct.
+* **Durée estimée** : 10 minutes.
+* **Outils utilisés** : Deux sondages Livestorm pré-créés (décision 1 : éteindre vs isoler ; décision 2 : restaurer immédiatement vs préserver puis restaurer sur base saine). Aucun outil technique.
+
+### Script pas-à-pas :
+
+1. **Mise en situation (2 min)** :
+   * *"Il est 3h12 du matin. Vous êtes d'astreinte. Le téléphone sonne : le superviseur de nuit voit le serveur de fichiers chiffrer ses propres données — les extensions changent une à une, un fichier LISEZMOI.txt vient d'apparaître avec une adresse de paiement. Vous êtes seul pour les dix prochaines minutes. L'histoire s'écrit selon VOS votes — et chaque choix a des conséquences."*
+
+2. **Décision 1 — Sondage n°4 : éteindre ou isoler ? (3 min)** :
+   * Lancer le sondage : *"Option A : couper l'alimentation du serveur immédiatement — le chiffrement s'arrête net. Option B : débrancher le câble réseau en laissant le serveur allumé."*
+   * **Raconter la branche A (même si elle est minoritaire)** :
+     *"Vous coupez le courant. Le chiffrement s'arrête... et avec lui, tout ce que contenait la mémoire vive : la clé de chiffrement que le ransomware y gardait, la liste des connexions de l'attaquant, les processus actifs. L'enquête vient de perdre ses meilleures preuves — et parfois, la seule chance de déchiffrer sans payer."*
+   * **Raconter la branche B (la bonne)** :
+     *"Vous débranchez le câble réseau. Le serveur est isolé : plus de propagation, plus de contrôle à distance. Mais la RAM est intacte : l'équipe forensics pourra la capturer, y trouver les connexions de l'attaquant — et peut-être la clé. Vous venez d'appliquer la règle d'or : ISOLER, JAMAIS ÉTEINDRE."*
+
+3. **Transition narrative (1 min)** :
+   * *"6h45. L'équipe est arrivée, la RAM est capturée, le périmètre est confiné. La direction appelle : 'La production doit repartir à 9h. Restaurez tout, tout de suite.' Deuxième décision."*
+
+4. **Décision 2 — Sondage n°5 : restaurer tout de suite ? (3 min)** :
+   * Lancer le sondage : *"Option A : restaurer immédiatement les sauvegardes de la veille sur le serveur existant — la production repart à 9h. Option B : cloner et hacher les supports pour l'enquête, puis restaurer sur une infrastructure réinstallée saine — la production repart en début d'après-midi."*
+   * **Raconter la branche A** :
+     *"9h00 : tout fonctionne, la direction vous félicite. Jeudi suivant, 3h12 : le téléphone sonne à nouveau. La porte dérobée installée par l'attaquant était toujours là — vous avez restauré les données sur un système encore compromis. Tout est à refaire, preuves en moins."*
+   * **Raconter la branche B** :
+     *"La production repart à 14h au lieu de 9h — cinq heures de retard qui fâchent la direction. Mais l'analyse du clone révèle la porte dérobée ET le point d'entrée initial : un VPN sans MFA. Les deux sont corrigés. L'attaquant ne reviendra pas par cette porte. C'est l'étape 4 du cycle — l'Éradication — qui doit TOUJOURS précéder la Restauration."*
+
+5. **Synthèse pédagogique (1 min)** :
+   * *"Deux décisions, quatre futurs possibles. Retenez la mécanique : le confinement préserve les preuves, l'éradication précède la restauration, et la pression de la direction — légitime ! — se gère avec une procédure écrite AVANT la crise, pas en improvisant à 3h du matin. La semaine prochaine, à l'atelier MedDistri, c'est vous qui serez dans la salle de crise."*
