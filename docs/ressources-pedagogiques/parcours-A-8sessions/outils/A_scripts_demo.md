@@ -3,7 +3,7 @@ Parcours : A 8 sessions  |  Module : Démonstrations Mentor  |  Format : Scripts
 
 ---
 
-## Démo 1 (Session A1) : Cartographie passive de la surface d'exposition (OSINT)
+## Démo 1 (Session A1) : Cartographie passive de la surface d'exposition (OSINT) {#demo-1-osint}
 
 * **Objectif** : Montrer aux apprenants ce qu'un attaquant peut voir sur une entreprise à partir de sources publiques et d'outils légaux, sans commettre d'intrusion active.
 * **Durée estimée** : 10 minutes.
@@ -38,17 +38,17 @@ Parcours : A 8 sessions  |  Module : Démonstrations Mentor  |  Format : Scripts
 
 ---
 
-## Démo 2 (Session A2) : Simulation de Vishing (Jeu de rôle vocal)
+## Démo 2 (Session A2) : Simulation de Vishing (Jeu de rôle vocal) {#demo-2-vishing}
 
 * **Objectif** : Sensibiliser les apprenants à la rapidité et à la force de persuasion de la manipulation humaine par téléphone.
 * **Durée estimée** : 10 minutes.
-* **Rôles** : Le Mentor (L'attaquant), Un apprenant volontaire (La victime - prévenue à l'avance pour le jeu de rôle).
+* **Rôles (format webinaire Livestorm)** : Le mentor joue théâtralement les deux voix en changeant de ton (l'attaquant / la victime), ou donne la réplique au modérateur du chat s'il y en a un. Les apprenants observent et notent dans le chat le moment où ils auraient raccroché.
 
 ### Script pas-à-pas :
 
 1. **Mise en situation (2 min)** :
-   * Le mentor appelle (par le micro de la classe virtuelle) la victime désignée.
-   * *Le ton du mentor* : Pressé, sérieux, directif, mais chaleureux et rassurant à la fois.
+   * Annoncer le principe : « vous allez assister à un appel téléphonique reconstitué ; votre mission : repérer le moment précis où il fallait raccrocher, et l'écrire dans le chat. »
+   * *Le ton du mentor pour l'attaquant* : Pressé, sérieux, directif, mais chaleureux et rassurant à la fois.
 
 2. **Le Dialogue simulé (5 min)** :
    * **Mentor** : *"Bonjour Thomas ? C'est Alexandre du support informatique central. Je t'appelle en urgence parce que notre SIEM vient de détecter une tentative d'intrusion russe sur ton compte Office 365. Tu as dû recevoir une notification ou un SMS d'alerte à l'instant, c'est bien le cas ?"*
@@ -58,7 +58,7 @@ Parcours : A 8 sessions  |  Module : Démonstrations Mentor  |  Format : Scripts
    * **Mentor** : *"Super, c'est validé de mon côté, la menace est écartée. Tu peux reprendre ton travail normalement. Merci pour ta réactivité, bonne journée !"*
 
 3. **Débriefing collectif (3 min)** :
-   * Arrêter la simulation. Interroger la classe.
+   * Arrêter la simulation. Lire dans le chat les « moments de rupture » notés par les apprenants, puis interroger la classe.
    * *Questions au groupe* :
      * *"Qu'est-ce qui s'est réellement passé ?"* (L'attaquant a tenté de se connecter au compte Office de Thomas, ce qui a déclenché l'envoi d'un SMS MFA de sécurité. L'attaquant a appelé pour subtiliser ce code et valider sa connexion pirate).
      * *"Quels leviers ont été utilisés ?"* (L'urgence artificielle, l'autorité usurpée du support informatique, la confiance).
@@ -66,7 +66,7 @@ Parcours : A 8 sessions  |  Module : Démonstrations Mentor  |  Format : Scripts
 
 ---
 
-## Démo 3 (Session A3) : Audit et logique de filtrage Pare-feu (Firewall)
+## Démo 3 (Session A3) : Audit et logique de filtrage Pare-feu (Firewall) {#demo-3-firewall}
 
 * **Objectif** : Expliquer aux apprenants le concept de filtrage réseau et l'importance cruciale de l'ordre de priorité des règles.
 * **Durée estimée** : 10 minutes.
@@ -98,3 +98,63 @@ Parcours : A 8 sessions  |  Module : Démonstrations Mentor  |  Format : Scripts
 
 4. **Synthèse pédagogique (1 min)** :
    * Résumer la consigne : toujours ordonner les règles du pare-feu de la plus spécifique (en haut) à la plus générale (en bas), en terminant toujours par le blocage implicite total.
+
+---
+
+## Démo 4 (Session A4) : Sécuriser une identité de A à Z (MFA & gestionnaire de mots de passe) {#demo-4-identites}
+
+* **Objectif** : Montrer concrètement comment vérifier l'exposition d'une identité, activer une authentification multifacteur par application (TOTP) et déléguer la mémoire des mots de passe à un gestionnaire.
+* **Durée estimée** : 8 minutes.
+* **Outils utilisés** : Un navigateur (site public de vérification de fuites type Have I Been Pwned), un **compte de démonstration** créé pour l'occasion (jamais un compte réel du mentor), une application d'authentification (ex. FreeOTP, Aegis, Google/Microsoft Authenticator) et un gestionnaire de mots de passe (ex. Bitwarden en compte de démonstration).
+* **Préparation indispensable** : réaliser la démo à blanc et **capturer chaque écran** ; en cas de problème technique en direct, la démo se raconte intégralement avec les captures.
+
+### Script pas-à-pas :
+
+1. **Étape 1 : Vérifier l'exposition (2 min)** :
+   * Ouvrir le site de vérification de fuites et saisir l'adresse du compte de démonstration.
+   * *Explication en direct* :
+     *"Ce site agrège les fuites de données publiques. Si votre adresse apparaît, cela signifie qu'un mot de passe associé circule quelque part — et les attaquants testent ces mots de passe partout où vous les avez réutilisés. C'est pour cela que la réutilisation d'un mot de passe est le péché capital de l'hygiène numérique."*
+   * Rappeler que les apprenants ont fait cette vérification en devoir (session A3) : relier à leurs résultats.
+
+2. **Étape 2 : Enrôler le MFA par application (3 min)** :
+   * Sur le compte de démonstration, ouvrir les paramètres de sécurité et lancer l'activation de la validation en deux étapes par application.
+   * Montrer le **QR code** d'enrôlement, le scanner avec l'application d'authentification, montrer le **code à 6 chiffres qui change toutes les 30 secondes**.
+   * *Explication en direct* :
+     *"Le secret est désormais partagé entre le service et mon téléphone. Le code est généré LOCALEMENT : rien ne transite par SMS, donc rien à intercepter par SIM swapping. Et souvenez-vous de la démo vishing de la session A2 : ce code, on ne le dicte JAMAIS à personne."*
+   * Montrer les **codes de secours** générés et expliquer où les conserver (imprimés ou dans le gestionnaire — pas en note sur le téléphone lui-même).
+
+3. **Étape 3 : Le gestionnaire de mots de passe (2 min)** :
+   * Dans le gestionnaire (compte de démonstration), générer un mot de passe de 20 caractères aléatoires pour un site, l'enregistrer, puis montrer le remplissage automatique à la connexion suivante.
+   * *Explication en direct* :
+     *"Le gestionnaire résout l'équation impossible : unique + long + mémorisable. Vous ne retenez plus qu'UN mot de passe maître — long, sous forme de phrase — et la machine retient tout le reste. Bonus : le remplissage automatique refuse de fonctionner sur un site de phishing, car le domaine ne correspond pas. Votre gestionnaire est aussi un détecteur de typosquatting."*
+
+4. **Synthèse pédagogique (1 min)** :
+   * Les trois gestes à reproduire chez soi (c'est le self-paced de la session) : vérifier son exposition, activer le MFA sur sa messagerie en priorité, adopter un gestionnaire.
+   * *"La messagerie d'abord : c'est la clé de toutes les autres serrures — celui qui la contrôle peut réinitialiser tous vos autres comptes."*
+
+---
+
+## Démo 5 (Session A5) : Construire une matrice de risques en direct {#demo-5-matrice-risques}
+
+* **Objectif** : Rendre tangible la cotation des risques (Criticité = Vraisemblance × Impact) et visualiser l'effet du traitement : le passage de la criticité brute à la criticité résiduelle.
+* **Durée estimée** : 8 minutes.
+* **Outils utilisés** : Une feuille de calcul préparée (LibreOffice Calc, Excel ou Google Sheets) contenant : une matrice 4×4 avec mise en forme conditionnelle (vert 1-3, orange 4-9, rouge 12-16) et un petit registre de risques (colonnes : Scénario, Vraisemblance, Impact, Criticité brute, Traitement choisi, Criticité résiduelle).
+* **Préparation indispensable** : pré-remplir les trois scénarios votés pendant l'activité « Le Comité des Risques » (portable volé 3×3=9 ; rançongiciel facturation 3×4=12 ; inondation 1×4=4).
+
+### Script pas-à-pas :
+
+1. **Étape 1 : Du vote à la matrice (3 min)** :
+   * Projeter le registre pré-rempli et faire apparaître les trois pastilles dans la matrice 4×4.
+   * *Explication en direct* :
+     *"Voici vos trois votes du comité des risques, projetés dans la matrice. Le rançongiciel est en zone rouge : traitement obligatoire — vous avez voté 'réduire puis transférer', voyons ce que cela produit."*
+
+2. **Étape 2 : L'effet du traitement (3 min)** :
+   * Saisir en direct les mesures décidées (sauvegardes immuables + EDR pour le rançongiciel) et la nouvelle cotation : la vraisemblance d'un impact critique chute, la criticité résiduelle passe par exemple de 12 à 6 — la pastille glisse du rouge vers l'orange.
+   * *Explication en direct* :
+     *"C'est LA slide qui justifie un budget en comité de direction : voilà ce que vos 20 000 euros achètent — un passage du rouge à l'orange. Sans matrice, la sécurité est une dépense ; avec la matrice, c'est un investissement mesurable."*
+
+3. **Étape 3 : Cotation participative (2 min)** :
+   * Demander au chat de proposer un 4e scénario (ou utiliser en secours : « fuite d'un fichier RH envoyé au mauvais destinataire »).
+   * Faire voter la vraisemblance puis l'impact via le chat (« tapez deux chiffres, ex. 3-2 »), saisir la cotation médiane en direct et laisser la matrice classer le risque.
+   * *Synthèse* :
+     *"Vous venez de faire en deux minutes ce qu'un comité des risques fait chaque trimestre. La méthode complète, côté professionnel, s'appelle EBIOS Risk Manager — c'est la méthode de l'ANSSI, référencée dans votre support."*
