@@ -14,7 +14,7 @@ Module : Consolidation & Clôture  |  Durée : 90 min  |  Modalité : Webinaire 
 ## Checklist technique Livestorm (à préparer AVANT la session)
 - [ ] Les **9 sondages** de la session sont créés dans Livestorm, numérotés et ordonnés (voir tableau ci-dessous) : 3 d'échauffement (définis dans le [support](../supports-md/A_S08_support.md)), 4 d'audit (définis dans le [dossier MedDistri](../projet/A_capstone.md)), 1 d'objection métier et 1 de bilan (support).
 - [ ] Le partage d'écran est testé avec le diaporama S08 ([spécifications](../slides/A_S08_slides_spec.md)) — y compris la **jauge du Score de Résilience** (slide dédiée, mise à jour manuelle entre les sondages : 10 % → 35 % → 55 % → 80 % → 100 % si sans-faute).
-- [ ] Le schéma « architecture cible » de MedDistri est prêt (slide 12) — en secours du tableau blanc.
+- [ ] Le schéma « architecture cible » de MedDistri est prêt à projeter (slide 11).
 - [ ] Le lien du questionnaire de satisfaction est prêt à coller dans le chat.
 - [ ] Un minuteur est visible du mentor.
 
