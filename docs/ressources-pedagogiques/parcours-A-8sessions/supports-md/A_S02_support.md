@@ -300,7 +300,7 @@ Pour lutter contre l'ingénierie sociale et sécuriser la messagerie d'entrepris
     *   A) Le montant de la facture est élevé.
     *   B) L'adresse de l'expéditeur a un domaine légèrement modifié (ex. `support@st0rmshield.fr` au lieu de `stormshield.fr`) ✅
     *   C) L'e-mail a été envoyé à 14h.
-*   **Guide d'animation (pour le mentor) :** Montrez l'importance du typosquattage (changement de caractères subtils comme un zéro au lieu d'un 'o') comme vecteur classique pour tromper les utilisateurs. Segment tampon : à faire en autonomie si la session est en retard.
+*   **Guide d'animation (pour le mentor) :** Montrez l'importance du typosquatting (changement de caractères subtils comme un zéro au lieu d'un 'o') comme vecteur classique pour tromper les utilisateurs. Segment tampon : à faire en autonomie si la session est en retard.
 
 ## 5. Aide-mémoire / Fiche de révision
 
