@@ -106,7 +106,7 @@ Bonjour **[Prénom de l'apprenant]**,
 
 C'est avec une grande fierté que je vous écris pour vous féliciter chaleureusement pour la validation de votre parcours de formation **GLE Cybersécurité**.
 
-Votre soutenance finale d'hier sur le cas MedDistri a démontré votre capacité à analyser des vulnérabilités complexes et à proposer des solutions réalistes, structurées et convaincantes.
+Lors du Grand Atelier d'Audit d'hier, la communauté a porté le Score de Résilience de MedDistri de 10 % à son niveau final — et vos votes ont démontré votre capacité collective à analyser des vulnérabilités et à décider de remédiations réalistes, priorisées et convaincantes.
 
 **Vos prochaines étapes :**
 
