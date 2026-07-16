@@ -1,174 +1,172 @@
 # Spécifications des slides — Session B16 : Centre des opérations de sécurité (SOC) & supervision
-Parcours : B 20 sessions  |  Module : E — Opérations, détection & réponse  |  Format : Spécifications Markdown
+Parcours : B 20 sessions  |  Module : E — Opérations de sécurité  |  Format : Spécifications Markdown
+
+> **Principe** : le texte affiché reste minimal (mots-clés, chiffres, schémas) ; le contenu riche est dans les notes orateur et le [plan de séance minuté](../plans-de-seance/B_S16_plan.md). Toutes les interactions passent par les sondages et le chat Livestorm.
 
 ---
 
 ### Slide 1 — Page de garde
 - **Type** : titre
 - **Points clés (bullets)** :
-  - Centre des opérations de sécurité (SOC) & supervision
-  - Organisation humaine, rôles analystes, traitement des alertes et métriques de détection
-  - Parcours B — Session B16
-- **Notes orateur** : Bonjour et bienvenue à tous. Nous débutons aujourd'hui notre cinquième et avant-dernier module de formation consacré aux opérations, à la détection et à la réponse à incident. Dans cette seizième session, nous allons étudier le Centre des Opérations de Sécurité, ou SOC. Nous verrons comment s'organise cette équipe, quels sont les rôles des analystes de niveau 1, 2 et 3, et comment s'évalue la performance d'un SOC.
-- **Visuel suggéré** : Vue d'une salle de contrôle de cybersécurité futuriste obscure avec un mur d'écrans géants affichant des cartes de menaces mondiales interactives en vert cyberpunk.
-  - **alt-text** : Salle de surveillance de sécurité (SOC) avec écrans géants de monitoring.
-- **Élément interactif** : Question sondage : "Selon vous, à quoi ressemble le quotidien d'un analyste SOC ?"
+  - SOC & supervision
+  - Qui regarde les écrans — et à quelle vitesse ?
+  - Parcours B — Session B16 · Ouverture du module Opérations de sécurité
+- **Notes orateur** : Accueillir : la gouvernance a décidé, les défenses sont posées — qui regarde ? Retour self-paced : « en une phrase dans le chat : c'est quoi, un SOC ? » (le SIEM, son outil, c'est la semaine prochaine). Rappel B15 : RGPD, 72 h, Atelier 3. Annonce : les trois niveaux, l'art de qualifier, les deux chronomètres — et l'alerte banale qui a révélé l'attaque de la décennie.
+- **Visuel suggéré** : Salle de supervision aux écrans muraux, silhouettes d'analystes devant des cartes de flux.
+  - **alt-text** : Salle d'un centre d'opérations de sécurité avec écrans de supervision et analystes.
+- **Élément interactif** : 💬 Chat d'accueil — le SOC en une phrase.
 
 ---
 
-### Slide 2 — Objectifs de la séance & Sommaire
+### Slide 2 — Objectifs & agenda
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - Décrire l'organisation interne et les responsabilités des analystes (Niveaux L1, L2, L3) d'un SOC.
-  - Expliquer le cycle de vie d'une alerte, du signal brut à l'escalade d'incident.
-  - Différencier une vraie alerte d'un faux positif et interpréter les métriques MTTD / MTTR.
-  - Sommaire : Qu'est-ce qu'un SOC ? (20 min), Les Niveaux d'analystes L1/L2/L3 (20 min), Cycle d'une alerte & Métriques (25 min), Activité de tri d'alertes (15 min), Quiz (10 min).
-- **Notes orateur** : Nous commencerons par définir les missions globales d'un SOC. Nous verrons ensuite la répartition des rôles entre analystes L1, L2 et L3. Nous étudierons ensuite le traitement d'une alerte et les indicateurs clés comme le MTTD et le MTTR. Nous ferons une mise en situation de tri d'alertes avant de terminer par notre traditionnel quiz de validation.
-- **Visuel suggéré** : Liste ordonnée de l'agenda et des objectifs synchrone présentés dans deux boîtes contrastées.
-  - **alt-text** : Tableau d'agenda minuté de la session synchrone de 90 minutes.
+  - Décrire l'organisation du SOC : L1, L2, L3 — et l'option MSSP.
+  - Qualifier une alerte par le contexte : vrai ou faux positif.
+  - Interpréter MTTD et MTTR — et les réduire (playbooks, SOAR).
+  - Agenda : les 3 niveaux → le cycle d'alerte → les KPIs → la garde de nuit → SolarWinds → quiz.
+- **Notes orateur** : Le fil rouge : une alerte ne vaut que par l'humain (ou le playbook) qui la traite. Deux histoires jumelles aux fins opposées le prouveront — Target et SolarWinds.
+- **Visuel suggéré** : Deux colonnes présentant les objectifs et l'agenda de la séance.
+  - **alt-text** : Tableau présentant les objectifs d'apprentissage et les étapes de la session.
 
 ---
 
-### Slide 3 — Qu'est-ce qu'un SOC ?
-- **Type** : contenu
+### Slide 3 — Brise-glace : la course de 62 minutes
+- **Type** : sondage
 - **Points clés (bullets)** :
-  - **SOC** : Security Operations Center.
-  - Centre opérationnel chargé de surveiller, détecter et analyser les menaces de sécurité en continu (souvent 24h/24, 7j/7).
-  - **Les trois piliers d'un SOC** :
-    - *Les Personnes* : Les analystes qualifiés qui qualifient les alertes.
-    - *Les Processus* : Les procédures d'escalade et plans de réponse (playbooks).
-    - *La Technologie* : Les outils de centralisation des logs (SIEM) et d'EDR.
-- **Notes orateur** : Le SOC est la tour de contrôle de la sécurité. Sa mission est d'écouter les signaux faibles émis par le réseau et les serveurs pour détecter l'apparition d'un incident le plus tôt possible. Le SOC repose sur trois piliers : des analystes compétents, des processus clairs pour savoir comment réagir, et des technologies de pointe pour collecter les logs.
-- **Visuel suggéré** : Schéma pyramidal reliant trois icônes : un profil humain (Personnes), des engrenages de processus (Processus) et une puce électronique (Technologie).
-  - **alt-text** : Les 3 piliers fondateurs d'un SOC efficace.
+  - 📊 **Sondage n°1** : temps moyen entre l'intrusion et le début du mouvement latéral ?
+  - A) ~1 heure — B) ~1 jour — C) ~1 semaine
+- **Notes orateur** : Lancer le sondage n°1 (60-90 s). Réponse A : 62 minutes en moyenne (CrowdStrike 2024), record ~2 minutes. Une heure : la fenêtre du défenseur entre « il est entré » et « il se propage » (B06). Toute la sécurité opérationnelle est une course contre ce chronomètre.
+- **Visuel suggéré** : Chronomètre géant affichant 62:00 avec une silhouette d'intrus progressant entre deux serveurs.
+  - **alt-text** : Chronomètre de 62 minutes illustrant le délai moyen avant le mouvement latéral d'un attaquant.
+- **Élément interactif** : 📊 Sondage Livestorm n°1 (brise-glace).
 
 ---
 
-### Slide 4 — L'organisation humaine : Les Niveaux d'analystes
+### Slide 4 — Le SOC : les urgences de l'entreprise
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - **Niveau 1 (L1) — Le Triage** :
-    - Reçoit les alertes brutes du SIEM. Trie et élimine les faux positifs. Escalade les vraies alertes.
-  - **Niveau 2 (L2) — L'Investigation** :
-    - Analyse en profondeur l'alerte escaladée. Détermine la portée de l'attaque et rédige des plans de confinement.
-  - **Niveau 3 (L3) — L'Expertise** :
-    - Chasse active aux menaces (*Threat Hunting*), rétro-ingénierie de codes malveillants et gestion de crise.
-- **Notes orateur** : Travailler dans un SOC est un sport d'équipe organisé en trois niveaux. Les analystes L1 sont en première ligne. Ils reçoivent des centaines d'alertes par jour et doivent trier les vrais problèmes des faux positifs. S'il y a un vrai doute, ils escaladent au L2, qui mène l'enquête approfondie. Le L3 intervient pour les crises majeures ou pour traquer des menaces invisibles.
-- **Visuel suggéré** : Pyramide humaine inversée ou diagramme en entonnoir de haut en bas représentant le flux de filtrage des alertes du L1 (large) vers le L3 (pointu).
-  - **alt-text** : Structure hiérarchique et rôles au sein de l'équipe du SOC.
+  - **L1 — l'infirmier de tri** : qualifier le flux, escalader documenté.
+  - **L2 — le médecin de garde** : investiguer (l'EDR en microscope), prescrire.
+  - **L3 — le chirurgien** : les crises majeures + le **threat hunting**.
+  - 24/7 = 8 à 10 analystes minimum → le **MSSP** pour les PME.
+- **Notes orateur** : Dérouler l'analogie des urgences avec la relance chat : « qui est l'infirmier, le médecin, le chirurgien ? » Le threat hunting : chercher par hypothèses (les TTP de B02-B03) ce qui n'a déclenché AUCUNE alerte — la réponse au « comment détecter un APT » posée depuis la Banque du Bangladesh. L'économie du 24/7 explique le MSSP : un SOC mutualisé, enrichi de CTI.
+- **Visuel suggéré** : Service d'urgences stylisé à trois postes (tri, consultation, bloc) avec des écrans d'alertes à la place des patients.
+  - **alt-text** : Urgences hospitalières transposées en centre de sécurité avec les trois niveaux d'analystes.
+- **Élément interactif** : 💬 Chat — l'analogie des urgences.
 
 ---
 
-### Slide 5 — Cycle de vie d'une alerte de sécurité
+### Slide 5 — Le cycle d'une alerte : vrai ou faux positif ?
+- **Type** : contenu
+- **Points clés (bullets)** :
+  - Événement brut → règle → alerte → **qualification**.
+  - **FP** : le légitime qui ressemble à une attaque (l'outil d'inventaire qui scanne).
+  - **VP** : la menace avérée — intervention immédiate.
+  - ⚠️ **Fatigue des alertes** : 44 % jamais investiguées (Cisco, 2017).
+- **Notes orateur** : L'arme du L1 : le CONTEXTE — qui, où, quand, est-ce habituel ? Question rhétorique : une connexion à 3h du matin est-elle suspecte ? Ça dépend — de qui, d'où, sur quoi. La fatigue des alertes est le danger silencieux : noyé sous les FP, on traite superficiellement et on rate le VP — Target en démonstration tout à l'heure.
+- **Visuel suggéré** : Entonnoir d'événements se réduisant en alertes, avec un aiguillage FP (classé) / VP (escaladé) et un analyste submergé en arrière-plan.
+  - **alt-text** : Entonnoir de tri des alertes de sécurité entre faux positifs classés et vrais positifs escaladés.
+
+---
+
+### Slide 6 — MTTD & MTTR : les deux chronomètres
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - 1. **Collecte** : Log brut enregistré (ex: tentative de connexion échouée).
-  - 2. **Détection** : Le SIEM applique une règle de corrélation et génère une alerte.
-  - 3. **Triage (L1)** : L'analyste examine le contexte. Décision : Faux Positif $\rightarrow$ clôture ; Vrai Positif $\rightarrow$ escalade.
-  - 4. **Analyse & Réponse (L2)** : Confinement de la menace (ex: couper l'accès réseau de l'hôte compromis).
-- **Notes orateur** : Une alerte ne surgit pas par magie. Elle part d'un événement brut sur un équipement, qui est centralisé et corrélé par notre outil de supervision. L'analyste L1 intervient alors pour qualifier l'événement. S'il confirme la menace, l'incident est déclaré et l'analyste L2 applique le protocole de confinement prévu.
-- **Visuel suggéré** : Frise chronologique horizontale reliant les 4 étapes avec des flèches, montrant le traitement logique d'une connexion suspecte.
-  - **alt-text** : Cycle de vie d'une alerte, du journal système brut jusqu'à la résolution.
+  - **MTTD** : de l'intrusion → à la détection.
+  - **MTTR** : de la détection → à la neutralisation.
+  - Détecter en 30 s ne sert à rien si l'on réagit en 24 h.
+  - **Playbooks** (la réaction écrite) + **SOAR** (la réaction automatisée, en secondes).
+- **Notes orateur** : Question rhétorique : lequel améliore-t-on avec des processus plutôt que des outils ? Le MTTR, largement. Les playbooks incluent la vérification humaine des alertes « banales mais sensibles » (MFA, comptes à privilèges — SolarWinds arrive). Le SOAR : IP malveillante contactée → isolement EDR automatique, même à 3h du matin (l'exercice bonus).
+- **Visuel suggéré** : Frise d'un incident avec deux chronomètres : intrusion→détection (MTTD) et détection→neutralisation (MTTR).
+  - **alt-text** : Frise temporelle d'un incident illustrant les métriques MTTD et MTTR.
 
 ---
 
-### Slide 6 — Vrais vs Faux Positifs : Le grand défi du L1
-- **Type** : contenu
+### Slide 7 — Activité : la garde de nuit du L1
+- **Type** : activité (sondages)
 - **Points clés (bullets)** :
-  - **Faux Positif (FP)** :
-    - L'outil lève une alerte de sécurité pour un comportement légitime.
-    - *Exemple* : Un développeur exécute un script d'automatisation réseau inhabituel.
-  - **Vrai Positif (VP)** :
-    - L'outil lève une alerte pour une attaque réelle en cours.
-    - *Exemple* : Un pirate tente de forcer un mot de passe administrateur par force brute.
-  - *Conséquence des FP* : La fatigue des alertes (*Alert Fatigue*), qui peut amener à rater une vraie attaque perdue au milieu du bruit.
-- **Notes orateur** : Le plus grand ennemi de l'analyste de niveau 1 est le faux positif. Si votre système d'alarme sonne chaque fois qu'un oiseau passe devant la fenêtre, vous finirez par l'éteindre. C'est ce qu'on appelle la fatigue des alertes. Le but du SOC est de régler finement ses outils de détection pour minimiser les faux positifs sans rater les vraies attaques.
-- **Visuel suggéré** : Une boîte aux lettres virtuelle débordante d'enveloppes rouges "Alerte", avec un analyste fatigué se tenant la tête.
-  - **alt-text** : Représentation du phénomène de fatigue des alertes chez les analystes.
+  - Trois alertes sur votre console — qualifiez et décidez.
+  - 📊 **Sondage n°2** : SSH nocturne depuis l'Asie sur la paie ? · 📊 **n°3** : 80 échecs puis connexion ? · 📊 **n°4** : PowerShell qui exfiltre ?
+- **Notes orateur** : Afficher chaque alerte AVEC son contexte, 30 s de lecture, vote, débrief : n°2 — faisceau d'indices (serveur sensible + heure + géoloc + aucun ticket) : VP critique, escalade documentée (l'alerte de 2h non traitée, c'était Target) ; n°3 — le réflexe d'or : vérifier le contexte (annuaire, appel) : FP documenté ; n°4 — chaîne comportementale type : isoler D'ABORD (un poste coûte peu, la propagation coûte tout), investiguer ensuite. PowerShell légitime ? Oui — c'est pourquoi les attaquants l'adorent (B03).
+- **Visuel suggéré** : Console de supervision affichant trois cartes d'alertes avec leurs contextes.
+  - **alt-text** : Console d'analyste avec trois alertes de sécurité à qualifier pendant l'activité.
+- **Élément interactif** : 📊 Sondages Livestorm n°2 à 4 — triage collectif.
 
 ---
 
-### Slide 7 — Évaluer la performance du SOC : MTTD & MTTR
-- **Type** : contenu
+### Slide 8 — Le paysage en chiffres
+- **Type** : chiffres clés
 - **Points clés (bullets)** :
-  - **MTTD (Mean Time To Detect)** :
-    - Temps moyen s'écoulant entre le début d'une intrusion et sa détection par le SOC.
-    - *Objectif* : Le plus bas possible (quelques minutes/heures maximum).
-  - **MTTR (Mean Time To Respond)** :
-    - Temps moyen nécessaire pour contenir et neutraliser l'attaque après détection.
-    - *Objectif* : Réduire au minimum pour limiter la propagation (confinement rapide).
-- **Notes orateur** : Comment savoir si un SOC est efficace ? On mesure deux indicateurs de temps fondamentaux. Le MTTD mesure notre rapidité à voir l'attaquant s'introduire. Le MTTR mesure notre rapidité à réagir pour couper ses accès et nettoyer les systèmes. En cybersécurité, chaque minute gagnée réduit le coût financier de l'impact de l'attaque.
-- **Visuel suggéré** : Un chronomètre numérique double : à gauche, MTTD en vert ; à droite, MTTR en bleu, avec des flèches temporelles.
-  - **alt-text** : Indicateurs temporels clés de performance de détection et de réponse.
+  - **62 min** en moyenne avant le mouvement latéral — record : ~2 min (CrowdStrike, 2024).
+  - **~18 000 organisations** touchées par la mise à jour piégée SolarWinds (2020).
+  - **44 %** des alertes jamais investiguées (Cisco, 2017).
+- **Notes orateur** : Trois lectures : la fenêtre de réaction se compte en minutes ; la plus grande attaque de la décennie a été découverte par UNE alerte vérifiée ; et le vrai risque du SOC n'est pas de manquer d'outils, mais de se noyer. Transition : l'histoire de cette alerte.
+- **Visuel suggéré** : Trois grands chiffres en typographie XXL avec leurs sources et années en petit.
+  - **alt-text** : Trois statistiques géantes sur la détection des intrusions avec leurs sources.
 
 ---
 
-### Slide 8 — L'importance des Playbooks (Fiches réflexes)
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - Procédures opérationnelles documentées détaillant précisément comment réagir face à un type d'alerte spécifique.
-  - Garantit la cohérence et la rapidité de la réponse, quel que soit l'analyste de garde.
-  - Exemple de Playbook Ransomware :
-    - 1. Isoler la machine du réseau local (via l'EDR).
-    - 2. Identifier le compte utilisateur compromis.
-    - 3. Révoquer ses identifiants.
-    - 4. Prendre un instantané (snapshot) de la VM pour analyse.
-- **Notes orateur** : En cas d'attaque, la panique est notre pire ennemie. C'est pour cela que le SOC utilise des playbooks. Ce sont des fiches réflexes écrites à l'avance. Quand une alerte de type ransomware se déclenche à 3 heures du matin, l'analyste de garde applique scrupuleusement la fiche étape par étape : isolation de l'ordinateur, blocage du compte, sauvegarde de la mémoire.
-- **Visuel suggéré** : Un classeur ouvert étiqueté "Playbook SOC" avec une checklist d'actions d'urgence de confinement réseau.
-  - **alt-text** : Fiche playbook de procédure d'urgence en cas d'attaque cyber.
-
----
-
-### Slide 9 — Les typologies de SOC : Interne vs Externe
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - **SOC Interne (Dédié)** :
-    - Propre à l'entreprise. Connaissance fine du métier.
-    - *Inconvénient* : Très coûteux à maintenir (nécessite au moins 5 à 8 analystes pour couvrir le 24/7).
-  - **SOC Externe (MSSP)** :
-    - Externalisé chez un prestataire spécialisé surveillant plusieurs clients.
-    - *Avantage* : Moins cher, bénéficie de la vision globale du prestataire sur d'autres attaques.
-- **Notes orateur** : Toutes les entreprises n'ont pas les moyens d'avoir leur propre SOC interne. Maintenir une équipe d'analystes éveillés et opérationnels 24h sur 24 nécessite au moins 5 à 8 personnes à plein temps. Beaucoup de PME et d'ETI choisissent d'externaliser leur surveillance auprès d'un prestataire de services de sécurité managés (un MSSP).
-- **Visuel suggéré** : Schéma comparatif montrant un bureau de SOC interne unique face à un grand centre de surveillance externe centralisé relié à plusieurs entreprises.
-  - **alt-text** : Comparaison organisationnelle entre SOC interne et SOC partagé chez un MSSP.
-
----
-
-### Slide 10 — Activité pratique : Qualification et Triage d'alerte
+### Slide 9 — Affaire : SolarWinds (2020)
 - **Type** : étude de cas
 - **Points clés (bullets)** :
-  - **Alerte brute** : Connexion SSH réussie sur le serveur de paye de l'entreprise à 02h15 du matin depuis une adresse IP publique située à l'étranger.
-  - **Ressources disponibles** : Annuaire interne, planning d'astreinte, historique de connexion de l'utilisateur.
-  - **Mission (Analyste L1)** :
-    - 1. Lister les questions pour valider s'il s'agit d'un Vrai ou d'un Faux Positif.
-    - 2. Rédiger la décision finale motivée (Faux Positif ou Escalade L2).
-- **Notes orateur** : Place à l'exercice de triage. Vous êtes analyste de niveau 1 de garde cette nuit. Vous recevez cette alerte de connexion tardive depuis l'étranger sur un serveur critique. Quelles investigations menez-vous pour savoir s'il s'agit d'une attaque réelle ou d'une astreinte légitime d'un de vos ingénieurs ?
-- **Visuel suggéré** : Capture d'écran factice de console de tri d'alertes affichant la ligne d'événement SSH à analyser.
-  - **alt-text** : Tableau de bord d'investigation d'un événement de connexion suspecte.
-- **Élément interactif** : Analyse collective de 15 minutes avec mise en commun et débat sur la décision de tri.
+  - L'alerte banale : un **2ᵉ téléphone MFA** enrôlé sur un compte VPN.
+  - Le playbook : **appeler l'employé** — « ce n'est pas moi ».
+  - La découverte : la mise à jour piégée de SolarWinds Orion (**chaîne d'approvisionnement**).
+  - ~18 000 organisations · des agences fédérales · des **mois** sans aucune alerte.
+- **Notes orateur** : Raconter : Mandiant, géant de la cybersécurité, compromis par un logiciel légitime ; l'analyste qui vérifie une alerte que 99 % des SOC auraient close ; la révélation publique et le partage des IoC (la CTI de B02 en action). Leçon : pas d'IA miraculeuse — un humain, un playbook, un contre-appel (le réflexe de B04, version SOC).
+- **Visuel suggéré** : Un téléphone en surbrillance dans une mer d'alertes grises, relié à une carte mondiale d'organisations compromises.
+  - **alt-text** : Une seule alerte de téléphone MFA mise en évidence révélant un réseau mondial de compromissions.
 
 ---
 
-### Slide 11 — Quiz de validation
-- **Type** : quiz
+### Slide 10 — Le contre-exemple : Target, revisité
+- **Type** : étude de cas
 - **Points clés (bullets)** :
-  - 1. Quel rôle au sein du SOC est principalement chargé du triage initial et du filtrage des alertes ?
-  - 2. Quelle est la conséquence majeure d'un taux trop élevé de faux positifs dans la console d'un analyste ?
-  - 3. Qu'indique un MTTD très bas dans un rapport d'audit de SOC ?
-- **Notes orateur** : C'est le moment de tester vos connaissances sur l'organisation des centres opérationnels de sécurité. Répondez au questionnaire depuis vos écrans pour valider ces notions de triage et de métriques.
-- **Visuel suggéré** : QR Code d'accès au vote interactif à gauche, questions à choix multiples à droite.
-  - **alt-text** : QR Code d'accès au vote synchrone de validation des acquis.
-- **Élément interactif** : Quiz en ligne interactif avec affichage des scores en temps réel.
+  - 2013 : les outils **détectent** · le SOC de Bangalore **remonte**...
+  - ... et personne n'agit à Minneapolis : **40 millions de cartes**.
+  - Mêmes ingrédients que SolarWinds — issue inverse.
+  - La différence : le **processus de qualification et d'escalade**.
+- **Notes orateur** : Le parallèle en deux minutes (cas complet vu en B06) : ni le budget ni les outils ne différencient les deux affaires — le processus, si. C'est tout l'objet des playbooks : écrire QUI fait QUOI quand l'alerte tombe, et vérifier que la chaîne fonctionne. Relance chat : « quel détail vous marque le plus ? »
+- **Visuel suggéré** : Deux chaînes d'escalade côte à côte : l'une aboutit à une action, l'autre s'interrompt en pointillés.
+  - **alt-text** : Comparaison de deux chaînes de traitement d'alerte, l'une aboutie, l'autre interrompue.
+- **Élément interactif** : 💬 Chat — réactions aux deux affaires.
 
 ---
 
-### Slide 12 — Conclusion & Travail autonome
+### Slide 11 — Et chez vous ? La supervision
+- **Type** : sondage (opinion)
+- **Points clés (bullets)** :
+  - 📊 **Sondage n°5** : votre organisation a-t-elle une supervision de sécurité ?
+  - A) SOC interne — B) Externalisée (MSSP) — C) Aucune / je ne sais pas.
+- **Notes orateur** : C est majoritaire dans les PME — le point aveugle : des défenses, personne qui regarde. La voie réaliste : le MSSP, en vérifiant trois clauses (contexte métier, délais garantis — le MTTR s'écrit dans le contrat, réversibilité). Une supervision partielle (EDR + astreinte) vaut mieux que rien. Enchaîner sur le mini-scénario de l'alerte MFA du vendredi soir : « tapez A, B ou C » (réponse B — désactiver l'appareil, suspendre, vérifier par un autre canal : c'est l'alerte SolarWinds, et le week-end est la fenêtre préférée des attaquants).
+- **Visuel suggéré** : Trois salles : une salle de supervision animée, un écran de prestataire distant, une salle d'écrans éteints.
+  - **alt-text** : Trois niveaux de supervision de sécurité, du SOC interne à l'absence totale de surveillance.
+- **Élément interactif** : 📊 Sondage Livestorm n°5 (opinion) puis 🤔 mini-scénario en chat (A/B/C).
+
+---
+
+### Slide 12 — Quiz de validation
+- **Type** : quiz (sondages)
+- **Points clés (bullets)** :
+  - 📊 **Sondage n°6** : la mission première du L1 ?
+  - 📊 **Sondage n°7** : que mesurent MTTD et MTTR ?
+  - 📊 **Sondage n°8** : ce qui distingue le threat hunting ?
+- **Notes orateur** : Lancer les trois sondages à la suite (~2 min chacun), débriefs scriptés dans le support : le L1 trie, qualifie et escalade (ni héros, ni presse-bouton) ; les deux chronomètres vont ensemble ; le hunting part du principe que les outils ont raté quelque chose — hypothèse, traces, confirmation. Si le temps le permet, enchaîner sur le bonus n°9 (3h du matin, le SOAR).
+- **Visuel suggéré** : Trois cartes de quiz numérotées 6, 7, 8 avec l'icône de sondage Livestorm.
+  - **alt-text** : Trois cartes de questions de quiz numérotées, associées à des sondages en direct.
+- **Élément interactif** : 📊 Sondages Livestorm n°6 à 8 (+ n°9 en tampon).
+
+---
+
+### Slide 13 — Synthèse & prochaine session
 - **Type** : récap
 - **Points clés (bullets)** :
-  - **Résumé** : Rôles du SOC (L1 triage, L2 enquête, L3 expertise), indicateurs temporels (MTTD et MTTR), importance des playbooks de réaction, et gestion de la fatigue des alertes.
-  - **Devoirs** : Compléter le module *"Security Operations Center (SOC) Fundamentals"* sur IBM SkillsBuild (~1h30).
-  - **Recherche** : Trouver la définition d'un **SOAR** et expliquer comment il permet d'automatiser l'exécution des playbooks.
-  - Prochaine session : *SIEM, journalisation & détection (B17)*.
-- **Notes orateur** : Nous avons exploré le fonctionnement humain et organisationnel de la détection ! Faites le cours associé sur SkillsBuild et renseignez-vous sur les outils de type SOAR qui automatisent l'exécution des playbooks. La semaine prochaine, nous rentrerons dans le détail de l'outil technique principal du SOC : le SIEM. Bonne semaine à tous !
-- **Visuel suggéré** : Badge d'achèvement de cours d'IBM SkillsBuild pour le module Security Operations Center (SOC).
-  - **alt-text** : Badge de réussite du cours SOC d'IBM SkillsBuild.
+  - Trois métiers · un art (qualifier par le contexte) · deux chronomètres.
+  - Target et SolarWinds : la différence tenait en un geste — **vérifier**.
+  - Self-paced : SkillsBuild *« SOC Fundamentals »* + la définition d'un log (horodatage, source, événement).
+  - Prochaine session — B17 : le SIEM & l'analyse de logs + **Atelier de Synthèse 4**.
+- **Notes orateur** : Faire écrire dans le chat UN mot retenu, en lire 4-5. Rappeler le devoir (la recherche sur les logs prépare directement B17). Teaser B17 : « la matière première du SOC : les journaux. Vous lirez de VRAIS logs d'attaque ligne par ligne — une seule ligne peut contenir toute une tentative de piratage. » Terminer à l'heure exacte.
+- **Visuel suggéré** : Récapitulatif en trois vignettes (niveaux, qualification, chronomètres) et un panneau « B17 — Atelier » fléché.
+  - **alt-text** : Synthèse en trois vignettes du fonctionnement du SOC avec un panneau annonçant la session B17.
+- **Élément interactif** : Chat de clôture — « un mot que vous retenez ».
