@@ -1,5 +1,7 @@
 # Spécifications des slides — Session B14 : Gestion des risques
-Parcours : B 20 sessions  |  Module : D — Gouvernance, risque & conformité  |  Format : Spécifications Markdown
+Parcours : B 20 sessions  |  Module : D — Gouvernance, risques & conformité  |  Format : Spécifications Markdown
+
+> **Principe** : le texte affiché reste minimal (mots-clés, chiffres, schémas) ; le contenu riche est dans les notes orateur et le [plan de séance minuté](../plans-de-seance/B_S14_plan.md). Toutes les interactions passent par les sondages et le chat Livestorm.
 
 ---
 
@@ -7,167 +9,162 @@ Parcours : B 20 sessions  |  Module : D — Gouvernance, risque & conformité  |
 - **Type** : titre
 - **Points clés (bullets)** :
   - Gestion des risques
-  - Analyser les menaces, évaluer la criticité, construire un registre et traiter les risques
+  - Coter, arbitrer, décider — par écrit
   - Parcours B — Session B14
-- **Notes orateur** : Bienvenue dans cette quatorzième session. Aujourd'hui, nous allons étudier la gestion des risques. La sécurité absolue n'existe pas. Le rôle d'un professionnel en cybersécurité est d'évaluer les risques pour éclairer les choix de la direction générale. Nous allons apprendre à définir un risque, à évaluer sa criticité et à formaliser un registre des risques pragmatique.
-- **Visuel suggéré** : Représentation d'une balance à deux plateaux équilibrant d'un côté un cube de données dorées et de l'autre une pile d'icônes de menaces rouges (virus, foudre, erreur humaine).
-  - **alt-text** : Graphisme de balance mesurant les risques et la sécurité des données.
-- **Élément interactif** : Question sondage : "Selon vous, qu'est-ce qu'un risque acceptable pour une entreprise ?"
+- **Notes orateur** : Accueillir. Retour self-paced : « tapez dans le chat le risque NON informatique observé cette semaine » — lire 3-4 exemples : « pour chacun, quelqu'un a déjà décidé de le réduire, l'assurer, l'éviter ou le subir — ce soir, la même logique, mais méthodique. » Rappel B13 : PSSI signée, RSSI conseille / Direction assume — et l'enquête charte.
+- **Visuel suggéré** : Balance de précision pesant un nuage d'orage numérique contre des pièces de monnaie.
+  - **alt-text** : Balance pesant un risque cyber symbolisé par un orage contre son coût en pièces de monnaie.
+- **Élément interactif** : 💬 Chat d'accueil — le risque non-IT observé.
 
 ---
 
-### Slide 2 — Objectifs de la séance & Sommaire
+### Slide 2 — Objectifs & agenda
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - Articuler les notions fondamentales de menace, vulnérabilité, impact et probabilité.
-  - Concevoir et alimenter un registre des risques cybersécurité pragmatique.
-  - Classer et justifier les quatre options de traitement du risque (réduire, transférer, éviter, accepter).
-  - Sommaire : L'Équation du Risque (20 min), Le Registre des risques (20 min), Les 4 Options de Traitement (25 min), Exercice de qualification de scénario (15 min), Quiz (10 min).
-- **Notes orateur** : Nous commencerons par l'équation du risque pour comprendre de quoi il est composé. Puis, nous verrons comment structurer un registre des risques. Nous analyserons ensuite les quatre stratégies de traitement à notre disposition avant de réaliser une étude de cas en groupe et de finir par le quiz.
-- **Visuel suggéré** : Liste structurée présentant d'un côté les objectifs opérationnels et de l'autre le minutage de la séance synchrone de 90 minutes.
-  - **alt-text** : Tableau d'agenda minuté de la session synchrone sur la gestion des risques.
+  - Articuler l'équation du risque : actif, menace, vulnérabilité, impact, vraisemblance.
+  - Coter dans la matrice 4x4 : criticité brute → résiduelle.
+  - Choisir parmi les 4 traitements : réduire, transférer, éviter, accepter (par écrit).
+  - Agenda : équation → matrice → traitements → registre IA générative → Mondelez & Merck → quiz.
+- **Notes orateur** : Le fil rouge : le risque ne s'élimine pas, il s'ARBITRE — et l'analyse de risques est le traducteur entre la technique et la direction (des CVE aux euros). Deux procès d'assurance à un milliard illustreront les limites du transfert.
+- **Visuel suggéré** : Deux colonnes présentant les objectifs et l'agenda de la séance.
+  - **alt-text** : Tableau présentant les objectifs d'apprentissage et les étapes de la session.
 
 ---
 
-### Slide 3 — L'Équation fondamentale du risque
-- **Type** : contenu
+### Slide 3 — Brise-glace : l'« acte de guerre »
+- **Type** : sondage
 - **Points clés (bullets)** :
-  - Un risque n'est pas une certitude, c'est un événement redouté potentiel.
-  - **Formule du Risque** : $\text{Risque} = \text{Menace} \times \text{Vulnérabilité} \times \text{Impact}$
-  - **Menace** : Facteur externe ou interne voulant causer un dommage (ex: attaquant, panne, incendie).
-  - **Vulnérabilité** : Faiblesse interne du système exploitable par la menace (ex: absence de mise à jour, salarié non formé).
-  - **Impact** : Gravité des conséquences si le scénario se produit (financière, réputation, juridique).
-- **Notes orateur** : La gestion des risques repose sur une équation simple. Pour qu'un risque existe, il faut une menace, une vulnérabilité exploitable et des conséquences réelles. S'il n'y a pas d'impact ou pas de vulnérabilité, le risque est nul. Par exemple, un virus redoutable (menace) n'est pas un risque pour vous si vos ordinateurs ne possèdent pas la faille correspondante (vulnérabilité).
-- **Visuel suggéré** : Schéma d'une multiplication visuelle de trois blocs (Menace $\times$ Vulnérabilité $\times$ Impact) aboutissant à une boîte rouge marquée "Risque".
-  - **alt-text** : Schéma mathématique simplifié représentant les composantes d'un risque.
+  - 📊 **Sondage n°1** : un assureur peut-il refuser d'indemniser une cyberattaque en invoquant un « acte de guerre » ?
+  - A) Oui, c'est déjà arrivé — B) Impossible juridiquement — C) Seulement en guerre déclarée
+- **Notes orateur** : Lancer le sondage n°1 (60-90 s). Réponse A : après NotPetya (B03), attribuée à un sabotage étatique, des assureurs ont invoqué l'exclusion de guerre — 100 M$ pour Mondelez, 1,4 Md$ pour Merck. Moralité d'ouverture : transférer un risque ne le fait pas disparaître — encore faut-il lire la police.
+- **Visuel suggéré** : Contrat d'assurance dont une clause est surlignée en rouge, sur fond d'écrans en panne.
+  - **alt-text** : Contrat d'assurance avec une clause d'exclusion surlignée devant des écrans touchés par une cyberattaque.
+- **Élément interactif** : 📊 Sondage Livestorm n°1 (brise-glace).
 
 ---
 
-### Slide 4 — Évaluer la criticité du risque
+### Slide 4 — L'équation du risque
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - La criticité d'un risque se calcule selon deux axes majeurs :
-    - **Probabilité (ou Vraisemblance)** : Quelle est la chance que cela arrive ? (Échelle de 1 à 4).
-    - **Gravité (ou Impact)** : Quel sera le niveau de dégâts si cela arrive ? (Échelle de 1 à 4).
-  - **Criticité (C)** = $\text{Probabilité} \times \text{Gravité}$.
-  - Les risques à traiter en priorité absolue sont ceux ayant une criticité maximale (Rouge).
-- **Notes orateur** : Pour classer nos risques, on évalue la probabilité et la gravité de l'impact. On multiplie ces deux valeurs pour obtenir la criticité. Un risque rare mais aux conséquences désastreuses aura une criticité élevée. Un risque fréquent mais sans impact réel sera classé comme prioritaire bas.
-- **Visuel suggéré** : Une matrice de criticité $4\times4$ colorée avec des cases vertes (risque faible), jaunes (risque moyen) et rouges (risque critique).
-  - **alt-text** : Matrice $4\times4$ d'évaluation de la criticité des risques.
+  - **Actif** (la valeur) · **Menace** (B02) · **Vulnérabilité** (B03-B08) · **Impact** (B01) · **Vraisemblance**.
+  - La grammaire : « la MENACE exploite la VULNÉRABILITÉ pour atteindre l'ACTIF et causer un IMPACT. »
+  - « Le pare-feu est vieux » n'est PAS un risque — c'est une vulnérabilité.
+- **Notes orateur** : Relance chat d'entrée : « rouler sans ceinture, code de carte dans le téléphone : pourquoi certains le font-ils ? » — la perception du risque est biaisée, la méthode corrige. Faire reformuler un exemple complet par le chat. Vous connaissez déjà tous les ingrédients — ce soir on les assemble. C'est la question n°8 du quiz.
+- **Visuel suggéré** : Engrenage à cinq pièces étiquetées (actif, menace, vulnérabilité, impact, vraisemblance) qui s'emboîtent en une phrase.
+  - **alt-text** : Cinq pièces d'engrenage formant la phrase type de formulation d'un risque cyber.
+- **Élément interactif** : 💬 Chat — perception du risque et reformulation.
 
 ---
 
-### Slide 5 — Qu'est-ce qu'un registre des risques ?
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - Tableau de suivi centralisant l'analyse des risques d'une organisation.
-  - Colonnes minimales d'un registre pragmatique :
-    - **ID / Nom du scénario** (ex: R01 - Attaque par Ransomware).
-    - **Actif support** (ex: Serveurs de fichiers).
-    - **Criticité brute** (Probabilité $\times$ Gravité avant mesures).
-    - **Mesures existantes / prévues** (ex: Sauvegarde 3-2-1, EDR).
-    - **Criticité résiduelle** (Le niveau de risque restant après application des protections).
-    - **Propriétaire du risque** (Le manager responsable du suivi).
-- **Notes orateur** : Le registre des risques est le tableau de bord du RSSI. Il recense tous les scénarios redoutés, leur niveau de dangerosité initial (risque brut), les défenses en place pour les atténuer, et le niveau de danger restant après ces efforts (le risque résiduel). Enfin, chaque risque doit avoir un responsable métier affecté pour s'assurer du suivi.
-- **Visuel suggéré** : Capture d'écran épurée d'un tableau de registre des risques avec des lignes colorées et des indicateurs de criticité brute vs résiduelle.
-  - **alt-text** : Structure type d'un tableau de suivi de registre des risques.
-
----
-
-### Slide 6 — Les 4 Stratégies de Traitement du Risque
+### Slide 5 — La matrice de criticité 4x4
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - **Réduire (ou Atténuer)** : Mettre en œuvre des contrôles de sécurité (ex: installer un pare-feu).
-  - **Transférer (ou Partager)** : Déplacer l'impact financier (ex: souscrire une cyber-assurance).
-  - **Éviter** : Supprimer l'activité risquée (ex: refuser d'héberger une base de données trop sensible).
-  - **Accepter** : Décider de ne rien faire car le coût de protection dépasse la valeur de l'actif ou parce que le risque résiduel est jugé tolérable par la direction.
-- **Notes orateur** : Une fois le risque évalué, que fait-on ? On a quatre options. Le plus souvent, on réduit le risque avec des outils de sécurité. On peut aussi le transférer en prenant une assurance. On peut l'éviter en renonçant au projet trop dangereux. Enfin, on peut l'accepter consciemment, parce que le sécuriser coûterait plus cher que ce qu'il peut nous faire perdre.
-- **Visuel suggéré** : Un panneau de signalisation routière quadri-directionnel avec les quatre flèches étiquetées : Réduire, Transférer, Éviter, Accepter.
-  - **alt-text** : Les 4 voies de traitement d'un risque de sécurité.
+  - **Criticité = Vraisemblance (1-4) × Gravité (1-4)** → score de 1 à 16.
+  - Zones : faible (1-4) · moyen (5-8) · **critique (9-16)**.
+  - La valeur de la cotation : la **discussion** qu'elle force et la **priorisation** qu'elle produit.
+- **Notes orateur** : Le registre des risques : la mémoire de l'arbitrage. La cotation est qualitative et collégiale — on traite le 12 avant le 4. Relance chat : « cotez : incendie du local serveur — V ? G ? » — lire les cotations, souligner les écarts : « vos désaccords sont exactement la discussion qu'une entreprise doit avoir. »
+- **Visuel suggéré** : Matrice 4x4 en dégradé vert-jaune-rouge avec des pastilles de risques positionnées.
+  - **alt-text** : Matrice de criticité seize cases colorées du vert au rouge avec des risques positionnés.
+- **Élément interactif** : 💬 Chat — cotation express collective.
 
 ---
 
-### Slide 7 — Réduire vs Transférer : Exemples concrets
-- **Type** : contenu
+### Slide 6 — Les 4 traitements du risque
+- **Type** : schéma
 - **Points clés (bullets)** :
-  - **Scénario** : Risque de vol d'ordinateurs portables de commerciaux en déplacement.
-  - **Option Réduction** :
-    - Action : Activer le chiffrement BitLocker sur tous les postes + imposer un mot de passe fort.
-    - Résultat : Les données sont protégées, le risque de fuite de données est réduit.
-  - **Option Transfert** :
-    - Action : Prendre un contrat d'assurance vol de matériel.
-    - Résultat : L'assurance rembourse le matériel volé, mais ne protège pas contre la fuite de données !
-- **Notes orateur** : Il est crucial de comprendre la différence entre réduire et transférer. Si vous chiffrez le disque, vous réduisez le risque de fuite. Si vous prenez une assurance, vous transférez le coût du vol du PC. L'assurance rembourse le matériel, mais elle ne pourra jamais effacer le fait que vos données clients ont été lues par un tiers. Les deux options sont souvent complémentaires.
-- **Visuel suggéré** : Comparaison face-à-face : à gauche, un PC portable avec un bouclier BitLocker (Réduction). À droite, un contrat d'assurance papier tamponné (Transfert).
-  - **alt-text** : Comparatif pratique entre la réduction et le transfert du risque.
+  - **Réduire** : abaisser la vraisemblance (EDR, MFA) ou l'impact (sauvegardes).
+  - **Transférer** : assurance, externalisation — des euros, pas la réputation.
+  - **Éviter** : renoncer — parfois la meilleure décision.
+  - **Accepter** : légitime, MAIS écrit, signé, daté, réexaminé.
+- **Notes orateur** : Dérouler l'analogie de l'alpinisme : casque et guide / assurance hélicoptère (en vérifiant l'altitude couverte !) / renoncer au sommet / y aller en le disant par écrit. Question rhétorique : quelle stratégie choisit-on le plus souvent sans s'en rendre compte ? ACCEPTER, par silence — d'où le registre. Rappel B13 : un risque non arbitré est un risque accepté par accident.
+- **Visuel suggéré** : Carrefour de montagne à quatre sentiers étiquetés, un alpiniste consultant sa carte.
+  - **alt-text** : Alpiniste choisissant entre quatre sentiers représentant les stratégies de traitement du risque.
 
 ---
 
-### Slide 8 — Le concept de Risque Acceptable (Appétence au risque)
-- **Type** : contenu
+### Slide 7 — Activité : la ligne de registre — l'IA générative chez EcoLog
+- **Type** : activité (sondages)
 - **Points clés (bullets)** :
-  - Il est impossible et trop coûteux de réduire tous les risques à zéro $\rightarrow$ la sécurité totale n'existe pas.
-  - **Appétence au risque** : Le niveau de risque qu'une organisation est prête à supporter pour atteindre ses objectifs.
-  - L'acceptation du risque doit être une **décision formelle de la Direction Générale**, signée et documentée.
-  - Le RSSI conseille, mais ne signe pas l'acceptation finale des risques (pas de délégation de responsabilité juridique).
-- **Notes orateur** : Le risque zéro n'existe pas. L'entreprise doit définir sa tolérance ou appétence au risque. Ce choix n'incombe pas au RSSI. C'est le rôle de la direction générale de décider si elle accepte un risque ou si elle veut investir pour le réduire. Le RSSI est là pour apporter les faits et les chiffrages nécessaires à cette décision.
-- **Visuel suggéré** : Une ligne rouge horizontale "Seuil d'acceptabilité" sur un graphique, avec des barres de risques passant au-dessus (à traiter) et d'autres restant en dessous (acceptées).
-  - **alt-text** : Graphique de représentation du seuil d'acceptation du risque en entreprise.
+  - Le marketing colle contrats et données clients dans des IA publiques gratuites.
+  - 📊 **Sondage n°2** : la cotation brute ? · 📊 **n°3** : la stratégie ? · 📊 **n°4** : la cotation résiduelle ?
+  - La ligne de registre se remplit à l'écran au fil des votes.
+- **Notes orateur** : Lancer les trois sondages avec débrief : n°2 — on MULTIPLIE : 12/16, critique ; n°3 — blocage + charte + IA interne = Réduire (on garde l'usage, on abaisse la vraisemblance — l'alternative sécurisée évite le contournement, B08) ; n°4 — 3/16, jamais nul, et la gravité ne bouge pas : les mesures réduisent la probabilité, pas les conséquences (abaisser la gravité = minimiser les données — teaser B15). Conclure : « exactement l'exercice de l'Atelier 3, la semaine prochaine, sur MedDistri. »
+- **Visuel suggéré** : Ligne de registre vide à six champs projetée, remplie progressivement.
+  - **alt-text** : Ligne de registre des risques à compléter progressivement pendant l'activité collective.
+- **Élément interactif** : 📊 Sondages Livestorm n°2 à 4 — construction collective de la ligne de registre.
 
 ---
 
-### Slide 9 — Méthodes d'analyse de risques officielles
-- **Type** : contenu
+### Slide 8 — Le paysage en chiffres
+- **Type** : chiffres clés
 - **Points clés (bullets)** :
-  - Pour structurer l'analyse, on utilise des cadres reconnus :
-  - **EBIOS RM** (France - ANSSI) :
-    - Axé sur les scénarios de menace par rapport aux objectifs stratégiques et aux sources de menaces.
-  - **ISO 27005** :
-    - Standard international fournissant les lignes directrices pour gérer les risques liés à l'information.
-  - **MEHARI** (Clusif) :
-    - Méthode d'évaluation quantitative et qualitative basée sur des bases de connaissances d'attaques.
-- **Notes orateur** : Pour faire une analyse de risques professionnelle, nous ne partons pas d'une page blanche. Nous utilisons des méthodologies structurées. En France, EBIOS RM de l'ANSSI est la référence incontournable. À l'international, c'est l'ISO 27005 qui sert de guide méthodologique pour mettre en place la gestion des risques de notre SMSI.
-- **Visuel suggéré** : Logotypes des référentiels EBIOS RM, ISO 27005 et MEHARI présentés de façon harmonieuse.
-  - **alt-text** : Les principaux référentiels méthodologiques de gestion des risques.
+  - **~100 M$** : Mondelez vs Zurich — l'exclusion de guerre invoquée (2018 → accord 2022).
+  - **1,4 Md$** : Merck — la justice donne raison à l'assuré (2023, accord 2024).
+  - **2023** : le marché (Lloyd's) réécrit ses clauses d'exclusion des attaques étatiques.
+- **Notes orateur** : Trois lectures : le transfert a des limites écrites en petits caractères ; la qualification juridique d'une attaque (crime ? guerre ?) vaut des milliards ; le marché s'adapte — les polices d'aujourd'hui exigent un socle de sécurité et précisent leurs exclusions. Transition : les deux histoires.
+- **Visuel suggéré** : Trois grands chiffres en typographie XXL avec leurs sources et années en petit.
+  - **alt-text** : Trois statistiques géantes sur les contentieux d'assurance cyber avec leurs sources.
 
 ---
 
-### Slide 10 — Activité pratique : Remplir une ligne de registre
+### Slide 9 — Affaire n°1 : Mondelez vs Zurich (2018-2022)
 - **Type** : étude de cas
 - **Points clés (bullets)** :
-  - **Scénario** : L'entreprise EcoLog stocke ses dossiers financiers dans un partage réseau accessible par tous les salariés, sans sauvegarde externe.
-  - **Objectifs de l'activité** :
-    - 1. Qualifier la menace et la vulnérabilité de ce scénario.
-    - 2. Estimer la Probabilité (1 à 4) et la Gravité (1 à 4) brute.
-    - 3. Proposer deux mesures de réduction réalistes.
-    - 4. Estimer la criticité résiduelle après ces mesures.
-- **Notes orateur** : Passons à la pratique. Nous allons analyser un scénario critique pour EcoLog : le stockage de ses fichiers financiers sans restriction d'accès et sans sauvegarde déconnectée. Remplissez en équipe la ligne de registre des risques correspondante en calculant la criticité avant et après vos propositions de sécurité.
-- **Visuel suggéré** : Ligne de tableau de registre vierge avec des champs éditables à remplir pendant l'exercice.
-  - **alt-text** : Ligne d'exercice d'un registre des risques à remplir en équipe.
-- **Élément interactif** : Travail collaboratif en sous-groupes de 15 minutes avec mise en commun au tableau blanc.
+  - NotPetya détruit serveurs et logistique : **~100 M$** déclarés.
+  - L'assureur refuse : exclusion des « **actes de guerre** » (attaque attribuée à un État).
+  - Quatre ans de procédure → accord **confidentiel** (2022).
+- **Notes orateur** : Raconter : le géant d'Oreo et Milka, victime collatérale de NotPetya ; l'attribution étatique publique qui se retourne contre la victime ; l'industrie entière suspendue au procès. Leçons : le contrat a des exclusions ; l'attribution géopolitique (B02) a des conséquences assurantielles ; l'incertitude juridique est elle-même un risque — quatre ans pour connaître le sort de 100 M$.
+- **Visuel suggéré** : Tablettes de chocolat et biscuits stylisés bloqués sur un tapis roulant à l'arrêt, contrat d'assurance en surimpression.
+  - **alt-text** : Chaîne de production agroalimentaire à l'arrêt derrière un contrat d'assurance contesté.
 
 ---
 
-### Slide 11 — Quiz de validation
-- **Type** : quiz
+### Slide 10 — Affaire n°2 : Merck (2017-2024)
+- **Type** : étude de cas
 - **Points clés (bullets)** :
-  - 1. Quel élément de l'équation du risque correspond à l'absence de correctifs sur un serveur ?
-  - 2. Si un risque a une Probabilité de 3 et une Gravité de 4, quelle est sa criticité brute sur une échelle de 16 ?
-  - 3. Quelle option de traitement correspond à l'achat d'une police de cyber-assurance ?
-- **Notes orateur** : C'est le moment de tester votre compréhension de la gestion des risques. Répondez au quiz depuis vos postes de travail. Pensez bien à l'équation fondamentale et à la différence entre réduction et transfert.
-- **Visuel suggéré** : QR Code d'accès au questionnaire à gauche et questions à choix multiples à droite.
-  - **alt-text** : QR Code vert d'accès au système de vote en direct.
-- **Élément interactif** : Vote synchrone en temps réel avec commentaire de correction par le mentor.
+  - Même attaque, même clause — **1,4 milliard de dollars** réclamés.
+  - Les tribunaux donnent **raison à Merck** (2023) : la clause « guerre » ne s'applique pas telle quelle au cyber.
+  - Accord définitif en 2024 — et le marché **réécrit** ses exclusions.
+- **Notes orateur** : Raconter : 40 000 machines touchées, la production de vaccins perturbée ; la justice du New Jersey : une clause rédigée pour des conflits armés ne couvre pas une cyberattaque touchant des civils hors zone de guerre. Conséquence : les exigences du Lloyd's (2023) — les contrats récents définissent précisément les attaques étatiques exclues. Leçon opérationnelle : faire relire ses clauses cyber par un juriste — quelques milliers d'euros contre 1,4 milliard d'incertitude. Relance chat : « quel détail vous marque le plus ? »
+- **Visuel suggéré** : Marteau de justice tranchant entre un missile barré et un écran d'ordinateur, chiffre « 1,4 Md$ » en arrière-plan.
+  - **alt-text** : Justice tranchant qu'une cyberattaque n'est pas un acte de guerre au sens du contrat d'assurance.
+- **Élément interactif** : 💬 Chat — réactions aux deux affaires.
 
 ---
 
-### Slide 12 — Conclusion & Travail autonome
+### Slide 11 — Et chez vous ? L'assurance cyber
+- **Type** : sondage (opinion)
+- **Points clés (bullets)** :
+  - 📊 **Sondage n°5** : votre organisation a-t-elle une assurance cyber ?
+  - A) Oui, et je sais ce qu'elle couvre — B) Oui, mais mystère — C) Non / je ne sais pas.
+- **Notes orateur** : Selon les baromètres AMRAE, l'assurance cyber reste concentrée sur les grandes entreprises. Deux messages : elle EXIGE désormais un socle (MFA, sauvegardes, EDR — le questionnaire ressemble à notre parcours) ; et pour les B : que couvre notre police, qu'exclut-elle ? Mondelez l'a découvert après le sinistre. Enchaîner sur le mini-scénario de l'acceptation orale : « tapez A, B ou C » (réponse B — la faire formaliser : fiche signée, datée, réexaminée ; l'acceptation orale n'engage que celui qui l'écoute).
+- **Visuel suggéré** : Parapluie dont certaines baleines sont manquantes, étiqueté « police cyber ».
+  - **alt-text** : Parapluie incomplet symbolisant une couverture d'assurance cyber aux exclusions méconnues.
+- **Élément interactif** : 📊 Sondage Livestorm n°5 (opinion) puis 🤔 mini-scénario en chat (A/B/C).
+
+---
+
+### Slide 12 — Quiz de validation
+- **Type** : quiz (sondages)
+- **Points clés (bullets)** :
+  - 📊 **Sondage n°6** : pourquoi le résiduel n'est-il jamais nul ?
+  - 📊 **Sondage n°7** : que transfère une cyber-assurance ?
+  - 📊 **Sondage n°8** : la formulation correcte d'un risque ?
+- **Notes orateur** : Lancer les trois sondages à la suite (~2 min chacun), débriefs scriptés dans le support : la sécurité parfaite n'existe pas — le résiduel s'accepte par écrit ; l'assurance transfère l'impact financier, dans les limites du contrat (Mondelez/Merck en une question) ; la grammaire du risque — « le pare-feu est vieux » n'est qu'une vulnérabilité. Si le temps le permet, enchaîner sur le bonus n°9 (le groupe électrogène).
+- **Visuel suggéré** : Trois cartes de quiz numérotées 6, 7, 8 avec l'icône de sondage Livestorm.
+  - **alt-text** : Trois cartes de questions de quiz numérotées, associées à des sondages en direct.
+- **Élément interactif** : 📊 Sondages Livestorm n°6 à 8 (+ n°9 en tampon).
+
+---
+
+### Slide 13 — Synthèse & prochaine session
 - **Type** : récap
 - **Points clés (bullets)** :
-  - **Résumé** : $\text{Risque} = \text{Menace} \times \text{Vulnérabilité} \times \text{Impact}$, Criticité ($P\times G$), 4 options de traitement (réduire, transférer, éviter, accepter), et rôle consultatif du RSSI.
-  - **Devoirs** : Compléter le module *"Cybersecurity Risk Management"* sur IBM SkillsBuild (~1h30).
-  - **Préparation** : Lire le document d'introduction à EBIOS RM sur le site de l'ANSSI.
-  - Prochaine session : *Conformité & réglementations vie privée (B15)*.
-- **Notes orateur** : Nous avons bouclé les bases de la gestion des risques ! Réalisez le module SkillsBuild pour approfondir. La semaine prochaine, nous aborderons le cadre légal et la conformité, en particulier le RGPD et le rôle de la CNIL, ce qui marquera la fin de notre module GRC et le lancement du Mini-projet 3. Bonne semaine !
-- **Visuel suggéré** : Badge d'achèvement de cours d'IBM SkillsBuild pour la gestion des risques de sécurité.
-  - **alt-text** : Badge de réussite du cours Risk Management d'IBM SkillsBuild.
+  - Une grammaire (menace → vulnérabilité → actif → impact) · une mesure (V × G) · quatre décisions.
+  - Accepter, c'est **par écrit** — et transférer, c'est **après lecture des exclusions**.
+  - Self-paced : SkillsBuild *« Governance and Risk Management - Part 2 »* + réviser B13-B14 pour l'Atelier 3 + observer les bandeaux cookies.
+  - Prochaine session — B15 : Conformité & vie privée + **Atelier de Synthèse 3**.
+- **Notes orateur** : Faire écrire dans le chat UN mot retenu, en lire 4-5. Insister sur la préparation de l'Atelier 3 (réviser la matrice). Teaser B15 : « la conformité — RGPD, CNIL — et VOUS coterez les risques de MedDistri. Avec des amendes bien réelles : 50 millions pour Google, 1,2 milliard pour Meta. La loi a des dents. » Terminer à l'heure exacte.
+- **Visuel suggéré** : Récapitulatif en quatre vignettes (équation, matrice, carrefour des traitements, contrat lu à la loupe) et un panneau « B15 — Atelier » fléché.
+  - **alt-text** : Synthèse en quatre vignettes de la gestion des risques avec un panneau annonçant la session B15 et son atelier.
+- **Élément interactif** : Chat de clôture — « un mot que vous retenez ».
