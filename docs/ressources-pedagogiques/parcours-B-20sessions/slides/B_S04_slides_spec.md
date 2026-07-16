@@ -1,162 +1,189 @@
 # Spécifications des slides — Session B04 : Ingénierie sociale & facteur humain
 Parcours : B 20 sessions  |  Module : A — Fondations  |  Format : Spécifications Markdown
 
+> **Principe** : le texte affiché reste minimal (mots-clés, chiffres, schémas) ; le contenu riche est dans les notes orateur et le [plan de séance minuté](../plans-de-seance/B_S04_plan.md). Toutes les interactions passent par les sondages et le chat Livestorm.
+
 ---
 
 ### Slide 1 — Page de garde
 - **Type** : titre
 - **Points clés (bullets)** :
   - Ingénierie sociale & facteur humain
-  - Décoder les mécanismes de la manipulation psychologique
+  - L'attaque qui ne vise ni vos machines, ni vos logiciels... mais vous
   - Parcours B — Session B04
-- **Notes orateur** : Bonjour à tous et bienvenue dans cette quatrième session. Aujourd'hui, nous n'allons pas parler de serveurs ou de lignes de code, mais du maillon le plus ciblé par les attaquants : l'être humain. Nous allons voir comment les pirates manipulent notre psychologie pour contourner les défenses les plus sophistiquées.
-- **Visuel suggéré** : Fond sombre avec l'illustration stylisée d'un cerveau humain connecté à des engrenages numériques ou un labyrinthe virtuel.
-  - **alt-text** : Graphisme représentant un cerveau humain stylisé avec des connexions de circuits imprimés verts sur fond sombre.
-- **Élément interactif** : Question sondage pour savoir qui a reçu un SMS ou un appel frauduleux dans la semaine passée.
+- **Notes orateur** : Accueillir : dernière session du module Fondations. Retour sur le self-paced : « qui a vu la vidéo Stuxnet ? Tapez dans le chat UNE étape de la Kill Chain que vous y avez reconnue. » Rappel express de B03. Teaser tenu : l'histoire des 19 millions d'euros perdus sans un seul malware, c'est ce soir.
+- **Visuel suggéré** : Fond sombre avec l'illustration stylisée d'un cerveau humain connecté à des engrenages numériques.
+  - **alt-text** : Graphisme représentant un cerveau humain stylisé avec des connexions de circuits imprimés sur fond sombre.
+- **Élément interactif** : 💬 Chat d'accueil — les étapes de la Kill Chain repérées dans Stuxnet.
 
 ---
 
-### Slide 2 — Objectifs de la séance & Sommaire
+### Slide 2 — Objectifs & agenda
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - Identifier les 5 leviers psychologiques de la manipulation.
-  - Différencier Phishing, Spear-phishing, Smishing et Vishing.
-  - Concevoir des règles d'hygiène numérique efficaces pour une entreprise.
-  - Sommaire : La psychologie de l'ingénierie sociale (20 min), Les canaux d'attaque (20 min), L'hygiène numérique (15 min), Activité Fiche d'onboarding (25 min), Quiz (10 min).
-- **Notes orateur** : Au cours de cette séance, nous allons comprendre les ressorts psychologiques derrière les arnaques comme le phishing. Nous étudierons ensuite les différents canaux utilisés (e-mail, SMS, téléphone) avant de rédiger ensemble un kit d'accueil sur l'hygiène cyber.
-- **Visuel suggéré** : Deux colonnes épurées détaillant d'un côté les objectifs pédagogiques et de l'autre l'organisation temporelle.
-  - **alt-text** : Liste structurée présentant l'agenda minuté de la session et les compétences clés ciblées.
+  - Décoder les 5 leviers psychologiques de la manipulation.
+  - Distinguer phishing, spear-phishing, smishing, vishing, baiting et BEC.
+  - Construire les réflexes d'hygiène numérique et la vérification hors canal.
+  - Agenda : leviers → activité « Décodez le levier » → canaux → Pathé & Arup → hygiène → quiz.
+- **Notes orateur** : Ce soir, aucune ligne de code : nous étudions le maillon le plus ciblé — l'humain. Nous apprendrons à nommer les leviers de manipulation, à reconnaître les canaux, puis nous décortiquerons deux affaires à plusieurs dizaines de millions avant de repartir avec des réflexes concrets.
+- **Visuel suggéré** : Deux colonnes épurées détaillant les objectifs pédagogiques et l'agenda de la séance.
+  - **alt-text** : Liste structurée présentant l'agenda de la session et les compétences clés ciblées.
 
 ---
 
-### Slide 3 — Qu'est-ce que l'ingénierie sociale ?
-- **Type** : contenu
+### Slide 3 — Brise-glace : 60 secondes chrono
+- **Type** : sondage
 - **Points clés (bullets)** :
-  - **Définition** : L'art de manipuler des personnes pour les inciter à accomplir des actes ou divulguer des informations confidentielles.
-  - Cible les faiblesses cognitives humaines plutôt que les failles matérielles ou logicielles.
-  - L'attaquant exploite la confiance naturelle et le désir d'aider.
-- **Notes orateur** : Pourquoi passer des mois à chercher une faille informatique complexe si un simple email ou appel téléphonique peut convaincre un employé de donner ses identifiants d'accès ? C'est le principe de l'ingénierie sociale : pirater l'humain plutôt que la machine.
-- **Visuel suggéré** : Illustration d'une marionnette contrôlée par des fils reliés à un clavier d'ordinateur.
-  - **alt-text** : Dessin conceptuel représentant des mains manipulant des fils de marionnette au-dessus d'un poste de travail informatique.
+  - 📊 **Sondage n°1** : temps médian entre l'ouverture d'un phishing et la saisie des identifiants ?
+  - A) Moins d'une minute — B) Un quart d'heure — C) Plus d'une heure
+- **Notes orateur** : Lancer le sondage n°1 (60-90 s). Réponse A : moins de 60 secondes en médiane — ~21 s pour cliquer, ~28 s pour saisir (Verizon DBIR 2024). La manipulation est conçue pour faire agir AVANT de réfléchir. L'objectif de la session : installer le réflexe qui fait gagner LA minute qui déjoue presque tout.
+- **Visuel suggéré** : Chronomètre géant affichant 60 secondes avec un curseur de souris approchant d'un lien.
+  - **alt-text** : Chronomètre marquant une minute à côté d'un curseur prêt à cliquer sur un lien d'e-mail frauduleux.
+- **Élément interactif** : 📊 Sondage Livestorm n°1 (brise-glace).
 
 ---
 
-### Slide 4 — Les leviers de la manipulation (1/2)
+### Slide 4 — Les 5 leviers psychologiques
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - **L'Autorité** : Se faire passer pour un supérieur, un policier ou un avocat (Ex : L'arnaque au président).
-  - **L'Urgence** : Empêcher la réflexion logique en instaurant une limite de temps stricte.
-  - **La Sympathie / Réciprocité** : Créer un lien amical ou feindre de rendre service (Ex : Le faux support informatique).
-- **Notes orateur** : Les manipulateurs utilisent des déclencheurs psychologiques universels. L'autorité nous pousse à obéir sans poser de questions. L'urgence crée un stress qui court-circuite notre esprit critique. La sympathie nous incite à aider quelqu'un qui se montre aimable avec nous.
-- **Visuel suggéré** : Trois encadrés colorés présentant chacun un levier avec des icônes explicites : un insigne de police (autorité), un sablier (urgence) et un visage souriant (sympathie).
-  - **alt-text** : Schéma conceptuel illustrant l'autorité, l'urgence et la sympathie avec des explications succinctes de cas d'usage cyber.
+  - **Autorité** : le PDG, l'avocat, le policier.
+  - **Urgence** : « dans 2 heures, votre compte sera suspendu ».
+  - **Sympathie** : le faux support qui « rend service ».
+  - **Peur** : l'amende, les poursuites.
+  - **Preuve sociale** : « tous vos collègues l'ont déjà fait ».
+- **Notes orateur** : L'ingénierie sociale attaque la décision humaine, pas la machine : l'attaquant fabrique un contexte où la victime contourne elle-même les règles. Dérouler les 5 leviers avec leurs exemples. Les leviers se combinent : autorité + urgence + secret = le cocktail du BEC. Pour les curieux : ce sont les principes d'influence de Cialdini — le marketing utilise les mêmes. Relance chat : « lequel avez-vous déjà vu dans un message reçu ? »
+- **Visuel suggéré** : Cinq cartes à jouer illustrées, une par levier, disposées en éventail comme une main de poker.
+  - **alt-text** : Cinq cartes à jouer représentant les leviers psychologiques de la manipulation disposées en éventail.
+- **Élément interactif** : 💬 Chat — « quel levier avez-vous déjà rencontré ? »
 
 ---
 
-### Slide 5 — Les leviers de la manipulation (2/2)
+### Slide 5 — Activité : Décodez le levier
+- **Type** : activité (sondages)
+- **Points clés (bullets)** :
+  - Trois messages piégés, lus avec le ton.
+  - 📊 **Sondages n°2, 3, 4** : quel est le levier DOMINANT ?
+  - « L'avocat du PDG » · « Le colis à 1,95 € » · « Julien du support »
+- **Notes orateur** : Lire chaque message avec le ton approprié (pressant, anodin, chaleureux), puis vote et débrief. N°2 : autorité + urgence + secret — le trio du BEC ; le secret est le signal d'alarme n°1. N°3 : urgence + montant dérisoire — l'objectif n'est pas 1,95 €, c'est la carte complète. N°4 : sympathie — et la demande finale est votre code MFA, celui qui valide la connexion que L'ATTAQUANT est en train de faire. Règle absolue : ce code ne se communique jamais.
+- **Visuel suggéré** : Trois bulles de message (e-mail, SMS, appel téléphonique) avec un point d'interrogation au centre.
+  - **alt-text** : Trois bulles de conversation représentant un e-mail, un SMS et un appel, autour d'un point d'interrogation.
+- **Élément interactif** : 📊 Sondages Livestorm n°2 à 4 — identification collective des leviers.
+
+---
+
+### Slide 6 — Les canaux d'attaque
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - **La Peur / Intimidation** : Utiliser des menaces de sanctions pour forcer l'action (Ex : Faux mails d'amendes administratives).
-  - **La Preuve sociale** : Faire croire que les collègues ont déjà effectué l'action pour rassurer la victime.
-  - L'erreur humaine est souvent le résultat d'une pression psychologique extrême.
-- **Notes orateur** : Nous complétons nos leviers avec la peur, qui paralyse et force l'obéissance immédiate sous la menace de sanctions. Enfin, la preuve sociale joue sur notre instinct grégaire : si l'attaquant nous affirme que toute notre équipe a déjà mis à jour son mot de passe sur le lien fourni, nous le ferons avec moins de méfiance.
-- **Visuel suggéré** : Deux encadrés comparatifs avec des icônes de panneau de danger (peur) et de groupe de personnes (preuve sociale).
-  - **alt-text** : Graphique présentant la peur et la preuve sociale comme facteurs clés de décision sous contrainte dans un contexte d'entreprise.
+  - **Phishing** : e-mail massif — la pêche au filet.
+  - **Spear-phishing** : ciblé via l'OSINT — la pêche au harpon.
+  - **Smishing** : par SMS (faux colis, fausse amende).
+  - **Vishing** : par téléphone — vise souvent les codes MFA.
+  - **Baiting** : la clé USB « Salaires 2026 » sur le parking.
+  - **BEC** : la fraude au président — l'aboutissement de tous les autres.
+- **Notes orateur** : Même psychologie, canaux différents. Le spear-phishing se nourrit d'OSINT : tout ce que LinkedIn et le site de l'entreprise révèlent (fonctions, hiérarchie, projets, absences). Le smishing profite du petit écran qui masque les indices. Le vishing ajoute la voix — et bientôt la slide Arup montrera que même la vidéo se falsifie.
+- **Visuel suggéré** : Six icônes de canaux (enveloppe, harpon, téléphone-SMS, combiné, clé USB, cravate) reliées à une même silhouette de cible humaine.
+  - **alt-text** : Six icônes représentant les canaux d'ingénierie sociale convergeant vers une silhouette humaine ciblée.
 
 ---
 
-### Slide 6 — Phishing vs Spear-phishing
-- **Type** : contenu
+### Slide 7 — 💬 La chasse aux indices
+- **Type** : question chat
 - **Points clés (bullets)** :
-  - **Phishing (Hameçonnage de masse)** :
-    - Email générique envoyé à des milliers de cibles.
-    - Imitation de marques grand public (banque, poste, impôts).
-  - **Spear-phishing (Hameçonnage ciblé)** :
-    - Email ultra-personnalisé visant une personne ou une entreprise spécifique.
-    - Utilise des informations réelles collectées en amont (LinkedIn, organigrammes).
-- **Notes orateur** : Le phishing traditionnel est une pêche au filet : on envoie le même mail à des milliers de personnes en espérant que quelques-unes mordent à l'hameçon. Le spear-phishing, lui, est une pêche au harpon : le mail est tellement personnalisé et crédible qu'il est presque impossible de ne pas douter au premier regard.
-- **Visuel suggéré** : Illustration comparative montrant un filet de pêche jeté en mer (phishing) à côté d'un pêcheur visant une cible unique au harpon (spear-phishing).
-  - **alt-text** : Illustration schématique opposant le phishing de masse (filet de pêche) et le spear-phishing ciblé (harpon sur un seul poisson).
+  - Un e-mail « Service Comptabilité — URGENT » affiché en grand.
+  - 💬 « Tapez dans le chat TOUS les indices qui trahissent le faux. »
+- **Notes orateur** : Afficher l'e-mail piégé du support en pleine page, lisible. Lire les réponses du chat et compléter : domaine expéditeur modifié (typosquatting), urgence artificielle (24h, pénalités), lien vers un domaine tiers, formulation impersonnelle, prétexte vague. Conclure : aucun indice ne demande de compétence technique — juste une minute d'attention.
+- **Visuel suggéré** : Reproduction plein écran de l'e-mail frauduleux du support, sans annotations (les indices seront révélés au débrief).
+  - **alt-text** : E-mail frauduleux affiché en plein écran imitant un service comptabilité avec objet urgent.
+- **Élément interactif** : 💬 Question chat — la chasse aux indices.
 
 ---
 
-### Slide 7 — Smishing & Vishing
-- **Type** : contenu
+### Slide 8 — Le paysage en chiffres
+- **Type** : chiffres clés
 - **Points clés (bullets)** :
-  - **Smishing (SMS Phishing)** :
-    - Messages texte frauduleux contenant un lien raccourci.
-    - Usurpation d'identité mobile (ex : livraison de colis, amendes ANTAI).
-  - **Vishing (Voice Phishing)** :
-    - Hameçonnage vocal par téléphone.
-    - L'attaquant usurpe le conseiller bancaire pour extorquer des codes MFA de validation.
-- **Notes orateur** : Les attaquants se diversifient et passent sur nos smartphones. Le smishing utilise l'immédiateté du SMS pour nous faire cliquer sur des liens frauduleux. Le vishing est encore plus redoutable : un attaquant poli et professionnel vous appelle pour "bloquer une fraude en cours" sur votre compte, tout en vous demandant en réalité de valider la transaction à votre insu.
-- **Visuel suggéré** : Visuel montrant un écran de smartphone affichant un SMS frauduleux avec un lien suspect, et un appel téléphonique entrant nommé "Faux Conseiller Bancaire".
-  - **alt-text** : Maquette de smartphone montrant un SMS d'alerte de livraison suspect et une icône d'appel vocal entrant.
+  - **< 60 s** pour tomber dans un phishing (Verizon DBIR 2024).
+  - **~2,8 milliards $** de pertes BEC déclarées en 2024 aux États-Unis (FBI IC3).
+  - **Menace n°1** des particuliers en France : l'hameçonnage (Cybermalveillance.gouv.fr, 2024).
+  - **> 99,9 %** des attaques automatisées bloquées par la MFA (Microsoft, 2019).
+- **Notes orateur** : Trois lectures : la victime tombe en secondes, donc la défense doit être un réflexe ; le BEC coûte des milliards sans un seul malware, donc la procédure vaut tous les antivirus ; la MFA est la mesure au meilleur rapport effort/protection — mais le sondage n°4 a montré qu'elle se protège aussi. Transition : voici ce que ces mécanismes donnent en vrai.
+- **Visuel suggéré** : Quatre grands chiffres en typographie XXL, chacun avec sa source et son année en petit.
+  - **alt-text** : Quatre statistiques géantes sur l'ingénierie sociale avec leurs sources : vitesse, pertes BEC, menace principale et efficacité MFA.
 
 ---
 
-### Slide 8 — L'hygiène numérique en entreprise
-- **Type** : récap
-- **Points clés (bullets)** :
-  - L'hygiène cyber : ensemble de réflexes quotidiens simples pour réduire la surface de vulnérabilité.
-  - La sécurité humaine est le premier et le dernier rempart de l'entreprise.
-  - L'erreur humaine n'est pas une fatalité : valoriser le signalement rapide plutôt que la sanction.
-- **Notes orateur** : Face à ces menaces de manipulation, la meilleure réponse est d'adopter des règles d'hygiène numérique strictes. De la même façon que l'on se lave les mains pour éviter les maladies, on applique des gestes barrières informatiques pour protéger l'infrastructure.
-- **Visuel suggéré** : Icône de trousse de premiers secours cyber avec des symboles de bouclier, de cadenas et d'un utilisateur.
-  - **alt-text** : Icône moderne d'une valise de secours médicale verte contenant un bouclier blanc au centre.
-
----
-
-### Slide 9 — Règles d'or : Mots de passe & Double Facteur
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - **Mots de passe** :
-    - Minimum 12 à 15 caractères (préférer les "phrases de passe").
-    - Uniques pour chaque compte, stockés dans un gestionnaire sécurisé.
-  - **MFA (Multi-Factor Authentication)** :
-    - Double validation obligatoire sur tous les accès.
-    - Bloque l'accès même si le mot de passe est compromis.
-- **Notes orateur** : Deux gestes simples éliminent 99 % des risques d'usurpation de compte : utiliser des phrases de passe robustes et activer la double authentification. Le MFA est crucial : si un pirate réussit à obtenir votre mot de passe par phishing, il sera bloqué car il ne possède pas le code temporaire envoyé sur votre téléphone.
-- **Visuel suggéré** : Schéma d'une clé physique insérée dans une serrure, doublée d'un écran de smartphone affichant un code d'accès temporaire de validation.
-  - **alt-text** : Schéma montrant la combinaison d'un mot de passe (clé) et d'un code MFA sur un téléphone mobile pour déverrouiller un cadenas virtuel.
-
----
-
-### Slide 10 — Règles d'or : Verrouillage & Doute systématique
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - **Verrouillage de session** : Touches `Windows + L` ou `Cmd + Ctrl + Q` dès que l'on s'éloigne.
-  - **La culture de la vérification** :
-    - Douter de toute demande inhabituelle ou urgente.
-    - Valider la demande par un canal de communication alternatif connu.
-  - Signaler tout comportement suspect aux équipes de sécurité immédiatement.
-- **Notes orateur** : Pour finir, prenez le réflexe de verrouiller votre poste de travail, même pour aller chercher un café. De plus, instaurez le doute systématique : si un collègue ou un fournisseur vous demande un changement de RIB ou une action confidentielle urgente, appelez-le par son numéro officiel pour vérifier la demande de vive voix.
-- **Visuel suggéré** : Une silhouette d'employé de bureau s'éloignant de son écran d'ordinateur verrouillé affichant un cadenas géant.
-  - **alt-text** : Bureau d'entreprise désert avec un écran affichant un fond de sécurité verrouillé et une icône de cadenas verte.
-
----
-
-### Slide 11 — Activité pratique : Kit d'onboarding PME
+### Slide 9 — Affaire n°1 : Pathé (2018)
 - **Type** : étude de cas
 - **Points clés (bullets)** :
-  - **Objectif** : Rédiger les "5 règles d'or de l'hygiène cyber" pour les nouveaux arrivants d'une PME.
-  - Pas de jargon technique, ton positif, règles courtes et concrètes.
-  - Expliquer clairement le comportement attendu et le risque évité.
-  - Durée : 25 minutes en groupes.
-- **Notes orateur** : Nous allons maintenant travailler sur votre livrable. Vous allez concevoir un dépliant d'accueil destiné aux nouveaux salariés d'une entreprise. Ce document doit lister les 5 réflexes de sécurité indispensables à adopter dès leur premier jour, rédigés dans un langage simple et accessible.
-- **Visuel suggéré** : Modèle de dépliant de poche épuré avec des lignes blanches prêtes à accueillir les 5 règles d'hygiène.
-  - **alt-text** : Prototype de fiche d'onboarding à cinq sections vides pour documenter les consignes de sécurité d'un nouvel employé.
-- **Élément interactif** : Travail collaboratif en groupes avec restitution orale.
+  - Des e-mails « du siège parisien » : une acquisition confidentielle à Dubaï.
+  - Un mois de virements « urgents et discrets ».
+  - **Plus de 19 millions d'euros** — sans un seul malware.
+- **Notes orateur** : Raconter : la filiale néerlandaise du groupe de cinéma français, le domaine ressemblant, le scénario cohérent, le trio autorité + urgence + secret. Les deux dirigeants — des cadres expérimentés, pas des naïfs — ont été licenciés. La parade était purement procédurale : un seul contre-appel au siège, sur un numéro connu, aurait tout arrêté.
+- **Visuel suggéré** : Façade de cinéma stylisée avec un fil d'e-mails s'envolant vers un compte offshore symbolisé par un coffre.
+  - **alt-text** : Illustration d'une salle de cinéma reliée par un flux d'e-mails frauduleux à un coffre-fort étranger.
 
 ---
 
-### Slide 12 — Conclusion & Travail autonome
+### Slide 10 — Affaire n°2 : Arup (2024)
+- **Type** : étude de cas
+- **Points clés (bullets)** :
+  - Un e-mail suspect... et l'employé demande une visio : bon réflexe !
+  - À l'écran : le directeur financier et des collègues reconnus.
+  - Une quinzaine de virements : **~25 millions de dollars**.
+  - Tout était **deepfake** — chaque visage, chaque voix.
+- **Notes orateur** : Le twist : la vérification a utilisé le canal que l'attaquant contrôlait — une visio truquée « confirme » une demande truquée. À l'ère des deepfakes (générés à partir d'enregistrements publics), reconnaître un visage ou une voix ne prouve plus rien : seule la vérification par un canal indépendant compte — rappeler soi-même un numéro connu, procédure interne à deux personnes. Relance chat : « auriez-vous été piégé ? Honnêtement. »
+- **Visuel suggéré** : Écran de visioconférence avec des vignettes de participants dont les visages se pixellisent en fils de code.
+  - **alt-text** : Fenêtre de visioconférence dont les visages des participants se décomposent en pixels révélant leur nature synthétique.
+- **Élément interactif** : 💬 Chat — réactions au cas Arup.
+
+---
+
+### Slide 11 — Et chez vous ? La procédure qui sauve
+- **Type** : sondage (opinion)
+- **Points clés (bullets)** :
+  - 📊 **Sondage n°5** : une procédure formalisée de contre-vérification des virements / RIB chez vous ?
+  - A) Oui, formalisée — B) Des habitudes informelles — C) Non / je ne sais pas.
+- **Notes orateur** : Sondage d'opinion, pas de bonne réponse — un diagnostic. La vigilance individuelle ne suffit pas face à un scénario professionnel : il faut une procédure qui tienne même quand l'humain est convaincu (double validation au-dessus d'un seuil, contre-appel obligatoire, aucun changement de RIB sans vérification). Enchaîner immédiatement sur le mini-scénario du faux RIB : « tapez A, B ou C » (scénario au support ; réponse B — rappeler au numéro habituel ; piège du C : si la boîte est compromise, c'est l'attaquant qui répond).
+- **Visuel suggéré** : Organigramme simple en trois étapes : demande reçue → contre-appel numéro connu → validation à deux.
+  - **alt-text** : Schéma de procédure de double vérification des demandes de virement en trois étapes.
+- **Élément interactif** : 📊 Sondage Livestorm n°5 (opinion) puis 🤔 mini-scénario en chat (A/B/C).
+
+---
+
+### Slide 12 — L'hygiène numérique : les 4 piliers
+- **Type** : contenu
+- **Points clés (bullets)** :
+  - **Mots de passe** : longs, uniques, dans un gestionnaire.
+  - **MFA partout** — et son code ne se communique JAMAIS.
+  - **Vérification hors canal** : raccrocher, rappeler un numéro connu.
+  - **Culture du signalement** : l'erreur signalée en 5 min vaut mieux que le silence de 3 jours.
+- **Notes orateur** : Question rhétorique : « que préférez-vous — une victime qui signale en 5 minutes, ou un "bon élève" qui se tait 3 jours ? » Punir la victime garantit que la prochaine se taira. Présenter la Boîte à outils du support : le kit d'onboarding « 5 réflexes » (EcoLog) — l'exercice de la semaine est de l'adapter à sa propre organisation.
+- **Visuel suggéré** : Quatre piliers de temple stylisés supportant un fronton « Sécurité », chacun étiqueté d'un pilier d'hygiène.
+  - **alt-text** : Temple à quatre colonnes représentant les piliers de l'hygiène numérique soutenant la sécurité de l'entreprise.
+
+---
+
+### Slide 13 — Quiz de validation
+- **Type** : quiz (sondages)
+- **Points clés (bullets)** :
+  - 📊 **Sondage n°6** : phishing vs spear-phishing — la différence essentielle ?
+  - 📊 **Sondage n°7** : on vous demande votre code MFA au téléphone : que signifie cette demande ?
+  - 📊 **Sondage n°8** : un collaborateur signale son erreur — réaction adaptée ?
+- **Notes orateur** : Lancer les trois sondages à la suite (~2 min chacun), débriefs scriptés dans le support : la personnalisation est LE multiplicateur du spear-phishing ; aucun organisme légitime ne demande jamais un code MFA (connaître votre nom ne prouve rien — les données circulent dans les fuites, cf. France Travail en B01) ; la culture du signalement est un investissement. Si le temps le permet, enchaîner sur le bonus n°9 (l'anomalie qui alerte : le typosquatting).
+- **Visuel suggéré** : Trois cartes de quiz numérotées 6, 7, 8 avec l'icône de sondage Livestorm.
+  - **alt-text** : Trois cartes de questions de quiz numérotées, associées à des sondages en direct.
+- **Élément interactif** : 📊 Sondages Livestorm n°6 à 8 (+ n°9 en tampon).
+
+---
+
+### Slide 14 — Synthèse & fin du module Fondations
 - **Type** : récap
 - **Points clés (bullets)** :
-  - **Points clés** : L'humain comme cible principale, les 5 leviers de manipulation, et l'importance des règles d'hygiène cyber.
-  - **Devoirs** : Suivre le cours IBM SkillsBuild *"Social Engineering"* (~1h00).
-  - **Recherche** : S'informer sur le concept d'OSINT (renseignement en sources ouvertes).
-  - Prochaine session : *Fondamentaux réseau pour la sécurité (B05)*.
-- **Notes orateur** : Bravo pour vos propositions de kits d'onboarding ! À retenir : la technique ne peut rien sans la vigilance humaine. Pour la semaine prochaine, connectez-vous sur SkillsBuild pour suivre le module sur l'ingénierie sociale afin de compléter cette séance. Bonne fin de journée !
-- **Visuel suggéré** : Visuel du badge SkillsBuild "Social Engineering" et icône de calendrier pour la prochaine séance.
-  - **alt-text** : Graphisme du badge numérique de réussite de cours IBM SkillsBuild sur l'ingénierie sociale.
+  - 5 leviers à nommer · 6 canaux à reconnaître · 1 réflexe : **vérifier hors canal**.
+  - Pathé & Arup : des millions perdus — et une minute de vérification pour les sauver.
+  - Module A terminé : quoi protéger (B01), qui attaque (B02), comment (B03), le maillon humain (B04).
+  - Self-paced : SkillsBuild *« Social Engineering »* + adapter le kit « 5 réflexes » + préparer IP/IPv4/IPv6.
+  - Prochaine session — B05 : Fondamentaux Réseau (module B).
+- **Notes orateur** : Faire écrire dans le chat UN mot retenu, en lire 4-5. Clôturer le module Fondations en félicitant le groupe. Teaser B05 : « changement de décor : le module Systèmes & réseaux. Vous découvrirez comment vos données voyagent sur Internet — et à quel point il est facile de les lire au passage quand rien n'est chiffré. » Terminer à l'heure exacte.
+- **Visuel suggéré** : Frise des quatre sessions du module A cochées, flèche vers un panneau « Module B — Réseaux ».
+  - **alt-text** : Frise de progression montrant les quatre sessions du module Fondations validées et l'ouverture du module Réseaux.
+- **Élément interactif** : Chat de clôture — « un mot que vous retenez ».
