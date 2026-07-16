@@ -58,7 +58,7 @@ Pour les curieux : les leviers présentés dérivent des principes d'influence f
 *   **Baiting (Appâtage)** — Technique consistant à laisser un support piégé (clé USB « Salaires 2026 » sur un parking) en pariant sur la curiosité de la victime.
 *   **BEC (Business Email Compromise)** — Fraude au président consistant à pirater ou usurper la boîte e-mail d'un dirigeant ou d'un fournisseur pour ordonner des transactions financières frauduleuses.
 *   **Deepfake (Hypertrucage)** — Contenu audio ou vidéo falsifié par intelligence artificielle, imitant de façon réaliste la voix ou le visage d'une personne réelle.
-*   **OSINT (Open Source Intelligence)** — Renseignement d'origine sources ouvertes : collecte légale d'informations publiques (réseaux sociaux, site web, presse) servant notamment à préparer les attaques ciblées.
+*   **OSINT (Open Source Intelligence)** — Renseignement en sources ouvertes (terme officiel français : « renseignement d'origine sources ouvertes », ROSO) : collecte légale d'informations publiques (réseaux sociaux, site web, presse) servant notamment à préparer les attaques ciblées.
 *   **Phishing (Hameçonnage)** — Envoi massif d'e-mails frauduleux usurpant l'identité de tiers de confiance pour voler des informations sensibles ou propager un malware.
 *   **Smishing** — Hameçonnage réalisé par le biais de messages textes (SMS).
 *   **Spear-phishing (Hameçonnage ciblé)** — Variante d'hameçonnage hautement personnalisée visant un individu ou une organisation spécifique à l'aide d'informations préalablement collectées.
