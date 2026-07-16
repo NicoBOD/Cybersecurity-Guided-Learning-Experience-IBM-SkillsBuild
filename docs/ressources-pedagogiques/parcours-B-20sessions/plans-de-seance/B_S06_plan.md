@@ -169,7 +169,7 @@ Parcours : B 20 sessions  |  Module : B — Systèmes & réseaux  |  Durée : 90
 
 **Si vous êtes en avance :**
 1. Dérouler les **Questions de réflexion** du support (notamment la n°3 : « avoir des outils » vs « avoir une sécurité opérationnelle »).
-2. Esquisser en direct le schéma EcoLog complet (WAN/pare-feu/DMZ/LAN) à main levée ou via draw.io partagé.
+2. Esquisser en direct le schéma EcoLog complet (WAN/pare-feu/DMZ/LAN) sur le tableau blanc interactif ou via draw.io partagé.
 3. Questions/réponses libres.
 
 ## Travail en autonomie (Self-paced)
