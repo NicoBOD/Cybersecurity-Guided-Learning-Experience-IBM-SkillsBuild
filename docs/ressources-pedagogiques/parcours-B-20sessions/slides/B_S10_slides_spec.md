@@ -1,5 +1,7 @@
 # Spécifications des slides — Session B10 : Cryptographie essentielle
-Parcours : B 20 sessions  |  Module : C — Sécurité des Systèmes et Applications  |  Format : Spécifications Markdown
+Parcours : B 20 sessions  |  Module : C — Identités, cloud & données  |  Format : Spécifications Markdown
+
+> **Principe** : le texte affiché reste minimal (mots-clés, chiffres, schémas) ; le contenu riche est dans les notes orateur et le [plan de séance minuté](../plans-de-seance/B_S10_plan.md). Toutes les interactions passent par les sondages et le chat Livestorm.
 
 ---
 
@@ -7,165 +9,185 @@ Parcours : B 20 sessions  |  Module : C — Sécurité des Systèmes et Applicat
 - **Type** : titre
 - **Points clés (bullets)** :
   - Cryptographie essentielle
-  - Chiffrement symétrique, asymétrique, fonctions de hachage et infrastructures de confiance
+  - Chiffrer · Hacher · Certifier — trois outils, trois usages
   - Parcours B — Session B10
-- **Notes orateur** : Bonjour et bienvenue dans cette dixième session. Aujourd'hui, nous allons étudier la cryptographie. C'est l'outil mathématique qui rend la cybersécurité possible. Nous allons démystifier le chiffrement symétrique et asymétrique, comprendre comment valider l'intégrité de nos fichiers et étudier le fonctionnement des certificats numériques.
-- **Visuel suggéré** : Illustration complexe d'une clé de bronze classique fusionnée à un tableau de chiffres binaires (0 et 1) en 3D avec des faisceaux laser verts.
-  - **alt-text** : Graphisme conceptuel illustrant l'art du chiffrement et de la cryptographie numérique.
-- **Élément interactif** : Question sondage : "Qui sait expliquer concrètement la différence entre une clé publique et une clé privée ?"
+- **Notes orateur** : Accueillir : ce soir on ouvre le coffre à outils mathématique de tout ce qu'on a vu (TLS, BitLocker, certificats). Retour self-paced : « en une phrase dans le chat : à quoi sert le sel cryptographique ? » Lire 2-3 définitions, valider sans tout dévoiler : « dans une heure, vous saurez pourquoi son absence a coûté 117 millions de comptes à LinkedIn. » Rappel B09 : Uber, 23andMe.
+- **Visuel suggéré** : Trois objets stylisés côte à côte : un coffre (chiffrer), une empreinte digitale (hacher), un sceau de cire (certifier).
+  - **alt-text** : Coffre-fort, empreinte digitale et sceau symbolisant les trois usages de la cryptographie.
+- **Élément interactif** : 💬 Chat d'accueil — le sel cryptographique en une phrase.
 
 ---
 
-### Slide 2 — Objectifs de la séance & Sommaire
+### Slide 2 — Objectifs & agenda
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - Comparer le chiffrement symétrique (clé unique) et le chiffrement asymétrique (couple de clés).
-  - Utiliser et analyser une fonction de hachage (SHA-256) et son effet d'avalanche.
-  - Décrire les infrastructures de clés publiques (PKI) et déchiffrer un certificat X.509.
-  - Sommaire : Chiffrement Symétrique vs Asymétrique (25 min), Le Hachage & l'effet d'avalanche (20 min), PKI & Certificats numériques (20 min), Exercice de hachage pratique (15 min), Quiz (10 min).
-- **Notes orateur** : Nous commencerons par distinguer les deux familles de chiffrement. Puis, nous verrons le hachage et l'effet d'avalanche. Nous étudierons ensuite la structure des certificats de confiance sur le web avant de réaliser une manipulation pratique et de clôturer par notre traditionnel quiz de validation.
-- **Visuel suggéré** : Liste structurée présentant d'un côté les objectifs opérationnels et de l'autre le minutage de la séance synchrone de 90 minutes.
-  - **alt-text** : Tableau d'agenda minuté de la session synchrone sur la cryptographie.
+  - Distinguer chiffrement symétrique et asymétrique (et leur combinaison).
+  - Maîtriser le hachage : intégrité, effet d'avalanche, mots de passe (sel + fonctions lentes).
+  - Décrire PKI, autorités de certification et certificats X.509.
+  - Agenda : chiffrement → hachage → PKI → laboratoire du hachage → Adobe & LinkedIn → quiz.
+- **Notes orateur** : Le fil rouge : trois outils qui ne sont PAS interchangeables — on chiffre ce qu'on devra relire, on hache ce qu'on doit seulement vérifier, on signe ce dont il faut prouver l'origine. Deux catastrophes d'école (270 millions de comptes à elles deux) montreront le prix de la confusion.
+- **Visuel suggéré** : Deux colonnes présentant les objectifs et l'agenda de la séance.
+  - **alt-text** : Tableau présentant les objectifs d'apprentissage et les étapes de la session.
 
 ---
 
-### Slide 3 — Chiffrement symétrique : La clé unique
-- **Type** : contenu
+### Slide 3 — Brise-glace : où va votre mot de passe ?
+- **Type** : sondage
 - **Points clés (bullets)** :
-  - Utilise **une seule et unique clé secrète** pour chiffrer et déchiffrer.
-  - Très rapide, adapté aux gros volumes de données au repos (ex: algorithme AES).
-  - *Le défi majeur* : Comment s'échanger la clé initiale de manière sécurisée ?
-  - *Analogie* : Un coffre-fort physique s'ouvrant avec une unique clé. Il faut transmettre le double de la clé au destinataire avant de pouvoir expédier le coffre.
-- **Notes orateur** : Le chiffrement symétrique utilise la même clé pour verrouiller et déverrouiller. C'est le chiffrement le plus rapide, idéal pour crypter un disque dur. Son point faible est l'échange de la clé : si vous l'envoyez par e-mail, un pirate peut l'intercepter et déchiffrer toutes vos communications. C'est l'analogie du double de clé de coffre-fort qu'il faut transmettre de main en main.
-- **Visuel suggéré** : Un coffre-fort métallique classique fermé par une serrure à clé unique dorée.
-  - **alt-text** : Coffre-fort à clé unique illustrant le concept de chiffrement symétrique.
+  - 📊 **Sondage n°1** : comment un site doit-il conserver votre mot de passe ?
+  - A) Chiffré avec une clé protégée — B) Haché avec un sel unique — C) En clair, base sécurisée
+- **Notes orateur** : Lancer le sondage n°1 (60-90 s). Réponse B — le piège est A : le chiffrement est réversible (qui a la clé relit tout, et les clés fuitent) ; le hachage permet de VÉRIFIER sans jamais pouvoir RELIRE. Cette distinction est le fil rouge de la soirée — et une grande entreprise a choisi A pour 153 millions de comptes.
+- **Visuel suggéré** : Deux coffres côte à côte : l'un avec une clé suspendue à côté (chiffrement), l'autre remplacé par une empreinte gravée (hachage).
+  - **alt-text** : Comparaison entre un coffre à clé récupérable et une empreinte irréversible pour le stockage des mots de passe.
+- **Élément interactif** : 📊 Sondage Livestorm n°1 (brise-glace).
 
 ---
 
-### Slide 4 — Chiffrement asymétrique : Le couple de clés
+### Slide 4 — Le code de César : algorithme + clé
+- **Type** : question chat
+- **Points clés (bullets)** :
+  - 💬 Message chiffré : `FRPHEVGR` (décalage de 13 lettres).
+  - Le premier qui tape le mot en clair dans le chat a gagné !
+- **Notes orateur** : Laisser 1-2 min, féliciter le premier « SÉCURITÉ ». Débrief : un algorithme (le décalage) + une clé (13) — toute la cryptographie tient dans ce couple depuis Jules César ; seule la solidité mathématique a changé. Transition : aujourd'hui, deux grandes familles d'algorithmes.
+- **Visuel suggéré** : Disque de chiffrement de César à deux anneaux de lettres décalées.
+  - **alt-text** : Disque de chiffrement par décalage illustrant le code de César.
+- **Élément interactif** : 💬 Chat — décryptage collectif du code de César.
+
+---
+
+### Slide 5 — Symétrique vs asymétrique
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - Utilise un couple de clés mathématiquement liées :
-    - **Clé publique** : Diffusée librement à tous. Sert uniquement à **chiffrer**.
-    - **Clé privée** : Gardée jalousement par son propriétaire. Sert uniquement à **déchiffrer**.
-  - Protocole plus lent, utilisé pour l'authentification et l'échange initial de clés de session (RSA, Diffie-Hellman).
-  - *Analogie* : Votre destinataire vous envoie un cadenas ouvert (clé publique). Vous fermez votre boîte avec et lui renvoyez. Lui seul possède la clé physique (clé privée) pour l'ouvrir.
-- **Notes orateur** : Le chiffrement asymétrique résout le problème de l'échange de clé. Chaque personne génère une clé publique que tout le monde peut voir, et une clé privée que personne d'autre ne possède. Si je veux envoyer un message chiffré à Bob, je le crypte avec sa clé publique. Seul Bob pourra le décoder, car sa clé privée est la seule à pouvoir déverrouiller ce chiffrement.
-- **Visuel suggéré** : Un cadenas ouvert (clé publique) envoyé par un utilisateur à un autre, puis le cadenas fermé à clé sur une boîte métallique dont le destinataire garde la clé privée.
-  - **alt-text** : Schéma conceptuel du chiffrement asymétrique à l'aide de la métaphore du cadenas public et de la clé privée.
+  - **Symétrique (AES)** : une seule clé partagée — ultra-rapide (disques, bases)... mais comment livrer la clé ?
+  - **Asymétrique (RSA, DH)** : clé publique (chiffrer) + clé privée (déchiffrer) — lent, mais résout l'échange et permet la signature.
+  - **Hybride** : l'asymétrique livre la clé, la symétrique fait le travail = le handshake TLS (B07).
+- **Notes orateur** : Dérouler les deux analogies : le coffre-fort à clé unique (et le problème du double de clé), le cadenas ouvert distribué à tous (seul le détenteur de la clé privée ouvre). BitLocker (B08) = AES. Question rhétorique : quelle clé ne quitte JAMAIS son propriétaire ? La privée — tout l'édifice repose là-dessus.
+- **Visuel suggéré** : Diptyque : coffre à clé unique / boîte aux lettres à fente publique et porte privée.
+  - **alt-text** : Comparaison entre le chiffrement symétrique à clé unique et l'asymétrique à double clé.
 
 ---
 
-### Slide 5 — Le Hachage (Hashing) : Garantir l'intégrité
+### Slide 6 — Le hachage : l'empreinte digitale des données
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - Le hachage n'est pas du chiffrement (il est irréversible).
-  - Transforme un document de taille quelconque en une empreinte de taille fixe (ex: SHA-256).
-  - **Propriétés indispensables** :
-    - **Irréversible** : Impossible de retrouver le document d'origine à partir du hash.
-    - **Résistant aux collisions** : Deux documents différents ne donnent pas le même hash.
-    - **Effet d'avalanche** : La moindre modification change totalement le hash de sortie.
-- **Notes orateur** : Le hachage permet de vérifier l'intégrité d'un fichier. Ce n'est pas du chiffrement : on ne peut pas revenir en arrière. Une bonne fonction de hachage comme le SHA-256 génère une empreinte unique. Si un seul caractère ou un espace change dans le document, l'empreinte de sortie est totalement modifiée. C'est l'effet d'avalanche.
-- **Visuel suggéré** : Un document texte passant à travers un hachoir virtuel et ressortant sous la forme d'une chaîne hexadécimale fixe de 64 caractères.
-  - **alt-text** : Graphique illustrant la transformation d'un fichier en empreinte de hachage SHA-256.
+  - Ce n'est **pas** du chiffrement : une empreinte de taille fixe, à **sens unique**.
+  - 3 propriétés : irréversible · résistant aux collisions · **effet d'avalanche**.
+  - Usage n°1 : l'**intégrité** (l'empreinte publiée vs l'empreinte calculée).
+- **Notes orateur** : L'analogie de l'empreinte digitale : on ne recrée pas la personne à partir de l'empreinte, mais on vérifie que c'est bien elle. L'effet d'avalanche : une lettre change, tout change — le laboratoire de tout à l'heure le montrera sur de vraies empreintes SHA-256.
+- **Visuel suggéré** : Document passant dans un entonnoir et ressortant en empreinte hexadécimale courte, flèche retour barrée.
+  - **alt-text** : Document transformé en empreinte de hachage avec impossibilité du chemin inverse.
 
 ---
 
-### Slide 6 — Focus sur l'effet d'avalanche
+### Slide 7 — Hacher les mots de passe : sel + lenteur
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - Entrée A : *"La cybersécurité protège nos données."*
-    - Hash : `5ccfec79bdf934f595df7b14ab44a2cbe5321f8a846c483a992bb3b0b8c66e4d`
-  - Entrée B : *"La cybersecurite protege nos donnees."*
-    - Hash : `8e77a16709f6e1ba0a3203498875567b45ddb17904ce8e7d2bb9b4226f97914a`
-  - Différence d'entrée : 4 accents modifiés.
-  - Résultat : Empreintes de hachage 100% différentes.
-- **Notes orateur** : Regardez cet exemple. Nous avons deux phrases presque identiques. Nous avons juste retiré les accents de la deuxième phrase. Les deux empreintes SHA-256 n'ont aucun caractère similaire à la même position. C'est cet effet d'avalanche qui permet de détecter immédiatement si un pirate a modifié ne serait-ce qu'une seule lettre d'un fichier lors d'un téléchargement.
-- **Visuel suggéré** : Comparatif visuel des deux phrases avec les différences de caractères surlignées en rouge, et les deux hashes affichés en dessous dans des cadres colorés distincts.
-  - **alt-text** : Schéma comparatif illustrant l'effet d'avalanche avec deux phrases d'entrée similaires.
+  - Jamais en clair, jamais chiffré : **haché**.
+  - **+ Sel** (unique par utilisateur) : empreintes toutes différentes, rainbow tables inopérantes.
+  - **+ Fonction lente** (bcrypt, **Argon2**) : la force brute devient non rentable.
+  - MD5 et SHA-1 : **cassés** — à bannir.
+- **Notes orateur** : La chaîne du raisonnement : sans sel, tous les « linkedin123 » ont la même empreinte → tables précalculées. Même salé, SHA-256 est trop rapide : des milliards de tests/seconde sur une carte graphique → fonctions volontairement lentes. Question rhétorique : pourquoi votre banque ne peut-elle pas vous RENVOYER votre mot de passe oublié ? Elle ne l'a jamais eu — elle n'en garde que l'empreinte. Si un site le peut... méfiance (mini-scénario à venir).
+- **Visuel suggéré** : Chaîne de fabrication : mot de passe + grain de sel → moulin lent (Argon2) → empreinte unique.
+  - **alt-text** : Chaîne illustrant l'ajout d'un sel unique et le passage par une fonction lente avant stockage de l'empreinte.
 
 ---
 
-### Slide 7 — Utilité du hachage : L'intégrité logicielle
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - L'éditeur publie le hash SHA-256 officiel de référence sur son site web sécurisé.
-  - L'utilisateur télécharge le fichier d'installation (.ISO ou .EXE).
-  - L'utilisateur calcule localement le hash du fichier téléchargé.
-  - Si les deux hashes correspondent $\rightarrow$ garantie absolue que le fichier n'a été ni corrompu lors du transport, ni modifié par un attaquant pour y ajouter un virus.
-- **Notes orateur** : Comment être sûr qu'un système d'exploitation téléchargé n'est pas piégé ? Les éditeurs publient le hash de référence de leurs fichiers. Une fois le fichier téléchargé, vous calculez son hash sur votre machine. S'il correspond exactement au hash publié par l'éditeur, vous avez l'assurance absolue que le fichier est sain et intègre.
-- **Visuel suggéré** : Illustration d'une comparaison de hashes : à gauche, le hash du site web, à droite, le hash calculé localement par l'utilisateur, avec un signe égal de validation vert.
-  - **alt-text** : Graphique d'explication de la vérification d'intégrité par comparaison de hashes de fichiers.
-
----
-
-### Slide 8 — Infrastructures de Clés Publiques (PKI) et X.509
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - **Le problème** : Comment être sûr que la clé publique de `google.com` appartient bien à Google et non à un pirate ?
-  - **La solution** : L'Infrastructure de Clés Publiques (PKI).
-  - **Certificat X.509** : Carte d'identité numérique du serveur.
-    - Clé publique du site.
-    - Identité du propriétaire (nom de domaine).
-    - Identité de l'émetteur (Autorité de Certification).
-    - Signature cryptographique de l'AC.
-- **Notes orateur** : Sur Internet, pour éviter qu'un pirate n'intercepte vos données en se faisant passer pour un autre site, nous utilisons des certificats d'identité numérique X.509. C'est l'équivalent d'une carte d'identité pour un serveur web. Elle contient la clé publique du site et elle est tamponnée et signée par une Autorité de Certification de confiance.
-- **Visuel suggéré** : Un certificat d'identité numérique officiel stylisé avec le symbole d'un cadenas et les champs X.509 (Propriétaire, Émetteur, Dates, Clé publique) lisibles.
-  - **alt-text** : Schéma conceptuel d'un certificat d'identité numérique X.509.
-
----
-
-### Slide 9 — PKI : La chaîne de confiance
+### Slide 8 — PKI, X.509 & la signature numérique
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - Votre navigateur web intègre par défaut une liste d'Autorités de Certification racines de confiance.
-  - Le serveur web envoie son certificat signé.
-  - Le navigateur vérifie mathématiquement la signature du serveur à l'aide de la clé publique de la CA.
-  - Si la signature est valide $\rightarrow$ le cadenas vert s'affiche.
-  - Si elle est invalide $\rightarrow$ affichage d'un avertissement de sécurité rouge.
-- **Notes orateur** : Comment votre navigateur vérifie-t-il le certificat ? Il contient en mémoire les signatures des grandes Autorités de Certification mondiales. Lorsqu'il se connecte à un site, il vérifie mathématiquement que la signature du certificat provient bien d'une de ces autorités. Si c'est le cas, la confiance est établie. Sinon, une alerte de sécurité s'affiche à l'écran.
-- **Visuel suggéré** : Représentation d'une chaîne de maillons reliant l'Autorité Racine, l'Autorité Intermédiaire, le Certificat du site web et enfin le navigateur de l'utilisateur.
-  - **alt-text** : Schéma de la chaîne de confiance cryptographique liant le navigateur à l'autorité racine de certification.
+  - Le problème : cette clé publique est-elle vraiment celle de `banque.com` ?
+  - **L'AC** vérifie l'identité puis **signe** le certificat **X.509** (clé publique + domaine + validité + signature — jamais la clé privée).
+  - **Signer** = hacher le document + chiffrer l'empreinte avec la clé **privée**.
+- **Notes orateur** : La signature, mécanique dévoilée : quiconque a la clé publique vérifie (déchiffre la signature, recalcule le hachage, compare) — hachage + asymétrique = authenticité + intégrité. Boucler avec B07 : c'est ce que le navigateur vérifie à chaque cadenas, et DigiNotar a montré ce qui arrive quand le signataire ment. C'est la question n°8 du quiz.
+- **Visuel suggéré** : Chaîne de confiance : AC (sceau) → certificat X.509 (carte d'identité) → navigateur (cadenas vérifié).
+  - **alt-text** : Chaîne de confiance reliant l'autorité de certification au cadenas affiché par le navigateur.
 
 ---
 
-### Slide 10 — Activité pratique : Analyse d'intégrité logicielle
+### Slide 9 — Activité : le laboratoire du hachage
+- **Type** : activité (sondages)
+- **Points clés (bullets)** :
+  - Deux phrases — seuls les accents diffèrent — et leurs empreintes SHA-256 affichées.
+  - 📊 **Sondage n°2** : caractères communs ? · 📊 **n°3** : pourquoi publier le SHA-256 d'un .ISO ? · 📊 **n°4** : peut-on inverser une empreinte ?
+- **Notes orateur** : 30 s d'observation, puis les trois sondages avec débrief : n°2 — l'effet d'avalanche, aucune corrélation visible ; n°3 — le scénario complet de la vérification d'intégrité (`sha256sum`) ; n°4 — LA nuance : inverser est impossible, TESTER est possible (hacher des millions de candidats et comparer) — le pont exact vers le sel, les fonctions lentes... et LinkedIn.
+- **Visuel suggéré** : Les deux phrases et leurs empreintes en police à chasse fixe, différences de caractères surlignées.
+  - **alt-text** : Comparaison de deux phrases quasi identiques et de leurs empreintes SHA-256 radicalement différentes.
+- **Élément interactif** : 📊 Sondages Livestorm n°2 à 4 — analyse collective.
+
+---
+
+### Slide 10 — Le paysage en chiffres
+- **Type** : chiffres clés
+- **Points clés (bullets)** :
+  - **~153 M de comptes** : le fichier Adobe (2013) — chiffrés, pas hachés, indices en clair.
+  - **117 M d'identifiants LinkedIn** en vente (2016, fuite 2012) — SHA-1 **sans sel**.
+  - **Des milliards d'empreintes/seconde** : une seule carte graphique moderne face aux hachages rapides.
+- **Notes orateur** : Trois lectures : le mauvais outil au mauvais endroit transforme une fuite en catastrophe ; un détail d'implémentation (le sel) change tout ; la force brute est industrielle — seule la lenteur volontaire la rend non rentable. Transition : les deux histoires.
+- **Visuel suggéré** : Trois grands chiffres en typographie XXL avec leurs sources et années en petit.
+  - **alt-text** : Trois statistiques géantes sur les fuites de mots de passe avec leurs sources.
+
+---
+
+### Slide 11 — Affaire n°1 : Adobe (2013)
 - **Type** : étude de cas
 - **Points clés (bullets)** :
-  - **Scénario** : L'administrateur système télécharge un logiciel de sécurité.
-  - **Hash de référence de l'éditeur** : `8e77a167...2bb9b4226f97914a`.
-  - **Hash calculé sur le fichier reçu** : `8e77a167...2bb9b4226f97914a` (Cas 1) ou `f72a816b...d2bb9b4226f97915b` (Cas 2).
-  - **Objectifs** :
-    - Interpréter les deux cas.
-    - Expliquer quelle action doit être menée dans le Cas 2.
-    - Proposer une commande de calcul de hash sur Linux ou Windows.
-- **Notes orateur** : Dans cet atelier, vous allez comparer des hashes d'installation reçus avec les hashes officiels de l'éditeur. Dans le premier cas, ils concordent. Dans le second, ils diffèrent radicalement. Que devez-vous faire du fichier dans le second cas ? Et comment auriez-vous pu calculer ce hash en console sur vos propres machines ?
-- **Visuel suggéré** : Capture d'un terminal de commande exécutant un calcul de hash sur un fichier d'installation logicielle, avec des lignes de comparaison de hachage.
-  - **alt-text** : Console de commande système affichant les résultats d'un calcul de somme de contrôle SHA-256.
-- **Élément interactif** : Manipulation et analyse de la trame de hashes en sous-salles virtuelles.
+  - ~153 millions de comptes diffusés.
+  - Mots de passe **chiffrés** (même clé) au lieu d'être hachés.
+  - Les **indices** stockés en clair à côté.
+  - « La plus grande grille de mots croisés du monde. »
+- **Notes orateur** : Raconter : le mode de chiffrement produisant le même bloc pour la même entrée — les mots de passe identiques se voient sans rien casser ; les indices (« prénom de ma fille », « pareil que gmail ») révèlent le mot de passe chiffré... de millions d'autres comptes partageant le même bloc. Leçon : chiffrer n'est PAS hacher — le sondage n°1 de ce soir, exactement.
+- **Visuel suggéré** : Grille de mots croisés géante dont les définitions sont des indices de mots de passe.
+  - **alt-text** : Grille de mots croisés symbolisant la fuite Adobe où les indices en clair révélaient les mots de passe.
 
 ---
 
-### Slide 11 — Quiz de validation
-- **Type** : quiz
+### Slide 12 — Affaire n°2 : LinkedIn (2012)
+- **Type** : étude de cas
 - **Points clés (bullets)** :
-  - 1. Quel algorithme de chiffrement (AES ou RSA) est le plus performant pour crypter une base de données de 1 To ?
-  - 2. Quelle propriété d'une fonction de hachage fait qu'un seul caractère changé modifie totalement le hash de sortie ?
-  - 3. Un certificat X.509 contient-il la clé privée du serveur web ?
-- **Notes orateur** : Passons au quiz final pour valider vos compétences cryptographiques. N'oubliez pas qu'un certificat d'identité est public et ne doit donc jamais dévoiler d'informations confidentielles comme les clés privées.
-- **Visuel suggéré** : QR Code d'accès au questionnaire en ligne à gauche, questions à choix multiples à droite.
-  - **alt-text** : QR Code vert pour la validation des acquis en cryptographie.
-- **Élément interactif** : Quiz interactif avec statistiques de réponses affichées en direct.
+  - 2012 : 6,5 M d'empreintes fuitées... 2016 : **117 millions en vente**.
+  - SHA-1 **sans sel** : tous les « linkedin123 » ont la même empreinte.
+  - L'écrasante majorité cassée **en quelques jours**.
+  - Ces identifiants alimentent le *credential stuffing* depuis dix ans.
+- **Notes orateur** : Dérouler : tables précalculées + cartes graphiques = carnage ; et la boucle avec B09 : c'est ce stock de fuites qui a frappé 23andMe. Leçons : le sel rend chaque empreinte unique ; la lenteur (bcrypt/Argon2) rend la force brute non rentable ; une fuite mal protégée nourrit les attaques pendant une décennie. Relance chat : « quel détail vous marque le plus ? »
+- **Visuel suggéré** : Rangée d'empreintes identiques surlignées dans une base de données, reliées à un dictionnaire de mots de passe.
+  - **alt-text** : Base de données montrant des empreintes identiques dues à l'absence de sel, reliées à un dictionnaire d'attaque.
+- **Élément interactif** : 💬 Chat — réactions aux deux affaires.
 
 ---
 
-### Slide 12 — Conclusion & Travail autonome
+### Slide 13 — Et vous ? Les checksums + le scénario
+- **Type** : sondage (opinion) + scénario
+- **Points clés (bullets)** :
+  - 📊 **Sondage n°5** : vérifiez-vous l'empreinte de vos téléchargements ? (A souvent / B rarement / C jamais)
+  - 🤔 Puis : le site qui vous RENVOIE votre mot de passe par e-mail — A, B ou C dans le chat.
+- **Notes orateur** : Sondage n°5 : C est majoritaire et c'est normal — le réflexe est attendu des pros IT ; dix secondes (`sha256sum`), seul moyen de détecter un installeur piégé. Puis le mini-scénario (support) : réponse B — s'il peut le renvoyer, il peut le relire (l'anti-modèle Adobe) ; la seule procédure légitime est la réinitialisation par lien temporaire ; chiffrer l'e-mail (C) déplace le problème. Un test à dix secondes qui révèle le sérieux d'un prestataire.
+- **Visuel suggéré** : E-mail affichant un mot de passe en clair avec un tampon « ALERTE » en surimpression.
+  - **alt-text** : Message électronique contenant un mot de passe en clair marqué d'une alerte de sécurité.
+- **Élément interactif** : 📊 Sondage Livestorm n°5 (opinion) puis 🤔 mini-scénario en chat (A/B/C).
+
+---
+
+### Slide 14 — Quiz de validation
+- **Type** : quiz (sondages)
+- **Points clés (bullets)** :
+  - 📊 **Sondage n°6** : pourquoi la cryptographie hybride (TLS) ?
+  - 📊 **Sondage n°7** : à quoi sert le sel ?
+  - 📊 **Sondage n°8** : que contient un certificat X.509 ?
+- **Notes orateur** : Lancer les trois sondages à la suite (~2 min chacun), débriefs scriptés dans le support : l'asymétrique livre la clé, la symétrique fait le travail (le handshake de B07, compris de l'intérieur) ; le sel casse la mutualisation des attaques (LinkedIn) ; la clé privée ne quitte JAMAIS le serveur. Si le temps le permet, enchaîner sur le bonus n°9 (l'alerte « Connexion non sécurisée »).
+- **Visuel suggéré** : Trois cartes de quiz numérotées 6, 7, 8 avec l'icône de sondage Livestorm.
+  - **alt-text** : Trois cartes de questions de quiz numérotées, associées à des sondages en direct.
+- **Élément interactif** : 📊 Sondages Livestorm n°6 à 8 (+ n°9 en tampon).
+
+---
+
+### Slide 15 — Synthèse & prochaine session
 - **Type** : récap
 - **Points clés (bullets)** :
-  - **Résumé** : Chiffrement symétrique (clé unique/AES), asymétrique (couple clés/RSA), hachage (intégrité/effet d'avalanche), et PKI (chaîne de confiance/X.509).
-  - **Devoirs** : Compléter le module de cours *"Cryptography Basics"* sur IBM SkillsBuild (~1h30).
-  - **Action pratique** : Ouvrir la console de sa machine personnelle, créer un petit fichier texte et s'entraîner à calculer et modifier son empreinte de hachage.
-  - Prochaine session : *Sécurité des infrastructures Cloud (B11)*.
-- **Notes orateur** : Bravo pour votre participation ! Vous connaissez maintenant les bases de la cryptographie qui sécurisent nos disques durs et notre navigation web au quotidien. Complétez le cours IBM SkillsBuild et testez le calcul de hachage en console chez vous. La semaine prochaine, nous verrons comment ces briques s'assemblent pour sécuriser les infrastructures Cloud. À bientôt !
-- **Visuel suggéré** : Capture d'un terminal montrant les commandes `sha256sum` et les différences de hash après édition du fichier.
-  - **alt-text** : Illustration des étapes de calcul pratique de hachage en console de commande.
+  - **Chiffrer** ce qu'on devra relire · **hacher** (sel + lenteur) ce qu'on doit vérifier · **signer** ce qu'il faut authentifier.
+  - Adobe & LinkedIn : 270 millions de comptes pour un choix d'outil erroné.
+  - Self-paced : SkillsBuild *« Cryptography Basics »* + expérience `sha256sum` + recherche IaaS/PaaS/SaaS.
+  - Prochaine session — B11 : Sécurité du Cloud.
+- **Notes orateur** : Faire écrire dans le chat UN mot retenu, en lire 4-5. Rappeler le triple devoir (cours, expérience terminal, recherche IaaS/PaaS/SaaS — préparation directe de B11). Teaser B11 : « vos données déménagent chez quelqu'un d'autre : qui est responsable de quoi ? Et l'histoire d'une seule configuration erronée qui a exposé 106 millions de dossiers bancaires. » Terminer à l'heure exacte.
+- **Visuel suggéré** : Récapitulatif en trois vignettes (coffre, empreinte salée, sceau) et un panneau « B11 » fléché.
+  - **alt-text** : Synthèse en trois vignettes des usages cryptographiques avec un panneau indiquant la prochaine session B11.
+- **Élément interactif** : Chat de clôture — « un mot que vous retenez ».

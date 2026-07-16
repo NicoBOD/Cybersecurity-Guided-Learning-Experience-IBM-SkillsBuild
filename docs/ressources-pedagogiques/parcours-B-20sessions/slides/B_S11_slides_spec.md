@@ -1,165 +1,184 @@
 # Spécifications des slides — Session B11 : Sécurité du cloud
 Parcours : B 20 sessions  |  Module : C — Identités, cloud & données  |  Format : Spécifications Markdown
 
+> **Principe** : le texte affiché reste minimal (mots-clés, chiffres, schémas) ; le contenu riche est dans les notes orateur et le [plan de séance minuté](../plans-de-seance/B_S11_plan.md). Toutes les interactions passent par les sondages et le chat Livestorm.
+
 ---
 
 ### Slide 1 — Page de garde
 - **Type** : titre
 - **Points clés (bullets)** :
   - Sécurité du cloud
-  - Modèle de responsabilité partagée, sécurité des conteneurs, et gestion des configurations
+  - Vos données chez quelqu'un d'autre : qui ferme les portes ?
   - Parcours B — Session B11
-- **Notes orateur** : Bienvenue dans cette onzième session. Aujourd'hui, nous allons parler de la sécurité du cloud. Avec la généralisation du cloud computing (IaaS, PaaS, SaaS), la manière de concevoir la sécurité a radicalement changé. Nous allons étudier comment se partagent les responsabilités entre le fournisseur cloud et le client, les risques de mauvaise configuration et comment sécuriser les accès à ces infrastructures.
-- **Visuel suggéré** : Illustration d'un nuage numérique transparent traversé par des lignes de données sécurisées et surmonté d'un bouclier holographique vert cyberpunk.
-  - **alt-text** : Nuage informatique stylisé et protégé par un bouclier de sécurité.
-- **Élément interactif** : Question sondage : "Qui pense que les données stockées chez AWS ou Microsoft Azure sont, par défaut, 100% sécurisées par le fournisseur ?"
+- **Notes orateur** : Accueillir. Retour self-paced : « tapez dans le chat un exemple de service IaaS, PaaS ou SaaS » — corriger en direct (EC2/Heroku/M365). Rappel B10 : chiffrer, hacher, certifier — le cloud met tous ces outils à l'épreuve. Annonce : la frontière de responsabilité, les erreurs à millions, et l'affaire des 106 millions de dossiers.
+- **Visuel suggéré** : Nuage stylisé posé sur des piliers de datacenter, avec une porte au premier plan dont la clé est tendue vers le spectateur.
+  - **alt-text** : Nuage informatique dont la porte d'entrée est confiée au client, symbolisant la responsabilité partagée.
+- **Élément interactif** : 💬 Chat d'accueil — exemples IaaS/PaaS/SaaS.
 
 ---
 
-### Slide 2 — Objectifs de la séance & Sommaire
+### Slide 2 — Objectifs & agenda
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - Analyser le modèle de responsabilité partagée selon les types de service (IaaS, PaaS, SaaS).
-  - Identifier les risques majeurs de mauvaise configuration (ex: seaux de stockage publics).
-  - Configurer et sécuriser des politiques d'accès IAM sur un tenant de cloud public.
-  - Sommaire : Le Modèle de Responsabilité Partagée (20 min), Les erreurs de configuration cloud (20 min), IAM & Moindre Privilège Cloud (25 min), Activité d'audit de politique IAM (15 min), Quiz (10 min).
-- **Notes orateur** : Au cours de cette séance, nous allons tout d'abord décortiquer le modèle de responsabilité partagée. Ensuite, nous verrons les erreurs classiques de configuration comme les seaux de stockage ouverts à tous les vents. Nous aborderons ensuite la sécurisation fine de l'IAM cloud, avant d'effectuer un audit pratique et de terminer par notre quiz de validation.
-- **Visuel suggéré** : Liste ordonnée de l'agenda et des objectifs synchrone présentés dans deux boîtes contrastées.
-  - **alt-text** : Tableau d'agenda de la session synchrone de 90 minutes.
+  - Attribuer les responsabilités de sécurité (client vs fournisseur) en IaaS, PaaS, SaaS.
+  - Identifier les erreurs de configuration majeures (buckets, secrets, Root sans MFA).
+  - Gouverner les accès cloud : Root isolé, IAM nominatif, moindre privilège.
+  - Agenda : responsabilité partagée → mauvaises configs → gouvernance → matrice → Capital One & Verizon → quiz.
+- **Notes orateur** : Le fil rouge : le cloud ne vous décharge pas de la sécurité, il en redistribue les rôles. La soirée sert à savoir exactement lesquels — et deux affaires montreront le prix de la confusion.
+- **Visuel suggéré** : Deux colonnes présentant les objectifs et l'agenda de la séance.
+  - **alt-text** : Tableau présentant les objectifs d'apprentissage et les étapes de la session.
 
 ---
 
-### Slide 3 — Qu'est-ce que le Cloud ? Les 3 Modèles de Service
-- **Type** : contenu
+### Slide 3 — Brise-glace : la faute à qui ?
+- **Type** : sondage
 - **Points clés (bullets)** :
-  - **IaaS (Infrastructure as a Service)** : Fournit des serveurs virtuels et du stockage brute (ex: AWS EC2, Azure VM).
-  - **PaaS (Platform as a Service)** : Fournit un environnement d'exécution pour développer des applications sans gérer l'OS (ex: Heroku, AWS Elastic Beanstalk).
-  - **SaaS (Software as a Service)** : Fournit une application clé en main accessible via un navigateur (ex: Microsoft 365, Salesforce).
-- **Notes orateur** : Pour bien sécuriser le cloud, il faut comprendre ce que l'on loue. En IaaS, on loue des machines vides : on gère tout, de l'OS aux données. En PaaS, on loue une plateforme pour y déposer son code : l'OS est géré par le fournisseur. En SaaS, on loue un logiciel fini et configuré : on ne gère que les utilisateurs et les données.
-- **Visuel suggéré** : Schéma comparatif en trois colonnes (IaaS, PaaS, SaaS) empilant les couches matérielles et logicielles.
-  - **alt-text** : Comparatif des modèles de services cloud IaaS, PaaS et SaaS.
+  - 📊 **Sondage n°1** : selon Gartner, quelle part des incidents de sécurité cloud est imputable au CLIENT ?
+  - A) ~50 % — B) ~99 % — C) ~10 %
+- **Notes orateur** : Lancer le sondage n°1 (60-90 s). Réponse B : la quasi-totalité, selon la prédiction devenue référence de Gartner. Les datacenters des fournisseurs sont des forteresses ; ce qui fuit, ce sont les configurations du client — bucket public, clé dans le code, compte sans MFA.
+- **Visuel suggéré** : Balance dont un plateau porte un datacenter blindé et l'autre une simple case à cocher « Public » qui fait tout basculer.
+  - **alt-text** : Balance illustrant qu'une simple case de configuration pèse plus lourd que la sécurité physique du datacenter.
+- **Élément interactif** : 📊 Sondage Livestorm n°1 (brise-glace).
 
 ---
 
-### Slide 4 — Le Modèle de Responsabilité Partagée (Shared Responsibility)
+### Slide 4 — La responsabilité partagée : la colocation
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - **Règle d'or** : Le fournisseur cloud sécurise *le* Cloud (sécurité physique, serveurs réels, réseaux physiques).
-  - Le client sécurise *dans* le Cloud (données, identités, configuration des pare-feux, systèmes d'exploitation en IaaS).
-  - Plus on monte vers le SaaS, plus la responsabilité du fournisseur cloud augmente, mais le client garde **toujours** la responsabilité de ses données et des accès (IAM).
-- **Notes orateur** : C'est le concept le plus important. Si vos données fuient à cause d'un mot de passe trop simple ou d'un seau de stockage public, ce n'est pas la faute d'AWS ou d'Azure, c'est la vôtre. Le fournisseur garantit la sécurité physique des centres de données et du réseau sous-jacent. Le client est responsable de la configuration de ses ressources et de la protection de ses comptes.
-- **Visuel suggéré** : Diagramme montrant la séparation des responsabilités entre le fournisseur (partie basse, en gris) et le client (partie haute, en vert) pour l'IaaS, le PaaS et le SaaS.
-  - **alt-text** : Diagramme du modèle de responsabilité partagée dans le cloud.
+  - Sécurité **DU** cloud (fournisseur) : bâtiments, serveurs, hyperviseur.
+  - Sécurité **DANS** le cloud (client) : données, identités, configurations.
+  - Le propriétaire répond des murs — le locataire ferme sa porte à clé.
+- **Notes orateur** : Dérouler l'analogie de la colocation : toiture et tuyauterie au propriétaire, serrure et meubles au locataire. Relance chat : « si le locataire laisse sa porte ouverte et se fait cambrioler — la faute à qui ? » La formule à mémoriser : DU cloud vs DANS le cloud (question n°6 du quiz).
+- **Visuel suggéré** : Immeuble en coupe : structure porteuse colorée aux couleurs du fournisseur, intérieurs d'appartements aux couleurs du client.
+  - **alt-text** : Immeuble en coupe séparant la structure gérée par le fournisseur des appartements gérés par les locataires.
+- **Élément interactif** : 💬 Chat — la colocation cambriolée.
 
 ---
 
-### Slide 5 — La menace n°1 dans le Cloud : La mauvaise configuration
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - Ce ne sont pas des failles logicielles complexes qui causent la majorité des fuites cloud, mais des **erreurs humaines de configuration**.
-  - **Seaux de stockage publics (ex: S3 Bucket Open)** : Des bases de données ou fichiers confidentiels exposés sans mot de passe sur Internet.
-  - **Secrets codés en dur** : Clés API d'administration cloud laissées dans le code source hébergé sur des dépôts GitHub publics.
-  - **Ports d'administration ouverts** : Ports SSH (22) ou RDP (3389) ouverts à toute la Terre.
-- **Notes orateur** : Dans le cloud, les attaquants n'ont pas besoin de trouver des failles Zero-Day complexes. Ils écrivent des scripts qui scannent en permanence le web à la recherche de seaux de stockage S3 mal configurés et ouverts sans mot de passe. Ils scannent aussi GitHub à la recherche de clés d'API cloud oubliées par les développeurs dans leur code.
-- **Visuel suggéré** : Un dossier de fichiers posé sur un nuage avec un panneau routier jaune "Accès Public" et un cadenas brisé.
-  - **alt-text** : Représentation d'une fuite de données due à un stockage cloud public non sécurisé.
-
----
-
-### Slide 6 — IAM Cloud : La nouvelle frontière du réseau
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - Dans le cloud, le réseau classique disparait $\rightarrow$ l'**IAM devient le nouveau périmètre de sécurité**.
-  - Tout accès à une ressource cloud est une requête API évaluée par le système IAM.
-  - Règle absolue : Ne jamais utiliser le compte racine (*Root Account*) pour les tâches courantes.
-  - Mettre en place un contrôle d'accès au niveau des ressources via le moindre privilège.
-- **Notes orateur** : Dans un centre de données traditionnel, on protège les ressources avec un pare-feu physique. Dans le cloud, n'importe quelle ressource a une adresse IP publique potentielle. C'est l'IAM qui sert de barrière. Si votre politique IAM est mal configurée, un compte utilisateur compromis peut détruire l'intégralité de vos serveurs virtuels.
-- **Visuel suggéré** : Schéma conceptuel où les murs de briques de pare-feu réseau classiques se transforment en un portail IAM d'authentification dans le nuage.
-  - **alt-text** : Remplacement des frontières réseau physiques par l'IAM cloud.
-
----
-
-### Slide 7 — Exemple de politique IAM Cloud (JSON)
+### Slide 5 — IaaS, PaaS, SaaS : la frontière qui glisse
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - Structure typique d'une politique de sécurité cloud (AWS IAM Policy) :
-    - `Effect` : `Allow` ou `Deny` (Autoriser ou Interdire).
-    - `Action` : L'opération API autorisée (ex: `s3:GetObject`).
-    - `Resource` : La ressource ciblée (ex: l'identifiant du seau de stockage).
-  - Règle de sécurité : Éviter l'usage de jokers (ex: `Action: "*"`) qui accordent des droits illimités.
-- **Notes orateur** : Les politiques d'accès dans le cloud s'écrivent souvent en JSON. Elles décrivent précisément qui a le droit de faire quoi sur quelle ressource. Il faut proscrire l'utilisation de l'étoile ou joker qui donne les droits d'administration complets. Soyez toujours le plus restrictif possible.
-- **Visuel suggéré** : Extrait de code JSON formaté et coloré illustrant une politique AWS IAM restrictive autorisant uniquement la lecture d'un bucket spécifique.
-  - **alt-text** : Extrait de code d'une politique IAM au format JSON.
+  - **IaaS** (EC2) : le client gère l'OS et tout au-dessus.
+  - **PaaS** (Heroku) : le client répond de son code et de ses données.
+  - **SaaS** (M365) : restent au client — données, identités, partages... et **sauvegarde**.
+  - Deux lignes invariantes : les **données** et les **identités**, toujours au client.
+- **Notes orateur** : Le critère : qui a la main sur la couche ? En IaaS, patcher l'OS est au client — WannaCry (B03) s'applique au cloud aussi. Point ignoré du SaaS : supprimer ≠ sauvegarder — le fournisseur ne restaure pas vos suppressions au-delà de ses corbeilles ; la plupart des fuites SaaS viennent de partages trop larges.
+- **Visuel suggéré** : Trois colonnes empilant les couches (matériel → OS → application → données), la frontière client/fournisseur glissant de l'une à l'autre.
+  - **alt-text** : Trois piles de couches techniques montrant la frontière de responsabilité selon le modèle IaaS, PaaS ou SaaS.
 
 ---
 
-### Slide 8 — La sécurité des conteneurs dans le Cloud
+### Slide 6 — Les trois portes laissées ouvertes
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - Les conteneurs (ex: Docker) encapsulent l'application et ses dépendances.
-  - Partagent le noyau du système d'exploitation de l'hôte (différent d'une machine virtuelle complète).
-  - **Bonnes pratiques de sécurité** :
-    - Scanner les images de conteneurs à la recherche de vulnérabilités connues (CVE).
-    - Ne jamais exécuter un conteneur en tant qu'utilisateur `root` sur l'hôte.
-    - Limiter les ressources (CPU, RAM) allouées pour éviter les attaques par déni de service.
-- **Notes orateur** : De nombreuses applications cloud s'exécutent aujourd'hui dans des conteneurs légers comme Docker. Contrairement aux machines virtuelles, les conteneurs partagent le noyau de l'OS hôte. Si un conteneur est compromis et s'exécute avec les droits d'administration root, l'attaquant peut s'échapper du conteneur et prendre le contrôle total du serveur serveur hôte.
-- **Visuel suggéré** : Un conteneur de transport maritime rouge verrouillé par un code de sécurité numérique vert posé sur un navire porte-conteneurs virtuel.
-  - **alt-text** : Représentation symbolique de la sécurité des conteneurs logiciels.
+  - **Le bucket public** : une case cochée → exposition mondiale, instantanée, silencieuse.
+  - **Le secret codé en dur** : une clé sur GitHub = exploitée en **minutes**.
+  - **Le Root sans MFA** : l'entreprise entière détruite ou rançonnée — sauvegardes comprises.
+- **Notes orateur** : Détailler chaque porte : les robots qui scannent GitHub en continu (minage sur votre facture, pivot vers les données — rappel du script d'Uber en B09) ; le Root compromis qui peut tout supprimer en minutes. Question rhétorique : le point commun ? Aucune faille du fournisseur — des choix ou des oublis du client. Gartner, en pratique.
+- **Visuel suggéré** : Trois portes entrouvertes étiquetées « stockage », « code », « Root », avec des silhouettes de robots scanneurs en approche.
+  - **alt-text** : Trois portes entrouvertes symbolisant les erreurs de configuration cloud les plus courantes.
 
 ---
 
-### Slide 9 — Outils de détection Cloud : CSPM
+### Slide 7 — La gouvernance des accès cloud
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - **CSPM (Cloud Security Posture Management)**.
-  - Outil qui scanne en continu vos infrastructures cloud.
-  - Détecte automatiquement les dérives de sécurité :
-    - Comptes sans MFA.
-    - Bases de données exposées publiquement.
-    - Clés de chiffrement non rotatives.
-  - Compare votre configuration aux standards de conformité (ex: CIS Benchmarks).
-- **Notes orateur** : Comment surveiller des milliers de ressources déployées dans le cloud par des dizaines de développeurs ? C'est le rôle du CSPM. Cet outil scanne en permanence votre infrastructure cloud et lève des alertes dès qu'un développeur crée une ressource non conforme aux règles de sécurité de l'entreprise.
-- **Visuel suggéré** : Tableau de bord de sécurité cloud synthétique montrant des jauges de conformité, des camemberts de risques et des boutons d'auto-remédiation.
-  - **alt-text** : Interface utilisateur simplifiée d'un outil CSPM.
+  - **Root au coffre** : jamais au quotidien, MFA matériel.
+  - **Comptes IAM nominatifs** + MFA obligatoire (B09 transposé).
+  - **Moindre privilège — machines comprises** : un composant ne voit que son besoin.
+  - **Surveillance continue (CSPM)** : détecter la dérive avant les scanners.
+- **Notes orateur** : Le Root est au cloud ce que l'admin local est au poste (B08). Le moindre privilège des identités TECHNIQUES est le point neuf : un pare-feu applicatif n'a rien à faire dans le stockage — l'affaire qui suit le démontre à 106 millions de dossiers. Question rhétorique : qui serait alerté chez vous si un bucket passait en public un dimanche soir ? Si « personne » : chantier n°1.
+- **Visuel suggéré** : Coffre-fort contenant une clé « Root », entouré de badges nominatifs et d'un radar de surveillance.
+  - **alt-text** : Coffre-fort isolant le compte racine, entouré de comptes nominatifs et d'un radar de surveillance des configurations.
 
 ---
 
-### Slide 10 — Activité pratique : Audit d'une politique IAM compromise
+### Slide 8 — Activité : la matrice de responsabilité
+- **Type** : activité (sondages)
+- **Points clés (bullets)** :
+  - 6 tâches × 3 modèles — qui est responsable : Client ou Fournisseur ?
+  - 📊 **Sondage n°2** : les correctifs de l'OS invité ? · 📊 **n°3** : la protection des données ? · 📊 **n°4** : le WAF ?
+  - La matrice se complète à l'écran au fil des votes.
+- **Notes orateur** : Lancer les trois sondages avec débrief : n°2 — qui a la main sur la couche la patche (IaaS : client) ; n°3 — LA ligne de la session : la donnée appartient TOUJOURS au client ; n°4 — client en IaaS/PaaS, fournisseur en SaaS... « et un WAF mal configuré côté client, c'est l'histoire qui arrive ». Compléter les 3 lignes restantes : physique (F×3), correctifs applicatifs (C/C/F), identités & MFA (C×3 — l'autre invariante).
+- **Visuel suggéré** : Matrice 6×3 vide projetée, remplie ligne par ligne avec un code couleur client/fournisseur.
+  - **alt-text** : Matrice de responsabilité cloud à compléter progressivement pendant l'activité collective.
+- **Élément interactif** : 📊 Sondages Livestorm n°2 à 4 — construction collective de la matrice.
+
+---
+
+### Slide 9 — Le paysage en chiffres
+- **Type** : chiffres clés
+- **Points clés (bullets)** :
+  - **~99 %** des défaillances cloud imputables au client (Gartner).
+  - **~106 M de dossiers** · 80 M$ d'amende · 190 M$ d'accord : Capital One (2019).
+  - **~14 M de dossiers** exposés par un bucket public : Verizon (2017, UpGuard).
+- **Notes orateur** : Trois lectures : le maillon faible est la configuration du client, pas la technologie du fournisseur ; une erreur s'expose au monde entier instantanément ; et le régulateur poursuit le client, pas AWS — la responsabilité juridique suit la responsabilité de configuration. Transition : les deux histoires.
+- **Visuel suggéré** : Trois grands chiffres en typographie XXL avec leurs sources et années en petit.
+  - **alt-text** : Trois statistiques géantes sur les incidents de sécurité cloud avec leurs sources.
+
+---
+
+### Slide 10 — Affaire n°1 : Capital One (2019)
 - **Type** : étude de cas
 - **Points clés (bullets)** :
-  - **Scénario** : L'équipe de développement d'EcoLog a écrit la politique IAM suivante pour un stagiaire :
-    - `Effect: Allow`, `Action: *`, `Resource: arn:aws:s3:::ecolog-prod-data/*`.
-  - **Objectifs** :
-    - Identifier le problème de sécurité dans cette politique.
-    - Réécrire cette politique en appliquant le moindre privilège (le stagiaire doit uniquement pouvoir lire les fichiers).
-    - Expliquer l'impact d'une compromission des clés API de ce stagiaire.
-- **Notes orateur** : Dans cet exercice pratique, vous allez auditer une politique d'accès IAM rédigée par un développeur pressé pour un stagiaire. Identifiez l'erreur majeure et réécrivez cette politique en JSON de manière sécurisée pour n'accorder que le droit de lecture de fichiers au stagiaire.
-- **Visuel suggéré** : Deux politiques JSON face-à-face : à gauche, la politique vulnérable avec une étoile rouge clignotante, à droite, la politique corrigée et sécurisée.
-  - **alt-text** : Comparatif visuel de politiques d'accès cloud vulnérable et durcie.
-- **Élément interactif** : Travail en petits groupes de 15 minutes suivi d'une correction pas à pas en session plénière.
+  - Un pare-feu applicatif **mal configuré** (technique SSRF).
+  - Le service de métadonnées remet des identifiants temporaires...
+  - ... porteurs de **droits excessifs** sur des centaines d'espaces de stockage.
+  - **~106 millions de dossiers** téléchargés — 80 M$ + 190 M$.
+- **Notes orateur** : Dérouler la chaîne, côté client de bout en bout : WAF détourné pour interroger l'intérieur → identifiants temporaires → droits sans rapport avec la fonction → exfiltration massive. L'attaquante (une ancienne ingénieure du fournisseur) s'en vante en ligne et se fait arrêter. Leçons : le fournisseur n'a pas été piraté ; le moindre privilège s'applique aux MACHINES (l'Admin_IT de B09 qui ne lit pas les factures) ; la surveillance du stockage aurait vu l'exfiltration.
+- **Visuel suggéré** : Chaîne de trois maillons étiquetés « WAF mal configuré », « métadonnées », « droits excessifs » menant à une base de données ouverte.
+  - **alt-text** : Chaîne d'exploitation de l'affaire Capital One reliant la mauvaise configuration aux données exposées.
 
 ---
 
-### Slide 11 — Quiz de validation
-- **Type** : quiz
+### Slide 11 — Affaire n°2 : Verizon (2017)
+- **Type** : étude de cas
 - **Points clés (bullets)** :
-  - 1. En IaaS, qui est responsable de la sécurité du système d'exploitation de la machine virtuelle ?
-  - 2. Pourquoi l'usage de jokers (`*`) dans les politiques IAM cloud est-il considéré comme une mauvaise pratique ?
-  - 3. Quelle est la fonction principale d'un outil CSPM ?
-- **Notes orateur** : C'est le moment du quiz. Préparez-vous à répondre pour valider les notions de responsabilité partagée, d'écriture de politique IAM sécurisée et de surveillance automatisée par CSPM.
-- **Visuel suggéré** : QR Code d'accès au questionnaire interactif à gauche, questions à choix multiples à droite.
-  - **alt-text** : QR Code vert cyberpunk de connexion au questionnaire interactif.
-- **Élément interactif** : Quiz en direct avec affichage des statistiques de réponses des apprenants.
+  - **~14 millions de dossiers clients** librement accessibles sur Internet.
+  - Un bucket configuré en **public**... par un **prestataire**.
+  - Découvert par un chercheur (UpGuard) — avant les attaquants, cette fois.
+- **Notes orateur** : Aucun piratage : une case cochée au mauvais endroit. Les robots parcourent en permanence l'espace des services de stockage à la recherche de cet oubli exact. Leçons : la fuite cloud archétypale ; la sous-traitance transporte la responsabilité (le prestataire configure, le donneur d'ordre assume — Target, encore) ; la détection ne doit rien au hasard : CSPM. Relance chat : « quel détail vous marque le plus ? »
+- **Visuel suggéré** : Entrepôt de dossiers dont la porte est grande ouverte sur une rue passante, un chercheur avec une loupe sur le seuil.
+  - **alt-text** : Entrepôt de données ouvert sur la rue symbolisant le bucket de stockage public découvert par un chercheur.
+- **Élément interactif** : 💬 Chat — réactions aux deux affaires.
 
 ---
 
-### Slide 12 — Conclusion & Travail autonome
+### Slide 12 — Et chez vous ? La frontière
+- **Type** : sondage (opinion)
+- **Points clés (bullets)** :
+  - 📊 **Sondage n°5** : la frontière de responsabilité cloud est-elle claire chez vous ?
+  - A) Claire et surveillée — B) Floue (« c'est le fournisseur qui gère ») — C) Je ne sais pas / pas de cloud.
+- **Notes orateur** : B est la réponse la plus répandue — et la plus dangereuse : vrai pour les murs, faux pour les portes. La question de lundi matin : qui vérifie les partages, le MFA, les configurations de stockage ? Si « personne » : premier chantier identifié. Enchaîner sur le mini-scénario de la clé d'API sur GitHub : « tapez A, B ou C » (réponse B — révoquer d'abord : la clé est déjà volée ; l'historique Git n'oublie rien).
+- **Visuel suggéré** : Ligne de démarcation au sol entre deux zones, nette d'un côté, effacée de l'autre.
+  - **alt-text** : Ligne de démarcation à moitié effacée symbolisant une frontière de responsabilité floue.
+- **Élément interactif** : 📊 Sondage Livestorm n°5 (opinion) puis 🤔 mini-scénario en chat (A/B/C).
+
+---
+
+### Slide 13 — Quiz de validation
+- **Type** : quiz (sondages)
+- **Points clés (bullets)** :
+  - 📊 **Sondage n°6** : que recouvre la « sécurité DU cloud » ?
+  - 📊 **Sondage n°7** : la bonne pratique du compte Root ?
+  - 📊 **Sondage n°8** : pourquoi les attaquants scannent-ils GitHub ?
+- **Notes orateur** : Lancer les trois sondages à la suite (~2 min chacun), débriefs scriptés dans le support : DU cloud = physique + hyperviseur (fournisseur) ; le Root au coffre, MFA matériel, jamais au quotidien ; GitHub scanné pour les secrets codés en dur — une clé publiée = une clé volée. Si le temps le permet, enchaîner sur le bonus n°9 (le bucket de paie public).
+- **Visuel suggéré** : Trois cartes de quiz numérotées 6, 7, 8 avec l'icône de sondage Livestorm.
+  - **alt-text** : Trois cartes de questions de quiz numérotées, associées à des sondages en direct.
+- **Élément interactif** : 📊 Sondages Livestorm n°6 à 8 (+ n°9 en tampon).
+
+---
+
+### Slide 14 — Synthèse & prochaine session
 - **Type** : récap
 - **Points clés (bullets)** :
-  - **Résumé** : Modèle de responsabilité partagée (fournisseur = du cloud, client = dans le cloud), risques majeurs de configurations, sécurité IAM (JSON, pas de jokers), et surveillance continue (CSPM).
-  - **Devoirs** : Compléter le module *"Cloud Security Fundamentals"* sur IBM SkillsBuild (~1h30).
-  - **Défi** : Explorer l'interface gratuite de console d'un fournisseur cloud (AWS/Azure/GCP) et simuler la création d'un utilisateur sans aucun droit par défaut.
-  - Prochaine session : *Sécurité & confidentialité des données (B12)*.
-- **Notes orateur** : Nous avons posé les bases de la sécurité du cloud ! N'oubliez pas de finaliser le cours sur IBM SkillsBuild. La semaine prochaine, nous verrons comment protéger spécifiquement l'actif le plus précieux des organisations : les données elles-mêmes. Bonne semaine à tous !
-- **Visuel suggéré** : Badge d'achèvement de cours d'IBM SkillsBuild pour la sécurité cloud.
-  - **alt-text** : Badge de réussite du cours Cloud Security d'IBM SkillsBuild.
+  - Le cloud loue les murs — **vous fermez les portes**.
+  - Invariants : données et identités, toujours au client.
+  - Root au coffre · IAM nominatif · zéro secret en dur · CSPM.
+  - Self-paced : SkillsBuild *« Cloud Security Fundamentals »* + typologie des données sensibles (préparation Atelier 2).
+  - Prochaine session — B12 : Sécurité & confidentialité des données + **Atelier de Synthèse 2**.
+- **Notes orateur** : Faire écrire dans le chat UN mot retenu, en lire 4-5. Insister sur la préparation de B12 : identifier les types de données sensibles (RH, R&D, clients, finances). Teaser B12 : « vos données elles-mêmes — les classer, les chiffrer, les sauvegarder. Avec l'Atelier de Synthèse 2, et l'histoire d'un datacenter parti en fumée... avec les sauvegardes rangées dans le même bâtiment. » Terminer à l'heure exacte.
+- **Visuel suggéré** : Récapitulatif en quatre vignettes (colocation, matrice, coffre Root, radar CSPM) et un panneau « B12 — Atelier » fléché.
+  - **alt-text** : Synthèse en quatre vignettes des thèmes cloud avec un panneau annonçant la session B12 et son atelier.
+- **Élément interactif** : Chat de clôture — « un mot que vous retenez ».
