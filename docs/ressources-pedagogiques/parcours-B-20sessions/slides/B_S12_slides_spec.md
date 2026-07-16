@@ -1,5 +1,7 @@
-# Spécifications des slides — Session B12 : Sécurité & confidentialité des données
+# Spécifications des slides — Session B12 : Sécurité & confidentialité des données (+ Atelier de Synthèse 2)
 Parcours : B 20 sessions  |  Module : C — Identités, cloud & données  |  Format : Spécifications Markdown
+
+> **Principe** : le texte affiché reste minimal (mots-clés, chiffres, schémas) ; le contenu riche est dans les notes orateur et le [plan de séance minuté](../plans-de-seance/B_S12_plan.md). Toutes les interactions passent par les sondages et le chat Livestorm.
 
 ---
 
@@ -7,163 +9,199 @@ Parcours : B 20 sessions  |  Module : C — Identités, cloud & données  |  For
 - **Type** : titre
 - **Points clés (bullets)** :
   - Sécurité & confidentialité des données
-  - Classification, chiffrement, DLP, stratégies de sauvegarde et Mini-projet 2
-  - Parcours B — Session B12
-- **Notes orateur** : Bienvenue dans notre douzième session. Aujourd'hui, nous allons nous concentrer sur l'actif le plus critique de l'entreprise : ses données. Nous allons voir comment classifier ces informations, comment les chiffrer efficacement au repos et en transit, comment prévenir les fuites de données avec un DLP, et comment élaborer un plan de sauvegarde résistant aux ransomwares.
-- **Visuel suggéré** : Une cascade virtuelle de zéros et de uns vert cyberpunk se déversant dans un coffre-fort numérique géant sécurisé par des verrous cryptographiques lumineux.
-  - **alt-text** : Flots de données sécurisés au sein d'un espace de stockage blindé.
-- **Élément interactif** : Question sondage : "Qui a déjà sauvegardé ses fichiers importants cette semaine sur un support déconnecté d'Internet ?"
+  - La donnée, de sa création à sa destruction
+  - Parcours B — Session B12 · **Atelier de Synthèse 2** inclus
+- **Notes orateur** : Accueillir : dernière session du module C, ET deuxième Atelier de Synthèse. Retour self-paced : « citez dans le chat un type de donnée sensible d'entreprise » (attendu : paie, clients, R&D, santé) — « gardez cette liste : c'est la matière première de l'atelier. » Rappel B11 : la responsabilité partagée, la donnée toujours au client.
+- **Visuel suggéré** : Frise du cycle de vie d'une donnée : création → étiquette → coffre → surveillance → sauvegarde → destructeur de documents.
+  - **alt-text** : Frise illustrant le cycle de vie complet d'une donnée, de sa création à sa destruction sécurisée.
+- **Élément interactif** : 💬 Chat d'accueil — les types de données sensibles.
 
 ---
 
-### Slide 2 — Objectifs de la séance & Sommaire
+### Slide 2 — Objectifs & agenda
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - Concevoir un schéma de classification des données adapté aux contraintes réglementaires.
-  - Différencier le chiffrement des données au repos et le chiffrement en transit.
-  - Expliquer le fonctionnement et l'intérêt d'un outil de prévention des fuites de données (DLP).
-  - Appliquer la règle de sauvegarde 3-2-1 pour se prémunir des attaques par ransomware.
-  - Sommaire : Classification des données (20 min), Chiffrement & DLP (20 min), Sauvegardes & Règle 3-2-1 (20 min), Lancement du Mini-projet 2 (20 min), Quiz (10 min).
-- **Notes orateur** : Nous débuterons la séance en étudiant la classification des données. Nous aborderons ensuite le chiffrement et la prévention des fuites avec les outils DLP. Nous analyserons ensuite la règle de sauvegarde 3-2-1 avant de lancer officiellement les travaux du Mini-projet 2. Nous terminerons par notre quiz traditionnel.
-- **Visuel suggéré** : Agenda temporel minuté affiché dans un panneau latéral, avec à gauche la liste des compétences clés.
-  - **alt-text** : Tableau d'agenda minuté de la session synchrone de 90 minutes.
+  - Classifier les données sur 4 niveaux de sensibilité.
+  - Chiffrer au repos et en transit · surveiller en usage (DLP).
+  - Sauvegarder en 3-2-1 : hors site, hors ligne/immuable, testé.
+  - **Atelier de Synthèse 2** : le plan de protection des données de MedDistri.
+  - Agenda : classification → chiffrement & DLP → 3-2-1 → OVHcloud & Morgan Stanley → ATELIER → quiz.
+- **Notes orateur** : Le fil rouge : la donnée se protège à chaque état de sa vie — et la plupart des catastrophes viennent d'une seule étape négligée. Deux affaires le prouveront, puis l'atelier assemblera tout le module C sur une page.
+- **Visuel suggéré** : Deux colonnes présentant les objectifs et l'agenda, avec l'atelier mis en évidence.
+  - **alt-text** : Tableau des objectifs et de l'agenda de la session avec l'atelier de synthèse surligné.
 
 ---
 
-### Slide 3 — La classification des données : Pourquoi faire ?
-- **Type** : contenu
+### Slide 3 — Brise-glace : la nuit de Strasbourg
+- **Type** : sondage
 - **Points clés (bullets)** :
-  - **Problème** : On ne peut pas appliquer le même niveau de sécurité maximal à toutes les données (trop coûteux et trop complexe au quotidien).
-  - **Solution** : Classer les données par niveau de sensibilité pour appliquer les bonnes protections.
-  - Exemple de taxonomie standard à 4 niveaux :
-    - **Publique** : Informations diffusables sans restriction (ex: plaquettes commerciales).
-    - **Interne** : Usage restreint aux employés (ex: annuaire interne).
-    - **Confidentielle** : Accès limité à certaines équipes (ex: salaires, projets en cours).
-    - **Strictement confidentielle** : Secret stratégique (ex: secrets industriels, fusions-acquisitions).
-- **Notes orateur** : Si vous protégez votre menu de cantine de la même manière que vos secrets industriels, vous allez dépenser beaucoup d'énergie pour rien et compliquer le travail des équipes. La classification permet d'identifier précisément les données hautement sensibles pour y allouer nos ressources de sécurité les plus fortes.
-- **Visuel suggéré** : Pyramide à quatre niveaux de couleurs différentes (vert, bleu, jaune, rouge) illustrant la taxonomie de classification des données.
-  - **alt-text** : Pyramide des niveaux de sensibilité de la classification des données.
+  - 📊 **Sondage n°1** : mars 2021, un datacenter brûle — combien de sites hors ligne ?
+  - A) ~3 000 — B) ~360 000 — C) ~3,6 millions
+- **Notes orateur** : Lancer le sondage n°1 (60-90 s). Réponse C : l'incendie du datacenter SBG2 d'OVHcloud à Strasbourg. Le vrai drame : des clients avaient leurs sauvegardes dans le même bâtiment — perte définitive. Ce soir : protéger la donnée à chaque étape, et la règle qui aurait tout sauvé.
+- **Visuel suggéré** : Silhouette de datacenter nocturne avec une lueur d'incendie et des pictogrammes de sites web s'éteignant en cascade.
+  - **alt-text** : Datacenter en feu la nuit avec des sites web s'éteignant en chaîne, illustrant l'incendie de Strasbourg.
+- **Élément interactif** : 📊 Sondage Livestorm n°1 (brise-glace).
 
 ---
 
-### Slide 4 — Chiffrement : Au repos vs En transit
+### Slide 4 — La classification : 4 niveaux
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - **Données en transit (In Transit)** :
-    - Données circulant sur le réseau (ex: e-mail en cours d'envoi, transaction web).
-    - Protection : **HTTPS / TLS / VPN**.
-  - **Données au repos (At Rest)** :
-    - Données stockées sur un disque physique ou une base de données (ex: serveurs, ordinateurs portables).
-    - Protection : **AES-256 / BitLocker / Chiffrement de base de données**.
-- **Notes orateur** : Il faut protéger les données dans tous leurs états. Quand elles bougent sur le réseau (en transit), on utilise des protocoles comme TLS pour empêcher l'interception. Quand elles dorment sur un support de stockage (au repos), on utilise des algorithmes comme l'AES-256 pour interdire la lecture en cas de vol du disque dur ou d'accès illégitime aux serveurs.
-- **Visuel suggéré** : À gauche, un camion de livraison traversant un pont chiffré (en transit). À droite, un entrepôt de stockage blindé scellé par un cadenas (au repos).
-  - **alt-text** : Comparatif graphique entre la sécurisation des données en mouvement et des données stockées.
+  - **Publique** : les livres en vitrine.
+  - **Interne** : le planning dans le couloir.
+  - **Confidentielle** : les contrats des auteurs.
+  - **Secrète** : le manuscrit du prochain best-seller.
+- **Notes orateur** : Dérouler l'analogie de la maison d'édition. Le principe : l'effort suit la valeur — on ne protège pas une brochure comme un brevet. Relance chat : « la liste des salaires de MedDistri : quel niveau ? Et le menu de la cantine ? » Le rôle pivot : la classification décide de TOUT le reste (droits, partages, chiffrement, DLP, sauvegardes).
+- **Visuel suggéré** : Pyramide à quatre étages colorés du vert (publique) au rouge (secrète) avec les exemples de la maison d'édition.
+  - **alt-text** : Pyramide des quatre niveaux de classification des données illustrée par l'analogie d'une maison d'édition.
+- **Élément interactif** : 💬 Chat — classement express de documents.
 
 ---
 
-### Slide 5 — DLP : Prévenir la fuite de données
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - **DLP (Data Loss Prevention)** : Outil logiciel qui inspecte les flux de données.
-  - Empêche l'exfiltration accidentelle ou malveillante d'informations sensibles.
-  - Détecte les anomalies en analysant le contenu (mots-clés, numéros de cartes bancaires, motifs regex) :
-    - *Rèseau (Network DLP)* : Bloque l'envoi de documents confidentiels par e-mail externe.
-    - *Poste (Endpoint DLP)* : Empêche la copie de fichiers clients sur une clé USB personnelle.
-- **Notes orateur** : Le DLP est le garde-barrière des données. Il analyse en temps réel les flux d'informations. Si un employé tente de copier la liste complète des clients sur une clé USB, ou d'envoyer un fichier contenant 500 numéros de cartes de crédit par mail personnel, le DLP bloque l'action et avertit l'équipe de sécurité.
-- **Visuel suggéré** : Un document texte étiqueté "Sensible" arrêté devant une barrière de sécurité numérique par un rayon laser de détection.
-  - **alt-text** : Représentation fonctionnelle d'un système de prévention des fuites de données DLP.
-
----
-
-### Slide 6 — La Règle d'or de la sauvegarde : Le 3-2-1
+### Slide 5 — Chiffrer : en transit ET au repos
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - Seule défense infaillible contre la perte définitive due aux ransomwares.
-  - **3 exemplaires** : Vos données de production + au moins 2 copies de sauvegarde.
-  - **2 supports différents** : Stocker les copies sur des technologies physiques différentes (ex: disque dur externe, serveur NAS, cloud).
-  - **1 copie hors site** : Conserver un exemplaire à l'extérieur des locaux (cloud sécurisé ou deuxième site physique) ET **hors ligne (Air-Gapped)**.
-- **Notes orateur** : Les ransomwares modernes ne se contentent pas de chiffrer vos serveurs de production. Ils cherchent activement vos serveurs de sauvegardes sur le réseau pour les détruire en premier. La règle 3-2-1 vous protège de cela. Avoir une sauvegarde déconnectée physiquement du réseau (Air-Gapped) est la seule garantie de pouvoir reconstruire son informatique après une cyberattaque majeure.
-- **Visuel suggéré** : Schéma présentant les trois chiffres 3, 2, 1 dans des cercles interconnectés avec des flèches illustrant la production, les deux supports physiques et le cloud distant.
-  - **alt-text** : Schéma explicatif de la méthodologie de sauvegarde 3-2-1.
+  - **En transit** : TLS, SSH, VPN — protéger le trajet (B07).
+  - **Au repos** : BitLocker, LUKS — protéger le support volé ou éteint (B08, B10).
+  - ⚠️ Machine allumée, session ouverte = données **en clair** pour un malware actif.
+- **Notes orateur** : Le piège conceptuel à désamorcer : « c'est chiffré donc c'est protégé » — faux sur une machine en fonctionnement : le déchiffrement est à la volée. Chaque état a son outil ; les deux chiffrements se complètent, ne se remplacent pas (question n°6 du quiz : HTTPS ne protège pas le stockage).
+- **Visuel suggéré** : Camion blindé (transit) livrant un coffre-fort (repos), avec une fenêtre ouverte sur le coffre quand la maison est « allumée ».
+  - **alt-text** : Camion blindé et coffre-fort illustrant les chiffrements en transit et au repos, avec leur limite en usage.
 
 ---
 
-### Slide 7 — Le concept de sauvegarde "Air-Gapped" (Hors ligne)
+### Slide 6 — Le DLP : le gardien de sortie
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - **Définition** : Séparation physique ou logique complète entre le réseau informatique principal et le système de sauvegarde.
-  - Une sauvegarde stockée sur un partage réseau accessible en permanence n'est **pas** protégée contre un ransomware.
-  - Exemples de Air-Gap :
-    - Bandes magnétiques de sauvegarde retirées physiquement du lecteur et rangées dans un coffre.
-    - Disque dur externe USB débranché après chaque sauvegarde.
-    - Coffres-forts cloud avec politiques d'écriture unique (WORM) non modifiables pendant X jours.
-- **Notes orateur** : Qu'est-ce que l'Air-Gap ? C'est le fait d'avoir un "vide d'air" physique entre vos ordinateurs connectés à Internet et vos sauvegardes. Si un pirate prend le contrôle de vos serveurs de fichiers, il ne peut pas détruire un disque débranché posé sur une étagère. C'est simple, rustique, mais d'une efficacité redoutable.
-- **Visuel suggéré** : Un pont-levis médiéval relevé, séparant un château fort (les sauvegardes) d'une plaine exposée aux attaques (le réseau Internet).
-  - **alt-text** : Métaphore du pont-levis pour illustrer le concept d'Air-Gap cryptographique et physique.
+  - Inspecte les flux sortants : e-mails, clés USB, uploads.
+  - Bloque les contenus classifiés (mots-clés, expressions régulières, empreintes) **et alerte**.
+  - Prérequis absolu : la **classification** — sans elle, tout ou rien.
+- **Notes orateur** : L'exemple canonique : la liste de numéros de cartes bancaires en pièce jointe → envoi bloqué, équipe sécurité alertée. Le DLP couvre l'état « en usage » de la donnée — celui que le chiffrement au repos ne couvre pas. La classification décide, le DLP applique.
+- **Visuel suggéré** : Portique de sécurité à la sortie d'un bâtiment scannant des enveloppes, certaines bloquées en rouge.
+  - **alt-text** : Portique de contrôle filtrant les documents sortants de l'entreprise, symbolisant la prévention des fuites.
 
 ---
 
-### Slide 8 — Présentation du Mini-projet 2 : Contexte d'EcoLog
+### Slide 7 — La sauvegarde 3-2-1
+- **Type** : schéma
+- **Points clés (bullets)** :
+  - **3** copies · **2** supports différents · **1** hors site.
+  - La copie hors site : **hors ligne ou immuable** (9 attaques sur 10 ciblent les sauvegardes — Veeam).
+  - Et la restauration se **teste** : RPO (combien perdre ?) · RTO (redémarrer en combien de temps ?).
+- **Notes orateur** : Dérouler l'exemple ArchiTech : production RAID + NAS local nocturne + cloud immuable ou coffre externe — survit à la panne, au rançongiciel ET à l'incendie. Question rhétorique : Maersk (B03) a survécu grâce à quoi ? Un serveur fortuitement hors ligne au Ghana — la chance n'est pas une stratégie, la copie hors ligne si.
+- **Visuel suggéré** : Trois coffres numérotés : un dans le bureau, un dans la pièce technique, un dans un bâtiment distant débranché du réseau.
+  - **alt-text** : Trois copies de sauvegarde réparties sur deux supports et un site distant hors ligne, illustrant la règle 3-2-1.
+
+---
+
+### Slide 8 — Le paysage en chiffres
+- **Type** : chiffres clés
+- **Points clés (bullets)** :
+  - **~3,6 millions de sites** hors ligne : l'incendie OVHcloud (2021).
+  - **95 M$ d'amendes cumulées** : Morgan Stanley et les disques revendus (2020-2022).
+  - **> 9 attaques sur 10** : les rançongiciels ciblent aussi les sauvegardes (Veeam).
+- **Notes orateur** : Trois lectures : le sinistre physique existe encore à l'ère du cloud ; la donnée reste dangereuse jusqu'à sa destruction certifiée ; la sauvegarde connectée n'est plus une protection. Transition : les deux histoires.
+- **Visuel suggéré** : Trois grands chiffres en typographie XXL avec leurs sources et années en petit.
+  - **alt-text** : Trois statistiques géantes sur les pertes de données avec leurs sources.
+
+---
+
+### Slide 9 — Affaire n°1 : OVHcloud (2021)
 - **Type** : étude de cas
 - **Points clés (bullets)** :
-  - **Entreprise** : EcoLog, société de conseil en environnement.
-  - **Problème** : EcoLog gère des rapports clients confidentiels, des données RH de salariés et des informations financières. Aucune classification n'existe, et les sauvegardes se font sur un disque USB partagé en continu sur le réseau.
-  - **Mission** : Élaborer un plan complet de protection des données pour l'entreprise.
-- **Notes orateur** : Passons à la mise en œuvre de nos connaissances avec le lancement du Mini-projet 2. Vous allez intervenir chez EcoLog. L'entreprise est dans une situation risquée : ses données sont mélangées et son système de sauvegarde est vulnérable aux ransomwares. Votre rôle est de remettre de l'ordre et de concevoir leur stratégie de défense.
-- **Visuel suggéré** : Logo fictif de la société EcoLog à gauche, et liste synthétique des trois types de données à risque à droite.
-  - **alt-text** : Fiche de présentation du Mini-projet 2 pour l'entreprise EcoLog.
+  - Nuit du 9 au 10 mars 2021 : le datacenter SBG2 ravagé.
+  - ~3,6 millions de sites hors ligne.
+  - « Activez votre plan de reprise d'activité » — beaucoup n'en avaient pas.
+  - Sauvegardes **co-localisées** = pertes **définitives**.
+- **Notes orateur** : Raconter : le leader européen de l'hébergement, le message du fondateur resté célèbre, et les clients qui ont perdu des années de travail — leurs sauvegardes partageaient le bâtiment, parfois la salle. Leçons : le cloud n'abolit pas le risque physique ; la sauvegarde reste au client (B11) ; « hors site » = séparation géographique RÉELLE.
+- **Visuel suggéré** : Plan d'un datacenter où production et sauvegardes sont dans la même salle, entourées par les flammes.
+  - **alt-text** : Plan de datacenter montrant les serveurs et leurs sauvegardes dans la même salle menacée par l'incendie.
 
 ---
 
-### Slide 9 — Cahier des charges du Mini-projet 2
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - Le livrable attendu doit contenir :
-    - 1. **Une grille de classification des données** (RH, Finances, Rapports clients) avec les mesures de sécurité associées.
-    - 2. **Une architecture de sauvegarde conforme 3-2-1** intégrant une isolation physique (Air-Gap).
-    - 3. **Trois règles d'usage de DLP** pour empêcher les collaborateurs de fuiter involontairement des rapports clients confidentiels.
-- **Notes orateur** : Ce mini-projet compte pour votre évaluation. Vous devez rédiger un rapport clair et structuré proposant une grille de classification à quatre niveaux adaptée, concevoir un schéma d'architecture de sauvegarde 3-2-1 et définir des règles d'usage pour un système DLP afin de sécuriser l'envoi de documents en externe.
-- **Visuel suggéré** : Icône de document de rapport officiel tamponné et validé avec une liste à puces des trois livrables requis.
-  - **alt-text** : Livrables obligatoires du Mini-projet 2.
-
----
-
-### Slide 10 — Atelier collaboratif de démarrage
+### Slide 10 — Affaire n°2 : Morgan Stanley
 - **Type** : étude de cas
 - **Points clés (bullets)** :
-  - En groupes de 3 ou 4 apprenants (durée : 15 min).
-  - **Première tâche** : Classer les trois types d'actifs suivants d'EcoLog :
-    - Les bilans comptables de l'année précédente non encore publiés.
-    - Les adresses e-mails professionnelles des salariés.
-    - Les rapports écologiques finaux vendus et livrés aux clients.
-  - Justifier vos choix en fonction de l'impact en cas de fuite publique.
-- **Notes orateur** : Pour vous lancer sur le mini-projet, nous allons faire un premier atelier. Répartissez-vous en groupes. Vous devez classer trois types d'informations clés d'EcoLog dans notre taxonomie à quatre niveaux, et surtout justifier votre raisonnement. Qu'est-ce qui ferait le plus de dégâts s'il était publié dans la presse demain ?
-- **Visuel suggéré** : Tableau croisé listant les 3 actifs avec des cases à cocher de couleur pour les niveaux de classification.
-  - **alt-text** : Grille de démarrage de classification des données d'EcoLog.
-- **Élément interactif** : Session de remue-méninges en petits groupes avec mise en commun.
+  - Des serveurs décommissionnés... revendus **sans effacement fiable**.
+  - Des disques pleins de données clients aux enchères — certains jamais récupérés.
+  - **60 M$ + 35 M$** d'amendes (2020, 2022).
+- **Notes orateur** : Raconter : l'opération de « ménage » confiée à un prestataire, les disques non chiffrés dans la nature. Leçons : le cycle de vie va jusqu'à la destruction — supprimer n'efface que l'index, formater ne suffit pas ; le chiffrement au repos systématique aurait transformé chaque disque en brique illisible ; la sous-traitance transporte la responsabilité. Relance chat : « quel détail vous marque le plus ? » Enchaîner sur le mini-scénario des disques de MedDistri : « tapez A, B ou C » (réponse B — effacement certifié / destruction physique + chiffrement en amont).
+- **Visuel suggéré** : Étal de vente aux enchères présentant des disques durs étiquetés « données clients » avec un marteau de commissaire-priseur.
+  - **alt-text** : Disques durs contenant des données vendus aux enchères, illustrant la fin de vie négligée du matériel.
+- **Élément interactif** : 💬 Chat — réactions, puis 🤔 mini-scénario en chat (A/B/C).
 
 ---
 
-### Slide 11 — Quiz de validation
-- **Type** : quiz
+### Slide 11 — Atelier de Synthèse 2 : MedDistri passe au cloud
+- **Type** : atelier (présentation)
 - **Points clés (bullets)** :
-  - 1. À quel niveau de classification (Publique, Interne, Confidente, Strictement Confidentielle) appartient une plaquette commerciale de vente ?
-  - 2. Quelle est la différence majeure entre le chiffrement des données au repos et en transit ?
-  - 3. Que signifie le chiffre "1" dans la règle de sauvegarde 3-2-1 ?
-- **Notes orateur** : C'est le moment de tester vos acquis avant de vous laisser travailler sur le mini-projet. Connectez-vous sur la plateforme de vote et répondez aux questions sur la classification, le chiffrement et la règle 3-2-1.
-- **Visuel suggéré** : QR Code d'accès au système de vote à gauche et questions interactives à droite.
-  - **alt-text** : QR Code d'accès au vote électronique synchrone.
-- **Élément interactif** : Quiz en direct avec correction immédiate.
+  - 15 commerciaux nomades · suite bureautique SaaS · mots de passe dans les navigateurs · fiches de paie sur l'espace partagé.
+  - 💬 « Qu'est-ce qui vous inquiète le PLUS ? »
+- **Notes orateur** : Afficher les contraintes (cf. B_miniprojets). Laisser le chat réagir (attendu : mots de passe navigateur, paie accessible à tous, pas de MFA) : « tout y est — corrigeons, décision par décision. » Trois votes puis les règles d'or collectives.
+- **Visuel suggéré** : Bureau de PME stylisé avec des post-it de mots de passe, un nuage SaaS et des valises de commerciaux.
+  - **alt-text** : Situation initiale de la PME MedDistri après sa migration cloud, avec ses mauvaises pratiques visibles.
+- **Élément interactif** : 💬 Chat — l'audit spontané de la situation.
 
 ---
 
-### Slide 12 — Conclusion & Prochaines étapes
+### Slide 12 — Atelier : les trois décisions
+- **Type** : atelier (sondages)
+- **Points clés (bullets)** :
+  - 📊 **Sondage n°2** : la MFA des 15 commerciaux ?
+  - 📊 **Sondage n°3** : classer les fiches de paie sur le cloud ?
+  - 📊 **Sondage n°4** : où placer la 3ᵉ copie (règle 3-2-1) ?
+- **Notes orateur** : Un sondage par décision (~4 min), débriefs scriptés dans le support : n°2 — le SMS est la MFA la plus fragile (SIM swapping, B09) : application en standard, FIDO2 en idéal ; n°3 — paie = personnel + bancaire = Confidentielles : accès restreint, chiffrement, traçabilité ; n°4 — A est le scénario OVHcloud exact, C confond corbeille et sauvegarde : cloud immuable hors site.
+- **Visuel suggéré** : Trois cartes de décision illustrées : smartphone MFA, dossier de paie étiqueté, coffre distant.
+  - **alt-text** : Trois cartes représentant les décisions de protection des données à voter pour MedDistri.
+- **Élément interactif** : 📊 Sondages Livestorm n°2 à 4 — les décisions de protection.
+
+---
+
+### Slide 13 — Atelier : les 5 règles d'or de MedDistri
+- **Type** : atelier (co-construction)
+- **Points clés (bullets)** :
+  - 💬 « Proposez une règle en une phrase ! »
+  - Cible : MFA partout · gestionnaire de mots de passe · classification & partages restreints · chiffrement au repos · 3-2-1 immuable testé.
+- **Notes orateur** : Rédiger en direct au tableau blanc à partir du chat, compléter ce qui manque. Synthèse de l'atelier : « ce plan tient sur une page — et il couvre tout le module : B09 les identités, B10 le chiffrement, B11 le cloud, B12 les données. Une page, quatre sessions, une PME transformée. »
+- **Visuel suggéré** : Tableau blanc affichant une charte à cinq lignes en cours de rédaction.
+  - **alt-text** : Charte des cinq règles d'or de protection des données rédigée collectivement au tableau blanc.
+- **Élément interactif** : 💬 Chat — co-rédaction des règles d'or.
+
+---
+
+### Slide 14 — Et vous ? Vos sauvegardes personnelles
+- **Type** : sondage (opinion)
+- **Points clés (bullets)** :
+  - 📊 **Sondage n°5** : vos données personnelles importantes — où en êtes-vous ?
+  - A) 3-2-1 ou presque — B) Une copie, pas très à jour — C) Tout au même endroit.
+- **Notes orateur** : Sondage d'opinion, sans jugement — C est fréquent, la prise de conscience arrive souvent après la perte. Le kit minimal : un disque externe branché uniquement le temps de la sauvegarde + une copie cloud chiffrée. Dix ans de photos valent deux heures de configuration — l'action personnelle de la semaine.
+- **Visuel suggéré** : Trois foyers stylisés : l'un avec coffre et cloud, l'un avec un disque poussiéreux, l'un croisant les doigts.
+  - **alt-text** : Trois foyers illustrant les niveaux de maturité des sauvegardes personnelles.
+- **Élément interactif** : 📊 Sondage Livestorm n°5 (opinion).
+
+---
+
+### Slide 15 — Quiz de validation
+- **Type** : quiz (sondages)
+- **Points clés (bullets)** :
+  - 📊 **Sondage n°6** : HTTPS puis disque non chiffré — que manque-t-il ?
+  - 📊 **Sondage n°7** : que fait un DLP face à l'envoi de cartes bancaires ?
+  - 📊 **Sondage n°8** : pourquoi la copie hors site doit-elle être hors ligne/immuable ?
+- **Notes orateur** : Lancer les trois sondages à la suite (~2 min chacun), débriefs scriptés dans le support : chaque état a son outil (TLS = le trajet) ; le DLP bloque ET alerte — aveugle sans classification ; les rançongiciels chassent les sauvegardes connectées (Veeam). Si le temps le permet, enchaîner sur le bonus n°9 (l'incendie fatal).
+- **Visuel suggéré** : Trois cartes de quiz numérotées 6, 7, 8 avec l'icône de sondage Livestorm.
+  - **alt-text** : Trois cartes de questions de quiz numérotées, associées à des sondages en direct.
+- **Élément interactif** : 📊 Sondages Livestorm n°6 à 8 (+ n°9 en tampon).
+
+---
+
+### Slide 16 — Synthèse & fin du module Identités, cloud & données
 - **Type** : récap
 - **Points clés (bullets)** :
-  - **Résumé** : Classification indispensable, chiffrement (double aspect repos/transit), DLP pour bloquer les fuites d'usages, et règle 3-2-1 (Air-Gap contre ransomwares).
-  - **Travail personnel** : Rédaction et dépôt de votre livrable pour le Mini-projet 2 d'ici la semaine prochaine.
-  - **IBM SkillsBuild** : Suivre le cours *"Data Security and Privacy Essentials"* (~1h30).
-  - Prochaine session : *Gouvernance & cadres de sécurité (B13)*.
-- **Notes orateur** : Nous avons terminé notre module sur les systèmes et les données ! Vous avez désormais toutes les clés pour rédiger le plan de protection des données d'EcoLog. N'oubliez pas de déposer votre travail sur la plateforme avant la semaine prochaine et de valider votre module d'apprentissage SkillsBuild. Bon courage et bonne fin de journée !
-- **Visuel suggéré** : Badge d'achèvement de cours d'IBM SkillsBuild pour la sécurité et la confidentialité des données.
-  - **alt-text** : Badge de réussite du cours Data Security d'IBM SkillsBuild.
+  - La donnée, protégée à chaque état : classée · chiffrée · surveillée · sauvegardée · détruite proprement.
+  - Module C terminé : identités (B09), cryptographie (B10), cloud (B11), données (B12).
+  - Self-paced : SkillsBuild *« Data Security and Privacy »* + sauvegarde personnelle + définitions PCA/PRA.
+  - Prochaine session — B13 : le module Gouvernance, risques & conformité.
+- **Notes orateur** : Faire écrire dans le chat UN mot retenu, en lire 4-5. Féliciter pour le module et l'atelier. Teaser B13 : « on monte à l'étage stratégie : qui décide, qui est responsable, selon quels référentiels — NIST, ISO 27001, ANSSI... et pourquoi la sécurité sans pilotage finit toujours par échouer. » Terminer à l'heure exacte.
+- **Visuel suggéré** : Frise des quatre sessions du module C cochées, la charte MedDistri en vignette, flèche vers un panneau « Module D — Gouvernance ».
+  - **alt-text** : Frise de progression du module données validé avec la charte de l'atelier et l'ouverture du module gouvernance.
+- **Élément interactif** : Chat de clôture — « un mot que vous retenez ».
