@@ -143,7 +143,7 @@ Pour éviter qu'un pirate ayant compromis une machine n'accède facilement à to
 !!! info "Chiffres clés à retenir (sources et années citées)"
     - **40 millions de numéros de cartes bancaires** et environ 70 millions de dossiers clients dérobés chez Target fin 2013 (chiffres communiqués par l'entreprise).
     - **Plus de 200 millions de dollars** de coûts cumulés pour Target, dont un accord de 18,5 M$ avec 47 États américains en 2017 — et le départ du PDG.
-    - **Une dizaine de gigaoctets** de données exfiltrées d'un casino nord-américain... via le thermomètre connecté de l'aquarium du hall (cas rapporté par la société de cybersécurité Darktrace, 2018).
+    - **Une dizaine de gigaoctets** de données exfiltrées d'un casino nord-américain... via le thermomètre connecté de l'aquarium du hall (incident de 2017, rapporté par la société de cybersécurité Darktrace en 2018).
 
 **Comment lire ces chiffres ?** (1) Le maillon faible peut être un fournisseur : votre pare-feu ne protège pas des accès que vous avez légitimement ouverts. (2) La facture d'une segmentation manquante se chiffre en centaines de millions. (3) Chaque objet connecté au réseau est une porte — si rien ne le sépare des données, la porte mène au coffre.
 
@@ -159,7 +159,7 @@ Détail accablant : les outils de détection de Target ont bien **généré des 
 
 #### Cas n°2 — Le casino et le thermomètre (2017) : l'objet connecté comme porte d'entrée
 
-Rapporté par la société de cybersécurité Darktrace : un casino nord-américain se fait dérober sa base de données de clients VIP. Le point d'entrée ? Le **thermomètre connecté de l'aquarium** du hall d'accueil — un objet IoT anodin, connecté au même réseau que les systèmes métier. Les attaquants l'ont compromis, s'en sont servis de tremplin vers la base de données, puis ont exfiltré environ **10 Go** de données... en les faisant transiter par le thermomètre.
+Incident survenu en 2017 et rapporté en 2018 par la société de cybersécurité Darktrace : un casino nord-américain se fait dérober sa base de données de clients VIP. Le point d'entrée ? Le **thermomètre connecté de l'aquarium** du hall d'accueil — un objet IoT anodin, connecté au même réseau que les systèmes métier. Les attaquants l'ont compromis, s'en sont servis de tremplin vers la base de données, puis ont exfiltré environ **10 Go** de données... en les faisant transiter par le thermomètre.
 
 **Ce que ce cas illustre :** chaque objet connecté est une machine comme une autre — souvent moins bien sécurisée ; la question n'est pas « qui penserait à pirater un thermomètre ? » mais « une fois le thermomètre compromis, que peut-il joindre ? ». Un VLAN dédié aux objets connectés, étanche au réseau métier, aurait transformé l'anecdote en non-événement. Pensez-y en regardant la liste des appareils de votre Wi-Fi domestique (votre inventaire de la semaine !).
 

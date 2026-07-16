@@ -112,7 +112,7 @@ Parcours : B 20 sessions  |  Module : B — Systèmes & réseaux  |  Format : Sp
 - **Points clés (bullets)** :
   - **40 M de cartes** + ~70 M de dossiers clients : Target, 2013.
   - **> 200 M$** de coûts cumulés · accord de 18,5 M$ avec 47 États (2017) · démission du PDG.
-  - **~10 Go** exfiltrés via un thermomètre d'aquarium connecté (Darktrace, 2018).
+  - **~10 Go** exfiltrés via un thermomètre d'aquarium connecté (incident de 2017, rapporté par Darktrace en 2018).
 - **Notes orateur** : Trois lectures : le maillon faible peut être un fournisseur (le pare-feu n'y peut rien — l'accès est légitime) ; la segmentation manquante se chiffre en centaines de millions ; et chaque objet connecté est une porte — si rien ne le sépare des données, la porte mène au coffre. Transition : les deux histoires en détail.
 - **Visuel suggéré** : Trois grands chiffres en typographie XXL avec leurs sources et années en petit.
   - **alt-text** : Trois statistiques géantes sur les défaillances de segmentation réseau avec leurs sources.
@@ -136,7 +136,7 @@ Parcours : B 20 sessions  |  Module : B — Systèmes & réseaux  |  Format : Sp
 - **Points clés (bullets)** :
   - Un thermomètre d'aquarium connecté... sur le réseau métier.
   - Tremplin vers la base des clients VIP.
-  - **~10 Go exfiltrés — par le thermomètre** (rapporté par Darktrace).
+  - **~10 Go exfiltrés — par le thermomètre** (rapporté par Darktrace en 2018).
 - **Notes orateur** : L'objet IoT anodin comme porte d'entrée : la question n'est pas « qui pirate un thermomètre ? » mais « une fois compromis, que peut-il JOINDRE ? ». Boucler avec l'inventaire Wi-Fi du début : votre téléviseur, vos ampoules — que peuvent-ils joindre chez vous ? Un VLAN IoT étanche transforme l'anecdote en non-événement. Relance chat : « quel détail vous marque le plus ? »
 - **Visuel suggéré** : Aquarium de hall d'hôtel avec un thermomètre connecté relié en pointillés rouges à une base de données de coffre-fort.
   - **alt-text** : Aquarium décoratif dont le thermomètre connecté est relié par un tracé d'intrusion à une base de données sécurisée.

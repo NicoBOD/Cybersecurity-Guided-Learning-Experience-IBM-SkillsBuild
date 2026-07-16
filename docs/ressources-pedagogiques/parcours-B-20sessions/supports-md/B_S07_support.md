@@ -61,7 +61,7 @@ Détaillez les deux menaces types du Wi-Fi public : l'**écoute passive** des tr
 *   **Man-in-the-Middle (MitM)** — Attaque d'interception où un pirate s'interpose secrètement entre deux parties pour lire ou modifier leurs communications.
 *   **PKI (Infrastructure de Clés Publiques)** — Système de serveurs, de logiciels et de procédures délivrant et gérant des certificats numériques de confiance (certificats X.509).
 *   **RADIUS Server** — Serveur centralisant l'authentification, les autorisations et la traçabilité des accès utilisateurs sur un réseau d'entreprise (802.1X).
-*   **TLS (Transport Layer Security)** — Protocole de sécurisation des échanges réseau chiffrant les flux applicatifs (comme HTTPS) et garantissant l'identité du serveur ; successeur du SSL, aujourd'hui déprécié.
+*   **TLS (Transport Layer Security)** — Protocole de sécurisation des échanges réseau chiffrant les flux applicatifs (comme HTTPS) et garantissant l'identité du serveur. Il succède à SSL, un protocole plus ancien aujourd'hui obsolète et à proscrire.
 *   **VPN (Réseau Privé Virtuel)** — Réseau virtuel sécurisé créant un tunnel chiffré pour le transit de données sur un réseau public.
 
 ---
@@ -72,7 +72,7 @@ Détaillez les deux menaces types du Wi-Fi public : l'**écoute passive** des tr
     Vos murailles (B06) protègent votre réseau — mais vos données, elles, **voyagent** hors les murs : Wi-Fi, Internet, hôtels, clients. La règle : ne jamais faire confiance au réseau traversé. Chiffrer le contenu (TLS), chiffrer le chemin (VPN), authentifier l'interlocuteur (certificats) — et considérer tout réseau public comme hostile par défaut.
 
 ### 1. Sécuriser le web : Le protocole TLS
-Lorsque vous naviguez sur un site web en HTTP classique, toutes les informations (mots de passe, numéros de carte bancaire) transitent en texte clair sur le réseau — vous l'avez vu de vos yeux dans l'exercice bonus de B05. Le protocole **HTTPS** sécurise ces échanges en encapsulant le trafic HTTP au sein d'un tunnel chiffré par le protocole **TLS** (*Transport Layer Security* — successeur du SSL, aujourd'hui déprécié).
+Lorsque vous naviguez sur un site web en HTTP classique, toutes les informations (mots de passe, numéros de carte bancaire) transitent en texte clair sur le réseau — vous l'avez vu de vos yeux dans l'exercice bonus de B05. Le protocole **HTTPS** sécurise ces échanges en encapsulant le trafic HTTP au sein d'un tunnel chiffré par le protocole **TLS** (*Transport Layer Security*), qui succède à SSL — un protocole plus ancien, aujourd'hui obsolète et à proscrire.
 
 *   *L'analogie* : Naviguer en HTTP équivaut à envoyer une carte postale sans enveloppe (tous les intermédiaires peuvent la lire). Naviguer en HTTPS équivaut à glisser le message dans un coffre-fort blindé portatif dont seul le destinataire possède le code.
 *   **Le Handshake TLS (Poignée de main)** :
@@ -268,7 +268,7 @@ Pour sécuriser et chiffrer les flux réseau d'entreprise via des solutions VPN 
 | **Man-in-the-Middle (MitM)** | Interception active : l'attaquant s'interpose entre deux parties pour lire ou modifier les échanges. |
 | **PKI** | Infrastructure délivrant et gérant les certificats numériques de confiance (X.509). |
 | **RADIUS** | Serveur central d'authentification des accès réseau (802.1X) — le cœur du WPA-Enterprise. |
-| **TLS** | Le protocole du HTTPS : chiffre les flux applicatifs et authentifie le serveur (successeur du SSL, déprécié). |
+| **TLS** | Le protocole du HTTPS : chiffre les flux applicatifs et authentifie le serveur (il remplace SSL, obsolète). |
 | **VPN** | Tunnel chiffré à travers un réseau public — chiffre TOUT le trafic de la machine (vs proxy). |
 | **WPA3 / WPA-Enterprise** | Les standards Wi-Fi modernes : SAE contre l'écoute passive ; 802.1X pour des accès nominatifs révocables. |
 

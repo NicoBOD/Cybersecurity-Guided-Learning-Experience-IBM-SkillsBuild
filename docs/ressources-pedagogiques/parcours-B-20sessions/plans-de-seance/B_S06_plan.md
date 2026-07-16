@@ -119,11 +119,11 @@ Parcours : B 20 sessions  |  Module : B — Systèmes & réseaux  |  Durée : 90
 
 ### 0:58–1:08 — Chiffres clés & deux affaires réelles
 
-**Chiffres (2 min, support §4) :** 40 millions de cartes + 70 millions de dossiers clients (Target, 2013) ; plus de 200 M$ de coûts cumulés, accord de 18,5 M$ avec 47 États (2017), démission du PDG ; ~10 Go exfiltrés via un thermomètre d'aquarium (Darktrace, 2018).
+**Chiffres (2 min, support §4) :** 40 millions de cartes + 70 millions de dossiers clients (Target, 2013) ; plus de 200 M$ de coûts cumulés, accord de 18,5 M$ avec 47 États (2017), démission du PDG ; ~10 Go exfiltrés via un thermomètre d'aquarium (incident de 2017, rapporté par Darktrace en 2018).
 
 **Cas n°1 — Target, 2013 (5 min, support §5) :** dérouler la chaîne complète : le prestataire de chauffage hameçonné → le portail fournisseurs → le mouvement latéral jusqu'aux caisses de 1 800 magasins → le malware qui lit les cartes en mémoire au moment du paiement, en pleine période de Noël. Le détail accablant : les outils de détection ont généré des alertes... qui n'ont pas été traitées à temps (rappel de la question rhétorique : une alerte que personne ne lit ne vaut rien). Conclusion : avec une vraie segmentation, l'attaque s'arrêtait au portail de facturation.
 
-**Cas n°2 — Le casino et le thermomètre, 2017 (3 min, support §5) :** rapporté par Darktrace : le thermomètre connecté de l'aquarium du hall, sur le même réseau que les systèmes métier → tremplin vers la base des clients VIP → ~10 Go exfiltrés par le thermomètre. Boucler avec l'inventaire Wi-Fi du début de session : « votre téléviseur, votre imprimante, vos ampoules — que peuvent-ils joindre chez vous ? » Un VLAN IoT étanche transforme l'anecdote en non-événement. Relance chat : *« Quel détail vous marque le plus ? »*
+**Cas n°2 — Le casino et le thermomètre, 2017 (3 min, support §5) :** incident de 2017 rapporté par Darktrace en 2018 : le thermomètre connecté de l'aquarium du hall, sur le même réseau que les systèmes métier → tremplin vers la base des clients VIP → ~10 Go exfiltrés par le thermomètre. Boucler avec l'inventaire Wi-Fi du début de session : « votre téléviseur, votre imprimante, vos ampoules — que peuvent-ils joindre chez vous ? » Un VLAN IoT étanche transforme l'anecdote en non-événement. Relance chat : *« Quel détail vous marque le plus ? »*
 
 ### 1:08–1:12 — Sondage n°5 : et chez vous ?
 
