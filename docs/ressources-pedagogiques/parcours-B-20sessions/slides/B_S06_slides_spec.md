@@ -1,169 +1,183 @@
-# Spécifications des slides — Session B06 : Défenses réseau et segmentation
-Parcours : B 20 sessions  |  Module : B — Sécurité Réseau  |  Format : Spécifications Markdown
+# Spécifications des slides — Session B06 : Défenses réseau
+Parcours : B 20 sessions  |  Module : B — Systèmes & réseaux  |  Format : Spécifications Markdown
+
+> **Principe** : le texte affiché reste minimal (mots-clés, chiffres, schémas) ; le contenu riche est dans les notes orateur et le [plan de séance minuté](../plans-de-seance/B_S06_plan.md). Toutes les interactions passent par les sondages et le chat Livestorm.
 
 ---
 
 ### Slide 1 — Page de garde
 - **Type** : titre
 - **Points clés (bullets)** :
-  - Défenses réseau et segmentation
-  - Filtrer, surveiller et cloisonner les infrastructures de communication
+  - Défenses réseau
+  - Filtrer, surveiller, cloisonner
   - Parcours B — Session B06
-- **Notes orateur** : Bonjour à tous. Après avoir étudié les bases des réseaux, nous allons aujourd'hui voir comment concevoir une architecture réseau hautement sécurisée. Nous allons découvrir les pare-feux, les systèmes d'analyse et de détection d'intrusions, et surtout comment cloisonner notre réseau pour éviter qu'une faille mineure ne paralyse toute l'entreprise.
-- **Visuel suggéré** : Représentation graphique d'une forteresse médiévale moderne avec plusieurs remparts concentriques, chacun matérialisant une zone réseau séparée par des douves lumineuses vertes.
-  - **alt-text** : Graphisme 3D abstrait représentant des remparts et des ponts-levis lumineux pour illustrer le concept de défense en profondeur.
-- **Élément interactif** : Question orale rapide : "Selon vous, quelle est la première chose que fait un pirate informatique après avoir infecté un ordinateur du secrétariat ?"
+- **Notes orateur** : Accueillir : la semaine dernière on a appris à lire le trafic, ce soir on apprend à le filtrer. Retour self-paced : « combien d'appareils avez-vous comptés sur votre Wi-Fi domestique ? Le chiffre dans le chat ! » Lire 4-5 chiffres, souligner la surprise (TV, imprimante, ampoules...) — « retenez ce sentiment, on y revient avec une histoire d'aquarium. » Rappel express de B05 (couches, ports, TV5 Monde).
+- **Visuel suggéré** : Forteresse moderne avec plusieurs remparts concentriques, chacun matérialisant une zone réseau.
+  - **alt-text** : Représentation d'une forteresse à remparts concentriques illustrant la défense en profondeur d'un réseau.
+- **Élément interactif** : 💬 Chat d'accueil — le nombre d'appareils du Wi-Fi domestique.
 
 ---
 
-### Slide 2 — Objectifs de la séance & Sommaire
+### Slide 2 — Objectifs & agenda
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - Expliquer le fonctionnement et comparer les générations de pare-feux (sans état, à état, NGFW).
-  - Différencier le rôle et le positionnement d'un IDS (détection) et d'un IPS (prévention).
-  - Concevoir et modéliser une architecture réseau segmentée (WAN, LAN, DMZ) avec sa table de règles de filtrage.
-  - Sommaire : Les Pare-feux (20 min), IDS/IPS (20 min), Architecture & DMZ (20 min), Exercice table de filtrage (20 min), Quiz (10 min).
-- **Notes orateur** : Nous commencerons par l'évolution des pare-feux. Puis nous verrons les systèmes de détection d'intrusions avant d'aborder le concept crucial de DMZ et de mettre en œuvre vos compétences lors d'un atelier pratique d'écriture de règles de sécurité.
-- **Visuel suggéré** : Colonnes structurées séparant les compétences visées à gauche et l'agenda minuté de la session synchrone à droite.
-  - **alt-text** : Tableau d'agenda minuté présentant le déroulement pas à pas de la séance de 90 minutes.
+  - Comparer les générations de pare-feux (stateless, stateful, NGFW).
+  - Différencier IDS (détecter) et IPS (bloquer).
+  - Concevoir une architecture segmentée (WAN / LAN / DMZ) et sa table de filtrage.
+  - Agenda : pare-feux → IDS/IPS → segmentation → table de filtrage EcoLog → Target & le thermomètre → quiz.
+- **Notes orateur** : Ce soir on construit les murailles : le pare-feu qui applique la loi, les sentinelles qui surveillent, et les zones étanches qui confinent. Point d'orgue : vous écrirez ensemble, par sondages, une vraie table de filtrage — puis deux histoires vraies montreront ce que coûte son absence.
+- **Visuel suggéré** : Deux colonnes présentant les objectifs et l'agenda de la séance.
+  - **alt-text** : Tableau présentant les objectifs d'apprentissage et les étapes de la session.
 
 ---
 
-### Slide 3 — Les Pare-feux : Le principe du Default Deny
+### Slide 3 — Brise-glace : l'entrée improbable
+- **Type** : sondage
+- **Points clés (bullets)** :
+  - 📊 **Sondage n°1** : Target 2013, 40 millions de cartes volées — par où sont-ils entrés ?
+  - A) Une faille du site web — B) Un prestataire de chauffage — C) Un employé corrompu
+- **Notes orateur** : Lancer le sondage n°1 (60-90 s). Réponse B : un petit prestataire de chauffage/climatisation hameçonné, dont l'accès au portail fournisseurs a mené jusqu'aux caisses de 1 800 magasins. Comment passe-t-on d'un portail de facturation aux caisses ? Quand rien ne les sépare. L'histoire complète arrive en seconde partie.
+- **Visuel suggéré** : Fourgon de chauffagiste stylisé garé devant un immense magasin, relié en pointillés rouges à une caisse enregistreuse.
+  - **alt-text** : Camionnette de prestataire de chauffage reliée par un tracé d'intrusion à une caisse enregistreuse de supermarché.
+- **Élément interactif** : 📊 Sondage Livestorm n°1 (brise-glace).
+
+---
+
+### Slide 4 — Le pare-feu : Default Deny
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - Dispositif filtrant les flux réseau entrants/sortants selon des règles.
-  - **Règle d'or : Default Deny (Rejet par défaut)**.
-  - Tout ce qui n'est pas explicitement autorisé est bloqué.
-  - Minimise l'exposition aux attaques non identifiées.
-- **Notes orateur** : Le pare-feu est le gardien de notre réseau. Pour être efficace, il doit obéir à la politique du "Default Deny" : on ferme tout par défaut et on n'ouvre que ce qui est strictement nécessaire pour le travail des utilisateurs. Si une communication n'est pas explicitement listée dans nos règles, elle est rejetée sans ménagement.
-- **Visuel suggéré** : Un mur pare-feu virtuel composé de briques lumineuses vertes bloquant des flux réseau rouges (non autorisés) et laissant passer uniquement un flux bleu (autorisé).
-  - **alt-text** : Mur de briques technologiques bloquant et filtrant des flux de données de différentes couleurs.
+  - Filtrer les flux entrants ET sortants selon des règles.
+  - **Default Deny** : tout ce qui n'est pas explicitement autorisé est interdit.
+  - On autorise des **besoins**, on ne bloque pas des menaces.
+- **Notes orateur** : Le principe fondateur, à marteler : par défaut, tout est fermé. La table de règles n'est pas une liste noire de menaces (impossible à maintenir) mais une liste blanche de besoins métier justifiés. C'est une philosophie de sécurité, pas un détail technique — et la dernière ligne de toute table de filtrage.
+- **Visuel suggéré** : Grande porte fermée par défaut avec une petite liste blanche de laissez-passer à côté.
+  - **alt-text** : Porte massive fermée accompagnée d'une courte liste de laissez-passer symbolisant la politique de rejet par défaut.
 
 ---
 
-### Slide 4 — Génération 1 : Le filtrage sans état (Stateless)
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - Examine chaque paquet indépendamment, sans historique.
-  - Filtre selon : IP Source/Dest et Port Source/Dest.
-  - Très rapide, mais incapable de comprendre le contexte.
-  - *Analogie* : Un portier de discothèque qui vérifie votre identité à l'entrée, mais oublie votre visage dès que vous avez franchi le seuil.
-- **Notes orateur** : La première génération de pare-feu est le filtrage sans état ou "Stateless". Il traite chaque paquet de façon isolée. C'est rapide, mais il est facile de le tromper en imitant des paquets de réponse, car il n'a aucune mémoire des connexions passées. C'est comme un portier qui relirait sa liste à chaque fois que vous faites un pas.
-- **Visuel suggéré** : Illustration d'un portier de boîte de nuit lisant une liste papier d'invités devant un ordinateur qui envoie des paquets isolés.
-  - **alt-text** : Illustration humoristique représentant un portier vérifiant une liste à chaque paquet réseau.
-
----
-
-### Slide 5 — Génération 2 & 3 : Stateful et NGFW
+### Slide 5 — Trois générations de portiers
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - **Filtrage à état (Stateful)** :
-    - Suit l'état des connexions dans une table dynamique.
-    - Se rappelle qu'une machine interne a initié la connexion et laisse passer le retour.
-  - **Next-Generation Firewall (NGFW)** :
-    - *Deep Packet Inspection (DPI)* : Analyse le contenu réel des paquets.
-    - Reconnaît les applications (distingue Dropbox du protocole HTTPS brut).
-    - Intègre des modules d'antivirus de flux et de filtrage d'URL.
-- **Notes orateur** : Le pare-feu "Stateful" garde en mémoire le contexte : si vous ouvrez un site web, le pare-feu s'en souvient et laisse le site vous répondre. Le NGFW va encore plus loin : il ouvre les paquets pour analyser leur contenu. Si vous téléchargez un virus sur le port HTTPS 443 autorisé, le NGFW va l'intercepter grâce à son antivirus de flux intégré.
-- **Visuel suggéré** : Schéma montrant un douanier ouvrant une valise (DPI) à côté d'une table d'états réseau (mémoire des flux).
-  - **alt-text** : Comparatif visuel de l'inspection de paquets basique (Stateful) vs inspection profonde applicative (NGFW).
+  - **Stateless** : vérifie la liste d'invités... et oublie votre visage.
+  - **Stateful** : le bracelet tamponné — se souvient des connexions initiées.
+  - **NGFW** : l'agent des douanes — passeport, trajet, et **ouverture de la valise (DPI)**.
+  - (+ le **WAF**, spécialiste posté devant les serveurs web.)
+- **Notes orateur** : Dérouler les trois analogies. Le stateful bloque tout paquet entrant non sollicité — relance chat : « le portier stateful laisse-t-il entrer un paquet qui ne répond à aucune connexion sortante ? Oui ou non. » (Non — c'est sa valeur ajoutée.) Le NGFW reconnaît l'application réelle même sur le port 443 : un tunnel malveillant en HTTPS ne lui échappe pas. Le WAF cible les attaques applicatives (injections SQL de B03, XSS).
+- **Visuel suggéré** : Trois portiers côte à côte : liste papier, bracelet tamponné, scanner à bagages.
+  - **alt-text** : Trois personnages de portiers illustrant les générations de pare-feux, du filtrage simple à l'inspection profonde.
+- **Élément interactif** : 💬 Chat — quiz éclair sur le portier stateful.
 
 ---
 
-### Slide 6 — WAF (Web Application Firewall) : Spécialiste du Web
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - Pare-feu spécialisé placé devant les serveurs web.
-  - Analyse le protocole HTTP/HTTPS en profondeur.
-  - Protège contre les attaques de niveau applicatif (ex. OWASP Top 10).
-  - Bloque les tentatives d'injections SQL et de Cross-Site Scripting (XSS).
-- **Notes orateur** : Le WAF est un pare-feu ultra-spécialisé pour le web. Contrairement à un pare-feu réseau classique qui se contente de dire "le port 443 est ouvert", le WAF analyse la requête HTTP elle-même. Si un utilisateur essaie de taper du code malveillant dans un formulaire de connexion pour pirater la base de données, le WAF le détecte et bloque la requête.
-- **Visuel suggéré** : Un bouclier positionné juste devant un serveur web, interceptant des requêtes malveillantes marquées d'un symbole d'injection SQL.
-  - **alt-text** : Schéma fonctionnel montrant le WAF filtrant les attaques applicatives web avant qu'elles n'atteignent le serveur de production.
-
----
-
-### Slide 7 — IDS et IPS : Surveiller et Intervenir
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - **IDS (Intrusion Detection System)** :
-    - Système passif (écoute une copie du réseau).
-    - Repère les signatures suspectes et génère des alertes.
-    - *Ne bloque pas le trafic*.
-  - **IPS (Intrusion Prevention System)** :
-    - Système actif positionné en coupure (*inline*).
-    - Analyse en temps réel et détruit les paquets malveillants immédiatement.
-- **Notes orateur** : Les pare-feux contrôlent les accès, mais ils ne voient pas tout. L'IDS et l'IPS analysent le trafic à la recherche de signatures d'attaques. L'IDS agit comme une alarme de maison : il sonne mais n'arrête pas le cambrioleur. L'IPS est un gardien actif : il est sur le passage et neutralise directement l'agresseur en détruisant les paquets malveillants.
-- **Visuel suggéré** : Un système d'alarme de sécurité (pour l'IDS) à côté d'un agent de sécurité physique interceptant activement un intrus (pour l'IPS).
-  - **alt-text** : Comparaison métaphorique entre la surveillance passive (alarme/IDS) et l'intervention active (gardien/IPS).
-
----
-
-### Slide 8 — Segmentation réseau et concept de DMZ
+### Slide 6 — IDS & IPS : les sentinelles
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - Empêche les mouvements latéraux des attaquants.
-  - Division du réseau en trois zones principales :
-    - **WAN** : Internet public (zone non sûre).
-    - **LAN** : Réseau local interne (ordinateurs des salariés, données sensibles).
-    - **DMZ (Zone Démilitarisée)** : Zone tampon exposée hébergeant les serveurs publics (Web, e-mail).
-- **Notes orateur** : Si tout votre réseau est à plat, le piratage d'une seule machine de bureau donne accès à vos serveurs les plus critiques. C'est pourquoi nous segmentons le réseau. Nous isolons les serveurs web publics dans une DMZ, une zone tampon. Ainsi, si le serveur web est piraté, l'attaquant est confiné dans la DMZ et ne peut pas atteindre le réseau interne.
-- **Visuel suggéré** : Schéma d'architecture réseau à trois branches connectées à un pare-feu central : Internet (WAN), le réseau interne (LAN) et la zone tampon (DMZ).
-  - **alt-text** : Schéma d'architecture réseau segmenté présentant le WAN, le LAN et la DMZ séparés par un pare-feu.
+  - **IDS** : passif, sur copie du trafic — détecte et **alerte**.
+  - **IPS** : actif, sur le chemin — **bloque** en temps réel.
+  - Le compromis : le passif n'arrête rien ; l'actif peut couper du trafic légitime (faux positif).
+- **Notes orateur** : Pourquoi ces sentinelles ? Parce qu'un flux AUTORISÉ peut transporter une attaque. L'IDS écoute un port miroir et ne casse jamais rien ; l'IPS inline détruit le paquet malveillant, mais un faux positif sur un système critique fait des dégâts — d'où la pratique : démarrer en détection, activer la prévention règle par règle. Question rhétorique à garder pour Target : « une alerte que personne ne lit, ça vaut combien ? »
+- **Visuel suggéré** : Schéma de flux réseau : l'IDS en dérivation avec une loupe, l'IPS sur le chemin avec un bouclier.
+  - **alt-text** : Schéma montrant un IDS placé en dérivation du flux réseau et un IPS placé en coupure sur le chemin.
 
 ---
 
-### Slide 9 — La règle d'or de la DMZ
-- **Type** : contenu
+### Slide 7 — Segmentation : WAN, LAN, DMZ
+- **Type** : schéma
 - **Points clés (bullets)** :
-  - Les machines de la DMZ sont exposées sur Internet et considérées comme vulnérables par défaut.
-  - **Règle absolue : Interdire toute connexion initiée depuis la DMZ vers le LAN**.
-  - Si un serveur en DMZ est compromis, le pirate ne peut pas s'en servir de rebond pour attaquer les ordinateurs internes.
-  - Les données nécessaires au LAN doivent être poussées par le LAN ou récupérées de façon contrôlée.
-- **Notes orateur** : C'est la règle d'or la plus importante en architecture réseau : une machine située en DMZ ne doit jamais pouvoir initier une connexion vers le LAN. Si vous devez mettre à jour une base de données interne, c'est le LAN qui doit initier la connexion pour interroger la DMZ, jamais l'inverse. C'est ce qui garantit l'étanchéité de notre sécurité.
-- **Visuel suggéré** : Schéma montrant un sens interdit rouge et une flèche bloquée partant de la DMZ vers le LAN, contrastant avec une flèche verte autorisée du LAN vers la DMZ.
-  - **alt-text** : Représentation graphique du flux bloqué DMZ $\rightarrow$ LAN et du flux autorisé LAN $\rightarrow$ DMZ.
+  - **WAN** : Internet, non sûr · **LAN** : l'interne · **DMZ** : la zone tampon exposée.
+  - **Règle d'or : aucun flux initié DMZ → LAN.**
+  - La DMZ est conçue pour être « perdable ».
+  - VLAN : la segmentation à l'intérieur du LAN (bureautique / production / IoT / invités).
+- **Notes orateur** : L'ennemi : le mouvement latéral — rappel TV5 Monde et son réseau à plat. Dérouler l'analogie de l'aéroport (support) : la DMZ est le hall public, le LAN la zone à badges. Question rhétorique : chez Target, dans quelle zone aurait dû vivre le portail fournisseurs ? Une zone étanche, sans aucun chemin vers les caisses.
+- **Visuel suggéré** : Schéma d'architecture : nuage Internet, pare-feu central, DMZ avec serveur web, LAN avec postes — flux autorisés en vert, flux DMZ vers LAN barré en rouge.
+  - **alt-text** : Schéma d'architecture réseau montrant les zones WAN, DMZ et LAN avec le flux DMZ vers LAN interdit.
 
 ---
 
-### Slide 10 — Activité pratique : Configuration pare-feu de "EcoLog"
+### Slide 8 — Activité : la table de filtrage d'EcoLog
+- **Type** : activité (sondages)
+- **Points clés (bullets)** :
+  - LAN employés `192.168.10.0/24` · DMZ serveur web `192.168.20.5` · WAN.
+  - Trois besoins métier → trois règles à voter.
+  - 📊 **Sondages n°2, 3, 4** : clients → site ? mises à jour ? administration SSH ?
+- **Notes orateur** : « Le pare-feu d'EcoLog vient d'être branché : TOUT est bloqué. Ouvrons uniquement le justifié. » Lancer les trois sondages avec débrief entre chaque : la question clé est QUI INITIE la connexion. Pièges : ouvrir le LAN au monde (n°2-B), violer la règle d'or DMZ→LAN (n°3-C), exposer SSH à Internet (n°4-C). Conclure en remplissant la table complète à l'écran, avec la ligne finale Any→Any : Deny — « c'est elle qui transforme une liste de règles en politique de sécurité. »
+- **Visuel suggéré** : Table de filtrage vide à cinq lignes projetée, remplie ligne par ligne au fil des votes.
+  - **alt-text** : Tableau de règles de pare-feu à compléter progressivement pendant l'activité collective.
+- **Élément interactif** : 📊 Sondages Livestorm n°2 à 4 — construction collective de la table.
+
+---
+
+### Slide 9 — Le paysage en chiffres
+- **Type** : chiffres clés
+- **Points clés (bullets)** :
+  - **40 M de cartes** + ~70 M de dossiers clients : Target, 2013.
+  - **> 200 M$** de coûts cumulés · accord de 18,5 M$ avec 47 États (2017) · démission du PDG.
+  - **~10 Go** exfiltrés via un thermomètre d'aquarium connecté (incident de 2017, rapporté par Darktrace en 2018).
+- **Notes orateur** : Trois lectures : le maillon faible peut être un fournisseur (le pare-feu n'y peut rien — l'accès est légitime) ; la segmentation manquante se chiffre en centaines de millions ; et chaque objet connecté est une porte — si rien ne le sépare des données, la porte mène au coffre. Transition : les deux histoires en détail.
+- **Visuel suggéré** : Trois grands chiffres en typographie XXL avec leurs sources et années en petit.
+  - **alt-text** : Trois statistiques géantes sur les défaillances de segmentation réseau avec leurs sources.
+
+---
+
+### Slide 10 — Affaire n°1 : Target (2013)
 - **Type** : étude de cas
 - **Points clés (bullets)** :
-  - **Scénario** : L'entreprise EcoLog doit configurer les règles de son pare-feu.
-  - **Zones** : LAN (`192.168.10.0/24`), DMZ (`192.168.20.5`), WAN (`Any`).
-  - **Objectifs** :
-    - Autoriser les visites HTTPS externes sur la DMZ.
-    - Permettre la navigation web sécurisée du LAN vers le WAN.
-    - Autoriser l'administration SSH du LAN vers la DMZ.
-    - Bloquer tout le reste (Default Deny).
-- **Notes orateur** : Place à la pratique. Vous allez concevoir la table de règles pare-feu de l'entreprise EcoLog. Vous devez définir précisément les adresses sources, destinations, les ports correspondants et l'action à mener (Autoriser ou Bloquer). Attention à bien ordonner vos règles et à finir par le blocage par défaut.
-- **Visuel suggéré** : Tableau vide présentant les colonnes : N° Règle, Zone Source, IP Source, Zone Dest, IP Dest, Port/Service, Action.
-  - **alt-text** : Tableau d'exercice à remplir pour la création de règles de sécurité de pare-feu.
-- **Élément interactif** : Remplissage collaboratif de la table de filtrage en sous-groupes de travail.
+  - Un prestataire de chauffage hameçonné → le portail fournisseurs.
+  - Mouvement latéral → les **caisses de 1 800 magasins**, à Noël.
+  - Les alertes de détection : générées... **mais pas traitées**.
+- **Notes orateur** : Dérouler la chaîne complète : identifiants du prestataire → portail de facturation → cheminement interne → malware sur les caisses lisant les cartes en mémoire au moment du paiement. Le détail accablant : les outils avaient détecté, personne n'a agi à temps — une alerte non traitée ne vaut rien. Conclusion : avec une vraie segmentation (portail dans une zone étanche, Default Deny vers le reste), l'attaque s'arrêtait à la facturation.
+- **Visuel suggéré** : Chaîne d'intrusion en cinq maillons illustrés, du fourgon du prestataire à la caisse enregistreuse, avec une cloison manquante en évidence.
+  - **alt-text** : Chaîne d'intrusion illustrée depuis le prestataire hameçonné jusqu'aux caisses enregistreuses, soulignant l'absence de cloisonnement.
 
 ---
 
-### Slide 11 — Quiz de validation
-- **Type** : quiz
+### Slide 11 — Affaire n°2 : le casino et le thermomètre (2017)
+- **Type** : étude de cas
 - **Points clés (bullets)** :
-  - 1. Quelle technologie de pare-feu inspecte le contenu applicatif des paquets (DPI) ?
-  - 2. Quelle est la différence majeure entre un IDS et un IPS ?
-  - 3. Un serveur en DMZ peut-il initier une connexion vers un poste du LAN ?
-- **Notes orateur** : Passons au quiz pour valider vos acquis. Répondez sur votre application. Pensez bien à la différence fondamentale d'action entre l'IDS et l'IPS et aux règles de cloisonnement de la DMZ.
-- **Visuel suggéré** : QR Code d'accès au vote synchrone à gauche, questions à choix multiples à droite.
-  - **alt-text** : QR Code de vote pour la validation des compétences réseau.
-- **Élément interactif** : Vote synchrone en direct avec affichage des résultats.
+  - Un thermomètre d'aquarium connecté... sur le réseau métier.
+  - Tremplin vers la base des clients VIP.
+  - **~10 Go exfiltrés — par le thermomètre** (rapporté par Darktrace en 2018).
+- **Notes orateur** : L'objet IoT anodin comme porte d'entrée : la question n'est pas « qui pirate un thermomètre ? » mais « une fois compromis, que peut-il JOINDRE ? ». Boucler avec l'inventaire Wi-Fi du début : votre téléviseur, vos ampoules — que peuvent-ils joindre chez vous ? Un VLAN IoT étanche transforme l'anecdote en non-événement. Relance chat : « quel détail vous marque le plus ? »
+- **Visuel suggéré** : Aquarium de hall d'hôtel avec un thermomètre connecté relié en pointillés rouges à une base de données de coffre-fort.
+  - **alt-text** : Aquarium décoratif dont le thermomètre connecté est relié par un tracé d'intrusion à une base de données sécurisée.
+- **Élément interactif** : 💬 Chat — réactions aux deux affaires.
 
 ---
 
-### Slide 12 — Conclusion & Travail en autonomie
+### Slide 12 — Et chez vous ? La segmentation
+- **Type** : sondage (opinion)
+- **Points clés (bullets)** :
+  - 📊 **Sondage n°5** : le réseau que vous connaissez le mieux est-il segmenté ?
+  - A) Zones étanches — B) Un Wi-Fi invité, sans plus — C) Tout à plat / je ne sais pas.
+- **Notes orateur** : Sondage d'opinion. B est déjà un vrai progrès — le Wi-Fi invité est la segmentation la plus accessible (la plupart des box la proposent). Pour les C : TV5, Target, le casino — trois histoires, une cause racine. L'atelier B08 fera dessiner votre schéma segmenté. Enchaîner sur le mini-scénario de l'alerte de 2h du matin : « tapez A, B ou C » (réponse B — confiner le poste puis investiguer ; A = l'erreur de Target ; C = le déni de service auto-infligé).
+- **Visuel suggéré** : Plan de maison avec des pièces cloisonnées ou ouvertes, symbolisant les niveaux de segmentation.
+  - **alt-text** : Plan d'habitation illustrant des réseaux plus ou moins cloisonnés selon les pièces.
+- **Élément interactif** : 📊 Sondage Livestorm n°5 (opinion) puis 🤔 mini-scénario en chat (A/B/C).
+
+---
+
+### Slide 13 — Quiz de validation
+- **Type** : quiz (sondages)
+- **Points clés (bullets)** :
+  - 📊 **Sondage n°6** : stateful vs stateless ?
+  - 📊 **Sondage n°7** : IDS vs IPS ?
+  - 📊 **Sondage n°8** : qu'apporte un NGFW ?
+- **Notes orateur** : Lancer les trois sondages à la suite (~2 min chacun), débriefs scriptés dans le support : le bracelet tamponné (mémoire des connexions) ; détecter/alerter vs bloquer en temps réel — et le compromis du faux positif ; l'inspection profonde du contenu, même sur un port autorisé. Rappeler : les défenses s'empilent, elles ne se remplacent pas. Si le temps le permet, enchaîner sur le bonus n°9 (le confinement DMZ).
+- **Visuel suggéré** : Trois cartes de quiz numérotées 6, 7, 8 avec l'icône de sondage Livestorm.
+  - **alt-text** : Trois cartes de questions de quiz numérotées, associées à des sondages en direct.
+- **Élément interactif** : 📊 Sondages Livestorm n°6 à 8 (+ n°9 en tampon).
+
+---
+
+### Slide 14 — Synthèse & prochaine session
 - **Type** : récap
 - **Points clés (bullets)** :
-  - **Résumé** : Pare-feux (Default Deny, à états, NGFW, WAF), surveillance active (IPS) ou passive (IDS) et cloisonnement par DMZ.
-  - **Travail personnel** : Suivre le cours IBM SkillsBuild *"Network Security - Part 2"* (~1h30).
-  - **Exercice maison** : Modéliser le schéma d'EcoLog avec un outil de dessin (Ex : draw.io) en y incluant le pare-feu.
-  - Prochaine session : *Introduction à la détection d'intrusions et analyse de logs (B07)*.
-- **Notes orateur** : Nous avons posé les briques de la défense réseau. Pour consolider ces connaissances, suivez le module de cours IBM SkillsBuild et dessinez le schéma réseau d'EcoLog chez vous. La semaine prochaine, nous verrons comment mettre cela en œuvre concrètement en installant un pare-feu et en analysant des paquets. Merci et à bientôt !
-- **Visuel suggéré** : Exemple de schéma réseau propre dessiné sur un tableau blanc virtuel avec des icônes d'équipements informatiques.
-  - **alt-text** : Capture d'un schéma d'architecture réseau DMZ/LAN/WAN propre et structuré.
+  - Un pare-feu qui n'autorise que le justifié : **Default Deny**.
+  - Des sentinelles : IDS alerte, IPS bloque — encore faut-il traiter les alertes.
+  - Des zones étanches : DMZ, VLAN — le mouvement latéral confiné.
+  - Self-paced : SkillsBuild *« Network Security - Part 2 »* + schéma draw.io + observer le cadenas TLS.
+  - Prochaine session — B07 : Communications sécurisées (TLS, VPN).
+- **Notes orateur** : Faire écrire dans le chat UN mot retenu, en lire 4-5. Rappeler le triple devoir (cours, schéma d'architecture en brouillon pour B08, inspection du cadenas TLS du navigateur — préparation directe de B07). Teaser B07 : « vos murailles sont en place — mais qui LIT vos données pendant qu'elles voyagent ? Chiffrement, TLS, VPN — et l'histoire de la petite extension de navigateur qui a forcé le web entier à passer au HTTPS. » Terminer à l'heure exacte.
+- **Visuel suggéré** : Récapitulatif en trois vignettes (pare-feu, sentinelles, zones) et un panneau « B07 » fléché.
+  - **alt-text** : Synthèse en trois vignettes des thèmes de la session avec un panneau indiquant la prochaine session B07.
+- **Élément interactif** : Chat de clôture — « un mot que vous retenez ».
