@@ -148,7 +148,7 @@ Comment être sûr que la clé publique de `banque.com` appartient bien à votre
 !!! info "Chiffres clés à retenir (sources et années citées)"
     - **Environ 153 millions de comptes** dans le fichier Adobe diffusé fin 2013 — mots de passe **chiffrés** (et non hachés) avec la même clé, indices de mot de passe stockés **en clair**.
     - **117 millions d'identifiants LinkedIn** mis en vente en 2016, issus de la fuite de 2012 — des empreintes SHA-1 **sans sel**, dont l'écrasante majorité a été cassée en quelques jours.
-    - **Plusieurs milliards d'empreintes testées par seconde** : la puissance d'une seule carte graphique moderne face à des hachages rapides — la raison d'être des fonctions dédiées lentes (bcrypt, Argon2).
+    - **Plusieurs milliards d'empreintes testées par seconde** : l'ordre de grandeur d'une seule carte graphique moderne face à des hachages rapides, constaté sur les bancs d'essai publics des outils de cassage (ex. Hashcat) — la raison d'être des fonctions dédiées lentes (bcrypt, Argon2).
 
 **Comment lire ces chiffres ?** (1) Le mauvais outil au mauvais endroit (chiffrer au lieu de hacher) transforme une fuite en catastrophe. (2) Un détail d'implémentation (le sel manquant) change tout. (3) La force brute est industrielle : seule la lenteur volontaire des fonctions dédiées la rend non rentable.
 

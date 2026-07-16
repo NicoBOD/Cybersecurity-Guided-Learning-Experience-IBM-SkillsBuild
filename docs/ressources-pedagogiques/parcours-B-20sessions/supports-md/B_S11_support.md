@@ -143,7 +143,7 @@ Pour sécuriser les consoles d'administration cloud, appliquez la politique du m
 ### 4. Le paysage en chiffres
 
 !!! info "Chiffres clés à retenir (sources et années citées)"
-    - **La quasi-totalité (~99 %)** des défaillances de sécurité cloud sont imputables au client, non au fournisseur (prédiction devenue référence du cabinet Gartner).
+    - **La quasi-totalité (~99 %)** des défaillances de sécurité cloud sont imputables au client, non au fournisseur (prédiction publiée en 2019 par le cabinet Gartner, devenue référence du secteur).
     - **Environ 106 millions de dossiers clients** exposés dans l'affaire Capital One (2019) — 80 M$ d'amende du régulateur bancaire américain (2020) et 190 M$ d'accord d'indemnisation.
     - **Environ 14 millions de dossiers clients Verizon** exposés en 2017 par un simple bucket de stockage configuré en accès public chez un prestataire (découverte du cabinet UpGuard).
 

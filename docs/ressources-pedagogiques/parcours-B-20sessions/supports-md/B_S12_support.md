@@ -122,7 +122,7 @@ Face à la recrudescence des rançongiciels (*ransomwares*) qui chiffrent les se
 !!! info "Chiffres clés à retenir (sources et années citées)"
     - **Environ 3,6 millions de sites web** hors ligne après l'incendie du datacenter OVHcloud de Strasbourg (mars 2021) — et des données définitivement perdues pour les clients dont les sauvegardes étaient co-localisées.
     - **95 millions de dollars d'amendes cumulées** pour Morgan Stanley (60 M$ du régulateur bancaire en 2020, 35 M$ du gendarme boursier en 2022) : des équipements de stockage décommissionnés revendus sans effacement fiable.
-    - **Plus de 9 attaques par rançongiciel sur 10** ciblent aussi les sauvegardes de la victime (rapport Veeam *Ransomware Trends*).
+    - **Plus de 9 attaques par rançongiciel sur 10** ciblent aussi les sauvegardes de la victime (rapport Veeam *Ransomware Trends*, 2023).
 
 **Comment lire ces chiffres ?** (1) Le sinistre physique existe encore à l'ère du cloud — la copie hors site n'est pas une option. (2) La donnée reste dangereuse jusqu'à sa destruction certifiée. (3) La sauvegarde connectée n'est plus une protection contre le rançongiciel : hors ligne ou immuable, sinon rien.
 
