@@ -1,5 +1,7 @@
 # Spécifications des slides — Session B09 : Gestion des identités et des accès (IAM)
-Parcours : B 20 sessions  |  Module : C — Sécurité des Systèmes et Applications  |  Format : Spécifications Markdown
+Parcours : B 20 sessions  |  Module : C — Identités, cloud & données  |  Format : Spécifications Markdown
+
+> **Principe** : le texte affiché reste minimal (mots-clés, chiffres, schémas) ; le contenu riche est dans les notes orateur et le [plan de séance minuté](../plans-de-seance/B_S09_plan.md). Toutes les interactions passent par les sondages et le chat Livestorm.
 
 ---
 
@@ -7,160 +9,175 @@ Parcours : B 20 sessions  |  Module : C — Sécurité des Systèmes et Applicat
 - **Type** : titre
 - **Points clés (bullets)** :
   - Gestion des identités et des accès (IAM)
-  - Identifier, authentifier, autoriser et tracer les activités des utilisateurs
-  - Parcours B — Session B09
-- **Notes orateur** : Bienvenue dans cette neuvième session. Aujourd'hui, nous allons nous attaquer à la gestion des identités et des accès, couramment appelée IAM. C'est l'un des piliers les plus importants de la cybersécurité moderne. Nous allons voir comment s'assurer que les bonnes personnes accèdent aux bonnes ressources, au bon moment, et comment prouver leur identité de manière robuste.
-- **Visuel suggéré** : Représentation d'une empreinte digitale numérique lumineuse verte entourée de cercles concentriques de clés, de jetons d'accès et d'engrenages de sécurité.
-  - **alt-text** : Graphisme de haute technologie illustrant la biométrie et le contrôle d'accès dans un style cyberpunk.
-- **Élément interactif** : Question sondage : "Selon vous, quelle proportion des cyberattaques réussies impliquent l'utilisation de mots de passe volés ou compromis ?"
+  - Qui a les clés ? Identifier, prouver, autoriser, tracer
+  - Parcours B — Session B09 · Ouverture du module Identités, cloud & données
+- **Notes orateur** : Accueillir : ouverture du module C — les murailles sont construites (module B), reste à gérer qui a les clés. Retour self-paced : « tapez dans le chat un service que vous utilisez avec "Se connecter avec Google/Microsoft" » — « vous utilisez déjà du SSO tous les jours ; ce soir, vous comprendrez la machinerie derrière le bouton. » Rappel B08 : Colonial Pipeline et son compte dormant — il va revenir.
+- **Visuel suggéré** : Empreinte digitale numérique entourée de cercles concentriques de clés et de jetons d'accès.
+  - **alt-text** : Illustration d'une empreinte digitale numérique entourée de clés symbolisant le contrôle des identités.
+- **Élément interactif** : 💬 Chat d'accueil — le SSO dans votre quotidien.
 
 ---
 
-### Slide 2 — Objectifs de la séance & Sommaire
+### Slide 2 — Objectifs & agenda
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - Expliquer les quatre étapes fondamentales de l'IAM : Identification, Authentification, Autorisation et Audit.
-  - Comparer le modèle de contrôle d'accès basé sur les rôles (RBAC) avec le modèle basé sur les attributs (ABAC).
-  - Concevoir une politique d'authentification multifacteur (MFA) et d'authentification unique (SSO).
-  - Sommaire : Les 4 piliers de l'IAM (25 min), Attribution des droits : RBAC vs ABAC (20 min), MFA & SSO (20 min), Exercice Matrice RBAC (15 min), Quiz (10 min).
-- **Notes orateur** : Durant ces 90 minutes, nous allons découper l'IAM en quatre concepts clés. Nous étudierons les modèles de gestion des droits RBAC et ABAC, puis nous aborderons le fonctionnement du SSO et du MFA. Nous ferons un cas pratique de création de matrice de droits et nous terminerons par un quiz de validation.
-- **Visuel suggéré** : Agenda minuté aligné à droite, avec les 3 compétences cibles affichées sous forme d'icônes à gauche.
-  - **alt-text** : Tableau d'agenda minuté de la session synchrone d'IAM.
+  - Distinguer les 4 piliers : Identification, Authentification, Autorisation, Audit.
+  - Comparer RBAC (rôles) et ABAC (attributs dynamiques).
+  - Concevoir une politique MFA + SSO, avec le cycle de vie des identités (JML).
+  - Agenda : 4 piliers → RBAC/ABAC → SSO & JML → matrice MedDistri → Uber & 23andMe → quiz.
+- **Notes orateur** : Le fil rouge de la soirée tient en une phrase du rapport Verizon : les attaquants ne piratent pas, ils se connectent. Nous allons apprendre à rendre cette connexion difficile (MFA), limitée (RBAC) et traçable (audit) — puis deux affaires récentes montreront le prix de chaque négligence.
+- **Visuel suggéré** : Deux colonnes présentant les objectifs et l'agenda de la séance.
+  - **alt-text** : Tableau présentant les objectifs d'apprentissage et les étapes de la session.
 
 ---
 
-### Slide 3 — Les 4 étapes logiques de l'IAM
-- **Type** : contenu
+### Slide 3 — Brise-glace : comment entrent-ils vraiment ?
+- **Type** : sondage
 - **Points clés (bullets)** :
-  - **Identification** : Déclarer qui vous êtes (ex. nom d'utilisateur, adresse e-mail).
-  - **Authentification (AuthN)** : Prouver qui vous êtes (ex. mot de passe, empreinte).
-  - **Autorisation (AuthZ)** : Accorder les droits (ex. droit de lecture, d'écriture).
-  - **Audit (Responsabilité)** : Tracer les actions dans les journaux d'événements (logs).
-- **Notes orateur** : L'IAM n'est pas juste un mot de passe. C'est un processus en 4 étapes distinctes. L'identification déclare une identité. L'authentification vérifie la preuve de cette identité. L'autorisation accorde les droits et l'audit enregistre tout pour des besoins d'investigation ultérieurs.
-- **Visuel suggéré** : Une frise chronologique horizontale présentant les 4 étapes avec des icônes d'utilisateur, de clé, de cadenas ouvert et de loupe d'analyse de logs.
-  - **alt-text** : Frise chronologique présentant le parcours logique de l'identification à l'audit.
+  - 📊 **Sondage n°1** : le premier vecteur d'accès initial des attaquants (Verizon DBIR) ?
+  - A) Identifiants volés ou réutilisés — B) Failles zero-day — C) Intrusion physique
+- **Notes orateur** : Lancer le sondage n°1 (60-90 s). Réponse A : de l'ordre d'une violation sur cinq, en tête année après année (DBIR 2025). Les attaquants achètent, hameçonnent ou rejouent de vrais identifiants — ils SE CONNECTENT. Le périmètre n'est plus la muraille : c'est l'identité.
+- **Visuel suggéré** : Porte d'entrée moderne ouverte avec une vraie clé, pendant que des outils de cambriolage restent inutilisés au sol.
+  - **alt-text** : Attaquant ouvrant une porte avec une clé légitime plutôt qu'en la forçant, symbolisant les identifiants volés.
+- **Élément interactif** : 📊 Sondage Livestorm n°1 (brise-glace).
 
 ---
 
-### Slide 4 — L'analogie de l'immeuble sécurisé
+### Slide 4 — Les 4 piliers de l'IAM
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - **Identification** : *"Bonjour, je suis Alice, consultante externe."*
-  - **Authentification** : Alice présente son passeport officiel à l'accueil.
-  - **Autorisation** : L'accueil lui remet un badge programmé uniquement pour le 1er étage.
-  - **Audit** : Chaque passage de badge d'Alice est enregistré dans le registre de sécurité.
-- **Notes orateur** : Pour bien fixer ces notions, reprenons l'analogie d'un bâtiment physique. Vous vous présentez à l'accueil : c'est l'identification. L'agent de sécurité contrôle votre pièce d'identité : c'est l'authentification. Il vous remet un badge d'accès limité à certains étages : c'est l'autorisation. Enfin, l'historique des portes que vous ouvrez est enregistré : c'est l'audit.
-- **Visuel suggéré** : Illustration d'un hall d'accueil d'entreprise moderne avec un portillon de sécurité et un écran affichant les logs de passage.
-  - **alt-text** : Bande dessinée modélisant les étapes de contrôle d'accès dans un bâtiment d'entreprise.
+  - **Identification** : « Je suis Alice Martin » (l'identifiant).
+  - **Authentification** : le prouver (facteurs de preuve).
+  - **Autorisation** : le badge limité au 1er étage.
+  - **Audit** : chaque passage enregistré.
+- **Notes orateur** : Dérouler l'analogie de l'immeuble sécurisé : l'accueil, le passeport, le badge programmé, le registre. Vocabulaire pro : AuthN (prouver qui l'on est) vs AuthZ (décider ce que l'on peut faire) — deux questions différentes, souvent confondues. Relance chat : « le badge limité au 1er étage, c'est quel pilier ? » (l'Autorisation).
+- **Visuel suggéré** : Parcours en quatre étapes dans un hall d'immeuble : accueil, contrôle du passeport, badge remis, registre de passage.
+  - **alt-text** : Parcours d'un visiteur dans un immeuble sécurisé illustrant les quatre piliers de l'IAM.
+- **Élément interactif** : 💬 Chat — quiz éclair sur l'analogie.
 
 ---
 
-### Slide 5 — L'Authentification Multifacteur (MFA)
+### Slide 5 — MFA : la règle des catégories
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - Vise à neutraliser le vol simple de mot de passe.
-  - Utilise **au moins deux facteurs de catégories différentes** :
-    - *Ce que je sais* : Mot de passe, code PIN.
-    - *Ce que je possède* : Clé YubiKey, code sur smartphone (OTP), application d'authentification.
-    - *Ce que je suis* : Caractéristique biométrique (empreinte, visage).
-  - Deux mots de passe différents $\neq$ MFA (ce sont deux facteurs de même nature).
-- **Notes orateur** : Le mot de passe seul est trop facile à voler par phishing ou force brute. Pour sécuriser un accès, on ajoute du MFA. Mais attention, pour que ce soit du MFA, il faut utiliser des facteurs de natures différentes. Saisir deux codes secrets n'est pas du MFA. Il faut combiner ce que vous savez (votre mot de passe) et ce que vous possédez (votre smartphone ou une clé USB matérielle de sécurité).
-- **Visuel suggéré** : Schéma d'une balance avec trois plateaux représentant le Savoir, la Possession et la Biométrie, tous connectés pour valider une identité.
-  - **alt-text** : Illustration des 3 catégories de facteurs d'authentification.
+  - Ce que l'on **sait** · ce que l'on **possède** · ce que l'on **est**.
+  - MFA = **deux catégories différentes** minimum (2 mots de passe ≠ MFA).
+  - Tous les MFA ne se valent pas : SMS < application TOTP < push + number matching < **FIDO2/passkey**.
+- **Notes orateur** : La règle des catégories est la question n°6 du quiz. Hiérarchiser : le SMS est fragile (SIM swapping — l'attaquant fait transférer votre ligne sur sa carte SIM) ; l'application TOTP est un bon standard ; le push est confortable mais vulnérable à la fatigue MFA (l'histoire d'Uber arrive) ; la clé FIDO2/passkey résiste à l'hameçonnage par conception. Rappel B04 : la MFA bloque >99,9 % des attaques automatisées — encore faut-il bien la choisir.
+- **Visuel suggéré** : Podium à quatre marches classant les méthodes MFA du SMS à la clé FIDO2.
+  - **alt-text** : Podium hiérarchisant les méthodes d'authentification multifacteur de la plus faible à la plus robuste.
 
 ---
 
-### Slide 6 — RBAC : Le contrôle d'accès basé sur les rôles
+### Slide 6 — RBAC vs ABAC
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - **RBAC (Role-Based Access Control)**.
-  - Les permissions sont attribuées à des **rôles métier** (ex: RH, Comptable, AdminIT).
-  - Les utilisateurs sont affectés à ces rôles.
-  - Idéal pour les structures stables et la simplicité de gestion.
-  - Évite de configurer des droits individuels machine par machine.
-- **Notes orateur** : Le modèle RBAC lie les accès aux fonctions de l'employé. Si vous êtes dans l'équipe RH, vous êtes affecté au rôle "RH" et vous héritez automatiquement des droits d'écriture sur les dossiers du personnel. C'est le modèle le plus classique, simple à mettre en place et très lisible pour les audits de sécurité.
-- **Visuel suggéré** : Schéma d'association : Utilisateurs $\rightarrow$ Rôles (Boîtes étiquetées RH, Informatique, Finances) $\rightarrow$ Permissions de dossiers.
-  - **alt-text** : Schéma structurel de l'attribution des droits par rôles professionnels.
+  - **RBAC** : les droits suivent les **rôles métier** — simple, auditable.
+  - **ABAC** : la décision dépend des **attributs** — sujet, ressource, contexte (heure, lieu, réseau).
+  - Exemple ABAC : « le Comptable modifie les factures SEULEMENT aux heures de bureau ET depuis le réseau de l'entreprise ».
+- **Notes orateur** : RBAC répond à « qui peut quoi », ABAC ajoute « dans quelles conditions ». Question rhétorique : pourquoi ne pas tout faire en ABAC ? Complexité — chaque règle dynamique s'écrit, se teste, se maintient. En pratique : RBAC pour la structure, ABAC pour les ressources les plus sensibles. C'est la question n°7 du quiz.
+- **Visuel suggéré** : Deux panneaux : un organigramme avec des rôles colorés (RBAC) et un tableau de bord de conditions contextuelles (ABAC).
+  - **alt-text** : Comparaison visuelle entre l'attribution de droits par rôles et l'évaluation dynamique par attributs.
 
 ---
 
-### Slide 7 — ABAC : Le contrôle d'accès basé sur les attributs
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - **ABAC (Attribute-Based Access Control)**.
-  - Évalue les droits de manière dynamique et granulaire.
-  - Se base sur des attributs contextuels :
-    - *Attribut du sujet* : Fonction, habilitation.
-    - *Attribut de la ressource* : Sensibilité du document.
-    - *Attribut environnemental* : Heure de connexion, adresse IP de connexion.
-- **Notes orateur** : Le modèle ABAC est beaucoup plus intelligent et granulaire que le RBAC. Au lieu de dire "Alice a le rôle comptable donc elle accède au fichier", on va vérifier son rôle, mais aussi l'heure et son adresse IP. Par exemple : Alice ne peut modifier les fichiers financiers que pendant les heures de bureau et uniquement si elle est connectée au réseau local du siège de l'entreprise.
-- **Visuel suggéré** : Un organigramme de décision complexe combinant l'identité d'un utilisateur, sa géolocalisation IP et l'heure système pour autoriser l'accès à un fichier confidentiel.
-  - **alt-text** : Représentation d'une politique de filtrage dynamique ABAC selon plusieurs variables.
-
----
-
-### Slide 8 — Single Sign-On (SSO) : Authentification unique
+### Slide 7 — SSO & le cycle de vie des identités
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - Permet d'accéder à toutes ses applications professionnelles en s'authentifiant une seule fois auprès d'un fournisseur d'identité central (IdP).
-  - *Avantages* :
-    - Élimine la lassitude des mots de passe (un seul mot de passe fort à mémoriser).
-    - Centralise la révocation des accès (si le salarié part, on désactive son compte SSO et il perd tous ses accès instantanément).
-- **Notes orateur** : Le SSO simplifie la vie des utilisateurs : au lieu d'avoir 50 mots de passe pour 50 outils différents, ils s'identifient une seule fois auprès d'un portail d'entreprise. Pour la sécurité, c'est génial : on peut imposer une double authentification forte à ce portail unique, et si un collaborateur quitte l'entreprise, on coupe son compte SSO pour révoquer l'intégralité de ses accès en une seule action.
-- **Visuel suggéré** : Schéma montrant un utilisateur s'identifiant sur un portail central qui génère des jetons de connexion sécurisés vers différentes icônes d'outils cloud (e-mail, CRM, cloud d'entreprise).
-  - **alt-text** : Architecture de fonctionnement d'un portail SSO d'entreprise.
+  - **SSO** : un compte unique (IdP) → toutes les applications ; le mot de passe n'est jamais vu des applications.
+  - Révocation **instantanée et centralisée** au départ — mais point de défaillance unique → **MFA obligatoire**.
+  - **JML** : Joiner (provisionner) · **Mover (retirer AVANT d'ajouter !)** · Leaver (tout révoquer).
+- **Notes orateur** : Les protocoles derrière le bouton : SAML 2.0 et OpenID Connect — l'application reçoit une assertion signée, jamais le mot de passe. Le « M » de JML est le maillon faible : les droits s'accumulent au fil des mutations (dérive des privilèges) — la revue périodique est le filet de sécurité. Question rhétorique : qui connaît TOUS les accès d'un salarié muté deux fois ? Sans IAM centralisé : personne.
+- **Visuel suggéré** : Portail central (IdP) ouvrant sur plusieurs applications, avec une frise Joiner → Mover → Leaver en dessous.
+  - **alt-text** : Portail d'authentification unique desservant plusieurs applications avec la frise du cycle de vie des identités.
 
 ---
 
-### Slide 9 — Le revers de la médaille du SSO
-- **Type** : contenu
+### Slide 8 — Activité : la matrice RBAC de MedDistri
+- **Type** : activité (sondages)
 - **Points clés (bullets)** :
-  - **Risque majeur** : Point de défaillance unique (Single Point of Failure).
-  - Si le mot de passe du compte SSO est compromis $\rightarrow$ l'attaquant accède à **toutes** les applications de l'entreprise.
-  - **Mesures compensatoires obligatoires** :
-    - Imposer du MFA ultra-robuste sur le SSO.
-    - Surveiller les alertes de connexions suspectes (ex: connexions simultanées depuis deux pays différents).
-- **Notes orateur** : Le SSO a un défaut majeur : c'est un point de défaillance unique. Si un pirate réussit à usurper les identifiants SSO d'un utilisateur, il a les clés de toute la maison. Pour protéger ce point critique, le MFA est obligatoire sur les portails SSO, de même que la surveillance active des connexions inhabituelles, comme une connexion depuis Paris suivie 5 minutes après d'une connexion depuis un autre continent.
-- **Visueliez suggéré** : Un trousseau contenant une clé géante dorée brisée en deux, avec une alerte rouge clignotante à côté du mot "Compromission".
-  - **alt-text** : Graphisme de sécurité représentant le risque du point de défaillance unique sur un compte centralisé.
+  - 4 ressources × 4 profils · droits **W / R / N**.
+  - 📊 **Sondage n°2** : le Stagiaire_Marketing ? · 📊 **n°3** : le Comptable et le dossier RH ? · 📊 **n°4** : l'Admin_IT et les factures ?
+  - La matrice complète se remplit à l'écran au fil des votes.
+- **Notes orateur** : Lancer les trois sondages avec débrief entre chaque : n°2 — « lecture partout pour apprendre » est la première cause de sur-attribution ; n°3 — presque tous les accès excessifs ont une bonne excuse, le critère est « le rôle l'exige-t-il ? » ; n°4 — LE piège : administrer l'infrastructure ≠ accéder aux données (séparation des privilèges). Reconstituer la matrice complète (support) en verbalisant chaque justification.
+- **Visuel suggéré** : Matrice 4×4 vide projetée, remplie case par case avec un code couleur W/R/N.
+  - **alt-text** : Matrice de droits d'accès à compléter progressivement pendant l'activité collective.
+- **Élément interactif** : 📊 Sondages Livestorm n°2 à 4 — construction collective de la matrice.
 
 ---
 
-### Slide 10 — Activité pratique : La matrice RBAC de "MediDistri"
+### Slide 9 — Le paysage en chiffres
+- **Type** : chiffres clés
+- **Points clés (bullets)** :
+  - **~1 violation sur 5** commence par des identifiants volés (Verizon DBIR 2025).
+  - **~14 000 comptes** compromis → **6,9 millions de personnes** exposées (23andMe, 2023).
+  - **2022** : Uber compromis par un attaquant de 17-18 ans — sans le moindre exploit.
+- **Notes orateur** : Trois lectures : le mot de passe seul est mort — il se vole, se rejoue, se revend ; la MFA est indispensable mais sa mise en œuvre compte ; et quelques milliers de mots de passe recyclés peuvent exposer des millions de personnes — votre hygiène protège aussi les autres. Transition : les deux histoires.
+- **Visuel suggéré** : Trois grands chiffres en typographie XXL avec leurs sources et années en petit.
+  - **alt-text** : Trois statistiques géantes sur les compromissions d'identités avec leurs sources.
+
+---
+
+### Slide 10 — Affaire n°1 : Uber (2022)
 - **Type** : étude de cas
 - **Points clés (bullets)** :
-  - **Scénario** : Concevoir la matrice de droits pour MediDistri.
-  - **Rôles** : RH_Manager, Comptable, Admin_IT, Stagiaire_Marketing.
-  - **Ressources** : Dossier Candidats RH, Base Factures, Console AWS, Portail Actualités.
-  - **Permissions** : Écriture (W), Lecture seule (R), Aucun accès (N).
-  - **Objectif** : Remplir la matrice en appliquant le principe du moindre privilège.
-- **Notes orateur** : Passons au cas pratique. Vous allez concevoir la matrice d'accès de l'entreprise MediDistri. Pour chaque profil d'employé, vous devez décider s'il doit pouvoir écrire, lire ou n'avoir aucun accès à nos 4 ressources cibles. N'oubliez pas notre règle d'or : le moindre privilège. Un administrateur système n'a pas à lire les dossiers RH confidentiels.
-- **Visuel suggéré** : Tableau vide croisant les 4 rôles et les 4 ressources à évaluer.
-  - **alt-text** : Matrice de droits RBAC vierge pour l'atelier collaboratif.
-- **Élément interactif** : Travail collaboratif en équipes de 3 à 4 personnes pour concevoir la matrice de droits.
+  - Identifiants d'un **prestataire** achetés au marché noir.
+  - La MFA bloque... alors l'attaquant **bombarde de notifications**.
+  - Un message WhatsApp du « support » : « acceptez pour faire cesser ».
+  - Un script aux identifiants codés en dur → accès généralisé.
+- **Notes orateur** : Dérouler la chaîne : la fatigue MFA (notifications en rafale la nuit) + l'ingénierie sociale (le faux support — B04) → l'acceptation → le VPN → le script PowerShell aux secrets codés en dur → les systèmes internes, jusqu'au Slack de l'entreprise. L'attaquant : présenté comme un adolescent lié à Lapsus$. Leçons : la faille du push est comportementale (parade : number matching — l'exercice bonus) ; les secrets codés en dur transforment un accès limité en compromission totale. Et le prestataire, encore (Target, TV5...).
+- **Visuel suggéré** : Smartphone submergé de notifications push identiques, avec une bulle de message « acceptez pour faire cesser » en surimpression.
+  - **alt-text** : Téléphone recevant une rafale de notifications d'authentification illustrant l'attaque par fatigue MFA.
 
 ---
 
-### Slide 11 — Quiz de validation
-- **Type** : quiz
+### Slide 11 — Affaire n°2 : 23andMe (2023)
+- **Type** : étude de cas
 - **Points clés (bullets)** :
-  - 1. Quel concept IAM correspond à l'acte de vérifier l'identité d'un utilisateur par un mot de passe et un SMS ?
-  - 2. Quelle est la différence majeure entre le modèle RBAC et le modèle ABAC ?
-  - 3. Est-il correct de dire que le SSO diminue le risque d'usurpation s'il n'est pas protégé par du MFA ?
-- **Notes orateur** : Testons vos connaissances sur l'IAM. Répondez au quiz sur votre outil de vote. Portez une attention particulière à la distinction entre Authentification et Autorisation, et aux limites de sécurité du SSO.
-- **Visuel suggéré** : Code QR vert de connexion au quiz à gauche et questions à choix multiples à droite.
-  - **alt-text** : QR Code d'accès au vote électronique de fin de session.
-- **Élément interactif** : Vote synchrone en temps réel avec correction immédiate.
+  - **Credential stuffing** : d'anciennes fuites rejouées en masse.
+  - ~14 000 comptes cèdent — ceux aux **mots de passe recyclés**.
+  - La mise en relation généalogique expose **6,9 millions de personnes**.
+  - La MFA rendue obligatoire... après coup.
+- **Notes orateur** : Aucune prouesse technique : les attaquants ont essayé des couples e-mail/mot de passe déjà fuités ailleurs. L'amplification : chaque compte compromis exposait ses « apparentés » via la fonction DNA Relatives. Leçons : la fuite d'hier chez X est l'intrusion de demain chez Y (mot de passe unique + gestionnaire) ; dans un système interconnecté, votre négligence expose les autres. Relance chat : « quel détail vous marque le plus ? »
+- **Visuel suggéré** : Arbre généalogique stylisé dont un seul nœud compromis illumine en rouge toutes ses branches.
+  - **alt-text** : Arbre généalogique dont la compromission d'un seul profil expose en cascade tous les profils liés.
+- **Élément interactif** : 💬 Chat — réactions aux deux affaires.
 
 ---
 
-### Slide 12 — Conclusion & Travail autonome
+### Slide 12 — Et vous ? Les mots de passe
+- **Type** : sondage (opinion)
+- **Points clés (bullets)** :
+  - 📊 **Sondage n°5** : votre pratique actuelle, en toute honnêteté ?
+  - A) Gestionnaire + uniques — B) Quelques « socles » déclinés — C) Le même presque partout.
+- **Notes orateur** : Anonyme et sans jugement — B et C sont majoritaires partout. Le message est mécanique, pas moral : un mot de passe recyclé déjà fuité suffit (23andMe). La sortie par le haut : un gestionnaire, des mots de passe uniques, la MFA partout — en commençant par la messagerie, clé de récupération de tout le reste. Enchaîner sur le mini-scénario de la mutation interne : « tapez A, B ou C » (réponse B — retirer les anciens droits en accordant les nouveaux ; c'est le « M » de JML, le maillon faible).
+- **Visuel suggéré** : Trois trousseaux : un coffre numérique ordonné, un trousseau de clés similaires, une clé unique usée.
+  - **alt-text** : Trois trousseaux de clés illustrant les niveaux d'hygiène de gestion des mots de passe.
+- **Élément interactif** : 📊 Sondage Livestorm n°5 (opinion) puis 🤔 mini-scénario en chat (A/B/C).
+
+---
+
+### Slide 13 — Quiz de validation
+- **Type** : quiz (sondages)
+- **Points clés (bullets)** :
+  - 📊 **Sondage n°6** : mot de passe + question secrète = MFA ?
+  - 📊 **Sondage n°7** : quelle règle relève de l'ABAC ?
+  - 📊 **Sondage n°8** : l'avantage du SSO au départ d'un salarié ?
+- **Notes orateur** : Lancer les trois sondages à la suite (~2 min chacun), débriefs scriptés dans le support : le critère du MFA est la CATÉGORIE, pas le nombre ; dès que la décision dépend du contexte, c'est de l'ABAC ; le SSO au départ = révocation instantanée centralisée — le « L » de JML, exactement ce qui a manqué à Colonial Pipeline. Si le temps le permet, enchaîner sur le bonus n°9 (la fatigue MFA et le number matching).
+- **Visuel suggéré** : Trois cartes de quiz numérotées 6, 7, 8 avec l'icône de sondage Livestorm.
+  - **alt-text** : Trois cartes de questions de quiz numérotées, associées à des sondages en direct.
+- **Élément interactif** : 📊 Sondages Livestorm n°6 à 8 (+ n°9 en tampon).
+
+---
+
+### Slide 14 — Synthèse & prochaine session
 - **Type** : récap
 - **Points clés (bullets)** :
-  - **Résumé** : Piliers IAM (identification, authentification, autorisation, audit), MFA (catégories distinctes), RBAC vs ABAC, SSO (avantages et surveillance).
-  - **Devoirs** : Suivre le cours *"Identity and Access Management Fundamentals"* sur IBM SkillsBuild (~1h30).
-  - **Recherche** : Découvrir comment fonctionnent les protocoles de SSO modernes **SAML 2.0** et **OIDC (OpenID Connect)**.
-  - Prochaine session : *Cryptographie essentielle (B10)*.
-- **Notes orateur** : Nous avons sécurisé les accès de nos systèmes ! Pour consolider cela, suivez le module de cours d'IAM sur IBM SkillsBuild et renseignez-vous sur les technologies SAML et OIDC qui permettent au SSO de fonctionner de façon standardisée sur le web. Bonne semaine à tous et à la prochaine séance !
-- **Visuel suggéré** : Badge d'achèvement de cours d'IBM SkillsBuild et logotypes des protocoles SAML 2.0 et OpenID Connect.
-  - **alt-text** : Visuels de badges IBM SkillsBuild et logos des standards SAML/OIDC.
+  - Les attaquants ne piratent pas : ils **se connectent**.
+  - MFA (la plus robuste possible) · besoin métier, rien que le besoin (RBAC) · retirer ce qui n'est plus exigé (JML) · tout tracer.
+  - Self-paced : SkillsBuild *« Identity and Access Management Fundamentals »* + recherche « sel cryptographique ».
+  - Prochaine session — B10 : Cryptographie essentielle.
+- **Notes orateur** : Faire écrire dans le chat UN mot retenu, en lire 4-5. Rappeler le devoir : la recherche sur le « sel » prépare directement B10. Teaser B10 : « chiffrer, hacher, signer — et l'histoire d'école : une grande entreprise a "chiffré" 153 millions de mots de passe au lieu de les hacher... et le monde entier a pu les lire comme une grille de mots croisés. » Terminer à l'heure exacte.
+- **Visuel suggéré** : Récapitulatif en quatre vignettes (MFA, matrice, JML, audit) et un panneau « B10 » fléché.
+  - **alt-text** : Synthèse en quatre vignettes des thèmes IAM avec un panneau indiquant la prochaine session B10.
+- **Élément interactif** : Chat de clôture — « un mot que vous retenez ».
