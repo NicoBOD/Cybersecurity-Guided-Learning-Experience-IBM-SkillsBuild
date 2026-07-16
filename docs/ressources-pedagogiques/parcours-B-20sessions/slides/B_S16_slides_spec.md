@@ -1,5 +1,5 @@
 # Spécifications des slides — Session B16 : Centre des opérations de sécurité (SOC) & supervision
-Parcours : B 20 sessions  |  Module : E — Opérations de sécurité  |  Format : Spécifications Markdown
+Parcours : B 20 sessions  |  Module : E — Opérations, détection & réponse  |  Format : Spécifications Markdown
 
 > **Principe** : le texte affiché reste minimal (mots-clés, chiffres, schémas) ; le contenu riche est dans les notes orateur et le [plan de séance minuté](../plans-de-seance/B_S16_plan.md). Toutes les interactions passent par les sondages et le chat Livestorm.
 
@@ -10,7 +10,7 @@ Parcours : B 20 sessions  |  Module : E — Opérations de sécurité  |  Format
 - **Points clés (bullets)** :
   - SOC & supervision
   - Qui regarde les écrans — et à quelle vitesse ?
-  - Parcours B — Session B16 · Ouverture du module Opérations de sécurité
+  - Parcours B — Session B16 · Ouverture du module Opérations, détection & réponse
 - **Notes orateur** : Accueillir : la gouvernance a décidé, les défenses sont posées — qui regarde ? Retour self-paced : « en une phrase dans le chat : c'est quoi, un SOC ? » (le SIEM, son outil, c'est la semaine prochaine). Rappel B15 : RGPD, 72 h, Atelier 3. Annonce : les trois niveaux, l'art de qualifier, les deux chronomètres — et l'alerte banale qui a révélé l'attaque de la décennie.
 - **Visuel suggéré** : Salle de supervision aux écrans muraux, silhouettes d'analystes devant des cartes de flux.
   - **alt-text** : Salle d'un centre d'opérations de sécurité avec écrans de supervision et analystes.

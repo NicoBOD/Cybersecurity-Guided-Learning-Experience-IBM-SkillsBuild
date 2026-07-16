@@ -1,5 +1,5 @@
 # Plan de séance — Session B16 : Centre des opérations de sécurité (SOC) & supervision
-Parcours : B 20 sessions  |  Module : E — Opérations de sécurité  |  Durée : 90 min  |  Modalité : Webinaire Livestorm (grand groupe — interactions par sondages et chat)
+Parcours : B 20 sessions  |  Module : E — Opérations, détection & réponse  |  Durée : 90 min  |  Modalité : Webinaire Livestorm (grand groupe — interactions par sondages et chat)
 
 ## Objectifs pédagogiques (verbes d'action)
 - **Décrire** l'organisation d'un SOC moderne : les rôles L1 (triage), L2 (investigation), L3 (réponse & threat hunting), et l'option MSSP.
@@ -50,7 +50,7 @@ Parcours : B 20 sessions  |  Module : E — Opérations de sécurité  |  Durée
 ### 0:00–0:04 — Accueil & ouverture du module E
 
 **🎙️ Verbatim d'ouverture :**
-> « Bonjour à toutes et à tous, et bienvenue dans le module Opérations de sécurité ! La gouvernance a décidé, les défenses sont posées — mais QUI regarde les écrans ? Votre recherche de la semaine : SOC et SIEM. En une phrase dans le chat : c'est quoi, un SOC ? »
+> « Bonjour à toutes et à tous, et bienvenue dans le module Opérations, détection & réponse ! La gouvernance a décidé, les défenses sont posées — mais QUI regarde les écrans ? Votre recherche de la semaine : SOC et SIEM. En une phrase dans le chat : c'est quoi, un SOC ? »
 
 **Points à dérouler :**
 - Lire 2-3 définitions, valider : le centre d'opérations — l'équipe qui surveille et répond, 24/7. « Le SIEM, son outil principal, c'est la semaine prochaine. »

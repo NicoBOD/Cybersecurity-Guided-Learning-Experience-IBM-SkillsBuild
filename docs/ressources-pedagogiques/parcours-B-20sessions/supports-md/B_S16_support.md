@@ -1,5 +1,5 @@
 # Session B16 — Centre des opérations de sécurité (SOC) & supervision
-Parcours : B 20 sessions  |  Module : E — Opérations de sécurité  |  Niveau : Débutant  |  Format : Webinaire Livestorm (1h30)
+Parcours : B 20 sessions  |  Module : E — Opérations, détection & réponse  |  Niveau : Débutant  |  Format : Webinaire Livestorm (1h30)
 
 ---
 

@@ -18,7 +18,7 @@ Parcours : B 20 sessions  |  Module : D — Gouvernance, risques & conformité  
 *   Le **RGPD** impose des principes stricts (minimisation, limitation de conservation, consentement libre) pour protéger la vie privée des résidents européens.
 *   En cas de violation de données personnelles, l'entreprise doit notifier la **CNIL sous 72 heures maximum** après en avoir pris connaissance.
 *   Les sanctions prévues par le RGPD suivent **deux paliers** : jusqu'à 10 M€ ou 2 % du CA mondial pour certains manquements, jusqu'à **20 M€ ou 4 % du CA mondial** pour les plus graves — le montant le plus élevé étant retenu.
-*   Le **DPO** orchestre la conformité interne, tient le registre des traitements obligatoire et fait l'interface avec l'autorité de contrôle.
+*   Le **DPO** orchestre la conformité interne, tient le registre des traitements (document obligatoire) et fait l'interface avec l'autorité de contrôle.
 
 ### Objectifs de la session
 À la fin de cette session, vous serez capable de :
