@@ -235,7 +235,7 @@ Pour équiper un SOC (Security Operations Center) moderne et coordonner la répo
     *   A) Le pare-feu local de la machine.
     *   B) Un playbook d'isolation automatique configuré dans le SOAR et l'EDR ✅
     *   C) Un script de redémarrage des serveurs.
-*   **Guide d'animation (pour le mentor) :** Le SOAR assure la protection quand l'humain dort : IP malveillante contactée (IoC) → poste isolé en secondes. Le pare-feu local (A) laisse passer ce qu'il ne connaît pas ; redémarrer (C) détruit des preuves sans confiner (teaser B19 : préserver la RAM). Segment tampon : à faire en autonomie si la session est en retard.
+*   **Guide d'animation (pour le mentor) :** Le SOAR assure la protection quand l'humain dort : IP malveillante contactée (IoC) → poste isolé en secondes. Le pare-feu local (A) laisse passer ce qu'il ne connaît pas ; redémarrer (C) détruit des preuves sans confiner (teaser B18 : préserver la RAM). Segment tampon : à faire en autonomie si la session est en retard.
 
 ## 5. Aide-mémoire / Fiche de révision
 

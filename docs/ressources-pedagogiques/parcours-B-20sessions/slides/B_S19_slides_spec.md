@@ -1,174 +1,187 @@
-# Spécifications des slides — Session B19 : Réponse aux incidents & bases du forensics
+# Spécifications des slides — Session B19 : Simulation de crise cyber (Tabletop)
 Parcours : B 20 sessions  |  Module : E — Opérations, détection & réponse  |  Format : Spécifications Markdown
+
+> **Principe** : texte affiché minimal (mots-clés, chiffres, injects horodatés) ; le discours complet est dans le [plan de séance minuté](../plans-de-seance/B_S19_plan.md). Les slides 9 à 12 portent la dramaturgie de l'exercice : les afficher au moment exact des injects.
 
 ---
 
 ### Slide 1 — Page de garde
 - **Type** : titre
 - **Points clés (bullets)** :
-  - Réponse aux incidents & bases du forensics
-  - Les 6 étapes du cycle SANS/NIST, préservation des preuves, bases du pentest et rapport préliminaire
+  - Simulation de crise cyber — Tabletop exercise
+  - Ce soir, pas de cours : **vous êtes la cellule de crise**
   - Parcours B — Session B19
-- **Notes orateur** : Bienvenue dans notre dix-neuvième session. Aujourd'hui, nous allons étudier la réponse aux incidents et l'investigation numérique, appelée *forensics*. C'est le cœur d'activité des équipes de crise. Nous allons apprendre à structurer une réponse en 6 étapes selon les standards du SANS et du NIST, à comprendre comment collecter des preuves numériques sans les corrompre, et à voir comment réaliser les premières étapes d'un rapport d'incident.
-- **Visuel suggéré** : Illustration d'un ruban de scène de crime numérique virtuel de couleur vert cyberpunk entourant des serveurs informatiques, avec une clé USB d'extraction forensique lumineuse branchée sur un rack.
-  - **alt-text** : Scène de crime numérique et outils d'investigation forensique.
-- **Élément interactif** : Question sondage : "Selon vous, quelle est la première action à faire lorsqu'on s'aperçoit qu'un ordinateur est en train de chiffrer ses fichiers à cause d'un ransomware ?"
+- **Notes orateur** : Accueil. Annoncer le format : une simulation en temps réel, chaque décision par vote, les arguments par le chat. B18 a donné la méthode ; ce soir, on la met sous pression.
+- **Visuel suggéré** : Table de crise vue de dessus, téléphone décroché, horloge affichant 7h55.
+  - **alt-text** : Salle de cellule de crise prête pour la simulation.
 
 ---
 
-### Slide 2 — Objectifs de la séance & Sommaire
+### Slide 2 — Le devoir de la semaine & objectifs
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - Restituer les 6 étapes du processus de réponse aux incidents (SANS/NIST).
-  - Expliquer les principes de préservation des preuves numériques (chaîne de contrôle, écriture protégée).
-  - Identifier les phases clés d'un test d'intrusion (*pentesting*) et l'utilité d'un rapport préliminaire.
-  - Sommaire : Le Cycle de réponse aux incidents (20 min), Principes de l'investigation numérique (20 min), Introduction au Pentest (20 min), Activité de rédaction de rapport préliminaire (20 min), Quiz (10 min).
-- **Notes orateur** : Pendant cette session de 90 minutes, nous allons explorer le cycle de réponse aux incidents. Nous verrons comment préserver des preuves informatiques recevables en justice. Nous ferons une introduction aux bases du test d'intrusion, avant de travailler sur une activité pratique de rédaction de rapport d'incident et de terminer par notre quiz.
-- **Visuel suggéré** : Emplacement de l'agenda et des objectifs synchrone présenté dans un tableau structuré à deux colonnes avec repères temporels.
-  - **alt-text** : Tableau d'agenda minuté de la session synchrone d'incident response.
+  - 💬 Chat : votre liste — les **4-5 fonctions** de votre cellule de crise ?
+  - Objectifs : expliquer un tabletop (MJ, injects, RETEX) · décider sous pression (opérationnel, juridique, communication) · construire un communiqué conforme.
+  - Parcours : théorie éclair → Hydro & Maersk → **la crise GigaVolt** (3 décisions + communiqué) → RETEX → quiz.
+- **Notes orateur** : Récolter les listes, regrouper : Direction, IT, juridique/DPO, communication. Message clé : l'informatique n'y est pas seule — une crise cyber est un problème d'entreprise à déclencheur informatique.
+- **Visuel suggéré** : Quatre chaises autour d'une table, étiquetées Direction / IT / Juridique / Communication.
+  - **alt-text** : Les quatre fonctions de la cellule de crise autour de la table.
+- **Élément interactif** : Question chat (réinvestissement du devoir de B18).
 
 ---
 
-### Slide 3 — Les 6 étapes de la réponse aux incidents (SANS/NIST)
+### Slide 3 — 📊 Sondage n°1 : le prix de la préparation
+- **Type** : sondage
+- **Points clés (bullets)** :
+  - Économie moyenne sur le coût d'une violation, avec équipe de réponse ET plan **testé** ?
+  - A) ~250 000 $ — B) ~1 M$ — C) ~2,66 M$
+  - Source : IBM, *Cost of a Data Breach*, 2022
+- **Notes orateur** : Réponse C. Le mot-clé : TESTÉ — un plan jamais exercé est une hypothèse. « Sous stress, on ne s'élève pas au niveau de ses ambitions : on retombe au niveau de son entraînement. » Enchaîner : alors entraînons-nous.
+- **Visuel suggéré** : Deux colonnes de coût comparées, l'écart de 2,66 M$ surligné.
+  - **alt-text** : Écart de coût d'une violation selon le niveau de préparation.
+- **Élément interactif** : Sondage Livestorm n°1 (brise-glace).
+
+---
+
+### Slide 4 — Le tabletop : la crise sans les dégâts
+- **Type** : contenu
+- **Points clés (bullets)** :
+  - Simulation **théorique** : zéro impact sur la production
+  - Le **maître du jeu** anime et lance des **injects** (rebondissements ciblés)
+  - Teste : les playbooks (B18) · la décision sous incertitude · la coordination technique/non-technique
+  - Règle d'or : un bon exercice **révèle des failles** — s'il est parfait, il était trop facile
+- **Notes orateur** : L'analogie de l'exercice d'évacuation incendie : on ne met pas le feu, on teste les réflexes — et « l'escalier B est bloqué » est un inject. Mentionner le guide ANSSI (2021) pour ceux qui voudront en organiser un.
+- **Visuel suggéré** : Plateau de jeu stylisé avec cartes « inject » face cachée et sablier.
+  - **alt-text** : L'exercice de crise représenté comme un jeu de plateau sérieux.
+
+---
+
+### Slide 5 — La cellule de crise : qui décide de quoi
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - **1. Préparation** : Avoir les outils, les playbooks et l'équipe d'urgence prête.
-  - **2. Identification** : Détecter l'incident et confirmer qu'il s'agit d'une attaque réelle.
-  - **3. Confinement** : Limiter la propagation (isoler les machines, couper le réseau).
-  - **4. Éradication** : Supprimer la cause de l'incident (nettoyer les malwares, patcher).
-  - **5. Récupération** : Restaurer les systèmes à partir des sauvegardes saines.
-  - **6. Leçons apprises** : Analyser l'incident pour améliorer les défenses futures.
-- **Notes orateur** : Face à une crise, les équipes ne doivent pas improviser. On applique le cadre standardisé du SANS en six étapes. La première est la préparation. Lorsque l'attaque survient, on l'identifie, on la contient pour éviter qu'elle ne se propage, puis on éradique la menace. Une fois le danger écarté, on reconstruit les serveurs grâce à nos sauvegardes avant de faire un débriefing pour comprendre comment éviter que cela ne recommence.
-- **Visuel suggéré** : Un schéma hexagonal ou une flèche cyclique reliant les 6 étapes numérotées de 1 à 6 avec des icônes d'outils, d'alerte, de barrière de confinement, de balai, de flèche montante et de cerveau.
-  - **alt-text** : Les 6 phases logiques de la réponse aux incidents informatiques.
+  - **Direction** : décide et assume (moyens d'urgence, payer ou non, déconnecter ou non — B13)
+  - **IT/Sécurité** : éclaire — diagnostic, confinement, délais de restauration
+  - **Juridique/DPO** : qualifie — CNIL **72 h** (B15) · plainte **72 h** (LOPMI, B02) · assureur (B14)
+  - **Communication** : cadre — interne (couper les rumeurs) et externe (une seule voix)
+- **Notes orateur** : Comparer avec les listes du chat. Insister sur la répartition : l'IT propose, la Direction décide, le juridique borne, la comm porte. Les deux « 72 h » ne sont pas les mêmes : notification CNIL et plainte assurantielle.
+- **Visuel suggéré** : Table ronde à quatre secteurs colorés, une flèche « décision » convergeant vers la Direction.
+  - **alt-text** : Répartition des responsabilités au sein de la cellule de crise.
 
 ---
 
-### Slide 4 — Le Confinement : Isoler sans éteindre
+### Slide 6 — Les 4 règles d'or de la communication de crise
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - Objectif : Stopper l'attaquant avant qu'il ne compromette d'autres systèmes.
-  - **La règle d'or** : **Isoler du réseau, mais ne pas éteindre la machine**.
-  - Pourquoi ne pas éteindre ?
-    - Éteindre la machine efface le contenu de la mémoire vive (**RAM**).
-    - Or, les preuves d'attaques modernes (processus en cours, clés de chiffrement de ransomwares) ne se trouvent souvent que dans la RAM.
-- **Notes orateur** : C'est une erreur classique : voir un ransomware chiffrer ses données et appuyer sur le bouton d'alimentation pour éteindre l'ordinateur. En faisant cela, vous détruisez toutes les preuves stockées dans la mémoire vive, la RAM. Les adresses IP de connexion du pirate, les clés de déchiffrement temporaires et les logiciels malveillants actifs s'évaporent. Le réflexe est de débrancher le câble réseau ou de couper le Wi-Fi, mais de laisser la machine allumée.
-- **Visuel suggéré** : Illustration montrant une prise réseau débranchée d'un ordinateur allumé, barré d'une croix rouge sur le bouton "Power OFF".
-  - **alt-text** : Principe d'isolation réseau d'une machine compromise sans coupure d'alimentation.
+  - 1. **Les faits** — jamais de mensonge, de spéculation, de coupable désigné sans preuve
+  - 2. **Une voix** — porte-parole unique ; les salariés ne s'expriment pas (ni presse, ni réseaux)
+  - 3. **L'empathie** — reconnaître, regretter, détailler les mesures engagées
+  - 4. **La transparence contrôlée** — expliquer sans livrer de détails techniques exploitables
+- **Notes orateur** : « Une mauvaise communication peut coûter plus cher que l'attaque. » Prévenir : dans une heure, un journaliste appellera — ces quatre règles seront votre grille de réponse.
+- **Visuel suggéré** : Quatre pictogrammes alignés : balance (faits), mégaphone unique, main tendue, rideau entrouvert.
+  - **alt-text** : Les quatre règles fondamentales de la communication de crise.
 
 ---
 
-### Slide 5 — Forensics : La préservation des preuves numériques
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - **Forensics** : Science de l'investigation numérique légale.
-  - Les deux règles cardinales pour que les preuves soient acceptées en justice :
-    - **1. Utilisation d'un bloqueur d'écriture** : Pour faire une copie conforme du disque sans modifier un seul bit de la source.
-    - **2. Calcul d'empreintes numériques (Hashs)** : Calculer le hash (ex: SHA-256) du disque original et de la copie. S'ils sont identiques, la preuve n'a pas été altérée.
-    - **Chaîne de contrôle (Chain of Custody)** : Documenter qui a manipulé la preuve, quand et comment.
-- **Notes orateur** : Si vous devez aller devant les tribunaux ou faire marcher vos assurances, vos preuves doivent être incontestables. Vous ne devez jamais analyser le disque dur d'origine directement sous peine de modifier ses métadonnées. On utilise un bloqueur d'écriture physique ou logique pour copier le disque. On calcule ensuite l'empreinte SHA-256 de l'original et de la copie. Si les signatures concordent, cela prouve devant le juge que l'enquêteur n'a rien modifié.
-- **Visuel suggéré** : Schéma d'une copie de disque dur sécurisée passant par un bloqueur d'écriture, avec affichage des empreintes SHA-256 identiques sur l'original et la copie.
-  - **alt-text** : Processus d'acquisition forensique préservant l'intégrité des preuves.
-
----
-
-### Slide 6 — La pyramide de volatilité des données
-- **Type** : schéma
-- **Points clés (bullets)** :
-  - Les données numériques s'effacent plus ou moins vite après l'incident.
-  - De la plus volatile (s'efface en premier) à la moins volatile (persiste longtemps) :
-    - 1. Registres du processeur & Cache (microsecondes).
-    - 2. Table de routage & Mémoire vive (RAM) (secondes/minutes).
-    - 3. Fichiers temporaires du système (heures).
-    - 4. Disque dur / Stockage persistant (années).
-    - 5. Sauvegardes hors ligne (indéfini).
-- **Notes orateur** : En forensics, le temps joue contre nous. Les données disparaissent à des vitesses différentes. C'est l'ordre de volatilité. Les informations du processeur et de la mémoire vive s'effacent instantanément si on éteint la machine, tandis que les fichiers stockés sur le disque dur persistent. L'enquêteur doit donc d'abord capturer la RAM avant de toucher au disque dur.
-- **Visuel suggéré** : Pyramide de volatilité de bas en haut : base large et stable (Disques durs) vers un sommet pointu et instable (Registres CPU, RAM).
-  - **alt-text** : Ordre de volatilité des données informatiques lors d'une investigation.
-
----
-
-### Slide 7 — Introduction aux tests d'intrusion (Pentest)
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - **Pentest** : Simulation d'une attaque réelle autorisée par l'entreprise pour identifier ses faiblesses avant les vrais pirates.
-  - **Les trois approches classiques** :
-    - **Boîte Noire (Black Box)** : Le pentester n'a aucune information préalable (simule un pirate externe).
-    - **Boîte Blanche (White Box)** : Accès total aux codes sources et architectures (audit approfondi).
-    - **Boîte Grise (Grey Box)** : Accès limité (simule un employé mécontent ou un partenaire externe).
-- **Notes orateur** : Pour tester nos processus de réponse à incident, nous pouvons faire appel à des pentesters. Ce sont des "hackers éthiques" payés pour s'introduire dans le système d'information. Ils peuvent travailler en boîte noire, c'est-à-dire sans aucune information, en boîte grise avec un simple compte utilisateur, ou en boîte blanche avec les plans du réseau et le code des applications sous les yeux.
-- **Visuel suggéré** : Trois boîtes physiques de couleurs différentes (Noire, Grise, Blanche) illustrant les trois niveaux d'accès à l'information.
-  - **alt-text** : Les 3 méthodes de tests d'intrusion en entreprise.
-
----
-
-### Slide 8 — Le déroulement d'une cyber-attaque (Cyber Kill Chain)
-- **Type** : schéma
-- **Points clés (bullets)** :
-  - Les étapes suivies par un attaquant lors d'un pentest ou d'une intrusion réelle :
-    - 1. **Reconnaissance** : Recherche d'informations sur la cible (OSINT).
-    - 2. **Armement** : Conception de la charge malveillante.
-    - 3. **Livraison** : Envoi de l'attaque (ex: e-mail de phishing).
-    - 4. **Exploitation** : Déclenchement de la faille sur la machine cible.
-    - 5. **Installation** : Dépôt d'une porte dérobée (backdoor) pour rester dans le réseau.
-    - 6. **Actions sur objectifs** : Vol de données ou chiffrement.
-- **Notes orateur** : Les attaquants et les pentesters suivent un chemin méthodique appelé la Cyber Kill Chain de Lockheed Martin. Elle se compose de six étapes. Tout commence par la reconnaissance passive. Puis l'attaquant arme sa charge, la livre via un mail de phishing par exemple, exploite la faille, installe un outil de persistance pour ne pas se faire éjecter, et enfin réalise ses objectifs de vol ou de sabotage.
-- **Visuel suggéré** : Frise chronologique descendante reliant les six étapes de la Kill Chain avec des icônes d'attaque ciblée.
-  - **alt-text** : Les étapes d'intrusion de la Cyber Kill Chain de Lockheed Martin.
-
----
-
-### Slide 9 — Le rapport préliminaire d'incident (RPI)
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - Rédigé rapidement après la détection d'une attaque majeure pour informer la direction.
-  - Doit être concis, factuel et éviter le jargon trop technique.
-  - Structure type du RPI :
-    - **Description succincte** : Qu'est-ce qui s'est passé ? (ex: Ransomware actif sur 5 postes).
-    - **Impact estimé** : Quels services sont à l'arrêt ?
-    - **Actions déjà menées** : Qu'avons-nous fait pour contenir la crise ?
-    - **Prochaines étapes** : Quelles investigations sont prévues ?
-- **Notes orateur** : En pleine gestion de crise, la direction générale a besoin de comprendre la situation sans se noyer dans des détails techniques. C'est l'objectif du Rapport Préliminaire d'Incident. Ce document d'une ou deux pages résume ce que l'on sait, l'impact sur l'activité de l'entreprise, les mesures de confinement déjà prises, et les prochaines actions prévues par l'équipe de réponse.
-- **Visuel suggéré** : Un modèle de document d'une page avec des en-têtes clairs : Résumé, Impact, Actions prises, Recommandations.
-  - **alt-text** : Modèle de rapport préliminaire de gestion d'incident de sécurité.
-
----
-
-### Slide 10 — Activité pratique : Rédiger un mémo de crise
+### Slide 7 — Affaire réelle : Norsk Hydro (2019)
 - **Type** : étude de cas
 - **Points clés (bullets)** :
-  - **Scénario** : L'équipe de comptabilité d'EcoLog signale que trois ordinateurs affichent un écran rouge exigeant une rançon de 500 dollars pour débloquer les dossiers financiers.
-  - **Mission** : Rédiger le plan d'action immédiat en 3 points en appliquant les principes vus aujourd'hui.
-    - Quelle est l'action de confinement prioritaire ?
-    - Que faites-vous des ordinateurs ?
-    - Quel message envoyez-vous au reste de l'entreprise ?
-- **Notes orateur** : Nous allons faire une simulation de crise. Le ransomware s'est déclaré chez les comptables d'EcoLog. Rédigez le mémo d'urgence. Quelles sont vos trois actions prioritaires ? Comment isolez-vous le problème ? Comment communiquez-vous pour éviter que d'autres collaborateurs ne cliquent à leur tour ?
-- **Visuel suggéré** : Un post-it virtuel rouge marqué "Urgence Ransomware EcoLog" à côté d'un bloc-notes de rédaction de plan de crise.
-  - **alt-text** : Exercice de rédaction d'un mémo de crise cybersécurité.
-- **Élément interactif** : Discussion interactive de 20 minutes avec partage des plans de crise rédigés par les apprenants.
+  - LockerGoga, 4h du matin — 35 000 salariés, 40 pays
+  - Trois décisions en heures : **isoler massivement** (22 000 postes hors ligne) · **refuser de payer** · **transparence totale** (points presse quotidiens)
+  - Usines en **mode manuel** : les classeurs papier ressortent
+  - ~**70 M$** (chiffres de l'entreprise, 2019) — et une réputation **renforcée**
+- **Notes orateur** : Le cas d'école mondial de la crise bien gérée. Les trois décisions dures étaient possibles parce que PRÉPARÉES : le mode manuel existait (PCA, B12), la position rançon était claire. La transparence a inversé le rapport de force médiatique : pas de rumeur à démentir, l'entreprise racontait sa propre histoire.
+- **Visuel suggéré** : Usine d'aluminium avec opérateurs consultant des classeurs papier, conférence de presse en médaillon.
+  - **alt-text** : Norsk Hydro en mode manuel pendant la crise LockerGoga.
 
 ---
 
-### Slide 11 — Quiz de validation
+### Slide 8 — Le cas revisité : Maersk (2017), côté cellule de crise
+- **Type** : étude de cas
+- **Points clés (bullets)** :
+  - NotPetya (l'attaque vue en B03) — ici : la **reconstruction**
+  - **10 jours** : ~4 000 serveurs et 45 000 postes reconstruits · ~**300 M$** déclarés (2017)
+  - Sauvé par une copie d'annuaire survivante… au **Ghana** (coupure de courant)
+  - ~80 % d'activité maintenue en mode dégradé improvisé
+- **Notes orateur** : Le miroir de Hydro : l'improvisation héroïque a sauvé Maersk — une fois, et par chance. Une communication hors bande et des sauvegardes hors ligne préparées auraient coûté infiniment moins cher que ce coup de chance. Transition : « fermez vos notes. 7h55. Votre téléphone sonne. »
+- **Visuel suggéré** : Porte-conteneurs à quai, un unique serveur allumé sur un planisphère au niveau du Ghana.
+  - **alt-text** : La reconstruction de Maersk à partir d'un unique contrôleur de domaine survivant.
+
+---
+
+### Slide 9 — 🧪 CRISE — Inject 1 (lundi, 7h55)
+- **Type** : étude de cas
+- **Points clés (bullets)** :
+  - **GigaVolt** — PME, 120 salariés, distribution de matériel électrique
+  - 7h55, l'astreinte : « l'AD ne répond plus · extensions `.lokd` · écran de rançon »
+  - 8h00 : la logistique démarre dans 30 minutes — plus un bon de livraison ne s'imprime
+  - **Vous êtes la cellule de crise. À vous.**
+- **Notes orateur** : Ton maître du jeu assumé. Lire l'inject, laisser 20 secondes de silence — le stress fait partie de l'exercice. Rappeler le fonctionnement : chaque décision = un vote, les arguments = le chat.
+- **Visuel suggéré** : Écran de rançon stylisé (sans marque réelle) sur fond d'entrepôt à l'arrêt, horodatage « 07:55 » en surimpression.
+  - **alt-text** : Début de la simulation : rançongiciel détecté chez GigaVolt à 7h55.
+
+---
+
+### Slide 10 — 📊 Décisions 1 & 2 : confiner, alerter
+- **Type** : sondage
+- **Points clés (bullets)** :
+  - 📊 **n°2 — 8h00, première action ?** A) Redémarrer les serveurs B) **Confiner sans éteindre + activer la cellule** ✅ C) Contacter les attaquants
+  - 📊 **n°3 — 8h30, qui prévenir dans l'heure ?** A) L'IT seulement B) **Cellule complète + assureur + prestataire** ✅ C) Tous les clients immédiatement
+  - 💬 Piège : la messagerie est chiffrée — vous les prévenez **comment ?**
+- **Notes orateur** : N°2 : redémarrer détruit la RAM (B18) ; confiner = segments isolés, accès distants coupés, machines allumées — et activer la cellule est une ACTION. N°3 : l'IT seule = décisions juridiques et comm en retard ; les clients tout de suite = paniquer avant de savoir. La question piège amène la communication hors bande : annuaire imprimé, téléphones personnels, messagerie externe convenue — préparés AVANT.
+- **Visuel suggéré** : Deux cartes de décision côte à côte avec minuteur, pictogramme « réseau coupé, machine allumée ».
+  - **alt-text** : Les deux premières décisions de la cellule de crise GigaVolt.
+- **Élément interactif** : Sondages Livestorm n°2 et n°3 + question chat.
+
+---
+
+### Slide 11 — 🕙 Inject 2 (10h30) : la rançon
+- **Type** : sondage
+- **Points clés (bullets)** :
+  - E-mail sur la boîte **personnelle** du dirigeant : « **500 000 €** ou publication des données clients — 48 h » (double extorsion, B02)
+  - Info RSSI : les sauvegardes de la veille sont **saines et hors ligne** (B12)
+  - 📊 **n°4 — Payer ?** A) Payer discrètement B) **Non : plainte (72 h), notification CNIL préparée (72 h), restauration après éradication** ✅ C) Ignorer sans plainte ni notification
+- **Notes orateur** : Débrief long (le cœur de l'exercice) : payer ne garantit rien (Colonial Pipeline a payé ET restauré sur sauvegardes), finance l'écosystème, signale un payeur ; « discrètement » est illusoire, la fuite est réelle → CNIL. C est la pire option : sans plainte sous 72 h, l'indemnisation saute (LOPMI 2023) ; sans notification, l'amende s'ajoute. Si débat : négocier pour gagner du temps n'est pas payer ; la position se fixe À FROID.
+- **Visuel suggéré** : Compte à rebours « 48:00:00 » au-dessus de trois cartes de décision, coffre de sauvegardes intact en arrière-plan.
+  - **alt-text** : La décision de la rançon sous compte à rebours.
+- **Élément interactif** : Sondage Livestorm n°4.
+
+---
+
+### Slide 12 — 🕑 Inject 3 (14h00) : le journaliste — et le communiqué
+- **Type** : étude de cas
+- **Points clés (bullets)** :
+  - Un journaliste a vu vos données sur un forum · un salarié tweete « on est piratés ! »
+  - 🤔 **Que lui répondez-vous ?** A) Nier B) **Reconnaître factuellement, annoncer un communiqué, renvoyer au porte-parole** ✅ C) Tout détailler
+  - 💬 Puis, ensemble : le communiqué en 6 blocs — faits · mesures · touché/pas touché · CNIL + clients · regrets · **contact presse unique**
+- **Notes orateur** : Mini-scénario d'abord (débrief : nier alors qu'il A les données = le mensonge devient l'histoire ; tout détailler = spéculation + infos exploitables ; le tweet rappelle : consigne de silence dès la première heure). Puis co-construction : récolter les blocs dans le chat, assembler en direct, afficher le modèle du support. Souligner le bloc 3 : dire ce qui n'a PAS été volé compte autant.
+- **Visuel suggéré** : Combiné téléphonique tendu au-dessus d'une page de communiqué à six blocs vides à remplir.
+  - **alt-text** : L'appel du journaliste et le squelette du communiqué de crise.
+- **Élément interactif** : Scénario A/B/C dans le chat, puis co-rédaction du communiqué par le chat.
+
+---
+
+### Slide 13 — 📊 L'opinion, le RETEX, le quiz & le bonus
 - **Type** : quiz
 - **Points clés (bullets)** :
-  - 1. Quelle étape du cycle SANS de réponse aux incidents consiste à isoler les hôtes infectés pour bloquer la propagation ?
-  - 2. Pourquoi un analyste forensique évite-t-il d'éteindre brutalement une machine en cours d'attaque ?
-  - 3. À quoi sert le calcul de l'empreinte SHA-256 lors de la copie d'un disque dur compromis ?
-- **Notes orateur** : Validons nos acquis sur la gestion d'incidents et le forensics. Répondez aux trois questions pour vérifier vos connaissances sur le confinement, la conservation de la mémoire vive et l'intégrité des preuves.
-- **Visuel suggéré** : QR Code d'accès au système de vote à gauche et questions interactives à droite.
-  - **alt-text** : QR Code d'accès au vote synchrone de validation.
-- **Élément interactif** : Quiz interactif avec statistiques de réponses et débriefing oral.
+  - 📊 **n°5 (opinion)** : sous pression réelle, votre organisation paierait-elle ? (Oui / Non / Aucune idée)
+  - 💬 **RETEX à chaud** : la décision la plus difficile + une chose à préparer à l'avance
+  - 📊 **n°6** : un « inject » ? → le rebondissement ciblé du MJ · 📊 **n°7** : ordre de reprise ? → éradiquer PUIS restaurer · 📊 **n°8** : qui parle ? → le porte-parole unique
+  - 📊 **n°9 (bonus)** : pourquoi ne pas réinstaller immédiatement ? → préserver les traces
+- **Notes orateur** : N°5 : « aucune idée » est la réponse la plus utile — la décision n'a jamais été préparée. RETEX : regrouper les propositions (annuaire de crise, hors bande, position rançon écrite, sauvegardes testées, porte-parole) — « cette liste EST le livrable d'un vrai exercice ». Quiz : débrief 30 s chacun. N°9 = tampon.
+- **Visuel suggéré** : Tableau de RETEX à deux colonnes (« difficile » / « à préparer ») entouré des cartes de quiz.
+  - **alt-text** : Le retour d'expérience et les sondages de validation de fin de session.
+- **Élément interactif** : Sondages Livestorm n°5 à 8 (+ n°9 bonus) + RETEX par le chat.
 
 ---
 
-### Slide 12 — Conclusion & Clôture du module
+### Slide 14 — Synthèse, devoirs & prochaine session
 - **Type** : récap
 - **Points clés (bullets)** :
-  - **Résumé** : Processus SANS/NIST de réponse, isolation réseau (pas d'extinction brute), forensics (chaîne de contrôle, hashs d'intégrité), approche de pentest et structure du RPI.
-  - **Devoirs** : Compléter le module *"Incident Response Fundamentals"* sur IBM SkillsBuild (~1h30).
-  - **Préparation** : Relire les supports de cours des sessions B01 à B19 pour se préparer au **Grand Atelier d'Audit Final** (Session B20).
-  - Prochaine session : *Grand Atelier d'Audit & Clôture du parcours (B20)*.
-- **Notes orateur** : Nous avons terminé notre module dédié aux opérations de détection et de réponse à incident ! Validez votre cours SkillsBuild et révisez bien les notions du parcours. La semaine prochaine sera notre dernière session synchrone. Ce sera notre grand atelier d'audit interactif MedDistri et la clôture de ce parcours de formation en cybersécurité. Révisez bien et à la semaine prochaine pour le grand final !
-- **Visuel suggéré** : Badge d'achèvement de cours d'IBM SkillsBuild pour la réponse aux incidents de sécurité.
-  - **alt-text** : Badge de réussite du cours Incident Response d'IBM SkillsBuild.
+  - Ce soir : confiner sans détruire · alerter par les bons canaux · refuser sous pression · parler d'une seule voix · transformer l'exercice en plan d'action
+  - Self-paced : terminer le cursus IBM SkillsBuild + récupérer ses badges · **réviser les modules A→E et les 4 Ateliers de Synthèse**
+  - Prochaine session (B20) : le **Grand Atelier d'Audit MedDistri** — l'audit complet d'une PME, voté et construit ensemble
+  - « Sous stress, on retombe au niveau de son entraînement. »
+- **Notes orateur** : Boucler : le RETEX du chat est le vrai livrable. Devoirs : la révision générale prépare B20 qui mobilisera TOUT le parcours. Teaser : « architecture, comptes, sauvegardes, gouvernance — vous auditerez tout, vous voterez les constats, vous construirez le plan de remédiation. La boucle sera bouclée. » Terminer à l'heure.
+- **Visuel suggéré** : Loupe posée sur le logo MedDistri, badges SkillsBuild alignés en bas.
+  - **alt-text** : Annonce du Grand Atelier d'Audit final et rappel des devoirs.
+- **Élément interactif** : Question chat de clôture (« un mot retenu »).
