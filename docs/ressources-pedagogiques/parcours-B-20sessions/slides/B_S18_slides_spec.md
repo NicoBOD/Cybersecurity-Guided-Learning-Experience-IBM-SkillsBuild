@@ -1,175 +1,189 @@
-# Spécifications des slides — Session B18 : Gestion des vulnérabilités
+# Spécifications des slides — Session B18 : Introduction à la réponse aux incidents
 Parcours : B 20 sessions  |  Module : E — Opérations, détection & réponse  |  Format : Spécifications Markdown
+
+> **Principe** : texte affiché minimal (mots-clés, chiffres, schémas) ; le discours complet est dans le [plan de séance minuté](../plans-de-seance/B_S18_plan.md). Chaque interaction Livestorm est signalée sur la slide concernée.
 
 ---
 
 ### Slide 1 — Page de garde
 - **Type** : titre
 - **Points clés (bullets)** :
-  - Gestion des vulnérabilités
-  - Cycle de vie des failles, référentiels CVE/CWE, calcul de score CVSS et plans de remédiation
+  - Introduction à la réponse aux incidents
+  - Avant : gérer les vulnérabilités · Pendant : confiner sans détruire les preuves · Après : apprendre
   - Parcours B — Session B18
-- **Notes orateur** : Bonjour et bienvenue dans notre dix-huitième session. Aujourd'hui, nous allons étudier la gestion des vulnérabilités. Les failles logicielles sont l'un des principaux moyens d'entrée pour les pirates. Nous allons apprendre à structurer un processus de veille et de scan, à utiliser les bases de données mondiales CVE et CWE, à décoder un score de gravité CVSS et à concevoir un plan de correction technique réaliste.
-- **Visuel suggéré** : Illustration d'une loupe numérique holographique verte pointée sur une ligne de code source affichant un bug surligné en rouge, avec le mot "CVE" en relief.
-  - **alt-text** : Détection et analyse d'une vulnérabilité dans du code logiciel.
-- **Élément interactif** : Question sondage : "Qui sait ce que signifie le terme 'Zero-Day' en cybersécurité ?"
+- **Notes orateur** : Accueil. B16 : l'équipe qui surveille ; B17 : les traces qu'elle lit ; ce soir : l'alerte est confirmée — on fait quoi ? Session en deux temps : colmater avant, réagir pendant et après.
+- **Visuel suggéré** : Un extincteur stylisé posé à côté d'un serveur, alarme discrète en fond.
+  - **alt-text** : La réponse aux incidents illustrée par l'urgence maîtrisée.
 
 ---
 
-### Slide 2 — Objectifs de la séance & Sommaire
+### Slide 2 — Le devoir de la semaine & objectifs
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - Expliquer les étapes du cycle de gestion des vulnérabilités (détection, évaluation, remédiation).
-  - Distinguer et utiliser les dictionnaires de vulnérabilités CVE et de faiblesses CWE.
-  - Interpréter les sous-scores d'un vecteur CVSSv3 pour évaluer la criticité réelle d'une faille.
-  - Sommaire : Le Cycle des vulnérabilités (20 min), Référentiels CVE & CWE (25 min), Le Score de gravité CVSS (25 min), Exercice de calcul de score (10 min), Quiz (10 min).
-- **Notes orateur** : Au cours de ces 90 minutes, nous allons tout d'abord présenter le cycle complet de gestion des vulnérabilités. Nous détaillerons ensuite les dictionnaires CVE et CWE. Nous apprendrons ensuite à lire et calculer un score CVSS pour prioriser nos actions, avant de faire un exercice pratique et notre quiz traditionnel de fin de séance.
-- **Visuel suggéré** : Agenda de la session affiché sous forme d'un tableau à droite, avec les 3 compétences clés présentées à gauche par des icônes de progression.
-  - **alt-text** : Tableau d'agenda minuté de la session synchrone de gestion des vulnérabilités.
+  - 💬 Chat : une action technique concrète pour **isoler** une machine compromise ?
+  - Objectifs : prioriser des correctifs (CVSS × exposition) · citer le cycle NIST/PICERL · appliquer les gestes du premier répondant (isoler sans éteindre).
+  - Parcours : vulnérabilités → comité de priorisation → Equifax → cycle de réponse → la RAM → fiche réflexe → quiz.
+- **Notes orateur** : Récolter : câble, Wi-Fi, VLAN d'isolement, règle pare-feu, EDR. Valider et annoncer les deux activités collectives (priorisation par sondages, fiche réflexe par chat).
+- **Visuel suggéré** : Câble réseau débranché en gros plan, liste d'objectifs à droite.
+  - **alt-text** : Isolement réseau d'une machine et objectifs de la session.
+- **Élément interactif** : Question chat (réinvestissement du devoir de B17).
 
 ---
 
-### Slide 3 — Le Cycle de gestion des vulnérabilités
+### Slide 3 — 📊 Sondage n°1 : l'avalanche
+- **Type** : sondage
+- **Points clés (bullets)** :
+  - Combien de nouvelles vulnérabilités (CVE) publiées dans le monde en 2024 ?
+  - A) ~4 000 — B) ~15 000 — C) plus de 40 000
+  - Source : programme CVE / base NVD, 2024
+- **Notes orateur** : Réponse C — plus de cent par jour, un record. Personne ne peut tout corriger : la compétence n'est pas de patcher, c'est de TRIER. Enchaîner sur le cycle.
+- **Visuel suggéré** : Compteur défilant de CVE avec la barre des 40 000 dépassée.
+  - **alt-text** : Volume record de vulnérabilités publiées en 2024.
+- **Élément interactif** : Sondage Livestorm n°1 (brise-glace).
+
+---
+
+### Slide 4 — Avant l'incident : le cycle des vulnérabilités
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - Processus continu visant à identifier, évaluer, traiter et signaler les faiblesses de sécurité.
-  - Les 4 grandes étapes opérationnelles :
-    - **1. Identification** : Scans de vulnérabilités automatisés (ex: Nessus, OpenVAS).
-    - **2. Évaluation** : Mesure de la gravité de la faille et de son impact sur les actifs de l'entreprise.
-    - **3. Remédiation (Traitement)** : Application d'un correctif (patch), mise en place de mesures compensatoires ou acceptation.
-    - **4. Vérification** : Rescanner pour s'assurer que la faille est bien corrigée.
-- **Notes orateur** : Gérer les vulnérabilités n'est pas une action ponctuelle. C'est un cycle sans fin car de nouvelles failles sont découvertes chaque jour. Nous scannons notre réseau, nous évaluons la dangerosité des failles trouvées, nous appliquons les correctifs et nous vérifions par un nouveau scan que la correction est efficace.
-- **Visuel suggéré** : Diagramme circulaire représentant les 4 étapes sous forme de flèches formant un anneau d'amélioration continue.
-  - **alt-text** : Cycle de vie de la gestion continue des vulnérabilités.
+  - **1. Identifier** : scan (Nessus, OpenVAS) × base **CVE**
+  - **2. Évaluer** : score **CVSS** 0-10 — pondéré par l'**exposition** de l'actif
+  - **3. Remédier** : patch (définitif) · mesure compensatoire (temporaire) · acceptation (formelle)
+  - **4. Vérifier** : re-scanner — des correctifs échouent en silence
+  - CVE = le cas déclaré · CWE = la maladie en général
+- **Notes orateur** : Cycle continu, jamais terminé. Marteler : le score technique seul ne fait pas la priorité — c'est gravité × exposition, la criticité V×G de B14 appliquée aux failles. CVE/CWE : l'analogie médicale en 30 secondes.
+- **Visuel suggéré** : Anneau à quatre flèches (identifier → évaluer → remédier → vérifier) tournant en continu.
+  - **alt-text** : Cycle continu de gestion des vulnérabilités en quatre étapes.
 
 ---
 
-### Slide 4 — Différence fondamentale : CVE vs CWE
+### Slide 5 — Le cas limite : la faille zero-day
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - **CVE (Common Vulnerabilities and Exposures)** :
-    - Identifiant unique mondial attribué à une faille de sécurité spécifique dans un logiciel précis.
-    - *Exemple* : **CVE-2021-44228** (Log4Shell dans la bibliothèque Apache Log4j).
-  - **CWE (Common Weakness Enumeration)** :
-    - Dictionnaire décrivant les catégories de faiblesses conceptuelles à l'origine des failles (le "défaut de fabrication" ou type de bug).
-    - *Exemple* : **CWE-79** (Cross-site Scripting - XSS) ou **CWE-89** (Injection SQL).
-- **Notes orateur** : Il ne faut pas confondre CVE et CWE. La CVE est un bug précis dans une version précise d'un produit (ex: Log4Shell chez Apache). La CWE est la catégorie générale du défaut de conception (ex: une mauvaise validation des entrées utilisateur). Pour faire une analogie médicale : la CWE est la maladie en général, la CVE est le cas d'infection constaté chez un patient précis.
-- **Visuel suggéré** : Comparatif visuel : à gauche, une fiche d'identité de bug précis (CVE). À droite, un catalogue de concepts de faiblesses de code (CWE).
-  - **alt-text** : Comparaison conceptuelle entre les identifiants CVE et les faiblesses logicielles CWE.
+  - Inconnue de l'éditeur → **aucun correctif** (« zéro jour » pour se préparer)
+  - Invisible pour l'antivirus par signature
+  - Parades **architecturales** : EDR comportemental (B08) · segmentation (B06) · défense en profondeur
+  - Très recherchée (et très chère) chez les attaquants étatiques
+- **Notes orateur** : On ne patche pas ce qui n'a pas de patch : on limite ce que la faille peut atteindre et on détecte le comportement anormal qu'elle produit. Transition : trois dossiers sur la table du comité sécurité.
+- **Visuel suggéré** : Sablier affichant « 0 », entouré des trois parades en pictogrammes.
+  - **alt-text** : Vulnérabilité zero-day et ses parades architecturales.
 
 ---
 
-### Slide 5 — Comprendre le score de gravité CVSS
-- **Type** : contenu
+### Slide 6 — 📊 Activité : le comité de priorisation (n°2, 3, 4)
+- **Type** : sondage
 - **Points clés (bullets)** :
-  - **CVSS (Common Vulnerability Scoring System)** :
-    - Standard mondial de calcul de la gravité d'une faille.
-  - Le score final va de **0.0** (aucun risque) à **10.0** (danger critique).
-  - Divisé en trois groupes de métriques :
-    - **Score de base (Base Score)** : Caractéristiques intrinsèques de la faille (ne changent pas dans le temps ni selon l'entreprise).
-    - **Score temporel** : Évolution de la faille (y a-t-il un exploit public ? un correctif disponible ?).
-    - **Score environnemental** : Impact réel de la faille sur les systèmes spécifiques de l'entreprise.
-- **Notes orateur** : Comment prioriser nos mises à jour ? On utilise le score CVSS. Il va de 0 à 10. Le score de base mesure la dangerosité technique absolue de la faille. Le score temporel regarde si les pirates ont déjà écrit un outil d'attaque publique. Le score environnemental adapte cette gravité à votre entreprise : une faille critique sur un serveur de test sans importance n'est pas prioritaire par rapport à une faille moyenne sur votre serveur de production.
-- **Visuel suggéré** : Une jauge colorée en forme de thermomètre graduée de 0 à 10 passant du vert au jaune, puis à l'orange et au rouge vif pour la note maximale.
-  - **alt-text** : Échelle de notation de la gravité des failles CVSS.
+  - 📊 **n°2 — Dossier A** : CVSS 9.8, serveur web **exposé Internet**, correctif dispo → sous 24 h ? maintenance ? accepter ?
+  - 📊 **n°3 — Dossier B** : la même faille, serveur de **test isolé** → même urgence ?
+  - 📊 **n°4 — Dossier C** : correctif qui risque de **casser la facturation** → jamais ? compenser-tester-déployer ? forcer ?
+- **Notes orateur** : Un dossier → un vote → un débrief. N°2 : pire profil au pire endroit = priorité 1 (« retenez ce dossier : c'est celui qu'Equifax a laissé traîner »). N°3 : même score, contexte opposé — le score environnemental. N°4 : le faux dilemme sécurité/production se résout par la séquence : compenser, tester, déployer.
+- **Visuel suggéré** : Trois dossiers cartonnés étiquetés A/B/C avec tampon de priorité à apposer.
+  - **alt-text** : Les trois dossiers de l'activité de priorisation des correctifs.
+- **Élément interactif** : Sondages Livestorm n°2, 3, 4.
 
 ---
 
-### Slide 6 — Décoder le vecteur CVSSv3
-- **Type** : schéma
-- **Points clés (bullets)** :
-  - Le score est calculé à partir d'une chaîne de caractères appelée **vecteur**.
-  - Exemple de vecteur : `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H`
-  - Les paramètres clés à savoir déchiffrer :
-    - **AV (Attack Vector)** : D'où vient l'attaque ? Network (N) $\rightarrow$ exploitables par Internet (le plus dangereux).
-    - **AC (Attack Complexity)** : Facilité d'exploit ? Low (L) $\rightarrow$ facile.
-    - **PR (Privileges Required)** : Faut-il un compte ? None (N) $\rightarrow$ aucun compte requis.
-- **Notes orateur** : Derrière un score de 9.8 se cache une chaîne de caractères précise appelée vecteur CVSS. Elle décrit comment l'attaque fonctionne. Si vous lisez "AV:N", cela signifie que l'attaque se fait par le réseau, donc par Internet. Si vous lisez "PR:N", cela signifie qu'aucun identifiant n'est requis. C'est la combinaison de ces facteurs qui donne une note de dangerosité maximale.
-- **Visuel suggéré** : Le vecteur CVSS décomposé avec des flèches explicatives reliant chaque lettre à sa signification textuelle (Vecteur d'attaque, complexité, privilèges requis).
-  - **alt-text** : Analyse détaillée de la syntaxe d'un vecteur de calcul CVSSv3.
-
----
-
-### Slide 7 — La remédiation : Patching, mesures de contournement ou acceptation
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - Face à une vulnérabilité qualifiée, trois choix de traitement :
-  - **1. Application du correctif (Patching)** : Solution idéale et définitive fournie par l'éditeur.
-  - **2. Mesure compensatoire (Mitigation)** : Si le patch ne peut pas être appliqué tout de suite (risque de bloquer la production).
-    - *Exemple* : Ajouter une règle de filtrage sur le pare-feu pour bloquer le port ciblé.
-  - **3. Acceptation** : Si le système est isolé et le risque résiduel faible.
-- **Notes orateur** : Corriger une vulnérabilité n'est pas toujours simple. Parfois, appliquer un correctif nécessite d'arrêter le serveur de production, ce que la direction refuse. Dans ce cas, nous mettons en place des mesures compensatoires temporaires, comme fermer un port réseau ou bloquer le protocole vulnérable sur le pare-feu, en attendant la prochaine maintenance planifiée.
-- **Visuel suggéré** : Schéma à trois branches montrant une route se divisant vers : Appliquer le patch (route goudronnée), Mesure compensatoire (pont temporaire), Acceptation (panneau de tolérance).
-  - **alt-text** : Options de traitement et de remédiation d'une faille de sécurité.
-
----
-
-### Slide 8 — Les vulnérabilités "Zero-Day" (0-Day)
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - Faille de sécurité récemment découverte qui n'est **pas encore connue de l'éditeur** du logiciel.
-  - Aucun correctif officiel n'est disponible.
-  - **"Zero-Day"** $\rightarrow$ l'éditeur a eu "zéro jour" pour préparer une correction.
-  - Très recherchées par les attaquants étatiques et revendues très cher sur le marché noir.
-  - Protection : Analyse comportementale (EDR) et segmentation réseau pour confiner l'intrusion.
-- **Notes orateur** : Qu'est-ce qu'une faille Zero-Day ? C'est une vulnérabilité exploitée par les pirates avant même que l'éditeur du logiciel n'en soit informé. L'éditeur a donc eu zéro jour pour développer un correctif. Face à ces menaces inconnues, les antivirus classiques par signature sont inefficaces ; nous devons compter sur l'analyse comportementale de nos EDR et sur une bonne segmentation réseau.
-- **Visuel suggéré** : Un sablier numérique affichant le chiffre "0" avec des lignes de codes sombres se désintégrant sous l'action d'une alerte.
-  - **alt-text** : Concept graphique représentant une vulnérabilité logicielle Zero-Day.
-
----
-
-### Slide 9 — La priorisation des correctifs
-- **Type** : schéma
-- **Points clés (bullets)** :
-  - Appliquer toutes les mises à jour en même temps est impossible (risque de pannes).
-  - **Matrice de priorisation** :
-    - Faille critique + Serveur exposé sur Internet $\rightarrow$ **Priorité 1** (Correction sous 24h).
-    - Faille critique + Poste interne isolé $\rightarrow$ **Priorité 2** (Correction sous 1 semaine).
-    - Faille moyenne + Serveur de test $\rightarrow$ **Priorité 3** (Correction sous 1 mois).
-- **Notes orateur** : Un scanner de vulnérabilités sur un grand réseau d'entreprise peut remonter des milliers de failles. Comment ne pas se noyer ? Il faut prioriser. Une vulnérabilité critique sur un serveur web accessible par tous sur Internet doit être corrigée en urgence absolue sous 24h. La même faille sur une machine de test sans données sensibles et non accessible peut attendre la prochaine session de mise à jour mensuelle.
-- **Visuel suggéré** : Tableau croisé liant la sensibilité de l'actif (Exposé, Interne, Test) et la gravité de la faille (Critique, Haute, Moyenne) avec des pastilles de priorité colorées.
-  - **alt-text** : Matrice de décision pour la priorisation de l'application des correctifs.
-
----
-
-### Slide 10 — Activité pratique : Décoder un vecteur CVSS
+### Slide 7 — Affaire réelle : Equifax (2017)
 - **Type** : étude de cas
 - **Points clés (bullets)** :
-  - **Vecteur à analyser** : `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H`
-  - **Paramètres fournis pour l'exercice** :
-    - `AV:N` (Network), `AC:L` (Complexity: Low)
-    - `PR:N` (Privileges: None), `UI:R` (User Interaction: Required)
-  - **Objectifs de l'activité** :
-    - 1. Expliquer si l'attaque peut être lancée à distance par Internet.
-    - 2. Expliquer si l'utilisateur cible doit réaliser une action pour déclencher la faille.
-    - 3. Estimer si le score de gravité est plutôt faible, moyen ou très élevé.
-- **Notes orateur** : Pour ce cas pratique, je vous donne ce vecteur CVSS. À l'aide de la légende des paramètres, vous devez m'expliquer comment se déroule l'attaque. Est-elle réalisable à distance ? L'attaquant a-t-il besoin de convaincre l'utilisateur de faire une action, comme cliquer sur un lien ? Déterminez si cette faille doit être corrigée en urgence.
-- **Visuel suggéré** : Tableau récapitulatif des quatre variables clés avec des choix à cocher pour l'exercice.
-  - **alt-text** : Fiche d'exercice pour l'interprétation des composants d'un vecteur CVSS.
-- **Élément interactif** : Analyse individuelle ou par binôme de 10 minutes avec restitution orale.
+  - Mars 2017 : faille Struts publiée (CVE-2017-5638), **correctif disponible le jour même**
+  - Consigne interne envoyée… serveur jamais patché — re-scan qui ne le voit pas
+  - **76 jours** d'exfiltration invisibles (certificat expiré sur l'inspection du trafic)
+  - **147 millions** de personnes · accord jusqu'à **700 M$** (FTC, 2019) · PDG, DSI, RSSI démissionnent
+- **Notes orateur** : Dérouler la chaîne des maillons cassés : inventaire, application, vérification, détection, communication de crise. 💬 Chat : « quel maillon a cédé en premier ? » — puis conclure : pas un exploit de génie, une chaîne de négligences ordinaires.
+- **Visuel suggéré** : Chaîne dont chaque maillon porte une étiquette (inventaire, patch, re-scan, certificat), tous fissurés.
+  - **alt-text** : La chaîne de défaillances de l'affaire Equifax.
+- **Élément interactif** : Question chat « le premier maillon ».
 
 ---
 
-### Slide 11 — Quiz de validation
+### Slide 8 — Le stress test mondial : Log4Shell (2021)
+- **Type** : étude de cas
+- **Points clés (bullets)** :
+  - CVE-2021-44228 — score **CVSS 10.0** : à distance, sans compte, trivial
+  - **Log4j** : une bibliothèque de journalisation présente dans d'innombrables logiciels
+  - Le problème n°1 du week-end : **« où l'utilise-t-on ? »** — l'inventaire, encore
+  - Réponse type : mesure compensatoire (WAF) immédiate → campagne de correctifs (CERT-FR/ANSSI)
+- **Notes orateur** : Le monde entier a vécu le même scénario en même temps. La gestion des vulnérabilités vit ou meurt par l'inventaire : on ne protège que ce qu'on sait posséder — le tout premier contrôle depuis A01. Transition : et quand malgré tout, une faille passe ?
+- **Visuel suggéré** : Planisphère avec des alertes s'allumant simultanément sur tous les continents.
+  - **alt-text** : Log4Shell, une vulnérabilité critique mondiale et simultanée.
+
+---
+
+### Slide 9 — Le cycle de réponse : NIST SP 800-61 / PICERL
+- **Type** : schéma
+- **Points clés (bullets)** :
+  - NIST : **4 phases** — Préparation · Détection & Analyse · Confinement-Éradication-Recouvrement · Post-incident
+  - PICERL (SANS) : les mêmes réalités en **6 étapes** mnémotechniques
+  - La phase la plus sautée : le **REX** — la seule qui empêche de revivre le même incident
+- **Notes orateur** : Précision de rigueur : le NIST regroupe confinement-éradication-recouvrement en UNE phase (on itère entre les trois) ; PICERL les déplie. Préparation = tout ce qu'on a déjà construit (B12 sauvegardes, playbooks, première partie de ce soir). « Sans REX, vous ne sortez pas d'un incident — vous attendez le suivant. »
+- **Visuel suggéré** : Tableau de correspondance NIST (4 lignes) ↔ PICERL (6 lignes), flèche de cycle qui reboucle.
+  - **alt-text** : Correspondance entre les quatre phases NIST et les six étapes PICERL.
+
+---
+
+### Slide 10 — Confiner, éradiquer, recouvrer : l'incendie de cuisine
+- **Type** : schéma
+- **Points clés (bullets)** :
+  - **Confinement** : fermer la porte de la cuisine — isoler pour protéger le reste
+  - **Éradication** : éteindre à la source, déblayer — malwares, portes dérobées, comptes compromis, **faille d'origine**
+  - **Recouvrement** : repeindre, remplacer la cuisinière — restaurer (B12), valider, surveiller
+- **Notes orateur** : Insister sur l'éradication : nettoyer les malwares ne suffit pas — il faut aussi les portes dérobées ET la faille exploitée, sinon le recouvrement restaure un environnement piégé (question de réflexion n°2). Remise en production progressive et sous surveillance renforcée.
+- **Visuel suggéré** : Triptyque incendie de cuisine : porte fermée / extincteur en action / cuisine rénovée.
+  - **alt-text** : Les trois temps opérationnels de la réponse illustrés par un incendie domestique.
+
+---
+
+### Slide 11 — La règle d'or de la RAM
+- **Type** : contenu
+- **Points clés (bullets)** :
+  - ❌ **Ne jamais éteindre** une machine compromise — la RAM volatile contient : processus actifs, connexions, adresses des attaquants… parfois **la clé de chiffrement**
+  - ❌ Ne pas redémarrer (risque de chiffrement du démarrage) · ne pas « nettoyer »
+  - ✅ **Isoler du réseau, laisser allumé** — ordre de volatilité : RAM → réseau → disques (copie) → journaux déportés (B17)
+  - ⚖️ Plainte sous **72 h** pour l'indemnisation assurantielle (LOPMI 2023, vu en B02)
+- **Notes orateur** : Le réflexe instinctif est l'erreur. Éteindre = passer l'éponge sur la scène de crime. Les journaux déportés de B17 sont déjà en lieu sûr — la RAM, elle, ne survit qu'à une condition : le courant. Transition : « testons ça à chaud — lundi, 10h04, le téléphone sonne. »
+- **Visuel suggéré** : Barrette de RAM posée comme une pièce à conviction sous scellé numéroté.
+  - **alt-text** : La mémoire vive comme preuve à préserver en priorité.
+
+---
+
+### Slide 12 — 🤔 L'appel du lundi matin & la fiche réflexe
+- **Type** : étude de cas
+- **Points clés (bullets)** :
+  - 🤔 « Mon écran affiche une demande de rançon ! » — A) Éteindre B) **Isoler, laisser allumé, escalader** ✅ C) Redémarrer
+  - 💬 Puis, ensemble : les **5 étapes** de la fiche réflexe helpdesk (une par message dans le chat)
+  - Modèle : isoler → maintenir l'alimentation → collecter (heure, photo, derniers fichiers) → escalader [CRITIQUE] → consigner
+  - Les 3 qualités d'une fiche : zéro jargon · interdits explicites (ne pas éteindre, **ne pas payer**) · escalade nominative
+- **Notes orateur** : Mini-scénario d'abord (débrief : les trois gestes dans l'ordre), puis co-rédaction : récolter les étapes dans le chat, écrire la fiche en direct, comparer au modèle du support. Rappeler la position constante de l'ANSSI : ne pas payer (B02).
+- **Visuel suggéré** : Combiné téléphonique + fiche réflexe à cinq cases numérotées se remplissant.
+  - **alt-text** : Scénario d'appel d'urgence et fiche réflexe premier répondant.
+- **Élément interactif** : Scénario A/B/C dans le chat, puis co-rédaction de la fiche par le chat.
+
+---
+
+### Slide 13 — 📊 Votre plan, le quiz & le bonus
 - **Type** : quiz
 - **Points clés (bullets)** :
-  - 1. Quelle est la différence majeure entre une CVE et une CWE ?
-  - 2. Que signifie l'indicateur "AV:N" dans un vecteur de vulnérabilité CVSS ?
-  - 3. Quel terme désigne une faille de sécurité activement exploitée mais pour laquelle aucun patch n'existe ?
-- **Notes orateur** : C'est l'heure du quiz pour valider vos compétences en gestion des vulnérabilités. Connectez-vous et votez. Portez une attention particulière aux acronymes CVE et CWE pour éviter les confusions classiques.
-- **Visuel suggéré** : QR Code d'accès au vote à gauche, questions interactives à droite.
-  - **alt-text** : QR Code vert d'accès au quiz interactif en direct.
-- **Élément interactif** : Vote synchrone en temps réel avec debriefing des résultats par le mentor.
+  - 📊 **n°5 (opinion)** : votre organisation a-t-elle un plan de réponse ? (Testé / Papier / Non-je ne sais pas)
+  - 📊 **n°6** : CVE vs CWE ? → le cas déclaré vs la maladie en général
+  - 📊 **n°7** : rançongiciel actif : premier geste ? → isoler SANS éteindre
+  - 📊 **n°8** : pourquoi ne jamais éteindre ? → la RAM volatile (preuves, parfois la clé)
+  - 📊 **n°9 (bonus)** : correctif urgent vs production ? → pilote 24 h puis déploiement en anneaux
+- **Notes orateur** : N°5 sans bonne réponse — repère : un plan jamais testé est une hypothèse (IBM CODB : plan testé = violations moins coûteuses), teaser direct de B19. Quiz : débrief 30 s chacun (éléments dans le support). N°9 = tampon : le couper si retard.
+- **Visuel suggéré** : Cinq cartes de vote alignées, la première marquée « opinion », la dernière « bonus ».
+  - **alt-text** : Les sondages de fin de session, de l'opinion au bonus.
+- **Élément interactif** : Sondages Livestorm n°5 à 8 (+ n°9 bonus).
 
 ---
 
-### Slide 12 — Conclusion & Travail autonome
+### Slide 14 — Synthèse, devoirs & prochaine session
 - **Type** : récap
 - **Points clés (bullets)** :
-  - **Résumé** : Cycle des vulnérabilités (détecter, évaluer, corriger, vérifier), CVE (failles spécifiques), CWE (faiblesses de code), score CVSS (gravité 0 à 10), et traitement (patch, mesures compensatoires).
-  - **Devoirs** : Compléter le module *"Vulnerability Assessment and Remediation"* sur IBM SkillsBuild (~1h30).
-  - **Recherche** : Visiter le site de la base de données de référence du NIST (NVD - National Vulnerability Database) et rechercher la fiche de la célèbre faille *Log4Shell*.
-  - Prochaine session : *Réponse aux incidents & bases du forensics (B19)*.
-- **Notes orateur** : Nous avons terminé notre session sur les vulnérabilités ! Pour aller plus loin, faites le cours SkillsBuild et allez jeter un œil au site officiel de la NVD américaine pour voir à quoi ressemble une vraie fiche de vulnérabilité. La semaine prochaine, nous verrons comment réagir lorsqu'une vulnérabilité a été exploitée avec succès et qu'une attaque s'est déclarée. À la semaine prochaine !
-- **Visuel suggéré** : Badge d'achèvement de cours d'IBM SkillsBuild pour la gestion des vulnérabilités.
-  - **alt-text** : Badge de réussite du cours Vulnerability Management d'IBM SkillsBuild.
+  - Prioriser = gravité × exposition · isoler sans éteindre · faire le REX
+  - Equifax : une faille connue, un correctif disponible, 700 M$ de négligences ordinaires
+  - Self-paced : IBM SkillsBuild *"Incident Response Fundamentals"* (~1h30) + votre liste : les 4-5 fonctions de VOTRE cellule de crise
+  - Prochaine session (B19) : on ne prend plus de notes — on **vit** une crise (exercice sur table interactif)
+- **Notes orateur** : Boucler la session, donner les devoirs (la liste de cellule de crise sert dès l'ouverture de B19). Teaser : « le scénario se déroulera en temps réel, et c'est vous qui prendrez chaque décision, par sondages. Rendez-vous en cellule de crise. » Terminer à l'heure.
+- **Visuel suggéré** : Porte de salle de crise entrouverte, lumière allumée, badge SkillsBuild en coin.
+  - **alt-text** : Synthèse de la session et invitation à la simulation de crise B19.
+- **Élément interactif** : Question chat de clôture (« un mot retenu »).
