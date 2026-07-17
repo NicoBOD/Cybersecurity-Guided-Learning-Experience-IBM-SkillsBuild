@@ -1,173 +1,189 @@
-# Spécifications des slides — Session B17 : SIEM, journalisation & détection
+# Spécifications des slides — Session B17 : Outils SIEM & Analyse de logs
 Parcours : B 20 sessions  |  Module : E — Opérations, détection & réponse  |  Format : Spécifications Markdown
+
+> **Principe** : texte affiché minimal (mots-clés, chiffres, extraits de logs) ; le discours complet est dans le [plan de séance minuté](../plans-de-seance/B_S17_plan.md). Chaque interaction Livestorm est signalée sur la slide concernée.
 
 ---
 
 ### Slide 1 — Page de garde
 - **Type** : titre
 - **Points clés (bullets)** :
-  - SIEM, journalisation & détection
-  - Centralisation des logs, règles de corrélation et Atelier de Synthèse Pratique 4
+  - Outils SIEM & Analyse de logs
+  - Lire les traces, corréler les indices — et l'**Atelier de Synthèse 4**
   - Parcours B — Session B17
-- **Notes orateur** : Bienvenue dans notre dix-septième session. Aujourd'hui, nous allons plonger au cœur technique de la surveillance : le SIEM et la journalisation. Nous allons comprendre comment collecter des journaux d'événements, comment les corréler pour détecter des attaques complexes et comment analyser des lignes de logs en console. Enfin, nous lancerons notre quatrième Atelier de Synthèse Pratique.
-- **Visuel suggéré** : Des flux lumineux de logs numériques en lignes de texte vertes convergeant depuis des serveurs virtuels vers une console centrale d'analyse 3D de sécurité.
-  - **alt-text** : Rapprochement et centralisation des flux de journaux vers un concentrateur sécurisé.
-- **Élément interactif** : Question sondage : "Qui a déjà ouvert l'observateur d'événements Windows ou lu les fichiers de logs sous /var/log/ sous Linux ?"
+- **Notes orateur** : Accueil. B16 a présenté l'équipe (le SOC) ; ce soir, son instrument : le SIEM, et sa matière première : les journaux. Annoncer l'enquête collective de l'Atelier de Synthèse 4.
+- **Visuel suggéré** : Flux de lignes de logs convergeant depuis plusieurs serveurs vers une console centrale d'analyse.
+  - **alt-text** : Centralisation de journaux d'événements vers un concentrateur SIEM.
 
 ---
 
-### Slide 2 — Objectifs de la séance & Sommaire
+### Slide 2 — Le devoir de la semaine & objectifs
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - Expliquer le fonctionnement d'un SIEM (centralisation, normalisation, corrélation).
-  - Identifier les logs système et applicatifs clés pour la sécurité d'une infrastructure.
-  - Analyser et interpréter des lignes de logs pour isoler une attaque de type bruteforce.
-  - Extraire et analyser des informations de logs pour l'Atelier de Synthèse Pratique 4.
-  - Sommaire : Principes du SIEM (20 min), Les Logs clés de sécurité (20 min), Analyse pratique de logs (20 min), Atelier de Synthèse Pratique 4 (20 min), Quiz (10 min).
-- **Notes orateur** : Nous étudierons en premier lieu l'architecture et les principes de fonctionnement d'un SIEM. Nous verrons ensuite quels sont les logs à collecter en priorité. Nous passerons à de l'analyse pratique en console pour repérer une attaque par force brute, avant de mener notre quatrième Atelier de Synthèse Pratique et de réaliser le quiz de validation.
-- **Visuel suggéré** : Planning de la séance minuté sous forme d'un tableau à droite, avec les compétences cibles illustrées à gauche par des icônes.
-  - **alt-text** : Tableau d'agenda minuté de la session synchrone d'analyse de logs.
+  - 💬 Chat : les **3 éléments obligatoires** d'une ligne de log ?
+  - Objectifs : expliquer le SIEM (collecte, normalisation, corrélation, stockage) · lire un log brut · évaluer la réussite d'une attaque (codes HTTP, tailles) · mener l'enquête de l'Atelier 4.
+  - Parcours : SIEM → anatomie d'un log → règles de corrélation → Marriott & Desjardins → **Atelier 4** → quiz.
+- **Notes orateur** : Récolter dans le chat : horodatage, source, événement. Valider, compléter, puis dérouler le programme. Le fil rouge : les traces existent toujours — encore faut-il les lire.
+- **Visuel suggéré** : Trois étiquettes (Quand ? Qui ? Quoi ?) posées sur une ligne de log agrandie.
+  - **alt-text** : Les trois composantes obligatoires d'une ligne de journal.
+- **Élément interactif** : Question chat (réinvestissement du devoir de B16).
 
 ---
 
-### Slide 3 — Qu'est-ce qu'un SIEM ?
-- **Type** : contenu
+### Slide 3 — 📊 Sondage n°1 : le chiffre qui fait mal
+- **Type** : sondage
 - **Points clés (bullets)** :
-  - **SIEM** : Security Information and Event Management.
-  - Outil logiciel centralisé qui collecte, stocke et analyse les journaux d'événements (logs) de toute l'entreprise en temps réel.
-  - **Les trois étapes logiques d'un SIEM** :
-    - **1. Collecte (Ingestion)** : Réception des logs des pare-feux, serveurs, routeurs, applications.
-    - **2. Normalisation** : Traduction de formats de logs différents dans un langage commun standardisé.
-    - **3. Corrélation & Analyse** : Croisement des événements pour détecter des comportements suspects.
-- **Notes orateur** : Si un pirate s'introduit chez vous, il va laisser une trace sur le pare-feu, une trace sur le serveur de fichiers, et une autre sur le contrôleur de domaine. Regarder ces machines individuellement est impossible. Le SIEM rassemble toutes ces traces éparpillées au même endroit, les traduit dans un format standardisé et les analyse ensemble pour reconstituer l'attaque.
-- **Visuel suggéré** : Diagramme montrant des logs sources disparates (Windows XML, Linux Syslog, logs de pare-feu Cisco) entrant dans un entonnoir SIEM et ressortant sous une forme unifiée et propre.
-  - **alt-text** : Schéma d'ingestion et de normalisation de logs par un SIEM.
+  - Délai moyen pour **identifier puis contenir** une violation de données ?
+  - A) ~25 jours — B) ~90 jours — C) ~258 jours
+  - Source : IBM, *Cost of a Data Breach*, 2024
+- **Notes orateur** : Réponse C : 258 jours — presque neuf mois. Pendant ce temps, l'attaquant écrit son journal intime chez vous : chaque action laisse une ligne. Le drame n'est pas l'absence de traces, c'est l'absence de lecteur. Enchaîner : la machine qui lit pour nous.
+- **Visuel suggéré** : Frise chronologique de 9 mois avec une silhouette d'intrus présente sur toute la longueur.
+  - **alt-text** : Durée moyenne d'une violation de données avant identification et confinement.
+- **Élément interactif** : Sondage Livestorm n°1 (brise-glace).
 
 ---
 
-### Slide 4 — Le moteur de corrélation du SIEM
+### Slide 4 — Le SIEM : 4 étapes
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - **Définition** : Règle logique associant plusieurs événements distincts pour lever une alerte de sécurité.
-  - Exemple de règle de corrélation simple :
-    - Événement A : 10 échecs de connexion SSH sur un serveur en moins de 30 secondes.
-    - Événement B : 1 connexion réussie sur ce même serveur depuis la même adresse IP dans la foulée.
-    - **Règle** : Si Événement A + Événement B -> Alerte : Attaque Brute Force Réussie !
-- **Notes orateur** : Sans moteur de corrélation, un échec de connexion est un non-événement. Des utilisateurs qui se trompent de mot de passe, cela arrive tout le temps. Mais si le SIEM détecte 50 échecs de connexion sur des comptes différents depuis la même adresse IP externe en 2 minutes, le moteur de corrélation comprend qu'il s'agit d'un scan de force brute et génère une alerte d'urgence.
-- **Visuel suggéré** : Une équation visuelle liant des icônes d'échecs répétés (cadenas rouges) suivis d'un succès (cadenas vert), pointant vers une sirène de sécurité d'alerte rouge.
-  - **alt-text** : Exemple logique d'une règle de corrélation d'événements.
+  - **1. Collecte** : agents + Syslog → base centrale
+  - **2. Normalisation (parsing)** : formats hétérogènes → schéma commun
+  - **3. Corrélation** : croiser les événements de machines différentes
+  - **4. Stockage & visualisation** : archives probantes + tableaux de bord
+- **Notes orateur** : Un pirate laisse une trace sur le pare-feu, une sur le serveur de fichiers, une sur l'annuaire. Séparées : anodines. Croisées : une intrusion qui se raconte. Personne ne lit des millions de lignes par jour — le SIEM, si. Insister : sans normalisation, pas de corrélation possible.
+- **Visuel suggéré** : Entonnoir : logs disparates (XML, Syslog, pare-feu) entrant, alertes qualifiées sortant.
+  - **alt-text** : Les quatre étapes de traitement d'un SIEM, de la collecte à l'alerte.
 
 ---
 
-### Slide 5 — Les journaux d'événements (Logs) clés à surveiller
+### Slide 5 — Panorama des outils
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - On ne peut pas tout stocker (limites de bande passante et de stockage).
-  - Les logs prioritaires pour la cybersécurité :
-    - **Logs d'authentification** : Connexions réussies/échouées, créations de comptes, élévations de privilèges (ex: sudo, connexions Active Directory).
-    - **Logs réseau** : Flux refusés par les pare-feux, requêtes DNS suspectes.
-    - **Logs système d'exécution** : Lancement de processus inhabituels (ex: PowerShell lancé par Word).
-- **Notes orateur** : Récupérer l'intégralité des logs de toutes les machines de l'entreprise coûte trop cher en stockage et ralentit le réseau. Le rôle du RSSI est de cibler les logs d'intérêt. On se concentre en priorité sur l'authentification (qui se connecte ?), le réseau (qui communique avec l'extérieur ?) et les lancements de processus système critiques.
-- **Visuel suggéré** : Tableau à trois colonnes détaillant pour chaque source de logs (OS, Réseau, Application) les types d'événements spécifiques à collecter.
-  - **alt-text** : Tableau récapitulatif des logs clés de sécurité à surveiller.
+  - Payants : **Splunk** · **Microsoft Sentinel** · **Elastic Security**
+  - Open-source (idéal PME) : **Wazuh** · **ELK** (Elasticsearch, Logstash, Kibana) · **Graylog Open**
+  - Le coût réel : volume ingéré (Go/jour) + durée de rétention → d'où le **ciblage** des sources
+- **Notes orateur** : Trente secondes, pas un catalogue : retenir qu'une PME a des options gratuites crédibles. Le vrai arbitrage est économique : on ne collecte pas tout, on cible — authentification, réseau, processus critiques. Détails dans le support.
+- **Visuel suggéré** : Deux colonnes de logos (payant / open-source) avec un curseur budget en dessous.
+  - **alt-text** : Panorama des solutions SIEM commerciales et open-source.
 
 ---
 
-### Slide 6 — Anatomie d'une ligne de log brute
+### Slide 6 — Anatomie d'un log web Apache
 - **Type** : contenu
 - **Points clés (bullets)** :
-  - Une ligne de log standard doit répondre aux questions : Qui, Quand, Où, Quoi ?
-  - Exemple de log de connexion Linux (Auth.log) :
-    - `Jun 29 22:15:30 srv-paye sshd[4012]: Failed password for invalid user admin from 198.51.100.42 port 52345 ssh2`
-  - Découpage analytique :
-    - **Date/Heure** : `Jun 29 22:15:30` (Quand)
-    - **Hôte cible** : `srv-paye` (Où)
-    - **Processus source** : `sshd[4012]`
-    - **Événement** : `Failed password for invalid user admin` (Quoi)
-    - **IP source** : `198.51.100.42` (Qui)
-- **Notes orateur** : Pour être capable d'enquêter, il faut savoir lire un journal d'événements brut. Regardez cette ligne issue d'un serveur Linux. On y trouve l'heure précise de l'attaque, le nom de la machine cible, le protocole utilisé, l'identifiant que l'attaquant a essayé de forcer, et l'adresse IP publique d'où provient la tentative de piratage.
-- **Visuel suggéré** : La ligne de log affichée en grand avec des couleurs différentes pour chaque champ (Date en jaune, Machine en bleu, Événement en rouge, IP en vert) associées à des bulles d'explications.
-  - **alt-text** : Découpage et explication des champs d'une ligne de journal Linux SSH.
+  - `203.0.113.88 - - [29/Jun/2026:16:42:57 +0200] "GET /admin/login.php HTTP/1.1" 200 4502`
+  - **Qui** : IP source · **Quand** : horodatage + fuseau · **Quoi** : méthode + ressource
+  - **Code d'état** : 200 traité · 400 rejeté · 404 introuvable · 500 erreur serveur
+  - **Taille de la réponse** : l'indice oublié — une réponse anormalement grosse trahit une fuite
+- **Notes orateur** : Décortiquer champ par champ en couleur. Marteler : « la taille, retenez-la — elle servira dans l'atelier ». 💬 Question chat : une requête isolée sur /admin/login.php, grave ? → signal faible ; la fréquence et la série font le diagnostic.
+- **Visuel suggéré** : La ligne de log agrandie, chaque champ surligné d'une couleur avec sa bulle d'explication.
+  - **alt-text** : Découpage commenté d'une ligne de journal Apache au format Common Log Format.
+- **Élément interactif** : Question chat « le réflexe du lecteur de logs ».
 
 ---
 
-### Slide 7 — Détection d'une attaque par Brute Force en console
+### Slide 7 — Du log à la règle de corrélation
 - **Type** : schéma
 - **Points clés (bullets)** :
-  - Analyse d'un extrait de logs réels :
-    - `22:10:01 - Failed password for user root from 203.0.113.5`
-    - `22:10:03 - Failed password for user root from 203.0.113.5`
-    - `22:10:05 - Failed password for user root from 203.0.113.5`
-    - `22:10:08 - Accepted password for user root from 203.0.113.5`
-  - **Constat** : 3 échecs suivis d'une connexion réussie en 7 secondes.
-  - **Diagnostic** : Attaque par brute force réussie sur le compte administrateur. **Alerte critique immédiate.**
-- **Notes orateur** : Cet enchaînement de lignes de logs est typique d'une attaque par dictionnaire ou force brute réussie. On observe plusieurs échecs de connexion rapprochés sur le même compte, suivis d'un message "Accepted password" provenant de la même adresse IP. L'attaquant a trouvé le bon mot de passe. Il est désormais dans le système avec les droits d'administration complets.
-- **Visuel suggéré** : Les lignes de logs formatées dans un terminal de commande avec les lignes d'échecs encadrées en orange et la ligne de succès finale clignotant en rouge d'alerte.
-  - **alt-text** : Enchaînement de logs illustrant une compromission par force brute réussie.
+  - `Jun 29 22:15:30 srv-paye sshd[4012]: Failed password for invalid user admin from 198.51.100.42`
+  - Une règle = **motif + seuil + fenêtre de temps → action**
+  - Force brute : 10 × `Failed password` + 1 × `Accepted password`, même IP, < 60 s → **alerte critique** (+ isolement SOAR)
+  - Autres motifs : voyage impossible · exfiltration (volume anormal) · scan de ports
+- **Notes orateur** : Un échec de connexion, c'est la vie. Dix échecs puis un succès en une minute, c'est une histoire — et les histoires se détectent. Relier au SOAR de B16 pour l'action automatique. Annoncer que le voyage impossible revient en mini-scénario.
+- **Visuel suggéré** : Équation visuelle : série de cadenas rouges + un cadenas vert → sirène d'alerte.
+  - **alt-text** : Logique d'une règle de corrélation détectant une force brute réussie.
 
 ---
 
-### Slide 8 — Présentation de l'Atelier de Synthèse 4 : Analyse de logs chez MedDistri
+### Slide 8 — Affaire réelle : Marriott/Starwood (2018)
 - **Type** : étude de cas
 - **Points clés (bullets)** :
-  - **Contexte** : MedDistri a mis en place un concentrateur de logs. Cette nuit, le pare-feu applicatif a levé une alerte suspecte d'injection SQL sur l'un de ses formulaires.
-  - **Objectif** : Analyser collectivement l'extrait de logs fourni pour valider l'impact et la réussite de la tentative.
-- **Notes orateur** : C'est le moment d'aborder notre quatrième Atelier de Synthèse Pratique. Nous allons analyser à l'écran un extrait de logs de MedDistri correspondant à un incident suspect de force brute SQL. Notre rôle est de mener l'enquête collectivement et de répondre aux questions de détection.
-- **Visuel suggéré** : Silhouette d'un détective numérique observant des lignes de logs à la loupe avec le logo de MedDistri en arrière-plan.
-  - **alt-text** : Fiche d'introduction de l'Atelier de Synthèse Pratique 4 d'analyse de logs.
+  - Intrusion : **2014** (chez Starwood) — rachat par Marriott : 2016 — découverte : **2018**
+  - **4 ans** de présence · ~**339 millions** de dossiers clients (régulateur britannique) · passeports inclus
+  - Détection : **une alerte** d'un outil de supervision de base de données
+  - Amende ICO : **18,4 M£** (2020)
+- **Notes orateur** : Dérouler la chronologie. Deux morales : on achète aussi les intrusions en cours (due diligence cyber, B13) ; une seule alerte bien placée sur l'actif critique a fait ce que quatre ans de silence n'avaient pas fait. 💬 Chat « l'énigme » : comment reste-t-on 4 ans invisible ? → comptes volés légitimes, petits volumes, périmètre hérité non supervisé.
+- **Visuel suggéré** : Frise 2014→2018 avec le logo hôtel, le rachat au milieu, et l'unique alerte en fin de course.
+  - **alt-text** : Chronologie de l'intrusion Starwood-Marriott, de 2014 à sa découverte en 2018.
+- **Élément interactif** : Question chat « l'énigme Marriott ».
 
 ---
 
-### Slide 9 — Démarche d'analyse pour l'Atelier de Synthèse 4
-- **Type** : contenu
-- **Points clés (bullets)** :
-  - Notre analyse collective de logs doit identifier :
-    - 1. **La chronologie précise de la tentative** (Heures et secondes de chaque requête).
-    - 2. **Le vecteur d'attaque et la méthode de compromission** (ex: injection SQL).
-    - 3. **Le code statut de retour HTTP** (Déterminer si la requête a abouti ou a été bloquée).
-    - 4. **Deux recommandations de sécurité immédiates** pour remédier au problème applicatif et bloquer l'IP source.
-- **Notes orateur** : Cet atelier va nous initier à la lecture rapide et à l'interprétation de logs réels. Nous allons déterminer en direct l'adresse IP de l'attaquant, le succès ou l'échec de la tentative en fonction du code retour HTTP, et proposer des mesures immédiates à prendre sur le pare-feu applicatif.
-- **Visuel suggéré** : Icône d'analyse de logs avec affichage des questions clés à se poser devant une ligne brute.
-  - **alt-text** : Méthodologie d'analyse de logs d'incident.
-
----
-
-### Slide 10 — Exercice de lecture de logs collectifs
+### Slide 9 — Le cas miroir : Desjardins (2019)
 - **Type** : étude de cas
 - **Points clés (bullets)** :
-  - En plénière (durée : 15 min).
-  - **Exercice** : Analyser les lignes de logs suivantes et répondre :
-    - `10:05:12 - Firewall blocked traffic from 198.51.100.12 to Port 80`
-    - `10:05:14 - Firewall blocked traffic from 198.51.100.12 to Port 443`
-    - `10:05:16 - Firewall blocked traffic from 198.51.100.12 to Port 22`
-  - **Question** : Quel comportement suspect l'adresse IP `198.51.100.12` adopte-t-elle ?
-- **Notes orateur** : Commençons par un entraînement collectif. Regardez ces trois lignes de logs réseau issues de notre pare-feu. Une même adresse IP externe tente de se connecter successivement à différents ports fermés de notre entreprise. Que fait ce système distant à votre avis ? Oui, il réalise un scan de ports pour chercher une entrée.
-- **Visuel suggéré** : Tableau des événements du pare-feu avec l'IP externe surlignée en jaune pour faire ressortir la répétition.
-  - **alt-text** : Exercice pratique de détection de scan de ports à partir de logs pare-feu.
-- **Élément interactif** : Analyse participative collective avec réponses dans le chat.
+  - Un **employé** exfiltre des données pendant **26 mois** — **9,7 millions** de personnes
+  - Découvert par… la **police** — aucune alerte interne
+  - Rapport du Commissariat à la protection de la vie privée du Canada (2020) : copies massives non surveillées
+  - Coût annoncé : **> 100 M$ CA** dès la première année (2019)
+- **Notes orateur** : Le miroir de Marriott : la menace était à l'intérieur, et les traces aussi. Une règle sur les copies massives récurrentes, ou un outil DLP, aurait vu le motif. La journalisation ne vise pas que l'attaquant externe — elle est le seul témoin des abus internes.
+- **Visuel suggéré** : Silhouette d'employé devant un écran, flux de données sortant discrètement vers un disque externe, compteur de mois qui défile.
+  - **alt-text** : Exfiltration interne de données étalée sur vingt-six mois.
 
 ---
 
-### Slide 11 — Quiz de validation
+### Slide 10 — 🧪 Atelier de Synthèse 4 : l'enquête MedDistri
+- **Type** : étude de cas
+- **Points clés (bullets)** :
+  - Depuis l'Atelier 1 : DMZ en place + concentrateur de journaux
+  - Cette nuit : le **WAF** (mode détection) signale des requêtes suspectes sur la boutique
+  - À l'écran : l'extrait `access.log` — **5 lignes, une enquête**
+  - Vos outils : les codes HTTP, les tailles de réponses, la chronologie
+- **Notes orateur** : Lire les 5 lignes à voix haute SANS les interpréter (l'extrait complet est dans le support et affiché en grand). « Toute l'attaque est là. À vous de la reconstituer. » Rappeler la ligne 2 : tous les visiteurs ne sont pas des suspects.
+- **Visuel suggéré** : Terminal affichant les cinq lignes de logs, loupe de détective posée sur la ligne 3.
+  - **alt-text** : Extrait de cinq lignes de journal Apache à analyser collectivement.
+
+---
+
+### Slide 11 — Atelier 4 : votes & verdicts
+- **Type** : sondage
+- **Points clés (bullets)** :
+  - 📊 **n°2** : quelle attaque aux lignes 3-4 ? (Path Traversal / **SQLi** ✅ / DDoS)
+  - 📊 **n°3** : code 200 + tailles 851 → 4522 → 6817 octets : réussite potentielle ? (**Oui** ✅ / Non)
+  - 💬 Chat : que révèle la ligne 5 — et pourquoi son code **400** est-il une bonne nouvelle ?
+  - 📊 **n°4** : la riposte ? (**WAF en blocage + requêtes paramétrées + évaluation de la fuite** ✅)
+- **Notes orateur** : Un vote → un débrief, dans l'ordre. N°2 : apostrophe, OR 1=1, UNION SELECT — la signature complète (B03). N°3 : la nuance qui fait les bons analystes : 200 = requête traitée ; c'est la TAILLE qui accable. Ligne 5 : traversée de répertoires échouée (400, 118 octets). N°4 : confinement + correction de la cause + qualification de la fuite (CNIL 72 h, B15) ; effacer les logs = détruire les pièces à conviction. Conclure : reconnaissance → extraction → élargissement en moins de 3 minutes.
+- **Visuel suggéré** : Les trois questions empilées avec cases à cocher, extrait de logs en fond grisé.
+  - **alt-text** : Les trois votes de l'Atelier de Synthèse 4 sur l'analyse de l'extrait de journal.
+- **Élément interactif** : Sondages Livestorm n°2, 3, 4 + question chat.
+
+---
+
+### Slide 12 — Deux débats : le curseur & le voyage impossible
+- **Type** : sondage
+- **Points clés (bullets)** :
+  - 📊 **n°5 (opinion)** : un SIEM trace aussi les salariés — où placez-vous le curseur ? (Tout / **Ciblé et proportionné** / Minimum)
+  - Cadre : proportionnalité, information des salariés, conservation ~6 mois (recommandation CNIL) — B15 s'applique aussi aux logs
+  - 🤔 Mini-scénario : Paris 9h02 → Singapour 9h37. A) Ignorer (VPN ?) B) **Qualifier : contexte, appel, mesure conservatoire** ✅ C) Tout bloquer
+- **Notes orateur** : N°5 sans bonne réponse, mais un cadre légal — et Desjardins en contrepoint : zéro surveillance interne se paie aussi. Mini-scénario : le VPN d'entreprise fabrique de faux voyages impossibles → contexte d'abord, puis canal indépendant (le contre-appel de B04), puis mesure proportionnée. Une alerte est une priorité d'enquête, pas un verdict.
+- **Visuel suggéré** : Curseur à trois positions au-dessus ; planisphère Paris-Singapour avec deux horodatages en dessous.
+  - **alt-text** : Sondage d'opinion sur la journalisation et scénario d'alerte de voyage impossible.
+- **Élément interactif** : Sondage Livestorm n°5 + scénario A/B/C dans le chat.
+
+---
+
+### Slide 13 — Quiz de validation & bonus
 - **Type** : quiz
 - **Points clés (bullets)** :
-  - 1. Quel processus du SIEM permet de convertir des logs de formats différents (XML, Syslog) en un format unifié ?
-  - 2. Pourquoi est-il déconseillé de collecter absolument tous les logs de tous les équipements d'un réseau ?
-  - 3. Dans le log SSH étudié, que signifie le terme `Failed password` ?
-- **Notes orateur** : Testons vos compétences sur la journalisation et le fonctionnement des SIEM. Connectez-vous et votez pour valider les notions de normalisation, de sélection des logs et de déchiffrement d'événements.
-- **Visuel suggéré** : QR Code d'accès au vote synchrone à gauche et questions interactives à droite.
-  - **alt-text** : QR Code vert d'accès au questionnaire d'évaluation.
-- **Élément interactif** : Quiz interactif avec correction en direct par le mentor.
+  - 📊 **n°6** : à quoi sert la normalisation (parsing) ? → langue commune, condition de la corrélation
+  - 📊 **n°7** : pourquoi centraliser les journaux à part ? → hors de portée de l'effacement par l'attaquant
+  - 📊 **n°8** : 10 échecs + 1 succès, même IP, 60 s ? → alerte critique « force brute probablement réussie »
+  - 📊 **n°9 (bonus)** : 500 connexions/10 s sur 5 ports ? → balayage de ports (reconnaissance)
+- **Notes orateur** : Trois sondages, débrief 30 secondes chacun (éléments dans le support). Le bonus n°9 est le tampon : le couper si retard, il est dans le support. Fil conducteur des débriefs : réponse graduée, valeur probante, motifs d'attaque.
+- **Visuel suggéré** : Quatre cartes de quiz numérotées, la dernière marquée « bonus ».
+  - **alt-text** : Les quatre sondages de validation de fin de session.
+- **Élément interactif** : Sondages Livestorm n°6, 7, 8 (+ n°9 bonus).
 
 ---
 
-### Slide 12 — Conclusion & Travail autonome
+### Slide 14 — Synthèse, devoirs & prochaine session
 - **Type** : récap
 - **Points clés (bullets)** :
-  - **Résumé** : SIEM (collecte, normalisation, corrélation), ciblage des logs d'intérêt, lecture de logs (Qui, Quand, Où, Quoi), et Atelier de Synthèse 4.
-  - **Travail personnel** : S'entraîner à lire des logs d'authentification sur des VM locales.
-  - **IBM SkillsBuild** : Suivre le cours *"Security Monitoring and Log Analysis"* (~1h30).
-  - Prochaine session : *Gestion des vulnérabilités (B18)*.
-- **Notes orateur** : Nous avons posé les bases de l'analyse de logs ! Validez votre quiz de synthèse et continuez à vous exercer sur votre temps libre en lisant des logs système. N'oubliez pas de suivre le module SkillsBuild associé. La semaine prochaine, nous verrons comment identifier et corriger les vulnérabilités de nos systèmes avant que les attaquants ne les exploitent. Bonne semaine !
-- **Visuel suggéré** : Badge d'achèvement de cours d'IBM SkillsBuild pour la surveillance et l'analyse de logs.
-  - **alt-text** : Badge de réussite du cours Log Analysis d'IBM SkillsBuild.
+  - Un log = **horodatage + source + événement** · la corrélation transforme le bruit en alertes · les journaux déportés = pièces à conviction
+  - 💬 Chat : « un mot que vous retenez »
+  - Self-paced : IBM SkillsBuild *"Log Analysis and SIEM Concepts"* (~1h30) + recherche : le **confinement** d'une machine compromise (+ une action technique d'isolement)
+  - Prochaine session (B18) : l'alerte a sonné — confiner, éradiquer, reconstruire
+- **Notes orateur** : Boucler : vous savez désormais lire ce que le SOC de B16 regarde. Donner les devoirs (le confinement prépare directement B18). Teaser : « pourquoi ne faut-il JAMAIS débrancher la prise d'une machine piratée ? Réponse la semaine prochaine. » Terminer à l'heure.
+- **Visuel suggéré** : Trois pictogrammes de synthèse (ligne de log, entonnoir, coffre-fort à preuves) + badge SkillsBuild.
+  - **alt-text** : Slide de synthèse avec les devoirs et l'annonce de la session B18.
+- **Élément interactif** : Question chat de clôture.
