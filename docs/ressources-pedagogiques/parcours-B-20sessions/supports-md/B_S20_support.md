@@ -90,6 +90,15 @@ Le détail du cas et les six votes sont dans le [dossier de l'atelier](../projet
 *   **L'audit (votes n°2 à n°7)** : six décisions — segmentation, filtrage, chiffrement des portables, sauvegarde 3-2-1, puis, **en cours de séance, l'incident se déclenche** : un rançongiciel chiffre la comptabilité (confinement ? communication ?). Tout le parcours en six votes.
 *   **Le débat (vote n°8)** : la directrice objecte — « le MFA fait perdre du temps aux commerciaux ». L'exercice final de restitution managériale : trouver l'argument qui convainc une direction (indice : le chiffre du sondage n°1).
 
+!!! tip "📊 Sondage Livestorm n°8 — Le débat décisionnel : l'objection de la directrice"
+    **Question :** La directrice refuse d'imposer le MFA : « mes commerciaux perdent déjà assez de temps lors de leurs connexions quotidiennes ». Quel argument est le plus percutant ?
+
+    - A) « Le MFA bloque plus de 99 % des attaques par compromission de compte (Microsoft, 2019) — et un arrêt d'activité coûtera infiniment plus cher que 3 secondes par connexion. » ✅
+    - B) « Le MFA est nommément obligatoire selon la loi sur la protection des données personnelles. »
+    - C) « Les commerciaux n'ont pas leur mot à dire sur les choix de sécurité. »
+
+    **Débrief mentor :** A — la restitution managériale en action : un chiffre sourcé + une comparaison coût/bénéfice parlante. B est factuellement faux (le RGPD impose la sécurité des traitements, pas le MFA nommément — un argument faux se retourne contre son auteur) ; C perd la direction, donc le budget (B13 : la direction décide, la direction assume). Ajouter : le MFA moderne (notification avec code à saisir) est fluide au quotidien.
+
 ### 3. Les chiffres du parcours (rappel de synthèse)
 
 !!! info "Chiffres clés à retenir (sources et années citées)"
