@@ -6,7 +6,7 @@ Parcours : B 20 sessions  |  Module : E — Opérations, détection & réponse  
 !!! abstract "Résumé"
     Ce document synthétise les concepts essentiels de la session. Vous y découvrirez notamment :
     - Qu'est-ce qu'un SIEM ? (collecte, normalisation, corrélation, stockage)
-    - Anatomie d'une ligne de log : lire « Qui, Quand, Où, Quoi »
+    - Anatomie d'une ligne de log : lire « Qui, Quand, Quoi » (et Où)
     - Les règles de corrélation : transformer des millions de lignes en quelques alertes
     - Deux affaires réelles : Marriott (4 ans de présence non détectée) et Desjardins (26 mois d'exfiltration interne)
     - L'**Atelier de Synthèse 4** : l'enquête collective dans les journaux web de MedDistri
@@ -83,7 +83,7 @@ Un **SIEM** (*Security Information and Event Management*) est le moteur logiciel
 *Pourquoi c'est indispensable* : un pirate qui s'introduit laisse une trace sur le pare-feu, une autre sur le serveur de fichiers, une troisième sur le contrôleur de domaine. Regardées séparément, chacune est anodine ; croisées, elles racontent l'intrusion. Aucun humain ne peut lire des millions de lignes par jour — le SIEM, si.
 
 ### 2. Anatomie d'une ligne de log
-Pour être exploitable, une ligne de log doit répondre à quatre questions : **Qui, Quand, Où, Quoi**. Vos recherches de la semaine l'ont montré : trois éléments sont obligatoires — l'**horodatage** (normalisé, idéalement en temps universel UTC), la **source** (IP, machine, compte) et l'**événement** (l'action et son résultat).
+Pour être exploitable, une ligne de log doit répondre à trois questions : **Qui, Quand, Quoi**. Vos recherches de la semaine l'ont montré : trois éléments sont obligatoires — l'**horodatage** (normalisé, idéalement en temps universel UTC), la **source** (IP, machine, compte) et l'**événement** (l'action et son résultat). Une quatrième question — **Où** (la machine ou le service visé) — est idéalement présente dans la ligne elle-même (comme `srv-paye` dans l'exemple SSH ci-dessous) ; à défaut, c'est le journal d'origine qui la fournit.
 
 #### Un log web Apache (Common Log Format) :
 `203.0.113.88 - - [29/Jun/2026:16:42:57 +0200] "GET /admin/login.php HTTP/1.1" 200 4502`
@@ -91,7 +91,7 @@ Pour être exploitable, une ligne de log doit répondre à quatre questions : **
 *   `203.0.113.88` : l'adresse IP du client (**qui**).
 *   `[29/Jun/2026:16:42:57 +0200]` : date, heure, fuseau (**quand**).
 *   `"GET /admin/login.php HTTP/1.1"` : la méthode HTTP, la ressource demandée (**quoi**), le protocole.
-*   `200` : le **code d'état HTTP** — 200 signifie que le serveur a traité la requête avec succès (404 : ressource introuvable ; 400 : requête rejetée ; 500 : erreur serveur).
+*   `200` : le **code d'état HTTP** — 200 signifie que le serveur a traité la requête avec succès (404 : ressource introuvable ; 400 : requête invalide, mal formée ; 403 : accès refusé ; 500 : erreur serveur).
 *   `4502` : la **taille de la réponse** en octets — un indice souvent décisif : une réponse anormalement volumineuse peut trahir une fuite de données.
 
 #### Un log d'authentification Linux (auth.log) :
@@ -163,9 +163,9 @@ Ligne 5 : 203.0.113.66 - - [08/Jul/2026:21:01:02 +0200] "GET /admin/../../etc/pa
 **Éléments de débriefing (pour le mentor) :**
 
 - **N°2 :** l'apostrophe `'` qui casse la syntaxe SQL, le `OR 1=1` (condition toujours vraie) puis le `UNION SELECT` qui greffe une seconde requête : la signature SQLi au complet (revue de B03). La ligne 2 (`198.51.100.23`) est un visiteur légitime — l'enquête commence toujours par isoler QUI fait QUOI.
-- **N°3 :** nuance importante : le code 200 dit « le serveur a traité la requête », pas « des données ont fui » — c'est la **taille de la réponse** qui accable : 851 octets pour une fiche produit normale, 6817 quand la requête greffée demande la table `clients`. Chronologie complète en moins de 3 minutes : reconnaissance (ligne 3), extraction (ligne 4), tentative d'élargissement (ligne 5 — une traversée de répertoires, **échouée** : code 400, réponse de 118 octets = message d'erreur).
+- **N°3 :** nuance importante : le code 200 dit « le serveur a traité la requête », pas « des données ont fui » — c'est la **taille de la réponse** qui accable : 851 octets pour une fiche produit normale, 6817 quand la requête greffée demande la table `clients`. Chronologie complète en moins de 3 minutes : reconnaissance (ligne 3), extraction (ligne 4), tentative d'élargissement (ligne 5 — une traversée de répertoires, **vraisemblablement sans succès** : code 400 « requête invalide » et réponse minuscule de 118 octets, un simple message d'erreur — ni 200, ni volume).
 - **N°4 :** B enchaîne le confinement (bloquer l'IP, activer le blocage WAF), la correction de la cause (requêtes paramétrées — le correctif définitif contre la SQLi) et la qualification de l'impact (quelles données la table `clients` expose-t-elle ? → si données personnelles : notification CNIL sous 72 h, réflexe de B15). A détruit la disponibilité sans traiter la cause ; C détruit **les preuves** — les journaux sont désormais des pièces à conviction (teaser B18).
-- **Chat (pendant le vote n°3)** : « que révèle la ligne 5, et pourquoi son code 400 est-il une bonne nouvelle ? » — l'attaquant a aussi tenté de lire `/etc/passwd`, le serveur a refusé la requête.
+- **Chat (pendant le vote n°3)** : « que révèle la ligne 5, et pourquoi est-elle plutôt rassurante ? » — l'attaquant a aussi tenté de lire `/etc/passwd` ; le code 400 (« requête invalide ») ne prouve pas à lui seul un blocage, mais l'absence de 200 ET la réponse minuscule (118 octets) indiquent que rien de volumineux n'est sorti — appliquer à la ligne 5 le même raisonnement code+taille que pour le vote n°3.
 
 !!! tip "📊 Sondage Livestorm n°5 — Le curseur de la journalisation (sondage d'opinion, pas de bonne réponse)"
     **Question :** Un SIEM trace tout — y compris l'activité quotidienne des salariés. Où placeriez-vous le curseur dans votre organisation ?

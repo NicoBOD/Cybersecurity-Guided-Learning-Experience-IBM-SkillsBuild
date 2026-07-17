@@ -73,7 +73,7 @@ Parcours : B 20 sessions  |  Module : E — Opérations, détection & réponse  
 - **Points clés (bullets)** :
   - `203.0.113.88 - - [29/Jun/2026:16:42:57 +0200] "GET /admin/login.php HTTP/1.1" 200 4502`
   - **Qui** : IP source · **Quand** : horodatage + fuseau · **Quoi** : méthode + ressource
-  - **Code d'état** : 200 traité · 400 rejeté · 404 introuvable · 500 erreur serveur
+  - **Code d'état** : 200 traité · 400 requête invalide · 403 accès refusé · 404 introuvable · 500 erreur serveur
   - **Taille de la réponse** : l'indice oublié — une réponse anormalement grosse trahit une fuite
 - **Notes orateur** : Décortiquer champ par champ en couleur. Marteler : « la taille, retenez-la — elle servira dans l'atelier ». 💬 Question chat : une requête isolée sur /admin/login.php, grave ? → signal faible ; la fréquence et la série font le diagnostic.
 - **Visuel suggéré** : La ligne de log agrandie, chaque champ surligné d'une couleur avec sa bulle d'explication.
@@ -140,9 +140,9 @@ Parcours : B 20 sessions  |  Module : E — Opérations, détection & réponse  
 - **Points clés (bullets)** :
   - 📊 **n°2** : quelle attaque aux lignes 3-4 ? (Path Traversal / **SQLi** ✅ / DDoS)
   - 📊 **n°3** : code 200 + tailles 851 → 4522 → 6817 octets : réussite potentielle ? (**Oui** ✅ / Non)
-  - 💬 Chat : que révèle la ligne 5 — et pourquoi son code **400** est-il une bonne nouvelle ?
+  - 💬 Chat : que révèle la ligne 5 — et pourquoi est-elle plutôt **rassurante** (400 + 118 octets) ?
   - 📊 **n°4** : la riposte ? (**WAF en blocage + requêtes paramétrées + évaluation de la fuite** ✅)
-- **Notes orateur** : Un vote → un débrief, dans l'ordre. N°2 : apostrophe, OR 1=1, UNION SELECT — la signature complète (B03). N°3 : la nuance qui fait les bons analystes : 200 = requête traitée ; c'est la TAILLE qui accable. Ligne 5 : traversée de répertoires échouée (400, 118 octets). N°4 : confinement + correction de la cause + qualification de la fuite (CNIL 72 h, B15) ; effacer les logs = détruire les pièces à conviction. Conclure : reconnaissance → extraction → élargissement en moins de 3 minutes.
+- **Notes orateur** : Un vote → un débrief, dans l'ordre. N°2 : apostrophe, OR 1=1, UNION SELECT — la signature complète (B03). N°3 : la nuance qui fait les bons analystes : 200 = requête traitée ; c'est la TAILLE qui accable. Ligne 5 : traversée de répertoires vraisemblablement sans succès — 400 « requête invalide » + 118 octets, ni 200 ni volume (même raisonnement code+taille). N°4 : confinement + correction de la cause + qualification de la fuite (CNIL 72 h, B15) ; effacer les logs = détruire les pièces à conviction. Conclure : reconnaissance → extraction → élargissement en moins de 3 minutes.
 - **Visuel suggéré** : Les trois questions empilées avec cases à cocher, extrait de logs en fond grisé.
   - **alt-text** : Les trois votes de l'Atelier de Synthèse 4 sur l'analyse de l'extrait de journal.
 - **Élément interactif** : Sondages Livestorm n°2, 3, 4 + question chat.

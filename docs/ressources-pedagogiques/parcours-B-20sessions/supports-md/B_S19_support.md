@@ -149,7 +149,7 @@ Mars 2019, 4 heures du matin. Le géant norvégien de l'aluminium **Norsk Hydro*
 **Corrigé / Communiqué modèle (rédigé sur le cas EcoLog, transposable) :**
 
 ```text
-COMMUNIQUÉ DE PRESSE — ECOLOG
+COMMUNIQUÉ DE PRESSE — EcoLog
 Pour diffusion immédiate — Paris, le 29 juin 2026
 
 EcoLog informe avoir été la cible d'un incident de sécurité informatique ayant
