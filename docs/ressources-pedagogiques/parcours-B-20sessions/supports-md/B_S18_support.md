@@ -127,7 +127,7 @@ Mars 2017 : une faille critique du framework web **Apache Struts** (CVE-2017-563
 
 ### 4. Quand l'incident survient : le cycle de réponse (NIST SP 800-61 / PICERL)
 
-Faire face à une cyberattaque ne s'improvise pas. Le guide **NIST SP 800-61** structure la réponse en **4 phases** ; le moyen mnémotechnique le plus répandu, **PICERL** (SANS), déplie les mêmes réalités en 6 étapes :
+Faire face à une cyberattaque ne s'improvise pas. Le guide **NIST SP 800-61** (Rev. 2 — la Rev. 3 de 2025 réorganise les mêmes fondamentaux autour des fonctions du CSF 2.0 vu en B13) structure la réponse en **4 phases** ; le moyen mnémotechnique le plus répandu, **PICERL** (SANS), déplie les mêmes réalités en 6 étapes :
 
 ```text
 NIST SP 800-61 (4 phases)          PICERL / SANS (6 étapes)
@@ -159,8 +159,9 @@ Face à des fichiers qui se chiffrent en direct, le réflexe instinctif est d'é
     *   **La RAM est volatile** : l'extinction efface définitivement les processus malveillants actifs, les connexions réseau en cours, les adresses des attaquants — et parfois **la clé de chiffrement du rançongiciel** encore en mémoire.
     *   **Le redémarrage peut aggraver** : certains malwares profitent du redémarrage pour chiffrer les fichiers de démarrage et rendre la machine définitivement inutilisable.
     *   **La bonne pratique** : **isoler du réseau** (câble débranché, Wi-Fi coupé) mais **laisser la machine allumée**, pour que les experts puissent extraire la mémoire vive.
+    *   *Nuance d'expert (pour le mentor, si la question vient)* : face à un malware purement **destructeur** (*wiper* type HermeticWiper) en train d'effacer physiquement les disques, couper l'alimentation peut devenir l'ultime recours pour sauver ce qui n'est pas encore détruit — arbitrage exceptionnel, au prix des preuves en RAM. Pour un rançongiciel, la règle reste : isoler, ne pas éteindre.
 
-L'investigation collecte les preuves du plus volatil au plus stable (l'**ordre de volatilité**) : RAM → état réseau → disques (copie, jamais l'original) → journaux déportés (déjà en lieu sûr grâce à B17). Ces preuves servent l'enquête technique, la plainte (sous 72 h pour l'indemnisation assurantielle — LOPMI 2023, vue en B02) et l'assurance (B14).
+L'investigation collecte les preuves du plus volatil au plus stable (l'**ordre de volatilité**, formalisé par la **RFC 3227** et la norme **ISO/IEC 27037**) : RAM → état réseau → disques (copie, jamais l'original) → journaux déportés (déjà en lieu sûr grâce à B17). Ces preuves servent l'enquête technique, la plainte (sous 72 h pour l'indemnisation assurantielle — LOPMI 2023, vue en B02) et l'assurance (B14).
 
 !!! question "🤔 Mini-scénario — Que feriez-vous si... ?"
     Lundi, 10h04. Un utilisateur appelle le support, paniqué : « mon écran affiche une demande de rançon, les fichiers du service changent d'extension les uns après les autres ! » Vous êtes le technicien helpdesk. **Tapez A, B ou C dans le chat :**

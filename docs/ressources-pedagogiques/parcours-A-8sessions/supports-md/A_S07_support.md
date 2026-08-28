@@ -126,7 +126,7 @@ Les 5 événements (chronologie réelle, à ne pas afficher d'emblée) :
 L'investigation numérique s'apparente à une enquête de police scientifique, transposée au monde virtuel. Les enquêteurs doivent collecter des indices sans modifier la scène de crime.
 
 #### A. L'ordre de volatilité des données
-Les données informatiques s'effacent à des vitesses différentes. Les enquêteurs collectent d'abord les données les plus volatiles :
+Les données informatiques s'effacent à des vitesses différentes. Principe canonique de l'investigation numérique — formalisé par la **RFC 3227** (*Guidelines for Evidence Collection and Archiving*) et la norme **ISO/IEC 27037** —, la collecte procède toujours du plus volatil au plus stable :
 
 * **Mémoire vive (RAM)** : Contient les mots de passe saisis en clair, les clés de chiffrement temporaires et la liste des connexions réseau actives de l'attaquant. Si on éteint l'ordinateur, toutes ces preuves cruciales disparaissent instantanément.
 * **Connexions réseau et processus actifs** : La photographie de ce que fait l'attaquant en ce moment même — perdue dès la déconnexion.

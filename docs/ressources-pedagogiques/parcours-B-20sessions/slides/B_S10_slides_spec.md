@@ -59,7 +59,7 @@ Parcours : B 20 sessions  |  Module : C — Identités, cloud & données  |  For
 - **Type** : schéma
 - **Points clés (bullets)** :
   - **Symétrique (AES)** : une seule clé partagée — ultra-rapide (disques, bases)... mais comment livrer la clé ?
-  - **Asymétrique (RSA, DH)** : clé publique (chiffrer) + clé privée (déchiffrer) — lent, mais résout l'échange et permet la signature.
+  - **Asymétrique (RSA, DH)** : clé publique (chiffrer) + clé privée (déchiffrer) — lent, mais résout l'échange de clés (DH, RSA) et permet la signature (RSA).
   - **Hybride** : l'asymétrique livre la clé, la symétrique fait le travail = le handshake TLS (B07).
 - **Notes orateur** : Dérouler les deux analogies : le coffre-fort à clé unique (et le problème du double de clé), le cadenas ouvert distribué à tous (seul le détenteur de la clé privée ouvre). BitLocker (B08) = AES. Question rhétorique : quelle clé ne quitte JAMAIS son propriétaire ? La privée — tout l'édifice repose là-dessus.
 - **Visuel suggéré** : Diptyque : coffre à clé unique / boîte aux lettres à fente publique et porte privée.
@@ -97,8 +97,8 @@ Parcours : B 20 sessions  |  Module : C — Identités, cloud & données  |  For
 - **Points clés (bullets)** :
   - Le problème : cette clé publique est-elle vraiment celle de `banque.com` ?
   - **L'AC** vérifie l'identité puis **signe** le certificat **X.509** (clé publique + domaine + validité + signature — jamais la clé privée).
-  - **Signer** = hacher le document + chiffrer l'empreinte avec la clé **privée**.
-- **Notes orateur** : La signature, mécanique dévoilée : quiconque a la clé publique vérifie (déchiffre la signature, recalcule le hachage, compare) — hachage + asymétrique = authenticité + intégrité. Boucler avec B07 : c'est ce que le navigateur vérifie à chaque cadenas, et DigiNotar a montré ce qui arrive quand le signataire ment. C'est la question n°8 du quiz.
+  - **Signer** = hacher le document + sceller l'empreinte avec la clé **privée**.
+- **Notes orateur** : La signature, mécanique dévoilée : l'émetteur scelle l'empreinte du document avec sa clé privée ; quiconque possède la clé publique vérifie mathématiquement que la signature correspond au document reçu (recalcul du hachage + contrôle de validité) — hachage + asymétrique = authenticité + intégrité. Boucler avec B07 : c'est ce que le navigateur vérifie à chaque cadenas, et DigiNotar a montré ce qui arrive quand le signataire ment. C'est la question n°8 du quiz.
 - **Visuel suggéré** : Chaîne de confiance : AC (sceau) → certificat X.509 (carte d'identité) → navigateur (cadenas vérifié).
   - **alt-text** : Chaîne de confiance reliant l'autorité de certification au cadenas affiché par le navigateur.
 
