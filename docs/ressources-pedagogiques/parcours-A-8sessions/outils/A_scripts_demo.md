@@ -220,6 +220,7 @@ Parcours : A 8 sessions  |  Module : Démonstrations Mentor  |  Format : Scripts
      *"Vous coupez le courant. Le chiffrement s'arrête... et avec lui, tout ce que contenait la mémoire vive : la clé de chiffrement que le ransomware y gardait, la liste des connexions de l'attaquant, les processus actifs. L'enquête vient de perdre ses meilleures preuves — et parfois, la seule chance de déchiffrer sans payer."*
    * **Raconter la branche B (la bonne)** :
      *"Vous débranchez le câble réseau. Le serveur est isolé : plus de propagation, plus de contrôle à distance. Mais la RAM est intacte : l'équipe forensics pourra la capturer, y trouver les connexions de l'attaquant — et peut-être la clé. Vous venez d'appliquer la règle d'or : ISOLER, JAMAIS ÉTEINDRE."*
+   * *Aparté mentor (si un participant avancé objecte le cas des malwares destructeurs)* : face à un *wiper* en train d'effacer physiquement les disques (type HermeticWiper), couper l'alimentation peut être l'ultime recours pour sauver ce qui reste — arbitrage exceptionnel de niveau expert, au prix des preuves en RAM. Pour un rançongiciel, la règle enseignée ici reste la bonne : isoler, ne pas éteindre.
 
 3. **Transition narrative (1 min)** :
    * *"6h45. L'équipe est arrivée, la RAM est capturée, le périmètre est confiné. La direction appelle : 'La production doit repartir à 9h. Restaurez tout, tout de suite.' Deuxième décision."*

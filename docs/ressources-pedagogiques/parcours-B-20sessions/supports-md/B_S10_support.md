@@ -43,13 +43,13 @@ Parcours : B 20 sessions  |  Module : C — Identités, cloud & données  |  Niv
 ### Approfondissement technique pour le mentor (Contenu dense)
 
 **1. La cryptographie hybride, déjà rencontrée**
-Reliez explicitement à B07 : le handshake TLS EST la cryptographie hybride en action — l'asymétrique (RSA, Diffie-Hellman) résout le problème de l'échange de clés, la symétrique (AES) fait le travail à grande vitesse. Cette session donne les fondations de ce qui a été admis en B07. Pour les curieux : Diffie-Hellman permet même de construire un secret commun sans jamais le transmettre — chacun combine sa part privée avec la part publique de l'autre.
+Reliez explicitement à B07 : le handshake TLS EST la cryptographie hybride en action — l'asymétrique (RSA, Diffie-Hellman) résout le problème de l'échange de clés, la symétrique (AES) fait le travail à grande vitesse. Cette session donne les fondations de ce qui a été admis en B07. Pour les curieux : Diffie-Hellman permet même de construire un secret commun sans jamais le transmettre — chacun combine sa part privée avec la part publique de l'autre. Précision de rigueur si la question vient : DH est un protocole d'**accord de clé**, il ne chiffre pas de messages et ne produit pas de signatures (c'est le rôle de RSA). Et si la question des **modes d'opération** d'AES surgit : la référence actuelle est le chiffrement authentifié type **AES-GCM** (AEAD : confidentialité + intégrité, utilisé par TLS 1.3) ; le mode historique **ECB** est à proscrire — même bloc en clair, même bloc chiffré : les motifs se voient, et c'est précisément le défaut du chiffrement (3DES en mode ECB) de l'affaire Adobe racontée plus bas.
 
 **2. Mots de passe : pourquoi le hachage « rapide » ne suffit pas**
 Le point technique central de la session : un mot de passe ne se chiffre pas, il se **hache** — mais pas n'importe comment. (1) Sans **sel**, deux utilisateurs au même mot de passe ont la même empreinte, et les tables précalculées (*rainbow tables*) cassent tout en masse. (2) Même salées, les fonctions généralistes (MD5, SHA-1, SHA-256) sont trop **rapides** : une seule carte graphique moderne teste des milliards de candidats par seconde. D'où les fonctions dédiées **volontairement lentes et coûteuses** : bcrypt, scrypt, **Argon2** (la référence actuelle). MD5 et SHA-1 sont par ailleurs cryptographiquement cassés (collisions démontrées) — à bannir de tout nouvel usage.
 
 **3. La signature numérique : le hachage rencontre l'asymétrique**
-Expliquez la mécanique si la question vient : signer un document = hacher le document, puis chiffrer l'empreinte avec sa clé **privée**. Quiconque possède la clé publique peut vérifier : il déchiffre la signature, recalcule le hachage, compare. C'est exactement ainsi qu'une Autorité de Certification signe un certificat X.509 — et ce que le navigateur vérifie à chaque cadenas (B07 : DigiNotar a montré ce qui arrive quand le signataire est compromis).
+Expliquez la mécanique si la question vient : signer un document = hacher le document, puis calculer à partir de cette empreinte et de la clé **privée** une signature que seul son détenteur peut produire. Quiconque possède la clé publique peut vérifier : il recalcule le hachage du document reçu et contrôle mathématiquement que la signature lui correspond. (Précision pour un participant avancé : l'image classique « chiffrer l'empreinte, puis la déchiffrer pour vérifier » ne décrit que le RSA historique — les schémas modernes comme RSA-PSS, ECDSA ou Ed25519 n'ont pas d'opération de « déchiffrement » : la vérification est une équation qui répond vrai ou faux.) C'est exactement ainsi qu'une Autorité de Certification signe un certificat X.509 — et ce que le navigateur vérifie à chaque cadenas (B07 : DigiNotar a montré ce qui arrive quand le signataire est compromis).
 
 ---
 
@@ -63,7 +63,7 @@ Expliquez la mécanique si la question vient : signer un document = hacher le do
 *   **PKI (Infrastructure de Clés Publiques)** — Système de délivrance et de gestion de certificats numériques X.509 permettant de certifier l'identité des serveurs et des clés.
 *   **Rainbow table (Table arc-en-ciel)** — Table précalculée d'empreintes de mots de passe courants, permettant de casser en masse les hachages non salés.
 *   **Sel (Salt)** — Valeur aléatoire unique ajoutée à chaque mot de passe avant hachage, rendant chaque empreinte unique et les tables précalculées inopérantes.
-*   **Signature numérique** — Empreinte d'un document chiffrée avec la clé privée du signataire — vérifiable par tous avec sa clé publique (authenticité + intégrité).
+*   **Signature numérique** — Preuve cryptographique calculée sur l'empreinte d'un document avec la clé privée du signataire — vérifiable par tous avec sa clé publique (authenticité + intégrité).
 
 ---
 
@@ -81,7 +81,7 @@ La cryptographie protège la confidentialité des données à l'aide de formules
 *   **Chiffrement asymétrique** : Utilise un couple de clés mathématiquement liées mais différentes :
     *   La **clé publique** : Elle est diffusée librement à tout le monde. Elle sert uniquement à **chiffrer** les messages à destination du propriétaire de la clé.
     *   La **clé privée** : Elle doit être gardée strictement confidentielle par son propriétaire. Elle sert uniquement à **déchiffrer** les messages chiffrés avec la clé publique correspondante.
-    *   *Usage* : Ce protocole est beaucoup plus lent. On l'utilise principalement pour établir la connexion initiale sécurisée (échange de clé de session symétrique via des algorithmes comme **RSA** ou **Diffie-Hellman**) ou pour signer numériquement des documents.
+    *   *Usage* : Ce protocole est beaucoup plus lent. On l'utilise principalement pour établir la connexion initiale sécurisée (échange de clé de session symétrique via des algorithmes comme **RSA** ou **Diffie-Hellman**) ou pour signer numériquement des documents (avec RSA — Diffie-Hellman, lui, sert uniquement à établir une clé partagée).
     *   *Analogie* : Votre correspondant vous envoie un cadenas ouvert (clé publique) dont il garde jalousement la clé physique (clé privée). Vous mettez votre document dans une boîte, vous la fermez avec son cadenas ouvert et lui renvoyez la boîte. Personne d'autre que lui ne pourra ouvrir la boîte, car il est le seul à posséder la clé physique.
 
 **La cryptographie hybride** : vous l'avez déjà rencontrée — le handshake TLS de B07 combine les deux : l'asymétrique livre la clé de session, la symétrique chiffre le trafic. Le meilleur des deux mondes.
@@ -112,7 +112,7 @@ Comment être sûr que la clé publique de `banque.com` appartient bien à votre
     3.  Les dates de validité du certificat.
     4.  L'identité de l'AC qui l'a émis (ex. Let's Encrypt).
     5.  La signature cryptographique de l'AC (prouvant que le certificat n'a pas été falsifié).
-*   **La signature numérique**, mécanisme sous-jacent : hacher le document, puis chiffrer l'empreinte avec la clé **privée** du signataire. Quiconque détient la clé publique vérifie : déchiffrer la signature, recalculer le hachage, comparer. Hachage + asymétrique = authenticité ET intégrité.
+*   **La signature numérique**, mécanisme sous-jacent : hacher le document, puis sceller cette empreinte avec la clé **privée** du signataire. Quiconque détient la clé publique vérifie que la signature correspond bien à l'empreinte qu'il recalcule du document reçu. Hachage + asymétrique = authenticité ET intégrité.
 
 ### Activité — Le laboratoire du hachage (Sondages Livestorm n°2 à 4)
 
@@ -268,12 +268,13 @@ Pour déployer des PKI d'entreprise, gérer des clés cryptographiques et stocke
 | Concept Clé | Définition synthétique |
 | :--- | :--- |
 | **Chiffrement symétrique (AES)** | Une seule clé partagée — rapide, pour les gros volumes (disques, bases). |
-| **Chiffrement asymétrique (RSA, DH)** | Couple publique/privée — lent, pour l'échange de clés et les signatures. |
+| **Chiffrement asymétrique (RSA)** | Couple publique/privée — lent, pour l'échange de clés et les signatures. |
+| **Diffie-Hellman (DH)** | Accord de clé : deux parties construisent un secret partagé sans jamais le transmettre — ni chiffrement de messages, ni signature. |
 | **Cryptographie hybride** | L'asymétrique livre la clé, la symétrique fait le travail — le handshake TLS (B07). |
 | **Hachage (SHA-256)** | Empreinte irréversible de taille fixe — l'outil de l'intégrité (effet d'avalanche). |
 | **Sel + fonction lente (Argon2, bcrypt)** | Le stockage correct des mots de passe : empreintes uniques, force brute non rentable. |
 | **Rainbow table** | Table d'empreintes précalculées — neutralisée par le sel. |
-| **Signature numérique** | Hachage chiffré à la clé privée — authenticité + intégrité, vérifiable par tous. |
+| **Signature numérique** | Empreinte scellée par la clé privée — authenticité + intégrité, vérifiable par tous avec la clé publique. |
 | **PKI / X.509** | La chaîne de confiance du web : l'AC signe la carte d'identité du serveur. |
 
 **La règle d'or de la session :** trois outils, trois usages — chiffrez ce que vous devrez relire, hachez (avec sel et fonction lente) ce que vous devez seulement vérifier, signez ce dont il faut prouver l'origine. Adobe et LinkedIn rappellent qu'un seul choix d'outil erroné se paie en centaines de millions de comptes.

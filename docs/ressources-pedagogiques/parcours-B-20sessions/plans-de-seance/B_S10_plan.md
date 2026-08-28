@@ -99,7 +99,7 @@ Parcours : B 20 sessions  |  Module : C — Identités, cloud & données  |  Dur
 - Le problème de confiance : cette clé publique de `banque.com` est-elle bien celle de votre banque ?
 - **L'AC** : le tiers de confiance qui vérifie l'identité puis signe le certificat.
 - **Le certificat X.509** : la carte d'identité du serveur — clé publique, domaine, validité, identité de l'AC, signature (JAMAIS la clé privée).
-- **La signature numérique**, mécanique dévoilée : hacher le document, chiffrer l'empreinte avec la clé PRIVÉE ; tout détenteur de la clé publique vérifie (déchiffre, recalcule, compare). Hachage + asymétrique = authenticité + intégrité.
+- **La signature numérique**, mécanique dévoilée : hacher le document, sceller l'empreinte avec la clé PRIVÉE ; tout détenteur de la clé publique vérifie que la signature correspond au document reçu (recalcul du hachage + contrôle de validité). Hachage + asymétrique = authenticité + intégrité.
 - Boucler avec B07 : c'est ce que le navigateur vérifie à chaque cadenas — et DigiNotar a montré ce qui arrive quand le signataire ment.
 
 **Transition scriptée :** « Passons au laboratoire : deux phrases, deux empreintes, trois votes. »

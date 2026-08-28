@@ -133,4 +133,5 @@ Parcours : B 20 sessions  |  Module : Démonstrations Pratiques  |  Format : Scr
         ```bash
         iptables -A INPUT -s 198.51.100.42 -j DROP
         ```
+    *   *Note mentor (modernisation)* : sur les distributions récentes (Debian 10+, Ubuntu 20.04+, RHEL 8+), la commande `iptables` est fournie par la couche de compatibilité **iptables-nft** : elle fonctionne toujours, mais le moteur de filtrage sous-jacent du noyau est désormais **nftables**. L'équivalent natif est `nft add rule inet filter input ip saddr 198.51.100.42 drop` — à condition d'avoir créé au préalable la table et la chaîne (`nft add table inet filter`, puis `nft add chain inet filter input '{ type filter hook input priority 0 ; policy accept ; }'`), car nftables ne fournit aucune chaîne par défaut. Pour une démo en direct, `iptables` reste le choix le plus universel.
     *   Le mentor conclut : *"En deux commandes système rapides, nous avons détecté l'attaquant et bloqué son accès au serveur."*
